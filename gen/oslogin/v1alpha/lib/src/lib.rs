@@ -1071,12 +1071,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1252,12 +1252,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1541,12 +1541,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1802,12 +1802,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1964,12 +1964,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2124,12 +2124,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2291,12 +2291,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

@@ -252,7 +252,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperation { # [doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to."] # [serde (rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub destination_parent : :: std :: option :: Option < String > , # [doc = "The display name of the folder."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "The type of this operation."] # [serde (rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType > , # [doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE."] # [serde (rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub source_parent : :: std :: option :: Option < String > , }
+    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperation { # [doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to."] # [serde (rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub destination_parent : :: std :: option :: Option < String > , # [doc = "The display name of the folder."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "The type of this operation."] # [serde (rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperationOperationType > , # [doc = "The resource name of the folder’s parent. Only applicable when the operation_type is MOVE."] # [serde (rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub source_parent : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for CloudresourcemanagerGoogleCloudResourcemanagerV2Alpha1FolderOperation
     {
@@ -355,7 +355,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperation { # [doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to."] # [serde (rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub destination_parent : :: std :: option :: Option < String > , # [doc = "The display name of the folder."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "The type of this operation."] # [serde (rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType > , # [doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE."] # [serde (rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub source_parent : :: std :: option :: Option < String > , }
+    pub struct CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperation { # [doc = "The resource name of the folder or organization we are either creating the folder under or moving the folder to."] # [serde (rename = "destinationParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub destination_parent : :: std :: option :: Option < String > , # [doc = "The display name of the folder."] # [serde (rename = "displayName" , default , skip_serializing_if = "std::option::Option::is_none")] pub display_name : :: std :: option :: Option < String > , # [doc = "The type of this operation."] # [serde (rename = "operationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub operation_type : :: std :: option :: Option < crate :: schemas :: CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperationOperationType > , # [doc = "The resource name of the folder’s parent. Only applicable when the operation_type is MOVE."] # [serde (rename = "sourceParent" , default , skip_serializing_if = "std::option::Option::is_none")] pub source_parent : :: std :: option :: Option < String > , }
     impl ::google_field_selector::FieldSelector
         for CloudresourcemanagerGoogleCloudResourcemanagerV2Beta1FolderOperation
     {
@@ -855,7 +855,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_type: ::std::option::Option<crate::schemas::FolderOperationOperationType>,
-        #[doc = "The resource name of the folder's parent. Only applicable when the operation_type is MOVE."]
+        #[doc = "The resource name of the folder’s parent. Only applicable when the operation_type is MOVE."]
         #[serde(
             rename = "sourceParent",
             default,
@@ -1195,7 +1195,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetAncestryResponse {
-        #[doc = "Ancestors are ordered from bottom to top of the resource hierarchy. The first ancestor is the project itself, followed by the project's parent, etc."]
+        #[doc = "Ancestors are ordered from bottom to top of the resource hierarchy. The first ancestor is the project itself, followed by the project’s parent, etc."]
         #[serde(
             rename = "ancestor",
             default,
@@ -1388,7 +1388,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The resource name of the folder's parent."]
+        #[doc = "The resource name of the folder’s parent."]
         #[serde(
             rename = "sourceParent",
             default,
@@ -1450,21 +1450,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_time: ::std::option::Option<String>,
-        #[doc = "A human-readable string that refers to the Organization in the GCP Console UI. This string is set by the server and cannot be changed. The string will be set to the primary domain (for example, \"google.com\") of the G Suite customer that owns the organization."]
+        #[doc = "A human-readable string that refers to the Organization in the GCP Console UI. This string is set by the server and cannot be changed. The string will be set to the primary domain (for example, “google.com”) of the G Suite customer that owns the organization."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The organization's current lifecycle state. Assigned by the server."]
+        #[doc = "The organization’s current lifecycle state. Assigned by the server."]
         #[serde(
             rename = "lifecycleState",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lifecycle_state: ::std::option::Option<crate::schemas::OrganizationLifecycleState>,
-        #[doc = "Output only. The resource name of the organization. This is the organization's relative path in the API. Its format is \"organizations/[organization_id]\". For example, \"organizations/1234\"."]
+        #[doc = "Output only. The resource name of the organization. This is the organization’s relative path in the API. Its format is “organizations/\\[organization_id\\]”. For example, “organizations/1234”."]
         #[serde(
             rename = "name",
             default,
@@ -1681,7 +1681,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The labels associated with this Project. Label keys must be between 1 and 63 characters long and must conform to the following regular expression: a-z{0,62}. Label values must be between 0 and 63 characters long and must conform to the regular expression [a-z0-9_-]{0,63}. A label value can be empty. No more than 256 labels can be associated with a given resource. Clients should store labels in a representation such as JSON that does not depend on specific characters being disallowed. Example: `\"environment\" : \"dev\"` Read-write."]
+        #[doc = "The labels associated with this Project. Label keys must be between 1 and 63 characters long and must conform to the following regular expression: a-z{0,62}. Label values must be between 0 and 63 characters long and must conform to the regular expression \\[a-z0-9\\_-\\]{0,63}. A label value can be empty. No more than 256 labels can be associated with a given resource. Clients should store labels in a representation such as JSON that does not depend on specific characters being disallowed. Example: `\"environment\" : \"dev\"` Read-write."]
         #[serde(
             rename = "labels",
             default,
@@ -1702,7 +1702,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "An optional reference to a parent Resource. Supported parent types include \"organization\" and \"folder\". Once set, the parent cannot be cleared. The `parent` can be set on creation or using the `UpdateProject` method; the end user must have the `resourcemanager.projects.create` permission on the parent. Read-write."]
+        #[doc = "An optional reference to a parent Resource. Supported parent types include “organization” and “folder”. Once set, the parent cannot be cleared. The `parent` can be set on creation or using the `UpdateProject` method; the end user must have the `resourcemanager.projects.create` permission on the parent. Read-write."]
         #[serde(
             rename = "parent",
             default,
@@ -1874,14 +1874,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceId {
-        #[doc = "Required field for the type-specific id. This should correspond to the id used in the type-specific API's."]
+        #[doc = "Required field for the type-specific id. This should correspond to the id used in the type-specific API’s."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Required field representing the resource type this id is for. At present, the valid types are \"project\", \"folder\", and \"organization\"."]
+        #[doc = "Required field representing the resource type this id is for. At present, the valid types are “project”, “folder”, and “organization”."]
         #[serde(
             rename = "type",
             default,
@@ -2410,7 +2410,7 @@ pub mod resources {
                     organization_id: None,
                 }
             }
-            #[doc = "Gets the access control policy for an Organization resource. May be empty if no such policy or resource exists. The `resource` field should be the organization's resource name, e.g. \"organizations/123\"."]
+            #[doc = "Gets the access control policy for an Organization resource. May be empty if no such policy or resource exists. The `resource` field should be the organization’s resource name, e.g. “organizations/123”."]
             pub fn get_iam_policy(
                 &self,
                 request: crate::schemas::GetIamPolicyRequest,
@@ -2455,7 +2455,7 @@ pub mod resources {
                     page_token: None,
                 }
             }
-            #[doc = "Sets the access control policy on an Organization resource. Replaces any existing policy. The `resource` field should be the organization's resource name, e.g. \"organizations/123\"."]
+            #[doc = "Sets the access control policy on an Organization resource. Replaces any existing policy. The `resource` field should be the organization’s resource name, e.g. “organizations/123”."]
             pub fn set_iam_policy(
                 &self,
                 request: crate::schemas::SetIamPolicyRequest,
@@ -2479,7 +2479,7 @@ pub mod resources {
                     resource: resource.into(),
                 }
             }
-            #[doc = "Returns permissions that a caller has on the specified Organization. The `resource` field should be the organization's resource name, e.g. \"organizations/123\"."]
+            #[doc = "Returns permissions that a caller has on the specified Organization. The `resource` field should be the organization’s resource name, e.g. “organizations/123”."]
             pub fn test_iam_permissions(
                 &self,
                 request: crate::schemas::TestIamPermissionsRequest,
@@ -2583,12 +2583,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2745,12 +2745,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2924,12 +2924,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3235,12 +3235,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3398,12 +3398,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3561,12 +3561,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3684,7 +3684,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Creates a Project resource. Initially, the Project resource is owned by its creator exclusively. The creator can later grant permission to others to read or update the Project. Several APIs are activated automatically for the Project, including Google Cloud Storage. The parent is identified by a specified ResourceId, which must include both an ID and a type, such as project, folder, or organization. This method does not associate the new project with a billing account. You can set or update the billing account associated with a project using the [`projects.updateBillingInfo`] (/billing/reference/rest/v1/projects/updateBillingInfo) method."]
+            #[doc = "Creates a Project resource. Initially, the Project resource is owned by its creator exclusively. The creator can later grant permission to others to read or update the Project. Several APIs are activated automatically for the Project, including Google Cloud Storage. The parent is identified by a specified ResourceId, which must include both an ID and a type, such as project, folder, or organization. This method does not associate the new project with a billing account. You can set or update the billing account associated with a project using the \\[`projects.updateBillingInfo`\\] (/billing/reference/rest/v1/projects/updateBillingInfo) method."]
             pub fn create(&self, request: crate::schemas::Project) -> CreateRequestBuilder {
                 CreateRequestBuilder {
                     reqwest: &self.reqwest,
@@ -3704,7 +3704,7 @@ pub mod resources {
                     use_legacy_stack: None,
                 }
             }
-            #[doc = "Marks the Project identified by the specified `project_id` (for example, `my-project-123`) for deletion. This method will only affect the Project if it has a lifecycle state of ACTIVE. This method changes the Project's lifecycle state from ACTIVE to DELETE_REQUESTED. The deletion starts at an unspecified time, at which point the project is no longer accessible. Until the deletion completes, you can check the lifecycle state checked by retrieving the Project with GetProject, and the Project remains visible to ListProjects. However, you cannot update the project. After the deletion completes, the Project is not retrievable by the GetProject and ListProjects methods. The caller must have delete permissions for this Project."]
+            #[doc = "Marks the Project identified by the specified `project_id` (for example, `my-project-123`) for deletion. This method will only affect the Project if it has a lifecycle state of ACTIVE. This method changes the Project’s lifecycle state from ACTIVE to DELETE_REQUESTED. The deletion starts at an unspecified time, at which point the project is no longer accessible. Until the deletion completes, you can check the lifecycle state checked by retrieving the Project with GetProject, and the Project remains visible to ListProjects. However, you cannot update the project. After the deletion completes, the Project is not retrievable by the GetProject and ListProjects methods. The caller must have delete permissions for this Project."]
             pub fn delete(&self, project_id: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -3963,12 +3963,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4118,12 +4118,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4278,12 +4278,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4439,12 +4439,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4602,12 +4602,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4736,7 +4736,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "An expression for filtering the results of the request. Filter rules are case insensitive. If multiple fields are included in a filter query, the query will return results that match any of the fields. Some eligible fields for filtering are: + `name` + `id` + `labels.` (where *key* is the name of a label) + `parent.type` + `parent.id` Some examples of using labels as filters: | Filter | Description | |------------------|-----------------------------------------------------| | name:how* | The project's name starts with \"how\". | | name:Howl | The project's name is `Howl` or `howl`. | | name:HOWL | Equivalent to above. | | NAME:howl | Equivalent to above. | | labels.color:* | The project has the label `color`. | | labels.color:red | The project's label `color` has the value `red`. | | labels.color:red labels.size:big |The project's label `color` has the value `red` and its label `size` has the value `big`. | If no filter is specified, the call will return projects for which the user has the `resourcemanager.projects.get` permission. NOTE: To perform a by-parent query (eg., what projects are directly in a Folder), the caller must have the `resourcemanager.projects.list` permission on the parent and the filter must contain both a `parent.type` and a `parent.id` restriction (example: \"parent.type:folder parent.id:123\"). In this case an alternate search index is used which provides more consistent results. Optional."]
+            #[doc = "An expression for filtering the results of the request. Filter rules are case insensitive. If multiple fields are included in a filter query, the query will return results that match any of the fields. Some eligible fields for filtering are: + `name` + `id` + `labels.` (where *key* is the name of a label) + `parent.type` + `parent.id` Some examples of using labels as filters: | Filter | Description | |——————\\|—————————————————–\\| | name:how\\* | The project’s name starts with “how”. | | name:Howl | The project’s name is `Howl` or `howl`. | | name:HOWL | Equivalent to above. | | NAME:howl | Equivalent to above. | | labels.color:\\* | The project has the label `color`. | | labels.color:red | The project’s label `color` has the value `red`. | | labels.color:red labels.size:big |The project’s label `color` has the value `red` and its label `size` has the value `big`. | If no filter is specified, the call will return projects for which the user has the `resourcemanager.projects.get` permission. NOTE: To perform a by-parent query (eg., what projects are directly in a Folder), the caller must have the `resourcemanager.projects.list` permission on the parent and the filter must contain both a `parent.type` and a `parent.id` restriction (example: “parent.type:folder parent.id:123”). In this case an alternate search index is used which provides more consistent results. Optional."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -4781,12 +4781,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5092,12 +5092,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5255,12 +5255,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5418,12 +5418,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5581,12 +5581,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

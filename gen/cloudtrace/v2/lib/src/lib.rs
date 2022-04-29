@@ -103,7 +103,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Attributes {
-        #[doc = "A set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: \"/instance_id\": { \"string_value\": { \"value\": \"my-instance\" } } \"/http/request_bytes\": { \"int_value\": 300 } \"abc.com/myattribute\": { \"bool_value\": false }"]
+        #[doc = "A set of attributes. Each attribute’s key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: “/instance_id”: { “string_value”: { “value”: “my-instance” } } “/http/request_bytes”: { “int_value”: 300 } “abc.com/myattribute”: { “bool_value”: false }"]
         #[serde(
             rename = "attributeMap",
             default,
@@ -361,7 +361,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub compressed_size_bytes: ::std::option::Option<i64>,
-        #[doc = "An identifier for the MessageEvent's message that can be used to match `SENT` and `RECEIVED` MessageEvents."]
+        #[doc = "An identifier for the MessageEvent’s message that can be used to match `SENT` and `RECEIVED` MessageEvents."]
         #[serde(
             rename = "id",
             default,
@@ -525,7 +525,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub child_span_count: ::std::option::Option<i32>,
-        #[doc = "Required. A description of the span's operation (up to 128 bytes). Cloud Trace displays the description in the Cloud Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces."]
+        #[doc = "Required. A description of the span’s operation (up to 128 bytes). Cloud Trace displays the description in the Cloud Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces."]
         #[serde(
             rename = "displayName",
             default,
@@ -553,7 +553,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The `[SPAN_ID]` of this span's parent span. If this is a root span, then this field must be empty."]
+        #[doc = "The `[SPAN_ID]` of this span’s parent span. If this is a root span, then this field must be empty."]
         #[serde(
             rename = "parentSpanId",
             default,
@@ -567,7 +567,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub same_process_as_parent_span: ::std::option::Option<bool>,
-        #[doc = "Required. The `[SPAN_ID]` portion of the span's resource name."]
+        #[doc = "Required. The `[SPAN_ID]` portion of the span’s resource name."]
         #[serde(
             rename = "spanId",
             default,
@@ -588,7 +588,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub stack_trace: ::std::option::Option<crate::schemas::StackTrace>,
-        #[doc = "Required. The start time of the span. On the client side, this is the time kept by the local machine where the span execution starts. On the server side, this is the time when the server's application handler starts running."]
+        #[doc = "Required. The start time of the span. On the client side, this is the time kept by the local machine where the span execution starts. On the server side, this is the time when the server’s application handler starts running."]
         #[serde(
             rename = "startTime",
             default,
@@ -1318,12 +1318,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1516,12 +1516,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

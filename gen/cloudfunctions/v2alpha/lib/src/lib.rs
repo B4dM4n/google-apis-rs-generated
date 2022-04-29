@@ -226,14 +226,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub build: ::std::option::Option<String>,
-        #[doc = "Optional. User managed repository created in Artifact Registry optionally with a customer managed encryption key. This is the repository to which the function docker image will be pushed after it is built by Cloud Build. If unspecified, GCF will create and use a repository named 'gcf-artifacts' for every deployed region. It must match the pattern `projects/{project}/locations/{location}/repositories/{repository}`. Cross-project repositories are not supported. Cross-location repositories are not supported. Repository format must be 'DOCKER'."]
+        #[doc = "Optional. User managed repository created in Artifact Registry optionally with a customer managed encryption key. This is the repository to which the function docker image will be pushed after it is built by Cloud Build. If unspecified, GCF will create and use a repository named ‘gcf-artifacts’ for every deployed region. It must match the pattern `projects/{project}/locations/{location}/repositories/{repository}`. Cross-project repositories are not supported. Cross-location repositories are not supported. Repository format must be ‘DOCKER’."]
         #[serde(
             rename = "dockerRepository",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub docker_repository: ::std::option::Option<String>,
-        #[doc = "The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named \"function\". For Node.js this is name of a function exported by the module specified in `source_location`."]
+        #[doc = "The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named “function”. For Node.js this is name of a function exported by the module specified in `source_location`."]
         #[serde(
             rename = "entryPoint",
             default,
@@ -373,7 +373,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retry_policy: ::std::option::Option<crate::schemas::EventTriggerRetryPolicy>,
-        #[doc = "Optional. The email of the trigger's service account. The service account must have permission to invoke Cloud Run services, the permission is `run.routes.invoke`. If empty, defaults to the Compute Engine default service account: `{project_number}-compute@developer.gserviceaccount.com`."]
+        #[doc = "Optional. The email of the trigger’s service account. The service account must have permission to invoke Cloud Run services, the permission is `run.routes.invoke`. If empty, defaults to the Compute Engine default service account: `{project_number}-compute@developer.gserviceaccount.com`."]
         #[serde(
             rename = "serviceAccountEmail",
             default,
@@ -1971,14 +1971,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Location {
-        #[doc = "The friendly name for this location, typically a nearby city name. For example, \"Tokyo\"."]
+        #[doc = "The friendly name for this location, typically a nearby city name. For example, “Tokyo”."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Cross-service attributes for the location. For example {\"cloud.googleapis.com/region\": \"us-east1\"}"]
+        #[doc = "Cross-service attributes for the location. For example {“cloud.googleapis.com/region”: “us-east1”}"]
         #[serde(
             rename = "labels",
             default,
@@ -2299,7 +2299,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub commit_sha: ::std::option::Option<String>,
-        #[doc = "Directory, relative to the source root, in which to run the build. This must be a relative path. If a step's `dir` is specified and is an absolute path, this value is ignored for that step's execution. eg. helloworld (no leading slash allowed)"]
+        #[doc = "Directory, relative to the source root, in which to run the build. This must be a relative path. If a step’s `dir` is specified and is an absolute path, this value is ignored for that step’s execution. eg. helloworld (no leading slash allowed)"]
         #[serde(
             rename = "dir",
             default,
@@ -2358,7 +2358,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Runtime {
-        #[doc = "The user facing name, eg 'Go 1.13', 'Node.js 12', etc."]
+        #[doc = "The user facing name, eg ‘Go 1.13’, ‘Node.js 12’, etc."]
         #[serde(
             rename = "displayName",
             default,
@@ -2372,7 +2372,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub environment: ::std::option::Option<crate::schemas::RuntimeEnvironment>,
-        #[doc = "The name of the runtime, e.g., 'go113', 'nodejs12', etc."]
+        #[doc = "The name of the runtime, e.g., ‘go113’, ‘nodejs12’, etc."]
         #[serde(
             rename = "name",
             default,
@@ -2596,7 +2596,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "Project identifier (preferably project number but can also be the project ID) of the project that contains the secret. If not set, it will be populated with the function's project assuming that the secret exists in the same project as of the function."]
+        #[doc = "Project identifier (preferably project number but can also be the project ID) of the project that contains the secret. If not set, it will be populated with the function’s project assuming that the secret exists in the same project as of the function."]
         #[serde(
             rename = "projectId",
             default,
@@ -2610,7 +2610,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub secret: ::std::option::Option<String>,
-        #[doc = "Version of the secret (version number or the string 'latest'). It is recommended to use a numeric version for secret environment variables as any updates to the secret value is not reflected until new instances start."]
+        #[doc = "Version of the secret (version number or the string ‘latest’). It is recommended to use a numeric version for secret environment variables as any updates to the secret value is not reflected until new instances start."]
         #[serde(
             rename = "version",
             default,
@@ -2705,7 +2705,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service: ::std::option::Option<String>,
-        #[doc = "The email of the service's service account. If empty, defaults to `{project_number}-compute@developer.gserviceaccount.com`."]
+        #[doc = "The email of the service’s service account. If empty, defaults to `{project_number}-compute@developer.gserviceaccount.com`."]
         #[serde(
             rename = "serviceAccountEmail",
             default,
@@ -3010,14 +3010,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SourceProvenance {
-        #[doc = "A copy of the build's `source.repo_source`, if exists, with any revisions resolved."]
+        #[doc = "A copy of the build’s `source.repo_source`, if exists, with any revisions resolved."]
         #[serde(
             rename = "resolvedRepoSource",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resolved_repo_source: ::std::option::Option<crate::schemas::RepoSource>,
-        #[doc = "A copy of the build's `source.storage_source`, if exists, with any generations resolved."]
+        #[doc = "A copy of the build’s `source.storage_source`, if exists, with any generations resolved."]
         #[serde(
             rename = "resolvedStorageSource",
             default,
@@ -3508,12 +3508,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3995,7 +3995,7 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."]
+                    #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may “fail open” without warning."]
                     pub fn test_iam_permissions(
                         &self,
                         request: crate::schemas::TestIamPermissionsRequest,
@@ -4041,7 +4041,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "The ID to use for the function, which will become the final component of the function's resource name. This value should be 4-63 characters, and valid characters are /a-z-/."]
+                    #[doc = "The ID to use for the function, which will become the final component of the function’s resource name. This value should be 4-63 characters, and valid characters are /a-z-/."]
                     pub fn function_id(mut self, value: impl Into<String>) -> Self {
                         self.function_id = Some(value.into());
                         self
@@ -4076,12 +4076,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4239,12 +4239,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4400,12 +4400,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4565,12 +4565,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4729,12 +4729,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4895,12 +4895,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5084,12 +5084,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5487,12 +5487,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5650,12 +5650,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5813,12 +5813,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5958,7 +5958,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                     pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -6030,12 +6030,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6163,7 +6163,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Required. A filter for matching the requested operations. The supported formats of *filter* are: To query for a specific function: project:*,location:*,function:* To query for all of the latest operations for a project: project:*,latest:true"]
+                    #[doc = "Required. A filter for matching the requested operations. The supported formats of *filter* are: To query for a specific function: project:*,location:*,function:\\* To query for all of the latest operations for a project: project:\\*,latest:true"]
                     pub fn filter(mut self, value: impl Into<String>) -> Self {
                         self.filter = Some(value.into());
                         self
@@ -6208,12 +6208,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6571,12 +6571,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

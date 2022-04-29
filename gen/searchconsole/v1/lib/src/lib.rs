@@ -91,13 +91,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum AmpInspectionResultAmpIndexStatusVerdict {
-        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Error” or “Invalid” for the page or item in Search Console."]
         Fail,
-        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
         Partial,
-        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
         #[doc = "Unknown verdict."]
         VerdictUnspecified,
@@ -189,9 +189,9 @@ pub mod schemas {
         AmpIndexingAllowed,
         #[doc = "Unknown indexing status."]
         AmpIndexingStateUnspecified,
-        #[doc = "Indexing not allowed, 'unavailable_after' date expired."]
+        #[doc = "Indexing not allowed, ‘unavailable_after’ date expired."]
         BlockedDueToExpiredUnavailableAfter,
-        #[doc = "Indexing not allowed, 'noindex' detected."]
+        #[doc = "Indexing not allowed, ‘noindex’ detected."]
         BlockedDueToNoindex,
     }
     impl AmpInspectionResultIndexingState {
@@ -409,7 +409,7 @@ pub mod schemas {
         Allowed,
         #[doc = "Crawl blocked by robots.txt."]
         Disallowed,
-        #[doc = "Unknown robots.txt state, typically because the page wasn't fetched or found, or because robots.txt itself couldn't be reached."]
+        #[doc = "Unknown robots.txt state, typically because the page wasn’t fetched or found, or because robots.txt itself couldn’t be reached."]
         RobotsTxtStateUnspecified,
     }
     impl AmpInspectionResultRobotsTxtState {
@@ -487,13 +487,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum AmpInspectionResultVerdict {
-        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Error” or “Invalid” for the page or item in Search Console."]
         Fail,
-        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
         Partial,
-        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
         #[doc = "Unknown verdict."]
         VerdictUnspecified,
@@ -1121,7 +1121,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Image {
-        #[doc = "Image data in format determined by the mime type. Currently, the format will always be \"image/png\", but this might change in the future."]
+        #[doc = "Image data in format determined by the mime type. Currently, the format will always be “image/png”, but this might change in the future."]
         #[serde(
             rename = "data",
             default,
@@ -1159,7 +1159,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IndexStatusInspectionResult {
-        #[doc = "Could Google find and index the page. More details about page indexing appear in 'indexing_state'."]
+        #[doc = "Could Google find and index the page. More details about page indexing appear in ‘indexing_state’."]
         #[serde(
             rename = "coverageState",
             default,
@@ -1195,7 +1195,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_crawl_time: ::std::option::Option<String>,
-        #[doc = "Whether or not Google could retrieve the page from your server. Equivalent to [\"page fetch\"](https://support.google.com/webmasters/answer/9012289#index_coverage) in the URL inspection report."]
+        #[doc = "Whether or not Google could retrieve the page from your server. Equivalent to [“page fetch”](https://support.google.com/webmasters/answer/9012289#index_coverage) in the URL inspection report."]
         #[serde(
             rename = "pageFetchState",
             default,
@@ -1334,9 +1334,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum IndexStatusInspectionResultIndexingState {
-        #[doc = "Indexing not allowed, 'noindex' detected in 'X-Robots-Tag' http header."]
+        #[doc = "Indexing not allowed, ‘noindex’ detected in ‘X-Robots-Tag’ http header."]
         BlockedByHttpHeader,
-        #[doc = "Indexing not allowed, 'noindex' detected in 'robots' meta tag."]
+        #[doc = "Indexing not allowed, ‘noindex’ detected in ‘robots’ meta tag."]
         BlockedByMetaTag,
         #[doc = "Reserved, no longer in use."]
         BlockedByRobotsTxt,
@@ -1579,7 +1579,7 @@ pub mod schemas {
         Allowed,
         #[doc = "Crawl blocked by robots.txt."]
         Disallowed,
-        #[doc = "Unknown robots.txt state, typically because the page wasn't fetched or found, or because robots.txt itself couldn't be reached."]
+        #[doc = "Unknown robots.txt state, typically because the page wasn’t fetched or found, or because robots.txt itself couldn’t be reached."]
         RobotsTxtStateUnspecified,
     }
     impl IndexStatusInspectionResultRobotsTxtState {
@@ -1659,13 +1659,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum IndexStatusInspectionResultVerdict {
-        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Error” or “Invalid” for the page or item in Search Console."]
         Fail,
-        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
         Partial,
-        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
         #[doc = "Unknown verdict."]
         VerdictUnspecified,
@@ -1756,14 +1756,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct InspectUrlIndexRequest {
-        #[doc = "Required. URL to inspect. Must be under the property specified in \"site_url\"."]
+        #[doc = "Required. URL to inspect. Must be under the property specified in “site_url”."]
         #[serde(
             rename = "inspectionUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inspection_url: ::std::option::Option<String>,
-        #[doc = "Optional. An [IETF BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag) language code representing the requested language for translated issue messages, e.g. \"en-US\", \"or \"de-CH\". Default value is \"en-US\"."]
+        #[doc = "Optional. An [IETF BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag) language code representing the requested language for translated issue messages, e.g. “en-US”, “or “de-CH”. Default value is “en-US”."]
         #[serde(
             rename = "languageCode",
             default,
@@ -1890,19 +1890,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MobileFriendlyIssueRule {
-        #[doc = "Viewport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured)."]
+        #[doc = "Viewport is not specified using the meta viewport tag. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured)."]
         ConfigureViewport,
-        #[doc = "Viewport defined to a fixed width. [Learn more] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport)."]
+        #[doc = "Viewport defined to a fixed width. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport)."]
         FixedWidthViewport,
-        #[doc = "Unknown rule. Sorry, we don't have any description for the rule that was broken."]
+        #[doc = "Unknown rule. Sorry, we don’t have any description for the rule that was broken."]
         MobileFriendlyRuleUnspecified,
-        #[doc = "Content not sized to viewport. [Learn more] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport)."]
+        #[doc = "Content not sized to viewport. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport)."]
         SizeContentToViewport,
-        #[doc = "Touch elements are too close to each other. [Learn more] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close)."]
+        #[doc = "Touch elements are too close to each other. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close)."]
         TapTargetsTooClose,
-        #[doc = "Font size is too small for easy reading on a small screen. [Learn More] (https://support.google.com/webmasters/answer/6352293#small_font_size)."]
+        #[doc = "Font size is too small for easy reading on a small screen. \\[Learn More\\] (https://support.google.com/webmasters/answer/6352293#small_font_size)."]
         UseLegibleFontSizes,
-        #[doc = "Plugins incompatible with mobile devices are being used. [Learn more] (https://support.google.com/webmasters/answer/6352293#flash_usage)."]
+        #[doc = "Plugins incompatible with mobile devices are being used. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#flash_usage)."]
         UsesIncompatiblePlugins,
     }
     impl MobileFriendlyIssueRule {
@@ -2030,13 +2030,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MobileUsabilityInspectionResultVerdict {
-        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Error” or “Invalid” for the page or item in Search Console."]
         Fail,
-        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
         Partial,
-        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
         #[doc = "Unknown verdict."]
         VerdictUnspecified,
@@ -2161,19 +2161,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MobileUsabilityIssueIssueType {
-        #[doc = "Viewport is not specified using the meta viewport tag. [Learn more] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured#error-list)."]
+        #[doc = "Viewport is not specified using the meta viewport tag. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#viewport_not_configured#error-list)."]
         ConfigureViewport,
-        #[doc = "Viewport defined to a fixed width. [Learn more] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport#error-list)."]
+        #[doc = "Viewport defined to a fixed width. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#fixed-width_viewport#error-list)."]
         FixedWidthViewport,
-        #[doc = "Unknown issue. Sorry, we don't have any description for the rule that was broken."]
+        #[doc = "Unknown issue. Sorry, we don’t have any description for the rule that was broken."]
         MobileUsabilityIssueTypeUnspecified,
-        #[doc = "Content not sized to viewport. [Learn more] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport#error-list)."]
+        #[doc = "Content not sized to viewport. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#content_not_sized_to_viewport#error-list)."]
         SizeContentToViewport,
-        #[doc = "Touch elements are too close to each other. [Learn more] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close#error-list)."]
+        #[doc = "Touch elements are too close to each other. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#touch_elements_too_close#error-list)."]
         TapTargetsTooClose,
-        #[doc = "Font size is too small for easy reading on a small screen. [Learn More] (https://support.google.com/webmasters/answer/6352293#small_font_size#error-list)."]
+        #[doc = "Font size is too small for easy reading on a small screen. \\[Learn More\\] (https://support.google.com/webmasters/answer/6352293#small_font_size#error-list)."]
         UseLegibleFontSizes,
-        #[doc = "Plugins incompatible with mobile devices are being used. [Learn more] (https://support.google.com/webmasters/answer/6352293#flash_usage#error-list)."]
+        #[doc = "Plugins incompatible with mobile devices are being used. \\[Learn more\\] (https://support.google.com/webmasters/answer/6352293#flash_usage#error-list)."]
         UsesIncompatiblePlugins,
     }
     impl MobileUsabilityIssueIssueType {
@@ -2414,13 +2414,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum RichResultsInspectionResultVerdict {
-        #[doc = "Equivalent to \"Error\" or \"Invalid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Error” or “Invalid” for the page or item in Search Console."]
         Fail,
-        #[doc = "Equivalent to \"Excluded\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Excluded” for the page or item in Search Console."]
         Neutral,
-        #[doc = "Equivalent to \"Valid with warnings\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid with warnings” for the page or item in Search Console."]
         Partial,
-        #[doc = "Equivalent to \"Valid\" for the page or item in Search Console."]
+        #[doc = "Equivalent to “Valid” for the page or item in Search Console."]
         Pass,
         #[doc = "Unknown verdict."]
         VerdictUnspecified,
@@ -2782,7 +2782,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SearchAnalyticsQueryRequest {
-        #[doc = "[Optional; Default is \"auto\"] How data is aggregated. If aggregated by property, all data for the same property is aggregated; if aggregated by page, all data is aggregated by canonical URI. If you filter or group by page, choose AUTO; otherwise you can aggregate either by property or by page, depending on how you want your data calculated; see the help documentation to learn how data is calculated differently by site versus by page. **Note:** If you group or filter by page, you cannot aggregate by property. If you specify any value other than AUTO, the aggregation type in the result will match the requested type, or if you request an invalid type, you will get an error. The API will never change your aggregation type if the requested type is invalid."]
+        #[doc = "\\[Optional; Default is \"auto\"\\] How data is aggregated. If aggregated by property, all data for the same property is aggregated; if aggregated by page, all data is aggregated by canonical URI. If you filter or group by page, choose AUTO; otherwise you can aggregate either by property or by page, depending on how you want your data calculated; see the help documentation to learn how data is calculated differently by site versus by page. **Note:** If you group or filter by page, you cannot aggregate by property. If you specify any value other than AUTO, the aggregation type in the result will match the requested type, or if you request an invalid type, you will get an error. The API will never change your aggregation type if the requested type is invalid."]
         #[serde(
             rename = "aggregationType",
             default,
@@ -2797,7 +2797,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_state: ::std::option::Option<crate::schemas::SearchAnalyticsQueryRequestDataState>,
-        #[doc = "[Optional] Zero or more filters to apply to the dimension grouping values; for example, 'query contains \"buy\"' to see only data where the query string contains the substring \"buy\" (not case-sensitive). You can filter by a dimension without grouping by it."]
+        #[doc = "\\[Optional\\] Zero or more filters to apply to the dimension grouping values; for example, ‘query contains \"buy\"’ to see only data where the query string contains the substring \"buy\" (not case-sensitive). You can filter by a dimension without grouping by it."]
         #[serde(
             rename = "dimensionFilterGroups",
             default,
@@ -2805,7 +2805,7 @@ pub mod schemas {
         )]
         pub dimension_filter_groups:
             ::std::option::Option<Vec<crate::schemas::ApiDimensionFilterGroup>>,
-        #[doc = "[Optional] Zero or more dimensions to group results by. Dimensions are the group-by values in the Search Analytics page. Dimensions are combined to create a unique row key for each row. Results are grouped in the order that you supply these dimensions."]
+        #[doc = "\\[Optional\\] Zero or more dimensions to group results by. Dimensions are the group-by values in the Search Analytics page. Dimensions are combined to create a unique row key for each row. Results are grouped in the order that you supply these dimensions."]
         #[serde(
             rename = "dimensions",
             default,
@@ -2813,28 +2813,28 @@ pub mod schemas {
         )]
         pub dimensions:
             ::std::option::Option<Vec<crate::schemas::SearchAnalyticsQueryRequestDimensionsItems>>,
-        #[doc = "[Required] End date of the requested date range, in YYYY-MM-DD format, in PST (UTC - 8:00). Must be greater than or equal to the start date. This value is included in the range."]
+        #[doc = "\\[Required\\] End date of the requested date range, in YYYY-MM-DD format, in PST (UTC - 8:00). Must be greater than or equal to the start date. This value is included in the range."]
         #[serde(
             rename = "endDate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_date: ::std::option::Option<String>,
-        #[doc = "Optional. [Optional; Default is \"web\"] Type of report: search type, or either Discover or Gnews."]
+        #[doc = "Optional. \\[Optional; Default is \"web\"\\] Type of report: search type, or either Discover or Gnews."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::SearchAnalyticsQueryRequestType>,
-        #[doc = "[Optional; Default is 1000] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive)."]
+        #[doc = "\\[Optional; Default is 1000\\] The maximum number of rows to return. Must be a number from 1 to 25,000 (inclusive)."]
         #[serde(
             rename = "rowLimit",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub row_limit: ::std::option::Option<i32>,
-        #[doc = "[Optional; Default is \"web\"] The search type to filter for."]
+        #[doc = "\\[Optional; Default is \"web\"\\] The search type to filter for."]
         #[serde(
             rename = "searchType",
             default,
@@ -2842,14 +2842,14 @@ pub mod schemas {
         )]
         pub search_type:
             ::std::option::Option<crate::schemas::SearchAnalyticsQueryRequestSearchType>,
-        #[doc = "[Required] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range."]
+        #[doc = "\\[Required\\] Start date of the requested date range, in YYYY-MM-DD format, in PST time (UTC - 8:00). Must be less than or equal to the end date. This value is included in the range."]
         #[serde(
             rename = "startDate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_date: ::std::option::Option<String>,
-        #[doc = "[Optional; Default is 0] Zero-based index of the first row in the response. Must be a non-negative number."]
+        #[doc = "\\[Optional; Default is 0\\] Zero-based index of the first row in the response. Must be a non-negative number."]
         #[serde(
             rename = "startRow",
             default,
@@ -3500,7 +3500,7 @@ pub mod schemas {
     pub enum TestStatusStatus {
         #[doc = "Inspection has completed without errors."]
         Complete,
-        #[doc = "Inspection terminated in an error state. This indicates a problem in Google's infrastructure, not a user error. Please try again later."]
+        #[doc = "Inspection terminated in an error state. This indicates a problem in Google’s infrastructure, not a user error. Please try again later."]
         InternalError,
         #[doc = "Google can not access the URL because of a user error such as a robots.txt blockage, a 403 or 500 code etc. Please make sure that the URL provided is accessible by Googlebot and is not password protected."]
         PageUnreachable,
@@ -3650,7 +3650,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WmxSite {
-        #[doc = "The user's permission level for the site."]
+        #[doc = "The user’s permission level for the site."]
         #[serde(
             rename = "permissionLevel",
             default,
@@ -3684,7 +3684,7 @@ pub mod schemas {
         SitePermissionLevelUnspecified,
         #[doc = "Restricted users can access most of the data, and perform some operations."]
         SiteRestrictedUser,
-        #[doc = "Unverified user has no access to site's data."]
+        #[doc = "Unverified user has no access to site’s data."]
         SiteUnverifiedUser,
     }
     impl WmxSitePermissionLevel {
@@ -4386,12 +4386,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4653,12 +4653,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4768,12 +4768,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4907,7 +4907,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "A URL of a site's sitemap index. For example: `http://www.example.com/sitemapindex.xml`."]
+            #[doc = "A URL of a site’s sitemap index. For example: `http://www.example.com/sitemapindex.xml`."]
             pub fn sitemap_index(mut self, value: impl Into<String>) -> Self {
                 self.sitemap_index = Some(value.into());
                 self
@@ -4942,12 +4942,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5105,12 +5105,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5181,7 +5181,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Adds a site to the set of the user's sites in Search Console."]
+            #[doc = "Adds a site to the set of the user’s sites in Search Console."]
             pub fn add(&self, site_url: impl Into<String>) -> AddRequestBuilder {
                 AddRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5200,7 +5200,7 @@ pub mod resources {
                     site_url: site_url.into(),
                 }
             }
-            #[doc = "Removes a site from the set of the user's Search Console sites."]
+            #[doc = "Removes a site from the set of the user’s Search Console sites."]
             pub fn delete(&self, site_url: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5238,7 +5238,7 @@ pub mod resources {
                     site_url: site_url.into(),
                 }
             }
-            #[doc = "Lists the user's Search Console sites."]
+            #[doc = "Lists the user’s Search Console sites."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5306,12 +5306,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5412,12 +5412,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5518,12 +5518,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5677,12 +5677,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5882,12 +5882,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6089,12 +6089,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

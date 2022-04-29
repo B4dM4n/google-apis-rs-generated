@@ -77,7 +77,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub current_period_phone_calls: ::std::option::Option<i64>,
-        #[doc = "Total cost of the account in current specified period in the account's specified currency."]
+        #[doc = "Total cost of the account in current specified period in the account’s specified currency."]
         #[serde(
             rename = "currentPeriodTotalCost",
             default,
@@ -123,7 +123,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub previous_period_phone_calls: ::std::option::Option<i64>,
-        #[doc = "Total cost of the account in previous specified period in the account's specified currency."]
+        #[doc = "Total cost of the account in previous specified period in the account’s specified currency."]
         #[serde(
             rename = "previousPeriodTotalCost",
             default,
@@ -297,7 +297,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dispute_status: ::std::option::Option<String>,
-        #[doc = "Location of the associated account's home city."]
+        #[doc = "Location of the associated account’s home city."]
         #[serde(
             rename = "geo",
             default,
@@ -710,14 +710,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeTimeZone {
-        #[doc = "IANA Time Zone Database time zone, e.g. \"America/New_York\"."]
+        #[doc = "IANA Time Zone Database time zone, e.g. “America/New_York”."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Optional. IANA Time Zone Database version number, e.g. \"2019a\"."]
+        #[doc = "Optional. IANA Time Zone Database version number, e.g. “2019a”."]
         #[serde(
             rename = "version",
             default,
@@ -991,7 +991,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SearchRequestBuilder<'a> {
-            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
             pub fn end_date_day(mut self, value: i32) -> Self {
                 self.end_date_day = Some(value);
                 self
@@ -1016,12 +1016,12 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "A query string for searching for account reports. Caller must provide a customer id of their MCC account with an associated Gaia Mint that allows read permission on their linked accounts. Search expressions are case insensitive. Example query: | Query | Description | |-------------------------|-----------------------------------------------| | manager_customer_id:123 | Get Account Report for Manager with id 123. | Required."]
+            #[doc = "A query string for searching for account reports. Caller must provide a customer id of their MCC account with an associated Gaia Mint that allows read permission on their linked accounts. Search expressions are case insensitive. Example query: | Query | Description | |———————––\\|———————————————–\\| | manager_customer_id:123 | Get Account Report for Manager with id 123. | Required."]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
             }
-            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
             pub fn start_date_day(mut self, value: i32) -> Self {
                 self.start_date_day = Some(value);
                 self
@@ -1066,12 +1066,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1403,7 +1403,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SearchRequestBuilder<'a> {
-            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
             pub fn end_date_day(mut self, value: i32) -> Self {
                 self.end_date_day = Some(value);
                 self
@@ -1428,12 +1428,12 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "A query string for searching for account reports. Caller must provide a customer id of their MCC account with an associated Gaia Mint that allows read permission on their linked accounts. Search expressions are case insensitive. Example query: | Query | Description | |-------------------------|-----------------------------------------------| | manager_customer_id:123 | Get Detailed Lead Report for Manager with id | | | 123. | Required."]
+            #[doc = "A query string for searching for account reports. Caller must provide a customer id of their MCC account with an associated Gaia Mint that allows read permission on their linked accounts. Search expressions are case insensitive. Example query: | Query | Description | |———————––\\|———————————————–\\| | manager_customer_id:123 | Get Detailed Lead Report for Manager with id | | | 123. | Required."]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
             }
-            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+            #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
             pub fn start_date_day(mut self, value: i32) -> Self {
                 self.start_date_day = Some(value);
                 self
@@ -1478,12 +1478,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

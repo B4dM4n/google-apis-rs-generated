@@ -21,7 +21,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub body_lines: ::std::option::Option<Vec<crate::schemas::PromotionBodyLinesItems>>,
-        #[doc = "An abridged version of this search's result URL, e.g. www.example.com."]
+        #[doc = "An abridged version of this search’s result URL, e.g. www.example.com."]
         #[serde(
             rename = "displayLink",
             default,
@@ -80,28 +80,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PromotionBodyLinesItems {
-        #[doc = "The block object's text in HTML, if it has text."]
+        #[doc = "The block object’s text in HTML, if it has text."]
         #[serde(
             rename = "htmlTitle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub html_title: ::std::option::Option<String>,
-        #[doc = "The anchor text of the block object's link, if it has a link."]
+        #[doc = "The anchor text of the block object’s link, if it has a link."]
         #[serde(
             rename = "link",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub link: ::std::option::Option<String>,
-        #[doc = "The block object's text, if it has text."]
+        #[doc = "The block object’s text, if it has text."]
         #[serde(
             rename = "title",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "The URL of the block object's link, if it has one."]
+        #[doc = "The URL of the block object’s link, if it has one."]
         #[serde(
             rename = "url",
             default,
@@ -166,7 +166,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Result {
-        #[doc = "Indicates the ID of Google's cached version of the search result."]
+        #[doc = "Indicates the ID of Google’s cached version of the search result."]
         #[serde(
             rename = "cacheId",
             default,
@@ -383,7 +383,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label_with_op: ::std::option::Option<String>,
-        #[doc = "The name of a refinement label, which you can use to refine searches. Don't display this in your user interface; instead, use displayName."]
+        #[doc = "The name of a refinement label, which you can use to refine searches. Don’t display this in your user interface; instead, use displayName."]
         #[serde(
             rename = "name",
             default,
@@ -425,7 +425,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The set of [promotions](https://developers.google.com/custom-search/docs/promotions). Present only if the custom search engine's configuration files define any promotions for the given query."]
+        #[doc = "The set of [promotions](https://developers.google.com/custom-search/docs/promotions). Present only if the custom search engine’s configuration files define any promotions for the given query."]
         #[serde(
             rename = "promotions",
             default,
@@ -537,7 +537,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub count: ::std::option::Option<i32>,
-        #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter."]
+        #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter’s value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document’s URL. * The geographic location of the web server’s IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter."]
         #[serde(
             rename = "cr",
             default,
@@ -579,14 +579,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub exclude_terms: ::std::option::Option<String>,
-        #[doc = "Restricts results to files of a specified extension. Filetypes supported by Google include: * Adobe Portable Document Format (`pdf`) * Adobe PostScript (`ps`) * Lotus 1-2-3 (`wk1`, `wk2`, `wk3`, `wk4`, `wk5`, `wki`, `wks`, `wku`) * Lotus WordPro (`lwp`) * Macwrite (`mw`) * Microsoft Excel (`xls`) * Microsoft PowerPoint (`ppt`) * Microsoft Word (`doc`) * Microsoft Works (`wks`, `wps`, `wdb`) * Microsoft Write (`wri`) * Rich Text Format (`rtf`) * Shockwave Flash (`swf`) * Text (`ans`, `txt`). Additional filetypes may be added in the future. An up-to-date list can always be found in Google's [file type FAQ](https://support.google.com/webmasters/answer/35287)."]
+        #[doc = "Restricts results to files of a specified extension. Filetypes supported by Google include: * Adobe Portable Document Format (`pdf`) * Adobe PostScript (`ps`) * Lotus 1-2-3 (`wk1`, `wk2`, `wk3`, `wk4`, `wk5`, `wki`, `wks`, `wku`) * Lotus WordPro (`lwp`) * Macwrite (`mw`) * Microsoft Excel (`xls`) * Microsoft PowerPoint (`ppt`) * Microsoft Word (`doc`) * Microsoft Works (`wks`, `wps`, `wdb`) * Microsoft Write (`wri`) * Rich Text Format (`rtf`) * Shockwave Flash (`swf`) * Text (`ans`, `txt`). Additional filetypes may be added in the future. An up-to-date list can always be found in Google’s [file type FAQ](https://support.google.com/webmasters/answer/35287)."]
         #[serde(
             rename = "fileType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_type: ::std::option::Option<String>,
-        #[doc = "Activates or deactivates the automatic filtering of Google search results. See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Valid values for this parameter are: * `0`: Disabled * `1`: Enabled (default) **Note**: By default, Google applies filtering to all search results to improve the quality of those results."]
+        #[doc = "Activates or deactivates the automatic filtering of Google search results. See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google’s search results filters. Valid values for this parameter are: * `0`: Disabled * `1`: Enabled (default) **Note**: By default, Google applies filtering to all search results to improve the quality of those results."]
         #[serde(
             rename = "filter",
             default,
@@ -814,7 +814,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub count: ::std::option::Option<i32>,
-        #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter."]
+        #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter’s value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document’s URL. * The geographic location of the web server’s IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter."]
         #[serde(
             rename = "cr",
             default,
@@ -856,14 +856,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub exclude_terms: ::std::option::Option<String>,
-        #[doc = "Restricts results to files of a specified extension. Filetypes supported by Google include: * Adobe Portable Document Format (`pdf`) * Adobe PostScript (`ps`) * Lotus 1-2-3 (`wk1`, `wk2`, `wk3`, `wk4`, `wk5`, `wki`, `wks`, `wku`) * Lotus WordPro (`lwp`) * Macwrite (`mw`) * Microsoft Excel (`xls`) * Microsoft PowerPoint (`ppt`) * Microsoft Word (`doc`) * Microsoft Works (`wks`, `wps`, `wdb`) * Microsoft Write (`wri`) * Rich Text Format (`rtf`) * Shockwave Flash (`swf`) * Text (`ans`, `txt`). Additional filetypes may be added in the future. An up-to-date list can always be found in Google's [file type FAQ](https://support.google.com/webmasters/answer/35287)."]
+        #[doc = "Restricts results to files of a specified extension. Filetypes supported by Google include: * Adobe Portable Document Format (`pdf`) * Adobe PostScript (`ps`) * Lotus 1-2-3 (`wk1`, `wk2`, `wk3`, `wk4`, `wk5`, `wki`, `wks`, `wku`) * Lotus WordPro (`lwp`) * Macwrite (`mw`) * Microsoft Excel (`xls`) * Microsoft PowerPoint (`ppt`) * Microsoft Word (`doc`) * Microsoft Works (`wks`, `wps`, `wdb`) * Microsoft Write (`wri`) * Rich Text Format (`rtf`) * Shockwave Flash (`swf`) * Text (`ans`, `txt`). Additional filetypes may be added in the future. An up-to-date list can always be found in Google’s [file type FAQ](https://support.google.com/webmasters/answer/35287)."]
         #[serde(
             rename = "fileType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_type: ::std::option::Option<String>,
-        #[doc = "Activates or deactivates the automatic filtering of Google search results. See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Valid values for this parameter are: * `0`: Disabled * `1`: Enabled (default) **Note**: By default, Google applies filtering to all search results to improve the quality of those results."]
+        #[doc = "Activates or deactivates the automatic filtering of Google search results. See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google’s search results filters. Valid values for this parameter are: * `0`: Disabled * `1`: Enabled (default) **Note**: By default, Google applies filtering to all search results to improve the quality of those results."]
         #[serde(
             rename = "filter",
             default,
@@ -1091,7 +1091,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub count: ::std::option::Option<i32>,
-        #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter."]
+        #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter’s value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document’s URL. * The geographic location of the web server’s IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter."]
         #[serde(
             rename = "cr",
             default,
@@ -1133,14 +1133,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub exclude_terms: ::std::option::Option<String>,
-        #[doc = "Restricts results to files of a specified extension. Filetypes supported by Google include: * Adobe Portable Document Format (`pdf`) * Adobe PostScript (`ps`) * Lotus 1-2-3 (`wk1`, `wk2`, `wk3`, `wk4`, `wk5`, `wki`, `wks`, `wku`) * Lotus WordPro (`lwp`) * Macwrite (`mw`) * Microsoft Excel (`xls`) * Microsoft PowerPoint (`ppt`) * Microsoft Word (`doc`) * Microsoft Works (`wks`, `wps`, `wdb`) * Microsoft Write (`wri`) * Rich Text Format (`rtf`) * Shockwave Flash (`swf`) * Text (`ans`, `txt`). Additional filetypes may be added in the future. An up-to-date list can always be found in Google's [file type FAQ](https://support.google.com/webmasters/answer/35287)."]
+        #[doc = "Restricts results to files of a specified extension. Filetypes supported by Google include: * Adobe Portable Document Format (`pdf`) * Adobe PostScript (`ps`) * Lotus 1-2-3 (`wk1`, `wk2`, `wk3`, `wk4`, `wk5`, `wki`, `wks`, `wku`) * Lotus WordPro (`lwp`) * Macwrite (`mw`) * Microsoft Excel (`xls`) * Microsoft PowerPoint (`ppt`) * Microsoft Word (`doc`) * Microsoft Works (`wks`, `wps`, `wdb`) * Microsoft Write (`wri`) * Rich Text Format (`rtf`) * Shockwave Flash (`swf`) * Text (`ans`, `txt`). Additional filetypes may be added in the future. An up-to-date list can always be found in Google’s [file type FAQ](https://support.google.com/webmasters/answer/35287)."]
         #[serde(
             rename = "fileType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_type: ::std::option::Option<String>,
-        #[doc = "Activates or deactivates the automatic filtering of Google search results. See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Valid values for this parameter are: * `0`: Disabled * `1`: Enabled (default) **Note**: By default, Google applies filtering to all search results to improve the quality of those results."]
+        #[doc = "Activates or deactivates the automatic filtering of Google search results. See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google’s search results filters. Valid values for this parameter are: * `0`: Disabled * `1`: Enabled (default) **Note**: By default, Google applies filtering to all search results to improve the quality of those results."]
         #[serde(
             rename = "filter",
             default,
@@ -2070,13 +2070,13 @@ pub mod resources {
             pub enum ListSafe {
                 #[doc = "Turn SafeSearch on."]
                 Active,
-                #[doc = "Deprecated, equivalent to \"active\"."]
+                #[doc = "Deprecated, equivalent to “active”."]
                 High,
-                #[doc = "Deprecated, equivalent to \"active\"."]
+                #[doc = "Deprecated, equivalent to “active”."]
                 Medium,
                 #[doc = "Turn SafeSearch off."]
                 Off,
-                #[doc = "SafeSearch mode unspecified. (Falls back to engine's configuration.)"]
+                #[doc = "SafeSearch mode unspecified. (Falls back to engine’s configuration.)"]
                 SafeUndefined,
             }
             impl ListSafe {
@@ -2427,7 +2427,7 @@ pub mod resources {
                 self.c_2coff = Some(value.into());
                 self
             }
-            #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter's value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document's URL * the geographic location of the Web server's IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter."]
+            #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter’s value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document’s URL * the geographic location of the Web server’s IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter."]
             pub fn cr(mut self, value: impl Into<String>) -> Self {
                 self.cr = Some(value.into());
                 self
@@ -2457,7 +2457,7 @@ pub mod resources {
                 self.file_type = Some(value.into());
                 self
             }
-            #[doc = "Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter."]
+            #[doc = "Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google’s search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -2619,12 +2619,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3175,13 +3175,13 @@ pub mod resources {
                 pub enum ListSafe {
                     #[doc = "Turn SafeSearch on."]
                     Active,
-                    #[doc = "Deprecated, equivalent to \"active\"."]
+                    #[doc = "Deprecated, equivalent to “active”."]
                     High,
-                    #[doc = "Deprecated, equivalent to \"active\"."]
+                    #[doc = "Deprecated, equivalent to “active”."]
                     Medium,
                     #[doc = "Turn SafeSearch off."]
                     Off,
-                    #[doc = "SafeSearch mode unspecified. (Falls back to engine's configuration.)"]
+                    #[doc = "SafeSearch mode unspecified. (Falls back to engine’s configuration.)"]
                     SafeUndefined,
                 }
                 impl ListSafe {
@@ -3533,7 +3533,7 @@ pub mod resources {
                     self.c_2coff = Some(value.into());
                     self
                 }
-                #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter's value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document's URL * the geographic location of the Web server's IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter."]
+                #[doc = "Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter’s value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document’s URL * the geographic location of the Web server’s IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter."]
                 pub fn cr(mut self, value: impl Into<String>) -> Self {
                     self.cr = Some(value.into());
                     self
@@ -3563,7 +3563,7 @@ pub mod resources {
                     self.file_type = Some(value.into());
                     self
                 }
-                #[doc = "Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter."]
+                #[doc = "Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google’s search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter."]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -3734,12 +3734,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

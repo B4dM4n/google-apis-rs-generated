@@ -41,7 +41,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::AclRule>>,
-        #[doc = "Type of the collection (\"calendar#acl\")."]
+        #[doc = "Type of the collection (“calendar#acl”)."]
         #[serde(
             rename = "kind",
             default,
@@ -105,14 +105,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Type of the resource (\"calendar#aclRule\")."]
+        #[doc = "Type of the resource (“calendar#aclRule”)."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The role assigned to the scope. Possible values are:\n\n* \"none\" - Provides no access. \n* \"freeBusyReader\" - Provides read access to free/busy information. \n* \"reader\" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n* \"writer\" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n* \"owner\" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."]
+        #[doc = "The role assigned to the scope. Possible values are:\n\n* “none” - Provides no access. \n* “freeBusyReader” - Provides read access to free/busy information. \n* “reader” - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n* “writer” - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n* “owner” - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."]
         #[serde(
             rename = "role",
             default,
@@ -150,14 +150,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AclRuleScope {
-        #[doc = "The type of the scope. Possible values are:\n\n* \"default\" - The public scope. This is the default value. \n* \"user\" - Limits the scope to a single user. \n* \"group\" - Limits the scope to a group. \n* \"domain\" - Limits the scope to a domain.  Note: The permissions granted to the \"default\", or public, scope apply to any user, authenticated or not."]
+        #[doc = "The type of the scope. Possible values are:\n\n* “default” - The public scope. This is the default value. \n* “user” - Limits the scope to a single user. \n* “group” - Limits the scope to a group. \n* “domain” - Limits the scope to a domain.  Note: The permissions granted to the “default”, or public, scope apply to any user, authenticated or not."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type \"default\"."]
+        #[doc = "The email address of a user or group, or the name of a domain, depending on the scope type. Omitted for type “default”."]
         #[serde(
             rename = "value",
             default,
@@ -216,7 +216,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Type of the resource (\"calendar#calendar\")."]
+        #[doc = "Type of the resource (“calendar#calendar”)."]
         #[serde(
             rename = "kind",
             default,
@@ -237,7 +237,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub summary: ::std::option::Option<String>,
-        #[doc = "The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. \"Europe/Zurich\".) Optional."]
+        #[doc = "The time zone of the calendar. (Formatted as an IANA Time Zone Database name, e.g. “Europe/Zurich”.) Optional."]
         #[serde(
             rename = "timeZone",
             default,
@@ -275,14 +275,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Calendars that are present on the user's calendar list."]
+        #[doc = "Calendars that are present on the user’s calendar list."]
         #[serde(
             rename = "items",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::CalendarListEntry>>,
-        #[doc = "Type of the collection (\"calendar#calendarList\")."]
+        #[doc = "Type of the collection (“calendar#calendarList”)."]
         #[serde(
             rename = "kind",
             default,
@@ -332,14 +332,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CalendarListEntry {
-        #[doc = "The effective access role that the authenticated user has on the calendar. Read-only. Possible values are:\n\n* \"freeBusyReader\" - Provides read access to free/busy information. \n* \"reader\" - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n* \"writer\" - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n* \"owner\" - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."]
+        #[doc = "The effective access role that the authenticated user has on the calendar. Read-only. Possible values are:\n\n* “freeBusyReader” - Provides read access to free/busy information. \n* “reader” - Provides read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n* “writer” - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n* “owner” - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."]
         #[serde(
             rename = "accessRole",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub access_role: ::std::option::Option<String>,
-        #[doc = "The main color of the calendar in the hexadecimal format \"#0088aa\". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional."]
+        #[doc = "The main color of the calendar in the hexadecimal format “\\#0088aa”. This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional."]
         #[serde(
             rename = "backgroundColor",
             default,
@@ -388,7 +388,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The foreground color of the calendar in the hexadecimal format \"#ffffff\". This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional."]
+        #[doc = "The foreground color of the calendar in the hexadecimal format “\\#ffffff”. This property supersedes the index-based colorId property. To set or change this property, you need to specify colorRgbFormat=true in the parameters of the insert, update and patch methods. Optional."]
         #[serde(
             rename = "foregroundColor",
             default,
@@ -409,7 +409,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Type of the resource (\"calendar#calendarListEntry\")."]
+        #[doc = "Type of the resource (“calendar#calendarListEntry”)."]
         #[serde(
             rename = "kind",
             default,
@@ -521,14 +521,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CalendarNotification {
-        #[doc = "The method used to deliver the notification. The possible value is:\n\n* \"email\" - Notifications are sent via email.  \n  Required when adding a notification."]
+        #[doc = "The method used to deliver the notification. The possible value is:\n\n* “email” - Notifications are sent via email.  \n  Required when adding a notification."]
         #[serde(
             rename = "method",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub method: ::std::option::Option<String>,
-        #[doc = "The type of notification. Possible values are:\n\n* \"eventCreation\" - Notification sent when a new event is put on the calendar. \n* \"eventChange\" - Notification sent when an event is changed. \n* \"eventCancellation\" - Notification sent when an event is cancelled. \n* \"eventResponse\" - Notification sent when an attendee responds to the event invitation. \n* \"agenda\" - An agenda with the events of the day (sent out in the morning).  \n  Required when adding a notification."]
+        #[doc = "The type of notification. Possible values are:\n\n* “eventCreation” - Notification sent when a new event is put on the calendar. \n* “eventChange” - Notification sent when an event is changed. \n* “eventCancellation” - Notification sent when an event is cancelled. \n* “eventResponse” - Notification sent when an attendee responds to the event invitation. \n* “agenda” - An agenda with the events of the day (sent out in the morning).  \n  Required when adding a notification."]
         #[serde(
             rename = "type",
             default,
@@ -581,7 +581,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies this as a notification channel used to watch for changes to a resource, which is \"api#channel\"."]
+        #[doc = "Identifies this as a notification channel used to watch for changes to a resource, which is “api#channel”."]
         #[serde(
             rename = "kind",
             default,
@@ -602,7 +602,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payload: ::std::option::Option<bool>,
-        #[doc = "The type of delivery mechanism used for this channel. Valid values are \"web_hook\" (or \"webhook\"). Both values refer to a channel where Http requests are used to deliver messages."]
+        #[doc = "The type of delivery mechanism used for this channel. Valid values are “web_hook” (or “webhook”). Both values refer to a channel where Http requests are used to deliver messages."]
         #[serde(
             rename = "type",
             default,
@@ -661,7 +661,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background: ::std::option::Option<String>,
-        #[doc = "The foreground color that can be used to write on top of a background with 'background' color."]
+        #[doc = "The foreground color that can be used to write on top of a background with ‘background’ color."]
         #[serde(
             rename = "foreground",
             default,
@@ -710,7 +710,7 @@ pub mod schemas {
         pub event: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::ColorDefinition>,
         >,
-        #[doc = "Type of the resource (\"calendar#colors\")."]
+        #[doc = "Type of the resource (“calendar#colors”)."]
         #[serde(
             rename = "kind",
             default,
@@ -883,7 +883,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConferenceProperties {
-        #[doc = "The types of conference solutions that are supported for this calendar.\nThe possible values are:\n\n* \"eventHangout\" \n* \"eventNamedHangout\" \n* \"hangoutsMeet\"  Optional."]
+        #[doc = "The types of conference solutions that are supported for this calendar.\nThe possible values are:\n\n* “eventHangout” \n* “eventNamedHangout” \n* “hangoutsMeet”  Optional."]
         #[serde(
             rename = "allowedConferenceSolutionTypes",
             default,
@@ -914,7 +914,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConferenceRequestStatus {
-        #[doc = "The current status of the conference create request. Read-only.\nThe possible values are:\n\n* \"pending\": the conference create request is still being processed.\n* \"success\": the conference create request succeeded, the entry points are populated.\n* \"failure\": the conference create request failed, there are no entry points."]
+        #[doc = "The current status of the conference create request. Read-only.\nThe possible values are:\n\n* “pending”: the conference create request is still being processed.\n* “success”: the conference create request succeeded, the entry points are populated.\n* “failure”: the conference create request failed, there are no entry points."]
         #[serde(
             rename = "statusCode",
             default,
@@ -990,7 +990,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConferenceSolutionKey {
-        #[doc = "The conference solution type.\nIf a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications.\nThe possible values are:\n\n* \"eventHangout\" for Hangouts for consumers (deprecated; existing events may show this conference solution type but new conferences cannot be created)\n* \"eventNamedHangout\" for classic Hangouts for Google Workspace users (deprecated; existing events may show this conference solution type but new conferences cannot be created)\n* \"hangoutsMeet\" for Google Meet (http://meet.google.com)\n* \"addOn\" for 3P conference providers"]
+        #[doc = "The conference solution type.\nIf a client encounters an unfamiliar or empty type, it should still be able to display the entry points. However, it should disallow modifications.\nThe possible values are:\n\n* “eventHangout” for Hangouts for consumers (deprecated; existing events may show this conference solution type but new conferences cannot be created)\n* “eventNamedHangout” for classic Hangouts for Google Workspace users (deprecated; existing events may show this conference solution type but new conferences cannot be created)\n* “hangoutsMeet” for Google Meet (http://meet.google.com)\n* “addOn” for 3P conference providers"]
         #[serde(
             rename = "type",
             default,
@@ -1080,7 +1080,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entry_point_features: ::std::option::Option<Vec<String>>,
-        #[doc = "The type of the conference entry point.\nPossible values are:\n\n* \"video\" - joining a conference over HTTP. A conference can have zero or one video entry point.\n* \"phone\" - joining a conference by dialing a phone number. A conference can have zero or more phone entry points.\n* \"sip\" - joining a conference over SIP. A conference can have zero or one sip entry point.\n* \"more\" - further conference joining instructions, for example additional phone numbers. A conference can have zero or one more entry point. A conference with only a more entry point is not a valid conference."]
+        #[doc = "The type of the conference entry point.\nPossible values are:\n\n* “video” - joining a conference over HTTP. A conference can have zero or one video entry point.\n* “phone” - joining a conference by dialing a phone number. A conference can have zero or more phone entry points.\n* “sip” - joining a conference over SIP. A conference can have zero or one sip entry point.\n* “more” - further conference joining instructions, for example additional phone numbers. A conference can have zero or one more entry point. A conference with only a more entry point is not a valid conference."]
         #[serde(
             rename = "entryPointType",
             default,
@@ -1122,7 +1122,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pin: ::std::option::Option<String>,
-        #[doc = "The CLDR/ISO 3166 region code for the country associated with this phone access. Example: \"SE\" for Sweden.\nCalendar backend will populate this field only for EntryPointType.PHONE."]
+        #[doc = "The CLDR/ISO 3166 region code for the country associated with this phone access. Example: “SE” for Sweden.\nCalendar backend will populate this field only for EntryPointType.PHONE."]
         #[serde(
             rename = "regionCode",
             default,
@@ -1167,7 +1167,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub domain: ::std::option::Option<String>,
-        #[doc = "Specific reason for the error. Some of the possible values are:\n\n* \"groupTooBig\" - The group of users requested is too large for a single query. \n* \"tooManyCalendarsRequested\" - The number of calendars requested is too large for a single query. \n* \"notFound\" - The requested resource was not found. \n* \"internalError\" - The API service has encountered an internal error.  Additional error types may be added in the future, so clients should gracefully handle additional error statuses not included in this list."]
+        #[doc = "Specific reason for the error. Some of the possible values are:\n\n* “groupTooBig” - The group of users requested is too large for a single query. \n* “tooManyCalendarsRequested” - The number of calendars requested is too large for a single query. \n* “notFound” - The requested resource was not found. \n* “internalError” - The API service has encountered an internal error.  Additional error types may be added in the future, so clients should gracefully handle additional error statuses not included in this list."]
         #[serde(
             rename = "reason",
             default,
@@ -1219,7 +1219,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub attendees: ::std::option::Option<Vec<crate::schemas::EventAttendee>>,
-        #[doc = "Whether attendees may have been omitted from the event's representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant's response. Optional. The default is False."]
+        #[doc = "Whether attendees may have been omitted from the event’s representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant’s response. Optional. The default is False."]
         #[serde(
             rename = "attendeesOmitted",
             default,
@@ -1282,7 +1282,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Specific type of the event. Read-only. Possible values are:\n\n* \"default\" - A regular event or not further specified. \n* \"outOfOffice\" - An out-of-office event. \n* \"focusTime\" - A focus-time event."]
+        #[doc = "Specific type of the event. Read-only. Possible values are:\n\n* “default” - A regular event or not further specified. \n* “outOfOffice” - An out-of-office event. \n* “focusTime” - A focus-time event."]
         #[serde(
             rename = "eventType",
             default,
@@ -1317,7 +1317,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub guests_can_modify: ::std::option::Option<bool>,
-        #[doc = "Whether attendees other than the organizer can see who the event's attendees are. Optional. The default is True."]
+        #[doc = "Whether attendees other than the organizer can see who the event’s attendees are. Optional. The default is True."]
         #[serde(
             rename = "guestsCanSeeOtherGuests",
             default,
@@ -1352,7 +1352,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Type of the resource (\"calendar#event\")."]
+        #[doc = "Type of the resource (“calendar#event”)."]
         #[serde(
             rename = "kind",
             default,
@@ -1366,7 +1366,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "Whether this is a locked event copy where no changes can be made to the main event fields \"summary\", \"description\", \"location\", \"start\", \"end\" or \"recurrence\". The default is False. Read-Only."]
+        #[doc = "Whether this is a locked event copy where no changes can be made to the main event fields “summary”, “description”, “location”, “start”, “end” or “recurrence”. The default is False. Read-Only."]
         #[serde(
             rename = "locked",
             default,
@@ -1408,7 +1408,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recurring_event_id: ::std::option::Option<String>,
-        #[doc = "Information about the event's reminders for the authenticated user."]
+        #[doc = "Information about the event’s reminders for the authenticated user."]
         #[serde(
             rename = "reminders",
             default,
@@ -1436,7 +1436,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start: ::std::option::Option<crate::schemas::EventDateTime>,
-        #[doc = "Status of the event. Optional. Possible values are:\n\n* \"confirmed\" - The event is confirmed. This is the default status. \n* \"tentative\" - The event is tentatively confirmed. \n* \"cancelled\" - The event is cancelled (deleted). The list method returns cancelled events only on incremental sync (when syncToken or updatedMin are specified) or if the showDeleted flag is set to true. The get method always returns them.\n  A cancelled status represents two different states depending on the event type:\n* Cancelled exceptions of an uncancelled recurring event indicate that this instance should no longer be presented to the user. Clients should store these events for the lifetime of the parent recurring event.\n  Cancelled exceptions are only guaranteed to have values for the id, recurringEventId and originalStartTime fields populated. The other fields might be empty.\n* All other cancelled events represent deleted events. Clients should remove their locally synced copies. Such cancelled events will eventually disappear, so do not rely on them being available indefinitely.\n  Deleted events are only guaranteed to have the id field populated.   On the organizer's calendar, cancelled events continue to expose event details (summary, location, etc.) so that they can be restored (undeleted). Similarly, the events to which the user was invited and that they manually removed continue to provide details. However, incremental sync requests with showDeleted set to false will not return these details.\n  If an event changes its organizer (for example via the move operation) and the original organizer is not on the attendee list, it will leave behind a cancelled event where only the id field is guaranteed to be populated."]
+        #[doc = "Status of the event. Optional. Possible values are:\n\n* “confirmed” - The event is confirmed. This is the default status. \n* “tentative” - The event is tentatively confirmed. \n* “cancelled” - The event is cancelled (deleted). The list method returns cancelled events only on incremental sync (when syncToken or updatedMin are specified) or if the showDeleted flag is set to true. The get method always returns them.\n  A cancelled status represents two different states depending on the event type:\n* Cancelled exceptions of an uncancelled recurring event indicate that this instance should no longer be presented to the user. Clients should store these events for the lifetime of the parent recurring event.\n  Cancelled exceptions are only guaranteed to have values for the id, recurringEventId and originalStartTime fields populated. The other fields might be empty.\n* All other cancelled events represent deleted events. Clients should remove their locally synced copies. Such cancelled events will eventually disappear, so do not rely on them being available indefinitely.\n  Deleted events are only guaranteed to have the id field populated.   On the organizer’s calendar, cancelled events continue to expose event details (summary, location, etc.) so that they can be restored (undeleted). Similarly, the events to which the user was invited and that they manually removed continue to provide details. However, incremental sync requests with showDeleted set to false will not return these details.\n  If an event changes its organizer (for example via the move operation) and the original organizer is not on the attendee list, it will leave behind a cancelled event where only the id field is guaranteed to be populated."]
         #[serde(
             rename = "status",
             default,
@@ -1450,7 +1450,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub summary: ::std::option::Option<String>,
-        #[doc = "Whether the event blocks time on the calendar. Optional. Possible values are:\n\n* \"opaque\" - Default value. The event does block time on the calendar. This is equivalent to setting Show me as to Busy in the Calendar UI. \n* \"transparent\" - The event does not block time on the calendar. This is equivalent to setting Show me as to Available in the Calendar UI."]
+        #[doc = "Whether the event blocks time on the calendar. Optional. Possible values are:\n\n* “opaque” - Default value. The event does block time on the calendar. This is equivalent to setting Show me as to Busy in the Calendar UI. \n* “transparent” - The event does not block time on the calendar. This is equivalent to setting Show me as to Available in the Calendar UI."]
         #[serde(
             rename = "transparency",
             default,
@@ -1464,7 +1464,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub updated: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "Visibility of the event. Optional. Possible values are:\n\n* \"default\" - Uses the default visibility for events on the calendar. This is the default value. \n* \"public\" - The event is public and event details are visible to all readers of the calendar. \n* \"private\" - The event is private and only event attendees may view event details. \n* \"confidential\" - The event is private. This value is provided for compatibility reasons."]
+        #[doc = "Visibility of the event. Optional. Possible values are:\n\n* “default” - Uses the default visibility for events on the calendar. This is the default value. \n* “public” - The event is public and event details are visible to all readers of the calendar. \n* “private” - The event is private and only event attendees may view event details. \n* “confidential” - The event is private. This value is provided for compatibility reasons."]
         #[serde(
             rename = "visibility",
             default,
@@ -1502,21 +1502,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub _self: ::std::option::Option<bool>,
-        #[doc = "The creator's name, if available."]
+        #[doc = "The creator’s name, if available."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The creator's email address, if available."]
+        #[doc = "The creator’s email address, if available."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The creator's Profile ID, if available."]
+        #[doc = "The creator’s Profile ID, if available."]
         #[serde(
             rename = "id",
             default,
@@ -1554,7 +1554,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub private: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Properties that are shared between copies of the event on other attendees' calendars."]
+        #[doc = "Properties that are shared between copies of the event on other attendees’ calendars."]
         #[serde(
             rename = "shared",
             default,
@@ -1585,28 +1585,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EventGadget {
-        #[doc = "The gadget's display mode. Deprecated. Possible values are:\n\n* \"icon\" - The gadget displays next to the event's title in the calendar view. \n* \"chip\" - The gadget displays when the event is clicked."]
+        #[doc = "The gadget’s display mode. Deprecated. Possible values are:\n\n* “icon” - The gadget displays next to the event’s title in the calendar view. \n* “chip” - The gadget displays when the event is clicked."]
         #[serde(
             rename = "display",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display: ::std::option::Option<String>,
-        #[doc = "The gadget's height in pixels. The height must be an integer greater than 0. Optional. Deprecated."]
+        #[doc = "The gadget’s height in pixels. The height must be an integer greater than 0. Optional. Deprecated."]
         #[serde(
             rename = "height",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub height: ::std::option::Option<i32>,
-        #[doc = "The gadget's icon URL. The URL scheme must be HTTPS. Deprecated."]
+        #[doc = "The gadget’s icon URL. The URL scheme must be HTTPS. Deprecated."]
         #[serde(
             rename = "iconLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub icon_link: ::std::option::Option<String>,
-        #[doc = "The gadget's URL. The URL scheme must be HTTPS. Deprecated."]
+        #[doc = "The gadget’s URL. The URL scheme must be HTTPS. Deprecated."]
         #[serde(
             rename = "link",
             default,
@@ -1620,21 +1620,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preferences: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The gadget's type. Deprecated."]
+        #[doc = "The gadget’s type. Deprecated."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "The gadget's title. Deprecated."]
+        #[doc = "The gadget’s title. Deprecated."]
         #[serde(
             rename = "title",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "The gadget's width in pixels. The width must be an integer greater than 0. Optional. Deprecated."]
+        #[doc = "The gadget’s width in pixels. The width must be an integer greater than 0. Optional. Deprecated."]
         #[serde(
             rename = "width",
             default,
@@ -1672,21 +1672,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub _self: ::std::option::Option<bool>,
-        #[doc = "The organizer's name, if available."]
+        #[doc = "The organizer’s name, if available."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The organizer's email address, if available. It must be a valid email address as per RFC5322."]
+        #[doc = "The organizer’s email address, if available. It must be a valid email address as per RFC5322."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The organizer's Profile ID, if available."]
+        #[doc = "The organizer’s Profile ID, if available."]
         #[serde(
             rename = "id",
             default,
@@ -1717,7 +1717,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EventReminders {
-        #[doc = "If the event doesn't use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5."]
+        #[doc = "If the event doesn’t use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event. The maximum number of override reminders is 5."]
         #[serde(
             rename = "overrides",
             default,
@@ -1807,7 +1807,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_url: ::std::option::Option<String>,
-        #[doc = "URL link to the attachment's icon. This field can only be modified for custom third-party attachments."]
+        #[doc = "URL link to the attachment’s icon. This field can only be modified for custom third-party attachments."]
         #[serde(
             rename = "iconLink",
             default,
@@ -1866,28 +1866,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_guests: ::std::option::Option<i32>,
-        #[doc = "The attendee's response comment. Optional."]
+        #[doc = "The attendee’s response comment. Optional."]
         #[serde(
             rename = "comment",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub comment: ::std::option::Option<String>,
-        #[doc = "The attendee's name, if available. Optional."]
+        #[doc = "The attendee’s name, if available. Optional."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The attendee's email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.\nRequired when adding an attendee."]
+        #[doc = "The attendee’s email address, if available. This field must be present when adding an attendee. It must be a valid email address as per RFC5322.\nRequired when adding an attendee."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The attendee's Profile ID, if available."]
+        #[doc = "The attendee’s Profile ID, if available."]
         #[serde(
             rename = "id",
             default,
@@ -1915,7 +1915,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource: ::std::option::Option<bool>,
-        #[doc = "The attendee's response status. Possible values are:\n\n* \"needsAction\" - The attendee has not responded to the invitation. \n* \"declined\" - The attendee has declined the invitation. \n* \"tentative\" - The attendee has tentatively accepted the invitation. \n* \"accepted\" - The attendee has accepted the invitation."]
+        #[doc = "The attendee’s response status. Possible values are:\n\n* “needsAction” - The attendee has not responded to the invitation. \n* “declined” - The attendee has declined the invitation. \n* “tentative” - The attendee has tentatively accepted the invitation. \n* “accepted” - The attendee has accepted the invitation."]
         #[serde(
             rename = "responseStatus",
             default,
@@ -1946,7 +1946,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EventDateTime {
-        #[doc = "The date, in the format \"yyyy-mm-dd\", if this is an all-day event."]
+        #[doc = "The date, in the format “yyyy-mm-dd”, if this is an all-day event."]
         #[serde(
             rename = "date",
             default,
@@ -1960,7 +1960,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. \"Europe/Zurich\".) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end."]
+        #[doc = "The time zone in which the time is specified. (Formatted as an IANA Time Zone Database name, e.g. “Europe/Zurich”.) For recurring events this field is required and specifies the time zone in which the recurrence is expanded. For single events this field is optional and indicates a custom time zone for the event start/end."]
         #[serde(
             rename = "timeZone",
             default,
@@ -1991,7 +1991,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EventReminder {
-        #[doc = "The method used by this reminder. Possible values are:\n\n* \"email\" - Reminders are sent via email. \n* \"popup\" - Reminders are sent via a UI popup.  \n  Required when adding a reminder."]
+        #[doc = "The method used by this reminder. Possible values are:\n\n* “email” - Reminders are sent via email. \n* “popup” - Reminders are sent via a UI popup.  \n  Required when adding a reminder."]
         #[serde(
             rename = "method",
             default,
@@ -2029,7 +2029,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Events {
-        #[doc = "The user's access role for this calendar. Read-only. Possible values are:\n\n* \"none\" - The user has no access. \n* \"freeBusyReader\" - The user has read access to free/busy information. \n* \"reader\" - The user has read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n* \"writer\" - The user has read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n* \"owner\" - The user has ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."]
+        #[doc = "The user’s access role for this calendar. Read-only. Possible values are:\n\n* “none” - The user has no access. \n* “freeBusyReader” - The user has read access to free/busy information. \n* “reader” - The user has read access to the calendar. Private events will appear to users with reader access, but event details will be hidden. \n* “writer” - The user has read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. \n* “owner” - The user has ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs."]
         #[serde(
             rename = "accessRole",
             default,
@@ -2064,7 +2064,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Event>>,
-        #[doc = "Type of the collection (\"calendar#events\")."]
+        #[doc = "Type of the collection (“calendar#events”)."]
         #[serde(
             rename = "kind",
             default,
@@ -2173,7 +2173,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FreeBusyGroup {
-        #[doc = "List of calendars' identifiers within a group."]
+        #[doc = "List of calendars’ identifiers within a group."]
         #[serde(
             rename = "calendars",
             default,
@@ -2326,7 +2326,7 @@ pub mod schemas {
         pub groups: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::FreeBusyGroup>,
         >,
-        #[doc = "Type of the resource (\"calendar#freeBusy\")."]
+        #[doc = "Type of the resource (“calendar#freeBusy”)."]
         #[serde(
             rename = "kind",
             default,
@@ -2385,7 +2385,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Type of the resource (\"calendar#setting\")."]
+        #[doc = "Type of the resource (“calendar#setting”)."]
         #[serde(
             rename = "kind",
             default,
@@ -2437,7 +2437,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Setting>>,
-        #[doc = "Type of the collection (\"calendar#settings\")."]
+        #[doc = "Type of the collection (“calendar#settings”)."]
         #[serde(
             rename = "kind",
             default,
@@ -3222,7 +3222,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to \"none\". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False."]
+            #[doc = "Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to “none”. Deleted ACLs will always be included if syncToken is provided. Optional. The default is False."]
             pub fn show_deleted(mut self, value: bool) -> Self {
                 self.show_deleted = Some(value);
                 self
@@ -3836,7 +3836,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to \"none\". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False."]
+            #[doc = "Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to “none”. Deleted ACLs will always be included if syncToken is provided. Optional. The default is False."]
             pub fn show_deleted(mut self, value: bool) -> Self {
                 self.show_deleted = Some(value);
                 self
@@ -4143,7 +4143,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Removes a calendar from the user's calendar list."]
+            #[doc = "Removes a calendar from the user’s calendar list."]
             pub fn delete(&self, calendar_id: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -4158,7 +4158,7 @@ pub mod resources {
                     calendar_id: calendar_id.into(),
                 }
             }
-            #[doc = "Returns a calendar from the user's calendar list."]
+            #[doc = "Returns a calendar from the user’s calendar list."]
             pub fn get(&self, calendar_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -4173,7 +4173,7 @@ pub mod resources {
                     calendar_id: calendar_id.into(),
                 }
             }
-            #[doc = "Inserts an existing calendar into the user's calendar list."]
+            #[doc = "Inserts an existing calendar into the user’s calendar list."]
             pub fn insert(
                 &self,
                 request: crate::schemas::CalendarListEntry,
@@ -4192,7 +4192,7 @@ pub mod resources {
                     color_rgb_format: None,
                 }
             }
-            #[doc = "Returns the calendars on the user's calendar list."]
+            #[doc = "Returns the calendars on the user’s calendar list."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -4212,7 +4212,7 @@ pub mod resources {
                     sync_token: None,
                 }
             }
-            #[doc = "Updates an existing calendar on the user's calendar list. This method supports patch semantics."]
+            #[doc = "Updates an existing calendar on the user’s calendar list. This method supports patch semantics."]
             pub fn patch(
                 &self,
                 request: crate::schemas::CalendarListEntry,
@@ -4233,7 +4233,7 @@ pub mod resources {
                     color_rgb_format: None,
                 }
             }
-            #[doc = "Updates an existing calendar on the user's calendar list."]
+            #[doc = "Updates an existing calendar on the user’s calendar list."]
             pub fn update(
                 &self,
                 request: crate::schemas::CalendarListEntry,
@@ -4668,7 +4668,7 @@ pub mod resources {
                 self.show_hidden = Some(value);
                 self
             }
-            #[doc = "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\nTo ensure client state consistency minAccessRole query parameter cannot be specified together with nextSyncToken.\nIf the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.\nLearn more about incremental synchronization.\nOptional. The default is to return all entries."]
+            #[doc = "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won’t be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\nTo ensure client state consistency minAccessRole query parameter cannot be specified together with nextSyncToken.\nIf the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.\nLearn more about incremental synchronization.\nOptional. The default is to return all entries."]
             pub fn sync_token(mut self, value: impl Into<String>) -> Self {
                 self.sync_token = Some(value.into());
                 self
@@ -5273,7 +5273,7 @@ pub mod resources {
                 self.show_hidden = Some(value);
                 self
             }
-            #[doc = "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won't be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\nTo ensure client state consistency minAccessRole query parameter cannot be specified together with nextSyncToken.\nIf the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.\nLearn more about incremental synchronization.\nOptional. The default is to return all entries."]
+            #[doc = "Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. If only read-only fields such as calendar properties or ACLs have changed, the entry won’t be returned. All entries deleted and hidden since the previous list request will always be in the result set and it is not allowed to set showDeleted neither showHidden to False.\nTo ensure client state consistency minAccessRole query parameter cannot be specified together with nextSyncToken.\nIf the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.\nLearn more about incremental synchronization.\nOptional. The default is to return all entries."]
             pub fn sync_token(mut self, value: impl Into<String>) -> Self {
                 self.sync_token = Some(value.into());
                 self
@@ -7202,7 +7202,7 @@ pub mod resources {
                     updated_min: None,
                 }
             }
-            #[doc = "Moves an event to another calendar, i.e. changes an event's organizer."]
+            #[doc = "Moves an event to another calendar, i.e. changes an event’s organizer."]
             pub fn r#move(
                 &self,
                 calendar_id: impl Into<String>,
@@ -7627,7 +7627,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> ImportRequestBuilder<'a> {
-            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
+            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event’s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
             pub fn conference_data_version(mut self, value: i32) -> Self {
                 self.conference_data_version = Some(value);
                 self
@@ -7780,7 +7780,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
+            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event’s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
             pub fn conference_data_version(mut self, value: i32) -> Self {
                 self.conference_data_version = Some(value);
                 self
@@ -7982,17 +7982,17 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False."]
+            #[doc = "Whether to include deleted events (with status equals “cancelled”) in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False."]
             pub fn show_deleted(mut self, value: bool) -> Self {
                 self.show_deleted = Some(value);
                 self
             }
-            #[doc = "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset."]
+            #[doc = "Upper bound (exclusive) for an event’s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset."]
             pub fn time_max(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.time_max = Some(value);
                 self
             }
-            #[doc = "Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset."]
+            #[doc = "Lower bound (inclusive) for an event’s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset."]
             pub fn time_min(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.time_min = Some(value);
                 self
@@ -8437,7 +8437,7 @@ pub mod resources {
                 self.shared_extended_property = Some(value.into());
                 self
             }
-            #[doc = "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False."]
+            #[doc = "Whether to include deleted events (with status equals “cancelled”) in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False."]
             pub fn show_deleted(mut self, value: bool) -> Self {
                 self.show_deleted = Some(value);
                 self
@@ -8457,12 +8457,12 @@ pub mod resources {
                 self.sync_token = Some(value.into());
                 self
             }
-            #[doc = "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin."]
+            #[doc = "Upper bound (exclusive) for an event’s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin."]
             pub fn time_max(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.time_max = Some(value);
                 self
             }
-            #[doc = "Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax."]
+            #[doc = "Lower bound (exclusive) for an event’s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax."]
             pub fn time_min(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.time_min = Some(value);
                 self
@@ -8472,7 +8472,7 @@ pub mod resources {
                 self.time_zone = Some(value.into());
                 self
             }
-            #[doc = "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."]
+            #[doc = "Lower bound for an event’s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."]
             pub fn updated_min(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.updated_min = Some(value);
                 self
@@ -8855,12 +8855,12 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> MoveRequestBuilder<'a> {
-            #[doc = "Deprecated. Please use sendUpdates instead.\n\nWhether to send notifications about the change of the event's organizer. Note that some emails might still be sent even if you set the value to false. The default is false."]
+            #[doc = "Deprecated. Please use sendUpdates instead.\n\nWhether to send notifications about the change of the event’s organizer. Note that some emails might still be sent even if you set the value to false. The default is false."]
             pub fn send_notifications(mut self, value: bool) -> Self {
                 self.send_notifications = Some(value);
                 self
             }
-            #[doc = "Guests who should receive notifications about the change of the event's organizer."]
+            #[doc = "Guests who should receive notifications about the change of the event’s organizer."]
             pub fn send_updates(
                 mut self,
                 value: crate::resources::events::params::MoveSendUpdates,
@@ -9025,7 +9025,7 @@ pub mod resources {
                 self.always_include_email = Some(value);
                 self
             }
-            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
+            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event’s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
             pub fn conference_data_version(mut self, value: i32) -> Self {
                 self.conference_data_version = Some(value);
                 self
@@ -9367,7 +9367,7 @@ pub mod resources {
                 self.always_include_email = Some(value);
                 self
             }
-            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
+            #[doc = "Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event’s body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0."]
             pub fn conference_data_version(mut self, value: i32) -> Self {
                 self.conference_data_version = Some(value);
                 self
@@ -9608,7 +9608,7 @@ pub mod resources {
                 self.shared_extended_property = Some(value.into());
                 self
             }
-            #[doc = "Whether to include deleted events (with status equals \"cancelled\") in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False."]
+            #[doc = "Whether to include deleted events (with status equals “cancelled”) in the result. Cancelled instances of recurring events (but not the underlying recurring event) will still be included if showDeleted and singleEvents are both False. If showDeleted and singleEvents are both True, only single instances of deleted events (but not the underlying recurring events) are returned. Optional. The default is False."]
             pub fn show_deleted(mut self, value: bool) -> Self {
                 self.show_deleted = Some(value);
                 self
@@ -9628,12 +9628,12 @@ pub mod resources {
                 self.sync_token = Some(value.into());
                 self
             }
-            #[doc = "Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin."]
+            #[doc = "Upper bound (exclusive) for an event’s start time to filter by. Optional. The default is not to filter by start time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMin is set, timeMax must be greater than timeMin."]
             pub fn time_max(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.time_max = Some(value);
                 self
             }
-            #[doc = "Lower bound (exclusive) for an event's end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax."]
+            #[doc = "Lower bound (exclusive) for an event’s end time to filter by. Optional. The default is not to filter by end time. Must be an RFC3339 timestamp with mandatory time zone offset, for example, 2011-06-03T10:00:00-07:00, 2011-06-03T10:00:00Z. Milliseconds may be provided but are ignored. If timeMax is set, timeMin must be smaller than timeMax."]
             pub fn time_min(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.time_min = Some(value);
                 self
@@ -9643,7 +9643,7 @@ pub mod resources {
                 self.time_zone = Some(value.into());
                 self
             }
-            #[doc = "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."]
+            #[doc = "Lower bound for an event’s last modification time (as a RFC3339 timestamp) to filter by. When specified, entries deleted since this time will always be included regardless of showDeleted. Optional. The default is not to filter by last modification time."]
             pub fn updated_min(mut self, value: ::chrono::DateTime<chrono::offset::Utc>) -> Self {
                 self.updated_min = Some(value);
                 self

@@ -72,7 +72,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FailoverInstanceRequest {
-        #[doc = "Optional. Available data protection modes that the user can choose. If it's unspecified, data protection mode will be LIMITED_DATA_LOSS by default."]
+        #[doc = "Optional. Available data protection modes that the user can choose. If it’s unspecified, data protection mode will be LIMITED_DATA_LOSS by default."]
         #[serde(
             rename = "dataProtectionMode",
             default,
@@ -188,7 +188,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GcsDestination {
-        #[doc = "Required. Data destination URI (e.g. 'gs://my_bucket/my_object'). Existing files will be overwritten."]
+        #[doc = "Required. Data destination URI (e.g. ‘gs://my_bucket/my_object’). Existing files will be overwritten."]
         #[serde(
             rename = "uri",
             default,
@@ -219,7 +219,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GcsSource {
-        #[doc = "Required. Source data URI. (e.g. 'gs://my_bucket/my_object')."]
+        #[doc = "Required. Source data URI. (e.g. ‘gs://my_bucket/my_object’)."]
         #[serde(
             rename = "uri",
             default,
@@ -445,14 +445,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Instance {
-        #[doc = "Optional. If specified, at least one node will be provisioned in this zone in addition to the zone specified in location_id. Only applicable to standard tier. If provided, it must be a different zone from the one provided in [location_id]. Additional nodes beyond the first 2 will be placed in zones selected by the service."]
+        #[doc = "Optional. If specified, at least one node will be provisioned in this zone in addition to the zone specified in location_id. Only applicable to standard tier. If provided, it must be a different zone from the one provided in \\[location_id\\]. Additional nodes beyond the first 2 will be placed in zones selected by the service."]
         #[serde(
             rename = "alternativeLocationId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alternative_location_id: ::std::option::Option<String>,
-        #[doc = "Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to \"true\" AUTH is enabled on the instance. Default value is \"false\" meaning AUTH is disabled."]
+        #[doc = "Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to “true” AUTH is enabled on the instance. Default value is “false” meaning AUTH is disabled."]
         #[serde(
             rename = "authEnabled",
             default,
@@ -480,7 +480,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The current zone where the Redis primary node is located. In basic tier, this will always be the same as [location_id]. In standard tier, this can be the zone of any node in the instance."]
+        #[doc = "Output only. The current zone where the Redis primary node is located. In basic tier, this will always be the same as \\[location_id\\]. In standard tier, this can be the zone of any node in the instance."]
         #[serde(
             rename = "currentLocationId",
             default,
@@ -557,7 +557,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub persistence_config: ::std::option::Option<crate::schemas::PersistenceConfig>,
-        #[doc = "Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is \"serviceAccount:\". The value may change over time for a given instance so should be checked before each import/export operation."]
+        #[doc = "Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is “serviceAccount:”. The value may change over time for a given instance so should be checked before each import/export operation."]
         #[serde(
             rename = "persistenceIamIdentity",
             default,
@@ -571,14 +571,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub port: ::std::option::Option<i32>,
-        #[doc = "Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'."]
+        #[doc = "Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target ‘host’."]
         #[serde(
             rename = "readEndpoint",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub read_endpoint: ::std::option::Option<String>,
-        #[doc = "Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'."]
+        #[doc = "Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target ‘port’."]
         #[serde(
             rename = "readEndpointPort",
             default,
@@ -606,7 +606,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub redis_version: ::std::option::Option<String>,
-        #[doc = "Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is [1-5] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0."]
+        #[doc = "Optional. The number of replica nodes. The valid range for the Standard Tier with read replicas enabled is \\[1-5\\] and defaults to 2. If read replicas are not enabled for a Standard Tier instance, the only valid value is 1 and the default is 1. The valid value for basic tier is 0 and the default is also 0."]
         #[serde(
             rename = "replicaCount",
             default,
@@ -620,7 +620,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reserved_ip_range: ::std::option::Option<String>,
-        #[doc = "Optional. Additional IP range for node placement. Required when enabling read replicas on an existing instance. For DIRECT_PEERING mode value must be a CIDR range of size /28, or \"auto\". For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or \"auto\"."]
+        #[doc = "Optional. Additional IP range for node placement. Required when enabling read replicas on an existing instance. For DIRECT_PEERING mode value must be a CIDR range of size /28, or “auto”. For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or “auto”."]
         #[serde(
             rename = "secondaryIpRange",
             default,
@@ -1140,7 +1140,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListInstancesResponse {
-        #[doc = "A list of Redis instances in the project in the specified location, or across all locations. If the `location_id` in the parent field of the request is \"-\", all regions available to the project are queried, and the results aggregated. If in such an aggregated query a location is unavailable, a placeholder Redis entry is included in the response with the `name` field set to a value of the form `projects/{project_id}/locations/{location_id}/instances/`- and the `status` field set to ERROR and `status_message` field set to \"location not available for ListInstances\"."]
+        #[doc = "A list of Redis instances in the project in the specified location, or across all locations. If the `location_id` in the parent field of the request is “-”, all regions available to the project are queried, and the results aggregated. If in such an aggregated query a location is unavailable, a placeholder Redis entry is included in the response with the `name` field set to a value of the form `projects/{project_id}/locations/{location_id}/instances/`- and the `status` field set to ERROR and `status_message` field set to “location not available for ListInstances”."]
         #[serde(
             rename = "instances",
             default,
@@ -1243,21 +1243,21 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Location {
-        #[doc = "The friendly name for this location, typically a nearby city name. For example, \"Tokyo\"."]
+        #[doc = "The friendly name for this location, typically a nearby city name. For example, “Tokyo”."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Cross-service attributes for the location. For example {\"cloud.googleapis.com/region\": \"us-east1\"}"]
+        #[doc = "Cross-service attributes for the location. For example {“cloud.googleapis.com/region”: “us-east1”}"]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Resource ID for the region. For example: \"us-east1\"."]
+        #[doc = "Resource ID for the region. For example: “us-east1”."]
         #[serde(
             rename = "locationId",
             default,
@@ -1272,7 +1272,7 @@ pub mod schemas {
         )]
         pub metadata:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Full resource name for the region. For example: \"projects/example-project/locations/us-east1\"."]
+        #[doc = "Full resource name for the region. For example: “projects/example-project/locations/us-east1”."]
         #[serde(
             rename = "name",
             default,
@@ -1408,7 +1408,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NodeInfo {
-        #[doc = "Output only. Node identifying string. e.g. 'node-0', 'node-1'"]
+        #[doc = "Output only. Node identifying string. e.g. ‘node-0’, ‘node-1’"]
         #[serde(
             rename = "id",
             default,
@@ -1924,7 +1924,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimeOfDay {
-        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time."]
+        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
@@ -2520,12 +2520,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2698,12 +2698,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2979,7 +2979,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a Redis instance based on the specified tier and memory size. By default, the instance is accessible from the project's [default network](https://cloud.google.com/vpc/docs/vpc). The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis instance will be fully functional. The completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation."]
+                    #[doc = "Creates a Redis instance based on the specified tier and memory size. By default, the instance is accessible from the project’s [default network](https://cloud.google.com/vpc/docs/vpc). The creation is executed asynchronously and callers may check the returned operation to track its progress. Once the operation is completed the Redis instance will be fully functional. The completed longrunning.Operation will contain the new instance object in the response field. The returned operation is automatically deleted after a few hours, so there is no need to call DeleteOperation."]
                     pub fn create(
                         &self,
                         request: crate::schemas::Instance,
@@ -3287,12 +3287,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3450,12 +3450,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3611,12 +3611,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3774,12 +3774,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3936,12 +3936,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4096,12 +4096,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4260,12 +4260,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4394,7 +4394,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response's `next_page_token` to determine if there are more instances left to be queried."]
+                    #[doc = "The maximum number of items to return. If not specified, a default value of 1000 will be used by the service. Regardless of the page_size value, the response may include a partial list and a caller should only rely on response’s `next_page_token` to determine if there are more instances left to be queried."]
                     pub fn page_size(mut self, value: i32) -> Self {
                         self.page_size = Some(value);
                         self
@@ -4434,12 +4434,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4835,12 +4835,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4998,12 +4998,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5161,12 +5161,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5285,7 +5285,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+                    #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
                     pub fn cancel(&self, name: impl Into<String>) -> CancelRequestBuilder {
                         CancelRequestBuilder {
                             reqwest: &self.reqwest,
@@ -5304,7 +5304,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."]
+                    #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."]
                     pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                         DeleteRequestBuilder {
                             reqwest: &self.reqwest,
@@ -5342,7 +5342,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                     pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -5414,12 +5414,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5575,12 +5575,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5735,12 +5735,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5913,12 +5913,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

@@ -130,7 +130,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1Beta2DetectedAttribute {
-        #[doc = "Detected attribute confidence. Range [0, 1]."]
+        #[doc = "Detected attribute confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -144,7 +144,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Text value of the detection result. For example, the value for \"HairColor\" can be \"black\", \"blonde\", etc."]
+        #[doc = "Text value of the detection result. For example, the value for “HairColor” can be “black”, “blonde”, etc."]
         #[serde(
             rename = "value",
             default,
@@ -168,7 +168,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1Beta2DetectedLandmark {
-        #[doc = "The confidence score of the detected landmark. Range [0, 1]."]
+        #[doc = "The confidence score of the detected landmark. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -446,7 +446,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1Beta2FaceDetectionAnnotation {
-        #[doc = "The thumbnail of a person's face."]
+        #[doc = "The thumbnail of a person’s face."]
         #[serde(
             rename = "thumbnail",
             default,
@@ -606,7 +606,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1Beta2LabelFrame {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -635,7 +635,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1Beta2LabelSegment {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -815,7 +815,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1Beta2ObjectTrackingAnnotation {
-        #[doc = "Object category's labeling confidence of this track."]
+        #[doc = "Object category’s labeling confidence of this track."]
         #[serde(
             rename = "confidence",
             default,
@@ -1482,7 +1482,7 @@ pub mod schemas {
         pub segment_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1Beta2LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "segmentPresenceLabelAnnotations",
             default,
@@ -1509,7 +1509,7 @@ pub mod schemas {
         pub shot_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1Beta2LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "shotPresenceLabelAnnotations",
             default,
@@ -1643,7 +1643,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1DetectedAttribute {
-        #[doc = "Detected attribute confidence. Range [0, 1]."]
+        #[doc = "Detected attribute confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -1657,7 +1657,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Text value of the detection result. For example, the value for \"HairColor\" can be \"black\", \"blonde\", etc."]
+        #[doc = "Text value of the detection result. For example, the value for “HairColor” can be “black”, “blonde”, etc."]
         #[serde(
             rename = "value",
             default,
@@ -1679,7 +1679,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1DetectedLandmark {
-        #[doc = "The confidence score of the detected landmark. Range [0, 1]."]
+        #[doc = "The confidence score of the detected landmark. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -1965,7 +1965,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1FaceDetectionAnnotation {
-        #[doc = "The thumbnail of a person's face."]
+        #[doc = "The thumbnail of a person’s face."]
         #[serde(
             rename = "thumbnail",
             default,
@@ -2121,7 +2121,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1LabelFrame {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2150,7 +2150,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1LabelSegment {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2321,7 +2321,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1ObjectTrackingAnnotation {
-        #[doc = "Object category's labeling confidence of this track."]
+        #[doc = "Object category’s labeling confidence of this track."]
         #[serde(
             rename = "confidence",
             default,
@@ -2453,7 +2453,7 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
-    pub struct GoogleCloudVideointelligenceV1P1Beta1AnnotateVideoRequest { # [doc = "Required. Requested video annotation features."] # [serde (rename = "features" , default , skip_serializing_if = "std::option::Option::is_none")] pub features : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudVideointelligenceV1P1Beta1AnnotateVideoRequestFeaturesItems > > , # [doc = "The video data bytes. If unset, the input video(s) should be specified via the `input_uri`. If set, `input_uri` must be unset."] # [serde (rename = "inputContent" , default , skip_serializing_if = "std::option::Option::is_none")] pub input_content : :: std :: option :: Option < :: google_api_bytes :: Bytes > , # [doc = "Input video location. Currently, only [Cloud Storage](https://cloud.google.com/storage/) URIs are supported. URIs must be specified in the following format: `gs://bucket-id/object-id` (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/request-endpoints). To identify multiple videos, a video URI may include wildcards in the `object-id`. Supported wildcards: '*' to match 0 or more characters; '?' to match 1 character. If unset, the input video should be embedded in the request as `input_content`. If set, `input_content` must be unset."] # [serde (rename = "inputUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub input_uri : :: std :: option :: Option < String > , # [doc = "Optional. Cloud region where annotation should take place. Supported cloud regions are: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region is specified, the region will be determined based on video file location."] # [serde (rename = "locationId" , default , skip_serializing_if = "std::option::Option::is_none")] pub location_id : :: std :: option :: Option < String > , # [doc = "Optional. Location where the output (in JSON format) should be stored. Currently, only [Cloud Storage](https://cloud.google.com/storage/) URIs are supported. These must be specified in the following format: `gs://bucket-id/object-id` (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/request-endpoints)."] # [serde (rename = "outputUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub output_uri : :: std :: option :: Option < String > , # [doc = "Additional video context and/or feature-specific parameters."] # [serde (rename = "videoContext" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_context : :: std :: option :: Option < crate :: schemas :: GoogleCloudVideointelligenceV1P1Beta1VideoContext > , }
+    pub struct GoogleCloudVideointelligenceV1P1Beta1AnnotateVideoRequest { # [doc = "Required. Requested video annotation features."] # [serde (rename = "features" , default , skip_serializing_if = "std::option::Option::is_none")] pub features : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudVideointelligenceV1P1Beta1AnnotateVideoRequestFeaturesItems > > , # [doc = "The video data bytes. If unset, the input video(s) should be specified via the `input_uri`. If set, `input_uri` must be unset."] # [serde (rename = "inputContent" , default , skip_serializing_if = "std::option::Option::is_none")] pub input_content : :: std :: option :: Option < :: google_api_bytes :: Bytes > , # [doc = "Input video location. Currently, only [Cloud Storage](https://cloud.google.com/storage/) URIs are supported. URIs must be specified in the following format: `gs://bucket-id/object-id` (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/request-endpoints). To identify multiple videos, a video URI may include wildcards in the `object-id`. Supported wildcards: ‘\\*’ to match 0 or more characters; ‘?’ to match 1 character. If unset, the input video should be embedded in the request as `input_content`. If set, `input_content` must be unset."] # [serde (rename = "inputUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub input_uri : :: std :: option :: Option < String > , # [doc = "Optional. Cloud region where annotation should take place. Supported cloud regions are: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region is specified, the region will be determined based on video file location."] # [serde (rename = "locationId" , default , skip_serializing_if = "std::option::Option::is_none")] pub location_id : :: std :: option :: Option < String > , # [doc = "Optional. Location where the output (in JSON format) should be stored. Currently, only [Cloud Storage](https://cloud.google.com/storage/) URIs are supported. These must be specified in the following format: `gs://bucket-id/object-id` (other URI formats return google.rpc.Code.INVALID_ARGUMENT). For more information, see [Request URIs](https://cloud.google.com/storage/docs/request-endpoints)."] # [serde (rename = "outputUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub output_uri : :: std :: option :: Option < String > , # [doc = "Additional video context and/or feature-specific parameters."] # [serde (rename = "videoContext" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_context : :: std :: option :: Option < crate :: schemas :: GoogleCloudVideointelligenceV1P1Beta1VideoContext > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudVideointelligenceV1P1Beta1AnnotateVideoRequest
     {
@@ -2586,7 +2586,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1DetectedAttribute {
-        #[doc = "Detected attribute confidence. Range [0, 1]."]
+        #[doc = "Detected attribute confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2600,7 +2600,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Text value of the detection result. For example, the value for \"HairColor\" can be \"black\", \"blonde\", etc."]
+        #[doc = "Text value of the detection result. For example, the value for “HairColor” can be “black”, “blonde”, etc."]
         #[serde(
             rename = "value",
             default,
@@ -2626,7 +2626,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1DetectedLandmark {
-        #[doc = "The confidence score of the detected landmark. Range [0, 1]."]
+        #[doc = "The confidence score of the detected landmark. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2766,7 +2766,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1ExplicitContentDetectionConfig {
-        #[doc = "Model to use for explicit content detection. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\"."]
+        #[doc = "Model to use for explicit content detection. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."]
         #[serde(
             rename = "model",
             default,
@@ -2943,7 +2943,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1FaceDetectionAnnotation {
-        #[doc = "The thumbnail of a person's face."]
+        #[doc = "The thumbnail of a person’s face."]
         #[serde(
             rename = "thumbnail",
             default,
@@ -2993,7 +2993,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1FaceDetectionConfig {
-        #[doc = "Whether to enable face attributes detection, such as glasses, dark_glasses, mouth_open etc. Ignored if 'include_bounding_boxes' is set to false."]
+        #[doc = "Whether to enable face attributes detection, such as glasses, dark_glasses, mouth_open etc. Ignored if ‘include_bounding_boxes’ is set to false."]
         #[serde(
             rename = "includeAttributes",
             default,
@@ -3007,7 +3007,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_bounding_boxes: ::std::option::Option<bool>,
-        #[doc = "Model to use for face detection. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\"."]
+        #[doc = "Model to use for face detection. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."]
         #[serde(
             rename = "model",
             default,
@@ -3154,7 +3154,7 @@ pub mod schemas {
     #[derive(
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
-    pub struct GoogleCloudVideointelligenceV1P1Beta1LabelDetectionConfig { # [doc = "The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model."] # [serde (rename = "frameConfidenceThreshold" , default , skip_serializing_if = "std::option::Option::is_none")] pub frame_confidence_threshold : :: std :: option :: Option < f32 > , # [doc = "What labels should be detected with LABEL_DETECTION, in addition to video-level labels or segment-level labels. If unspecified, defaults to `SHOT_MODE`."] # [serde (rename = "labelDetectionMode" , default , skip_serializing_if = "std::option::Option::is_none")] pub label_detection_mode : :: std :: option :: Option < crate :: schemas :: GoogleCloudVideointelligenceV1P1Beta1LabelDetectionConfigLabelDetectionMode > , # [doc = "Model to use for label detection. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\"."] # [serde (rename = "model" , default , skip_serializing_if = "std::option::Option::is_none")] pub model : :: std :: option :: Option < String > , # [doc = "Whether the video has been shot from a stationary (i.e., non-moving) camera. When set to true, might improve detection accuracy for moving objects. Should be used with `SHOT_AND_FRAME_MODE` enabled."] # [serde (rename = "stationaryCamera" , default , skip_serializing_if = "std::option::Option::is_none")] pub stationary_camera : :: std :: option :: Option < bool > , # [doc = "The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it's set to 0.3 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model."] # [serde (rename = "videoConfidenceThreshold" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_confidence_threshold : :: std :: option :: Option < f32 > , }
+    pub struct GoogleCloudVideointelligenceV1P1Beta1LabelDetectionConfig { # [doc = "The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is \\[0.1, 0.9\\]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model."] # [serde (rename = "frameConfidenceThreshold" , default , skip_serializing_if = "std::option::Option::is_none")] pub frame_confidence_threshold : :: std :: option :: Option < f32 > , # [doc = "What labels should be detected with LABEL_DETECTION, in addition to video-level labels or segment-level labels. If unspecified, defaults to `SHOT_MODE`."] # [serde (rename = "labelDetectionMode" , default , skip_serializing_if = "std::option::Option::is_none")] pub label_detection_mode : :: std :: option :: Option < crate :: schemas :: GoogleCloudVideointelligenceV1P1Beta1LabelDetectionConfigLabelDetectionMode > , # [doc = "Model to use for label detection. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."] # [serde (rename = "model" , default , skip_serializing_if = "std::option::Option::is_none")] pub model : :: std :: option :: Option < String > , # [doc = "Whether the video has been shot from a stationary (i.e., non-moving) camera. When set to true, might improve detection accuracy for moving objects. Should be used with `SHOT_AND_FRAME_MODE` enabled."] # [serde (rename = "stationaryCamera" , default , skip_serializing_if = "std::option::Option::is_none")] pub stationary_camera : :: std :: option :: Option < bool > , # [doc = "The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it’s set to 0.3 by default. The valid range for this threshold is \\[0.1, 0.9\\]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model."] # [serde (rename = "videoConfidenceThreshold" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_confidence_threshold : :: std :: option :: Option < f32 > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudVideointelligenceV1P1Beta1LabelDetectionConfig
     {
@@ -3251,7 +3251,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1LabelFrame {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -3280,7 +3280,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1LabelSegment {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -3463,7 +3463,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1ObjectTrackingAnnotation {
-        #[doc = "Object category's labeling confidence of this track."]
+        #[doc = "Object category’s labeling confidence of this track."]
         #[serde(
             rename = "confidence",
             default,
@@ -3539,7 +3539,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1ObjectTrackingConfig {
-        #[doc = "Model to use for object tracking. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\"."]
+        #[doc = "Model to use for object tracking. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."]
         #[serde(
             rename = "model",
             default,
@@ -3643,7 +3643,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1PersonDetectionConfig {
-        #[doc = "Whether to enable person attributes detection, such as cloth color (black, blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair, etc. Ignored if 'include_bounding_boxes' is set to false."]
+        #[doc = "Whether to enable person attributes detection, such as cloth color (black, blue, etc), type (coat, dress, etc), pattern (plain, floral, etc), hair, etc. Ignored if ‘include_bounding_boxes’ is set to false."]
         #[serde(
             rename = "includeAttributes",
             default,
@@ -3657,7 +3657,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_bounding_boxes: ::std::option::Option<bool>,
-        #[doc = "Whether to enable pose landmarks detection. Ignored if 'include_bounding_boxes' is set to false."]
+        #[doc = "Whether to enable pose landmarks detection. Ignored if ‘include_bounding_boxes’ is set to false."]
         #[serde(
             rename = "includePoseLandmarks",
             default,
@@ -3692,7 +3692,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1ShotChangeDetectionConfig {
-        #[doc = "Model to use for shot change detection. Supported values: \"builtin/stable\" (the default if unset), \"builtin/latest\", and \"builtin/legacy\"."]
+        #[doc = "Model to use for shot change detection. Supported values: “builtin/stable” (the default if unset), “builtin/latest”, and “builtin/legacy”."]
         #[serde(
             rename = "model",
             default,
@@ -3727,7 +3727,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P1Beta1SpeechContext {
-        #[doc = "Optional. A list of strings containing words and phrases \"hints\" so that the speech recognition is more likely to recognize them. This can be used to improve the accuracy for specific words and phrases, for example, if specific commands are typically spoken by the user. This can also be used to add additional words to the vocabulary of the recognizer. See [usage limits](https://cloud.google.com/speech/limits#content)."]
+        #[doc = "Optional. A list of strings containing words and phrases “hints” so that the speech recognition is more likely to recognize them. This can be used to improve the accuracy for specific words and phrases, for example, if specific commands are typically spoken by the user. This can also be used to add additional words to the vocabulary of the recognizer. See [usage limits](https://cloud.google.com/speech/limits#content)."]
         #[serde(
             rename = "phrases",
             default,
@@ -3842,21 +3842,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audio_tracks: ::std::option::Option<Vec<i32>>,
-        #[doc = "Optional. If set, specifies the estimated number of speakers in the conversation. If not set, defaults to '2'. Ignored unless enable_speaker_diarization is set to true."]
+        #[doc = "Optional. If set, specifies the estimated number of speakers in the conversation. If not set, defaults to ‘2’. Ignored unless enable_speaker_diarization is set to true."]
         #[serde(
             rename = "diarizationSpeakerCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub diarization_speaker_count: ::std::option::Option<i32>,
-        #[doc = "Optional. If 'true', adds punctuation to recognition result hypotheses. This feature is only available in select languages. Setting this for requests in other languages has no effect at all. The default 'false' value does not add punctuation to result hypotheses. NOTE: \"This is currently offered as an experimental service, complimentary to all users. In the future this may be exclusively available as a premium feature.\""]
+        #[doc = "Optional. If ‘true’, adds punctuation to recognition result hypotheses. This feature is only available in select languages. Setting this for requests in other languages has no effect at all. The default ‘false’ value does not add punctuation to result hypotheses. NOTE: “This is currently offered as an experimental service, complimentary to all users. In the future this may be exclusively available as a premium feature.”"]
         #[serde(
             rename = "enableAutomaticPunctuation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_automatic_punctuation: ::std::option::Option<bool>,
-        #[doc = "Optional. If 'true', enables speaker detection for each recognized word in the top alternative of the recognition result using a speaker_tag provided in the WordInfo. Note: When this is true, we send all the words from the beginning of the audio for the top alternative in every consecutive response. This is done in order to improve our speaker tags as our models learn to identify the speakers in the conversation over time."]
+        #[doc = "Optional. If ‘true’, enables speaker detection for each recognized word in the top alternative of the recognition result using a speaker_tag provided in the WordInfo. Note: When this is true, we send all the words from the beginning of the audio for the top alternative in every consecutive response. This is done in order to improve our speaker tags as our models learn to identify the speakers in the conversation over time."]
         #[serde(
             rename = "enableSpeakerDiarization",
             default,
@@ -3870,14 +3870,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_word_confidence: ::std::option::Option<bool>,
-        #[doc = "Optional. If set to `true`, the server will attempt to filter out profanities, replacing all but the initial character in each filtered word with asterisks, e.g. \"f***\". If set to `false` or omitted, profanities won't be filtered out."]
+        #[doc = "Optional. If set to `true`, the server will attempt to filter out profanities, replacing all but the initial character in each filtered word with asterisks, e.g. “f\\*\\*\\*”. If set to `false` or omitted, profanities won’t be filtered out."]
         #[serde(
             rename = "filterProfanity",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter_profanity: ::std::option::Option<bool>,
-        #[doc = "Required. *Required* The language of the supplied audio as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: \"en-US\". See [Language Support](https://cloud.google.com/speech/docs/languages) for a list of the currently supported language codes."]
+        #[doc = "Required. *Required* The language of the supplied audio as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: “en-US”. See [Language Support](https://cloud.google.com/speech/docs/languages) for a list of the currently supported language codes."]
         #[serde(
             rename = "languageCode",
             default,
@@ -3975,7 +3975,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_hints: ::std::option::Option<Vec<String>>,
-        #[doc = "Model to use for text detection. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\"."]
+        #[doc = "Model to use for text detection. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."]
         #[serde(
             rename = "model",
             default,
@@ -4425,7 +4425,7 @@ pub mod schemas {
         pub segment_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P1Beta1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "segmentPresenceLabelAnnotations",
             default,
@@ -4452,7 +4452,7 @@ pub mod schemas {
         pub shot_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P1Beta1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "shotPresenceLabelAnnotations",
             default,
@@ -4745,7 +4745,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P2Beta1DetectedAttribute {
-        #[doc = "Detected attribute confidence. Range [0, 1]."]
+        #[doc = "Detected attribute confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -4759,7 +4759,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Text value of the detection result. For example, the value for \"HairColor\" can be \"black\", \"blonde\", etc."]
+        #[doc = "Text value of the detection result. For example, the value for “HairColor” can be “black”, “blonde”, etc."]
         #[serde(
             rename = "value",
             default,
@@ -4785,7 +4785,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P2Beta1DetectedLandmark {
-        #[doc = "The confidence score of the detected landmark. Range [0, 1]."]
+        #[doc = "The confidence score of the detected landmark. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -5067,7 +5067,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P2Beta1FaceDetectionAnnotation {
-        #[doc = "The thumbnail of a person's face."]
+        #[doc = "The thumbnail of a person’s face."]
         #[serde(
             rename = "thumbnail",
             default,
@@ -5230,7 +5230,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P2Beta1LabelFrame {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -5259,7 +5259,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P2Beta1LabelSegment {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -5442,7 +5442,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P2Beta1ObjectTrackingAnnotation {
-        #[doc = "Object category's labeling confidence of this track."]
+        #[doc = "Object category’s labeling confidence of this track."]
         #[serde(
             rename = "confidence",
             default,
@@ -6119,7 +6119,7 @@ pub mod schemas {
         pub segment_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P2Beta1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "segmentPresenceLabelAnnotations",
             default,
@@ -6146,7 +6146,7 @@ pub mod schemas {
         pub shot_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P2Beta1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "shotPresenceLabelAnnotations",
             default,
@@ -6432,7 +6432,7 @@ pub mod schemas {
         pub celebrities: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P3Beta1RecognizedCelebrity>,
         >,
-        #[doc = "A track of a person's face."]
+        #[doc = "A track of a person’s face."]
         #[serde(
             rename = "faceTrack",
             default,
@@ -6457,7 +6457,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P3Beta1DetectedAttribute {
-        #[doc = "Detected attribute confidence. Range [0, 1]."]
+        #[doc = "Detected attribute confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6471,7 +6471,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Text value of the detection result. For example, the value for \"HairColor\" can be \"black\", \"blonde\", etc."]
+        #[doc = "Text value of the detection result. For example, the value for “HairColor” can be “black”, “blonde”, etc."]
         #[serde(
             rename = "value",
             default,
@@ -6497,7 +6497,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P3Beta1DetectedLandmark {
-        #[doc = "The confidence score of the detected landmark. Range [0, 1]."]
+        #[doc = "The confidence score of the detected landmark. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6779,7 +6779,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P3Beta1FaceDetectionAnnotation {
-        #[doc = "The thumbnail of a person's face."]
+        #[doc = "The thumbnail of a person’s face."]
         #[serde(
             rename = "thumbnail",
             default,
@@ -6942,7 +6942,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P3Beta1LabelFrame {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6971,7 +6971,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P3Beta1LabelSegment {
-        #[doc = "Confidence that the label is accurate. Range: [0, 1]."]
+        #[doc = "Confidence that the label is accurate. Range: \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -7154,7 +7154,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVideointelligenceV1P3Beta1ObjectTrackingAnnotation {
-        #[doc = "Object category's labeling confidence of this track."]
+        #[doc = "Object category’s labeling confidence of this track."]
         #[serde(
             rename = "confidence",
             default,
@@ -7298,7 +7298,7 @@ pub mod schemas {
         )]
         pub celebrity:
             ::std::option::Option<crate::schemas::GoogleCloudVideointelligenceV1P3Beta1Celebrity>,
-        #[doc = "Recognition confidence. Range [0, 1]."]
+        #[doc = "Recognition confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -7408,7 +7408,7 @@ pub mod schemas {
         pub annotation_results: ::std::option::Option<
             crate::schemas::GoogleCloudVideointelligenceV1P3Beta1StreamingVideoAnnotationResults,
         >,
-        #[doc = "Google Cloud Storage URI that stores annotation results of one streaming session in JSON format. It is the annotation_result_storage_directory from the request followed by '/cloud_project_number-session_id'."]
+        #[doc = "Google Cloud Storage URI that stores annotation results of one streaming session in JSON format. It is the annotation_result_storage_directory from the request followed by ‘/cloud_project_number-session_id’."]
         #[serde(
             rename = "annotationResultsUri",
             default,
@@ -7978,7 +7978,7 @@ pub mod schemas {
         pub segment_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P3Beta1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "segmentPresenceLabelAnnotations",
             default,
@@ -8005,7 +8005,7 @@ pub mod schemas {
         pub shot_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1P3Beta1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "shotPresenceLabelAnnotations",
             default,
@@ -8692,7 +8692,7 @@ pub mod schemas {
         pub segment_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on video level or user-specified segment level. There is exactly one element for each unique label. Compared to the existing topical `segment_label_annotations`, this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "segmentPresenceLabelAnnotations",
             default,
@@ -8718,7 +8718,7 @@ pub mod schemas {
         pub shot_label_annotations: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVideointelligenceV1LabelAnnotation>,
         >,
-        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to \"builtin/latest\" in the request."]
+        #[doc = "Presence label annotations on shot level. There is exactly one element for each unique label. Compared to the existing topical `shot_label_annotations`, this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets `LabelDetectionConfig.model` to “builtin/latest” in the request."]
         #[serde(
             rename = "shotPresenceLabelAnnotations",
             default,
@@ -9195,12 +9195,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

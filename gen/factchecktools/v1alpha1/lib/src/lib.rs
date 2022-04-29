@@ -33,14 +33,14 @@ pub mod schemas {
         pub claim_review: ::std::option::Option<
             Vec<crate::schemas::GoogleFactcheckingFactchecktoolsV1Alpha1ClaimReview>,
         >,
-        #[doc = "A person or organization stating the claim. For instance, \"John Doe\"."]
+        #[doc = "A person or organization stating the claim. For instance, “John Doe”."]
         #[serde(
             rename = "claimant",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub claimant: ::std::option::Option<String>,
-        #[doc = "The claim text. For instance, \"Crime has doubled in the last 2 years.\""]
+        #[doc = "The claim text. For instance, “Crime has doubled in the last 2 years.”"]
         #[serde(
             rename = "text",
             default,
@@ -85,7 +85,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_title: ::std::option::Option<String>,
-        #[doc = "A person or organization stating the claim. For instance, \"John Doe\". Corresponds to `ClaimReview.itemReviewed.author.name`."]
+        #[doc = "A person or organization stating the claim. For instance, “John Doe”. Corresponds to `ClaimReview.itemReviewed.author.name`."]
         #[serde(
             rename = "name",
             default,
@@ -193,7 +193,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleFactcheckingFactchecktoolsV1Alpha1ClaimReview {
-        #[doc = "The language this review was written in. For instance, \"en\" or \"de\"."]
+        #[doc = "The language this review was written in. For instance, “en” or “de”."]
         #[serde(
             rename = "languageCode",
             default,
@@ -216,7 +216,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub review_date: ::std::option::Option<String>,
-        #[doc = "Textual rating. For instance, \"Mostly false\"."]
+        #[doc = "Textual rating. For instance, “Mostly false”."]
         #[serde(
             rename = "textualRating",
             default,
@@ -358,7 +358,7 @@ pub mod schemas {
         pub rating: ::std::option::Option<
             crate::schemas::GoogleFactcheckingFactchecktoolsV1Alpha1ClaimRating,
         >,
-        #[doc = "This field is optional, and will default to the page URL. We provide this field to allow you the override the default value, but the only permitted override is the page URL plus an optional anchor link (\"page jump\"). Corresponds to `ClaimReview.url`"]
+        #[doc = "This field is optional, and will default to the page URL. We provide this field to allow you the override the default value, but the only permitted override is the page URL plus an optional anchor link (“page jump”). Corresponds to `ClaimReview.url`"]
         #[serde(
             rename = "url",
             default,
@@ -569,14 +569,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleFactcheckingFactchecktoolsV1Alpha1Publisher {
-        #[doc = "The name of this publisher. For instance, \"Awesome Fact Checks\"."]
+        #[doc = "The name of this publisher. For instance, “Awesome Fact Checks”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Host-level site name, without the protocol or \"www\" prefix. For instance, \"awesomefactchecks.com\". This value of this field is based purely on the claim review URL."]
+        #[doc = "Host-level site name, without the protocol or “www” prefix. For instance, “awesomefactchecks.com”. This value of this field is based purely on the claim review URL."]
         #[serde(
             rename = "site",
             default,
@@ -868,7 +868,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SearchRequestBuilder<'a> {
-            #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". Can be used to restrict results by language, though we do not currently consider the region."]
+            #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. Can be used to restrict results by language, though we do not currently consider the region."]
             pub fn language_code(mut self, value: impl Into<String>) -> Self {
                 self.language_code = Some(value.into());
                 self
@@ -933,12 +933,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1361,12 +1361,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1521,12 +1521,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1681,12 +1681,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1826,7 +1826,7 @@ pub mod resources {
                 self.offset = Some(value);
                 self
             }
-            #[doc = "The organization for which we want to fetch markups for. For instance, \"site.com\". Cannot be specified along with an URL."]
+            #[doc = "The organization for which we want to fetch markups for. For instance, “site.com”. Cannot be specified along with an URL."]
             pub fn organization(mut self, value: impl Into<String>) -> Self {
                 self.organization = Some(value.into());
                 self
@@ -1876,12 +1876,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2182,12 +2182,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

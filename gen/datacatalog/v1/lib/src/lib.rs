@@ -678,7 +678,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Optional. A column's mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`."]
+        #[doc = "Optional. A column’s mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`."]
         #[serde(
             rename = "mode",
             default,
@@ -763,7 +763,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub designation: ::std::option::Option<String>,
-        #[doc = "Email of the person in the format of `john.doe@xyz`, ``, or `John Doe`."]
+        #[doc = "Email of the person in the format of `john.doe@xyz`, \\``, or `John Doe`."]
         #[serde(
             rename = "email",
             default,
@@ -1390,7 +1390,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1Entry {
-        #[doc = "Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding)."]
+        #[doc = "Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see \\[Introduction to partitioned tables\\] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding)."]
         #[serde(
             rename = "bigqueryDateShardedSpec",
             default,
@@ -1444,7 +1444,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Display name of an entry. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum size is 200 bytes when encoded in UTF-8. Default value is an empty string."]
+        #[doc = "Display name of an entry. The name must contain only Unicode letters, numbers (0-9), underscores (\\_), dashes (-), spaces ( ), and can’t start or end with spaces. The maximum size is 200 bytes when encoded in UTF-8. Default value is an empty string."]
         #[serde(
             rename = "displayName",
             default,
@@ -1474,7 +1474,7 @@ pub mod schemas {
         )]
         pub gcs_fileset_spec:
             ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1GcsFilesetSpec>,
-        #[doc = "Output only. Indicates the entry's source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore."]
+        #[doc = "Output only. Indicates the entry’s source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore."]
         #[serde(
             rename = "integratedSystem",
             default,
@@ -1489,7 +1489,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [Full Resource Name] (https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` Output only when the entry is one of the types in the `EntryType` enum. For entries with a `user_specified_type`, this field is optional and defaults to an empty string. The resource string must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), periods (.), colons (:), slashes (/), dashes (-), and hashes (#). The maximum size is 200 bytes when encoded in UTF-8."]
+        #[doc = "The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the \\[Full Resource Name\\] (https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` Output only when the entry is one of the types in the `EntryType` enum. For entries with a `user_specified_type`, this field is optional and defaults to an empty string. The resource string must contain only letters (a-z, A-Z), numbers (0-9), underscores (\\_), periods (.), colons (:), slashes (/), dashes (-), and hashes (#). The maximum size is 200 bytes when encoded in UTF-8."]
         #[serde(
             rename = "linkedResource",
             default,
@@ -1549,14 +1549,14 @@ pub mod schemas {
         )]
         pub usage_signal:
             ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1UsageSignal>,
-        #[doc = "Indicates the entry's source system that Data Catalog doesn't automatically integrate with. The `user_specified_system` string has the following limitations: * Is case insensitive. * Must begin with a letter or underscore. * Can only contain letters, numbers, and underscores. * Must be at least 1 character and at most 64 characters long."]
+        #[doc = "Indicates the entry’s source system that Data Catalog doesn’t automatically integrate with. The `user_specified_system` string has the following limitations: * Is case insensitive. * Must begin with a letter or underscore. * Can only contain letters, numbers, and underscores. * Must be at least 1 character and at most 64 characters long."]
         #[serde(
             rename = "userSpecifiedSystem",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_specified_system: ::std::option::Option<String>,
-        #[doc = "Custom entry type that doesn't match any of the values allowed for input and listed in the `EntryType` enum. When creating an entry, first check the type values in the enum. If there are no appropriate types for the new entry, provide a custom value, for example, `my_special_type`. The `user_specified_type` string has the following limitations: * Is case insensitive. * Must begin with a letter or underscore. * Can only contain letters, numbers, and underscores. * Must be at least 1 character and at most 64 characters long."]
+        #[doc = "Custom entry type that doesn’t match any of the values allowed for input and listed in the `EntryType` enum. When creating an entry, first check the type values in the enum. If there are no appropriate types for the new entry, provide a custom value, for example, `my_special_type`. The `user_specified_type` string has the following limitations: * Is case insensitive. * Must begin with a letter or underscore. * Can only contain letters, numbers, and underscores. * Must be at least 1 character and at most 64 characters long."]
         #[serde(
             rename = "userSpecifiedType",
             default,
@@ -1690,7 +1690,7 @@ pub mod schemas {
         Fileset,
         #[doc = "A Dataplex lake."]
         Lake,
-        #[doc = "Output only. The type of models. For more information, see [Supported models in BigQuery ML] (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in)."]
+        #[doc = "Output only. The type of models. For more information, see \\[Supported models in BigQuery ML\\] (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in)."]
         Model,
         #[doc = "Output only. Routine, for example, a BigQuery routine."]
         Routine,
@@ -1823,7 +1823,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "A short name to identify the entry group, for example, \"analytics data - jan 2011\". Default value is an empty string."]
+        #[doc = "A short name to identify the entry group, for example, “analytics data - jan 2011”. Default value is an empty string."]
         #[serde(
             rename = "displayName",
             default,
@@ -2096,7 +2096,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1FieldTypeEnumTypeEnumValue {
-        #[doc = "Required. The display name of the enum value. Must not be an empty string. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum length is 200 characters."]
+        #[doc = "Required. The display name of the enum value. Must not be an empty string. The name must contain only Unicode letters, numbers (0-9), underscores (\\_), dashes (-), spaces ( ), and can’t start or end with spaces. The maximum length is 200 characters."]
         #[serde(
             rename = "displayName",
             default,
@@ -2206,7 +2206,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1GcsFilesetSpec {
-        #[doc = "Required. Patterns to identify a set of files in Google Cloud Storage. For more information, see [Wildcard Names] (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames). Note: Currently, bucket wildcards are not supported. Examples of valid `file_patterns`: * `gs://bucket_name/dir/*`: matches all files in `bucket_name/dir` directory * `gs://bucket_name/dir/**`: matches all files in `bucket_name/dir` and all subdirectories * `gs://bucket_name/file*`: matches files prefixed by `file` in `bucket_name` * `gs://bucket_name/??.txt`: matches files with two characters followed by `.txt` in `bucket_name` * `gs://bucket_name/[aeiou].txt`: matches files that contain a single vowel character followed by `.txt` in `bucket_name` * `gs://bucket_name/[a-m].txt`: matches files that contain `a`, `b`, ... or `m` followed by `.txt` in `bucket_name` * `gs://bucket_name/a/*/b`: matches all files in `bucket_name` that match the `a/*/b` pattern, such as `a/c/b`, `a/d/b` * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt` You can combine wildcards to match complex sets of files, for example: `gs://bucket_name/[a-m]??.j*g`"]
+        #[doc = "Required. Patterns to identify a set of files in Google Cloud Storage. For more information, see \\[Wildcard Names\\] (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames). Note: Currently, bucket wildcards are not supported. Examples of valid `file_patterns`: * `gs://bucket_name/dir/*`: matches all files in `bucket_name/dir` directory * `gs://bucket_name/dir/**`: matches all files in `bucket_name/dir` and all subdirectories * `gs://bucket_name/file*`: matches files prefixed by `file` in `bucket_name` * `gs://bucket_name/??.txt`: matches files with two characters followed by `.txt` in `bucket_name` * `gs://bucket_name/[aeiou].txt`: matches files that contain a single vowel character followed by `.txt` in `bucket_name` * `gs://bucket_name/[a-m].txt`: matches files that contain `a`, `b`, … or `m` followed by `.txt` in `bucket_name` * `gs://bucket_name/a/*/b`: matches all files in `bucket_name` that match the `a/*/b` pattern, such as `a/c/b`, `a/d/b` * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt` You can combine wildcards to match complex sets of files, for example: `gs://bucket_name/[a-m]??.j*g`"]
         #[serde(
             rename = "filePatterns",
             default,
@@ -2908,7 +2908,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Required. User-defined name of this policy tag. The name can't start or end with spaces and must be unique within the parent taxonomy, contain only Unicode letters, numbers, underscores, dashes and spaces, and be at most 200 bytes long when encoded in UTF-8."]
+        #[doc = "Required. User-defined name of this policy tag. The name can’t start or end with spaces and must be unique within the parent taxonomy, contain only Unicode letters, numbers, underscores, dashes and spaces, and be at most 200 bytes long when encoded in UTF-8."]
         #[serde(
             rename = "displayName",
             default,
@@ -2922,7 +2922,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Resource name of this policy tag's parent policy tag. If empty, this is a top level tag. If not set, defaults to an empty string. For example, for the \"LatLong\" policy tag in the example above, this field contains the resource name of the \"Geolocation\" policy tag, and, for \"Geolocation\", this field is empty."]
+        #[doc = "Resource name of this policy tag’s parent policy tag. If empty, this is a top level tag. If not set, defaults to an empty string. For example, for the “LatLong” policy tag in the example above, this field contains the resource name of the “Geolocation” policy tag, and, for “Geolocation”, this field is empty."]
         #[serde(
             rename = "parentPolicyTag",
             default,
@@ -3382,7 +3382,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_by: ::std::option::Option<String>,
-        #[doc = "Number of results to return in a single search page. Can't be negative or 0, defaults to 10 in this case. The maximum number is 1000. If exceeded, throws an \"invalid argument\" exception."]
+        #[doc = "Number of results to return in a single search page. Can’t be negative or 0, defaults to 10 in this case. The maximum number is 1000. If exceeded, throws an “invalid argument” exception."]
         #[serde(
             rename = "pageSize",
             default,
@@ -3443,7 +3443,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_gcp_public_datasets: ::std::option::Option<bool>,
-        #[doc = "The list of organization IDs to search within. To find your organization ID, follow the steps from [Creating and managing organizations] (/resource-manager/docs/creating-managing-organization)."]
+        #[doc = "The list of organization IDs to search within. To find your organization ID, follow the steps from \\[Creating and managing organizations\\] (/resource-manager/docs/creating-managing-organization)."]
         #[serde(
             rename = "includeOrgIds",
             default,
@@ -3464,7 +3464,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub include_public_tag_templates: ::std::option::Option<bool>,
-        #[doc = "Optional. The list of locations to search within. If empty, all locations are searched. Returns an error if any location in the list isn't one of the [Supported regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions). If a location is unreachable, its name is returned in the `SearchCatalogResponse.unreachable` field. To get additional information on the error, repeat the search request and set the location name as the value of this parameter."]
+        #[doc = "Optional. The list of locations to search within. If empty, all locations are searched. Returns an error if any location in the list isn’t one of the [Supported regions](https://cloud.google.com/data-catalog/docs/concepts/regions#supported_regions). If a location is unreachable, its name is returned in the `SearchCatalogResponse.unreachable` field. To get additional information on the error, repeat the search request and set the location name as the value of this parameter."]
         #[serde(
             rename = "restrictedLocations",
             default,
@@ -3517,7 +3517,7 @@ pub mod schemas {
         )]
         pub results:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudDatacatalogV1SearchCatalogResult>>,
-        #[doc = "Unreachable locations. Search results don't include data from those locations. To get additional information on an error, repeat the search request and restrict it to specific locations by setting the `SearchCatalogRequest.scope.restricted_locations` parameter."]
+        #[doc = "Unreachable locations. Search results don’t include data from those locations. To get additional information on an error, repeat the search request and restrict it to specific locations by setting the `SearchCatalogRequest.scope.restricted_locations` parameter."]
         #[serde(
             rename = "unreachable",
             default,
@@ -3583,7 +3583,7 @@ pub mod schemas {
         pub integrated_system: ::std::option::Option<
             crate::schemas::GoogleCloudDatacatalogV1SearchCatalogResultIntegratedSystem,
         >,
-        #[doc = "The full name of the Google Cloud resource the entry belongs to. For more information, see [Full Resource Name] (/apis/design/resource_names#full_resource_name). Example: `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`"]
+        #[doc = "The full name of the Google Cloud resource the entry belongs to. For more information, see \\[Full Resource Name\\] (/apis/design/resource_names#full_resource_name). Example: `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`"]
         #[serde(
             rename = "linkedResource",
             default,
@@ -4015,7 +4015,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1StorageProperties {
-        #[doc = "Patterns to identify a set of files for this fileset. Examples of a valid `file_pattern`: * `gs://bucket_name/dir/*`: matches all files in the `bucket_name/dir` directory * `gs://bucket_name/dir/**`: matches all files in the `bucket_name/dir` and all subdirectories recursively * `gs://bucket_name/file*`: matches files prefixed by `file` in `bucket_name` * `gs://bucket_name/??.txt`: matches files with two characters followed by `.txt` in `bucket_name` * `gs://bucket_name/[aeiou].txt`: matches files that contain a single vowel character followed by `.txt` in `bucket_name` * `gs://bucket_name/[a-m].txt`: matches files that contain `a`, `b`, ... or `m` followed by `.txt` in `bucket_name` * `gs://bucket_name/a/*/b`: matches all files in `bucket_name` that match the `a/*/b` pattern, such as `a/c/b`, `a/d/b` * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`"]
+        #[doc = "Patterns to identify a set of files for this fileset. Examples of a valid `file_pattern`: * `gs://bucket_name/dir/*`: matches all files in the `bucket_name/dir` directory * `gs://bucket_name/dir/**`: matches all files in the `bucket_name/dir` and all subdirectories recursively * `gs://bucket_name/file*`: matches files prefixed by `file` in `bucket_name` * `gs://bucket_name/??.txt`: matches files with two characters followed by `.txt` in `bucket_name` * `gs://bucket_name/[aeiou].txt`: matches files that contain a single vowel character followed by `.txt` in `bucket_name` * `gs://bucket_name/[a-m].txt`: matches files that contain `a`, `b`, … or `m` followed by `.txt` in `bucket_name` * `gs://bucket_name/a/*/b`: matches all files in `bucket_name` that match the `a/*/b` pattern, such as `a/c/b`, `a/d/b` * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`"]
         #[serde(
             rename = "filePattern",
             default,
@@ -4201,7 +4201,7 @@ pub mod schemas {
         )]
         pub enum_value:
             ::std::option::Option<crate::schemas::GoogleCloudDatacatalogV1TagFieldEnumValue>,
-        #[doc = "Output only. The order of this field with respect to other fields in this tag. Can be set by Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag don't have to be sequential."]
+        #[doc = "Output only. The order of this field with respect to other fields in this tag. Can be set by Tag. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag don’t have to be sequential."]
         #[serde(
             rename = "order",
             default,
@@ -4284,14 +4284,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatacatalogV1TagTemplate {
-        #[doc = "Display name for this template. Defaults to an empty string. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum length is 200 characters."]
+        #[doc = "Display name for this template. Defaults to an empty string. The name must contain only Unicode letters, numbers (0-9), underscores (\\_), dashes (-), spaces ( ), and can’t start or end with spaces. The maximum length is 200 characters."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Required. Map of tag template field IDs to the settings for the field. This map is an exhaustive list of the allowed fields. The map must contain at least one field and at most 500 fields. The keys to this map are tag template field IDs. The IDs have the following limitations: * Can contain uppercase and lowercase letters, numbers (0-9) and underscores (_). * Must be at least 1 character and at most 64 characters long. * Must start with a letter or underscore."]
+        #[doc = "Required. Map of tag template field IDs to the settings for the field. This map is an exhaustive list of the allowed fields. The map must contain at least one field and at most 500 fields. The keys to this map are tag template field IDs. The IDs have the following limitations: * Can contain uppercase and lowercase letters, numbers (0-9) and underscores (\\_). * Must be at least 1 character and at most 64 characters long. * Must start with a letter or underscore."]
         #[serde(
             rename = "fields",
             default,
@@ -4348,7 +4348,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The display name for this field. Defaults to an empty string. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum length is 200 characters."]
+        #[doc = "The display name for this field. Defaults to an empty string. The name must contain only Unicode letters, numbers (0-9), underscores (\\_), dashes (-), spaces ( ), and can’t start or end with spaces. The maximum length is 200 characters."]
         #[serde(
             rename = "displayName",
             default,
@@ -4362,14 +4362,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_required: ::std::option::Option<bool>,
-        #[doc = "Output only. The resource name of the tag template field in URL format. Example: `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}` Note: The tag template field itself might not be stored in the location specified in its name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 64 characters."]
+        #[doc = "Output only. The resource name of the tag template field in URL format. Example: `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}` Note: The tag template field itself might not be stored in the location specified in its name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_), and must start with a letter or underscore. The maximum length is 64 characters."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The order of this field with respect to other fields in this tag template. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order and field orders within a tag don't have to be sequential."]
+        #[doc = "The order of this field with respect to other fields in this tag template. For example, a higher value can indicate a more important field. The value can be negative. Multiple fields can have the same order and field orders within a tag don’t have to be sequential."]
         #[serde(
             rename = "order",
             default,
@@ -4423,7 +4423,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Required. User-defined name of this taxonomy. The name can't start or end with spaces, must contain only Unicode letters, numbers, underscores, dashes, and spaces, and be at most 200 bytes long when encoded in UTF-8. The taxonomy display name must be unique within an organization."]
+        #[doc = "Required. User-defined name of this taxonomy. The name can’t start or end with spaces, must contain only Unicode letters, numbers, underscores, dashes, and spaces, and be at most 200 bytes long when encoded in UTF-8. The taxonomy display name must be unique within an organization."]
         #[serde(
             rename = "displayName",
             default,
@@ -5025,7 +5025,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Searches Data Catalog for multiple resources like entries and tags that match a query. This is a [Custom Method] (https://cloud.google.com/apis/design/custom_methods) that doesn't return all information on a resource, only its ID and high level fields. To get more information, you can subsequently call specific get methods. Note: Data Catalog search queries don't guarantee full recall. Results that match your query might not be returned, even in subsequent result pages. Additionally, returned (and not returned) results can vary if you repeat search queries. For more information, see [Data Catalog search syntax] (https://cloud.google.com/data-catalog/docs/how-to/search-reference)."]
+            #[doc = "Searches Data Catalog for multiple resources like entries and tags that match a query. This is a \\[Custom Method\\] (https://cloud.google.com/apis/design/custom_methods) that doesn’t return all information on a resource, only its ID and high level fields. To get more information, you can subsequently call specific get methods. Note: Data Catalog search queries don’t guarantee full recall. Results that match your query might not be returned, even in subsequent result pages. Additionally, returned (and not returned) results can vary if you repeat search queries. For more information, see \\[Data Catalog search syntax\\] (https://cloud.google.com/data-catalog/docs/how-to/search-reference)."]
             pub fn search(
                 &self,
                 request: crate::schemas::GoogleCloudDatacatalogV1SearchCatalogRequest,
@@ -5097,12 +5097,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5263,12 +5263,12 @@ pub mod resources {
                 self.fully_qualified_name = Some(value.into());
                 self
             }
-            #[doc = "The full name of the Google Cloud Platform resource the Data Catalog entry represents. For more information, see [Full Resource Name] (https://cloud.google.com/apis/design/resource_names#full_resource_name). Full names are case-sensitive. For example: * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`"]
+            #[doc = "The full name of the Google Cloud Platform resource the Data Catalog entry represents. For more information, see \\[Full Resource Name\\] (https://cloud.google.com/apis/design/resource_names#full_resource_name). Full names are case-sensitive. For example: * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`"]
             pub fn linked_resource(mut self, value: impl Into<String>) -> Self {
                 self.linked_resource = Some(value.into());
                 self
             }
-            #[doc = "The SQL name of the entry. SQL names are case-sensitive. Examples: * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}` * `pubsub.topic.{PROJECT_ID}.```{TOPIC.ID.SEPARATED.WITH.DOTS}`` * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}` * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}` * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}` Identifiers (`*_ID`) should comply with the [Lexical structure in Standard SQL] (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical)."]
+            #[doc = "The SQL name of the entry. SQL names are case-sensitive. Examples: * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}` * `pubsub.topic.{PROJECT_ID}.`\\``{TOPIC.ID.SEPARATED.WITH.DOTS}`\\` * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}` * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}` * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}` Identifiers (`*_ID`) should comply with the \\[Lexical structure in Standard SQL\\] (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical)."]
             pub fn sql_resource(mut self, value: impl Into<String>) -> Self {
                 self.sql_resource = Some(value.into());
                 self
@@ -5303,12 +5303,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5480,7 +5480,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates an entry group. An entry group contains logically related entries together with [Cloud Identity and Access Management](/data-catalog/docs/concepts/iam) policies. These policies specify users who can create, edit, and view entries within entry groups. Data Catalog automatically creates entry groups with names that start with the `@` symbol for the following resources: * BigQuery entries (`@bigquery`) * Pub/Sub topics (`@pubsub`) * Dataproc Metastore services (`@dataproc_metastore_{SERVICE_NAME_HASH}`) You can create your own entry groups for Cloud Storage fileset entries and custom entries together with the corresponding IAM policies. User-created entry groups can't contain the `@` symbol, it is reserved for automatically created groups. Entry groups, like entries, can be searched. A maximum of 10,000 entry groups may be created per organization across all locations. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
+                    #[doc = "Creates an entry group. An entry group contains logically related entries together with [Cloud Identity and Access Management](/data-catalog/docs/concepts/iam) policies. These policies specify users who can create, edit, and view entries within entry groups. Data Catalog automatically creates entry groups with names that start with the `@` symbol for the following resources: * BigQuery entries (`@bigquery`) * Pub/Sub topics (`@pubsub`) * Dataproc Metastore services (`@dataproc_metastore_{SERVICE_NAME_HASH}`) You can create your own entry groups for Cloud Storage fileset entries and custom entries together with the corresponding IAM policies. User-created entry groups can’t contain the `@` symbol, it is reserved for automatically created groups. Entry groups, like entries, can be searched. A maximum of 10,000 entry groups may be created per organization across all locations. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GoogleCloudDatacatalogV1EntryGroup,
@@ -5545,7 +5545,7 @@ pub mod resources {
                             read_mask: None,
                         }
                     }
-                    #[doc = "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups."]
+                    #[doc = "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn’t exist or you don’t have the permission to view it. * An empty policy if the resource exists but doesn’t have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn’t get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups."]
                     pub fn get_iam_policy(
                         &self,
                         request: crate::schemas::GetIamPolicyRequest,
@@ -5615,7 +5615,7 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Sets an access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates - Entry groups Note: This method sets policies only within Data Catalog and can't be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups."]
+                    #[doc = "Sets an access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates - Entry groups Note: This method sets policies only within Data Catalog and can’t be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups."]
                     pub fn set_iam_policy(
                         &self,
                         request: crate::schemas::SetIamPolicyRequest,
@@ -5639,7 +5639,7 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method."]
+                    #[doc = "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn’t exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can’t be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method."]
                     pub fn test_iam_permissions(
                         &self,
                         request: crate::schemas::TestIamPermissionsRequest,
@@ -5702,7 +5702,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The ID of the entry group to create. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), and must start with a letter or underscore. The maximum size is 64 bytes when encoded in UTF-8."]
+                    #[doc = "Required. The ID of the entry group to create. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (\\_), and must start with a letter or underscore. The maximum size is 64 bytes when encoded in UTF-8."]
                     pub fn entry_group_id(mut self, value: impl Into<String>) -> Self {
                         self.entry_group_id = Some(value.into());
                         self
@@ -5737,12 +5737,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5908,12 +5908,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6075,12 +6075,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6239,12 +6239,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6413,12 +6413,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6762,12 +6762,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6927,12 +6927,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -7090,12 +7090,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -7215,7 +7215,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Creates an entry. You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM', or custom types. Data Catalog automatically creates entries with other types during metadata ingestion from integrated systems. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project). An entry group can have a maximum of 100,000 entries."]
+                        #[doc = "Creates an entry. You can create entries only with ‘FILESET’, ‘CLUSTER’, ‘DATA_STREAM’, or custom types. Data Catalog automatically creates entries with other types during metadata ingestion from integrated systems. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project). An entry group can have a maximum of 100,000 entries."]
                         pub fn create(
                             &self,
                             request: crate::schemas::GoogleCloudDatacatalogV1Entry,
@@ -7278,7 +7278,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups."]
+                        #[doc = "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn’t exist or you don’t have the permission to view it. * An empty policy if the resource exists but doesn’t have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn’t get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups."]
                         pub fn get_iam_policy(
                             &self,
                             request: crate::schemas::GetIamPolicyRequest,
@@ -7421,7 +7421,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method."]
+                        #[doc = "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn’t exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can’t be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method."]
                         pub fn test_iam_permissions(
                             &self,
                             request: crate::schemas::TestIamPermissionsRequest,
@@ -7494,7 +7494,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID of the entry to create. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores (_). The maximum size is 64 bytes when encoded in UTF-8."]
+                        #[doc = "Required. The ID of the entry to create. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores (\\_). The maximum size is 64 bytes when encoded in UTF-8."]
                         pub fn entry_id(mut self, value: impl Into<String>) -> Self {
                             self.entry_id = Some(value.into());
                             self
@@ -7529,12 +7529,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -7696,12 +7696,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -7858,12 +7858,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -8023,12 +8023,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -8205,12 +8205,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -8552,12 +8552,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -8719,12 +8719,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -8896,12 +8896,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -9063,12 +9063,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -9234,12 +9234,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -9401,12 +9401,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -9532,7 +9532,7 @@ pub mod resources {
                             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                                 self.auth
                             }
-                            #[doc = "Creates a tag and assigns it to: * An Entry if the method name is `projects.locations.entryGroups.entries.tags.create`. * Or EntryGroupif the method name is `projects.locations.entryGroups.tags.create`. Note: The project identified by the `parent` parameter for the [tag] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the [tag template] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be in the same organization."]
+                            #[doc = "Creates a tag and assigns it to: * An Entry if the method name is `projects.locations.entryGroups.entries.tags.create`. * Or EntryGroupif the method name is `projects.locations.entryGroups.tags.create`. Note: The project identified by the `parent` parameter for the \\[tag\\] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the \\[tag template\\] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be in the same organization."]
                             pub fn create(
                                 &self,
                                 request: crate::schemas::GoogleCloudDatacatalogV1Tag,
@@ -9672,12 +9672,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -9838,12 +9838,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -10014,12 +10014,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -10366,12 +10366,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -10495,7 +10495,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Creates a tag and assigns it to: * An Entry if the method name is `projects.locations.entryGroups.entries.tags.create`. * Or EntryGroupif the method name is `projects.locations.entryGroups.tags.create`. Note: The project identified by the `parent` parameter for the [tag] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the [tag template] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be in the same organization."]
+                        #[doc = "Creates a tag and assigns it to: * An Entry if the method name is `projects.locations.entryGroups.entries.tags.create`. * Or EntryGroupif the method name is `projects.locations.entryGroups.tags.create`. Note: The project identified by the `parent` parameter for the \\[tag\\] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters) and the \\[tag template\\] (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters) used to create the tag must be in the same organization."]
                         pub fn create(
                             &self,
                             request: crate::schemas::GoogleCloudDatacatalogV1Tag,
@@ -10635,12 +10635,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -10801,12 +10801,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -10975,12 +10975,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -11327,12 +11327,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -11456,7 +11456,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a tag template. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see [Data Catalog resource project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
+                    #[doc = "Creates a tag template. You must enable the Data Catalog API in the project identified by the `parent` parameter. For more information, see \\[Data Catalog resource project\\] (https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GoogleCloudDatacatalogV1TagTemplate,
@@ -11520,7 +11520,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view it. * An empty policy if the resource exists but doesn't have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn't get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups."]
+                    #[doc = "Gets the access control policy for a resource. May return: * A`NOT_FOUND` error if the resource doesn’t exist or you don’t have the permission to view it. * An empty policy if the resource exists but doesn’t have a set policy. Supported resources are: - Tag templates - Entry groups Note: This method doesn’t get policies from Google Cloud Platform resources ingested into Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag templates. - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups."]
                     pub fn get_iam_policy(
                         &self,
                         request: crate::schemas::GetIamPolicyRequest,
@@ -11544,7 +11544,7 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Updates a tag template. You can't update template fields with this method. These fields are separate resources with their own create, update, and delete methods. You must enable the Data Catalog API in the project identified by the `tag_template.name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
+                    #[doc = "Updates a tag template. You can’t update template fields with this method. These fields are separate resources with their own create, update, and delete methods. You must enable the Data Catalog API in the project identified by the `tag_template.name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
                     pub fn patch(
                         &self,
                         request: crate::schemas::GoogleCloudDatacatalogV1TagTemplate,
@@ -11569,7 +11569,7 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Sets an access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates - Entry groups Note: This method sets policies only within Data Catalog and can't be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups."]
+                    #[doc = "Sets an access control policy for a resource. Replaces any existing policy. Supported resources are: - Tag templates - Entry groups Note: This method sets policies only within Data Catalog and can’t be used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources synced with the Data Catalog. To call this method, you must have the following Google IAM permissions: - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag templates. - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups."]
                     pub fn set_iam_policy(
                         &self,
                         request: crate::schemas::SetIamPolicyRequest,
@@ -11593,7 +11593,7 @@ pub mod resources {
                             resource: resource.into(),
                         }
                     }
-                    #[doc = "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can't be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method."]
+                    #[doc = "Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn’t exist. Supported resources are: - Tag templates - Entry groups Note: This method gets policies only within Data Catalog and can’t be used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any external Google Cloud Platform resources ingested into Data Catalog. No Google IAM permissions are required to call this method."]
                     pub fn test_iam_permissions(
                         &self,
                         request: crate::schemas::TestIamPermissionsRequest,
@@ -11646,7 +11646,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CreateRequestBuilder<'a> {
-                    #[doc = "Required. The ID of the tag template to create. The ID must contain only lowercase letters (a-z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum size is 64 bytes when encoded in UTF-8."]
+                    #[doc = "Required. The ID of the tag template to create. The ID must contain only lowercase letters (a-z), numbers (0-9), or underscores (\\_), and must start with a letter or underscore. The maximum size is 64 bytes when encoded in UTF-8."]
                     pub fn tag_template_id(mut self, value: impl Into<String>) -> Self {
                         self.tag_template_id = Some(value.into());
                         self
@@ -11681,12 +11681,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -11852,12 +11852,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12013,12 +12013,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12176,12 +12176,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12345,12 +12345,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12510,12 +12510,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12673,12 +12673,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12843,7 +12843,7 @@ pub mod resources {
                                 force: None,
                             }
                         }
-                        #[doc = "Updates a field in a tag template. You can't update the field type with this method. You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
+                        #[doc = "Updates a field in a tag template. You can’t update the field type with this method. You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
                         pub fn patch(
                             &self,
                             request: crate::schemas::GoogleCloudDatacatalogV1TagTemplateField,
@@ -12868,7 +12868,7 @@ pub mod resources {
                                 update_mask: None,
                             }
                         }
-                        #[doc = "Renames a field in a tag template. You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see [Data Catalog resource project] (https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
+                        #[doc = "Renames a field in a tag template. You must enable the Data Catalog API in the project identified by the `name` parameter. For more information, see \\[Data Catalog resource project\\] (https://cloud.google.com/data-catalog/docs/concepts/resource-project)."]
                         pub fn rename(
                             &self,
                             request : crate :: schemas :: GoogleCloudDatacatalogV1RenameTagTemplateFieldRequest,
@@ -12917,7 +12917,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID of the tag template field to create. Note: Adding a required field to an existing template is *not* allowed. Field IDs can contain letters (both uppercase and lowercase), numbers (0-9), underscores (_) and dashes (-). Field IDs must be at least 1 character long and at most 128 characters long. Field IDs must also be unique within their template."]
+                        #[doc = "Required. The ID of the tag template field to create. Note: Adding a required field to an existing template is *not* allowed. Field IDs can contain letters (both uppercase and lowercase), numbers (0-9), underscores (\\_) and dashes (-). Field IDs must be at least 1 character long and at most 128 characters long. Field IDs must also be unique within their template."]
                         pub fn tag_template_field_id(mut self, value: impl Into<String>) -> Self {
                             self.tag_template_field_id = Some(value.into());
                             self
@@ -12952,12 +12952,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13129,12 +13129,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13299,12 +13299,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13471,12 +13471,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13661,12 +13661,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -13795,7 +13795,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a taxonomy in a specified project. The taxonomy is initially empty, that is, it doesn't contain policy tags."]
+                    #[doc = "Creates a taxonomy in a specified project. The taxonomy is initially empty, that is, it doesn’t contain policy tags."]
                     pub fn create(
                         &self,
                         request: crate::schemas::GoogleCloudDatacatalogV1Taxonomy,
@@ -13972,7 +13972,7 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Replaces (updates) a taxonomy and all its policy tags. The taxonomy and its entire hierarchy of policy tags must be represented literally by `SerializedTaxonomy` and the nested `SerializedPolicyTag` messages. This operation automatically does the following: - Deletes the existing policy tags that are missing from the `SerializedPolicyTag`. - Creates policy tags that don't have resource names. They are considered new. - Updates policy tags with valid resources names accordingly."]
+                    #[doc = "Replaces (updates) a taxonomy and all its policy tags. The taxonomy and its entire hierarchy of policy tags must be represented literally by `SerializedTaxonomy` and the nested `SerializedPolicyTag` messages. This operation automatically does the following: - Deletes the existing policy tags that are missing from the `SerializedPolicyTag`. - Creates policy tags that don’t have resource names. They are considered new. - Updates policy tags with valid resources names accordingly."]
                     pub fn replace(
                         &self,
                         request: crate::schemas::GoogleCloudDatacatalogV1ReplaceTaxonomyRequest,
@@ -14098,12 +14098,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14262,12 +14262,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14434,12 +14434,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14605,12 +14605,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14768,12 +14768,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14931,12 +14931,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15111,12 +15111,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15425,7 +15425,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Specifies fields to update. If not set, defaults to all fields you can update. For more information, see [FieldMask] (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
+                    #[doc = "Specifies fields to update. If not set, defaults to all fields you can update. For more information, see \\[FieldMask\\] (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -15460,12 +15460,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15625,12 +15625,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15790,12 +15790,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15953,12 +15953,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16309,12 +16309,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16475,12 +16475,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16637,12 +16637,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16802,12 +16802,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16978,12 +16978,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17296,7 +17296,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> PatchRequestBuilder<'a> {
-                        #[doc = "Specifies the fields to update. You can update only display name, description, and parent policy tag. If not set, defaults to all updatable fields. For more information, see [FieldMask] (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
+                        #[doc = "Specifies the fields to update. You can update only display name, description, and parent policy tag. If not set, defaults to all updatable fields. For more information, see \\[FieldMask\\] (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)."]
                         pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                             self.update_mask = Some(value.into());
                             self
@@ -17331,12 +17331,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17498,12 +17498,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17663,12 +17663,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self

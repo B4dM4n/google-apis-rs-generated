@@ -49,11 +49,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NotificationSettingNotificationTypesItems {
-        #[doc = "Indicates whether there is a change in location metadata's duplicate location field."]
+        #[doc = "Indicates whether there is a change in location metadata’s duplicate location field."]
         DuplicateLocation,
         #[doc = "The location has Google updates for review. The location_name field on the notification will provide the resource name of the location with Google updates."]
         GoogleUpdate,
-        #[doc = "Deprecated: Migrate the existing usages of this value to the more expanded \"VOICE_OF_MERCHANT_UPDATED\"."]
+        #[doc = "Deprecated: Migrate the existing usages of this value to the more expanded “VOICE_OF_MERCHANT_UPDATED”."]
         LossOfVoiceOfMerchant,
         #[doc = "A new answer is added to the location. The notification will provide the resource name of question and answer."]
         NewAnswer,
@@ -61,7 +61,7 @@ pub mod schemas {
         NewCustomerMedia,
         #[doc = "A new question is added to the location. The notification will provide the resource name of question."]
         NewQuestion,
-        #[doc = "A new review has been added to the location. The review_name field on the notification will provide the resource name of the review that was added, and location_name will have the location's resource name."]
+        #[doc = "A new review has been added to the location. The review_name field on the notification will provide the resource name of the review that was added, and location_name will have the location’s resource name."]
         NewReview,
         #[doc = "No notification type. Will not match any notifications."]
         NotificationTypeUnspecified,
@@ -69,7 +69,7 @@ pub mod schemas {
         UpdatedAnswer,
         #[doc = "A question of the location is updated. The notification will provide the resource name of question."]
         UpdatedQuestion,
-        #[doc = "A review on the location has been updated. The review_name field on the notification will provide the resource name of the review that was added, and location_name will have the location's resource name."]
+        #[doc = "A review on the location has been updated. The review_name field on the notification will provide the resource name of the review that was added, and location_name will have the location’s resource name."]
         UpdatedReview,
         #[doc = "Indicates whether the location has an update in Voice of Merchant (VOM) status. VOM dictates whether the location is in good standing and the merchant has control over the business on Google. Any edits made to the location will propagate to Maps after passing the review phase. Call GetVoiceOfMerchantState rpc for more details."]
         VoiceOfMerchantUpdated,
@@ -483,12 +483,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -650,12 +650,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

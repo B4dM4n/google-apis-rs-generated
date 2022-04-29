@@ -26,7 +26,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metric_name: ::std::option::Option<String>,
-        #[doc = "The reason for this metric's restriction."]
+        #[doc = "The reason for this metric’s restriction."]
         #[serde(
             rename = "restrictedMetricTypes",
             default,
@@ -140,7 +140,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchRunPivotReportsResponse {
-        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string \"analyticsData#batchRunPivotReports\". Useful to distinguish between response types in JSON."]
+        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string “analyticsData#batchRunPivotReports”. Useful to distinguish between response types in JSON."]
         #[serde(
             rename = "kind",
             default,
@@ -200,7 +200,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchRunReportsResponse {
-        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string \"analyticsData#batchRunReports\". Useful to distinguish between response types in JSON."]
+        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string “analyticsData#batchRunReports”. Useful to distinguish between response types in JSON."]
         #[serde(
             rename = "kind",
             default,
@@ -472,7 +472,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Cohort {
-        #[doc = "The cohort selects users whose first touch date is between start date and end date defined in the `dateRange`. This `dateRange` does not specify the full date range of event data that is present in a cohort report. In a cohort report, this `dateRange` is extended by the granularity and offset present in the `cohortsRange`; event data for the extended reporting date range is present in a cohort report. In a cohort request, this `dateRange` is required and the `dateRanges` in the `RunReportRequest` or `RunPivotReportRequest` must be unspecified. This `dateRange` should generally be aligned with the cohort's granularity. If `CohortsRange` uses daily granularity, this `dateRange` can be a single day. If `CohortsRange` uses weekly granularity, this `dateRange` can be aligned to a week boundary, starting at Sunday and ending Saturday. If `CohortsRange` uses monthly granularity, this `dateRange` can be aligned to a month, starting at the first and ending on the last day of the month."]
+        #[doc = "The cohort selects users whose first touch date is between start date and end date defined in the `dateRange`. This `dateRange` does not specify the full date range of event data that is present in a cohort report. In a cohort report, this `dateRange` is extended by the granularity and offset present in the `cohortsRange`; event data for the extended reporting date range is present in a cohort report. In a cohort request, this `dateRange` is required and the `dateRanges` in the `RunReportRequest` or `RunPivotReportRequest` must be unspecified. This `dateRange` should generally be aligned with the cohort’s granularity. If `CohortsRange` uses daily granularity, this `dateRange` can be a single day. If `CohortsRange` uses weekly granularity, this `dateRange` can be aligned to a week boundary, starting at Sunday and ending Saturday. If `CohortsRange` uses monthly granularity, this `dateRange` can be aligned to a month, starting at the first and ending on the last day of the month."]
         #[serde(
             rename = "dateRange",
             default,
@@ -627,13 +627,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CohortsRangeGranularity {
-        #[doc = "Daily granularity. Commonly used if the cohort's `dateRange` is a single day and the request contains `cohortNthDay`."]
+        #[doc = "Daily granularity. Commonly used if the cohort’s `dateRange` is a single day and the request contains `cohortNthDay`."]
         Daily,
         #[doc = "Should never be specified."]
         GranularityUnspecified,
-        #[doc = "Monthly granularity. Commonly used if the cohort's `dateRange` is a month in duration and the request contains `cohortNthMonth`."]
+        #[doc = "Monthly granularity. Commonly used if the cohort’s `dateRange` is a month in duration and the request contains `cohortNthMonth`."]
         Monthly,
-        #[doc = "Weekly granularity. Commonly used if the cohort's `dateRange` is a week in duration (starting on Sunday and ending on Saturday) and the request contains `cohortNthWeek`."]
+        #[doc = "Weekly granularity. Commonly used if the cohort’s `dateRange` is a week in duration (starting on Sunday and ending on Saturday) and the request contains `cohortNthWeek`."]
         Weekly,
     }
     impl CohortsRangeGranularity {
@@ -719,7 +719,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConcatenateExpression {
-        #[doc = "The delimiter placed between dimension names. Delimiters are often single characters such as \"|\" or \",\" but can be longer strings. If a dimension value contains the delimiter, both will be present in response with no distinction. For example if dimension 1 value = \"US,FR\", dimension 2 value = \"JP\", and delimiter = \",\", then the response will contain \"US,FR,JP\"."]
+        #[doc = "The delimiter placed between dimension names. Delimiters are often single characters such as “\\|” or “,” but can be longer strings. If a dimension value contains the delimiter, both will be present in response with no distinction. For example if dimension 1 value = “US,FR”, dimension 2 value = “JP”, and delimiter = “,”, then the response will contain “US,FR,JP”."]
         #[serde(
             rename = "delimiter",
             default,
@@ -757,7 +757,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DateRange {
-        #[doc = "The inclusive end date for the query in the format `YYYY-MM-DD`. Cannot be before `start_date`. The format `NdaysAgo`, `yesterday`, or `today` is also accepted, and in that case, the date is inferred based on the property's reporting time zone."]
+        #[doc = "The inclusive end date for the query in the format `YYYY-MM-DD`. Cannot be before `start_date`. The format `NdaysAgo`, `yesterday`, or `today` is also accepted, and in that case, the date is inferred based on the property’s reporting time zone."]
         #[serde(
             rename = "endDate",
             default,
@@ -771,7 +771,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The inclusive start date for the query in the format `YYYY-MM-DD`. Cannot be after `end_date`. The format `NdaysAgo`, `yesterday`, or `today` is also accepted, and in that case, the date is inferred based on the property's reporting time zone."]
+        #[doc = "The inclusive start date for the query in the format `YYYY-MM-DD`. Cannot be after `end_date`. The format `NdaysAgo`, `yesterday`, or `today` is also accepted, and in that case, the date is inferred based on the property’s reporting time zone."]
         #[serde(
             rename = "startDate",
             default,
@@ -802,7 +802,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Dimension {
-        #[doc = "One dimension can be the result of an expression of multiple dimensions. For example, dimension \"country, city\": concatenate(country, \", \", city)."]
+        #[doc = "One dimension can be the result of an expression of multiple dimensions. For example, dimension “country, city”: concatenate(country, “, “, city)."]
         #[serde(
             rename = "dimensionExpression",
             default,
@@ -961,7 +961,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DimensionExpression {
-        #[doc = "Used to combine dimension values to a single dimension. For example, dimension \"country, city\": concatenate(country, \", \", city)."]
+        #[doc = "Used to combine dimension values to a single dimension. For example, dimension “country, city”: concatenate(country, “, “, city)."]
         #[serde(
             rename = "concatenate",
             default,
@@ -1006,7 +1006,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DimensionHeader {
-        #[doc = "The dimension's name."]
+        #[doc = "The dimension’s name."]
         #[serde(
             rename = "name",
             default,
@@ -1037,7 +1037,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DimensionMetadata {
-        #[doc = "This dimension's name. Useable in [Dimension](#Dimension)'s `name`. For example, `eventName`."]
+        #[doc = "This dimension’s name. Useable in [Dimension](#Dimension)’s `name`. For example, `eventName`."]
         #[serde(
             rename = "apiName",
             default,
@@ -1072,7 +1072,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "This dimension's name within the Google Analytics user interface. For example, `Event name`."]
+        #[doc = "This dimension’s name within the Google Analytics user interface. For example, `Event name`."]
         #[serde(
             rename = "uiName",
             default,
@@ -1130,11 +1130,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DimensionOrderByOrderType {
-        #[doc = "Alphanumeric sort by Unicode code point. For example, \"2\" < \"A\" < \"X\" < \"b\" < \"z\"."]
+        #[doc = "Alphanumeric sort by Unicode code point. For example, “2” \\< “A” \\< “X” \\< “b” \\< “z”."]
         Alphanumeric,
-        #[doc = "Case insensitive alphanumeric sort by lower case Unicode code point. For example, \"2\" < \"A\" < \"b\" < \"X\" < \"z\"."]
+        #[doc = "Case insensitive alphanumeric sort by lower case Unicode code point. For example, “2” \\< “A” \\< “b” \\< “X” \\< “z”."]
         CaseInsensitiveAlphanumeric,
-        #[doc = "Dimension values are converted to numbers before sorting. For example in NUMERIC sort, \"25\" < \"100\", and in `ALPHANUMERIC` sort, \"100\" < \"25\". Non-numeric dimension values all have equal ordering value below all numeric values."]
+        #[doc = "Dimension values are converted to numbers before sorting. For example in NUMERIC sort, “25” \\< “100”, and in `ALPHANUMERIC` sort, “100” \\< “25”. Non-numeric dimension values all have equal ordering value below all numeric values."]
         Numeric,
         #[doc = "Unspecified."]
         OrderTypeUnspecified,
@@ -1307,7 +1307,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub and_group: ::std::option::Option<crate::schemas::FilterExpressionList>,
-        #[doc = "A primitive filter. In the same FilterExpression, all of the filter's field names need to be either all dimensions or all metrics."]
+        #[doc = "A primitive filter. In the same FilterExpression, all of the filter’s field names need to be either all dimensions or all metrics."]
         #[serde(
             rename = "filter",
             default,
@@ -1471,7 +1471,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invisible: ::std::option::Option<bool>,
-        #[doc = "The name of the metric. See the [API Metrics](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#metrics) for the list of metric names. If `expression` is specified, `name` can be any string that you would like within the allowed character set. For example if `expression` is `screenPageViews/sessions`, you could call that metric's name = `viewsPerSession`. Metric names that you choose must match the regular expression `^[a-zA-Z0-9_]$`. Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric `expression`."]
+        #[doc = "The name of the metric. See the [API Metrics](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#metrics) for the list of metric names. If `expression` is specified, `name` can be any string that you would like within the allowed character set. For example if `expression` is `screenPageViews/sessions`, you could call that metric’s name = `viewsPerSession`. Metric names that you choose must match the regular expression `^[a-zA-Z0-9_]$`. Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric `expression`."]
         #[serde(
             rename = "name",
             default,
@@ -1622,14 +1622,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MetricHeader {
-        #[doc = "The metric's name."]
+        #[doc = "The metric’s name."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The metric's data type."]
+        #[doc = "The metric’s data type."]
         #[serde(
             rename = "type",
             default,
@@ -1786,7 +1786,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MetricMetadata {
-        #[doc = "A metric name. Useable in [Metric](#Metric)'s `name`. For example, `eventCount`."]
+        #[doc = "A metric name. Useable in [Metric](#Metric)’s `name`. For example, `eventCount`."]
         #[serde(
             rename = "apiName",
             default,
@@ -1829,7 +1829,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The mathematical expression for this derived metric. Can be used in [Metric](#Metric)'s `expression` field for equivalent reports. Most metrics are not expressions, and for non-expressions, this field is empty."]
+        #[doc = "The mathematical expression for this derived metric. Can be used in [Metric](#Metric)’s `expression` field for equivalent reports. Most metrics are not expressions, and for non-expressions, this field is empty."]
         #[serde(
             rename = "expression",
             default,
@@ -1843,7 +1843,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::MetricMetadataType>,
-        #[doc = "This metric's name within the Google Analytics user interface. For example, `Event count`."]
+        #[doc = "This metric’s name within the Google Analytics user interface. For example, `Event count`."]
         #[serde(
             rename = "uiName",
             default,
@@ -2346,21 +2346,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desc: ::std::option::Option<bool>,
-        #[doc = "Sorts results by a dimension's values."]
+        #[doc = "Sorts results by a dimension’s values."]
         #[serde(
             rename = "dimension",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension: ::std::option::Option<crate::schemas::DimensionOrderBy>,
-        #[doc = "Sorts results by a metric's values."]
+        #[doc = "Sorts results by a metric’s values."]
         #[serde(
             rename = "metric",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metric: ::std::option::Option<crate::schemas::MetricOrderBy>,
-        #[doc = "Sorts results by a metric's values within a pivot column group."]
+        #[doc = "Sorts results by a metric’s values within a pivot column group."]
         #[serde(
             rename = "pivot",
             default,
@@ -2391,7 +2391,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Pivot {
-        #[doc = "Dimension names for visible columns in the report response. Including \"dateRange\" produces a date range column; for each row in the response, dimension values in the date range column will indicate the corresponding date range from the request."]
+        #[doc = "Dimension names for visible columns in the report response. Including “dateRange” produces a date range column; for each row in the response, dimension values in the date range column will indicate the corresponding date range from the request."]
         #[serde(
             rename = "fieldNames",
             default,
@@ -2584,7 +2584,7 @@ pub mod schemas {
         )]
         pub pivot_dimension_headers:
             ::std::option::Option<Vec<crate::schemas::PivotDimensionHeader>>,
-        #[doc = "The cardinality of the pivot. The total number of rows for this pivot's fields regardless of how the parameters `offset` and `limit` are specified in the request."]
+        #[doc = "The cardinality of the pivot. The total number of rows for this pivot’s fields regardless of how the parameters `offset` and `limit` are specified in the request."]
         #[serde(
             rename = "rowCount",
             default,
@@ -2622,7 +2622,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metric_name: ::std::option::Option<String>,
-        #[doc = "Used to select a dimension name and value pivot. If multiple pivot selections are given, the sort occurs on rows where all pivot selection dimension name and value pairs match the row's dimension name and value pair."]
+        #[doc = "Used to select a dimension name and value pivot. If multiple pivot selections are given, the sort occurs on rows where all pivot selection dimension name and value pairs match the row’s dimension name and value pair."]
         #[serde(
             rename = "pivotSelections",
             default,
@@ -2789,14 +2789,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResponseMetaData {
-        #[doc = "The currency code used in this report. Intended to be used in formatting currency metrics like `purchaseRevenue` for visualization. If currency_code was specified in the request, this response parameter will echo the request parameter; otherwise, this response parameter is the property's current currency_code. Currency codes are string encodings of currency types from the ISO 4217 standard (https://en.wikipedia.org/wiki/ISO_4217); for example \"USD\", \"EUR\", \"JPY\". To learn more, see https://support.google.com/analytics/answer/9796179."]
+        #[doc = "The currency code used in this report. Intended to be used in formatting currency metrics like `purchaseRevenue` for visualization. If currency_code was specified in the request, this response parameter will echo the request parameter; otherwise, this response parameter is the property’s current currency_code. Currency codes are string encodings of currency types from the ISO 4217 standard (https://en.wikipedia.org/wiki/ISO_4217); for example “USD”, “EUR”, “JPY”. To learn more, see https://support.google.com/analytics/answer/9796179."]
         #[serde(
             rename = "currencyCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub currency_code: ::std::option::Option<String>,
-        #[doc = "If true, indicates some buckets of dimension combinations are rolled into \"(other)\" row. This can happen for high cardinality reports."]
+        #[doc = "If true, indicates some buckets of dimension combinations are rolled into “(other)” row. This can happen for high cardinality reports."]
         #[serde(
             rename = "dataLossFromOtherRow",
             default,
@@ -2825,7 +2825,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub subject_to_thresholding: ::std::option::Option<bool>,
-        #[doc = "The property's current timezone. Intended to be used to interpret time-based dimensions like `hour` and `minute`. Formatted as strings from the IANA Time Zone database (https://www.iana.org/time-zones); for example \"America/New_York\" or \"Asia/Tokyo\"."]
+        #[doc = "The property’s current timezone. Intended to be used to interpret time-based dimensions like `hour` and `minute`. Formatted as strings from the IANA Time Zone database (https://www.iana.org/time-zones); for example “America/New_York” or “Asia/Tokyo”."]
         #[serde(
             rename = "timeZone",
             default,
@@ -2885,21 +2885,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct RunPivotReportRequest {
-        #[doc = "Cohort group associated with this request. If there is a cohort group in the request the 'cohort' dimension must be present."]
+        #[doc = "Cohort group associated with this request. If there is a cohort group in the request the ‘cohort’ dimension must be present."]
         #[serde(
             rename = "cohortSpec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cohort_spec: ::std::option::Option<crate::schemas::CohortSpec>,
-        #[doc = "A currency code in ISO4217 format, such as \"AED\", \"USD\", \"JPY\". If the field is empty, the report uses the property's default currency."]
+        #[doc = "A currency code in ISO4217 format, such as “AED”, “USD”, “JPY”. If the field is empty, the report uses the property’s default currency."]
         #[serde(
             rename = "currencyCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub currency_code: ::std::option::Option<String>,
-        #[doc = "The date range to retrieve event data for the report. If multiple date ranges are specified, event data from each date range is used in the report. A special dimension with field name \"dateRange\" can be included in a Pivot's field names; if included, the report compares between date ranges. In a cohort request, this `dateRanges` must be unspecified."]
+        #[doc = "The date range to retrieve event data for the report. If multiple date ranges are specified, event data from each date range is used in the report. A special dimension with field name “dateRange” can be included in a Pivot’s field names; if included, the report compares between date ranges. In a cohort request, this `dateRanges` must be unspecified."]
         #[serde(
             rename = "dateRanges",
             default,
@@ -2941,7 +2941,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Describes the visual format of the report's dimensions in columns or rows. The union of the fieldNames (dimension names) in all pivots must be a subset of dimension names defined in Dimensions. No two pivots can share a dimension. A dimension is only visible if it appears in a pivot."]
+        #[doc = "Describes the visual format of the report’s dimensions in columns or rows. The union of the fieldNames (dimension names) in all pivots must be a subset of dimension names defined in Dimensions. No two pivots can share a dimension. A dimension is only visible if it appears in a pivot."]
         #[serde(
             rename = "pivots",
             default,
@@ -2955,7 +2955,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub property: ::std::option::Option<String>,
-        #[doc = "Toggles whether to return the current state of this Analytics Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota)."]
+        #[doc = "Toggles whether to return the current state of this Analytics Property’s quota. Quota is returned in [PropertyQuota](#PropertyQuota)."]
         #[serde(
             rename = "returnPropertyQuota",
             default,
@@ -2986,7 +2986,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RunPivotReportResponse {
-        #[doc = "Aggregation of metric values. Can be totals, minimums, or maximums. The returned aggregations are controlled by the metric_aggregations in the pivot. The type of aggregation returned in each row is shown by the dimension_values which are set to \"RESERVED_\"."]
+        #[doc = "Aggregation of metric values. Can be totals, minimums, or maximums. The returned aggregations are controlled by the metric_aggregations in the pivot. The type of aggregation returned in each row is shown by the dimension_values which are set to “RESERVED\\_”."]
         #[serde(
             rename = "aggregates",
             default,
@@ -3000,7 +3000,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_headers: ::std::option::Option<Vec<crate::schemas::DimensionHeader>>,
-        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string \"analyticsData#runPivotReport\". Useful to distinguish between response types in JSON."]
+        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string “analyticsData#runPivotReport”. Useful to distinguish between response types in JSON."]
         #[serde(
             rename = "kind",
             default,
@@ -3021,14 +3021,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metric_headers: ::std::option::Option<Vec<crate::schemas::MetricHeader>>,
-        #[doc = "Summarizes the columns and rows created by a pivot. Each pivot in the request produces one header in the response. If we have a request like this: \"pivots\": [{ \"fieldNames\": [\"country\", \"city\"] }, { \"fieldNames\": \"eventName\" }] We will have the following `pivotHeaders` in the response: \"pivotHeaders\" : [{ \"dimensionHeaders\": [{ \"dimensionValues\": [ { \"value\": \"United Kingdom\" }, { \"value\": \"London\" } ] }, { \"dimensionValues\": [ { \"value\": \"Japan\" }, { \"value\": \"Osaka\" } ] }] }, { \"dimensionHeaders\": [{ \"dimensionValues\": [{ \"value\": \"session_start\" }] }, { \"dimensionValues\": [{ \"value\": \"scroll\" }] }] }]"]
+        #[doc = "Summarizes the columns and rows created by a pivot. Each pivot in the request produces one header in the response. If we have a request like this: “pivots”: \\[{ “fieldNames”: \\[“country”, “city”\\] }, { “fieldNames”: “eventName” }\\] We will have the following `pivotHeaders` in the response: “pivotHeaders” : \\[{ “dimensionHeaders”: \\[{ “dimensionValues”: \\[ { “value”: “United Kingdom” }, { “value”: “London” } \\] }, { “dimensionValues”: \\[ { “value”: “Japan” }, { “value”: “Osaka” } \\] }\\] }, { “dimensionHeaders”: \\[{ “dimensionValues”: \\[{ “value”: “session_start” }\\] }, { “dimensionValues”: \\[{ “value”: “scroll” }\\] }\\] }\\]"]
         #[serde(
             rename = "pivotHeaders",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pivot_headers: ::std::option::Option<Vec<crate::schemas::PivotHeader>>,
-        #[doc = "This Analytics Property's quota state including this request."]
+        #[doc = "This Analytics Property’s quota state including this request."]
         #[serde(
             rename = "propertyQuota",
             default,
@@ -3071,7 +3071,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimensions: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "The number of rows to return. If unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. `limit` must be positive. The API can also return fewer rows than the requested `limit`, if there aren't as many dimension values as the `limit`. For instance, there are fewer than 300 possible values for the dimension `country`, so when reporting on only `country`, you can't get more than 300 rows, even if you set `limit` to a higher value."]
+        #[doc = "The number of rows to return. If unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. `limit` must be positive. The API can also return fewer rows than the requested `limit`, if there aren’t as many dimension values as the `limit`. For instance, there are fewer than 300 possible values for the dimension `country`, so when reporting on only `country`, you can’t get more than 300 rows, even if you set `limit` to a higher value."]
         #[serde(
             rename = "limit",
             default,
@@ -3079,7 +3079,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub limit: ::std::option::Option<i64>,
-        #[doc = "Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to \"RESERVED_(MetricAggregation)\"."]
+        #[doc = "Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to “RESERVED\\_(MetricAggregation)”."]
         #[serde(
             rename = "metricAggregations",
             default,
@@ -3116,7 +3116,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_bys: ::std::option::Option<Vec<crate::schemas::OrderBy>>,
-        #[doc = "Toggles whether to return the current state of this Analytics Property's Realtime quota. Quota is returned in [PropertyQuota](#PropertyQuota)."]
+        #[doc = "Toggles whether to return the current state of this Analytics Property’s Realtime quota. Quota is returned in [PropertyQuota](#PropertyQuota)."]
         #[serde(
             rename = "returnPropertyQuota",
             default,
@@ -3248,7 +3248,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_headers: ::std::option::Option<Vec<crate::schemas::DimensionHeader>>,
-        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string \"analyticsData#runRealtimeReport\". Useful to distinguish between response types in JSON."]
+        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string “analyticsData#runRealtimeReport”. Useful to distinguish between response types in JSON."]
         #[serde(
             rename = "kind",
             default,
@@ -3276,7 +3276,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minimums: ::std::option::Option<Vec<crate::schemas::Row>>,
-        #[doc = "This Analytics Property's Realtime quota state including this request."]
+        #[doc = "This Analytics Property’s Realtime quota state including this request."]
         #[serde(
             rename = "propertyQuota",
             default,
@@ -3319,14 +3319,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct RunReportRequest {
-        #[doc = "Cohort group associated with this request. If there is a cohort group in the request the 'cohort' dimension must be present."]
+        #[doc = "Cohort group associated with this request. If there is a cohort group in the request the ‘cohort’ dimension must be present."]
         #[serde(
             rename = "cohortSpec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cohort_spec: ::std::option::Option<crate::schemas::CohortSpec>,
-        #[doc = "A currency code in ISO4217 format, such as \"AED\", \"USD\", \"JPY\". If the field is empty, the report uses the property's default currency."]
+        #[doc = "A currency code in ISO4217 format, such as “AED”, “USD”, “JPY”. If the field is empty, the report uses the property’s default currency."]
         #[serde(
             rename = "currencyCode",
             default,
@@ -3361,7 +3361,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub keep_empty_rows: ::std::option::Option<bool>,
-        #[doc = "The number of rows to return. If unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. `limit` must be positive. The API can also return fewer rows than the requested `limit`, if there aren't as many dimension values as the `limit`. For instance, there are fewer than 300 possible values for the dimension `country`, so when reporting on only `country`, you can't get more than 300 rows, even if you set `limit` to a higher value. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination)."]
+        #[doc = "The number of rows to return. If unspecified, 10,000 rows are returned. The API returns a maximum of 100,000 rows per request, no matter how many you ask for. `limit` must be positive. The API can also return fewer rows than the requested `limit`, if there aren’t as many dimension values as the `limit`. For instance, there are fewer than 300 possible values for the dimension `country`, so when reporting on only `country`, you can’t get more than 300 rows, even if you set `limit` to a higher value. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination)."]
         #[serde(
             rename = "limit",
             default,
@@ -3369,7 +3369,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub limit: ::std::option::Option<i64>,
-        #[doc = "Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to \"RESERVED_(MetricAggregation)\"."]
+        #[doc = "Aggregation of metrics. Aggregated metric values will be shown in rows where the dimension_values are set to “RESERVED\\_(MetricAggregation)”."]
         #[serde(
             rename = "metricAggregations",
             default,
@@ -3377,7 +3377,7 @@ pub mod schemas {
         )]
         pub metric_aggregations:
             ::std::option::Option<Vec<crate::schemas::RunReportRequestMetricAggregationsItems>>,
-        #[doc = "The filter clause of metrics. Applied after aggregating the report's rows, similar to SQL having-clause. Dimensions cannot be used in this filter."]
+        #[doc = "The filter clause of metrics. Applied after aggregating the report’s rows, similar to SQL having-clause. Dimensions cannot be used in this filter."]
         #[serde(
             rename = "metricFilter",
             default,
@@ -3413,7 +3413,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub property: ::std::option::Option<String>,
-        #[doc = "Toggles whether to return the current state of this Analytics Property's quota. Quota is returned in [PropertyQuota](#PropertyQuota)."]
+        #[doc = "Toggles whether to return the current state of this Analytics Property’s quota. Quota is returned in [PropertyQuota](#PropertyQuota)."]
         #[serde(
             rename = "returnPropertyQuota",
             default,
@@ -3543,7 +3543,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_headers: ::std::option::Option<Vec<crate::schemas::DimensionHeader>>,
-        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string \"analyticsData#runReport\". Useful to distinguish between response types in JSON."]
+        #[doc = "Identifies what kind of resource this message is. This `kind` is always the fixed string “analyticsData#runReport”. Useful to distinguish between response types in JSON."]
         #[serde(
             rename = "kind",
             default,
@@ -3578,7 +3578,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minimums: ::std::option::Option<Vec<crate::schemas::Row>>,
-        #[doc = "This Analytics Property's quota state including this request."]
+        #[doc = "This Analytics Property’s quota state including this request."]
         #[serde(
             rename = "propertyQuota",
             default,
@@ -3630,7 +3630,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SchemaRestrictionResponse {
-        #[doc = "All restrictions actively enforced in creating the report. For example, `purchaseRevenue` always has the restriction type `REVENUE_DATA`. However, this active response restriction is only populated if the user's custom role disallows access to `REVENUE_DATA`."]
+        #[doc = "All restrictions actively enforced in creating the report. For example, `purchaseRevenue` always has the restriction type `REVENUE_DATA`. However, this active response restriction is only populated if the user’s custom role disallows access to `REVENUE_DATA`."]
         #[serde(
             rename = "activeMetricRestrictions",
             default,
@@ -4030,7 +4030,7 @@ pub mod resources {
                     property: property.into(),
                 }
             }
-            #[doc = "This compatibility method lists dimensions and metrics that can be added to a report request and maintain compatibility. This method fails if the request's dimensions and metrics are incompatible. In Google Analytics, reports fail if they request incompatible dimensions and/or metrics; in that case, you will need to remove dimensions and/or metrics from the incompatible report until the report is compatible. The Realtime and Core reports have different compatibility rules. This method checks compatibility for Core reports."]
+            #[doc = "This compatibility method lists dimensions and metrics that can be added to a report request and maintain compatibility. This method fails if the request’s dimensions and metrics are incompatible. In Google Analytics, reports fail if they request incompatible dimensions and/or metrics; in that case, you will need to remove dimensions and/or metrics from the incompatible report until the report is compatible. The Realtime and Core reports have different compatibility rules. This method checks compatibility for Core reports."]
             pub fn check_compatibility(
                 &self,
                 request: crate::schemas::CheckCompatibilityRequest,
@@ -4196,12 +4196,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4359,12 +4359,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4522,12 +4522,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4684,12 +4684,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4845,12 +4845,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5008,12 +5008,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5171,12 +5171,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

@@ -85,9 +85,9 @@ pub mod schemas {
         RequestConfig,
         #[doc = "Default type; will be handled as NEW_MESSAGE."]
         TypeUnspecified,
-        #[doc = "Update the Chat app's message. This is only permitted on a CARD_CLICKED event where the message sender type is BOT."]
+        #[doc = "Update the Chat app’s message. This is only permitted on a CARD_CLICKED event where the message sender type is BOT."]
         UpdateMessage,
-        #[doc = "Update the cards on a user's message. This is only permitted as a response to a MESSAGE event with a matched url, or a CARD_CLICKED event where the message sender type is HUMAN. Text will be ignored."]
+        #[doc = "Update the cards on a user’s message. This is only permitted as a response to a MESSAGE event with a matched url, or a CARD_CLICKED event where the message sender type is HUMAN. Text will be ignored."]
         UpdateUserMessageCards,
     }
     impl ActionResponseType {
@@ -216,7 +216,7 @@ pub mod schemas {
         DataLoss,
         #[doc = "The deadline expired before the operation could complete. For operations that change the state of the system, this error may be returned even if the operation has completed successfully. For example, a successful response from a server could have been delayed long enough for the deadline to expire. HTTP Mapping: 504 Gateway Timeout"]
         DeadlineExceeded,
-        #[doc = "The operation was rejected because the system is not in a state required for the operation's execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an \"rmdir\" fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
+        #[doc = "The operation was rejected because the system is not in a state required for the operation’s execution. For example, the directory to be deleted is non-empty, an rmdir operation is applied to a non-directory, etc. Service implementors can use the following guidelines to decide between `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`: (a) Use `UNAVAILABLE` if the client can retry just the failing call. (b) Use `ABORTED` if the client should retry at a higher level. For example, when a client-specified test-and-set fails, indicating the client should restart a read-modify-write sequence. (c) Use `FAILED_PRECONDITION` if the client should not retry until the system state has been explicitly fixed. For example, if an “rmdir” fails because the directory is non-empty, `FAILED_PRECONDITION` should be returned since the client should not retry unless the files are deleted from the directory. HTTP Mapping: 400 Bad Request"]
         FailedPrecondition,
         #[doc = "Internal errors. This means that some invariants expected by the underlying system have been broken. This error code is reserved for serious errors. HTTP Mapping: 500 Internal Server Error"]
         Internal,
@@ -226,7 +226,7 @@ pub mod schemas {
         NotFound,
         #[doc = "Not an error; returned on success HTTP Mapping: 200 OK"]
         Ok,
-        #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range [0,2^32-1], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
+        #[doc = "The operation was attempted past the valid range. E.g., seeking or reading past end-of-file. Unlike `INVALID_ARGUMENT`, this error indicates a problem that may be fixed if the system state changes. For example, a 32-bit file system will generate `INVALID_ARGUMENT` if asked to read at an offset that is not in the range \\[0,2^32-1\\], but it will generate `OUT_OF_RANGE` if asked to read from an offset past the current file size. There is a fair bit of overlap between `FAILED_PRECONDITION` and `OUT_OF_RANGE`. We recommend using `OUT_OF_RANGE` (the more specific error) when it applies so that callers who are iterating through a space can easily look for an `OUT_OF_RANGE` error to detect when they are done. HTTP Mapping: 400 Bad Request"]
         OutOfRange,
         #[doc = "The caller does not have permission to execute the specified operation. `PERMISSION_DENIED` must not be used for rejections caused by exhausting some resource (use `RESOURCE_EXHAUSTED` instead for those errors). `PERMISSION_DENIED` must not be used if the caller can not be identified (use `UNAUTHENTICATED` instead for those errors). This error code does not imply the request is valid or the requested entity exists or satisfies other pre-conditions. HTTP Mapping: 403 Forbidden"]
         PermissionDenied,
@@ -533,7 +533,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub drive_data_ref: ::std::option::Option<crate::schemas::DriveDataRef>,
-        #[doc = "Resource name of the attachment, in the form \"spaces/*/messages/*/attachments/*\"."]
+        #[doc = "Resource name of the attachment, in the form “spaces/*/messages/*/attachments/\\*”."]
         #[serde(
             rename = "name",
             default,
@@ -801,7 +801,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CardHeader {
-        #[doc = "The image's type (e.g. square border or circular border)."]
+        #[doc = "The image’s type (e.g. square border or circular border)."]
         #[serde(
             rename = "imageStyle",
             default,
@@ -960,21 +960,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alpha: ::std::option::Option<f32>,
-        #[doc = "The amount of blue in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of blue in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "blue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blue: ::std::option::Option<f32>,
-        #[doc = "The amount of green in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of green in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "green",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub green: ::std::option::Option<f32>,
-        #[doc = "The amount of red in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of red in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "red",
             default,
@@ -1048,7 +1048,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_zone: ::std::option::Option<crate::schemas::TimeZone>,
-        #[doc = "The full `locale.displayName` in the format of [ISO 639 language code]-[ISO 3166 country/region code] such as \"en-US\". Not supported by Chat apps."]
+        #[doc = "The full `locale.displayName` in the format of \\[ISO 639 language code\\]-\\[ISO 3166 country/region code\\] such as “en-US”. Not supported by Chat apps."]
         #[serde(
             rename = "userLocale",
             default,
@@ -1086,7 +1086,7 @@ pub mod schemas {
         Sheets,
         #[doc = "The add-on launches from Google Slides."]
         Slides,
-        #[doc = "Google can't identify a host app."]
+        #[doc = "Google can’t identify a host app."]
         UnspecifiedHostApp,
     }
     impl CommonEventObjectHostApp {
@@ -1343,7 +1343,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<crate::schemas::FormAction>,
-        #[doc = "Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/chat/how-tos/dialogs), like data entered on a card."]
+        #[doc = "Represents information about the user’s client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/chat/how-tos/dialogs), like data entered on a card."]
         #[serde(
             rename = "common",
             default,
@@ -1407,7 +1407,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thread_key: ::std::option::Option<String>,
-        #[doc = "A secret value that legacy Chat apps can use to verify if a request is from Google. Google randomly generates the token, and its value remains static. You can obtain, revoke, or regenerate the token from the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat) in the Google Cloud Console. Modern Chat apps don't use this field. It is absent from API responses and the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat)."]
+        #[doc = "A secret value that legacy Chat apps can use to verify if a request is from Google. Google randomly generates the token, and its value remains static. You can obtain, revoke, or regenerate the token from the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat) in the Google Cloud Console. Modern Chat apps don’t use this field. It is absent from API responses and the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat)."]
         #[serde(
             rename = "token",
             default,
@@ -1517,7 +1517,7 @@ pub mod schemas {
     pub enum DeprecatedEventType {
         #[doc = "The Chat app was added to a space."]
         AddedToSpace,
-        #[doc = "The Chat app's interactive card was clicked."]
+        #[doc = "The Chat app’s interactive card was clicked."]
         CardClicked,
         #[doc = "A message was sent in a space."]
         Message,
@@ -2035,7 +2035,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "If `true`, the button is displayed in a disabled state and doesn't respond to user actions."]
+        #[doc = "If `true`, the button is displayed in a disabled state and doesn’t respond to user actions."]
         #[serde(
             rename = "disabled",
             default,
@@ -2100,7 +2100,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Card {
-        #[doc = "The card's actions. Actions are added to the card's generated toolbar menu. For example, the following JSON constructs a card action menu with Settings and Send Feedback options: `\"card_actions\": [ { \"actionLabel\": \"Settings\", \"onClick\": { \"action\": { \"functionName\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"SETTING\" } ], \"loadIndicator\": \"LoadIndicator.SPINNER\" } } }, { \"actionLabel\": \"Send Feedback\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/feedback\" } } } ]`"]
+        #[doc = "The card’s actions. Actions are added to the card’s generated toolbar menu. For example, the following JSON constructs a card action menu with Settings and Send Feedback options: `\"card_actions\": [ { \"actionLabel\": \"Settings\", \"onClick\": { \"action\": { \"functionName\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"SETTING\" } ], \"loadIndicator\": \"LoadIndicator.SPINNER\" } } }, { \"actionLabel\": \"Send Feedback\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/feedback\" } } } ]`"]
         #[serde(
             rename = "cardActions",
             default,
@@ -2321,7 +2321,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_alt_text: ::std::option::Option<String>,
-        #[doc = "The image's type."]
+        #[doc = "The image’s type."]
         #[serde(
             rename = "imageType",
             default,
@@ -2451,7 +2451,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The name of the text input that's used in `formInput`, and uniquely identifies this input."]
+        #[doc = "The name of the text input that’s used in `formInput`, and uniquely identifies this input."]
         #[serde(
             rename = "name",
             default,
@@ -2472,7 +2472,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::GoogleAppsCardV1DateTimePickerType>,
-        #[doc = "The number representing the time zone offset from UTC, in minutes. If set, the `value_ms_epoch` is displayed in the specified time zone. If not set, it uses the user's time zone setting on the client side."]
+        #[doc = "The number representing the time zone offset from UTC, in minutes. If set, the `value_ms_epoch` is displayed in the specified time zone. If not set, it uses the user’s time zone setting on the client side."]
         #[serde(
             rename = "timezoneOffsetDate",
             default,
@@ -2694,7 +2694,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub border_style: ::std::option::Option<crate::schemas::GoogleAppsCardV1BorderStyle>,
-        #[doc = "The number of columns to display in the grid. A default value is used if this field isn't specified, and that default value is different depending on where the grid is shown (dialog versus companion)."]
+        #[doc = "The number of columns to display in the grid. A default value is used if this field isn’t specified, and that default value is different depending on where the grid is shown (dialog versus companion)."]
         #[serde(
             rename = "columnCount",
             default,
@@ -2708,7 +2708,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::GoogleAppsCardV1GridItem>>,
-        #[doc = "This callback is reused by each individual grid item, but with the item's identifier and index in the items list added to the callback's parameters."]
+        #[doc = "This callback is reused by each individual grid item, but with the item’s identifier and index in the items list added to the callback’s parameters."]
         #[serde(
             rename = "onClick",
             default,
@@ -2737,7 +2737,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1GridItem {
-        #[doc = "A user-specified identifier for this grid item. This identifier is returned in the parent Grid's onClick callback parameters."]
+        #[doc = "A user-specified identifier for this grid item. This identifier is returned in the parent Grid’s onClick callback parameters."]
         #[serde(
             rename = "id",
             default,
@@ -2758,14 +2758,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub layout: ::std::option::Option<crate::schemas::GoogleAppsCardV1GridItemLayout>,
-        #[doc = "The grid item's subtitle."]
+        #[doc = "The grid item’s subtitle."]
         #[serde(
             rename = "subtitle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub subtitle: ::std::option::Option<String>,
-        #[doc = "The horizontal alignment of the grid item's text."]
+        #[doc = "The horizontal alignment of the grid item’s text."]
         #[serde(
             rename = "textAlignment",
             default,
@@ -2773,7 +2773,7 @@ pub mod schemas {
         )]
         pub text_alignment:
             ::std::option::Option<crate::schemas::GoogleAppsCardV1GridItemTextAlignment>,
-        #[doc = "The grid item's title."]
+        #[doc = "The grid item’s title."]
         #[serde(
             rename = "title",
             default,
@@ -2795,9 +2795,9 @@ pub mod schemas {
     pub enum GoogleAppsCardV1GridItemLayout {
         #[doc = "No layout specified."]
         GridItemLayoutUnspecified,
-        #[doc = "The title and subtitle are shown above the grid item's image."]
+        #[doc = "The title and subtitle are shown above the grid item’s image."]
         TextAbove,
-        #[doc = "The title and subtitle are shown below the grid item's image."]
+        #[doc = "The title and subtitle are shown below the grid item’s image."]
         TextBelow,
     }
     impl GoogleAppsCardV1GridItemLayout {
@@ -2973,7 +2973,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1Icon {
-        #[doc = "The description of the icon, used for accessibility. The default value is provided if you don't specify one."]
+        #[doc = "The description of the icon, used for accessibility. The default value is provided if you don’t specify one."]
         #[serde(
             rename = "altText",
             default,
@@ -3444,7 +3444,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleAppsCardV1OpenLinkOpenAs {
-        #[doc = "The link opens as a full size window (if that's the frame used by the client."]
+        #[doc = "The link opens as a full size window (if that’s the frame used by the client."]
         FullSize,
         #[doc = "The link opens as an overlay, such as a pop-up."]
         Overlay,
@@ -3824,7 +3824,7 @@ pub mod schemas {
         )]
         pub control_type:
             ::std::option::Option<crate::schemas::GoogleAppsCardV1SwitchControlControlType>,
-        #[doc = "The name of the switch widget that's used in `formInput`."]
+        #[doc = "The name of the switch widget that’s used in `formInput`."]
         #[serde(
             rename = "name",
             default,
@@ -3954,7 +3954,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1TextInput {
-        #[doc = "The refresh function that returns suggestions based on the user's input text. If the callback is not specified, autocomplete is done in client side based on the initial suggestion items."]
+        #[doc = "The refresh function that returns suggestions based on the user’s input text. If the callback is not specified, autocomplete is done in client side based on the initial suggestion items."]
         #[serde(
             rename = "autoCompleteAction",
             default,
@@ -4105,7 +4105,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsCardV1TextParagraph {
-        #[doc = "The text that's shown in the widget."]
+        #[doc = "The text that’s shown in the widget."]
         #[serde(
             rename = "text",
             default,
@@ -4302,7 +4302,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Image {
-        #[doc = "The aspect ratio of this image (width/height). This field allows clients to reserve the right height for the image while waiting for it to load. It's not meant to override the native aspect ratio of the image. If unset, the server fills it by prefetching the image."]
+        #[doc = "The aspect ratio of this image (width/height). This field allows clients to reserve the right height for the image while waiting for it to load. It’s not meant to override the native aspect ratio of the image. If unset, the server fills it by prefetching the image."]
         #[serde(
             rename = "aspectRatio",
             default,
@@ -4361,7 +4361,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub icon_url: ::std::option::Option<String>,
-        #[doc = "The name of this image_button which will be used for accessibility. Default value will be provided if developers don't specify."]
+        #[doc = "The name of this image_button which will be used for accessibility. Default value will be provided if developers don’t specify."]
         #[serde(
             rename = "name",
             default,
@@ -5214,7 +5214,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "A plain-text description of the message's cards, used when the actual cards cannot be displayed (e.g. mobile notifications)."]
+        #[doc = "A plain-text description of the message’s cards, used when the actual cards cannot be displayed (e.g. mobile notifications)."]
         #[serde(
             rename = "fallbackText",
             default,
@@ -5567,14 +5567,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Space {
-        #[doc = "The space's display name. For direct messages between humans, this field might be empty."]
+        #[doc = "The space’s display name. For direct messages between humans, this field might be empty."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Resource name of the space, in the form \"spaces/*\". Example: spaces/AAAAAAAAAAAA"]
+        #[doc = "Resource name of the space, in the form “spaces/\\*”. Example: spaces/AAAAAAAAAAAA"]
         #[serde(
             rename = "name",
             default,
@@ -5835,7 +5835,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Thread {
-        #[doc = "Resource name, in the form \"spaces/*/threads/*\". Example: spaces/AAAAAAAAAAA/threads/TTTTTTTTTTT"]
+        #[doc = "Resource name, in the form “spaces/*/threads/*”. Example: spaces/AAAAAAAAAAA/threads/TTTTTTTTTTT"]
         #[serde(
             rename = "name",
             default,
@@ -5904,7 +5904,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimeZone {
-        #[doc = "The [IANA TZ](https://www.iana.org/time-zones) time zone database code, such as \"America/Toronto\"."]
+        #[doc = "The [IANA TZ](https://www.iana.org/time-zones) time zone database code, such as “America/Toronto”."]
         #[serde(
             rename = "id",
             default,
@@ -5942,14 +5942,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct User {
-        #[doc = "Output only. The user's display name."]
+        #[doc = "Output only. The user’s display name."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Unique identifier of the user's Google Workspace domain."]
+        #[doc = "Unique identifier of the user’s Google Workspace domain."]
         #[serde(
             rename = "domainId",
             default,
@@ -6558,12 +6558,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6735,12 +6735,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6949,12 +6949,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7145,12 +7145,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7418,12 +7418,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7595,12 +7595,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7809,12 +7809,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8065,12 +8065,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8236,12 +8236,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8558,12 +8558,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8773,12 +8773,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8945,12 +8945,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9388,12 +9388,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9552,12 +9552,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9712,12 +9712,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9879,12 +9879,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10071,12 +10071,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

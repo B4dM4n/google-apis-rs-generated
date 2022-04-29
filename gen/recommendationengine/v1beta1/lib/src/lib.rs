@@ -175,7 +175,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommendationengineV1Beta1BigQuerySource {
-        #[doc = "Optional. The schema to use when parsing the data from the source. Supported values for catalog imports: 1: \"catalog_recommendations_ai\" using https://cloud.google.com/recommendations-ai/docs/upload-catalog#json (Default for catalogItems.import) 2: \"catalog_merchant_center\" using https://cloud.google.com/recommendations-ai/docs/upload-catalog#mc Supported values for user event imports: 1: \"user_events_recommendations_ai\" using https://cloud.google.com/recommendations-ai/docs/manage-user-events#import (Default for userEvents.import) 2. \"user_events_ga360\" using https://support.google.com/analytics/answer/3437719?hl=en"]
+        #[doc = "Optional. The schema to use when parsing the data from the source. Supported values for catalog imports: 1: “catalog_recommendations_ai” using https://cloud.google.com/recommendations-ai/docs/upload-catalog#json (Default for catalogItems.import) 2: “catalog_merchant_center” using https://cloud.google.com/recommendations-ai/docs/upload-catalog#mc Supported values for user event imports: 1: “user_events_recommendations_ai” using https://cloud.google.com/recommendations-ai/docs/manage-user-events#import (Default for userEvents.import) 2. “user_events_ga360” using https://support.google.com/analytics/answer/3437719?hl=en"]
         #[serde(
             rename = "dataSchema",
             default,
@@ -309,7 +309,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommendationengineV1Beta1CatalogItem {
-        #[doc = "Required. Catalog item categories. This field is repeated for supporting one catalog item belonging to several parallel category hierarchies. For example, if a shoes product belongs to both [\"Shoes & Accessories\" -> \"Shoes\"] and [\"Sports & Fitness\" -> \"Athletic Clothing\" -> \"Shoes\"], it could be represented as: \"categoryHierarchies\": [ { \"categories\": [\"Shoes & Accessories\", \"Shoes\"]}, { \"categories\": [\"Sports & Fitness\", \"Athletic Clothing\", \"Shoes\"] } ]"]
+        #[doc = "Required. Catalog item categories. This field is repeated for supporting one catalog item belonging to several parallel category hierarchies. For example, if a shoes product belongs to both \\[“Shoes & Accessories” -> “Shoes”\\] and \\[“Sports & Fitness” -> “Athletic Clothing” -> “Shoes”\\], it could be represented as: “categoryHierarchies”: \\[ { “categories”: \\[“Shoes & Accessories”, “Shoes”\\]}, { “categories”: \\[“Sports & Fitness”, “Athletic Clothing”, “Shoes”\\] } \\]"]
         #[serde(
             rename = "categoryHierarchies",
             default,
@@ -665,7 +665,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_view_id: ::std::option::Option<String>,
-        #[doc = "Optional. Recommendation token included in the recommendation prediction response. This field enables accurate attribution of recommendation model performance. This token enables us to accurately attribute page view or purchase back to the event and the particular predict response containing this clicked/purchased item. If user clicks on product K in the recommendation results, pass the `PredictResponse.recommendationToken` property as a url parameter to product K's page. When recording events on product K's page, log the PredictResponse.recommendation_token to this field. Optional, but highly encouraged for user events that are the result of a recommendation prediction query."]
+        #[doc = "Optional. Recommendation token included in the recommendation prediction response. This field enables accurate attribution of recommendation model performance. This token enables us to accurately attribute page view or purchase back to the event and the particular predict response containing this clicked/purchased item. If user clicks on product K in the recommendation results, pass the `PredictResponse.recommendationToken` property as a url parameter to product K’s page. When recording events on product K’s page, log the PredictResponse.recommendation_token to this field. Optional, but highly encouraged for user events that are the result of a recommendation prediction query."]
         #[serde(
             rename = "recommendationToken",
             default,
@@ -679,7 +679,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referrer_uri: ::std::option::Option<String>,
-        #[doc = "Optional. Complete url (window.location.href) of the user's current page. When using the JavaScript pixel, this value is filled in automatically. Maximum length 5KB."]
+        #[doc = "Optional. Complete url (window.location.href) of the user’s current page. When using the JavaScript pixel, this value is filled in automatically. Maximum length 5KB."]
         #[serde(
             rename = "uri",
             default,
@@ -817,7 +817,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_uris: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. The schema to use when parsing the data from the source. Supported values for catalog imports: 1: \"catalog_recommendations_ai\" using https://cloud.google.com/recommendations-ai/docs/upload-catalog#json (Default for catalogItems.import) 2: \"catalog_merchant_center\" using https://cloud.google.com/recommendations-ai/docs/upload-catalog#mc Supported values for user events imports: 1: \"user_events_recommendations_ai\" using https://cloud.google.com/recommendations-ai/docs/manage-user-events#import (Default for userEvents.import) 2. \"user_events_ga360\" using https://support.google.com/analytics/answer/3437719?hl=en"]
+        #[doc = "Optional. The schema to use when parsing the data from the source. Supported values for catalog imports: 1: “catalog_recommendations_ai” using https://cloud.google.com/recommendations-ai/docs/upload-catalog#json (Default for catalogItems.import) 2: “catalog_merchant_center” using https://cloud.google.com/recommendations-ai/docs/upload-catalog#mc Supported values for user events imports: 1: “user_events_recommendations_ai” using https://cloud.google.com/recommendations-ai/docs/manage-user-events#import (Default for userEvents.import) 2. “user_events_ga360” using https://support.google.com/analytics/answer/3437719?hl=en"]
         #[serde(
             rename = "jsonSchema",
             default,
@@ -909,7 +909,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub request_id: ::std::option::Option<String>,
-        #[doc = "Optional. Indicates which fields in the provided imported 'items' to update. If not set, will by default update all fields."]
+        #[doc = "Optional. Indicates which fields in the provided imported ‘items’ to update. If not set, will by default update all fields."]
         #[serde(
             rename = "updateMask",
             default,
@@ -1218,7 +1218,7 @@ pub mod schemas {
         pub catalog_items: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudRecommendationengineV1Beta1CatalogItem>,
         >,
-        #[doc = "If empty, the list is complete. If nonempty, the token to pass to the next request's ListCatalogItemRequest.page_token."]
+        #[doc = "If empty, the list is complete. If nonempty, the token to pass to the next request’s ListCatalogItemRequest.page_token."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1258,7 +1258,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommendationengineV1Beta1ListCatalogsResponse {
-        #[doc = "Output only. All the customer's catalogs."]
+        #[doc = "Output only. All the customer’s catalogs."]
         #[serde(
             rename = "catalogs",
             default,
@@ -1307,7 +1307,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommendationengineV1Beta1ListPredictionApiKeyRegistrationsResponse {
-        #[doc = "If empty, the list is complete. If nonempty, pass the token to the next request's `ListPredictionApiKeysRegistrationsRequest.pageToken`."]
+        #[doc = "If empty, the list is complete. If nonempty, pass the token to the next request’s `ListPredictionApiKeysRegistrationsRequest.pageToken`."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1349,7 +1349,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommendationengineV1Beta1ListUserEventsResponse {
-        #[doc = "If empty, the list is complete. If nonempty, the token to pass to the next request's ListUserEvents.page_token."]
+        #[doc = "If empty, the list is complete. If nonempty, the token to pass to the next request’s ListUserEvents.page_token."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1394,7 +1394,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dry_run: ::std::option::Option<bool>,
-        #[doc = "Optional. Filter for restricting prediction results. Accepts values for tags and the `filterOutOfStockItems` flag. * Tag expressions. Restricts predictions to items that match all of the specified tags. Boolean operators `OR` and `NOT` are supported if the expression is enclosed in parentheses, and must be separated from the tag values by a space. `-\"tagA\"` is also supported and is equivalent to `NOT \"tagA\"`. Tag values must be double quoted UTF-8 encoded strings with a size limit of 1 KiB. * filterOutOfStockItems. Restricts predictions to items that do not have a stockState value of OUT_OF_STOCK. Examples: * tag=(\"Red\" OR \"Blue\") tag=\"New-Arrival\" tag=(NOT \"promotional\") * filterOutOfStockItems tag=(-\"promotional\") * filterOutOfStockItems If your filter blocks all prediction results, nothing will be returned. If you want generic (unfiltered) popular items to be returned instead, set `strictFiltering` to false in `PredictRequest.params`."]
+        #[doc = "Optional. Filter for restricting prediction results. Accepts values for tags and the `filterOutOfStockItems` flag. * Tag expressions. Restricts predictions to items that match all of the specified tags. Boolean operators `OR` and `NOT` are supported if the expression is enclosed in parentheses, and must be separated from the tag values by a space. `-\"tagA\"` is also supported and is equivalent to `NOT \"tagA\"`. Tag values must be double quoted UTF-8 encoded strings with a size limit of 1 KiB. * filterOutOfStockItems. Restricts predictions to items that do not have a stockState value of OUT_OF_STOCK. Examples: * tag=(“Red” OR “Blue”) tag=“New-Arrival” tag=(NOT “promotional”) * filterOutOfStockItems tag=(-“promotional”) * filterOutOfStockItems If your filter blocks all prediction results, nothing will be returned. If you want generic (unfiltered) popular items to be returned instead, set `strictFiltering` to false in `PredictRequest.params`."]
         #[serde(
             rename = "filter",
             default,
@@ -1422,7 +1422,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_token: ::std::option::Option<String>,
-        #[doc = "Optional. Additional domain specific parameters for the predictions. Allowed values: * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem object will be returned in the `PredictResponse.PredictionResult.itemMetadata` object in the method response. * `returnItemScore`: Boolean. If set to true, the prediction 'score' corresponding to each returned item will be set in the `metadata` field in the prediction response. The given 'score' indicates the probability of an item being clicked/purchased given the user's context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular items instead of empty if your filter blocks all prediction results. * `priceRerankLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {'no-price-reranking', 'low-price-reranking', 'medium-price-reranking', 'high-price-reranking'}. This gives request level control and adjust prediction results based on product price. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {'no-diversity', 'low-diversity', 'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives request level control and adjust prediction results based on product category."]
+        #[doc = "Optional. Additional domain specific parameters for the predictions. Allowed values: * `returnCatalogItem`: Boolean. If set to true, the associated catalogItem object will be returned in the `PredictResponse.PredictionResult.itemMetadata` object in the method response. * `returnItemScore`: Boolean. If set to true, the prediction ‘score’ corresponding to each returned item will be set in the `metadata` field in the prediction response. The given ‘score’ indicates the probability of an item being clicked/purchased given the user’s context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular items instead of empty if your filter blocks all prediction results. * `priceRerankLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-price-reranking’, ‘low-price-reranking’, ‘medium-price-reranking’, ‘high-price-reranking’}. This gives request level control and adjust prediction results based on product price. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-diversity’, ‘low-diversity’, ‘medium-diversity’, ‘high-diversity’, ‘auto-diversity’}. This gives request level control and adjust prediction results based on product category."]
         #[serde(
             rename = "params",
             default,
@@ -1430,7 +1430,7 @@ pub mod schemas {
         )]
         pub params:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Required. Context about the user, what they are looking at and what action they took to trigger the predict request. Note that this user event detail won't be ingested to userEvent logs. Thus, a separate userEvent write request is required for event logging. Don't set UserInfo.visitor_id or UserInfo.user_id to the same fixed ID for different users. If you are trying to receive non-personalized recommendations (not recommended; this can negatively impact model performance), instead set UserInfo.visitor_id to a random unique ID and leave UserInfo.user_id unset."]
+        #[doc = "Required. Context about the user, what they are looking at and what action they took to trigger the predict request. Note that this user event detail won’t be ingested to userEvent logs. Thus, a separate userEvent write request is required for event logging. Don’t set UserInfo.visitor_id or UserInfo.user_id to the same fixed ID for different users. If you are trying to receive non-personalized recommendations (not recommended; this can negatively impact model performance), instead set UserInfo.visitor_id to a random unique ID and leave UserInfo.user_id unset."]
         #[serde(
             rename = "userEvent",
             default,
@@ -1452,7 +1452,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudRecommendationengineV1Beta1PredictResponse { # [doc = "True if the dryRun property was set in the request."] # [serde (rename = "dryRun" , default , skip_serializing_if = "std::option::Option::is_none")] pub dry_run : :: std :: option :: Option < bool > , # [doc = "IDs of items in the request that were missing from the catalog."] # [serde (rename = "itemsMissingInCatalog" , default , skip_serializing_if = "std::option::Option::is_none")] pub items_missing_in_catalog : :: std :: option :: Option < Vec < String > > , # [doc = "Additional domain specific prediction response metadata."] # [serde (rename = "metadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub metadata : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , :: serde_json :: Value > > , # [doc = "If empty, the list is complete. If nonempty, the token to pass to the next request's PredictRequest.page_token."] # [serde (rename = "nextPageToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub next_page_token : :: std :: option :: Option < String > , # [doc = "A unique recommendation token. This should be included in the user event logs resulting from this recommendation, which enables accurate attribution of recommendation model performance."] # [serde (rename = "recommendationToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub recommendation_token : :: std :: option :: Option < String > , # [doc = "A list of recommended items. The order represents the ranking (from the most relevant item to the least)."] # [serde (rename = "results" , default , skip_serializing_if = "std::option::Option::is_none")] pub results : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudRecommendationengineV1Beta1PredictResponsePredictionResult > > , }
+    pub struct GoogleCloudRecommendationengineV1Beta1PredictResponse { # [doc = "True if the dryRun property was set in the request."] # [serde (rename = "dryRun" , default , skip_serializing_if = "std::option::Option::is_none")] pub dry_run : :: std :: option :: Option < bool > , # [doc = "IDs of items in the request that were missing from the catalog."] # [serde (rename = "itemsMissingInCatalog" , default , skip_serializing_if = "std::option::Option::is_none")] pub items_missing_in_catalog : :: std :: option :: Option < Vec < String > > , # [doc = "Additional domain specific prediction response metadata."] # [serde (rename = "metadata" , default , skip_serializing_if = "std::option::Option::is_none")] pub metadata : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , :: serde_json :: Value > > , # [doc = "If empty, the list is complete. If nonempty, the token to pass to the next request’s PredictRequest.page_token."] # [serde (rename = "nextPageToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub next_page_token : :: std :: option :: Option < String > , # [doc = "A unique recommendation token. This should be included in the user event logs resulting from this recommendation, which enables accurate attribution of recommendation model performance."] # [serde (rename = "recommendationToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub recommendation_token : :: std :: option :: Option < String > , # [doc = "A list of recommended items. The order represents the ranking (from the most relevant item to the least)."] # [serde (rename = "results" , default , skip_serializing_if = "std::option::Option::is_none")] pub results : :: std :: option :: Option < Vec < crate :: schemas :: GoogleCloudRecommendationengineV1Beta1PredictResponsePredictionResult > > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudRecommendationengineV1Beta1PredictResponse
     {
@@ -1558,7 +1558,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub canonical_product_uri: ::std::option::Option<String>,
-        #[doc = "Optional. A map to pass the costs associated with the product. For example: {\"manufacturing\": 45.5} The profit of selling this item is computed like so: * If 'exactPrice' is provided, profit = displayPrice - sum(costs) * If 'priceRange' is provided, profit = minPrice - sum(costs)"]
+        #[doc = "Optional. A map to pass the costs associated with the product. For example: {“manufacturing”: 45.5} The profit of selling this item is computed like so: * If ‘exactPrice’ is provided, profit = displayPrice - sum(costs) * If ‘priceRange’ is provided, profit = minPrice - sum(costs)"]
         #[serde(
             rename = "costs",
             default,
@@ -1707,7 +1707,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_price: ::std::option::Option<f32>,
-        #[doc = "Optional. Price of the product without any discount. If zero, by default set to be the 'displayPrice'."]
+        #[doc = "Optional. Price of the product without any discount. If zero, by default set to be the ‘displayPrice’."]
         #[serde(
             rename = "originalPrice",
             default,
@@ -1926,7 +1926,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub list_id: ::std::option::Option<String>,
-        #[doc = "Required for `category-page-view` events. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. The categories associated with a category page. Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: categories : [\"Sales\", \"2017 Black Friday Deals\"]."]
+        #[doc = "Required for `category-page-view` events. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. The categories associated with a category page. Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: categories : \\[“Sales”, “2017 Black Friday Deals”\\]."]
         #[serde(
             rename = "pageCategories",
             default,
@@ -1935,7 +1935,7 @@ pub mod schemas {
         pub page_categories: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudRecommendationengineV1Beta1CatalogItemCategoryHierarchy>,
         >,
-        #[doc = "The main product details related to the event. This field is required for the following event types: * `add-to-cart` * `add-to-list` * `checkout-start` * `detail-page-view` * `purchase-complete` * `refund` * `remove-from-cart` * `remove-from-list` This field is optional for the following event types: * `page-visit` * `shopping-cart-page-view` - note that 'product_details' should be set for this unless the shopping cart is empty. * `search` (highly encouraged) In a `search` event, this field represents the products returned to the end user on the current page (the end user may have not finished broswing the whole page yet). When a new page is returned to the end user, after pagination/filtering/ordering even for the same query, a new SEARCH event with different product_details is desired. The end user may have not finished broswing the whole page yet. This field is not allowed for the following event types: * `category-page-view` * `home-page-view`"]
+        #[doc = "The main product details related to the event. This field is required for the following event types: * `add-to-cart` * `add-to-list` * `checkout-start` * `detail-page-view` * `purchase-complete` * `refund` * `remove-from-cart` * `remove-from-list` This field is optional for the following event types: * `page-visit` * `shopping-cart-page-view` - note that ‘product_details’ should be set for this unless the shopping cart is empty. * `search` (highly encouraged) In a `search` event, this field represents the products returned to the end user on the current page (the end user may have not finished broswing the whole page yet). When a new page is returned to the end user, after pagination/filtering/ordering even for the same query, a new SEARCH event with different product_details is desired. The end user may have not finished broswing the whole page yet. This field is not allowed for the following event types: * `category-page-view` * `home-page-view`"]
         #[serde(
             rename = "productDetails",
             default,
@@ -1953,7 +1953,7 @@ pub mod schemas {
         pub purchase_transaction: ::std::option::Option<
             crate::schemas::GoogleCloudRecommendationengineV1Beta1PurchaseTransaction,
         >,
-        #[doc = "At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. The user's search query as UTF-8 encoded text with a length limit of 5 KiB."]
+        #[doc = "At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. The user’s search query as UTF-8 encoded text with a length limit of 5 KiB."]
         #[serde(
             rename = "searchQuery",
             default,
@@ -2084,7 +2084,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecommendationengineV1Beta1PurgeUserEventsRequest {
-        #[doc = "Required. The filter string to specify the events to be deleted. Empty string filter is not allowed. The eligible fields for filtering are: * `eventType`: UserEvent.eventType field of type string. * `eventTime`: in ISO 8601 \"zulu\" format. * `visitorId`: field of type string. Specifying this will delete all events associated with a visitor. * `userId`: field of type string. Specifying this will delete all events associated with a user. Examples: * Deleting all events in a time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventTime < \"2012-04-23T18:30:43.511Z\"` * Deleting specific eventType in time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventType = \"detail-page-view\"` * Deleting all events for a specific visitor: `visitorId = \"visitor1024\"` The filtering fields are assumed to have an implicit AND."]
+        #[doc = "Required. The filter string to specify the events to be deleted. Empty string filter is not allowed. The eligible fields for filtering are: * `eventType`: UserEvent.eventType field of type string. * `eventTime`: in ISO 8601 “zulu” format. * `visitorId`: field of type string. Specifying this will delete all events associated with a visitor. * `userId`: field of type string. Specifying this will delete all events associated with a user. Examples: * Deleting all events in a time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventTime < \"2012-04-23T18:30:43.511Z\"` * Deleting specific eventType in time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventType = \"detail-page-view\"` * Deleting all events for a specific visitor: `visitorId = \"visitor1024\"` The filtering fields are assumed to have an implicit AND."]
         #[serde(
             rename = "filter",
             default,
@@ -2352,7 +2352,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event_type: ::std::option::Option<String>,
-        #[doc = "Optional. Retail product specific user event metadata. This field is required for the following event types: * `add-to-cart` * `add-to-list` * `category-page-view` * `checkout-start` * `detail-page-view` * `purchase-complete` * `refund` * `remove-from-cart` * `remove-from-list` * `search` This field is optional for the following event types: * `page-visit` * `shopping-cart-page-view` - note that 'product_event_detail' should be set for this unless the shopping cart is empty. This field is not allowed for the following event types: * `home-page-view`"]
+        #[doc = "Optional. Retail product specific user event metadata. This field is required for the following event types: * `add-to-cart` * `add-to-list` * `category-page-view` * `checkout-start` * `detail-page-view` * `purchase-complete` * `refund` * `remove-from-cart` * `remove-from-list` * `search` This field is optional for the following event types: * `page-visit` * `shopping-cart-page-view` - note that ‘product_event_detail’ should be set for this unless the shopping cart is empty. This field is not allowed for the following event types: * `home-page-view`"]
         #[serde(
             rename = "productEventDetail",
             default,
@@ -2552,14 +2552,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_agent: ::std::option::Option<String>,
-        #[doc = "Optional. Unique identifier for logged-in user with a length limit of 128 bytes. Required only for logged-in users. Don't set for anonymous users. Don't set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality."]
+        #[doc = "Optional. Unique identifier for logged-in user with a length limit of 128 bytes. Required only for logged-in users. Don’t set for anonymous users. Don’t set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality."]
         #[serde(
             rename = "userId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_id: ::std::option::Option<String>,
-        #[doc = "Required. A unique identifier for tracking visitors with a length limit of 128 bytes. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor logs in or out of the website. Maximum length 128 bytes. Cannot be empty. Don't set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality."]
+        #[doc = "Required. A unique identifier for tracking visitors with a length limit of 128 bytes. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor logs in or out of the website. Maximum length 128 bytes. Cannot be empty. Don’t set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality."]
         #[serde(
             rename = "visitorId",
             default,
@@ -3066,12 +3066,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3364,7 +3364,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> PatchRequestBuilder<'a> {
-                    #[doc = "Optional. Indicates which fields in the provided 'catalog' to update. If not set, will only update the catalog_item_level_config field. Currently only fields that can be updated are catalog_item_level_config."]
+                    #[doc = "Optional. Indicates which fields in the provided ‘catalog’ to update. If not set, will only update the catalog_item_level_config field. Currently only fields that can be updated are catalog_item_level_config."]
                     pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                         self.update_mask = Some(value.into());
                         self
@@ -3399,12 +3399,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3712,12 +3712,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -3883,12 +3883,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4048,12 +4048,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4202,12 +4202,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4387,12 +4387,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4679,7 +4679,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> PatchRequestBuilder<'a> {
-                        #[doc = "Optional. Indicates which fields in the provided 'item' to update. If not set, will by default update all fields."]
+                        #[doc = "Optional. Indicates which fields in the provided ‘item’ to update. If not set, will by default update all fields."]
                         pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                             self.update_mask = Some(value.into());
                             self
@@ -4714,12 +4714,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4889,7 +4889,7 @@ pub mod resources {
                                     name: name.into(),
                                 }
                             }
-                            #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                            #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                             pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                                 ListRequestBuilder {
                                     reqwest: &self.reqwest,
@@ -4961,12 +4961,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -5144,12 +5144,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -5513,12 +5513,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -5733,12 +5733,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -5892,12 +5892,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6069,12 +6069,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6432,7 +6432,7 @@ pub mod resources {
                                     parent: parent.into(),
                                 }
                             }
-                            #[doc = "Triggers a user event rejoin operation with latest catalog data. Events will not be annotated with detailed catalog information if catalog item is missing at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This API can be used to trigger a 'join' operation on specified events with latest version of catalog items. It can also be used to correct events joined with wrong catalog items."]
+                            #[doc = "Triggers a user event rejoin operation with latest catalog data. Events will not be annotated with detailed catalog information if catalog item is missing at the time the user event is ingested, and these events are stored as unjoined events with a limited usage on training and serving. This API can be used to trigger a ‘join’ operation on specified events with latest version of catalog items. It can also be used to correct events joined with wrong catalog items."]
                             pub fn rejoin(
                                 &self,
                                 request : crate :: schemas :: GoogleCloudRecommendationengineV1Beta1RejoinUserEventsRequest,
@@ -6548,12 +6548,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6702,12 +6702,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6842,7 +6842,7 @@ pub mod resources {
                             xgafv: ::std::option::Option<crate::params::Xgafv>,
                         }
                         impl<'a> ListRequestBuilder<'a> {
-                            #[doc = "Optional. Filtering expression to specify restrictions over returned events. This is a sequence of terms, where each term applies some kind of a restriction to the returned user events. Use this expression to restrict results to a specific time range, or filter events by eventType. eg: eventTime > \"2012-04-23T18:25:43.511Z\" eventsMissingCatalogItems eventTime<\"2012-04-23T18:25:43.511Z\" eventType=search We expect only 3 types of fields: * eventTime: this can be specified a maximum of 2 times, once with a less than operator and once with a greater than operator. The eventTime restrict should result in one contiguous valid eventTime range. * eventType: only 1 eventType restriction can be specified. * eventsMissingCatalogItems: specififying this will restrict results to events for which catalog items were not found in the catalog. The default behavior is to return only those events for which catalog items were found. Some examples of valid filters expressions: * Example 1: eventTime > \"2012-04-23T18:25:43.511Z\" eventTime < \"2012-04-23T18:30:43.511Z\" * Example 2: eventTime > \"2012-04-23T18:25:43.511Z\" eventType = detail-page-view * Example 3: eventsMissingCatalogItems eventType = search eventTime < \"2018-04-23T18:30:43.511Z\" * Example 4: eventTime > \"2012-04-23T18:25:43.511Z\" * Example 5: eventType = search * Example 6: eventsMissingCatalogItems"]
+                            #[doc = "Optional. Filtering expression to specify restrictions over returned events. This is a sequence of terms, where each term applies some kind of a restriction to the returned user events. Use this expression to restrict results to a specific time range, or filter events by eventType. eg: eventTime > “2012-04-23T18:25:43.511Z” eventsMissingCatalogItems eventTime\\<“2012-04-23T18:25:43.511Z” eventType=search We expect only 3 types of fields: * eventTime: this can be specified a maximum of 2 times, once with a less than operator and once with a greater than operator. The eventTime restrict should result in one contiguous valid eventTime range. * eventType: only 1 eventType restriction can be specified. * eventsMissingCatalogItems: specififying this will restrict results to events for which catalog items were not found in the catalog. The default behavior is to return only those events for which catalog items were found. Some examples of valid filters expressions: * Example 1: eventTime > “2012-04-23T18:25:43.511Z” eventTime \\< “2012-04-23T18:30:43.511Z” * Example 2: eventTime > “2012-04-23T18:25:43.511Z” eventType = detail-page-view * Example 3: eventsMissingCatalogItems eventType = search eventTime \\< “2018-04-23T18:30:43.511Z” * Example 4: eventTime > “2012-04-23T18:25:43.511Z” * Example 5: eventType = search * Example 6: eventsMissingCatalogItems"]
                             pub fn filter(mut self, value: impl Into<String>) -> Self {
                                 self.filter = Some(value.into());
                                 self
@@ -6887,12 +6887,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -7192,12 +7192,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -7344,12 +7344,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -7513,12 +7513,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -7666,7 +7666,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                        #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                         pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -7738,12 +7738,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -7921,12 +7921,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self

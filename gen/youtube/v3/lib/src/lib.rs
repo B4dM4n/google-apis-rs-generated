@@ -147,7 +147,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Activity {
-        #[doc = "The contentDetails object contains information about the content associated with the activity. For example, if the snippet.type value is videoRated, then the contentDetails object's content identifies the rated video."]
+        #[doc = "The contentDetails object contains information about the content associated with the activity. For example, if the snippet.type value is videoRated, then the contentDetails object’s content identifies the rated video."]
         #[serde(
             rename = "contentDetails",
             default,
@@ -168,14 +168,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#activity\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#activity”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The snippet object contains basic details about the activity, including the activity's type and group ID."]
+        #[doc = "The snippet object contains basic details about the activity, including the activity’s type and group ID."]
         #[serde(
             rename = "snippet",
             default,
@@ -553,7 +553,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description_text: ::std::option::Option<String>,
-        #[doc = "The URL the client should direct the user to, if the user chooses to visit the advertiser's website."]
+        #[doc = "The URL the client should direct the user to, if the user chooses to visit the advertiser’s website."]
         #[serde(
             rename = "destinationUrl",
             default,
@@ -826,7 +826,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub author: ::std::option::Option<String>,
-        #[doc = "An image of the post's author."]
+        #[doc = "An image of the post’s author."]
         #[serde(
             rename = "imageUrl",
             default,
@@ -1037,7 +1037,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Activity>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#activityListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#activityListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1128,7 +1128,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The group ID associated with the activity. A group ID identifies user events that are associated with the same user and resource. For example, if a user rates a video and marks the same video as a favorite, the entries for those events would have the same group ID in the user's activity feed. In your user interface, you can avoid repetition by grouping events with the same groupId value."]
+        #[doc = "The group ID associated with the activity. A group ID identifies user events that are associated with the same user and resource. For example, if a user rates a video and marks the same video as a favorite, the entries for those events would have the same group ID in the user’s activity feed. In your user interface, you can avoid repetition by grouping events with the same groupId value."]
         #[serde(
             rename = "groupId",
             default,
@@ -1310,7 +1310,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#caption\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#caption”."]
         #[serde(
             rename = "kind",
             default,
@@ -1369,7 +1369,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Caption>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#captionListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#captionListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1414,7 +1414,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audio_track_type: ::std::option::Option<crate::schemas::CaptionSnippetAudioTrackType>,
-        #[doc = "The reason that YouTube failed to process the caption track. This property is only present if the state property's value is failed."]
+        #[doc = "The reason that YouTube failed to process the caption track. This property is only present if the state property’s value is failed."]
         #[serde(
             rename = "failureReason",
             default,
@@ -1442,7 +1442,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_draft: ::std::option::Option<bool>,
-        #[doc = "Indicates whether caption track is formatted for \"easy reader,\" meaning it is at a third-grade level for language learners. The default value is false."]
+        #[doc = "Indicates whether caption track is formatted for “easy reader,” meaning it is at a third-grade level for language learners. The default value is false."]
         #[serde(
             rename = "isEasyReader",
             default,
@@ -1477,14 +1477,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The caption track's status."]
+        #[doc = "The caption track’s status."]
         #[serde(
             rename = "status",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::CaptionSnippetStatus>,
-        #[doc = "The caption track's type."]
+        #[doc = "The caption track’s type."]
         #[serde(
             rename = "trackKind",
             default,
@@ -2138,7 +2138,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub branding_settings: ::std::option::Option<crate::schemas::ChannelBrandingSettings>,
-        #[doc = "The contentDetails object encapsulates information about the channel's content."]
+        #[doc = "The contentDetails object encapsulates information about the channel’s content."]
         #[serde(
             rename = "contentDetails",
             default,
@@ -2174,7 +2174,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#channel\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#channel”."]
         #[serde(
             rename = "kind",
             default,
@@ -2293,7 +2293,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#channelBannerResource\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#channelBannerResource”."]
         #[serde(
             rename = "kind",
             default,
@@ -2414,35 +2414,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChannelContentDetailsRelatedPlaylists {
-        #[doc = "The ID of the playlist that contains the channel\"s favorite videos. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
+        #[doc = "The ID of the playlist that contains the channel“s favorite videos. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
         #[serde(
             rename = "favorites",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub favorites: ::std::option::Option<String>,
-        #[doc = "The ID of the playlist that contains the channel\"s liked videos. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
+        #[doc = "The ID of the playlist that contains the channel“s liked videos. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
         #[serde(
             rename = "likes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub likes: ::std::option::Option<String>,
-        #[doc = "The ID of the playlist that contains the channel\"s uploaded videos. Use the videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos."]
+        #[doc = "The ID of the playlist that contains the channel“s uploaded videos. Use the videos.insert method to upload new videos and the videos.delete method to delete previously uploaded videos."]
         #[serde(
             rename = "uploads",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uploads: ::std::option::Option<String>,
-        #[doc = "The ID of the playlist that contains the channel\"s watch history. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
+        #[doc = "The ID of the playlist that contains the channel“s watch history. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
         #[serde(
             rename = "watchHistory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub watch_history: ::std::option::Option<String>,
-        #[doc = "The ID of the playlist that contains the channel\"s watch later playlist. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
+        #[doc = "The ID of the playlist that contains the channel“s watch later playlist. Use the playlistItems.insert and playlistItems.delete to add or remove items from that list."]
         #[serde(
             rename = "watchLater",
             default,
@@ -2518,7 +2518,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub context: ::std::option::Option<crate::schemas::ChannelConversionPingContext>,
-        #[doc = "The url (without the schema) that the player shall send the ping to. It's at caller's descretion to decide which schema to use (http vs https) Example of a returned url: //googleads.g.doubleclick.net/pagead/ viewthroughconversion/962985656/?data=path%3DtHe_path%3Btype%3D cview%3Butuid%3DGISQtTNGYqaYl4sKxoVvKA&labe=default The caller must append biscotti authentication (ms param in case of mobile, for example) to this ping."]
+        #[doc = "The url (without the schema) that the player shall send the ping to. It’s at caller’s descretion to decide which schema to use (http vs https) Example of a returned url: //googleads.g.doubleclick.net/pagead/ viewthroughconversion/962985656/?data=path%3DtHe_path%3Btype%3D cview%3Butuid%3DGISQtTNGYqaYl4sKxoVvKA&labe=default The caller must append biscotti authentication (ms param in case of mobile, for example) to this ping."]
         #[serde(
             rename = "conversionUrl",
             default,
@@ -2673,7 +2673,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Channel>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#channelListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#channelListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2743,14 +2743,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChannelLocalization {
-        #[doc = "The localized strings for channel's description."]
+        #[doc = "The localized strings for channel’s description."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The localized strings for channel's title."]
+        #[doc = "The localized strings for channel’s title."]
         #[serde(
             rename = "title",
             default,
@@ -2788,21 +2788,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "The channel's URL."]
+        #[doc = "The channel’s URL."]
         #[serde(
             rename = "channelUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_url: ::std::option::Option<String>,
-        #[doc = "The channel's display name."]
+        #[doc = "The channel’s display name."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The channels's avatar URL."]
+        #[doc = "The channels’s avatar URL."]
         #[serde(
             rename = "profileImageUrl",
             default,
@@ -2854,7 +2854,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#channelSection\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#channelSection”."]
         #[serde(
             rename = "kind",
             default,
@@ -2967,7 +2967,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::ChannelSection>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#channelSectionListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#channelSectionListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3005,7 +3005,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChannelSectionLocalization {
-        #[doc = "The localized strings for channel section's title."]
+        #[doc = "The localized strings for channel section’s title."]
         #[serde(
             rename = "title",
             default,
@@ -3043,7 +3043,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "The language of the channel section's default title and description."]
+        #[doc = "The language of the channel section’s default title and description."]
         #[serde(
             rename = "defaultLanguage",
             default,
@@ -3078,7 +3078,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub style: ::std::option::Option<crate::schemas::ChannelSectionSnippetStyle>,
-        #[doc = "The channel section's title for multiple_playlists and multiple_channels."]
+        #[doc = "The channel section’s title for multiple_playlists and multiple_channels."]
         #[serde(
             rename = "title",
             default,
@@ -3503,7 +3503,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_url: ::std::option::Option<String>,
-        #[doc = "The language of the channel's default title and description."]
+        #[doc = "The language of the channel’s default title and description."]
         #[serde(
             rename = "defaultLanguage",
             default,
@@ -3538,7 +3538,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnails: ::std::option::Option<crate::schemas::ThumbnailDetails>,
-        #[doc = "The channel's title."]
+        #[doc = "The channel’s title."]
         #[serde(
             rename = "title",
             default,
@@ -3632,7 +3632,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChannelStatus {
-        #[doc = "If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn't have a public YouTube identity."]
+        #[doc = "If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn’t have a public YouTube identity."]
         #[serde(
             rename = "isLinked",
             default,
@@ -3886,7 +3886,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChannelTopicDetails {
-        #[doc = "A list of Wikipedia URLs that describe the channel's content."]
+        #[doc = "A list of Wikipedia URLs that describe the channel’s content."]
         #[serde(
             rename = "topicCategories",
             default,
@@ -3938,7 +3938,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#comment\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#comment”."]
         #[serde(
             rename = "kind",
             default,
@@ -3997,7 +3997,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Comment>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#commentListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#commentListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4066,7 +4066,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub author_channel_id: ::std::option::Option<crate::schemas::CommentSnippetAuthorChannelId>,
-        #[doc = "Link to the author's YouTube channel, if any."]
+        #[doc = "Link to the author’s YouTube channel, if any."]
         #[serde(
             rename = "authorChannelUrl",
             default,
@@ -4094,7 +4094,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_rate: ::std::option::Option<bool>,
-        #[doc = "The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it's the video's channel."]
+        #[doc = "The id of the corresponding YouTube channel. In case of a channel comment this is the channel the comment refers to. In case of a video comment it’s the video’s channel."]
         #[serde(
             rename = "channelId",
             default,
@@ -4108,7 +4108,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub like_count: ::std::option::Option<u32>,
-        #[doc = "The comment's moderation status. Will not be set if the comments were requested through the id filter."]
+        #[doc = "The comment’s moderation status. Will not be set if the comments were requested through the id filter."]
         #[serde(
             rename = "moderationStatus",
             default,
@@ -4130,14 +4130,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub published_at: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The comment's text. The format is either plain text or HTML dependent on what has been requested. Even the plain text representation may differ from the text originally posted in that it may replace video links with video titles etc."]
+        #[doc = "The comment’s text. The format is either plain text or HTML dependent on what has been requested. Even the plain text representation may differ from the text originally posted in that it may replace video links with video titles etc."]
         #[serde(
             rename = "textDisplay",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text_display: ::std::option::Option<String>,
-        #[doc = "The comment's original raw text as initially posted or last updated. The original text will only be returned if it is accessible to the viewer, which is only guaranteed if the viewer is the comment's author."]
+        #[doc = "The comment’s original raw text as initially posted or last updated. The original text will only be returned if it is accessible to the viewer, which is only guaranteed if the viewer is the comment’s author."]
         #[serde(
             rename = "textOriginal",
             default,
@@ -4388,7 +4388,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#commentThread\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#commentThread”."]
         #[serde(
             rename = "kind",
             default,
@@ -4454,7 +4454,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::CommentThread>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#commentThreadListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#commentThreadListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4555,7 +4555,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_reply: ::std::option::Option<bool>,
-        #[doc = "The YouTube channel the comments in the thread refer to or the channel with the video the comments refer to. If video_id isn't set the comments refer to the channel itself."]
+        #[doc = "The YouTube channel the comments in the thread refer to or the channel with the video the comments refer to. If video_id isn’t set the comments refer to the channel itself."]
         #[serde(
             rename = "channelId",
             default,
@@ -4614,105 +4614,105 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ContentRating {
-        #[doc = "The video's Australian Classification Board (ACB) or Australian Communications and Media Authority (ACMA) rating. ACMA ratings are used to classify children's television programming."]
+        #[doc = "The video’s Australian Classification Board (ACB) or Australian Communications and Media Authority (ACMA) rating. ACMA ratings are used to classify children’s television programming."]
         #[serde(
             rename = "acbRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub acb_rating: ::std::option::Option<crate::schemas::ContentRatingAcbRating>,
-        #[doc = "The video's rating from Italy's Autorità per le Garanzie nelle Comunicazioni (AGCOM)."]
+        #[doc = "The video’s rating from Italy’s Autorità per le Garanzie nelle Comunicazioni (AGCOM)."]
         #[serde(
             rename = "agcomRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub agcom_rating: ::std::option::Option<crate::schemas::ContentRatingAgcomRating>,
-        #[doc = "The video's Anatel (Asociación Nacional de Televisión) rating for Chilean television."]
+        #[doc = "The video’s Anatel (Asociación Nacional de Televisión) rating for Chilean television."]
         #[serde(
             rename = "anatelRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub anatel_rating: ::std::option::Option<crate::schemas::ContentRatingAnatelRating>,
-        #[doc = "The video's British Board of Film Classification (BBFC) rating."]
+        #[doc = "The video’s British Board of Film Classification (BBFC) rating."]
         #[serde(
             rename = "bbfcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bbfc_rating: ::std::option::Option<crate::schemas::ContentRatingBbfcRating>,
-        #[doc = "The video's rating from Thailand's Board of Film and Video Censors."]
+        #[doc = "The video’s rating from Thailand’s Board of Film and Video Censors."]
         #[serde(
             rename = "bfvcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bfvc_rating: ::std::option::Option<crate::schemas::ContentRatingBfvcRating>,
-        #[doc = "The video's rating from the Austrian Board of Media Classification (Bundesministerium für Unterricht, Kunst und Kultur)."]
+        #[doc = "The video’s rating from the Austrian Board of Media Classification (Bundesministerium für Unterricht, Kunst und Kultur)."]
         #[serde(
             rename = "bmukkRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bmukk_rating: ::std::option::Option<crate::schemas::ContentRatingBmukkRating>,
-        #[doc = "Rating system for Canadian TV - Canadian TV Classification System The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian English-language broadcasts. For more information, see the Canadian Broadcast Standards Council website."]
+        #[doc = "Rating system for Canadian TV - Canadian TV Classification System The video’s rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian English-language broadcasts. For more information, see the Canadian Broadcast Standards Council website."]
         #[serde(
             rename = "catvRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub catv_rating: ::std::option::Option<crate::schemas::ContentRatingCatvRating>,
-        #[doc = "The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian French-language broadcasts. For more information, see the Canadian Broadcast Standards Council website."]
+        #[doc = "The video’s rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian French-language broadcasts. For more information, see the Canadian Broadcast Standards Council website."]
         #[serde(
             rename = "catvfrRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub catvfr_rating: ::std::option::Option<crate::schemas::ContentRatingCatvfrRating>,
-        #[doc = "The video's Central Board of Film Certification (CBFC - India) rating."]
+        #[doc = "The video’s Central Board of Film Certification (CBFC - India) rating."]
         #[serde(
             rename = "cbfcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cbfc_rating: ::std::option::Option<crate::schemas::ContentRatingCbfcRating>,
-        #[doc = "The video's Consejo de Calificación Cinematográfica (Chile) rating."]
+        #[doc = "The video’s Consejo de Calificación Cinematográfica (Chile) rating."]
         #[serde(
             rename = "cccRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ccc_rating: ::std::option::Option<crate::schemas::ContentRatingCccRating>,
-        #[doc = "The video's rating from Portugal's Comissão de Classificação de Espect´culos."]
+        #[doc = "The video’s rating from Portugal’s Comissão de Classificação de Espect´culos."]
         #[serde(
             rename = "cceRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cce_rating: ::std::option::Option<crate::schemas::ContentRatingCceRating>,
-        #[doc = "The video's rating in Switzerland."]
+        #[doc = "The video’s rating in Switzerland."]
         #[serde(
             rename = "chfilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub chfilm_rating: ::std::option::Option<crate::schemas::ContentRatingChfilmRating>,
-        #[doc = "The video's Canadian Home Video Rating System (CHVRS) rating."]
+        #[doc = "The video’s Canadian Home Video Rating System (CHVRS) rating."]
         #[serde(
             rename = "chvrsRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub chvrs_rating: ::std::option::Option<crate::schemas::ContentRatingChvrsRating>,
-        #[doc = "The video's rating from the Commission de Contrôle des Films (Belgium)."]
+        #[doc = "The video’s rating from the Commission de Contrôle des Films (Belgium)."]
         #[serde(
             rename = "cicfRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cicf_rating: ::std::option::Option<crate::schemas::ContentRatingCicfRating>,
-        #[doc = "The video's rating from Romania's CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA)."]
+        #[doc = "The video’s rating from Romania’s CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA)."]
         #[serde(
             rename = "cnaRating",
             default,
@@ -4726,28 +4726,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cnc_rating: ::std::option::Option<crate::schemas::ContentRatingCncRating>,
-        #[doc = "The video's rating from France's Conseil supérieur de l’audiovisuel, which rates broadcast content."]
+        #[doc = "The video’s rating from France’s Conseil supérieur de l’audiovisuel, which rates broadcast content."]
         #[serde(
             rename = "csaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub csa_rating: ::std::option::Option<crate::schemas::ContentRatingCsaRating>,
-        #[doc = "The video's rating from Luxembourg's Commission de surveillance de la classification des films (CSCF)."]
+        #[doc = "The video’s rating from Luxembourg’s Commission de surveillance de la classification des films (CSCF)."]
         #[serde(
             rename = "cscfRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cscf_rating: ::std::option::Option<crate::schemas::ContentRatingCscfRating>,
-        #[doc = "The video's rating in the Czech Republic."]
+        #[doc = "The video’s rating in the Czech Republic."]
         #[serde(
             rename = "czfilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub czfilm_rating: ::std::option::Option<crate::schemas::ContentRatingCzfilmRating>,
-        #[doc = "The video's Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil) rating."]
+        #[doc = "The video’s Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil) rating."]
         #[serde(
             rename = "djctqRating",
             default,
@@ -4769,35 +4769,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ecbmct_rating: ::std::option::Option<crate::schemas::ContentRatingEcbmctRating>,
-        #[doc = "The video's rating in Estonia."]
+        #[doc = "The video’s rating in Estonia."]
         #[serde(
             rename = "eefilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub eefilm_rating: ::std::option::Option<crate::schemas::ContentRatingEefilmRating>,
-        #[doc = "The video's rating in Egypt."]
+        #[doc = "The video’s rating in Egypt."]
         #[serde(
             rename = "egfilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub egfilm_rating: ::std::option::Option<crate::schemas::ContentRatingEgfilmRating>,
-        #[doc = "The video's Eirin (映倫) rating. Eirin is the Japanese rating system."]
+        #[doc = "The video’s Eirin (映倫) rating. Eirin is the Japanese rating system."]
         #[serde(
             rename = "eirinRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub eirin_rating: ::std::option::Option<crate::schemas::ContentRatingEirinRating>,
-        #[doc = "The video's rating from Malaysia's Film Censorship Board."]
+        #[doc = "The video’s rating from Malaysia’s Film Censorship Board."]
         #[serde(
             rename = "fcbmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fcbm_rating: ::std::option::Option<crate::schemas::ContentRatingFcbmRating>,
-        #[doc = "The video's rating from Hong Kong's Office for Film, Newspaper and Article Administration."]
+        #[doc = "The video’s rating from Hong Kong’s Office for Film, Newspaper and Article Administration."]
         #[serde(
             rename = "fcoRating",
             default,
@@ -4811,7 +4811,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fmoc_rating: ::std::option::Option<crate::schemas::ContentRatingFmocRating>,
-        #[doc = "The video's rating from South Africa's Film and Publication Board."]
+        #[doc = "The video’s rating from South Africa’s Film and Publication Board."]
         #[serde(
             rename = "fpbRating",
             default,
@@ -4826,105 +4826,105 @@ pub mod schemas {
         )]
         pub fpb_rating_reasons:
             ::std::option::Option<Vec<crate::schemas::ContentRatingFpbRatingReasonsItems>>,
-        #[doc = "The video's Freiwillige Selbstkontrolle der Filmwirtschaft (FSK - Germany) rating."]
+        #[doc = "The video’s Freiwillige Selbstkontrolle der Filmwirtschaft (FSK - Germany) rating."]
         #[serde(
             rename = "fskRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fsk_rating: ::std::option::Option<crate::schemas::ContentRatingFskRating>,
-        #[doc = "The video's rating in Greece."]
+        #[doc = "The video’s rating in Greece."]
         #[serde(
             rename = "grfilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub grfilm_rating: ::std::option::Option<crate::schemas::ContentRatingGrfilmRating>,
-        #[doc = "The video's Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA - Spain) rating."]
+        #[doc = "The video’s Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA - Spain) rating."]
         #[serde(
             rename = "icaaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub icaa_rating: ::std::option::Option<crate::schemas::ContentRatingIcaaRating>,
-        #[doc = "The video's Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more information."]
+        #[doc = "The video’s Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more information."]
         #[serde(
             rename = "ifcoRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ifco_rating: ::std::option::Option<crate::schemas::ContentRatingIfcoRating>,
-        #[doc = "The video's rating in Israel."]
+        #[doc = "The video’s rating in Israel."]
         #[serde(
             rename = "ilfilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ilfilm_rating: ::std::option::Option<crate::schemas::ContentRatingIlfilmRating>,
-        #[doc = "The video's INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating."]
+        #[doc = "The video’s INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating."]
         #[serde(
             rename = "incaaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub incaa_rating: ::std::option::Option<crate::schemas::ContentRatingIncaaRating>,
-        #[doc = "The video's rating from the Kenya Film Classification Board."]
+        #[doc = "The video’s rating from the Kenya Film Classification Board."]
         #[serde(
             rename = "kfcbRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kfcb_rating: ::std::option::Option<crate::schemas::ContentRatingKfcbRating>,
-        #[doc = "The video's NICAM/Kijkwijzer rating from the Nederlands Instituut voor de Classificatie van Audiovisuele Media (Netherlands)."]
+        #[doc = "The video’s NICAM/Kijkwijzer rating from the Nederlands Instituut voor de Classificatie van Audiovisuele Media (Netherlands)."]
         #[serde(
             rename = "kijkwijzerRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kijkwijzer_rating: ::std::option::Option<crate::schemas::ContentRatingKijkwijzerRating>,
-        #[doc = "The video's Korea Media Rating Board (영상물등급위원회) rating. The KMRB rates videos in South Korea."]
+        #[doc = "The video’s Korea Media Rating Board (영상물등급위원회) rating. The KMRB rates videos in South Korea."]
         #[serde(
             rename = "kmrbRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kmrb_rating: ::std::option::Option<crate::schemas::ContentRatingKmrbRating>,
-        #[doc = "The video's rating from Indonesia's Lembaga Sensor Film."]
+        #[doc = "The video’s rating from Indonesia’s Lembaga Sensor Film."]
         #[serde(
             rename = "lsfRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lsf_rating: ::std::option::Option<crate::schemas::ContentRatingLsfRating>,
-        #[doc = "The video's rating from Malta's Film Age-Classification Board."]
+        #[doc = "The video’s rating from Malta’s Film Age-Classification Board."]
         #[serde(
             rename = "mccaaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mccaa_rating: ::std::option::Option<crate::schemas::ContentRatingMccaaRating>,
-        #[doc = "The video's rating from the Danish Film Institute's (Det Danske Filminstitut) Media Council for Children and Young People."]
+        #[doc = "The video’s rating from the Danish Film Institute’s (Det Danske Filminstitut) Media Council for Children and Young People."]
         #[serde(
             rename = "mccypRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mccyp_rating: ::std::option::Option<crate::schemas::ContentRatingMccypRating>,
-        #[doc = "The video's rating system for Vietnam - MCST"]
+        #[doc = "The video’s rating system for Vietnam - MCST"]
         #[serde(
             rename = "mcstRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mcst_rating: ::std::option::Option<crate::schemas::ContentRatingMcstRating>,
-        #[doc = "The video's rating from Singapore's Media Development Authority (MDA) and, specifically, it's Board of Film Censors (BFC)."]
+        #[doc = "The video’s rating from Singapore’s Media Development Authority (MDA) and, specifically, it’s Board of Film Censors (BFC)."]
         #[serde(
             rename = "mdaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mda_rating: ::std::option::Option<crate::schemas::ContentRatingMdaRating>,
-        #[doc = "The video's rating from Medietilsynet, the Norwegian Media Authority."]
+        #[doc = "The video’s rating from Medietilsynet, the Norwegian Media Authority."]
         #[serde(
             rename = "medietilsynetRating",
             default,
@@ -4932,7 +4932,7 @@ pub mod schemas {
         )]
         pub medietilsynet_rating:
             ::std::option::Option<crate::schemas::ContentRatingMedietilsynetRating>,
-        #[doc = "The video's rating from Finland's Kansallinen Audiovisuaalinen Instituutti (National Audiovisual Institute)."]
+        #[doc = "The video’s rating from Finland’s Kansallinen Audiovisuaalinen Instituutti (National Audiovisual Institute)."]
         #[serde(
             rename = "mekuRating",
             default,
@@ -4946,28 +4946,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mena_mpaa_rating: ::std::option::Option<crate::schemas::ContentRatingMenaMpaaRating>,
-        #[doc = "The video's rating from the Ministero dei Beni e delle Attività Culturali e del Turismo (Italy)."]
+        #[doc = "The video’s rating from the Ministero dei Beni e delle Attività Culturali e del Turismo (Italy)."]
         #[serde(
             rename = "mibacRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mibac_rating: ::std::option::Option<crate::schemas::ContentRatingMibacRating>,
-        #[doc = "The video's Ministerio de Cultura (Colombia) rating."]
+        #[doc = "The video’s Ministerio de Cultura (Colombia) rating."]
         #[serde(
             rename = "mocRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub moc_rating: ::std::option::Option<crate::schemas::ContentRatingMocRating>,
-        #[doc = "The video's rating from Taiwan's Ministry of Culture (文化部)."]
+        #[doc = "The video’s rating from Taiwan’s Ministry of Culture (文化部)."]
         #[serde(
             rename = "moctwRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub moctw_rating: ::std::option::Option<crate::schemas::ContentRatingMoctwRating>,
-        #[doc = "The video's Motion Picture Association of America (MPAA) rating."]
+        #[doc = "The video’s Motion Picture Association of America (MPAA) rating."]
         #[serde(
             rename = "mpaaRating",
             default,
@@ -4981,42 +4981,42 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mpaat_rating: ::std::option::Option<crate::schemas::ContentRatingMpaatRating>,
-        #[doc = "The video's rating from the Movie and Television Review and Classification Board (Philippines)."]
+        #[doc = "The video’s rating from the Movie and Television Review and Classification Board (Philippines)."]
         #[serde(
             rename = "mtrcbRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mtrcb_rating: ::std::option::Option<crate::schemas::ContentRatingMtrcbRating>,
-        #[doc = "The video's rating from the Maldives National Bureau of Classification."]
+        #[doc = "The video’s rating from the Maldives National Bureau of Classification."]
         #[serde(
             rename = "nbcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nbc_rating: ::std::option::Option<crate::schemas::ContentRatingNbcRating>,
-        #[doc = "The video's rating in Poland."]
+        #[doc = "The video’s rating in Poland."]
         #[serde(
             rename = "nbcplRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nbcpl_rating: ::std::option::Option<crate::schemas::ContentRatingNbcplRating>,
-        #[doc = "The video's rating from the Bulgarian National Film Center."]
+        #[doc = "The video’s rating from the Bulgarian National Film Center."]
         #[serde(
             rename = "nfrcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nfrc_rating: ::std::option::Option<crate::schemas::ContentRatingNfrcRating>,
-        #[doc = "The video's rating from Nigeria's National Film and Video Censors Board."]
+        #[doc = "The video’s rating from Nigeria’s National Film and Video Censors Board."]
         #[serde(
             rename = "nfvcbRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nfvcb_rating: ::std::option::Option<crate::schemas::ContentRatingNfvcbRating>,
-        #[doc = "The video's rating from the Nacionãlais Kino centrs (National Film Centre of Latvia)."]
+        #[doc = "The video’s rating from the Nacionãlais Kino centrs (National Film Centre of Latvia)."]
         #[serde(
             rename = "nkclvRating",
             default,
@@ -5030,28 +5030,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nmc_rating: ::std::option::Option<crate::schemas::ContentRatingNmcRating>,
-        #[doc = "The video's Office of Film and Literature Classification (OFLC - New Zealand) rating."]
+        #[doc = "The video’s Office of Film and Literature Classification (OFLC - New Zealand) rating."]
         #[serde(
             rename = "oflcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oflc_rating: ::std::option::Option<crate::schemas::ContentRatingOflcRating>,
-        #[doc = "The video's rating in Peru."]
+        #[doc = "The video’s rating in Peru."]
         #[serde(
             rename = "pefilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pefilm_rating: ::std::option::Option<crate::schemas::ContentRatingPefilmRating>,
-        #[doc = "The video's rating from the Hungarian Nemzeti Filmiroda, the Rating Committee of the National Office of Film."]
+        #[doc = "The video’s rating from the Hungarian Nemzeti Filmiroda, the Rating Committee of the National Office of Film."]
         #[serde(
             rename = "rcnofRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rcnof_rating: ::std::option::Option<crate::schemas::ContentRatingRcnofRating>,
-        #[doc = "The video's rating in Venezuela."]
+        #[doc = "The video’s rating in Venezuela."]
         #[serde(
             rename = "resorteviolenciaRating",
             default,
@@ -5059,49 +5059,49 @@ pub mod schemas {
         )]
         pub resorteviolencia_rating:
             ::std::option::Option<crate::schemas::ContentRatingResorteviolenciaRating>,
-        #[doc = "The video's General Directorate of Radio, Television and Cinematography (Mexico) rating."]
+        #[doc = "The video’s General Directorate of Radio, Television and Cinematography (Mexico) rating."]
         #[serde(
             rename = "rtcRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rtc_rating: ::std::option::Option<crate::schemas::ContentRatingRtcRating>,
-        #[doc = "The video's rating from Ireland's Raidió Teilifís Éireann."]
+        #[doc = "The video’s rating from Ireland’s Raidió Teilifís Éireann."]
         #[serde(
             rename = "rteRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rte_rating: ::std::option::Option<crate::schemas::ContentRatingRteRating>,
-        #[doc = "The video's National Film Registry of the Russian Federation (MKRF - Russia) rating."]
+        #[doc = "The video’s National Film Registry of the Russian Federation (MKRF - Russia) rating."]
         #[serde(
             rename = "russiaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub russia_rating: ::std::option::Option<crate::schemas::ContentRatingRussiaRating>,
-        #[doc = "The video's rating in Slovakia."]
+        #[doc = "The video’s rating in Slovakia."]
         #[serde(
             rename = "skfilmRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub skfilm_rating: ::std::option::Option<crate::schemas::ContentRatingSkfilmRating>,
-        #[doc = "The video's rating in Iceland."]
+        #[doc = "The video’s rating in Iceland."]
         #[serde(
             rename = "smaisRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub smais_rating: ::std::option::Option<crate::schemas::ContentRatingSmaisRating>,
-        #[doc = "The video's rating from Statens medieråd (Sweden's National Media Council)."]
+        #[doc = "The video’s rating from Statens medieråd (Sweden’s National Media Council)."]
         #[serde(
             rename = "smsaRating",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub smsa_rating: ::std::option::Option<crate::schemas::ContentRatingSmsaRating>,
-        #[doc = "The video's TV Parental Guidelines (TVPG) rating."]
+        #[doc = "The video’s TV Parental Guidelines (TVPG) rating."]
         #[serde(
             rename = "tvpgRating",
             default,
@@ -9865,7 +9865,7 @@ pub mod schemas {
         MenaMpaaPg13,
         #[doc = "R"]
         MenaMpaaR,
-        #[doc = "To keep the same enum values as MPAA's items have, skip NC_17."]
+        #[doc = "To keep the same enum values as MPAA’s items have, skip NC_17."]
         MenaMpaaUnrated,
         MenaMpaaUnspecified,
     }
@@ -12356,7 +12356,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#i18nLanguage\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#i18nLanguage”."]
         #[serde(
             rename = "kind",
             default,
@@ -12415,7 +12415,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::I18Nlanguage>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#i18nLanguageListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#i18nLanguageListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12505,7 +12505,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#i18nRegion\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#i18nRegion”."]
         #[serde(
             rename = "kind",
             default,
@@ -12564,7 +12564,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::I18Nregion>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#i18nRegionListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#i18nRegionListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13296,7 +13296,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveBroadcast {
-        #[doc = "The contentDetails object contains information about the event's video content, such as whether the content can be shown in an embedded video player or if it will be archived and therefore available for viewing after the event has concluded."]
+        #[doc = "The contentDetails object contains information about the event’s video content, such as whether the content can be shown in an embedded video player or if it will be archived and therefore available for viewing after the event has concluded."]
         #[serde(
             rename = "contentDetails",
             default,
@@ -13317,7 +13317,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveBroadcast\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveBroadcast”."]
         #[serde(
             rename = "kind",
             default,
@@ -13331,14 +13331,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub snippet: ::std::option::Option<crate::schemas::LiveBroadcastSnippet>,
-        #[doc = "The statistics object contains info about the event's current stats. These include concurrent viewers and total chat count. Statistics can change (in either direction) during the lifetime of an event. Statistics are only returned while the event is live."]
+        #[doc = "The statistics object contains info about the event’s current stats. These include concurrent viewers and total chat count. Statistics can change (in either direction) during the lifetime of an event. Statistics are only returned while the event is live."]
         #[serde(
             rename = "statistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub statistics: ::std::option::Option<crate::schemas::LiveBroadcastStatistics>,
-        #[doc = "The status object contains information about the event's status."]
+        #[doc = "The status object contains information about the event’s status."]
         #[serde(
             rename = "status",
             default,
@@ -13419,7 +13419,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_content_encryption: ::std::option::Option<bool>,
-        #[doc = "This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true. *Important:* You must set the value to true and also set the enableArchive property's value to true if you want to make playback available immediately after the broadcast ends."]
+        #[doc = "This setting determines whether viewers can access DVR controls while watching the video. DVR controls enable the viewer to control the video playback experience by pausing, rewinding, or fast forwarding content. The default value for this property is true. *Important:* You must set the value to true and also set the enableArchive property’s value to true if you want to make playback available immediately after the broadcast ends."]
         #[serde(
             rename = "enableDvr",
             default,
@@ -13470,14 +13470,14 @@ pub mod schemas {
         )]
         pub projection:
             ::std::option::Option<crate::schemas::LiveBroadcastContentDetailsProjection>,
-        #[doc = "Automatically start recording after the event goes live. The default value for this property is true. *Important:* You must also set the enableDvr property's value to true if you want the playback to be available immediately after the broadcast ends. If you set this property's value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback."]
+        #[doc = "Automatically start recording after the event goes live. The default value for this property is true. *Important:* You must also set the enableDvr property’s value to true if you want the playback to be available immediately after the broadcast ends. If you set this property’s value to true but do not also set the enableDvr property to true, there may be a delay of around one day before the archived video will be available for playback."]
         #[serde(
             rename = "recordFromStart",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub record_from_start: ::std::option::Option<bool>,
-        #[doc = "This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast's status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint's eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers."]
+        #[doc = "This setting indicates whether the broadcast should automatically begin with an in-stream slate when you update the broadcast’s status to live. After updating the status, you then need to send a liveCuepoints.insert request that sets the cuepoint’s eventState to end to remove the in-stream slate and make your broadcast stream visible to viewers."]
         #[serde(
             rename = "startWithSlate",
             default,
@@ -13894,7 +13894,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::LiveBroadcast>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveBroadcastListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveBroadcastListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13964,14 +13964,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveBroadcastSnippet {
-        #[doc = "The date and time that the broadcast actually ended. This information is only available once the broadcast's state is complete."]
+        #[doc = "The date and time that the broadcast actually ended. This information is only available once the broadcast’s state is complete."]
         #[serde(
             rename = "actualEndTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub actual_end_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The date and time that the broadcast actually started. This information is only available once the broadcast's state is live."]
+        #[doc = "The date and time that the broadcast actually started. This information is only available once the broadcast’s state is live."]
         #[serde(
             rename = "actualStartTime",
             default,
@@ -13985,7 +13985,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "The broadcast's description. As with the title, you can set this field by modifying the broadcast resource or by setting the description field of the corresponding video resource."]
+        #[doc = "The broadcast’s description. As with the title, you can set this field by modifying the broadcast resource or by setting the description field of the corresponding video resource."]
         #[serde(
             rename = "description",
             default,
@@ -14006,7 +14006,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub live_chat_id: ::std::option::Option<String>,
-        #[doc = "The date and time that the broadcast was added to YouTube's live broadcast schedule."]
+        #[doc = "The date and time that the broadcast was added to YouTube’s live broadcast schedule."]
         #[serde(
             rename = "publishedAt",
             default,
@@ -14034,7 +14034,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnails: ::std::option::Option<crate::schemas::ThumbnailDetails>,
-        #[doc = "The broadcast's title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource."]
+        #[doc = "The broadcast’s title. Note that the broadcast represents exactly one YouTube video. You can set this field by modifying the broadcast resource or by setting the title field of the corresponding video resource."]
         #[serde(
             rename = "title",
             default,
@@ -14097,7 +14097,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveBroadcastStatus {
-        #[doc = "The broadcast's status. The status can be updated using the API's liveBroadcasts.transition method."]
+        #[doc = "The broadcast’s status. The status can be updated using the API’s liveBroadcasts.transition method."]
         #[serde(
             rename = "lifeCycleStatus",
             default,
@@ -14120,14 +14120,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub made_for_kids: ::std::option::Option<bool>,
-        #[doc = "The broadcast's privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource."]
+        #[doc = "The broadcast’s privacy status. Note that the broadcast represents exactly one YouTube video, so the privacy settings are identical to those supported for videos. In addition, you can set this field by modifying the broadcast resource or by setting the privacyStatus field of the corresponding video resource."]
         #[serde(
             rename = "privacyStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub privacy_status: ::std::option::Option<crate::schemas::LiveBroadcastStatusPrivacyStatus>,
-        #[doc = "The broadcast's recording status."]
+        #[doc = "The broadcast’s recording status."]
         #[serde(
             rename = "recordingStatus",
             default,
@@ -14161,7 +14161,7 @@ pub mod schemas {
         Created,
         #[doc = "No value or the value is unknown."]
         LifeCycleStatusUnspecified,
-        #[doc = "Viper is recording; this means the \"clock\" is running"]
+        #[doc = "Viper is recording; this means the “clock” is running"]
         Live,
         #[doc = "Transition into LIVE has been requested"]
         LiveStarting,
@@ -14759,7 +14759,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveChatGiftMembershipReceivedDetails {
-        #[doc = "The ID of the membership gifting message that is related to this gift membership. This ID will always refer to a message whose type is 'membershipGiftingEvent'."]
+        #[doc = "The ID of the membership gifting message that is related to this gift membership. This ID will always refer to a message whose type is ‘membershipGiftingEvent’."]
         #[serde(
             rename = "associatedMembershipGiftingMessageId",
             default,
@@ -14773,7 +14773,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gifter_channel_id: ::std::option::Option<String>,
-        #[doc = "The name of the Level at which the viewer is a member. This matches the `snippet.membershipGiftingDetails.giftMembershipsLevelName` of the associated membership gifting message. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[doc = "The name of the Level at which the viewer is a member. This matches the `snippet.membershipGiftingDetails.giftMembershipsLevelName` of the associated membership gifting message. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn’t filled."]
         #[serde(
             rename = "memberLevelName",
             default,
@@ -14804,7 +14804,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveChatMemberMilestoneChatDetails {
-        #[doc = "The name of the Level at which the viever is a member. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[doc = "The name of the Level at which the viever is a member. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn’t filled."]
         #[serde(
             rename = "memberLevelName",
             default,
@@ -14856,7 +14856,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gift_memberships_count: ::std::option::Option<i32>,
-        #[doc = "The name of the level of the gift memberships purchased by the user. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[doc = "The name of the level of the gift memberships purchased by the user. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn’t filled."]
         #[serde(
             rename = "giftMembershipsLevelName",
             default,
@@ -14908,7 +14908,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveChatMessage\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveChatMessage”."]
         #[serde(
             rename = "kind",
             default,
@@ -14953,14 +14953,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "The channel's URL."]
+        #[doc = "The channel’s URL."]
         #[serde(
             rename = "channelUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_url: ::std::option::Option<String>,
-        #[doc = "The channel's display name."]
+        #[doc = "The channel’s display name."]
         #[serde(
             rename = "displayName",
             default,
@@ -14988,14 +14988,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_chat_sponsor: ::std::option::Option<bool>,
-        #[doc = "Whether the author's identity has been verified by YouTube."]
+        #[doc = "Whether the author’s identity has been verified by YouTube."]
         #[serde(
             rename = "isVerified",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_verified: ::std::option::Option<bool>,
-        #[doc = "The channels's avatar URL."]
+        #[doc = "The channels’s avatar URL."]
         #[serde(
             rename = "profileImageUrl",
             default,
@@ -15076,7 +15076,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::LiveChatMessage>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveChatMessageListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveChatMessageListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -15196,7 +15196,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_message: ::std::option::Option<String>,
-        #[doc = "Details about the funding event, this is only set if the type is 'fanFundingEvent'."]
+        #[doc = "Details about the funding event, this is only set if the type is ‘fanFundingEvent’."]
         #[serde(
             rename = "fanFundingEventDetails",
             default,
@@ -15204,7 +15204,7 @@ pub mod schemas {
         )]
         pub fan_funding_event_details:
             ::std::option::Option<crate::schemas::LiveChatFanFundingEventDetails>,
-        #[doc = "Details about the Gift Membership Received event, this is only set if the type is 'giftMembershipReceivedEvent'."]
+        #[doc = "Details about the Gift Membership Received event, this is only set if the type is ‘giftMembershipReceivedEvent’."]
         #[serde(
             rename = "giftMembershipReceivedDetails",
             default,
@@ -15225,7 +15225,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub live_chat_id: ::std::option::Option<String>,
-        #[doc = "Details about the Member Milestone Chat event, this is only set if the type is 'memberMilestoneChatEvent'."]
+        #[doc = "Details about the Member Milestone Chat event, this is only set if the type is ‘memberMilestoneChatEvent’."]
         #[serde(
             rename = "memberMilestoneChatDetails",
             default,
@@ -15233,7 +15233,7 @@ pub mod schemas {
         )]
         pub member_milestone_chat_details:
             ::std::option::Option<crate::schemas::LiveChatMemberMilestoneChatDetails>,
-        #[doc = "Details about the Membership Gifting event, this is only set if the type is 'membershipGiftingEvent'."]
+        #[doc = "Details about the Membership Gifting event, this is only set if the type is ‘membershipGiftingEvent’."]
         #[serde(
             rename = "membershipGiftingDetails",
             default,
@@ -15255,7 +15255,7 @@ pub mod schemas {
         )]
         pub message_retracted_details:
             ::std::option::Option<crate::schemas::LiveChatMessageRetractedDetails>,
-        #[doc = "Details about the New Member Announcement event, this is only set if the type is 'newSponsorEvent'. Please note that \"member\" is the new term for \"sponsor\"."]
+        #[doc = "Details about the New Member Announcement event, this is only set if the type is ‘newSponsorEvent’. Please note that “member” is the new term for “sponsor”."]
         #[serde(
             rename = "newSponsorDetails",
             default,
@@ -15276,14 +15276,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::LiveChatMessageSnippetType>,
-        #[doc = "Details about the Super Chat event, this is only set if the type is 'superChatEvent'."]
+        #[doc = "Details about the Super Chat event, this is only set if the type is ‘superChatEvent’."]
         #[serde(
             rename = "superChatDetails",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub super_chat_details: ::std::option::Option<crate::schemas::LiveChatSuperChatDetails>,
-        #[doc = "Details about the Super Sticker event, this is only set if the type is 'superStickerEvent'."]
+        #[doc = "Details about the Super Sticker event, this is only set if the type is ‘superStickerEvent’."]
         #[serde(
             rename = "superStickerDetails",
             default,
@@ -15291,7 +15291,7 @@ pub mod schemas {
         )]
         pub super_sticker_details:
             ::std::option::Option<crate::schemas::LiveChatSuperStickerDetails>,
-        #[doc = "Details about the text message, this is only set if the type is 'textMessageEvent'."]
+        #[doc = "Details about the text message, this is only set if the type is ‘textMessageEvent’."]
         #[serde(
             rename = "textMessageDetails",
             default,
@@ -15486,7 +15486,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveChatModerator\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveChatModerator”."]
         #[serde(
             rename = "kind",
             default,
@@ -15545,7 +15545,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::LiveChatModerator>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveChatModeratorListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveChatModeratorListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -15660,7 +15660,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_upgrade: ::std::option::Option<bool>,
-        #[doc = "The name of the Level that the viewer just had joined. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn't filled."]
+        #[doc = "The name of the Level that the viewer just had joined. The Level names are defined by the YouTube channel offering the Membership. In some situations this field isn’t filled."]
         #[serde(
             rename = "memberLevelName",
             default,
@@ -15811,7 +15811,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveChatTextMessageDetails {
-        #[doc = "The user's message."]
+        #[doc = "The user’s message."]
         #[serde(
             rename = "messageText",
             default,
@@ -15958,7 +15958,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiveStream {
-        #[doc = "The cdn object defines the live stream's content delivery network (CDN) settings. These settings provide details about the manner in which you stream your content to YouTube."]
+        #[doc = "The cdn object defines the live stream’s content delivery network (CDN) settings. These settings provide details about the manner in which you stream your content to YouTube."]
         #[serde(
             rename = "cdn",
             default,
@@ -15986,7 +15986,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveStream\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveStream”."]
         #[serde(
             rename = "kind",
             default,
@@ -16000,7 +16000,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub snippet: ::std::option::Option<crate::schemas::LiveStreamSnippet>,
-        #[doc = "The status object contains information about live stream's status."]
+        #[doc = "The status object contains information about live stream’s status."]
         #[serde(
             rename = "status",
             default,
@@ -16570,7 +16570,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::LiveStream>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#liveStreamListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#liveStreamListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -16646,7 +16646,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "The stream's description. The value cannot be longer than 10000 characters."]
+        #[doc = "The stream’s description. The value cannot be longer than 10000 characters."]
         #[serde(
             rename = "description",
             default,
@@ -16666,7 +16666,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub published_at: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The stream's title. The value must be between 1 and 128 characters long."]
+        #[doc = "The stream’s title. The value must be between 1 and 128 characters long."]
         #[serde(
             rename = "title",
             default,
@@ -16901,7 +16901,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#member\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#member”."]
         #[serde(
             rename = "kind",
             default,
@@ -16960,7 +16960,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Member>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#memberListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#memberListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -17022,7 +17022,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MemberSnippet {
-        #[doc = "The id of the channel that's offering memberships."]
+        #[doc = "The id of the channel that’s offering memberships."]
         #[serde(
             rename = "creatorChannelId",
             default,
@@ -17036,7 +17036,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub member_details: ::std::option::Option<crate::schemas::ChannelProfileDetails>,
-        #[doc = "Details about the user's membership."]
+        #[doc = "Details about the user’s membership."]
         #[serde(
             rename = "membershipsDetails",
             default,
@@ -17224,7 +17224,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#membershipsLevelListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#membershipsLevelListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -17283,7 +17283,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::MembershipsLevel>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#membershipsLevelListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#membershipsLevelListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -17321,7 +17321,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MembershipsLevelSnippet {
-        #[doc = "The id of the channel that's offering channel memberships."]
+        #[doc = "The id of the channel that’s offering channel memberships."]
         #[serde(
             rename = "creatorChannelId",
             default,
@@ -17373,7 +17373,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub embed_html: ::std::option::Option<String>,
-        #[doc = "This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster's consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints. You need to set this value to true if you intend to have a broadcast delay for your event. *Note:* This property cannot be updated once the broadcast is in the testing or live state."]
+        #[doc = "This value determines whether the monitor stream is enabled for the broadcast. If the monitor stream is enabled, then YouTube will broadcast the event content on a special stream intended only for the broadcaster’s consumption. The broadcaster can use the stream to review the event content and also to identify the optimal times to insert cuepoints. You need to set this value to true if you intend to have a broadcast delay for your event. *Note:* This property cannot be updated once the broadcast is in the testing or live state."]
         #[serde(
             rename = "enableMonitorStream",
             default,
@@ -17463,7 +17463,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#playlist\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#playlist”."]
         #[serde(
             rename = "kind",
             default,
@@ -17576,7 +17576,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#playlistItem\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#playlistItem”."]
         #[serde(
             rename = "kind",
             default,
@@ -17590,7 +17590,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub snippet: ::std::option::Option<crate::schemas::PlaylistItemSnippet>,
-        #[doc = "The status object contains information about the playlist item's privacy status."]
+        #[doc = "The status object contains information about the playlist item’s privacy status."]
         #[serde(
             rename = "status",
             default,
@@ -17700,7 +17700,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::PlaylistItem>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#playlistItemListResponse\". Etag of this resource."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#playlistItemListResponse”. Etag of this resource."]
         #[serde(
             rename = "kind",
             default,
@@ -17784,7 +17784,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_title: ::std::option::Option<String>,
-        #[doc = "The item's description."]
+        #[doc = "The item’s description."]
         #[serde(
             rename = "description",
             default,
@@ -17826,7 +17826,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnails: ::std::option::Option<crate::schemas::ThumbnailDetails>,
-        #[doc = "The item's title."]
+        #[doc = "The item’s title."]
         #[serde(
             rename = "title",
             default,
@@ -17871,7 +17871,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlaylistItemStatus {
-        #[doc = "This resource's privacy status."]
+        #[doc = "This resource’s privacy status."]
         #[serde(
             rename = "privacyStatus",
             default,
@@ -17996,7 +17996,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Playlist>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#playlistListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#playlistListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -18066,14 +18066,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlaylistLocalization {
-        #[doc = "The localized strings for playlist's description."]
+        #[doc = "The localized strings for playlist’s description."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The localized strings for playlist's title."]
+        #[doc = "The localized strings for playlist’s title."]
         #[serde(
             rename = "title",
             default,
@@ -18149,14 +18149,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_title: ::std::option::Option<String>,
-        #[doc = "The language of the playlist's default title and description."]
+        #[doc = "The language of the playlist’s default title and description."]
         #[serde(
             rename = "defaultLanguage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_language: ::std::option::Option<String>,
-        #[doc = "The playlist's description."]
+        #[doc = "The playlist’s description."]
         #[serde(
             rename = "description",
             default,
@@ -18198,7 +18198,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnails: ::std::option::Option<crate::schemas::ThumbnailDetails>,
-        #[doc = "The playlist's title."]
+        #[doc = "The playlist’s title."]
         #[serde(
             rename = "title",
             default,
@@ -18229,7 +18229,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlaylistStatus {
-        #[doc = "The playlist's privacy status."]
+        #[doc = "The playlist’s privacy status."]
         #[serde(
             rename = "privacyStatus",
             default,
@@ -18340,7 +18340,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub property: ::std::option::Option<String>,
-        #[doc = "The property's value."]
+        #[doc = "The property’s value."]
         #[serde(
             rename = "value",
             default,
@@ -18474,7 +18474,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::SearchResult>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#searchListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#searchListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -18564,14 +18564,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<crate::schemas::ResourceId>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#searchResult\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#searchResult”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The snippet object contains basic details about a search result, such as its title or description. For example, if the search result is a video, then the title will be the video's title and the description will be the video's description."]
+        #[doc = "The snippet object contains basic details about a search result, such as its title or description. For example, if the search result is a video, then the title will be the video’s title and the description will be the video’s description."]
         #[serde(
             rename = "snippet",
             default,
@@ -18623,7 +18623,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "It indicates if the resource (video or channel) has upcoming/active live broadcast content. Or it's \"none\" if there is not any upcoming/active live broadcasts."]
+        #[doc = "It indicates if the resource (video or channel) has upcoming/active live broadcast content. Or it’s “none” if there is not any upcoming/active live broadcasts."]
         #[serde(
             rename = "liveBroadcastContent",
             default,
@@ -18777,7 +18777,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#subscription\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#subscription”."]
         #[serde(
             rename = "kind",
             default,
@@ -18969,7 +18969,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Subscription>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#subscriptionListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#subscriptionListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -19038,7 +19038,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SubscriptionSnippet {
-        #[doc = "The ID that YouTube uses to uniquely identify the subscriber's channel."]
+        #[doc = "The ID that YouTube uses to uniquely identify the subscriber’s channel."]
         #[serde(
             rename = "channelId",
             default,
@@ -19052,7 +19052,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_title: ::std::option::Option<String>,
-        #[doc = "The subscription's details."]
+        #[doc = "The subscription’s details."]
         #[serde(
             rename = "description",
             default,
@@ -19080,7 +19080,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnails: ::std::option::Option<crate::schemas::ThumbnailDetails>,
-        #[doc = "The subscription's title."]
+        #[doc = "The subscription’s title."]
         #[serde(
             rename = "title",
             default,
@@ -19236,7 +19236,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::SuperChatEvent>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#superChatEventListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#superChatEventListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -19334,7 +19334,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub currency: ::std::option::Option<String>,
-        #[doc = "A rendered string that displays the purchase amount and currency (e.g., \"$1.00\"). The string is rendered for the given language."]
+        #[doc = "A rendered string that displays the purchase amount and currency (e.g., “$1.00”). The string is rendered for the given language."]
         #[serde(
             rename = "displayString",
             default,
@@ -19518,7 +19518,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#thirdPartyLink\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#thirdPartyLink”."]
         #[serde(
             rename = "kind",
             default,
@@ -19792,7 +19792,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub height: ::std::option::Option<u32>,
-        #[doc = "The thumbnail image's URL."]
+        #[doc = "The thumbnail image’s URL."]
         #[serde(
             rename = "url",
             default,
@@ -19910,7 +19910,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::ThumbnailDetails>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#thumbnailSetResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#thumbnailSetResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -19984,7 +19984,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The fileDetails object encapsulates information about the video file that was uploaded to YouTube, including the file's resolution, duration, audio and video codecs, stream bitrates, and more. This data can only be retrieved by the video owner."]
+        #[doc = "The fileDetails object encapsulates information about the video file that was uploaded to YouTube, including the file’s resolution, duration, audio and video codecs, stream bitrates, and more. This data can only be retrieved by the video owner."]
         #[serde(
             rename = "fileDetails",
             default,
@@ -19998,7 +19998,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#video\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#video”."]
         #[serde(
             rename = "kind",
             default,
@@ -20036,14 +20036,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub player: ::std::option::Option<crate::schemas::VideoPlayer>,
-        #[doc = "The processingDetails object encapsulates information about YouTube's progress in processing the uploaded video file. The properties in the object identify the current processing status and an estimate of the time remaining until YouTube finishes processing the video. This part also indicates whether different types of data or content, such as file details or thumbnail images, are available for the video. The processingProgress object is designed to be polled so that the video uploaded can track the progress that YouTube has made in processing the uploaded video file. This data can only be retrieved by the video owner."]
+        #[doc = "The processingDetails object encapsulates information about YouTube’s progress in processing the uploaded video file. The properties in the object identify the current processing status and an estimate of the time remaining until YouTube finishes processing the video. This part also indicates whether different types of data or content, such as file details or thumbnail images, are available for the video. The processingProgress object is designed to be polled so that the video uploaded can track the progress that YouTube has made in processing the uploaded video file. This data can only be retrieved by the video owner."]
         #[serde(
             rename = "processingDetails",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub processing_details: ::std::option::Option<crate::schemas::VideoProcessingDetails>,
-        #[doc = "The projectDetails object contains information about the project specific video metadata. b/157517979: This part was never populated after it was added. However, it sees non-zero traffic because there is generated client code in the wild that refers to it [1]. We keep this field and do NOT remove it because otherwise V3 would return an error when this part gets requested [2]. [1] https://developers.google.com/resources/api-libraries/documentation/youtube/v3/csharp/latest/classGoogle_1_1Apis_1_1YouTube_1_1v3_1_1Data_1_1VideoProjectDetails.html [2] http://google3/video/youtube/src/python/servers/data_api/common.py?l=1565-1569&rcl=344141677"]
+        #[doc = "The projectDetails object contains information about the project specific video metadata. b/157517979: This part was never populated after it was added. However, it sees non-zero traffic because there is generated client code in the wild that refers to it \\[1\\]. We keep this field and do NOT remove it because otherwise V3 would return an error when this part gets requested \\[2\\]. \\[1\\] https://developers.google.com/resources/api-libraries/documentation/youtube/v3/csharp/latest/classGoogle_1_1Apis_1_1YouTube_1_1v3_1_1Data_1_1VideoProjectDetails.html \\[2\\] http://google3/video/youtube/src/python/servers/data_api/common.py?l=1565-1569&rcl=344141677"]
         #[serde(
             rename = "projectDetails",
             default,
@@ -20071,7 +20071,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub statistics: ::std::option::Option<crate::schemas::VideoStatistics>,
-        #[doc = "The status object contains information about the video's uploading, processing, and privacy statuses."]
+        #[doc = "The status object contains information about the video’s uploading, processing, and privacy statuses."]
         #[serde(
             rename = "status",
             default,
@@ -20370,7 +20370,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alcohol_content: ::std::option::Option<bool>,
-        #[doc = "Age-restricted trailers. For redband trailers and adult-rated video-games. Only users aged 18+ can view the content. The the field is true the content is restricted to viewers aged 18+. Otherwise The field won't be present."]
+        #[doc = "Age-restricted trailers. For redband trailers and adult-rated video-games. Only users aged 18+ can view the content. The the field is true the content is restricted to viewers aged 18+. Otherwise The field won’t be present."]
         #[serde(
             rename = "restricted",
             default,
@@ -20499,7 +20499,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#videoCategory\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#videoCategory”."]
         #[serde(
             rename = "kind",
             default,
@@ -20558,7 +20558,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::VideoCategory>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#videoCategoryListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#videoCategoryListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -20641,7 +20641,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "The video category's title."]
+        #[doc = "The video category’s title."]
         #[serde(
             rename = "title",
             default,
@@ -21012,7 +21012,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audio_streams: ::std::option::Option<Vec<crate::schemas::VideoFileDetailsAudioStream>>,
-        #[doc = "The uploaded video file's combined (video and audio) bitrate in bits per second."]
+        #[doc = "The uploaded video file’s combined (video and audio) bitrate in bits per second."]
         #[serde(
             rename = "bitrateBps",
             default,
@@ -21020,7 +21020,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub bitrate_bps: ::std::option::Option<u64>,
-        #[doc = "The uploaded video file's container format."]
+        #[doc = "The uploaded video file’s container format."]
         #[serde(
             rename = "container",
             default,
@@ -21042,14 +21042,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub duration_ms: ::std::option::Option<u64>,
-        #[doc = "The uploaded file's name. This field is present whether a video file or another type of file was uploaded."]
+        #[doc = "The uploaded file’s name. This field is present whether a video file or another type of file was uploaded."]
         #[serde(
             rename = "fileName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_name: ::std::option::Option<String>,
-        #[doc = "The uploaded file's size in bytes. This field is present whether a video file or another type of file was uploaded."]
+        #[doc = "The uploaded file’s size in bytes. This field is present whether a video file or another type of file was uploaded."]
         #[serde(
             rename = "fileSize",
             default,
@@ -21057,7 +21057,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub file_size: ::std::option::Option<u64>,
-        #[doc = "The uploaded file's type as detected by YouTube's video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded."]
+        #[doc = "The uploaded file’s type as detected by YouTube’s video processing engine. Currently, YouTube only processes video files, but this field is present whether a video file or another type of file was uploaded."]
         #[serde(
             rename = "fileType",
             default,
@@ -21191,7 +21191,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VideoFileDetailsAudioStream {
-        #[doc = "The audio stream's bitrate, in bits per second."]
+        #[doc = "The audio stream’s bitrate, in bits per second."]
         #[serde(
             rename = "bitrateBps",
             default,
@@ -21235,14 +21235,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct VideoFileDetailsVideoStream {
-        #[doc = "The video content's display aspect ratio, which specifies the aspect ratio in which the video should be displayed."]
+        #[doc = "The video content’s display aspect ratio, which specifies the aspect ratio in which the video should be displayed."]
         #[serde(
             rename = "aspectRatio",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub aspect_ratio: ::std::option::Option<f64>,
-        #[doc = "The video stream's bitrate, in bits per second."]
+        #[doc = "The video stream’s bitrate, in bits per second."]
         #[serde(
             rename = "bitrateBps",
             default,
@@ -21257,14 +21257,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub codec: ::std::option::Option<String>,
-        #[doc = "The video stream's frame rate, in frames per second."]
+        #[doc = "The video stream’s frame rate, in frames per second."]
         #[serde(
             rename = "frameRateFps",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub frame_rate_fps: ::std::option::Option<f64>,
-        #[doc = "The encoded video content's height in pixels."]
+        #[doc = "The encoded video content’s height in pixels."]
         #[serde(
             rename = "heightPixels",
             default,
@@ -21285,7 +21285,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vendor: ::std::option::Option<String>,
-        #[doc = "The encoded video content's width in pixels. You can calculate the video's encoding aspect ratio as width_pixels / height_pixels."]
+        #[doc = "The encoded video content’s width in pixels. You can calculate the video’s encoding aspect ratio as width_pixels / height_pixels."]
         #[serde(
             rename = "widthPixels",
             default,
@@ -21418,7 +21418,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::VideoRating>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#videoGetRatingResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#videoGetRatingResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -21467,7 +21467,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Video>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"youtube#videoListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “youtube#videoListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -21604,14 +21604,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VideoLocalization {
-        #[doc = "Localized version of the video's description."]
+        #[doc = "Localized version of the video’s description."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Localized version of the video's title."]
+        #[doc = "Localized version of the video’s title."]
         #[serde(
             rename = "title",
             default,
@@ -21726,14 +21726,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub editor_suggestions_availability: ::std::option::Option<String>,
-        #[doc = "This value indicates whether file details are available for the uploaded video. You can retrieve a video's file details by requesting the fileDetails part in your videos.list() request."]
+        #[doc = "This value indicates whether file details are available for the uploaded video. You can retrieve a video’s file details by requesting the fileDetails part in your videos.list() request."]
         #[serde(
             rename = "fileDetailsAvailability",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_details_availability: ::std::option::Option<String>,
-        #[doc = "The reason that YouTube failed to process the video. This property will only have a value if the processingStatus property's value is failed."]
+        #[doc = "The reason that YouTube failed to process the video. This property will only have a value if the processingStatus property’s value is failed."]
         #[serde(
             rename = "processingFailureReason",
             default,
@@ -21741,14 +21741,14 @@ pub mod schemas {
         )]
         pub processing_failure_reason:
             ::std::option::Option<crate::schemas::VideoProcessingDetailsProcessingFailureReason>,
-        #[doc = "This value indicates whether the video processing engine has generated suggestions that might improve YouTube's ability to process the the video, warnings that explain video processing problems, or errors that cause video processing problems. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request."]
+        #[doc = "This value indicates whether the video processing engine has generated suggestions that might improve YouTube’s ability to process the the video, warnings that explain video processing problems, or errors that cause video processing problems. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request."]
         #[serde(
             rename = "processingIssuesAvailability",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub processing_issues_availability: ::std::option::Option<String>,
-        #[doc = "The processingProgress object contains information about the progress YouTube has made in processing the video. The values are really only relevant if the video's processing status is processing."]
+        #[doc = "The processingProgress object contains information about the progress YouTube has made in processing the video. The values are really only relevant if the video’s processing status is processing."]
         #[serde(
             rename = "processingProgress",
             default,
@@ -21756,7 +21756,7 @@ pub mod schemas {
         )]
         pub processing_progress:
             ::std::option::Option<crate::schemas::VideoProcessingDetailsProcessingProgress>,
-        #[doc = "The video's processing status. This value indicates whether YouTube was able to process the video or if the video is still being processed."]
+        #[doc = "The video’s processing status. This value indicates whether YouTube was able to process the video or if the video is still being processed."]
         #[serde(
             rename = "processingStatus",
             default,
@@ -21764,7 +21764,7 @@ pub mod schemas {
         )]
         pub processing_status:
             ::std::option::Option<crate::schemas::VideoProcessingDetailsProcessingStatus>,
-        #[doc = "This value indicates whether keyword (tag) suggestions are available for the video. Tags can be added to a video's metadata to make it easier for other users to find the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request."]
+        #[doc = "This value indicates whether keyword (tag) suggestions are available for the video. Tags can be added to a video’s metadata to make it easier for other users to find the video. You can retrieve these suggestions by requesting the suggestions part in your videos.list() request."]
         #[serde(
             rename = "tagSuggestionsAvailability",
             default,
@@ -22200,28 +22200,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_title: ::std::option::Option<String>,
-        #[doc = "The default_audio_language property specifies the language spoken in the video's default audio track."]
+        #[doc = "The default_audio_language property specifies the language spoken in the video’s default audio track."]
         #[serde(
             rename = "defaultAudioLanguage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_audio_language: ::std::option::Option<String>,
-        #[doc = "The language of the videos's default snippet."]
+        #[doc = "The language of the videos’s default snippet."]
         #[serde(
             rename = "defaultLanguage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_language: ::std::option::Option<String>,
-        #[doc = "The video's description. @mutable youtube.videos.insert youtube.videos.update"]
+        #[doc = "The video’s description. @mutable youtube.videos.insert youtube.videos.update"]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Indicates if the video is an upcoming/active live broadcast. Or it's \"none\" if the video is not an upcoming/active live broadcast."]
+        #[doc = "Indicates if the video is an upcoming/active live broadcast. Or it’s “none” if the video is not an upcoming/active live broadcast."]
         #[serde(
             rename = "liveBroadcastContent",
             default,
@@ -22257,7 +22257,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub thumbnails: ::std::option::Option<crate::schemas::ThumbnailDetails>,
-        #[doc = "The video's title. @mutable youtube.videos.insert youtube.videos.update"]
+        #[doc = "The video’s title. @mutable youtube.videos.insert youtube.videos.update"]
         #[serde(
             rename = "title",
             default,
@@ -22446,7 +22446,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub failure_reason: ::std::option::Option<crate::schemas::VideoStatusFailureReason>,
-        #[doc = "The video's license. @mutable youtube.videos.insert youtube.videos.update"]
+        #[doc = "The video’s license. @mutable youtube.videos.insert youtube.videos.update"]
         #[serde(
             rename = "license",
             default,
@@ -22459,7 +22459,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub made_for_kids: ::std::option::Option<bool>,
-        #[doc = "The video's privacy status."]
+        #[doc = "The video’s privacy status."]
         #[serde(
             rename = "privacyStatus",
             default,
@@ -22523,7 +22523,7 @@ pub mod schemas {
         InvalidFile,
         #[doc = "File was too small."]
         TooSmall,
-        #[doc = "Upload wasn't finished."]
+        #[doc = "Upload wasn’t finished."]
         UploadAborted,
     }
     impl VideoStatusFailureReason {
@@ -22962,7 +22962,7 @@ pub mod schemas {
         )]
         pub editor_suggestions:
             ::std::option::Option<Vec<crate::schemas::VideoSuggestionsEditorSuggestionsItems>>,
-        #[doc = "A list of errors that will prevent YouTube from successfully processing the uploaded video video. These errors indicate that, regardless of the video's current processing status, eventually, that status will almost certainly be failed."]
+        #[doc = "A list of errors that will prevent YouTube from successfully processing the uploaded video video. These errors indicate that, regardless of the video’s current processing status, eventually, that status will almost certainly be failed."]
         #[serde(
             rename = "processingErrors",
             default,
@@ -22970,7 +22970,7 @@ pub mod schemas {
         )]
         pub processing_errors:
             ::std::option::Option<Vec<crate::schemas::VideoSuggestionsProcessingErrorsItems>>,
-        #[doc = "A list of suggestions that may improve YouTube's ability to process the video."]
+        #[doc = "A list of suggestions that may improve YouTube’s ability to process the video."]
         #[serde(
             rename = "processingHints",
             default,
@@ -22986,7 +22986,7 @@ pub mod schemas {
         )]
         pub processing_warnings:
             ::std::option::Option<Vec<crate::schemas::VideoSuggestionsProcessingWarningsItems>>,
-        #[doc = "A list of keyword tags that could be added to the video's metadata to increase the likelihood that users will locate your video when searching or browsing on YouTube."]
+        #[doc = "A list of keyword tags that could be added to the video’s metadata to increase the likelihood that users will locate your video when searching or browsing on YouTube."]
         #[serde(
             rename = "tagSuggestions",
             default,
@@ -23518,14 +23518,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub relevant_topic_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "A list of Wikipedia URLs that provide a high-level description of the video's content."]
+        #[doc = "A list of Wikipedia URLs that provide a high-level description of the video’s content."]
         #[serde(
             rename = "topicCategories",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub topic_categories: ::std::option::Option<Vec<String>>,
-        #[doc = "A list of Freebase topic IDs that are centrally associated with the video. These are topics that are centrally featured in the video, and it can be said that the video is mainly about each of these. You can retrieve information about each topic using the < a href=\"http://wiki.freebase.com/wiki/Topic_API\">Freebase Topic API."]
+        #[doc = "A list of Freebase topic IDs that are centrally associated with the video. These are topics that are centrally featured in the video, and it can be said that the video is mainly about each of these. You can retrieve information about each topic using the \\< a href=“http://wiki.freebase.com/wiki/Topic_API”\\>Freebase Topic API."]
         #[serde(
             rename = "topicIds",
             default,
@@ -23556,7 +23556,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WatchSettings {
-        #[doc = "The text color for the video watch page's branded area."]
+        #[doc = "The text color for the video watch page’s branded area."]
         #[serde(
             rename = "backgroundColor",
             default,
@@ -23570,7 +23570,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub featured_playlist_id: ::std::option::Option<String>,
-        #[doc = "The background color for the video watch page's branded area."]
+        #[doc = "The background color for the video watch page’s branded area."]
         #[serde(
             rename = "textColor",
             default,
@@ -24066,12 +24066,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -24310,12 +24310,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -24742,7 +24742,7 @@ pub mod resources {
                 self.on_behalf_of = Some(value.into());
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -24777,12 +24777,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -24858,7 +24858,7 @@ pub mod resources {
                 self.on_behalf_of = Some(value.into());
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -24903,12 +24903,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25019,7 +25019,7 @@ pub mod resources {
                 self.on_behalf_of = Some(value.into());
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -25059,12 +25059,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25283,7 +25283,7 @@ pub mod resources {
                 self.on_behalf_of = Some(value.into());
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -25318,12 +25318,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25459,7 +25459,7 @@ pub mod resources {
                 self.on_behalf_of = Some(value.into());
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -25499,12 +25499,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25754,7 +25754,7 @@ pub mod resources {
                 self.channel_id = Some(value.into());
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -25794,12 +25794,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26112,7 +26112,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -26147,12 +26147,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26221,7 +26221,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -26261,12 +26261,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26418,7 +26418,7 @@ pub mod resources {
                 self.mine = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -26453,12 +26453,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26588,7 +26588,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -26623,12 +26623,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26837,7 +26837,7 @@ pub mod resources {
                 self.for_username = Some(value.into());
                 self
             }
-            #[doc = "Stands for \"host language\". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX)."]
+            #[doc = "Stands for “host language”. Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX)."]
             pub fn hl(mut self, value: impl Into<String>) -> Self {
                 self.hl = Some(value.into());
                 self
@@ -26867,7 +26867,7 @@ pub mod resources {
                 self.my_subscribers = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -26907,12 +26907,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27236,12 +27236,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27691,12 +27691,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27851,7 +27851,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Limits the returned comment threads to those with the specified moderation status. Not compatible with the 'id' filter. Valid values: published, heldForReview, likelySpam."]
+            #[doc = "Limits the returned comment threads to those with the specified moderation status. Not compatible with the ‘id’ filter. Valid values: published, heldForReview, likelySpam."]
             pub fn moderation_status(
                 mut self,
                 value: crate::resources::comment_threads::params::ListModerationStatus,
@@ -27872,7 +27872,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Limits the returned comment threads to those matching the specified key words. Not compatible with the 'id' filter."]
+            #[doc = "Limits the returned comment threads to those matching the specified key words. Not compatible with the ‘id’ filter."]
             pub fn search_terms(mut self, value: impl Into<String>) -> Self {
                 self.search_terms = Some(value.into());
                 self
@@ -27920,12 +27920,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28433,7 +28433,7 @@ pub mod resources {
                     text_format: None,
                 }
             }
-            #[doc = "Expresses the caller's opinion that one or more comments should be flagged as spam."]
+            #[doc = "Expresses the caller’s opinion that one or more comments should be flagged as spam."]
             pub fn mark_as_spam(&self, id: impl Into<Vec<String>>) -> MarkAsSpamRequestBuilder {
                 MarkAsSpamRequestBuilder {
                     reqwest: &self.reqwest,
@@ -28551,12 +28551,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28652,12 +28652,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28842,12 +28842,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29159,12 +29159,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29269,12 +29269,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29374,12 +29374,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29569,12 +29569,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29764,12 +29764,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30059,7 +30059,7 @@ pub mod resources {
                 #[doc = "Return only persistent broadcasts."]
                 Live,
                 StatusUnspecified,
-                #[doc = "Start testing the broadcast. YouTube transmits video to the broadcast's monitor stream. Note that you can only transition a broadcast to the testing state if its contentDetails.monitorStream.enableMonitorStream property is set to true.\","]
+                #[doc = "Start testing the broadcast. YouTube transmits video to the broadcast’s monitor stream. Note that you can only transition a broadcast to the testing state if its contentDetails.monitorStream.enableMonitorStream property is set to true.“,"]
                 Testing,
             }
             impl TransitionBroadcastStatus {
@@ -30320,7 +30320,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> BindRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -30365,12 +30365,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30500,7 +30500,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -30540,12 +30540,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30618,7 +30618,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -30658,12 +30658,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30832,7 +30832,7 @@ pub mod resources {
                 self.mine = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -30877,12 +30877,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31174,7 +31174,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> TransitionRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -31214,12 +31214,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31350,7 +31350,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -31390,12 +31390,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31607,12 +31607,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31708,12 +31708,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31948,12 +31948,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32049,12 +32049,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32231,12 +32231,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32627,12 +32627,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32728,12 +32728,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32898,12 +32898,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33220,7 +33220,7 @@ pub mod resources {
                     on_behalf_of_content_owner_channel: None,
                 }
             }
-            #[doc = "Retrieve the list of streams associated with the given channel. --"]
+            #[doc = "Retrieve the list of streams associated with the given channel. –"]
             pub fn list(&self, part: impl Into<Vec<String>>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -33293,7 +33293,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -33333,12 +33333,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33411,7 +33411,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -33451,12 +33451,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33604,7 +33604,7 @@ pub mod resources {
                 self.mine = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -33649,12 +33649,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33943,7 +33943,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -33983,12 +33983,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34287,12 +34287,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34633,12 +34633,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34867,7 +34867,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -34902,12 +34902,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34975,7 +34975,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -35010,12 +35010,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35154,7 +35154,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -35204,12 +35204,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35494,7 +35494,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -35529,12 +35529,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35768,7 +35768,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -35803,12 +35803,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35877,7 +35877,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> InsertRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -35917,12 +35917,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -36082,7 +36082,7 @@ pub mod resources {
                 self.mine = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -36127,12 +36127,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -36422,7 +36422,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -36457,12 +36457,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -37706,7 +37706,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -37868,12 +37868,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -38376,12 +38376,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -38477,12 +38477,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -38650,7 +38650,7 @@ pub mod resources {
                 self.my_subscribers = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -38703,12 +38703,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39081,12 +39081,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39438,12 +39438,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39860,12 +39860,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39972,12 +39972,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40151,12 +40151,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40317,12 +40317,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40437,7 +40437,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn't result in creation of a single resource), I use a custom verb here."]
+            #[doc = "As this is not an insert in a strict sense (it supports uploading/setting of a thumbnail for multiple videos, which doesn’t result in creation of a single resource), I use a custom verb here."]
             pub fn set(&self, video_id: impl Into<String>) -> SetRequestBuilder {
                 SetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -40478,7 +40478,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SetRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -40513,12 +40513,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40780,12 +40780,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40991,12 +40991,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -41528,7 +41528,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -41563,12 +41563,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -41635,7 +41635,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetRatingRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -41670,12 +41670,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -41813,7 +41813,7 @@ pub mod resources {
                 self.notify_subscribers = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -41858,12 +41858,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42090,7 +42090,7 @@ pub mod resources {
                 self.chart = Some(value);
                 self
             }
-            #[doc = "Stands for \"host language\". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX)."]
+            #[doc = "Stands for “host language”. Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX)."]
             pub fn hl(mut self, value: impl Into<String>) -> Self {
                 self.hl = Some(value.into());
                 self
@@ -42128,7 +42128,7 @@ pub mod resources {
                 self.my_rating = Some(value);
                 self
             }
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -42178,12 +42178,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42501,12 +42501,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42573,7 +42573,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ReportAbuseRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -42608,12 +42608,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42681,7 +42681,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -42716,12 +42716,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42903,7 +42903,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SetRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -42938,12 +42938,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -43084,7 +43084,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UnsetRequestBuilder<'a> {
-            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
+            #[doc = "*Note:* This parameter is intended exclusively for YouTube content partners. The *onBehalfOfContentOwner* parameter indicates that the request’s authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -43119,12 +43119,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -43279,12 +43279,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

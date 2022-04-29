@@ -103,7 +103,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message: ::std::option::Option<String>,
-        #[doc = "The API request payload, represented as a protocol buffer. Most API request types are supported. For example: \"type.googleapis.com/google.cloud.retail.v2.ProductService.CreateProductRequest\" \"type.googleapis.com/google.cloud.retail.v2.UserEventService.WriteUserEventRequest\""]
+        #[doc = "The API request payload, represented as a protocol buffer. Most API request types are supported. For example: “type.googleapis.com/google.cloud.retail.v2.ProductService.CreateProductRequest” “type.googleapis.com/google.cloud.retail.v2.UserEventService.WriteUserEventRequest”"]
         #[serde(
             rename = "requestPayload",
             default,
@@ -111,7 +111,7 @@ pub mod schemas {
         )]
         pub request_payload:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The API response payload, represented as a protocol buffer. This is used to log some \"soft errors\", where the response is valid but we consider there are some quality issues like unjoined events. The following API responses are supported and no PII is included: \"google.cloud.retail.v2.PredictionService.Predict\" \"google.cloud.retail.v2.UserEventService.WriteUserEvent\" \"google.cloud.retail.v2.UserEventService.CollectUserEvent\""]
+        #[doc = "The API response payload, represented as a protocol buffer. This is used to log some “soft errors”, where the response is valid but we consider there are some quality issues like unjoined events. The following API responses are supported and no PII is included: “google.cloud.retail.v2.PredictionService.Predict” “google.cloud.retail.v2.UserEventService.WriteUserEvent” “google.cloud.retail.v2.UserEventService.CollectUserEvent”"]
         #[serde(
             rename = "responsePayload",
             default,
@@ -255,7 +255,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailLoggingServiceContext {
-        #[doc = "An identifier of the service. For example, \"retail.googleapis.com\"."]
+        #[doc = "An identifier of the service. For example, “retail.googleapis.com”."]
         #[serde(
             rename = "service",
             default,
@@ -286,7 +286,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailLoggingSourceLocation {
-        #[doc = "Human-readable name of a function or method. For example, \"google.cloud.retail.v2.UserEventService.ImportUserEvents\"."]
+        #[doc = "Human-readable name of a function or method. For example, “google.cloud.retail.v2.UserEventService.ImportUserEvents”."]
         #[serde(
             rename = "functionName",
             default,
@@ -1335,14 +1335,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_missing: ::std::option::Option<bool>,
-        #[doc = "Required. The IDs for this type, such as the store IDs for \"pickup-in-store\" or the region IDs for \"same-day-delivery\" to be added for this type. Duplicate IDs will be automatically ignored. At least 1 value is required, and a maximum of 2000 values are allowed. Each value must be a string with a length limit of 10 characters, matching the pattern `[a-zA-Z0-9_-]+`, such as \"store1\" or \"REGION-2\". Otherwise, an INVALID_ARGUMENT error is returned. If the total number of place IDs exceeds 2000 for this type after adding, then the update will be rejected."]
+        #[doc = "Required. The IDs for this type, such as the store IDs for “pickup-in-store” or the region IDs for “same-day-delivery” to be added for this type. Duplicate IDs will be automatically ignored. At least 1 value is required, and a maximum of 2000 values are allowed. Each value must be a string with a length limit of 10 characters, matching the pattern `[a-zA-Z0-9_-]+`, such as “store1” or “REGION-2”. Otherwise, an INVALID_ARGUMENT error is returned. If the total number of place IDs exceeds 2000 for this type after adding, then the update will be rejected."]
         #[serde(
             rename = "placeIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub place_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. The fulfillment type, including commonly used types (such as pickup in store and same day delivery), and custom types. Supported values: * \"pickup-in-store\" * \"ship-to-store\" * \"same-day-delivery\" * \"next-day-delivery\" * \"custom-type-1\" * \"custom-type-2\" * \"custom-type-3\" * \"custom-type-4\" * \"custom-type-5\" If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned. This field directly corresponds to Product.fulfillment_info.type."]
+        #[doc = "Required. The fulfillment type, including commonly used types (such as pickup in store and same day delivery), and custom types. Supported values: * “pickup-in-store” * “ship-to-store” * “same-day-delivery” * “next-day-delivery” * “custom-type-1” * “custom-type-2” * “custom-type-3” * “custom-type-4” * “custom-type-5” If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned. This field directly corresponds to Product.fulfillment_info.type."]
         #[serde(
             rename = "type",
             default,
@@ -1500,7 +1500,7 @@ pub mod schemas {
         pub attribute_config_level: ::std::option::Option<
             crate::schemas::GoogleCloudRetailV2BetaAttributesConfigAttributeConfigLevel,
         >,
-        #[doc = "Enable attribute(s) config at catalog level. For example, indexable, dynamic_facetable, or searchable for each attribute. The key is catalog attribute's name. For example: `color`, `brands`, `attributes.custom_attribute`, such as `attributes.xyz`. The maximum number of catalog attributes allowed in a request is 1000."]
+        #[doc = "Enable attribute(s) config at catalog level. For example, indexable, dynamic_facetable, or searchable for each attribute. The key is catalog attribute’s name. For example: `color`, `brands`, `attributes.custom_attribute`, such as `attributes.xyz`. The maximum number of catalog attributes allowed in a request is 1000."]
         #[serde(
             rename = "catalogAttributes",
             default,
@@ -1512,7 +1512,7 @@ pub mod schemas {
                 crate::schemas::GoogleCloudRetailV2BetaCatalogAttribute,
             >,
         >,
-        #[doc = "Required. Immutable. The fully qualified resource name of the attribute config. Format: \"projects/*/locations/*/catalogs/*/attributesConfig\""]
+        #[doc = "Required. Immutable. The fully qualified resource name of the attribute config. Format: “projects/*/locations/*/catalogs/\\*/attributesConfig”"]
         #[serde(
             rename = "name",
             default,
@@ -1609,14 +1609,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaAudience {
-        #[doc = "The age groups of the audience. Strongly encouraged to use the standard values: \"newborn\" (up to 3 months old), \"infant\" (3–12 months old), \"toddler\" (1–5 years old), \"kids\" (5–13 years old), \"adult\" (typically teens or older). At most 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [age_group](https://support.google.com/merchants/answer/6324463). Schema.org property [Product.audience.suggestedMinAge](https://schema.org/suggestedMinAge) and [Product.audience.suggestedMaxAge](https://schema.org/suggestedMaxAge)."]
+        #[doc = "The age groups of the audience. Strongly encouraged to use the standard values: “newborn” (up to 3 months old), “infant” (3–12 months old), “toddler” (1–5 years old), “kids” (5–13 years old), “adult” (typically teens or older). At most 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [age_group](https://support.google.com/merchants/answer/6324463). Schema.org property [Product.audience.suggestedMinAge](https://schema.org/suggestedMinAge) and [Product.audience.suggestedMaxAge](https://schema.org/suggestedMaxAge)."]
         #[serde(
             rename = "ageGroups",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub age_groups: ::std::option::Option<Vec<String>>,
-        #[doc = "The genders of the audience. Strongly encouraged to use the standard values: \"male\", \"female\", \"unisex\". At most 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [gender](https://support.google.com/merchants/answer/6324479). Schema.org property [Product.audience.suggestedGender](https://schema.org/suggestedGender)."]
+        #[doc = "The genders of the audience. Strongly encouraged to use the standard values: “male”, “female”, “unisex”. At most 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [gender](https://support.google.com/merchants/answer/6324479). Schema.org property [Product.audience.suggestedGender](https://schema.org/suggestedGender)."]
         #[serde(
             rename = "genders",
             default,
@@ -1668,7 +1668,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_staging_dir: ::std::option::Option<String>,
-        #[doc = "BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format. Only supported when ImportProductsRequest.reconciliation_mode is set to `FULL`."]
+        #[doc = "BigQuery time partitioned table’s \\_PARTITIONDATE in YYYY-MM-DD format. Only supported when ImportProductsRequest.reconciliation_mode is set to `FULL`."]
         #[serde(
             rename = "partitionDate",
             default,
@@ -2113,14 +2113,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaColorInfo {
-        #[doc = "The standard color families. Strongly recommended to use the following standard color groups: \"Red\", \"Pink\", \"Orange\", \"Yellow\", \"Purple\", \"Green\", \"Cyan\", \"Blue\", \"Brown\", \"White\", \"Gray\", \"Black\" and \"Mixed\". Normally it is expected to have only 1 color family. May consider using single \"Mixed\" instead of multiple values. A maximum of 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
+        #[doc = "The standard color families. Strongly recommended to use the following standard color groups: “Red”, “Pink”, “Orange”, “Yellow”, “Purple”, “Green”, “Cyan”, “Blue”, “Brown”, “White”, “Gray”, “Black” and “Mixed”. Normally it is expected to have only 1 color family. May consider using single “Mixed” instead of multiple values. A maximum of 5 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
         #[serde(
             rename = "colorFamilies",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color_families: ::std::option::Option<Vec<String>>,
-        #[doc = "The color display names, which may be different from standard color family names, such as the color aliases used in the website frontend. Normally it is expected to have only 1 color. May consider using single \"Mixed\" instead of multiple values. A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
+        #[doc = "The color display names, which may be different from standard color family names, such as the color aliases used in the website frontend. Normally it is expected to have only 1 color. May consider using single “Mixed” instead of multiple values. A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [color](https://support.google.com/merchants/answer/6324487). Schema.org property [Product.color](https://schema.org/color)."]
         #[serde(
             rename = "colors",
             default,
@@ -2182,7 +2182,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaCompleteQueryResponseCompletionResult {
-        #[doc = "Custom attributes for the suggestion term. * For \"user-data\", the attributes are additional custom attributes ingested through BigQuery. * For \"cloud-retail\", the attributes are product attributes generated by Cloud Retail."]
+        #[doc = "Custom attributes for the suggestion term. * For “user-data”, the attributes are additional custom attributes ingested through BigQuery. * For “cloud-retail”, the attributes are product attributes generated by Cloud Retail."]
         #[serde(
             rename = "attributes",
             default,
@@ -2308,7 +2308,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_suggestions_import_operation: ::std::option::Option<String>,
-        #[doc = "Specifies the matching order for autocomplete suggestions, e.g., a query consisting of 'sh' with 'out-of-order' specified would suggest \"women's shoes\", whereas a query of 'red s' with 'exact-prefix' specified would suggest \"red shoes\". Currently supported values: * 'out-of-order' * 'exact-prefix' Default value: 'exact-prefix'."]
+        #[doc = "Specifies the matching order for autocomplete suggestions, e.g., a query consisting of ‘sh’ with ‘out-of-order’ specified would suggest “women’s shoes”, whereas a query of ‘red s’ with ‘exact-prefix’ specified would suggest “red shoes”. Currently supported values: * ‘out-of-order’ * ‘exact-prefix’ Default value: ‘exact-prefix’."]
         #[serde(
             rename = "matchingOrder",
             default,
@@ -2329,7 +2329,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_prefix_length: ::std::option::Option<i32>,
-        #[doc = "Required. Immutable. Fully qualified name projects/*/locations/*/catalogs/*/completionConfig"]
+        #[doc = "Required. Immutable. Fully qualified name projects/*/locations/*/catalogs/\\*/completionConfig"]
         #[serde(
             rename = "name",
             default,
@@ -2368,7 +2368,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaCompletionDataInputConfig {
-        #[doc = "Required. BigQuery input source. Add the IAM permission \"BigQuery Data Viewer\" for cloud-retail-customer-data-access@system.gserviceaccount.com before using this feature otherwise an error is thrown."]
+        #[doc = "Required. BigQuery input source. Add the IAM permission “BigQuery Data Viewer” for cloud-retail-customer-data-access@system.gserviceaccount.com before using this feature otherwise an error is thrown."]
         #[serde(
             rename = "bigQuerySource",
             default,
@@ -2492,7 +2492,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub full_match: ::std::option::Option<bool>,
-        #[doc = "The value of the term to match on. Value cannot be empty. Value can have at most 3 terms if specified as a partial match. Each space separated string is considered as one term. Example) \"a b c\" is 3 terms and allowed, \" a b c d\" is 4 terms and not allowed for partial match."]
+        #[doc = "The value of the term to match on. Value cannot be empty. Value can have at most 3 terms if specified as a partial match. Each space separated string is considered as one term. Example) “a b c” is 3 terms and allowed, “ a b c d“ is 4 terms and not allowed for partial match."]
         #[serde(
             rename = "value",
             default,
@@ -2574,14 +2574,14 @@ pub mod schemas {
         )]
         pub facet_spec:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaSearchRequestFacetSpec>,
-        #[doc = "Immutable. Fully qualified name projects/*/locations/global/catalogs/*/controls/*"]
+        #[doc = "Immutable. Fully qualified name projects/*/locations/global/catalogs/*/controls/\\*"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "A rule control - a condition-action pair. Enacts a set action when the condition is triggered. For example: Boost \"gShoe\" when query full matches \"Running Shoes\"."]
+        #[doc = "A rule control - a condition-action pair. Enacts a set action when the condition is triggered. For example: Boost “gShoe” when query full matches “Running Shoes”."]
         #[serde(
             rename = "rule",
             default,
@@ -2708,28 +2708,28 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaCustomAttribute {
-        #[doc = "This field will only be used when AttributesConfig.attribute_config_level of the Catalog is 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', if true, custom attribute values are indexed, so that it can be filtered, faceted or boosted in SearchService.Search. This field is ignored in a UserEvent. See SearchRequest.filter, SearchRequest.facet_specs and SearchRequest.boost_spec for more details."]
+        #[doc = "This field will only be used when AttributesConfig.attribute_config_level of the Catalog is ‘PRODUCT_LEVEL_ATTRIBUTE_CONFIG’, if true, custom attribute values are indexed, so that it can be filtered, faceted or boosted in SearchService.Search. This field is ignored in a UserEvent. See SearchRequest.filter, SearchRequest.facet_specs and SearchRequest.boost_spec for more details."]
         #[serde(
             rename = "indexable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub indexable: ::std::option::Option<bool>,
-        #[doc = "The numerical values of this custom attribute. For example, `[2.3, 15.4]` when the key is \"lengths_cm\". Exactly one of text or numbers should be set. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The numerical values of this custom attribute. For example, `[2.3, 15.4]` when the key is “lengths_cm”. Exactly one of text or numbers should be set. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "numbers",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub numbers: ::std::option::Option<Vec<f64>>,
-        #[doc = "This field will only be used when AttributesConfig.attribute_config_level of the Catalog is 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', if true, custom attribute values are searchable by text queries in SearchService.Search. This field is ignored in a UserEvent. Only set if type text is set. Otherwise, a INVALID_ARGUMENT error is returned."]
+        #[doc = "This field will only be used when AttributesConfig.attribute_config_level of the Catalog is ‘PRODUCT_LEVEL_ATTRIBUTE_CONFIG’, if true, custom attribute values are searchable by text queries in SearchService.Search. This field is ignored in a UserEvent. Only set if type text is set. Otherwise, a INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "searchable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub searchable: ::std::option::Option<bool>,
-        #[doc = "The textual values of this custom attribute. For example, `[\"yellow\", \"green\"]` when the key is \"color\". Empty string is not allowed. Otherwise, an INVALID_ARGUMENT error is returned. Exactly one of text or numbers should be set. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The textual values of this custom attribute. For example, `[\"yellow\", \"green\"]` when the key is “color”. Empty string is not allowed. Otherwise, an INVALID_ARGUMENT error is returned. Exactly one of text or numbers should be set. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "text",
             default,
@@ -2885,14 +2885,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaFulfillmentInfo {
-        #[doc = "The IDs for this type, such as the store IDs for FulfillmentInfo.type.pickup-in-store or the region IDs for FulfillmentInfo.type.same-day-delivery. A maximum of 3000 values are allowed. Each value must be a string with a length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such as \"store1\" or \"REGION-2\". Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The IDs for this type, such as the store IDs for FulfillmentInfo.type.pickup-in-store or the region IDs for FulfillmentInfo.type.same-day-delivery. A maximum of 3000 values are allowed. Each value must be a string with a length limit of 30 characters, matching the pattern `[a-zA-Z0-9_-]+`, such as “store1” or “REGION-2”. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "placeIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub place_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The fulfillment type, including commonly used types (such as pickup in store and same day delivery), and custom types. Customers have to map custom types to their display names before rendering UI. Supported values: * \"pickup-in-store\" * \"ship-to-store\" * \"same-day-delivery\" * \"next-day-delivery\" * \"custom-type-1\" * \"custom-type-2\" * \"custom-type-3\" * \"custom-type-4\" * \"custom-type-5\" If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The fulfillment type, including commonly used types (such as pickup in store and same day delivery), and custom types. Customers have to map custom types to their display names before rendering UI. Supported values: * “pickup-in-store” * “ship-to-store” * “same-day-delivery” * “next-day-delivery” * “custom-type-1” * “custom-type-2” * “custom-type-3” * “custom-type-4” * “custom-type-5” If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "type",
             default,
@@ -2923,7 +2923,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaGcsSource {
-        #[doc = "The schema to use when parsing the data from the source. Supported values for product imports: * `product` (default): One JSON Product per line. Each product must have a valid Product.id. * `product_merchant_center`: See [Importing catalog data from Merchant Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc). Supported values for user events imports: * `user_event` (default): One JSON UserEvent per line. * `user_event_ga360`: Using https://support.google.com/analytics/answer/3437719. Supported values for control imports: * 'control' (default): One JSON Control per line. Supported values for catalog attribute imports: * 'catalog_attribute' (default): One CSV CatalogAttribute per line."]
+        #[doc = "The schema to use when parsing the data from the source. Supported values for product imports: * `product` (default): One JSON Product per line. Each product must have a valid Product.id. * `product_merchant_center`: See [Importing catalog data from Merchant Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc). Supported values for user events imports: * `user_event` (default): One JSON UserEvent per line. * `user_event_ga360`: Using https://support.google.com/analytics/answer/3437719. Supported values for control imports: * ‘control’ (default): One JSON Control per line. Supported values for catalog attribute imports: * ‘catalog_attribute’ (default): One CSV CatalogAttribute per line."]
         #[serde(
             rename = "dataSchema",
             default,
@@ -3241,7 +3241,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub request_id: ::std::option::Option<String>,
-        #[doc = "Indicates which fields in the provided imported 'products' to update. If not set, will by default update all fields."]
+        #[doc = "Indicates which fields in the provided imported ‘products’ to update. If not set, will by default update all fields."]
         #[serde(
             rename = "updateMask",
             default,
@@ -3261,7 +3261,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRetailV2BetaImportProductsRequestReconciliationMode {
-        #[doc = "Calculates diff and replaces the entire product dataset. Existing products may be deleted if they are not present in the source location. Can only be set while using BigQuerySource. And the BigQuery dataset must be created in the data location \"us (multiple regions in United States)\", otherwise a PERMISSION_DENIED error is thrown. Add the IAM permission \"BigQuery Data Viewer\" for cloud-retail-customer-data-access@system.gserviceaccount.com before using this feature otherwise an error is thrown."]
+        #[doc = "Calculates diff and replaces the entire product dataset. Existing products may be deleted if they are not present in the source location. Can only be set while using BigQuerySource. And the BigQuery dataset must be created in the data location “us (multiple regions in United States)”, otherwise a PERMISSION_DENIED error is thrown. Add the IAM permission “BigQuery Data Viewer” for cloud-retail-customer-data-access@system.gserviceaccount.com before using this feature otherwise an error is thrown."]
         Full,
         #[doc = "Inserts new products or updates existing products."]
         Incremental,
@@ -3476,7 +3476,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaListCatalogsResponse {
-        #[doc = "All the customer's Catalogs."]
+        #[doc = "All the customer’s Catalogs."]
         #[serde(
             rename = "catalogs",
             default,
@@ -3634,7 +3634,7 @@ pub mod schemas {
                 crate::schemas::GoogleCloudRetailV2BetaCustomAttribute,
             >,
         >,
-        #[doc = "Input only. Supported fulfillment types. Valid fulfillment type values include commonly used types (such as pickup in store and same day delivery), and custom types. Customers have to map custom types to their display names before rendering UI. Supported values: * \"pickup-in-store\" * \"ship-to-store\" * \"same-day-delivery\" * \"next-day-delivery\" * \"custom-type-1\" * \"custom-type-2\" * \"custom-type-3\" * \"custom-type-4\" * \"custom-type-5\" If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned. All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "Input only. Supported fulfillment types. Valid fulfillment type values include commonly used types (such as pickup in store and same day delivery), and custom types. Customers have to map custom types to their display names before rendering UI. Supported values: * “pickup-in-store” * “ship-to-store” * “same-day-delivery” * “next-day-delivery” * “custom-type-1” * “custom-type-2” * “custom-type-3” * “custom-type-4” * “custom-type-5” If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned. All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "fulfillmentTypes",
             default,
@@ -3679,14 +3679,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaMerchantCenterLink {
-        #[doc = "The branch id (e.g. 0/1/2) within this catalog that products from merchant_center_account_id are streamed to. When updating this field, an empty value will use the currently configured default branch. However, changing the default branch later on won't change the linked branch here. A single branch id can only have one linked merchant center account id."]
+        #[doc = "The branch id (e.g. 0/1/2) within this catalog that products from merchant_center_account_id are streamed to. When updating this field, an empty value will use the currently configured default branch. However, changing the default branch later on won’t change the linked branch here. A single branch id can only have one linked merchant center account id."]
         #[serde(
             rename = "branchId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub branch_id: ::std::option::Option<String>,
-        #[doc = "String representing the destination to import for, all if left empty. List of possible values can be found here. [https://support.google.com/merchants/answer/7501026] List of allowed string values: \"Shopping_ads\", \"Buy_on_google_listings\", \"Display_ads\", \"Local_inventory _ads\", \"Free_listings\", \"Free_local_listings\" NOTE: The string values are case sensitive."]
+        #[doc = "String representing the destination to import for, all if left empty. List of possible values can be found here. \\[https://support.google.com/merchants/answer/7501026\\] List of allowed string values: “Shopping_ads”, “Buy_on_google_listings”, “Display_ads”, “Local_inventory \\_ads”, “Free_listings”, “Free_local_listings” NOTE: The string values are case sensitive."]
         #[serde(
             rename = "destinations",
             default,
@@ -3760,7 +3760,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudRetailV2BetaPredictRequest {
-        #[doc = "Filter for restricting prediction results with a length limit of 5,000 characters. Accepts values for tags and the `filterOutOfStockItems` flag. * Tag expressions. Restricts predictions to products that match all of the specified tags. Boolean operators `OR` and `NOT` are supported if the expression is enclosed in parentheses, and must be separated from the tag values by a space. `-\"tagA\"` is also supported and is equivalent to `NOT \"tagA\"`. Tag values must be double quoted UTF-8 encoded strings with a size limit of 1,000 characters. Note: \"Recently viewed\" models don't support tag filtering at the moment. * filterOutOfStockItems. Restricts predictions to products that do not have a stockState value of OUT_OF_STOCK. Examples: * tag=(\"Red\" OR \"Blue\") tag=\"New-Arrival\" tag=(NOT \"promotional\") * filterOutOfStockItems tag=(-\"promotional\") * filterOutOfStockItems If your filter blocks all prediction results, the API will return generic (unfiltered) popular products. If you only want results strictly matching the filters, set `strictFiltering` to True in `PredictRequest.params` to receive empty results instead. Note that the API will never return items with storageStatus of \"EXPIRED\" or \"DELETED\" regardless of filter choices."]
+        #[doc = "Filter for restricting prediction results with a length limit of 5,000 characters. Accepts values for tags and the `filterOutOfStockItems` flag. * Tag expressions. Restricts predictions to products that match all of the specified tags. Boolean operators `OR` and `NOT` are supported if the expression is enclosed in parentheses, and must be separated from the tag values by a space. `-\"tagA\"` is also supported and is equivalent to `NOT \"tagA\"`. Tag values must be double quoted UTF-8 encoded strings with a size limit of 1,000 characters. Note: “Recently viewed” models don’t support tag filtering at the moment. * filterOutOfStockItems. Restricts predictions to products that do not have a stockState value of OUT_OF_STOCK. Examples: * tag=(“Red” OR “Blue”) tag=“New-Arrival” tag=(NOT “promotional”) * filterOutOfStockItems tag=(-“promotional”) * filterOutOfStockItems If your filter blocks all prediction results, the API will return generic (unfiltered) popular products. If you only want results strictly matching the filters, set `strictFiltering` to True in `PredictRequest.params` to receive empty results instead. Note that the API will never return items with storageStatus of “EXPIRED” or “DELETED” regardless of filter choices."]
         #[serde(
             rename = "filter",
             default,
@@ -3788,7 +3788,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_token: ::std::option::Option<String>,
-        #[doc = "Additional domain specific parameters for the predictions. Allowed values: * `returnProduct`: Boolean. If set to true, the associated product object will be returned in the `results.metadata` field in the prediction response. * `returnScore`: Boolean. If set to true, the prediction 'score' corresponding to each returned product will be set in the `results.metadata` field in the prediction response. The given 'score' indicates the probability of an product being clicked/purchased given the user's context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular products instead of empty if your filter blocks all prediction results. * `priceRerankLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {'no-price-reranking', 'low-price-reranking', 'medium-price-reranking', 'high-price-reranking'}. This gives request-level control and adjusts prediction results based on product price. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {'no-diversity', 'low-diversity', 'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives request-level control and adjusts prediction results based on product category."]
+        #[doc = "Additional domain specific parameters for the predictions. Allowed values: * `returnProduct`: Boolean. If set to true, the associated product object will be returned in the `results.metadata` field in the prediction response. * `returnScore`: Boolean. If set to true, the prediction ‘score’ corresponding to each returned product will be set in the `results.metadata` field in the prediction response. The given ‘score’ indicates the probability of an product being clicked/purchased given the user’s context and history. * `strictFiltering`: Boolean. True by default. If set to false, the service will return generic (unfiltered) popular products instead of empty if your filter blocks all prediction results. * `priceRerankLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-price-reranking’, ‘low-price-reranking’, ‘medium-price-reranking’, ‘high-price-reranking’}. This gives request-level control and adjusts prediction results based on product price. * `diversityLevel`: String. Default empty. If set to be non-empty, then it needs to be one of {‘no-diversity’, ‘low-diversity’, ‘medium-diversity’, ‘high-diversity’, ‘auto-diversity’}. This gives request-level control and adjusts prediction results based on product category."]
         #[serde(
             rename = "params",
             default,
@@ -3796,7 +3796,7 @@ pub mod schemas {
         )]
         pub params:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Required. Context about the user, what they are looking at and what action they took to trigger the predict request. Note that this user event detail won't be ingested to userEvent logs. Thus, a separate userEvent write request is required for event logging. Don't set UserEvent.visitor_id or UserInfo.user_id to the same fixed ID for different users. If you are trying to receive non-personalized recommendations (not recommended; this can negatively impact model performance), instead set UserEvent.visitor_id to a random unique ID and leave UserInfo.user_id unset."]
+        #[doc = "Required. Context about the user, what they are looking at and what action they took to trigger the predict request. Note that this user event detail won’t be ingested to userEvent logs. Thus, a separate userEvent write request is required for event logging. Don’t set UserEvent.visitor_id or UserInfo.user_id to the same fixed ID for different users. If you are trying to receive non-personalized recommendations (not recommended; this can negatively impact model performance), instead set UserEvent.visitor_id to a random unique ID and leave UserInfo.user_id unset."]
         #[serde(
             rename = "userEvent",
             default,
@@ -4042,7 +4042,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brands: ::std::option::Option<Vec<String>>,
-        #[doc = "Product categories. This field is repeated for supporting one product belonging to several parallel categories. Strongly recommended using the full path for better search / recommendation quality. To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, please replace it with other character(s). For example, if a shoes product belongs to both [\"Shoes & Accessories\" -> \"Shoes\"] and [\"Sports & Fitness\" -> \"Athletic Clothing\" -> \"Shoes\"], it could be represented as: \"categories\": [ \"Shoes & Accessories > Shoes\", \"Sports & Fitness > Athletic Clothing > Shoes\" ] Must be set for Type.PRIMARY Product otherwise an INVALID_ARGUMENT error is returned. At most 250 values are allowed per Product. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property google_product_category. Schema.org property [Product.category] (https://schema.org/category). [mc_google_product_category]: https://support.google.com/merchants/answer/6324436"]
+        #[doc = "Product categories. This field is repeated for supporting one product belonging to several parallel categories. Strongly recommended using the full path for better search / recommendation quality. To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, please replace it with other character(s). For example, if a shoes product belongs to both \\[“Shoes & Accessories” -> “Shoes”\\] and \\[“Sports & Fitness” -> “Athletic Clothing” -> “Shoes”\\], it could be represented as: “categories”: \\[ “Shoes & Accessories > Shoes”, “Sports & Fitness > Athletic Clothing > Shoes” \\] Must be set for Type.PRIMARY Product otherwise an INVALID_ARGUMENT error is returned. At most 250 values are allowed per Product. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property google_product_category. Schema.org property \\[Product.category\\] (https://schema.org/category). \\[mc_google_product_category\\]: https://support.google.com/merchants/answer/6324436"]
         #[serde(
             rename = "categories",
             default,
@@ -4063,7 +4063,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color_info: ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaColorInfo>,
-        #[doc = "The condition of the product. Strongly encouraged to use the standard values: \"new\", \"refurbished\", \"used\". A maximum of 1 value is allowed per Product. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [condition](https://support.google.com/merchants/answer/6324469). Schema.org property [Offer.itemCondition](https://schema.org/itemCondition)."]
+        #[doc = "The condition of the product. Strongly encouraged to use the standard values: “new”, “refurbished”, “used”. A maximum of 1 value is allowed per Product. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [condition](https://support.google.com/merchants/answer/6324469). Schema.org property [Offer.itemCondition](https://schema.org/itemCondition)."]
         #[serde(
             rename = "conditions",
             default,
@@ -4099,7 +4099,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gtin: ::std::option::Option<String>,
-        #[doc = "Immutable. Product identifier, which is the final component of name. For example, this field is \"id_1\", if name is `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [id](https://support.google.com/merchants/answer/6324405). Schema.org property [Product.sku](https://schema.org/sku)."]
+        #[doc = "Immutable. Product identifier, which is the final component of name. For example, this field is “id_1”, if name is `projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [id](https://support.google.com/merchants/answer/6324405). Schema.org property [Product.sku](https://schema.org/sku)."]
         #[serde(
             rename = "id",
             default,
@@ -4113,14 +4113,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub images: ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2BetaImage>>,
-        #[doc = "Language of the title/description and other string attributes. Use language tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). For product prediction, this field is ignored and the model automatically detects the text language. The Product can include text in different languages, but duplicating Products to provide text in multiple languages can result in degraded model performance. For product search this field is in use. It defaults to \"en-US\" if unset."]
+        #[doc = "Language of the title/description and other string attributes. Use language tags defined by [BCP 47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). For product prediction, this field is ignored and the model automatically detects the text language. The Product can include text in different languages, but duplicating Products to provide text in multiple languages can result in degraded model performance. For product search this field is in use. It defaults to “en-US” if unset."]
         #[serde(
             rename = "languageCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
-        #[doc = "The material of the product. For example, \"leather\", \"wooden\". A maximum of 20 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 200 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [material](https://support.google.com/merchants/answer/6324410). Schema.org property [Product.material](https://schema.org/material)."]
+        #[doc = "The material of the product. For example, “leather”, “wooden”. A maximum of 20 values are allowed. Each value must be a UTF-8 encoded string with a length limit of 200 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [material](https://support.google.com/merchants/answer/6324410). Schema.org property [Product.material](https://schema.org/material)."]
         #[serde(
             rename = "materials",
             default,
@@ -4134,7 +4134,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The pattern or graphic print of the product. For example, \"striped\", \"polka dot\", \"paisley\". A maximum of 20 values are allowed per Product. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [pattern](https://support.google.com/merchants/answer/6324483). Schema.org property [Product.pattern](https://schema.org/pattern)."]
+        #[doc = "The pattern or graphic print of the product. For example, “striped”, “polka dot”, “paisley”. A maximum of 20 values are allowed per Product. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [pattern](https://support.google.com/merchants/answer/6324483). Schema.org property [Product.pattern](https://schema.org/pattern)."]
         #[serde(
             rename = "patterns",
             default,
@@ -4184,14 +4184,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rating: ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaRating>,
-        #[doc = "Indicates which fields in the Products are returned in SearchResponse. Supported fields for all types: * audience * availability * brands * color_info * conditions * gtin * materials * name * patterns * price_info * rating * sizes * title * uri Supported fields only for Type.PRIMARY and Type.COLLECTION: * categories * description * images Supported fields only for Type.VARIANT: * Only the first image in images To mark attributes as retrievable, include paths of the form \"attributes.key\" where \"key\" is the key of a custom attribute, as specified in attributes. For Type.PRIMARY and Type.COLLECTION, the following fields are always returned in SearchResponse by default: * name For Type.VARIANT, the following fields are always returned in by default: * name * color_info Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is returned. Note: Returning more fields in SearchResponse may increase response payload size and serving latency."]
+        #[doc = "Indicates which fields in the Products are returned in SearchResponse. Supported fields for all types: * audience * availability * brands * color_info * conditions * gtin * materials * name * patterns * price_info * rating * sizes * title * uri Supported fields only for Type.PRIMARY and Type.COLLECTION: * categories * description * images Supported fields only for Type.VARIANT: * Only the first image in images To mark attributes as retrievable, include paths of the form “attributes.key” where “key” is the key of a custom attribute, as specified in attributes. For Type.PRIMARY and Type.COLLECTION, the following fields are always returned in SearchResponse by default: * name For Type.VARIANT, the following fields are always returned in by default: * name * color_info Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is returned. Note: Returning more fields in SearchResponse may increase response payload size and serving latency."]
         #[serde(
             rename = "retrievableFields",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub retrievable_fields: ::std::option::Option<String>,
-        #[doc = "The size of the product. To represent different size systems or size types, consider using this format: [[[size_system:]size_type:]size_value]. For example, in \"US:MENS:M\", \"US\" represents size system; \"MENS\" represents size type; \"M\" represents size value. In \"GIRLS:27\", size system is empty; \"GIRLS\" represents size type; \"27\" represents size value. In \"32 inches\", both size system and size type are empty, while size value is \"32 inches\". A maximum of 20 values are allowed per Product. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [size](https://support.google.com/merchants/answer/6324492), [size_type](https://support.google.com/merchants/answer/6324497), and [size_system](https://support.google.com/merchants/answer/6324502). Schema.org property [Product.size](https://schema.org/size)."]
+        #[doc = "The size of the product. To represent different size systems or size types, consider using this format: \\[\\[\\[size_system:\\]size_type:\\]size_value\\]. For example, in “US:MENS:M”, “US” represents size system; “MENS” represents size type; “M” represents size value. In “GIRLS:27”, size system is empty; “GIRLS” represents size type; “27” represents size value. In “32 inches”, both size system and size type are empty, while size value is “32 inches”. A maximum of 20 values are allowed per Product. Each value must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. Corresponding properties: Google Merchant Center property [size](https://support.google.com/merchants/answer/6324492), [size_type](https://support.google.com/merchants/answer/6324497), and [size_system](https://support.google.com/merchants/answer/6324502). Schema.org property [Product.size](https://schema.org/size)."]
         #[serde(
             rename = "sizes",
             default,
@@ -4226,7 +4226,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub uri: ::std::option::Option<String>,
-        #[doc = "Output only. Product variants grouped together on primary product which share similar product attributes. It's automatically grouped by primary_product_id for all the product variants. Only populated for Type.PRIMARY Products. Note: This field is OUTPUT_ONLY for ProductService.GetProduct. Do not set this field in API requests."]
+        #[doc = "Output only. Product variants grouped together on primary product which share similar product attributes. It’s automatically grouped by primary_product_id for all the product variants. Only populated for Type.PRIMARY Products. Note: This field is OUTPUT_ONLY for ProductService.GetProduct. Do not set this field in API requests."]
         #[serde(
             rename = "variants",
             default,
@@ -4559,7 +4559,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaPromotion {
-        #[doc = "ID of the promotion. For example, \"free gift\". The value must be a UTF-8 encoded string with a length limit of 128 characters, and match the pattern: `a-zA-Z*`. For example, id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [promotion](https://support.google.com/merchants/answer/7050148)."]
+        #[doc = "ID of the promotion. For example, “free gift”. The value must be a UTF-8 encoded string with a length limit of 128 characters, and match the pattern: `a-zA-Z*`. For example, id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [promotion](https://support.google.com/merchants/answer/7050148)."]
         #[serde(
             rename = "promotionId",
             default,
@@ -4664,7 +4664,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaPurgeUserEventsRequest {
-        #[doc = "Required. The filter string to specify the events to be deleted with a length limit of 5,000 characters. Empty string filter is not allowed. The eligible fields for filtering are: * `eventType`: Double quoted UserEvent.event_type string. * `eventTime`: in ISO 8601 \"zulu\" format. * `visitorId`: Double quoted string. Specifying this will delete all events associated with a visitor. * `userId`: Double quoted string. Specifying this will delete all events associated with a user. Examples: * Deleting all events in a time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventTime < \"2012-04-23T18:30:43.511Z\"` * Deleting specific eventType in time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventType = \"detail-page-view\"` * Deleting all events for a specific visitor: `visitorId = \"visitor1024\"` The filtering fields are assumed to have an implicit AND."]
+        #[doc = "Required. The filter string to specify the events to be deleted with a length limit of 5,000 characters. Empty string filter is not allowed. The eligible fields for filtering are: * `eventType`: Double quoted UserEvent.event_type string. * `eventTime`: in ISO 8601 “zulu” format. * `visitorId`: Double quoted string. Specifying this will delete all events associated with a visitor. * `userId`: Double quoted string. Specifying this will delete all events associated with a user. Examples: * Deleting all events in a time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventTime < \"2012-04-23T18:30:43.511Z\"` * Deleting specific eventType in time range: `eventTime > \"2012-04-23T18:25:43.511Z\" eventType = \"detail-page-view\"` * Deleting all events for a specific visitor: `visitorId = \"visitor1024\"` The filtering fields are assumed to have an implicit AND."]
         #[serde(
             rename = "filter",
             default,
@@ -4739,7 +4739,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rating_count: ::std::option::Option<i32>,
-        #[doc = "List of rating counts per rating value (index = rating - 1). The list is empty if there is no rating. If the list is non-empty, its size is always 5. Otherwise, an INVALID_ARGUMENT error is returned. For example, [41, 14, 13, 47, 303]. It means that the Product got 41 ratings with 1 star, 14 ratings with 2 star, and so on."]
+        #[doc = "List of rating counts per rating value (index = rating - 1). The list is empty if there is no rating. If the list is non-empty, its size is always 5. Otherwise, an INVALID_ARGUMENT error is returned. For example, \\[41, 14, 13, 47, 303\\]. It means that the Product got 41 ratings with 1 star, 14 ratings with 2 star, and so on."]
         #[serde(
             rename = "ratingHistogram",
             default,
@@ -5028,14 +5028,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_missing: ::std::option::Option<bool>,
-        #[doc = "Required. The IDs for this type, such as the store IDs for \"pickup-in-store\" or the region IDs for \"same-day-delivery\", to be removed for this type. At least 1 value is required, and a maximum of 2000 values are allowed. Each value must be a string with a length limit of 10 characters, matching the pattern `[a-zA-Z0-9_-]+`, such as \"store1\" or \"REGION-2\". Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "Required. The IDs for this type, such as the store IDs for “pickup-in-store” or the region IDs for “same-day-delivery”, to be removed for this type. At least 1 value is required, and a maximum of 2000 values are allowed. Each value must be a string with a length limit of 10 characters, matching the pattern `[a-zA-Z0-9_-]+`, such as “store1” or “REGION-2”. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "placeIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub place_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. The fulfillment type, including commonly used types (such as pickup in store and same day delivery), and custom types. Supported values: * \"pickup-in-store\" * \"ship-to-store\" * \"same-day-delivery\" * \"next-day-delivery\" * \"custom-type-1\" * \"custom-type-2\" * \"custom-type-3\" * \"custom-type-4\" * \"custom-type-5\" If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned. This field directly corresponds to Product.fulfillment_info.type."]
+        #[doc = "Required. The fulfillment type, including commonly used types (such as pickup in store and same day delivery), and custom types. Supported values: * “pickup-in-store” * “ship-to-store” * “same-day-delivery” * “next-day-delivery” * “custom-type-1” * “custom-type-2” * “custom-type-3” * “custom-type-4” * “custom-type-5” If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned. This field directly corresponds to Product.fulfillment_info.type."]
         #[serde(
             rename = "type",
             default,
@@ -5328,14 +5328,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaRuleBoostAction {
-        #[doc = "Strength of the condition boost, which must be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored."]
+        #[doc = "Strength of the condition boost, which must be in \\[-1, 1\\]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored."]
         #[serde(
             rename = "boost",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub boost: ::std::option::Option<f32>,
-        #[doc = "The filter can have a max size of 5000 characters. An expression which specifies which products to apply an action to. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID \"product_1\" or \"product_2\", and color \"Red\" or \"Blue\": *(id: ANY(\"product_1\", \"product_2\")) * *AND * *(colorFamilies: ANY(\"Red\", \"Blue\")) *"]
+        #[doc = "The filter can have a max size of 5000 characters. An expression which specifies which products to apply an action to. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID “product_1” or “product_2”, and color “Red” or “Blue”: \\*(id: ANY(“product_1”, “product_2”)) * \\*AND * \\*(colorFamilies: ANY(“Red”, “Blue”)) *"]
         #[serde(
             rename = "productsFilter",
             default,
@@ -5380,7 +5380,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query_terms: ::std::option::Option<Vec<String>>,
-        #[doc = "Will be [deprecated = true] post migration;"]
+        #[doc = "Will be \\[deprecated = true\\] post migration;"]
         #[serde(
             rename = "terms",
             default,
@@ -5411,7 +5411,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaRuleFilterAction {
-        #[doc = "A filter to apply on the matching condition results. Supported features: * filter must be set. * Filter syntax is identical to SearchRequest.filter. See more details at the Retail Search [user guide](/retail/search/docs/filter-and-order#filter). * To filter products with product ID \"product_1\" or \"product_2\", and color \"Red\" or \"Blue\": *(id: ANY(\"product_1\", \"product_2\")) * *AND * *(colorFamilies: ANY(\"Red\", \"Blue\")) *"]
+        #[doc = "A filter to apply on the matching condition results. Supported features: * filter must be set. * Filter syntax is identical to SearchRequest.filter. See more details at the Retail Search [user guide](/retail/search/docs/filter-and-order#filter). * To filter products with product ID “product_1” or “product_2”, and color “Red” or “Blue”: \\*(id: ANY(“product_1”, “product_2”)) * \\*AND * \\*(colorFamilies: ANY(“Red”, “Blue”)) *"]
         #[serde(
             rename = "filter",
             default,
@@ -5473,7 +5473,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaRuleOnewaySynonymsAction {
-        #[doc = "Will be [deprecated = true] post migration;"]
+        #[doc = "Will be \\[deprecated = true\\] post migration;"]
         #[serde(
             rename = "onewayTerms",
             default,
@@ -5563,7 +5563,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub replacement_term: ::std::option::Option<String>,
-        #[doc = "Will be [deprecated = true] post migration;"]
+        #[doc = "Will be \\[deprecated = true\\] post migration;"]
         #[serde(
             rename = "term",
             default,
@@ -5616,7 +5616,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaSearchRequest {
-        #[doc = "Boost specification to boost certain products. See more details at this [user guide](https://cloud.google.com/retail/docs/boosting). Notice that if both ServingConfig.boost_control_ids and [SearchRequest.boost_spec] are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions."]
+        #[doc = "Boost specification to boost certain products. See more details at this [user guide](https://cloud.google.com/retail/docs/boosting). Notice that if both ServingConfig.boost_control_ids and \\[SearchRequest.boost_spec\\] are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions."]
         #[serde(
             rename = "boostSpec",
             default,
@@ -5624,7 +5624,7 @@ pub mod schemas {
         )]
         pub boost_spec:
             ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaSearchRequestBoostSpec>,
-        #[doc = "The branch resource name, such as `projects/*/locations/global/catalogs/default_catalog/branches/0`. Use \"default_branch\" as the branch ID or leave this field empty, to search products under the default branch."]
+        #[doc = "The branch resource name, such as `projects/*/locations/global/catalogs/default_catalog/branches/0`. Use “default_branch” as the branch ID or leave this field empty, to search products under the default branch."]
         #[serde(
             rename = "branch",
             default,
@@ -5684,7 +5684,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_by: ::std::option::Option<String>,
-        #[doc = "The categories associated with a category page. Required for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: \"pageCategories\" : [\"Sales > 2017 Black Friday Deals\"]."]
+        #[doc = "The categories associated with a category page. Required for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: “pageCategories” : \\[“Sales > 2017 Black Friday Deals”\\]."]
         #[serde(
             rename = "pageCategories",
             default,
@@ -5745,7 +5745,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_info: ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaUserInfo>,
-        #[doc = "The keys to fetch and rollup the matching variant Products attributes, FulfillmentInfo or LocalInventorys attributes. The attributes from all the matching variant Products or LocalInventorys are merged and de-duplicated. Notice that rollup attributes will lead to extra query latency. Maximum number of keys is 30. For FulfillmentInfo, a fulfillment type and a fulfillment ID must be provided in the format of \"fulfillmentType.fulfillmentId\". E.g., in \"pickupInStore.store123\", \"pickupInStore\" is fulfillment type and \"store123\" is the store ID. Supported keys are: * colorFamilies * price * originalPrice * discount * variantId * inventory(place_id,price) * inventory(place_id,original_price) * inventory(place_id,attributes.key), where key is any key in the Product.inventories.attributes map. * attributes.key, where key is any key in the Product.attributes map. * pickupInStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"pickup-in-store\". * shipToStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"ship-to-store\". * sameDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"same-day-delivery\". * nextDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"next-day-delivery\". * customFulfillment1.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"custom-type-1\". * customFulfillment2.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"custom-type-2\". * customFulfillment3.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"custom-type-3\". * customFulfillment4.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"custom-type-4\". * customFulfillment5.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type \"custom-type-5\". If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The keys to fetch and rollup the matching variant Products attributes, FulfillmentInfo or LocalInventorys attributes. The attributes from all the matching variant Products or LocalInventorys are merged and de-duplicated. Notice that rollup attributes will lead to extra query latency. Maximum number of keys is 30. For FulfillmentInfo, a fulfillment type and a fulfillment ID must be provided in the format of “fulfillmentType.fulfillmentId”. E.g., in “pickupInStore.store123”, “pickupInStore” is fulfillment type and “store123” is the store ID. Supported keys are: * colorFamilies * price * originalPrice * discount * variantId * inventory(place_id,price) * inventory(place_id,original_price) * inventory(place_id,attributes.key), where key is any key in the Product.inventories.attributes map. * attributes.key, where key is any key in the Product.attributes map. * pickupInStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “pickup-in-store”. * shipToStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “ship-to-store”. * sameDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “same-day-delivery”. * nextDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “next-day-delivery”. * customFulfillment1.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-1”. * customFulfillment2.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-2”. * customFulfillment3.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-3”. * customFulfillment4.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-4”. * customFulfillment5.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type “custom-type-5”. If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "variantRollupKeys",
             default,
@@ -5772,11 +5772,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRetailV2BetaSearchRequestSearchMode {
-        #[doc = "Only faceted search will be performed. The product search will be disabled. When in this mode, one or both of SearchRequest.facet_spec and SearchRequest.dynamic_facet_spec should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult] will not be returned."]
+        #[doc = "Only faceted search will be performed. The product search will be disabled. When in this mode, one or both of SearchRequest.facet_spec and SearchRequest.dynamic_facet_spec should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only \\[SearchResponse.Facet\\] will be returned. \\[SearchResponse.SearchResult\\] will not be returned."]
         FacetedSearchOnly,
-        #[doc = "Only product search will be performed. The faceted search will be disabled. Only [SearchResponse.SearchResult] will be returned. [SearchResponse.Facet] will not be returned, even if SearchRequest.facet_specs or SearchRequest.dynamic_facet_spec is set."]
+        #[doc = "Only product search will be performed. The faceted search will be disabled. Only \\[SearchResponse.SearchResult\\] will be returned. \\[SearchResponse.Facet\\] will not be returned, even if SearchRequest.facet_specs or SearchRequest.dynamic_facet_spec is set."]
         ProductSearchOnly,
-        #[doc = "Default value. In this case both product search and faceted search will be performed. Both [SearchResponse.SearchResult] and [SearchResponse.Facet] will be returned."]
+        #[doc = "Default value. In this case both product search and faceted search will be performed. Both \\[SearchResponse.SearchResult\\] and \\[SearchResponse.Facet\\] will be returned."]
         SearchModeUnspecified,
     }
     impl GoogleCloudRetailV2BetaSearchRequestSearchMode {
@@ -5901,14 +5901,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaSearchRequestBoostSpecConditionBoostSpec {
-        #[doc = "Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored."]
+        #[doc = "Strength of the condition boost, which should be in \\[-1, 1\\]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored."]
         #[serde(
             rename = "boost",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub boost: ::std::option::Option<f32>,
-        #[doc = "An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID \"product_1\" or \"product_2\", and color \"Red\" or \"Blue\": * (id: ANY(\"product_1\", \"product_2\")) AND (colorFamilies: ANY(\"Red\",\"Blue\"))"]
+        #[doc = "An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID “product_1” or “product_2”, and color “Red” or “Blue”: * (id: ANY(“product_1”, “product_2”)) AND (colorFamilies: ANY(“Red”,“Blue”))"]
         #[serde(
             rename = "condition",
             default,
@@ -5943,7 +5943,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaSearchRequestDynamicFacetSpec {
-        #[doc = "Mode of the DynamicFacet feature. Defaults to Mode.DISABLED if it's unset."]
+        #[doc = "Mode of the DynamicFacet feature. Defaults to Mode.DISABLED if it’s unset."]
         #[serde(
             rename = "mode",
             default,
@@ -6058,14 +6058,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaSearchRequestFacetSpec {
-        #[doc = "Enables dynamic position for this facet. If set to true, the position of this facet among all facets in the response is determined by Google Retail Search. It will be ordered together with dynamic facets if dynamic facets is enabled. If set to false, the position of this facet in the response will be the same as in the request, and it will be ranked before the facets with dynamic position enable and all dynamic facets. For example, you may always want to have rating facet returned in the response, but it's not necessarily to always display the rating facet at the top. In that case, you can set enable_dynamic_position to true so that the position of rating facet in response will be determined by Google Retail Search. Another example, assuming you have the following facets in the request: * \"rating\", enable_dynamic_position = true * \"price\", enable_dynamic_position = false * \"brands\", enable_dynamic_position = false And also you have a dynamic facets enable, which will generate a facet 'gender'. Then the final order of the facets in the response can be (\"price\", \"brands\", \"rating\", \"gender\") or (\"price\", \"brands\", \"gender\", \"rating\") depends on how Google Retail Search orders \"gender\" and \"rating\" facets. However, notice that \"price\" and \"brands\" will always be ranked at 1st and 2nd position since their enable_dynamic_position are false."]
+        #[doc = "Enables dynamic position for this facet. If set to true, the position of this facet among all facets in the response is determined by Google Retail Search. It will be ordered together with dynamic facets if dynamic facets is enabled. If set to false, the position of this facet in the response will be the same as in the request, and it will be ranked before the facets with dynamic position enable and all dynamic facets. For example, you may always want to have rating facet returned in the response, but it’s not necessarily to always display the rating facet at the top. In that case, you can set enable_dynamic_position to true so that the position of rating facet in response will be determined by Google Retail Search. Another example, assuming you have the following facets in the request: * “rating”, enable_dynamic_position = true * “price”, enable_dynamic_position = false * “brands”, enable_dynamic_position = false And also you have a dynamic facets enable, which will generate a facet ‘gender’. Then the final order of the facets in the response can be (“price”, “brands”, “rating”, “gender”) or (“price”, “brands”, “gender”, “rating”) depends on how Google Retail Search orders “gender” and “rating” facets. However, notice that “price” and “brands” will always be ranked at 1st and 2nd position since their enable_dynamic_position are false."]
         #[serde(
             rename = "enableDynamicPosition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_dynamic_position: ::std::option::Option<bool>,
-        #[doc = "List of keys to exclude when faceting. By default, FacetKey.key is not excluded from the filter unless it is listed in this field. For example, suppose there are 100 products with color facet \"Red\" and 200 products with color facet \"Blue\". A query containing the filter \"colorFamilies:ANY(\"Red\")\" and have \"colorFamilies\" as FacetKey.key will by default return the \"Red\" with count 100. If this field contains \"colorFamilies\", then the query returns both the \"Red\" with count 100 and \"Blue\" with count 200, because the \"colorFamilies\" key is now excluded from the filter. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "List of keys to exclude when faceting. By default, FacetKey.key is not excluded from the filter unless it is listed in this field. For example, suppose there are 100 products with color facet “Red” and 200 products with color facet “Blue”. A query containing the filter “colorFamilies:ANY(“Red”)“ and have “colorFamilies” as FacetKey.key will by default return the “Red” with count 100. If this field contains “colorFamilies”, then the query returns both the “Red” with count 100 and “Blue” with count 200, because the “colorFamilies” key is now excluded from the filter. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "excludedFilterKeys",
             default,
@@ -6103,7 +6103,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaSearchRequestFacetSpecFacetKey {
-        #[doc = "Only get facet values that contains the given strings. For example, suppose \"categories\" has three values \"Women > Shoe\", \"Women > Dress\" and \"Men > Shoe\". If set \"contains\" to \"Shoe\", the \"categories\" facet will give only \"Women > Shoe\" and \"Men > Shoe\". Only supported on textual fields. Maximum is 10."]
+        #[doc = "Only get facet values that contains the given strings. For example, suppose “categories” has three values “Women > Shoe”, “Women > Dress” and “Men > Shoe”. If set “contains” to “Shoe”, the “categories” facet will give only “Women > Shoe” and “Men > Shoe”. Only supported on textual fields. Maximum is 10."]
         #[serde(
             rename = "contains",
             default,
@@ -6117,35 +6117,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub intervals: ::std::option::Option<Vec<crate::schemas::GoogleCloudRetailV2BetaInterval>>,
-        #[doc = "Required. Supported textual and numerical facet keys in Product object, over which the facet values are computed. Facet key is case-sensitive. Allowed facet keys when FacetKey.query is not specified: * textual_field = * \"brands\" * \"categories\" * \"genders\" * \"ageGroups\" * \"availability\" * \"colorFamilies\" * \"colors\" * \"sizes\" * \"materials\" * \"patterns\" * \"conditions\" * \"attributes.key\" * \"pickupInStore\" * \"shipToStore\" * \"sameDayDelivery\" * \"nextDayDelivery\" * \"customFulfillment1\" * \"customFulfillment2\" * \"customFulfillment3\" * \"customFulfillment4\" * \"customFulfillment5\" * \"inventory(place_id,attributes.key)\" * numerical_field = * \"price\" * \"discount\" * \"rating\" * \"ratingCount\" * \"attributes.key\" * \"inventory(place_id,price)\" * \"inventory(place_id,original_price)\" * \"inventory(place_id,attributes.key)\""]
+        #[doc = "Required. Supported textual and numerical facet keys in Product object, over which the facet values are computed. Facet key is case-sensitive. Allowed facet keys when FacetKey.query is not specified: * textual_field = * “brands” * “categories” * “genders” * “ageGroups” * “availability” * “colorFamilies” * “colors” * “sizes” * “materials” * “patterns” * “conditions” * “attributes.key” * “pickupInStore” * “shipToStore” * “sameDayDelivery” * “nextDayDelivery” * “customFulfillment1” * “customFulfillment2” * “customFulfillment3” * “customFulfillment4” * “customFulfillment5” * “inventory(place_id,attributes.key)” * numerical_field = * “price” * “discount” * “rating” * “ratingCount” * “attributes.key” * “inventory(place_id,price)” * “inventory(place_id,original_price)” * “inventory(place_id,attributes.key)”"]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "The order in which Facet.values are returned. Allowed values are: * \"count desc\", which means order by Facet.FacetValue.count descending. * \"value desc\", which means order by Facet.FacetValue.value descending. Only applies to textual facets. If not set, textual values are sorted in [natural order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical intervals are sorted in the order given by FacetSpec.FacetKey.intervals; FulfillmentInfo.place_ids are sorted in the order given by FacetSpec.FacetKey.restricted_values."]
+        #[doc = "The order in which Facet.values are returned. Allowed values are: * “count desc”, which means order by Facet.FacetValue.count descending. * “value desc”, which means order by Facet.FacetValue.value descending. Only applies to textual facets. If not set, textual values are sorted in [natural order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical intervals are sorted in the order given by FacetSpec.FacetKey.intervals; FulfillmentInfo.place_ids are sorted in the order given by FacetSpec.FacetKey.restricted_values."]
         #[serde(
             rename = "orderBy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_by: ::std::option::Option<String>,
-        #[doc = "Only get facet values that start with the given string prefix. For example, suppose \"categories\" has three values \"Women > Shoe\", \"Women > Dress\" and \"Men > Shoe\". If set \"prefixes\" to \"Women\", the \"categories\" facet will give only \"Women > Shoe\" and \"Women > Dress\". Only supported on textual fields. Maximum is 10."]
+        #[doc = "Only get facet values that start with the given string prefix. For example, suppose “categories” has three values “Women > Shoe”, “Women > Dress” and “Men > Shoe”. If set “prefixes” to “Women”, the “categories” facet will give only “Women > Shoe” and “Women > Dress”. Only supported on textual fields. Maximum is 10."]
         #[serde(
             rename = "prefixes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub prefixes: ::std::option::Option<Vec<String>>,
-        #[doc = "The query that is used to compute facet for the given facet key. When provided, it will override the default behavior of facet computation. The query syntax is the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Notice that there is no limitation on FacetKey.key when query is specified. In the response, FacetValue.value will be always \"1\" and FacetValue.count will be the number of results that matches the query. For example, you can set a customized facet for \"shipToStore\", where FacetKey.key is \"customizedShipToStore\", and FacetKey.query is \"availability: ANY(\"IN_STOCK\") AND shipToStore: ANY(\"123\")\". Then the facet will count the products that are both in stock and ship to store \"123\"."]
+        #[doc = "The query that is used to compute facet for the given facet key. When provided, it will override the default behavior of facet computation. The query syntax is the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Notice that there is no limitation on FacetKey.key when query is specified. In the response, FacetValue.value will be always “1” and FacetValue.count will be the number of results that matches the query. For example, you can set a customized facet for “shipToStore”, where FacetKey.key is “customizedShipToStore”, and FacetKey.query is “availability: ANY(\"IN_STOCK\") AND shipToStore: ANY(\"123\")”. Then the facet will count the products that are both in stock and ship to store “123”."]
         #[serde(
             rename = "query",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
-        #[doc = "Only get facet for the given restricted values. For example, when using \"pickupInStore\" as key and set restricted values to [\"store123\", \"store456\"], only facets for \"store123\" and \"store456\" are returned. Only supported on textual fields and fulfillments. Maximum is 20. Must be set for the fulfillment facet keys: * pickupInStore * shipToStore * sameDayDelivery * nextDayDelivery * customFulfillment1 * customFulfillment2 * customFulfillment3 * customFulfillment4 * customFulfillment5"]
+        #[doc = "Only get facet for the given restricted values. For example, when using “pickupInStore” as key and set restricted values to \\[“store123”, “store456”\\], only facets for “store123” and “store456” are returned. Only supported on textual fields and fulfillments. Maximum is 20. Must be set for the fulfillment facet keys: * pickupInStore * shipToStore * sameDayDelivery * nextDayDelivery * customFulfillment1 * customFulfillment2 * customFulfillment3 * customFulfillment4 * customFulfillment5"]
         #[serde(
             rename = "restrictedValues",
             default,
@@ -6515,7 +6515,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dynamic_facet: ::std::option::Option<bool>,
-        #[doc = "The key for this facet. E.g., \"colorFamilies\" or \"price\" or \"attributes.attr1\"."]
+        #[doc = "The key for this facet. E.g., “colorFamilies” or “price” or “attributes.attr1”."]
         #[serde(
             rename = "key",
             default,
@@ -6554,14 +6554,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub count: ::std::option::Option<i64>,
-        #[doc = "Interval value for a facet, such as [10, 20) for facet \"price\"."]
+        #[doc = "Interval value for a facet, such as \\[10, 20) for facet “price”."]
         #[serde(
             rename = "interval",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub interval: ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaInterval>,
-        #[doc = "Text value of a facet, such as \"Black\" for facet \"colorFamilies\"."]
+        #[doc = "Text value of a facet, such as “Black” for facet “colorFamilies”."]
         #[serde(
             rename = "value",
             default,
@@ -6640,7 +6640,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub matching_variant_count: ::std::option::Option<i32>,
-        #[doc = "If a variant Product matches the search query, this map indicates which Product fields are matched. The key is the Product.name, the value is a field mask of the matched Product fields. If matched attributes cannot be determined, this map will be empty. For example, a key \"sku1\" with field mask \"products.color_info\" indicates there is a match between \"sku1\" ColorInfo and the query."]
+        #[doc = "If a variant Product matches the search query, this map indicates which Product fields are matched. The key is the Product.name, the value is a field mask of the matched Product fields. If matched attributes cannot be determined, this map will be empty. For example, a key “sku1” with field mask “products.color_info” indicates there is a match between “sku1” ColorInfo and the query."]
         #[serde(
             rename = "matchingVariantFields",
             default,
@@ -6648,14 +6648,14 @@ pub mod schemas {
         )]
         pub matching_variant_fields:
             ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The product data snippet in the search response. Only Product.name is guaranteed to be populated. Product.variants contains the product variants that match the search query. If there are multiple product variants matching the query, top 5 most relevant product variants are returned and ordered by relevancy. If relevancy can be deternmined, use matching_variant_fields to look up matched product variants fields. If relevancy cannot be determined, e.g. when searching \"shoe\" all products in a shoe product can be a match, 5 product variants are returned but order is meaningless."]
+        #[doc = "The product data snippet in the search response. Only Product.name is guaranteed to be populated. Product.variants contains the product variants that match the search query. If there are multiple product variants matching the query, top 5 most relevant product variants are returned and ordered by relevancy. If relevancy can be deternmined, use matching_variant_fields to look up matched product variants fields. If relevancy cannot be determined, e.g. when searching “shoe” all products in a shoe product can be a match, 5 product variants are returned but order is meaningless."]
         #[serde(
             rename = "product",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product: ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaProduct>,
-        #[doc = "The rollup matching variant Product attributes. The key is one of the SearchRequest.variant_rollup_keys. The values are the merged and de-duplicated Product attributes. Notice that the rollup values are respect filter. For example, when filtering by \"colorFamilies:ANY(\"red\")\" and rollup \"colorFamilies\", only \"red\" is returned. For textual and numerical attributes, the rollup values is a list of string or double values with type google.protobuf.ListValue. For example, if there are two variants with colors \"red\" and \"blue\", the rollup values are { key: \"colorFamilies\" value { list_value { values { string_value: \"red\" } values { string_value: \"blue\" } } } } For FulfillmentInfo, the rollup values is a double value with type google.protobuf.Value. For example, `{key: \"pickupInStore.store1\" value { number_value: 10 }}` means a there are 10 variants in this product are available in the store \"store1\"."]
+        #[doc = "The rollup matching variant Product attributes. The key is one of the SearchRequest.variant_rollup_keys. The values are the merged and de-duplicated Product attributes. Notice that the rollup values are respect filter. For example, when filtering by “colorFamilies:ANY(\"red\")” and rollup “colorFamilies”, only “red” is returned. For textual and numerical attributes, the rollup values is a list of string or double values with type google.protobuf.ListValue. For example, if there are two variants with colors “red” and “blue”, the rollup values are { key: “colorFamilies” value { list_value { values { string_value: “red” } values { string_value: “blue” } } } } For FulfillmentInfo, the rollup values is a double value with type google.protobuf.Value. For example, `{key: \"pickupInStore.store1\" value { number_value: 10 }}` means a there are 10 variants in this product are available in the store “store1”."]
         #[serde(
             rename = "variantRollupValues",
             default,
@@ -6687,7 +6687,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaServingConfig {
-        #[doc = "Condition boost specifications. If a product matches multiple conditions in the specifications, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 100. Notice that if both ServingConfig.boost_control_ids and [SearchRequest.boost_spec] are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
+        #[doc = "Condition boost specifications. If a product matches multiple conditions in the specifications, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 100. Notice that if both ServingConfig.boost_control_ids and \\[SearchRequest.boost_spec\\] are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions. Can only be set if solution_types is SOLUTION_TYPE_SEARCH."]
         #[serde(
             rename = "boostControlIds",
             default,
@@ -6701,7 +6701,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "How much diversity to use in recommendation model results e.g. 'medium-diversity' or 'high-diversity'. Currently supported values: * 'no-diversity' * 'low-diversity' * 'medium-diversity' * 'high-diversity' * 'auto-diversity' If not specified, we choose default based on recommendation model type. Default value: 'no-diversity'. Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[doc = "How much diversity to use in recommendation model results e.g. ‘medium-diversity’ or ‘high-diversity’. Currently supported values: * ‘no-diversity’ * ‘low-diversity’ * ‘medium-diversity’ * ‘high-diversity’ * ‘auto-diversity’ If not specified, we choose default based on recommendation model type. Default value: ‘no-diversity’. Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
         #[serde(
             rename = "diversityLevel",
             default,
@@ -6724,7 +6724,7 @@ pub mod schemas {
         pub dynamic_facet_spec: ::std::option::Option<
             crate::schemas::GoogleCloudRetailV2BetaSearchRequestDynamicFacetSpec,
         >,
-        #[doc = "Whether to add additional category filters on the 'similar-items' model. If not specified, we enable it by default. Allowed values are: * 'no-category-match': No additional filtering of original results from the model and the customer's filters. * 'relaxed-category-match': Only keep results with categories that match at least one item categories in the PredictRequests's context item. * If customer also sends filters in the PredictRequest, then the results will satisfy both conditions (user given and category match). Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[doc = "Whether to add additional category filters on the ‘similar-items’ model. If not specified, we enable it by default. Allowed values are: * ‘no-category-match’: No additional filtering of original results from the model and the customer’s filters. * ‘relaxed-category-match’: Only keep results with categories that match at least one item categories in the PredictRequests’s context item. * If customer also sends filters in the PredictRequest, then the results will satisfy both conditions (user given and category match). Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
         #[serde(
             rename = "enableCategoryFilterLevel",
             default,
@@ -6759,7 +6759,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_id: ::std::option::Option<String>,
-        #[doc = "Immutable. Fully qualified name projects/*/locations/global/catalogs/*/servingConfig/*"]
+        #[doc = "Immutable. Fully qualified name projects/*/locations/global/catalogs/*/servingConfig/\\*"]
         #[serde(
             rename = "name",
             default,
@@ -6773,7 +6773,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oneway_synonyms_control_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "How much price ranking we want in serving results. Price reranking causes product items with a similar recommendation probability to be ordered by price, with the highest-priced items first. This setting could result in a decrease in click-through and conversion rates. Allowed values are: * 'no-price-reranking' * 'low-price-raranking' * 'medium-price-reranking' * 'high-price-reranking' If not specified, we choose default based on model type. Default value: 'no-price-reranking'. Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
+        #[doc = "How much price ranking we want in serving results. Price reranking causes product items with a similar recommendation probability to be ordered by price, with the highest-priced items first. This setting could result in a decrease in click-through and conversion rates. Allowed values are: * ‘no-price-reranking’ * ‘low-price-raranking’ * ‘medium-price-reranking’ * ‘high-price-reranking’ If not specified, we choose default based on model type. Default value: ‘no-price-reranking’. Can only be set if solution_types is SOLUTION_TYPE_RECOMMENDATION."]
         #[serde(
             rename = "priceRerankingLevel",
             default,
@@ -6898,7 +6898,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRetailV2BetaSetDefaultBranchRequest {
-        #[doc = "The final component of the resource name of a branch. This field must be one of \"0\", \"1\" or \"2\". Otherwise, an INVALID_ARGUMENT error is returned. If there are no sufficient active products in the targeted branch and force is not set, a FAILED_PRECONDITION error is returned."]
+        #[doc = "The final component of the resource name of a branch. This field must be one of “0”, “1” or “2”. Otherwise, an INVALID_ARGUMENT error is returned. If there are no sufficient active products in the targeted branch and force is not set, a FAILED_PRECONDITION error is returned."]
         #[serde(
             rename = "branchId",
             default,
@@ -6965,7 +6965,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_missing: ::std::option::Option<bool>,
-        #[doc = "Required. The inventory information to update. The allowable fields to update are: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info The updated inventory fields must be specified in SetInventoryRequest.set_mask. If SetInventoryRequest.inventory.name is empty or invalid, an INVALID_ARGUMENT error is returned. If the caller does not have permission to update the Product named in Product.name, regardless of whether or not it exists, a PERMISSION_DENIED error is returned. If the Product to update does not have existing inventory information, the provided inventory information will be inserted. If the Product to update has existing inventory information, the provided inventory information will be merged while respecting the last update time for each inventory field, using the provided or default value for SetInventoryRequest.set_time. The caller can replace place IDs for a subset of fulfillment types in the following ways: * Adds \"fulfillment_info\" in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types and corresponding place IDs to update in SetInventoryRequest.inventory.fulfillment_info The caller can clear all place IDs from a subset of fulfillment types in the following ways: * Adds \"fulfillment_info\" in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types to clear in SetInventoryRequest.inventory.fulfillment_info * Checks that only the desired fulfillment info types have empty SetInventoryRequest.inventory.fulfillment_info.place_ids The last update time is recorded for the following inventory fields: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info If a full overwrite of inventory information while ignoring timestamps is needed, UpdateProduct should be invoked instead."]
+        #[doc = "Required. The inventory information to update. The allowable fields to update are: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info The updated inventory fields must be specified in SetInventoryRequest.set_mask. If SetInventoryRequest.inventory.name is empty or invalid, an INVALID_ARGUMENT error is returned. If the caller does not have permission to update the Product named in Product.name, regardless of whether or not it exists, a PERMISSION_DENIED error is returned. If the Product to update does not have existing inventory information, the provided inventory information will be inserted. If the Product to update has existing inventory information, the provided inventory information will be merged while respecting the last update time for each inventory field, using the provided or default value for SetInventoryRequest.set_time. The caller can replace place IDs for a subset of fulfillment types in the following ways: * Adds “fulfillment_info” in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types and corresponding place IDs to update in SetInventoryRequest.inventory.fulfillment_info The caller can clear all place IDs from a subset of fulfillment types in the following ways: * Adds “fulfillment_info” in SetInventoryRequest.set_mask * Specifies only the desired fulfillment types to clear in SetInventoryRequest.inventory.fulfillment_info * Checks that only the desired fulfillment info types have empty SetInventoryRequest.inventory.fulfillment_info.place_ids The last update time is recorded for the following inventory fields: * Product.price_info * Product.availability * Product.available_quantity * Product.fulfillment_info If a full overwrite of inventory information while ignoring timestamps is needed, UpdateProduct should be invoked instead."]
         #[serde(
             rename = "inventory",
             default,
@@ -7037,7 +7037,7 @@ pub mod schemas {
                 crate::schemas::GoogleCloudRetailV2BetaCustomAttribute,
             >,
         >,
-        #[doc = "Highly recommended for user events that are the result of PredictionService.Predict. This field enables accurate attribution of recommendation model performance. The value must be a valid PredictResponse.attribution_token for user events that are the result of PredictionService.Predict. The value must be a valid SearchResponse.attribution_token for user events that are the result of SearchService.Search. This token enables us to accurately attribute page view or purchase back to the event and the particular predict response containing this clicked/purchased product. If user clicks on product K in the recommendation results, pass PredictResponse.attribution_token as a URL parameter to product K's page. When recording events on product K's page, log the PredictResponse.attribution_token to this field."]
+        #[doc = "Highly recommended for user events that are the result of PredictionService.Predict. This field enables accurate attribution of recommendation model performance. The value must be a valid PredictResponse.attribution_token for user events that are the result of PredictionService.Predict. The value must be a valid SearchResponse.attribution_token for user events that are the result of SearchService.Search. This token enables us to accurately attribute page view or purchase back to the event and the particular predict response containing this clicked/purchased product. If user clicks on product K in the recommendation results, pass PredictResponse.attribution_token as a URL parameter to product K’s page. When recording events on product K’s page, log the PredictResponse.attribution_token to this field."]
         #[serde(
             rename = "attributionToken",
             default,
@@ -7101,7 +7101,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_by: ::std::option::Option<String>,
-        #[doc = "The categories associated with a category page. To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: \"pageCategories\" : [\"Sales > 2017 Black Friday Deals\"]. Required for `category-page-view` events. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The categories associated with a category page. To represent full path of category, use ‘\\>’ sign to separate different hierarchies. If ‘\\>’ is part of the category name, please replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: “pageCategories” : \\[“Sales > 2017 Black Friday Deals”\\]. Required for `category-page-view` events. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "pageCategories",
             default,
@@ -7138,7 +7138,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referrer_uri: ::std::option::Option<String>,
-        #[doc = "The user's search query. See SearchRequest.query for definition. The value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "The user’s search query. See SearchRequest.query for definition. The value must be a UTF-8 encoded string with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. At least one of search_query or page_categories is required for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "searchQuery",
             default,
@@ -7152,7 +7152,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub session_id: ::std::option::Option<String>,
-        #[doc = "Complete URL (window.location.href) of the user's current page. When using the client side event reporting with JavaScript pixel and Google Tag Manager, this value is filled in automatically. Maximum length 5,000 characters."]
+        #[doc = "Complete URL (window.location.href) of the user’s current page. When using the client side event reporting with JavaScript pixel and Google Tag Manager, this value is filled in automatically. Maximum length 5,000 characters."]
         #[serde(
             rename = "uri",
             default,
@@ -7166,7 +7166,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_info: ::std::option::Option<crate::schemas::GoogleCloudRetailV2BetaUserInfo>,
-        #[doc = "Required. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor log in/out of the website. Don't set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. The field should not contain PII or user-data. We recommend to use Google Analystics [Client ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId) for this field."]
+        #[doc = "Required. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor log in/out of the website. Don’t set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. The field should not contain PII or user-data. We recommend to use Google Analystics [Client ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId) for this field."]
         #[serde(
             rename = "visitorId",
             default,
@@ -7305,7 +7305,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub direct_user_request: ::std::option::Option<bool>,
-        #[doc = "The end user's IP address. This field is used to extract location information for personalization. This field must be either an IPv4 address (e.g. \"104.133.9.80\") or an IPv6 address (e.g. \"2001:0db8:85a3:0000:0000:8a2e:0370:7334\"). Otherwise, an INVALID_ARGUMENT error is returned. This should not be set when: * setting SearchRequest.user_info. * using the JavaScript tag in UserEventService.CollectUserEvent or if direct_user_request is set."]
+        #[doc = "The end user’s IP address. This field is used to extract location information for personalization. This field must be either an IPv4 address (e.g. “104.133.9.80”) or an IPv6 address (e.g. “2001:0db8:85a3:0000:0000:8a2e:0370:7334”). Otherwise, an INVALID_ARGUMENT error is returned. This should not be set when: * setting SearchRequest.user_info. * using the JavaScript tag in UserEventService.CollectUserEvent or if direct_user_request is set."]
         #[serde(
             rename = "ipAddress",
             default,
@@ -7319,7 +7319,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_agent: ::std::option::Option<String>,
-        #[doc = "Highly recommended for logged-in users. Unique identifier for logged-in user, such as a user name. Don't set for anonymous users. Always use a hashed value for this ID. Don't set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned."]
+        #[doc = "Highly recommended for logged-in users. Unique identifier for logged-in user, such as a user name. Don’t set for anonymous users. Always use a hashed value for this ID. Don’t set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned."]
         #[serde(
             rename = "userId",
             default,
@@ -7970,7 +7970,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDate {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -8390,7 +8390,7 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Set a specified branch id as default branch. API methods such as SearchService.Search, ProductService.GetProduct, ProductService.ListProducts will treat requests using \"default_branch\" to the actual branch id set as default. For example, if `projects/*/locations/*/catalogs/*/branches/1` is set as default, setting SearchRequest.branch to `projects/*/locations/*/catalogs/*/branches/default_branch` is equivalent to setting SearchRequest.branch to `projects/*/locations/*/catalogs/*/branches/1`. Using multiple branches can be useful when developers would like to have a staging branch to test and verify for future usage. When it becomes ready, developers switch on the staging branch using this API while keeping using `projects/*/locations/*/catalogs/*/branches/default_branch` as SearchRequest.branch to route the traffic to this staging branch. CAUTION: If you have live predict/search traffic, switching the default branch could potentially cause outages if the ID space of the new branch is very different from the old one. More specifically: * PredictionService will only return product IDs from branch {newBranch}. * SearchService will only return product IDs from branch {newBranch} (if branch is not explicitly set). * UserEventService will only join events with products from branch {newBranch}."]
+                    #[doc = "Set a specified branch id as default branch. API methods such as SearchService.Search, ProductService.GetProduct, ProductService.ListProducts will treat requests using “default_branch” to the actual branch id set as default. For example, if `projects/*/locations/*/catalogs/*/branches/1` is set as default, setting SearchRequest.branch to `projects/*/locations/*/catalogs/*/branches/default_branch` is equivalent to setting SearchRequest.branch to `projects/*/locations/*/catalogs/*/branches/1`. Using multiple branches can be useful when developers would like to have a staging branch to test and verify for future usage. When it becomes ready, developers switch on the staging branch using this API while keeping using `projects/*/locations/*/catalogs/*/branches/default_branch` as SearchRequest.branch to route the traffic to this staging branch. CAUTION: If you have live predict/search traffic, switching the default branch could potentially cause outages if the ID space of the new branch is very different from the old one. More specifically: * PredictionService will only return product IDs from branch {newBranch}. * SearchService will only return product IDs from branch {newBranch} (if branch is not explicitly set). * UserEventService will only join events with products from branch {newBranch}."]
                     pub fn set_default_branch(
                         &self,
                         request: crate::schemas::GoogleCloudRetailV2BetaSetDefaultBranchRequest,
@@ -8528,7 +8528,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> CompleteQueryRequestBuilder<'a> {
-                    #[doc = "Determines which dataset to use for fetching completion. \"user-data\" will use the imported dataset through CompletionService.ImportCompletionData. \"cloud-retail\" will use the dataset generated by cloud retail based on user events. If leave empty, it will use the \"user-data\". Current supported values: * user-data * cloud-retail This option requires additional allowlisting. Before using cloud-retail, contact Cloud Retail support team first."]
+                    #[doc = "Determines which dataset to use for fetching completion. “user-data” will use the imported dataset through CompletionService.ImportCompletionData. “cloud-retail” will use the dataset generated by cloud retail based on user events. If leave empty, it will use the “user-data”. Current supported values: * user-data * cloud-retail This option requires additional allowlisting. Before using cloud-retail, contact Cloud Retail support team first."]
                     pub fn dataset(mut self, value: impl Into<String>) -> Self {
                         self.dataset = Some(value.into());
                         self
@@ -8538,7 +8538,7 @@ pub mod resources {
                         self.device_type = Some(value.into());
                         self
                     }
-                    #[doc = "The language filters applied to the output suggestions. If set, it should contain the language of the query. If not set, suggestions are returned without considering language restrictions. This is the BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). The maximum number of language codes is 3."]
+                    #[doc = "The language filters applied to the output suggestions. If set, it should contain the language of the query. If not set, suggestions are returned without considering language restrictions. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). The maximum number of language codes is 3."]
                     pub fn language_codes(mut self, value: impl Into<Vec<String>>) -> Self {
                         self.language_codes = Some(value.into());
                         self
@@ -8588,12 +8588,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -8763,12 +8763,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -8925,12 +8925,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9087,12 +9087,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9266,12 +9266,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9609,12 +9609,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9774,12 +9774,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9945,12 +9945,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -10116,12 +10116,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -10364,12 +10364,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -10536,12 +10536,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -10708,12 +10708,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -10926,12 +10926,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -11360,12 +11360,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -11528,12 +11528,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -11701,12 +11701,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -11868,12 +11868,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -12032,12 +12032,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -12197,12 +12197,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -12352,7 +12352,7 @@ pub mod resources {
                                 self.page_token = Some(value.into());
                                 self
                             }
-                            #[doc = "The fields of Product to return in the responses. If not set or empty, the following fields are returned: * Product.name * Product.id * Product.title * Product.uri * Product.images * Product.price_info * Product.brands If \"*\" is provided, all fields are returned. Product.name is always returned no matter what mask is set. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned."]
+                            #[doc = "The fields of Product to return in the responses. If not set or empty, the following fields are returned: * Product.name * Product.id * Product.title * Product.uri * Product.images * Product.price_info * Product.brands If “\\*” is provided, all fields are returned. Product.name is always returned no matter what mask is set. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned."]
                             pub fn read_mask(mut self, value: impl Into<String>) -> Self {
                                 self.read_mask = Some(value.into());
                                 self
@@ -12387,12 +12387,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -12713,7 +12713,7 @@ pub mod resources {
                                 self.allow_missing = Some(value);
                                 self
                             }
-                            #[doc = "Indicates which fields in the provided Product to update. The immutable and output only fields are NOT supported. If not set, all supported fields (the fields that are neither immutable nor output only) are updated. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned. The attribute key can be updated by setting the mask path as \"attributes.${key_name}\". If a key name is present in the mask but not in the patching product from the request, this key will be deleted after the update."]
+                            #[doc = "Indicates which fields in the provided Product to update. The immutable and output only fields are NOT supported. If not set, all supported fields (the fields that are neither immutable nor output only) are updated. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned. The attribute key can be updated by setting the mask path as “attributes.${key_name}”. If a key name is present in the mask but not in the patching product from the request, this key will be deleted after the update."]
                             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                                 self.update_mask = Some(value.into());
                                 self
@@ -12748,12 +12748,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -12900,12 +12900,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -13051,12 +13051,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -13218,12 +13218,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -13422,12 +13422,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13682,7 +13682,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID to use for the Control, which will become the final component of the Control's resource name. This value should be 4-63 characters, and valid characters are /a-z-_/."]
+                        #[doc = "Required. The ID to use for the Control, which will become the final component of the Control’s resource name. This value should be 4-63 characters, and valid characters are /a-z-\\_/."]
                         pub fn control_id(mut self, value: impl Into<String>) -> Self {
                             self.control_id = Some(value.into());
                             self
@@ -13717,12 +13717,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13884,12 +13884,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14048,12 +14048,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14185,7 +14185,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. A filter to apply on the list results. Supported features: * List all the products under the parent branch if filter is unset. * List controls that are used in a single ServingConfig: 'serving_config = \"boosted_home_page_cvr\"'"]
+                        #[doc = "Optional. A filter to apply on the list results. Supported features: * List all the products under the parent branch if filter is unset. * List controls that are used in a single ServingConfig: ‘serving_config = “boosted_home_page_cvr”’"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -14230,12 +14230,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14583,12 +14583,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14730,7 +14730,7 @@ pub mod resources {
                                 name: name.into(),
                             }
                         }
-                        #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                        #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                         pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -14802,12 +14802,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14984,12 +14984,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -15386,12 +15386,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -15557,12 +15557,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -15689,7 +15689,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Enables a Control on the specified ServingConfig. The control is added in the last position of the list of controls it belongs to (e.g. if it's a facet spec control it will be applied in the last position of servingConfig.facetSpecIds) Returns a ALREADY_EXISTS error if the control has already been applied. Returns a FAILED_PRECONDITION error if the addition could exceed maximum number of control allowed for that type of control."]
+                        #[doc = "Enables a Control on the specified ServingConfig. The control is added in the last position of the list of controls it belongs to (e.g. if it’s a facet spec control it will be applied in the last position of servingConfig.facetSpecIds) Returns a ALREADY_EXISTS error if the control has already been applied. Returns a FAILED_PRECONDITION error if the addition could exceed maximum number of control allowed for that type of control."]
                         pub fn add_control(
                             &self,
                             request: crate::schemas::GoogleCloudRetailV2BetaAddControlRequest,
@@ -15945,12 +15945,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16087,7 +16087,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> CreateRequestBuilder<'a> {
-                        #[doc = "Required. The ID to use for the ServingConfig, which will become the final component of the ServingConfig's resource name. This value should be 4-63 characters, and valid characters are /a-z-_/."]
+                        #[doc = "Required. The ID to use for the ServingConfig, which will become the final component of the ServingConfig’s resource name. This value should be 4-63 characters, and valid characters are /a-z-\\_/."]
                         pub fn serving_config_id(mut self, value: impl Into<String>) -> Self {
                             self.serving_config_id = Some(value.into());
                             self
@@ -16122,12 +16122,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16293,12 +16293,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16457,12 +16457,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16637,12 +16637,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16990,12 +16990,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17161,12 +17161,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17332,12 +17332,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17503,12 +17503,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17821,12 +17821,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -17990,12 +17990,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -18157,12 +18157,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -18324,12 +18324,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -18491,12 +18491,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -18639,7 +18639,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                     pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -18711,12 +18711,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -18891,12 +18891,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -19206,7 +19206,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -19278,12 +19278,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19458,12 +19458,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

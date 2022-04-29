@@ -38,7 +38,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub campaign: ::std::option::Option<String>,
-        #[doc = "The Channel Group associated with an end user's session for this View (defined by the View's Channel Groupings)."]
+        #[doc = "The Channel Group associated with an end user’s session for this View (defined by the View’s Channel Groupings)."]
         #[serde(
             rename = "channelGrouping",
             default,
@@ -87,7 +87,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub keyword: ::std::option::Option<String>,
-        #[doc = "The first page in users' sessions, or the landing page."]
+        #[doc = "The first page in users’ sessions, or the landing page."]
         #[serde(
             rename = "landingPagePath",
             default,
@@ -237,7 +237,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date_range: ::std::option::Option<crate::schemas::DateRange>,
-        #[doc = "A unique name for the cohort. If not defined name will be auto-generated with values cohort_[1234...]."]
+        #[doc = "A unique name for the cohort. If not defined name will be auto-generated with values cohort\\_\\[1234…\\]."]
         #[serde(
             rename = "name",
             default,
@@ -266,7 +266,7 @@ pub mod schemas {
     pub enum CohortType {
         #[doc = "Cohorts that are selected based on first visit date."]
         FirstVisitDate,
-        #[doc = "If unspecified it's treated as `FIRST_VISIT_DATE`."]
+        #[doc = "If unspecified it’s treated as `FIRST_VISIT_DATE`."]
         UnspecifiedCohortType,
     }
     impl CohortType {
@@ -536,7 +536,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Dimension {
-        #[doc = "If non-empty, we place dimension values into buckets after string to int64. Dimension values that are not the string representation of an integral value will be converted to zero. The bucket values have to be in increasing order. Each bucket is closed on the lower end, and open on the upper end. The \"first\" bucket includes all values less than the first boundary, the \"last\" bucket includes all values up to infinity. Dimension values that fall in a bucket get transformed to a new dimension value. For example, if one gives a list of \"0, 1, 3, 4, 7\", then we return the following buckets: - bucket #1: values < 0, dimension value \"<0\" - bucket #2: values in [0,1), dimension value \"0\" - bucket #3: values in [1,3), dimension value \"1-2\" - bucket #4: values in [3,4), dimension value \"3\" - bucket #5: values in [4,7), dimension value \"4-6\" - bucket #6: values >= 7, dimension value \"7+\" NOTE: If you are applying histogram mutation on any dimension, and using that dimension in sort, you will want to use the sort type `HISTOGRAM_BUCKET` for that purpose. Without that the dimension values will be sorted according to dictionary (lexicographic) order. For example the ascending dictionary order is: \"<50\", \"1001+\", \"121-1000\", \"50-120\" And the ascending `HISTOGRAM_BUCKET` order is: \"<50\", \"50-120\", \"121-1000\", \"1001+\" The client has to explicitly request `\"orderType\": \"HISTOGRAM_BUCKET\"` for a histogram-mutated dimension."]
+        #[doc = "If non-empty, we place dimension values into buckets after string to int64. Dimension values that are not the string representation of an integral value will be converted to zero. The bucket values have to be in increasing order. Each bucket is closed on the lower end, and open on the upper end. The “first” bucket includes all values less than the first boundary, the “last” bucket includes all values up to infinity. Dimension values that fall in a bucket get transformed to a new dimension value. For example, if one gives a list of “0, 1, 3, 4, 7”, then we return the following buckets: - bucket #1: values \\< 0, dimension value “\\<0” - bucket #2: values in \\[0,1), dimension value “0” - bucket #3: values in \\[1,3), dimension value “1-2” - bucket #4: values in \\[3,4), dimension value “3” - bucket #5: values in \\[4,7), dimension value “4-6” - bucket #6: values >= 7, dimension value “7+” NOTE: If you are applying histogram mutation on any dimension, and using that dimension in sort, you will want to use the sort type `HISTOGRAM_BUCKET` for that purpose. Without that the dimension values will be sorted according to dictionary (lexicographic) order. For example the ascending dictionary order is: “\\<50”, “1001+”, “121-1000”, “50-120” And the ascending `HISTOGRAM_BUCKET` order is: “\\<50”, “50-120”, “121-1000”, “1001+” The client has to explicitly request `\"orderType\": \"HISTOGRAM_BUCKET\"` for a histogram-mutated dimension."]
         #[serde(
             rename = "histogramBuckets",
             default,
@@ -628,7 +628,7 @@ pub mod schemas {
         EndsWith,
         #[doc = "The value should match the match expression entirely."]
         Exact,
-        #[doc = "This option is used to specify a dimension filter whose expression can take any value from a selected list of values. This helps avoiding evaluating multiple exact match dimension filters which are OR'ed for every single response row. For example: expressions: [\"A\", \"B\", \"C\"] Any response row whose dimension has it is value as A, B or C, matches this DimensionFilter."]
+        #[doc = "This option is used to specify a dimension filter whose expression can take any value from a selected list of values. This helps avoiding evaluating multiple exact match dimension filters which are OR’ed for every single response row. For example: expressions: \\[“A”, “B”, “C”\\] Any response row whose dimension has it is value as A, B or C, matches this DimensionFilter."]
         InList,
         #[doc = "Integer comparison filters. case sensitivity is ignored for these and the expression is assumed to be a string representing an integer. Failure conditions: - If expression is not a valid int64, the client should expect an error. - Input dimensions that are not valid int64 values will never match the filter."]
         NumericEqual,
@@ -1134,14 +1134,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EventData {
-        #[doc = "Type of interaction with the object. Eg: 'play'."]
+        #[doc = "Type of interaction with the object. Eg: ‘play’."]
         #[serde(
             rename = "eventAction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event_action: ::std::option::Option<String>,
-        #[doc = "The object on the page that was interacted with. Eg: 'Video'."]
+        #[doc = "The object on the page that was interacted with. Eg: ‘Video’."]
         #[serde(
             rename = "eventCategory",
             default,
@@ -1380,7 +1380,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alias: ::std::option::Option<String>,
-        #[doc = "A metric expression in the request. An expression is constructed from one or more metrics and numbers. Accepted operators include: Plus (+), Minus (-), Negation (Unary -), Divided by (/), Multiplied by (*), Parenthesis, Positive cardinal numbers (0-9), can include decimals and is limited to 1024 characters. Example `ga:totalRefunds/ga:users`, in most cases the metric expression is just a single metric name like `ga:users`. Adding mixed `MetricType` (E.g., `CURRENCY` + `PERCENTAGE`) metrics will result in unexpected results."]
+        #[doc = "A metric expression in the request. An expression is constructed from one or more metrics and numbers. Accepted operators include: Plus (+), Minus (-), Negation (Unary -), Divided by (/), Multiplied by (\\*), Parenthesis, Positive cardinal numbers (0-9), can include decimals and is limited to 1024 characters. Example `ga:totalRefunds/ga:users`, in most cases the metric expression is just a single metric name like `ga:users`. Adding mixed `MetricType` (E.g., `CURRENCY` + `PERCENTAGE`) metrics will result in unexpected results."]
         #[serde(
             rename = "expression",
             default,
@@ -1554,7 +1554,7 @@ pub mod schemas {
         Equal,
         #[doc = "Should the value of the metric be greater than to the comparison value."]
         GreaterThan,
-        #[doc = "Validates if the metric is missing. Doesn't take comparisonValue into account."]
+        #[doc = "Validates if the metric is missing. Doesn’t take comparisonValue into account."]
         IsMissing,
         #[doc = "Should the value of the metric be less than to the comparison value."]
         LessThan,
@@ -2209,7 +2209,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Pivot {
-        #[doc = "DimensionFilterClauses are logically combined with an `AND` operator: only data that is included by all these DimensionFilterClauses contributes to the values in this pivot region. Dimension filters can be used to restrict the columns shown in the pivot region. For example if you have `ga:browser` as the requested dimension in the pivot region, and you specify key filters to restrict `ga:browser` to only \"IE\" or \"Firefox\", then only those two browsers would show up as columns."]
+        #[doc = "DimensionFilterClauses are logically combined with an `AND` operator: only data that is included by all these DimensionFilterClauses contributes to the values in this pivot region. Dimension filters can be used to restrict the columns shown in the pivot region. For example if you have `ga:browser` as the requested dimension in the pivot region, and you specify key filters to restrict `ga:browser` to only “IE” or “Firefox”, then only those two browsers would show up as columns."]
         #[serde(
             rename = "dimensionFilterClauses",
             default,
@@ -2238,7 +2238,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "If k metrics were requested, then the response will contain some data-dependent multiple of k columns in the report. E.g., if you pivoted on the dimension `ga:browser` then you'd get k columns for \"Firefox\", k columns for \"IE\", k columns for \"Chrome\", etc. The ordering of the groups of columns is determined by descending order of \"total\" for the first of the k values. Ties are broken by lexicographic ordering of the first pivot dimension, then lexicographic ordering of the second pivot dimension, and so on. E.g., if the totals for the first value for Firefox, IE, and Chrome were 8, 2, 8, respectively, the order of columns would be Chrome, Firefox, IE. The following let you choose which of the groups of k columns are included in the response."]
+        #[doc = "If k metrics were requested, then the response will contain some data-dependent multiple of k columns in the report. E.g., if you pivoted on the dimension `ga:browser` then you’d get k columns for “Firefox”, k columns for “IE”, k columns for “Chrome”, etc. The ordering of the groups of columns is determined by descending order of “total” for the first of the k values. Ties are broken by lexicographic ordering of the first pivot dimension, then lexicographic ordering of the second pivot dimension, and so on. E.g., if the totals for the first value for Firefox, IE, and Chrome were 8, 2, 8, respectively, the order of columns would be Chrome, Firefox, IE. The following let you choose which of the groups of k columns are included in the response."]
         #[serde(
             rename = "startGroup",
             default,
@@ -2519,7 +2519,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub row_count: ::std::option::Option<i32>,
-        #[doc = "There's one ReportRow for every unique combination of dimensions."]
+        #[doc = "There’s one ReportRow for every unique combination of dimensions."]
         #[serde(
             rename = "rows",
             default,
@@ -2540,7 +2540,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sampling_space_sizes: ::std::option::Option<Vec<i64>>,
-        #[doc = "For each requested date range, for the set of all rows that match the query, every requested value format gets a total. The total for a value format is computed by first totaling the metrics mentioned in the value format and then evaluating the value format as a scalar expression. E.g., The \"totals\" for `3 / (ga:sessions + 2)` we compute `3 / ((sum of all relevant ga:sessions) + 2)`. Totals are computed before pagination."]
+        #[doc = "For each requested date range, for the set of all rows that match the query, every requested value format gets a total. The total for a value format is computed by first totaling the metrics mentioned in the value format and then evaluating the value format as a scalar expression. E.g., The “totals” for `3 / (ga:sessions + 2)` we compute `3 / ((sum of all relevant ga:sessions) + 2)`. Totals are computed before pagination."]
         #[serde(
             rename = "totals",
             default,
@@ -2649,7 +2649,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub order_bys: ::std::option::Option<Vec<crate::schemas::OrderBy>>,
-        #[doc = "Page size is for paging and specifies the maximum number of returned rows. Page size should be >= 0. A query returns the default of 1,000 rows. The Analytics Core Reporting API returns a maximum of 100,000 rows per request, no matter how many you ask for. It can also return fewer rows than requested, if there aren't as many dimension segments as you expect. For instance, there are fewer than 300 possible values for `ga:country`, so when segmenting only by country, you can't get more than 300 rows, even if you set `pageSize` to a higher value."]
+        #[doc = "Page size is for paging and specifies the maximum number of returned rows. Page size should be >= 0. A query returns the default of 1,000 rows. The Analytics Core Reporting API returns a maximum of 100,000 rows per request, no matter how many you ask for. It can also return fewer rows than requested, if there aren’t as many dimension segments as you expect. For instance, there are fewer than 300 possible values for `ga:country`, so when segmenting only by country, you can’t get more than 300 rows, even if you set `pageSize` to a higher value."]
         #[serde(
             rename = "pageSize",
             default,
@@ -2879,14 +2879,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_name: ::std::option::Option<String>,
-        #[doc = "Mobile manufacturer or branded name. Eg: \"Google\", \"Apple\" etc."]
+        #[doc = "Mobile manufacturer or branded name. Eg: “Google”, “Apple” etc."]
         #[serde(
             rename = "mobileDeviceBranding",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mobile_device_branding: ::std::option::Option<String>,
-        #[doc = "Mobile device model. Eg: \"Pixel\", \"iPhone\" etc."]
+        #[doc = "Mobile device model. Eg: “Pixel”, “iPhone” etc."]
         #[serde(
             rename = "mobileDeviceModel",
             default,
@@ -2939,7 +2939,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date_range: ::std::option::Option<crate::schemas::DateRange>,
-        #[doc = "Page size is for paging and specifies the maximum number of returned rows. Page size should be > 0. If the value is 0 or if the field isn't specified, the request returns the default of 1000 rows per page."]
+        #[doc = "Page size is for paging and specifies the maximum number of returned rows. Page size should be > 0. If the value is 0 or if the field isn’t specified, the request returns the default of 1000 rows per page."]
         #[serde(
             rename = "pageSize",
             default,
@@ -3268,7 +3268,7 @@ pub mod schemas {
         EndsWith,
         #[doc = "The value should match the match expression entirely."]
         Exact,
-        #[doc = "This option is used to specify a dimension filter whose expression can take any value from a selected list of values. This helps avoiding evaluating multiple exact match dimension filters which are OR'ed for every single response row. For example: expressions: [\"A\", \"B\", \"C\"] Any response row whose dimension has it is value as A, B or C, matches this DimensionFilter."]
+        #[doc = "This option is used to specify a dimension filter whose expression can take any value from a selected list of values. This helps avoiding evaluating multiple exact match dimension filters which are OR’ed for every single response row. For example: expressions: \\[“A”, “B”, “C”\\] Any response row whose dimension has it is value as A, B or C, matches this DimensionFilter."]
         InList,
         #[doc = "Checks if the dimension is numerically between the minimum and maximum of the match expression, boundaries excluded."]
         NumericBetween,
@@ -3384,7 +3384,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SegmentFilter {
-        #[doc = "If true, match the complement of simple or sequence segment. For example, to match all visits not from \"New York\", we can define the segment as follows: \"sessionSegment\": { \"segmentFilters\": [{ \"simpleSegment\" :{ \"orFiltersForSegment\": [{ \"segmentFilterClauses\":[{ \"dimensionFilter\": { \"dimensionName\": \"ga:city\", \"expressions\": [\"New York\"] } }] }] }, \"not\": \"True\" }] },"]
+        #[doc = "If true, match the complement of simple or sequence segment. For example, to match all visits not from “New York”, we can define the segment as follows: “sessionSegment”: { “segmentFilters”: \\[{ “simpleSegment” :{ “orFiltersForSegment”: \\[{ “segmentFilterClauses”:\\[{ “dimensionFilter”: { “dimensionName”: “ga:city”, “expressions”: \\[“New York”\\] } }\\] }\\] }, “not”: “True” }\\] },"]
         #[serde(
             rename = "not",
             default,
@@ -4043,21 +4043,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub activities: ::std::option::Option<Vec<crate::schemas::Activity>>,
-        #[doc = "The data source of a hit. By default, hits sent from analytics.js are reported as \"web\" and hits sent from the mobile SDKs are reported as \"app\". These values can be overridden in the Measurement Protocol."]
+        #[doc = "The data source of a hit. By default, hits sent from analytics.js are reported as “web” and hits sent from the mobile SDKs are reported as “app”. These values can be overridden in the Measurement Protocol."]
         #[serde(
             rename = "dataSource",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_source: ::std::option::Option<String>,
-        #[doc = "The type of device used: \"mobile\", \"tablet\" etc."]
+        #[doc = "The type of device used: “mobile”, “tablet” etc."]
         #[serde(
             rename = "deviceCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device_category: ::std::option::Option<String>,
-        #[doc = "Platform on which the activity happened: \"android\", \"ios\" etc."]
+        #[doc = "Platform on which the activity happened: “android”, “ios” etc."]
         #[serde(
             rename = "platform",
             default,
@@ -4360,12 +4360,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4548,12 +4548,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

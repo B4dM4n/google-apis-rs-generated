@@ -385,7 +385,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraints { # [doc = "A client's physical location, expressed as a ISO 31166-1 alpha-2 region code."] # [serde (rename = "deviceLocation" , default , skip_serializing_if = "std::option::Option::is_none")] pub device_location : :: std :: option :: Option < String > , # [doc = "Requests the lists for a specific language. Expects ISO 639 alpha-2 format."] # [serde (rename = "language" , default , skip_serializing_if = "std::option::Option::is_none")] pub language : :: std :: option :: Option < String > , # [doc = "Sets the maximum number of entries that the client is willing to have in the local database for the specified list. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set."] # [serde (rename = "maxDatabaseEntries" , default , skip_serializing_if = "std::option::Option::is_none")] pub max_database_entries : :: std :: option :: Option < i32 > , # [doc = "The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set."] # [serde (rename = "maxUpdateEntries" , default , skip_serializing_if = "std::option::Option::is_none")] pub max_update_entries : :: std :: option :: Option < i32 > , # [doc = "Requests the list for a specific geographic location. If not set the server may pick that value based on the user's IP address. Expects ISO 3166-1 alpha-2 format."] # [serde (rename = "region" , default , skip_serializing_if = "std::option::Option::is_none")] pub region : :: std :: option :: Option < String > , # [doc = "The compression types supported by the client."] # [serde (rename = "supportedCompressions" , default , skip_serializing_if = "std::option::Option::is_none")] pub supported_compressions : :: std :: option :: Option < Vec < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraintsSupportedCompressionsItems > > , }
+    pub struct GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraints { # [doc = "A client’s physical location, expressed as a ISO 31166-1 alpha-2 region code."] # [serde (rename = "deviceLocation" , default , skip_serializing_if = "std::option::Option::is_none")] pub device_location : :: std :: option :: Option < String > , # [doc = "Requests the lists for a specific language. Expects ISO 639 alpha-2 format."] # [serde (rename = "language" , default , skip_serializing_if = "std::option::Option::is_none")] pub language : :: std :: option :: Option < String > , # [doc = "Sets the maximum number of entries that the client is willing to have in the local database for the specified list. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set."] # [serde (rename = "maxDatabaseEntries" , default , skip_serializing_if = "std::option::Option::is_none")] pub max_database_entries : :: std :: option :: Option < i32 > , # [doc = "The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set."] # [serde (rename = "maxUpdateEntries" , default , skip_serializing_if = "std::option::Option::is_none")] pub max_update_entries : :: std :: option :: Option < i32 > , # [doc = "Requests the list for a specific geographic location. If not set the server may pick that value based on the user’s IP address. Expects ISO 3166-1 alpha-2 format."] # [serde (rename = "region" , default , skip_serializing_if = "std::option::Option::is_none")] pub region : :: std :: option :: Option < String > , # [doc = "The compression types supported by the client."] # [serde (rename = "supportedCompressions" , default , skip_serializing_if = "std::option::Option::is_none")] pub supported_compressions : :: std :: option :: Option < Vec < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraintsSupportedCompressionsItems > > , }
     impl ::google_field_selector::FieldSelector
         for GoogleSecuritySafebrowsingV4FetchThreatListUpdatesRequestListUpdateRequestConstraints
     {
@@ -457,7 +457,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponse { # [doc = "A set of entries to add to a local threat type's list. Repeated to allow for a combination of compressed and raw data to be sent in a single response."] # [serde (rename = "additions" , default , skip_serializing_if = "std::option::Option::is_none")] pub additions : :: std :: option :: Option < Vec < crate :: schemas :: GoogleSecuritySafebrowsingV4ThreatEntrySet > > , # [doc = "The expected SHA256 hash of the client state; that is, of the sorted list of all hashes present in the database after applying the provided update. If the client state doesn't match the expected state, the client must disregard this update and retry later."] # [serde (rename = "checksum" , default , skip_serializing_if = "std::option::Option::is_none")] pub checksum : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4Checksum > , # [doc = "The new client state, in encrypted format. Opaque to clients."] # [serde (rename = "newClientState" , default , skip_serializing_if = "std::option::Option::is_none")] pub new_client_state : :: std :: option :: Option < :: google_api_bytes :: Bytes > , # [doc = "The platform type for which data is returned."] # [serde (rename = "platformType" , default , skip_serializing_if = "std::option::Option::is_none")] pub platform_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponsePlatformType > , # [doc = "A set of entries to remove from a local threat type's list. In practice, this field is empty or contains exactly one ThreatEntrySet."] # [serde (rename = "removals" , default , skip_serializing_if = "std::option::Option::is_none")] pub removals : :: std :: option :: Option < Vec < crate :: schemas :: GoogleSecuritySafebrowsingV4ThreatEntrySet > > , # [doc = "The type of response. This may indicate that an action is required by the client when the response is received."] # [serde (rename = "responseType" , default , skip_serializing_if = "std::option::Option::is_none")] pub response_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseResponseType > , # [doc = "The format of the threats."] # [serde (rename = "threatEntryType" , default , skip_serializing_if = "std::option::Option::is_none")] pub threat_entry_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatEntryType > , # [doc = "The threat type for which data is returned."] # [serde (rename = "threatType" , default , skip_serializing_if = "std::option::Option::is_none")] pub threat_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType > , }
+    pub struct GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponse { # [doc = "A set of entries to add to a local threat type’s list. Repeated to allow for a combination of compressed and raw data to be sent in a single response."] # [serde (rename = "additions" , default , skip_serializing_if = "std::option::Option::is_none")] pub additions : :: std :: option :: Option < Vec < crate :: schemas :: GoogleSecuritySafebrowsingV4ThreatEntrySet > > , # [doc = "The expected SHA256 hash of the client state; that is, of the sorted list of all hashes present in the database after applying the provided update. If the client state doesn’t match the expected state, the client must disregard this update and retry later."] # [serde (rename = "checksum" , default , skip_serializing_if = "std::option::Option::is_none")] pub checksum : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4Checksum > , # [doc = "The new client state, in encrypted format. Opaque to clients."] # [serde (rename = "newClientState" , default , skip_serializing_if = "std::option::Option::is_none")] pub new_client_state : :: std :: option :: Option < :: google_api_bytes :: Bytes > , # [doc = "The platform type for which data is returned."] # [serde (rename = "platformType" , default , skip_serializing_if = "std::option::Option::is_none")] pub platform_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponsePlatformType > , # [doc = "A set of entries to remove from a local threat type’s list. In practice, this field is empty or contains exactly one ThreatEntrySet."] # [serde (rename = "removals" , default , skip_serializing_if = "std::option::Option::is_none")] pub removals : :: std :: option :: Option < Vec < crate :: schemas :: GoogleSecuritySafebrowsingV4ThreatEntrySet > > , # [doc = "The type of response. This may indicate that an action is required by the client when the response is received."] # [serde (rename = "responseType" , default , skip_serializing_if = "std::option::Option::is_none")] pub response_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseResponseType > , # [doc = "The format of the threats."] # [serde (rename = "threatEntryType" , default , skip_serializing_if = "std::option::Option::is_none")] pub threat_entry_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatEntryType > , # [doc = "The threat type for which data is returned."] # [serde (rename = "threatType" , default , skip_serializing_if = "std::option::Option::is_none")] pub threat_type : :: std :: option :: Option < crate :: schemas :: GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseThreatType > , }
     impl ::google_field_selector::FieldSelector
         for GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponse
     {
@@ -556,9 +556,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleSecuritySafebrowsingV4FetchThreatListUpdatesResponseListUpdateResponseResponseType {
-        #[doc = "Full updates replace the client's entire local database. This means that either the client was seriously out-of-date or the client is believed to be corrupt."]
+        #[doc = "Full updates replace the client’s entire local database. This means that either the client was seriously out-of-date or the client is believed to be corrupt."]
         FullUpdate,
-        #[doc = "Partial updates are applied to the client's existing local database."]
+        #[doc = "Partial updates are applied to the client’s existing local database."]
         PartialUpdate,
         #[doc = "Unknown."]
         ResponseTypeUnspecified,
@@ -775,7 +775,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleSecuritySafebrowsingV4FindFullHashesRequest {
-        #[doc = "Client metadata associated with callers of higher-level APIs built on top of the client's implementation."]
+        #[doc = "Client metadata associated with callers of higher-level APIs built on top of the client’s implementation."]
         #[serde(
             rename = "apiClient",
             default,
@@ -790,7 +790,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub client: ::std::option::Option<crate::schemas::GoogleSecuritySafebrowsingV4ClientInfo>,
-        #[doc = "The current client states for each of the client's local threat lists."]
+        #[doc = "The current client states for each of the client’s local threat lists."]
         #[serde(
             rename = "clientStates",
             default,
@@ -1063,7 +1063,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encoded_data: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "The offset of the first entry in the encoded data, or, if only a single integer was encoded, that single integer's value. If the field is empty or missing, assume zero."]
+        #[doc = "The offset of the first entry in the encoded data, or, if only a single integer was encoded, that single integer’s value. If the field is empty or missing, assume zero."]
         #[serde(
             rename = "firstValue",
             default,
@@ -1857,7 +1857,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleSecuritySafebrowsingV4ThreatHitUserInfo {
-        #[doc = "The UN M.49 region code associated with the user's location."]
+        #[doc = "The UN M.49 region code associated with the user’s location."]
         #[serde(
             rename = "regionCode",
             default,
@@ -2200,7 +2200,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleSecuritySafebrowsingV4ThreatListDescriptor {
-        #[doc = "The platform type targeted by the list's entries."]
+        #[doc = "The platform type targeted by the list’s entries."]
         #[serde(
             rename = "platformType",
             default,
@@ -2218,7 +2218,7 @@ pub mod schemas {
         pub threat_entry_type: ::std::option::Option<
             crate::schemas::GoogleSecuritySafebrowsingV4ThreatListDescriptorThreatEntryType,
         >,
-        #[doc = "The threat type posed by the list's entries."]
+        #[doc = "The threat type posed by the list’s entries."]
         #[serde(
             rename = "threatType",
             default,
@@ -3170,12 +3170,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3384,12 +3384,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3587,12 +3587,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3781,12 +3781,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3969,12 +3969,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4158,12 +4158,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4351,12 +4351,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

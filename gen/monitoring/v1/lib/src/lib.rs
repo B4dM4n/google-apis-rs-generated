@@ -218,7 +218,7 @@ pub mod schemas {
         AlignNextOlder,
         #[doc = "No alignment. Raw data is returned. Not valid if cross-series reduction is requested. The value_type of the result is the same as the value_type of the input."]
         AlignNone,
-        #[doc = "Align and convert to a percentage change. This aligner is valid for GAUGE and DELTA metrics with numeric values. This alignment returns ((current - previous)/previous) * 100, where the value of previous is determined based on the alignment_period.If the values of current and previous are both 0, then the returned value is 0. If only previous is 0, the returned value is infinity.A 10-minute moving mean is computed at each point of the alignment period prior to the above calculation to smooth the metric and prevent false positives from very short-lived spikes. The moving mean is only applicable for data whose values are >= 0. Any values < 0 are treated as a missing datapoint, and are ignored. While DELTA metrics are accepted by this alignment, special care should be taken that the values for the metric will always be positive. The output is a GAUGE metric with value_type DOUBLE."]
+        #[doc = "Align and convert to a percentage change. This aligner is valid for GAUGE and DELTA metrics with numeric values. This alignment returns ((current - previous)/previous) * 100, where the value of previous is determined based on the alignment_period.If the values of current and previous are both 0, then the returned value is 0. If only previous is 0, the returned value is infinity.A 10-minute moving mean is computed at each point of the alignment period prior to the above calculation to smooth the metric and prevent false positives from very short-lived spikes. The moving mean is only applicable for data whose values are >= 0. Any values \\< 0 are treated as a missing datapoint, and are ignored. While DELTA metrics are accepted by this alignment, special care should be taken that the values for the metric will always be positive. The output is a GAUGE metric with value_type DOUBLE."]
         AlignPercentChange,
         #[doc = "Align the time series by using percentile aggregation (https://en.wikipedia.org/wiki/Percentile). The resulting data point in each alignment period is the 5th percentile of all data points in the period. This aligner is valid for GAUGE and DELTA metrics with distribution values. The output is a GAUGE metric with value_type DOUBLE."]
         AlignPercentile05,
@@ -228,7 +228,7 @@ pub mod schemas {
         AlignPercentile95,
         #[doc = "Align the time series by using percentile aggregation (https://en.wikipedia.org/wiki/Percentile). The resulting data point in each alignment period is the 99th percentile of all data points in the period. This aligner is valid for GAUGE and DELTA metrics with distribution values. The output is a GAUGE metric with value_type DOUBLE."]
         AlignPercentile99,
-        #[doc = "Align and convert to a rate. The result is computed as rate = (y1 - y0)/(t1 - t0), or \"delta over time\". Think of this aligner as providing the slope of the line that passes through the value at the start and at the end of the alignment_period.This aligner is valid for CUMULATIVE and DELTA metrics with numeric values. If the selected alignment period results in periods with no data, then the aligned value for such a period is created by interpolation. The output is a GAUGE metric with value_type DOUBLE.If, by \"rate\", you mean \"percentage change\", see the ALIGN_PERCENT_CHANGE aligner instead."]
+        #[doc = "Align and convert to a rate. The result is computed as rate = (y1 - y0)/(t1 - t0), or “delta over time”. Think of this aligner as providing the slope of the line that passes through the value at the start and at the end of the alignment_period.This aligner is valid for CUMULATIVE and DELTA metrics with numeric values. If the selected alignment period results in periods with no data, then the aligned value for such a period is created by interpolation. The output is a GAUGE metric with value_type DOUBLE.If, by “rate”, you mean “percentage change”, see the ALIGN_PERCENT_CHANGE aligner instead."]
         AlignRate,
         #[doc = "Align the time series by returning the standard deviation of the values in each alignment period. This aligner is valid for GAUGE and DELTA metrics with numeric values. The value_type of the output is DOUBLE."]
         AlignStddev,
@@ -363,7 +363,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AlertChart {
-        #[doc = "Required. The resource name of the alert policy. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] "]
+        #[doc = "Required. The resource name of the alert policy. The format is: projects/\\[PROJECT_ID_OR_NUMBER\\]/alertPolicies/\\[ALERT_POLICY_ID\\] "]
         #[serde(
             rename = "name",
             default,
@@ -924,7 +924,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DataSet {
-        #[doc = "A template string for naming TimeSeries in the resulting data set. This should be a string with interpolations of the form ${label_name}, which will resolve to the label's value."]
+        #[doc = "A template string for naming TimeSeries in the resulting data set. This should be a string with interpolations of the form ${label_name}, which will resolve to the label’s value."]
         #[serde(
             rename = "legendTemplate",
             default,
@@ -1252,7 +1252,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub packed: ::std::option::Option<bool>,
-        #[doc = "The field type URL, without the scheme, for message or enumeration types. Example: \"type.googleapis.com/google.protobuf.Timestamp\"."]
+        #[doc = "The field type URL, without the scheme, for message or enumeration types. Example: “type.googleapis.com/google.protobuf.Timestamp”."]
         #[serde(
             rename = "typeUrl",
             default,
@@ -1540,7 +1540,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GridLayout {
-        #[doc = "The number of columns into which the view's width is divided. If omitted or set to zero, a system default will be used while rendering."]
+        #[doc = "The number of columns into which the view’s width is divided. If omitted or set to zero, a system default will be used while rendering."]
         #[serde(
             rename = "columns",
             default,
@@ -2006,14 +2006,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Option {
-        #[doc = "The option's name. For protobuf built-in options (options defined in descriptor.proto), this is the short name. For example, \"map_entry\". For custom options, it should be the fully-qualified name. For example, \"google.api.http\"."]
+        #[doc = "The option’s name. For protobuf built-in options (options defined in descriptor.proto), this is the short name. For example, “map_entry”. For custom options, it should be the fully-qualified name. For example, “google.api.http”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The option's value packed in an Any message. If the value is a primitive, the corresponding wrapper type defined in google/protobuf/wrappers.proto should be used. If the value is an enum, it should be stored as an int32 value using the google.protobuf.Int32Value type."]
+        #[doc = "The option’s value packed in an Any message. If the value is a primitive, the corresponding wrapper type defined in google/protobuf/wrappers.proto should be used. If the value is an enum, it should be stored as an int32 value using the google.protobuf.Int32Value type."]
         #[serde(
             rename = "value",
             default,
@@ -2494,7 +2494,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spark_chart_view: ::std::option::Option<crate::schemas::SparkChartView>,
-        #[doc = "The thresholds used to determine the state of the scorecard given the time series' current value. For an actual value x, the scorecard is in a danger state if x is less than or equal to a danger threshold that triggers below, or greater than or equal to a danger threshold that triggers above. Similarly, if x is above/below a warning threshold that triggers above/below, then the scorecard is in a warning state - unless x also puts it in a danger state. (Danger trumps warning.)As an example, consider a scorecard with the following four thresholds: { value: 90, category: 'DANGER', trigger: 'ABOVE', }, { value: 70, category: 'WARNING', trigger: 'ABOVE', }, { value: 10, category: 'DANGER', trigger: 'BELOW', }, { value: 20, category: 'WARNING', trigger: 'BELOW', }Then: values less than or equal to 10 would put the scorecard in a DANGER state, values greater than 10 but less than or equal to 20 a WARNING state, values strictly between 20 and 70 an OK state, values greater than or equal to 70 but less than 90 a WARNING state, and values greater than or equal to 90 a DANGER state."]
+        #[doc = "The thresholds used to determine the state of the scorecard given the time series’ current value. For an actual value x, the scorecard is in a danger state if x is less than or equal to a danger threshold that triggers below, or greater than or equal to a danger threshold that triggers above. Similarly, if x is above/below a warning threshold that triggers above/below, then the scorecard is in a warning state - unless x also puts it in a danger state. (Danger trumps warning.)As an example, consider a scorecard with the following four thresholds: { value: 90, category: ‘DANGER’, trigger: ‘ABOVE’, }, { value: 70, category: ‘WARNING’, trigger: ‘ABOVE’, }, { value: 10, category: ‘DANGER’, trigger: ‘BELOW’, }, { value: 20, category: ‘WARNING’, trigger: ‘BELOW’, }Then: values less than or equal to 10 would put the scorecard in a DANGER state, values greater than 10 but less than or equal to 20 a WARNING state, values strictly between 20 and 70 an OK state, values greater than or equal to 70 but less than 90 a WARNING state, and values greater than or equal to 90 a DANGER state."]
         #[serde(
             rename = "thresholds",
             default,
@@ -2532,7 +2532,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SourceContext {
-        #[doc = "The path-qualified name of the .proto file that contained the associated protobuf element. For example: \"google/protobuf/source_context.proto\"."]
+        #[doc = "The path-qualified name of the .proto file that contained the associated protobuf element. For example: “google/protobuf/source_context.proto”."]
         #[serde(
             rename = "fileName",
             default,
@@ -2563,7 +2563,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SpanContext {
-        #[doc = "The resource name of the span. The format is: projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID] [TRACE_ID] is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array.[SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
+        #[doc = "The resource name of the span. The format is: projects/\\[PROJECT_ID_OR_NUMBER\\]/traces/\\[TRACE_ID\\]/spans/\\[SPAN_ID\\] \\[TRACE_ID\\] is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array.\\[SPAN_ID\\] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
         #[serde(
             rename = "spanName",
             default,
@@ -2881,7 +2881,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub table_display_options: ::std::option::Option<crate::schemas::TableDisplayOptions>,
-        #[doc = "Optional. A template string for naming TimeSeries in the resulting data set. This should be a string with interpolations of the form ${label_name}, which will resolve to the label's value i.e. \"${resource.labels.project_id}.\""]
+        #[doc = "Optional. A template string for naming TimeSeries in the resulting data set. This should be a string with interpolations of the form ${label_name}, which will resolve to the label’s value i.e. “${resource.labels.project_id}.”"]
         #[serde(
             rename = "tableTemplate",
             default,
@@ -3105,9 +3105,9 @@ pub mod schemas {
     pub enum ThresholdColor {
         #[doc = "Color is unspecified. Not allowed in well-formed requests."]
         ColorUnspecified,
-        #[doc = "Crossing the threshold is \"emergency\" behavior."]
+        #[doc = "Crossing the threshold is “emergency” behavior."]
         Red,
-        #[doc = "Crossing the threshold is \"concerning\" behavior."]
+        #[doc = "Crossing the threshold is “concerning” behavior."]
         Yellow,
     }
     impl ThresholdColor {
@@ -4188,12 +4188,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4356,12 +4356,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4576,12 +4576,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4742,12 +4742,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4940,12 +4940,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5253,12 +5253,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5416,12 +5416,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5576,12 +5576,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5748,12 +5748,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6074,12 +6074,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6397,12 +6397,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6573,12 +6573,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6749,12 +6749,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -6983,12 +6983,12 @@ pub mod resources {
                                     self.quota_user = Some(value.into());
                                     self
                                 }
-                                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                     self.upload_protocol = Some(value.into());
                                     self
                                 }
-                                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                     self.upload_type = Some(value.into());
                                     self
@@ -7221,12 +7221,12 @@ pub mod resources {
                                     self.quota_user = Some(value.into());
                                     self
                                 }
-                                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                     self.upload_protocol = Some(value.into());
                                     self
                                 }
-                                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                     self.upload_type = Some(value.into());
                                     self

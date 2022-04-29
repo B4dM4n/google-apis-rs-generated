@@ -183,14 +183,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ArtifactObjects {
-        #[doc = "Cloud Storage bucket and optional object path, in the form \"gs://bucket/path/to/somewhere/\". (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)). Files in the workspace matching any path pattern will be uploaded to Cloud Storage with this location as a prefix."]
+        #[doc = "Cloud Storage bucket and optional object path, in the form “gs://bucket/path/to/somewhere/”. (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)). Files in the workspace matching any path pattern will be uploaded to Cloud Storage with this location as a prefix."]
         #[serde(
             rename = "location",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "Path globs used to match files in the build's workspace."]
+        #[doc = "Path globs used to match files in the build’s workspace."]
         #[serde(
             rename = "paths",
             default,
@@ -266,14 +266,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Artifacts {
-        #[doc = "A list of images to be pushed upon the successful completion of all build steps. The images will be pushed using the builder service account's credentials. The digests of the pushed images will be stored in the Build resource's results field. If any of the images fail to be pushed, the build is marked FAILURE."]
+        #[doc = "A list of images to be pushed upon the successful completion of all build steps. The images will be pushed using the builder service account’s credentials. The digests of the pushed images will be stored in the Build resource’s results field. If any of the images fail to be pushed, the build is marked FAILURE."]
         #[serde(
             rename = "images",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub images: ::std::option::Option<Vec<String>>,
-        #[doc = "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account's credentials. The location and generation of the uploaded objects will be stored in the Build resource's results field. If any objects fail to be pushed, the build is marked FAILURE."]
+        #[doc = "A list of objects to be uploaded to Cloud Storage upon successful completion of all build steps. Files in the workspace matching specified paths globs will be uploaded to the specified Cloud Storage location using the builder service account’s credentials. The location and generation of the uploaded objects will be stored in the Build resource’s results field. If any objects fail to be pushed, the build is marked FAILURE."]
         #[serde(
             rename = "objects",
             default,
@@ -457,7 +457,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Build {
-        #[doc = "Output only. Describes this build's approval configuration, status, and result."]
+        #[doc = "Output only. Describes this build’s approval configuration, status, and result."]
         #[serde(
             rename = "approval",
             default,
@@ -499,7 +499,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub failure_info: ::std::option::Option<crate::schemas::FailureInfo>,
-        #[doc = "Output only. Time at which execution of the build was finished. The difference between finish_time and start_time is the duration of the build's execution."]
+        #[doc = "Output only. Time at which execution of the build was finished. The difference between finish_time and start_time is the duration of the build’s execution."]
         #[serde(
             rename = "finishTime",
             default,
@@ -513,7 +513,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "A list of images to be pushed upon the successful completion of all build steps. The images are pushed using the builder service account's credentials. The digests of the pushed images will be stored in the `Build` resource's results field. If any of the images fail to be pushed, the build status is marked `FAILURE`."]
+        #[doc = "A list of images to be pushed upon the successful completion of all build steps. The images are pushed using the builder service account’s credentials. The digests of the pushed images will be stored in the `Build` resource’s results field. If any of the images fail to be pushed, the build status is marked `FAILURE`."]
         #[serde(
             rename = "images",
             default,
@@ -534,7 +534,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub logs_bucket: ::std::option::Option<String>,
-        #[doc = "Output only. The 'Build' name with format: `projects/{project}/locations/{location}/builds/{build}`, where {build} is a unique identifier generated by the service."]
+        #[doc = "Output only. The ‘Build’ name with format: `projects/{project}/locations/{location}/builds/{build}`, where {build} is a unique identifier generated by the service."]
         #[serde(
             rename = "name",
             default,
@@ -810,7 +810,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub result: ::std::option::Option<crate::schemas::ApprovalResult>,
-        #[doc = "Output only. The state of this build's approval."]
+        #[doc = "Output only. The state of this build’s approval."]
         #[serde(
             rename = "state",
             default,
@@ -958,7 +958,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BuildOptions {
-        #[doc = "Requested disk size for the VM that runs the build. Note that this is *NOT* \"disk free\"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error."]
+        #[doc = "Requested disk size for the VM that runs the build. Note that this is *NOT* “disk free”; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build – the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error."]
         #[serde(
             rename = "diskSizeGb",
             default,
@@ -973,7 +973,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dynamic_substitutions: ::std::option::Option<bool>,
-        #[doc = "A list of global environment variable definitions that will exist for all build steps in this build. If a variable is defined in both globally and in a build step, the variable will use the build step value. The elements are of the form \"KEY=VALUE\" for the environment variable \"KEY\" being given the value \"VALUE\"."]
+        #[doc = "A list of global environment variable definitions that will exist for all build steps in this build. If a variable is defined in both globally and in a build step, the variable will use the build step value. The elements are of the form “KEY=VALUE” for the environment variable “KEY” being given the value “VALUE”."]
         #[serde(
             rename = "env",
             default,
@@ -1017,7 +1017,7 @@ pub mod schemas {
         )]
         pub requested_verify_option:
             ::std::option::Option<crate::schemas::BuildOptionsRequestedVerifyOption>,
-        #[doc = "A list of global environment variables, which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`. These variables will be available to all build steps in this build."]
+        #[doc = "A list of global environment variables, which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build’s `Secret`. These variables will be available to all build steps in this build."]
         #[serde(
             rename = "secretEnv",
             default,
@@ -1549,28 +1549,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BuildStep {
-        #[doc = "A list of arguments that will be presented to the step when it is started. If the image used to run the step's container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments."]
+        #[doc = "A list of arguments that will be presented to the step when it is started. If the image used to run the step’s container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments."]
         #[serde(
             rename = "args",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub args: ::std::option::Option<Vec<String>>,
-        #[doc = "Working directory to use when running this step's container. If this value is a relative path, it is relative to the build's working directory. If this value is absolute, it may be outside the build's working directory, in which case the contents of the path may not be persisted across build step executions, unless a `volume` for that path is specified. If the build specifies a `RepoSource` with `dir` and a step with a `dir`, which specifies an absolute path, the `RepoSource` `dir` is ignored for the step's execution."]
+        #[doc = "Working directory to use when running this step’s container. If this value is a relative path, it is relative to the build’s working directory. If this value is absolute, it may be outside the build’s working directory, in which case the contents of the path may not be persisted across build step executions, unless a `volume` for that path is specified. If the build specifies a `RepoSource` with `dir` and a step with a `dir`, which specifies an absolute path, the `RepoSource` `dir` is ignored for the step’s execution."]
         #[serde(
             rename = "dir",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dir: ::std::option::Option<String>,
-        #[doc = "Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used."]
+        #[doc = "Entrypoint to be used instead of the build step image’s default entrypoint. If unset, the image’s default entrypoint is used."]
         #[serde(
             rename = "entrypoint",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entrypoint: ::std::option::Option<String>,
-        #[doc = "A list of environment variable definitions to be used when running a step. The elements are of the form \"KEY=VALUE\" for the environment variable \"KEY\" being given the value \"VALUE\"."]
+        #[doc = "A list of environment variable definitions to be used when running a step. The elements are of the form “KEY=VALUE” for the environment variable “KEY” being given the value “VALUE”."]
         #[serde(
             rename = "env",
             default,
@@ -1584,14 +1584,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Required. The name of the container image that will run this particular build step. If the image is available in the host's Docker daemon's cache, it will be run directly. If not, the host will attempt to pull the image first, using the builder service account's credentials if necessary. The Docker daemon's cache will already have the latest versions of all of the officially supported build steps ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)). The Docker daemon will also have cached many of the layers for some popular images, like \"ubuntu\", \"debian\", but they will be refreshed at the time you attempt to use them. If you built an image in a previous build step, it will be stored in the host's Docker daemon's cache and is available to use as the name for a later build step."]
+        #[doc = "Required. The name of the container image that will run this particular build step. If the image is available in the host’s Docker daemon’s cache, it will be run directly. If not, the host will attempt to pull the image first, using the builder service account’s credentials if necessary. The Docker daemon’s cache will already have the latest versions of all of the officially supported build steps ([https://github.com/GoogleCloudPlatform/cloud-builders](https://github.com/GoogleCloudPlatform/cloud-builders)). The Docker daemon will also have cached many of the layers for some popular images, like “ubuntu”, “debian”, but they will be refreshed at the time you attempt to use them. If you built an image in a previous build step, it will be stored in the host’s Docker daemon’s cache and is available to use as the name for a later build step."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Stores timing information for pulling this build step's builder image only."]
+        #[doc = "Output only. Stores timing information for pulling this build step’s builder image only."]
         #[serde(
             rename = "pullTiming",
             default,
@@ -1605,7 +1605,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub script: ::std::option::Option<String>,
-        #[doc = "A list of environment variables which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`."]
+        #[doc = "A list of environment variables which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build’s `Secret`."]
         #[serde(
             rename = "secretEnv",
             default,
@@ -2618,7 +2618,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct InlineSecret {
-        #[doc = "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build's secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build's secrets."]
+        #[doc = "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build’s secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build’s secrets."]
         #[serde(
             rename = "envMap",
             default,
@@ -2809,14 +2809,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NotifierMetadata {
-        #[doc = "The human-readable and user-given name for the notifier. For example: \"repo-merge-email-notifier\"."]
+        #[doc = "The human-readable and user-given name for the notifier. For example: “repo-merge-email-notifier”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The string representing the name and version of notifier to deploy. Expected to be of the form of \"/:\". For example: \"gcr.io/my-project/notifiers/smtp:1.2.34\"."]
+        #[doc = "The string representing the name and version of notifier to deploy. Expected to be of the form of “/:”. For example: “gcr.io/my-project/notifiers/smtp:1.2.34”."]
         #[serde(
             rename = "notifier",
             default,
@@ -2847,14 +2847,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NotifierSecret {
-        #[doc = "Name is the local name of the secret, such as the verbatim string \"my-smtp-password\"."]
+        #[doc = "Name is the local name of the secret, such as the verbatim string “my-smtp-password”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Value is interpreted to be a resource path for fetching the actual (versioned) secret data for this secret. For example, this would be a Google Cloud Secret Manager secret version resource path like: \"projects/my-project/secrets/my-secret/versions/latest\"."]
+        #[doc = "Value is interpreted to be a resource path for fetching the actual (versioned) secret data for this secret. For example, this would be a Google Cloud Secret Manager secret version resource path like: “projects/my-project/secrets/my-secret/versions/latest”."]
         #[serde(
             rename = "value",
             default,
@@ -3156,7 +3156,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub commit_sha: ::std::option::Option<String>,
-        #[doc = "Directory, relative to the source root, in which to run the build. This must be a relative path. If a step's `dir` is specified and is an absolute path, this value is ignored for that step's execution."]
+        #[doc = "Directory, relative to the source root, in which to run the build. This must be a relative path. If a step’s `dir` is specified and is an absolute path, this value is ignored for that step’s execution."]
         #[serde(
             rename = "dir",
             default,
@@ -3369,7 +3369,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kms_key_name: ::std::option::Option<String>,
-        #[doc = "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build's secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build's secrets."]
+        #[doc = "Map of environment variable name to its encrypted value. Secret environment variables must be unique across all of a build’s secrets, and must be used by at least one build step. Values can be at most 64 KB in size. There can be at most 100 secret values across all of a build’s secrets."]
         #[serde(
             rename = "secretEnv",
             default,
@@ -3401,14 +3401,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecretManagerSecret {
-        #[doc = "Environment variable name to associate with the secret. Secret environment variables must be unique across all of a build's secrets, and must be used by at least one build step."]
+        #[doc = "Environment variable name to associate with the secret. Secret environment variables must be unique across all of a build’s secrets, and must be used by at least one build step."]
         #[serde(
             rename = "env",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub env: ::std::option::Option<String>,
-        #[doc = "Resource name of the SecretVersion. In format: projects/*/secrets/*/versions/*"]
+        #[doc = "Resource name of the SecretVersion. In format: projects/*/secrets/*/versions/\\*"]
         #[serde(
             rename = "versionName",
             default,
@@ -3515,7 +3515,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub from_address: ::std::option::Option<String>,
-        #[doc = "The SMTP sender's password."]
+        #[doc = "The SMTP sender’s password."]
         #[serde(
             rename = "password",
             default,
@@ -3627,21 +3627,21 @@ pub mod schemas {
         )]
         pub file_hashes:
             ::std::option::Option<::std::collections::BTreeMap<String, crate::schemas::FileHashes>>,
-        #[doc = "A copy of the build's `source.repo_source`, if exists, with any revisions resolved."]
+        #[doc = "A copy of the build’s `source.repo_source`, if exists, with any revisions resolved."]
         #[serde(
             rename = "resolvedRepoSource",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resolved_repo_source: ::std::option::Option<crate::schemas::RepoSource>,
-        #[doc = "A copy of the build's `source.storage_source`, if exists, with any generations resolved."]
+        #[doc = "A copy of the build’s `source.storage_source`, if exists, with any generations resolved."]
         #[serde(
             rename = "resolvedStorageSource",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resolved_storage_source: ::std::option::Option<crate::schemas::StorageSource>,
-        #[doc = "A copy of the build's `source.storage_source_manifest`, if exists, with any revisions resolved. This feature is in Preview."]
+        #[doc = "A copy of the build’s `source.storage_source_manifest`, if exists, with any revisions resolved. This feature is in Preview."]
         #[serde(
             rename = "resolvedStorageSourceManifest",
             default,
@@ -4636,7 +4636,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+                    #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
                     pub fn cancel(
                         &self,
                         request: crate::schemas::CancelOperationRequest,
@@ -4730,12 +4730,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4892,12 +4892,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5179,12 +5179,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5313,7 +5313,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> DeleteRequestBuilder<'a> {
-                    #[doc = "Optional. If this is provided, it must match the server's etag on the workerpool for the request to be processed."]
+                    #[doc = "Optional. If this is provided, it must match the server’s etag on the workerpool for the request to be processed."]
                     pub fn etag(mut self, value: impl Into<String>) -> Self {
                         self.etag = Some(value.into());
                         self
@@ -5348,12 +5348,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5509,12 +5509,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5669,12 +5669,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5839,12 +5839,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

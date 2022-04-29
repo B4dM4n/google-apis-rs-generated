@@ -538,7 +538,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::OpaqueColor>,
-        #[doc = "The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0]."]
+        #[doc = "The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval \\[0.0, 1.0\\]."]
         #[serde(
             rename = "position",
             default,
@@ -560,14 +560,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CreateImageRequest {
-        #[doc = "The element properties for the image. When the aspect ratio of the provided size does not match the image aspect ratio, the image is scaled and centered with respect to the size in order to maintain aspect ratio. The provided transform is applied after this operation. The PageElementProperties.size property is optional. If you don't specify the size, the default size of the image is used. The PageElementProperties.transform property is optional. If you don't specify a transform, the image will be placed at the top left corner of the page."]
+        #[doc = "The element properties for the image. When the aspect ratio of the provided size does not match the image aspect ratio, the image is scaled and centered with respect to the size in order to maintain aspect ratio. The provided transform is applied after this operation. The PageElementProperties.size property is optional. If you don’t specify the size, the default size of the image is used. The PageElementProperties.transform property is optional. If you don’t specify a transform, the image will be placed at the top left corner of the page."]
         #[serde(
             rename = "elementProperties",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub element_properties: ::std::option::Option<crate::schemas::PageElementProperties>,
-        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -627,7 +627,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CreateLineRequest {
-        #[doc = "The category of the line to be created. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a `category` and a `line_category`, the `category` takes precedence. If you do not specify a value for `category`, but specify a value for `line_category`, then the specified `line_category` value is used. If you do not specify either, then STRAIGHT is used."]
+        #[doc = "The category of the line to be created. The exact line type created is determined based on the category and how it’s routed to connect to other page elements. If you specify both a `category` and a `line_category`, the `category` takes precedence. If you do not specify a value for `category`, but specify a value for `line_category`, then the specified `line_category` value is used. If you do not specify either, then STRAIGHT is used."]
         #[serde(
             rename = "category",
             default,
@@ -641,14 +641,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub element_properties: ::std::option::Option<crate::schemas::PageElementProperties>,
-        #[doc = "The category of the line to be created. *Deprecated*: use `category` instead. The exact line type created is determined based on the category and how it's routed to connect to other page elements. If you specify both a `category` and a `line_category`, the `category` takes precedence."]
+        #[doc = "The category of the line to be created. *Deprecated*: use `category` instead. The exact line type created is determined based on the category and how it’s routed to connect to other page elements. If you specify both a `category` and a `line_category`, the `category` takes precedence."]
         #[serde(
             rename = "lineCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub line_category: ::std::option::Option<crate::schemas::CreateLineRequestLineCategory>,
-        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -931,7 +931,7 @@ pub mod schemas {
         NumberedDigitAlphaRoman,
         #[doc = "A numbered list with `DIGIT`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by parenthesis."]
         NumberedDigitAlphaRomanParens,
-        #[doc = "A numbered list with `DIGIT` numeric glyphs separated by periods, where each nesting level uses the previous nesting level's glyph as a prefix. For example: '1.', '1.1.', '2.', '2.2.'."]
+        #[doc = "A numbered list with `DIGIT` numeric glyphs separated by periods, where each nesting level uses the previous nesting level’s glyph as a prefix. For example: ‘1.’, ‘1.1.’, ‘2.’, ‘2.2.’."]
         NumberedDigitNested,
         #[doc = "A numbered list with `UPPERALPHA`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by periods."]
         NumberedUpperalphaAlphaRoman,
@@ -1167,7 +1167,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CreateShapeRequestShapeType {
-        #[doc = "Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'"]
+        #[doc = "Curved arc shape. Corresponds to ECMA-376 ST_ShapeType ‘arc’"]
         Arc,
         #[doc = "East arrow shape."]
         ArrowEast,
@@ -1175,283 +1175,283 @@ pub mod schemas {
         ArrowNorth,
         #[doc = "Northeast arrow shape."]
         ArrowNorthEast,
-        #[doc = "Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'"]
+        #[doc = "Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘bentArrow’"]
         BentArrow,
-        #[doc = "Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'"]
+        #[doc = "Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘bentUpArrow’"]
         BentUpArrow,
-        #[doc = "Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'"]
+        #[doc = "Bevel shape. Corresponds to ECMA-376 ST_ShapeType ‘bevel’"]
         Bevel,
-        #[doc = "Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'"]
+        #[doc = "Block arc shape. Corresponds to ECMA-376 ST_ShapeType ‘blockArc’"]
         BlockArc,
-        #[doc = "Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'"]
+        #[doc = "Brace pair shape. Corresponds to ECMA-376 ST_ShapeType ‘bracePair’"]
         BracePair,
-        #[doc = "Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'"]
+        #[doc = "Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType ‘bracketPair’"]
         BracketPair,
-        #[doc = "Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'"]
+        #[doc = "Can shape. Corresponds to ECMA-376 ST_ShapeType ‘can’"]
         Can,
-        #[doc = "Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'"]
+        #[doc = "Chevron shape. Corresponds to ECMA-376 ST_ShapeType ‘chevron’"]
         Chevron,
-        #[doc = "Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'"]
+        #[doc = "Chord shape. Corresponds to ECMA-376 ST_ShapeType ‘chord’"]
         Chord,
-        #[doc = "Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'"]
+        #[doc = "Cloud shape. Corresponds to ECMA-376 ST_ShapeType ‘cloud’"]
         Cloud,
-        #[doc = "Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'"]
+        #[doc = "Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType ‘cloudCallout’"]
         CloudCallout,
-        #[doc = "Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'"]
+        #[doc = "Corner shape. Corresponds to ECMA-376 ST_ShapeType ‘corner’"]
         Corner,
-        #[doc = "Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'"]
+        #[doc = "Cube shape. Corresponds to ECMA-376 ST_ShapeType ‘cube’"]
         Cube,
-        #[doc = "Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'"]
+        #[doc = "Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedDownArrow’"]
         CurvedDownArrow,
-        #[doc = "Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'"]
+        #[doc = "Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedLeftArrow’"]
         CurvedLeftArrow,
-        #[doc = "Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'"]
+        #[doc = "Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedRightArrow’"]
         CurvedRightArrow,
-        #[doc = "Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'"]
+        #[doc = "Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedUpArrow’"]
         CurvedUpArrow,
         #[doc = "Custom shape."]
         Custom,
-        #[doc = "Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'"]
+        #[doc = "Decagon shape. Corresponds to ECMA-376 ST_ShapeType ‘decagon’"]
         Decagon,
-        #[doc = "Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'"]
+        #[doc = "Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType ‘diagStripe’"]
         DiagonalStripe,
-        #[doc = "Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'"]
+        #[doc = "Diamond shape. Corresponds to ECMA-376 ST_ShapeType ‘diamond’"]
         Diamond,
-        #[doc = "Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'"]
+        #[doc = "Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType ‘dodecagon’"]
         Dodecagon,
-        #[doc = "Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'"]
+        #[doc = "Donut shape. Corresponds to ECMA-376 ST_ShapeType ‘donut’"]
         Donut,
-        #[doc = "Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'"]
+        #[doc = "Double wave shape. Corresponds to ECMA-376 ST_ShapeType ‘doubleWave’"]
         DoubleWave,
-        #[doc = "Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'"]
+        #[doc = "Down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘downArrow’"]
         DownArrow,
-        #[doc = "Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'"]
+        #[doc = "Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘downArrowCallout’"]
         DownArrowCallout,
-        #[doc = "Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'"]
+        #[doc = "Ellipse shape. Corresponds to ECMA-376 ST_ShapeType ‘ellipse’"]
         Ellipse,
-        #[doc = "Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'"]
+        #[doc = "Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType ‘ellipseRibbon’"]
         EllipseRibbon,
-        #[doc = "Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'"]
+        #[doc = "Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType ‘ellipseRibbon2’"]
         EllipseRibbon2,
-        #[doc = "Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'"]
+        #[doc = "Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartAlternateProcess’"]
         FlowChartAlternateProcess,
-        #[doc = "Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'"]
+        #[doc = "Collate flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartCollate’"]
         FlowChartCollate,
-        #[doc = "Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'"]
+        #[doc = "Connector flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartConnector’"]
         FlowChartConnector,
-        #[doc = "Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'"]
+        #[doc = "Decision flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDecision’"]
         FlowChartDecision,
-        #[doc = "Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'"]
+        #[doc = "Delay flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDelay’"]
         FlowChartDelay,
-        #[doc = "Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'"]
+        #[doc = "Display flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDisplay’"]
         FlowChartDisplay,
-        #[doc = "Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'"]
+        #[doc = "Document flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDocument’"]
         FlowChartDocument,
-        #[doc = "Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'"]
+        #[doc = "Extract flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartExtract’"]
         FlowChartExtract,
-        #[doc = "Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'"]
+        #[doc = "Input output flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartInputOutput’"]
         FlowChartInputOutput,
-        #[doc = "Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'"]
+        #[doc = "Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartInternalStorage’"]
         FlowChartInternalStorage,
-        #[doc = "Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'"]
+        #[doc = "Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMagneticDisk’"]
         FlowChartMagneticDisk,
-        #[doc = "Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'"]
+        #[doc = "Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMagneticDrum’"]
         FlowChartMagneticDrum,
-        #[doc = "Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'"]
+        #[doc = "Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMagneticTape’"]
         FlowChartMagneticTape,
-        #[doc = "Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'"]
+        #[doc = "Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartManualInput’"]
         FlowChartManualInput,
-        #[doc = "Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'"]
+        #[doc = "Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartManualOperation’"]
         FlowChartManualOperation,
-        #[doc = "Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'"]
+        #[doc = "Merge flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMerge’"]
         FlowChartMerge,
-        #[doc = "Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'"]
+        #[doc = "Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMultidocument’"]
         FlowChartMultidocument,
-        #[doc = "Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'"]
+        #[doc = "Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOfflineStorage’"]
         FlowChartOfflineStorage,
-        #[doc = "Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOffpageConnector'"]
+        #[doc = "Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOffpageConnector’"]
         FlowChartOffpageConnector,
-        #[doc = "Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'"]
+        #[doc = "Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOnlineStorage’"]
         FlowChartOnlineStorage,
-        #[doc = "Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'"]
+        #[doc = "Or flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOr’"]
         FlowChartOr,
-        #[doc = "Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPredefinedProcess'"]
+        #[doc = "Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPredefinedProcess’"]
         FlowChartPredefinedProcess,
-        #[doc = "Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'"]
+        #[doc = "Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPreparation’"]
         FlowChartPreparation,
-        #[doc = "Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'"]
+        #[doc = "Process flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartProcess’"]
         FlowChartProcess,
-        #[doc = "Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'"]
+        #[doc = "Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPunchedCard’"]
         FlowChartPunchedCard,
-        #[doc = "Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'"]
+        #[doc = "Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPunchedTape’"]
         FlowChartPunchedTape,
-        #[doc = "Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'"]
+        #[doc = "Sort flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartSort’"]
         FlowChartSort,
-        #[doc = "Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'"]
+        #[doc = "Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartSummingJunction’"]
         FlowChartSummingJunction,
-        #[doc = "Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'"]
+        #[doc = "Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartTerminator’"]
         FlowChartTerminator,
-        #[doc = "Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'"]
+        #[doc = "Folded corner shape. Corresponds to ECMA-376 ST_ShapeType ‘foldedCorner’"]
         FoldedCorner,
-        #[doc = "Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'"]
+        #[doc = "Frame shape. Corresponds to ECMA-376 ST_ShapeType ‘frame’"]
         Frame,
-        #[doc = "Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'"]
+        #[doc = "Half frame shape. Corresponds to ECMA-376 ST_ShapeType ‘halfFrame’"]
         HalfFrame,
-        #[doc = "Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'"]
+        #[doc = "Heart shape. Corresponds to ECMA-376 ST_ShapeType ‘heart’"]
         Heart,
-        #[doc = "Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'"]
+        #[doc = "Heptagon shape. Corresponds to ECMA-376 ST_ShapeType ‘heptagon’"]
         Heptagon,
-        #[doc = "Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'"]
+        #[doc = "Hexagon shape. Corresponds to ECMA-376 ST_ShapeType ‘hexagon’"]
         Hexagon,
-        #[doc = "Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'"]
+        #[doc = "Home plate shape. Corresponds to ECMA-376 ST_ShapeType ‘homePlate’"]
         HomePlate,
-        #[doc = "Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'"]
+        #[doc = "Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType ‘horizontalScroll’"]
         HorizontalScroll,
-        #[doc = "Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'"]
+        #[doc = "Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType ‘irregularSeal1’"]
         IrregularSeal1,
-        #[doc = "Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'"]
+        #[doc = "Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType ‘irregularSeal2’"]
         IrregularSeal2,
-        #[doc = "Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'"]
+        #[doc = "Left arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftArrow’"]
         LeftArrow,
-        #[doc = "Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'"]
+        #[doc = "Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftArrowCallout’"]
         LeftArrowCallout,
-        #[doc = "Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'"]
+        #[doc = "Left brace shape. Corresponds to ECMA-376 ST_ShapeType ‘leftBrace’"]
         LeftBrace,
-        #[doc = "Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'"]
+        #[doc = "Left bracket shape. Corresponds to ECMA-376 ST_ShapeType ‘leftBracket’"]
         LeftBracket,
-        #[doc = "Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'"]
+        #[doc = "Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftRightArrow’"]
         LeftRightArrow,
-        #[doc = "Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'"]
+        #[doc = "Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftRightArrowCallout’"]
         LeftRightArrowCallout,
-        #[doc = "Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'"]
+        #[doc = "Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftRightUpArrow’"]
         LeftRightUpArrow,
-        #[doc = "Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'"]
+        #[doc = "Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftUpArrow’"]
         LeftUpArrow,
-        #[doc = "Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'"]
+        #[doc = "Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType ‘lightningBolt’"]
         LightningBolt,
-        #[doc = "Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'"]
+        #[doc = "Divide math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathDivide’"]
         MathDivide,
-        #[doc = "Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'"]
+        #[doc = "Equal math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathEqual’"]
         MathEqual,
-        #[doc = "Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'"]
+        #[doc = "Minus math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathMinus’"]
         MathMinus,
-        #[doc = "Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'"]
+        #[doc = "Multiply math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathMultiply’"]
         MathMultiply,
-        #[doc = "Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'"]
+        #[doc = "Not equal math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathNotEqual’"]
         MathNotEqual,
-        #[doc = "Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'"]
+        #[doc = "Plus math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathPlus’"]
         MathPlus,
-        #[doc = "Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'"]
+        #[doc = "Moon shape. Corresponds to ECMA-376 ST_ShapeType ‘moon’"]
         Moon,
-        #[doc = "No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'"]
+        #[doc = "No smoking shape. Corresponds to ECMA-376 ST_ShapeType ‘noSmoking’"]
         NoSmoking,
-        #[doc = "Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'"]
+        #[doc = "Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘notchedRightArrow’"]
         NotchedRightArrow,
-        #[doc = "Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'"]
+        #[doc = "Octagon shape. Corresponds to ECMA-376 ST_ShapeType ‘octagon’"]
         Octagon,
-        #[doc = "Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'"]
+        #[doc = "Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType ‘parallelogram’"]
         Parallelogram,
-        #[doc = "Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'"]
+        #[doc = "Pentagon shape. Corresponds to ECMA-376 ST_ShapeType ‘pentagon’"]
         Pentagon,
-        #[doc = "Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'"]
+        #[doc = "Pie shape. Corresponds to ECMA-376 ST_ShapeType ‘pie’"]
         Pie,
-        #[doc = "Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'"]
+        #[doc = "Plaque shape. Corresponds to ECMA-376 ST_ShapeType ‘plaque’"]
         Plaque,
-        #[doc = "Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'"]
+        #[doc = "Plus shape. Corresponds to ECMA-376 ST_ShapeType ‘plus’"]
         Plus,
-        #[doc = "Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'"]
+        #[doc = "Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘quadArrow’"]
         QuadArrow,
-        #[doc = "Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'"]
+        #[doc = "Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘quadArrowCallout’"]
         QuadArrowCallout,
-        #[doc = "Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'."]
+        #[doc = "Rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘rect’."]
         Rectangle,
-        #[doc = "Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'"]
+        #[doc = "Ribbon shape. Corresponds to ECMA-376 ST_ShapeType ‘ribbon’"]
         Ribbon,
-        #[doc = "Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'"]
+        #[doc = "Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType ‘ribbon2’"]
         Ribbon2,
-        #[doc = "Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'"]
+        #[doc = "Right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘rightArrow’"]
         RightArrow,
-        #[doc = "Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'"]
+        #[doc = "Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘rightArrowCallout’"]
         RightArrowCallout,
-        #[doc = "Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'"]
+        #[doc = "Right brace shape. Corresponds to ECMA-376 ST_ShapeType ‘rightBrace’"]
         RightBrace,
-        #[doc = "Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'"]
+        #[doc = "Right bracket shape. Corresponds to ECMA-376 ST_ShapeType ‘rightBracket’"]
         RightBracket,
-        #[doc = "Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'"]
+        #[doc = "Right triangle shape. Corresponds to ECMA-376 ST_ShapeType ‘rtTriangle’"]
         RightTriangle,
-        #[doc = "One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'"]
+        #[doc = "One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘round1Rect’"]
         Round1Rectangle,
-        #[doc = "Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2DiagRect'"]
+        #[doc = "Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘round2DiagRect’"]
         Round2DiagonalRectangle,
-        #[doc = "Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2SameRect'"]
+        #[doc = "Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘round2SameRect’"]
         Round2SameRectangle,
-        #[doc = "Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'"]
+        #[doc = "Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘roundRect’"]
         RoundRectangle,
-        #[doc = "Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'"]
+        #[doc = "Smiley face shape. Corresponds to ECMA-376 ST_ShapeType ‘smileyFace’"]
         SmileyFace,
-        #[doc = "One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'"]
+        #[doc = "One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snip1Rect’"]
         Snip1Rectangle,
-        #[doc = "Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'"]
+        #[doc = "Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snip2DiagRect’"]
         Snip2DiagonalRectangle,
-        #[doc = "Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2SameRect'"]
+        #[doc = "Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snip2SameRect’"]
         Snip2SameRectangle,
-        #[doc = "One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snipRoundRect'"]
+        #[doc = "One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snipRoundRect’"]
         SnipRoundRectangle,
         #[doc = "Speech shape."]
         Speech,
-        #[doc = "Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'"]
+        #[doc = "Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star10’"]
         Star10,
-        #[doc = "Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'"]
+        #[doc = "Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star12’"]
         Star12,
-        #[doc = "Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'"]
+        #[doc = "Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star16’"]
         Star16,
-        #[doc = "Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'"]
+        #[doc = "Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star24’"]
         Star24,
-        #[doc = "Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'"]
+        #[doc = "Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star32’"]
         Star32,
-        #[doc = "Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'"]
+        #[doc = "Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star4’"]
         Star4,
-        #[doc = "Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'"]
+        #[doc = "Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star5’"]
         Star5,
-        #[doc = "Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'"]
+        #[doc = "Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star6’"]
         Star6,
-        #[doc = "Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'"]
+        #[doc = "Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star7’"]
         Star7,
-        #[doc = "Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'"]
+        #[doc = "Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star8’"]
         Star8,
         #[doc = "Star burst shape."]
         Starburst,
-        #[doc = "Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'"]
+        #[doc = "Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘stripedRightArrow’"]
         StripedRightArrow,
-        #[doc = "Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'"]
+        #[doc = "Sun shape. Corresponds to ECMA-376 ST_ShapeType ‘sun’"]
         Sun,
-        #[doc = "Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'"]
+        #[doc = "Teardrop shape. Corresponds to ECMA-376 ST_ShapeType ‘teardrop’"]
         Teardrop,
         #[doc = "Text box shape."]
         TextBox,
-        #[doc = "Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'"]
+        #[doc = "Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType ‘trapezoid’"]
         Trapezoid,
-        #[doc = "Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'"]
+        #[doc = "Triangle shape. Corresponds to ECMA-376 ST_ShapeType ‘triangle’"]
         Triangle,
         #[doc = "The shape type that is not predefined."]
         TypeUnspecified,
-        #[doc = "Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'"]
+        #[doc = "Up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘upArrow’"]
         UpArrow,
-        #[doc = "Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'"]
+        #[doc = "Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘upArrowCallout’"]
         UpArrowCallout,
-        #[doc = "Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'"]
+        #[doc = "Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘upDownArrow’"]
         UpDownArrow,
-        #[doc = "U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'"]
+        #[doc = "U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘uturnArrow’"]
         UturnArrow,
-        #[doc = "Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'"]
+        #[doc = "Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType ‘verticalScroll’"]
         VerticalScroll,
-        #[doc = "Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'"]
+        #[doc = "Wave shape. Corresponds to ECMA-376 ST_ShapeType ‘wave’"]
         Wave,
-        #[doc = "Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'"]
+        #[doc = "Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType ‘wedgeEllipseCallout’"]
         WedgeEllipseCallout,
-        #[doc = "Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'"]
+        #[doc = "Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘wedgeRectCallout’"]
         WedgeRectangleCallout,
-        #[doc = "Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRoundRectCallout'"]
+        #[doc = "Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘wedgeRoundRectCallout’"]
         WedgeRoundRectangleCallout,
     }
     impl CreateShapeRequestShapeType {
@@ -2052,7 +2052,7 @@ pub mod schemas {
         )]
         pub linking_mode:
             ::std::option::Option<crate::schemas::CreateSheetsChartRequestLinkingMode>,
-        #[doc = "A user-supplied object ID. If specified, the ID must be unique among all pages and page elements in the presentation. The ID should start with a word character [a-zA-Z0-9_] and then followed by any number of the following characters [a-zA-Z0-9_-:]. The length of the ID should not be less than 5 or greater than 50. If empty, a unique identifier will be generated."]
+        #[doc = "A user-supplied object ID. If specified, the ID must be unique among all pages and page elements in the presentation. The ID should start with a word character \\[a-zA-Z0-9\\_\\] and then followed by any number of the following characters \\[a-zA-Z0-9\\_-:\\]. The length of the ID should not be less than 5 or greater than 50. If empty, a unique identifier will be generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -2192,14 +2192,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreateSlideRequest {
-        #[doc = "The optional zero-based index indicating where to insert the slides. If you don't specify an index, the new slide is created at the end."]
+        #[doc = "The optional zero-based index indicating where to insert the slides. If you don’t specify an index, the new slide is created at the end."]
         #[serde(
             rename = "insertionIndex",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub insertion_index: ::std::option::Option<i32>,
-        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -2214,7 +2214,7 @@ pub mod schemas {
         )]
         pub placeholder_id_mappings:
             ::std::option::Option<Vec<crate::schemas::LayoutPlaceholderIdMapping>>,
-        #[doc = "Layout reference of the slide to be inserted, based on the *current master*, which is one of the following: - The master of the previous slide index. - The master of the first slide, if the insertion_index is zero. - The first master in the presentation, if there are no slides. If the LayoutReference is not found in the current master, a 400 bad request error is returned. If you don't specify a layout reference, then the new slide will use the predefined layout `BLANK`."]
+        #[doc = "Layout reference of the slide to be inserted, based on the *current master*, which is one of the following: - The master of the previous slide index. - The master of the first slide, if the insertion_index is zero. - The first master in the presentation, if there are no slides. If the LayoutReference is not found in the current master, a 400 bad request error is returned. If you don’t specify a layout reference, then the new slide will use the predefined layout `BLANK`."]
         #[serde(
             rename = "slideLayoutReference",
             default,
@@ -2281,7 +2281,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub element_properties: ::std::option::Option<crate::schemas::PageElementProperties>,
-        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -2341,21 +2341,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CreateVideoRequest {
-        #[doc = "The element properties for the video. The PageElementProperties.size property is optional. If you don't specify a size, a default size is chosen by the server. The PageElementProperties.transform property is optional. The transform must not have shear components. If you don't specify a transform, the video will be placed at the top left corner of the page."]
+        #[doc = "The element properties for the video. The PageElementProperties.size property is optional. If you don’t specify a size, a default size is chosen by the server. The PageElementProperties.transform property is optional. The transform must not have shear components. If you don’t specify a transform, the video will be placed at the top left corner of the page."]
         #[serde(
             rename = "elementProperties",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub element_properties: ::std::option::Option<crate::schemas::PageElementProperties>,
-        #[doc = "The video source's unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q. To access a Google Drive video file, you might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys)."]
+        #[doc = "The video source’s unique identifier for this video. e.g. For YouTube video https://www.youtube.com/watch?v=7U3axjORYZ0, the ID is 7U3axjORYZ0. For a Google Drive video https://drive.google.com/file/d/1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q the ID is 1xCgQLFTJi5_Xl8DgW_lcUYq5e-q6Hi5Q. To access a Google Drive video file, you might need to add a resource key to the HTTP header for a subset of old files. For more information, see [Access link-shared files using resource keys](https://developers.google.com/drive/api/v3/resource-keys)."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -2498,28 +2498,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub angle: ::std::option::Option<f32>,
-        #[doc = "The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object's original height."]
+        #[doc = "The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object’s original height."]
         #[serde(
             rename = "bottomOffset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bottom_offset: ::std::option::Option<f32>,
-        #[doc = "The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object's original width."]
+        #[doc = "The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object’s original width."]
         #[serde(
             rename = "leftOffset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub left_offset: ::std::option::Option<f32>,
-        #[doc = "The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object's original width."]
+        #[doc = "The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object’s original width."]
         #[serde(
             rename = "rightOffset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub right_offset: ::std::option::Option<f32>,
-        #[doc = "The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object's original height."]
+        #[doc = "The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object’s original height."]
         #[serde(
             rename = "topOffset",
             default,
@@ -2716,7 +2716,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The range of text to delete, based on TextElement indexes. There is always an implicit newline character at the end of a shape's or table cell's text that cannot be deleted. `Range.Type.ALL` will use the correct bounds, but care must be taken when specifying explicit bounds for range types `FROM_START_INDEX` and `FIXED_RANGE`. For example, if the text is \"ABC\", followed by an implicit newline, then the maximum value is 2 for `text_range.start_index` and 3 for `text_range.end_index`. Deleting text that crosses a paragraph boundary may result in changes to paragraph styles and lists as the two paragraphs are merged. Ranges that include only one code unit of a surrogate pair are expanded to include both code units."]
+        #[doc = "The range of text to delete, based on TextElement indexes. There is always an implicit newline character at the end of a shape’s or table cell’s text that cannot be deleted. `Range.Type.ALL` will use the correct bounds, but care must be taken when specifying explicit bounds for range types `FROM_START_INDEX` and `FIXED_RANGE`. For example, if the text is “ABC”, followed by an implicit newline, then the maximum value is 2 for `text_range.start_index` and 3 for `text_range.end_index`. Deleting text that crosses a paragraph boundary may result in changes to paragraph styles and lists as the two paragraphs are merged. Ranges that include only one code unit of a surrogate pair are expanded to include both code units."]
         #[serde(
             rename = "textRange",
             default,
@@ -2859,7 +2859,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The object being duplicated may contain other objects, for example when duplicating a slide or a group page element. This map defines how the IDs of duplicated objects are generated: the keys are the IDs of the original objects and its values are the IDs that will be assigned to the corresponding duplicate object. The ID of the source object's duplicate may be specified in this map as well, using the same value of the `object_id` field as a key and the newly desired ID as the value. All keys must correspond to existing IDs in the presentation. All values must be unique in the presentation and must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the new ID must not be less than 5 or greater than 50. If any IDs of source objects are omitted from the map, a new random ID will be assigned. If the map is empty or unset, all duplicate objects will receive a new random ID."]
+        #[doc = "The object being duplicated may contain other objects, for example when duplicating a slide or a group page element. This map defines how the IDs of duplicated objects are generated: the keys are the IDs of the original objects and its values are the IDs that will be assigned to the corresponding duplicate object. The ID of the source object’s duplicate may be specified in this map as well, using the same value of the `object_id` field as a key and the newly desired ID as the value. All keys must correspond to existing IDs in the presentation. All values must be unique in the presentation and must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the new ID must not be less than 5 or greater than 50. If any IDs of source objects are omitted from the map, a new random ID will be assigned. If the map is empty or unset, all duplicate objects will receive a new random ID."]
         #[serde(
             rename = "objectIds",
             default,
@@ -2950,7 +2950,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub children_object_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "A user-supplied object ID for the group to be created. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID for the group to be created. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "groupObjectId",
             default,
@@ -3003,7 +3003,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Image {
-        #[doc = "An URL to an image with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change."]
+        #[doc = "An URL to an image with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation’s sharing settings change."]
         #[serde(
             rename = "contentUrl",
             default,
@@ -3046,14 +3046,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ImageProperties {
-        #[doc = "The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only."]
+        #[doc = "The brightness effect of the image. The value should be in the interval \\[-1.0, 1.0\\], where 0 means no effect. This property is read-only."]
         #[serde(
             rename = "brightness",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brightness: ::std::option::Option<f32>,
-        #[doc = "The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only."]
+        #[doc = "The contrast effect of the image. The value should be in the interval \\[-1.0, 1.0\\], where 0 means no effect. This property is read-only."]
         #[serde(
             rename = "contrast",
             default,
@@ -3095,7 +3095,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shadow: ::std::option::Option<crate::schemas::Shadow>,
-        #[doc = "The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only."]
+        #[doc = "The transparency effect of the image. The value should be in the interval \\[0.0, 1.0\\], where 0 means no effect and 1 means completely transparent. This property is read-only."]
         #[serde(
             rename = "transparency",
             default,
@@ -3296,7 +3296,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub layout_placeholder_object_id: ::std::option::Option<String>,
-        #[doc = "A user-supplied object ID for the placeholder identified above that to be created onto a slide. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated."]
+        #[doc = "A user-supplied object ID for the placeholder identified above that to be created onto a slide. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don’t specify an ID, a unique one is generated."]
         #[serde(
             rename = "objectId",
             default,
@@ -3650,25 +3650,25 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum LineLineType {
-        #[doc = "Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'."]
+        #[doc = "Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType ‘bentConnector2’."]
         BentConnector2,
-        #[doc = "Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'."]
+        #[doc = "Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType ‘bentConnector3’."]
         BentConnector3,
-        #[doc = "Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'."]
+        #[doc = "Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType ‘bentConnector4’."]
         BentConnector4,
-        #[doc = "Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'."]
+        #[doc = "Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType ‘bentConnector5’."]
         BentConnector5,
-        #[doc = "Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'."]
+        #[doc = "Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType ‘curvedConnector2’."]
         CurvedConnector2,
-        #[doc = "Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'."]
+        #[doc = "Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType ‘curvedConnector3’."]
         CurvedConnector3,
-        #[doc = "Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'."]
+        #[doc = "Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType ‘curvedConnector4’."]
         CurvedConnector4,
-        #[doc = "Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'."]
+        #[doc = "Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType ‘curvedConnector5’."]
         CurvedConnector5,
-        #[doc = "Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'."]
+        #[doc = "Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType ‘straightConnector1’."]
         StraightConnector1,
-        #[doc = "Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector."]
+        #[doc = "Straight line. Corresponds to ECMA-376 ST_ShapeType ‘line’. This line type is not a connector."]
         StraightLine,
         #[doc = "An unspecified line type."]
         TypeUnspecified,
@@ -3784,7 +3784,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub connected_object_id: ::std::option::Option<String>,
-        #[doc = "The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the \"cnx\" attribute in section 20.1.9.9 and Annex H. \"Predefined DrawingML Shape and Text Geometries\" of \"Office Open XML File Formats-Fundamentals and Markup Language Reference\", part 1 of [ECMA-376 5th edition] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor."]
+        #[doc = "The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the “cnx” attribute in section 20.1.9.9 and Annex H. “Predefined DrawingML Shape and Text Geometries” of “Office Open XML File Formats-Fundamentals and Markup Language Reference”, part 1 of \\[ECMA-376 5th edition\\] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor."]
         #[serde(
             rename = "connectionSiteIndex",
             default,
@@ -3842,7 +3842,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_arrow: ::std::option::Option<crate::schemas::LinePropertiesEndArrow>,
-        #[doc = "The connection at the end of the line. If unset, there is no connection. Only lines with a Type indicating it is a \"connector\" can have an `end_connection`."]
+        #[doc = "The connection at the end of the line. If unset, there is no connection. Only lines with a Type indicating it is a “connector” can have an `end_connection`."]
         #[serde(
             rename = "endConnection",
             default,
@@ -3870,7 +3870,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_arrow: ::std::option::Option<crate::schemas::LinePropertiesStartArrow>,
-        #[doc = "The connection at the beginning of the line. If unset, there is no connection. Only lines with a Type indicating it is a \"connector\" can have a `start_connection`."]
+        #[doc = "The connection at the beginning of the line. If unset, there is no connection. Only lines with a Type indicating it is a “connector” can have a `start_connection`."]
         #[serde(
             rename = "startConnection",
             default,
@@ -3897,19 +3897,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum LinePropertiesDashStyle {
-        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'."]
+        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dash’."]
         Dash,
-        #[doc = "Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'."]
+        #[doc = "Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dashDot’."]
         DashDot,
         #[doc = "Unspecified dash style."]
         DashStyleUnspecified,
-        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'."]
+        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dot’."]
         Dot,
-        #[doc = "Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'."]
+        #[doc = "Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘lgDash’."]
         LongDash,
-        #[doc = "Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'."]
+        #[doc = "Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘lgDashDot’."]
         LongDashDot,
-        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style."]
+        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘solid’. This is the default dash style."]
         Solid,
     }
     impl LinePropertiesDashStyle {
@@ -3995,11 +3995,11 @@ pub mod schemas {
     pub enum LinePropertiesEndArrow {
         #[doc = "An unspecified arrow style."]
         ArrowStyleUnspecified,
-        #[doc = "Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'."]
+        #[doc = "Filled arrow. Corresponds to ECMA-376 ST_LineEndType value ‘triangle’."]
         FillArrow,
-        #[doc = "Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'."]
+        #[doc = "Filled circle. Corresponds to ECMA-376 ST_LineEndType value ‘oval’."]
         FillCircle,
-        #[doc = "Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'."]
+        #[doc = "Filled diamond. Corresponds to ECMA-376 ST_LineEndType value ‘diamond’."]
         FillDiamond,
         #[doc = "Filled square."]
         FillSquare,
@@ -4013,7 +4013,7 @@ pub mod schemas {
         OpenDiamond,
         #[doc = "Hollow square."]
         OpenSquare,
-        #[doc = "Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'."]
+        #[doc = "Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value ‘stealth’."]
         StealthArrow,
     }
     impl LinePropertiesEndArrow {
@@ -4111,11 +4111,11 @@ pub mod schemas {
     pub enum LinePropertiesStartArrow {
         #[doc = "An unspecified arrow style."]
         ArrowStyleUnspecified,
-        #[doc = "Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'."]
+        #[doc = "Filled arrow. Corresponds to ECMA-376 ST_LineEndType value ‘triangle’."]
         FillArrow,
-        #[doc = "Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'."]
+        #[doc = "Filled circle. Corresponds to ECMA-376 ST_LineEndType value ‘oval’."]
         FillCircle,
-        #[doc = "Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'."]
+        #[doc = "Filled diamond. Corresponds to ECMA-376 ST_LineEndType value ‘diamond’."]
         FillDiamond,
         #[doc = "Filled square."]
         FillSquare,
@@ -4129,7 +4129,7 @@ pub mod schemas {
         OpenDiamond,
         #[doc = "Hollow square."]
         OpenSquare,
-        #[doc = "Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'."]
+        #[doc = "Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value ‘stealth’."]
         StealthArrow,
     }
     impl LinePropertiesStartArrow {
@@ -4443,7 +4443,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The table range specifying which cells of the table to merge. Any text in the cells being merged will be concatenated and stored in the upper-left (\"head\") cell of the range. If the range is non-rectangular (which can occur in some cases where the range covers cells that are already merged), a 400 bad request error is returned."]
+        #[doc = "The table range specifying which cells of the table to merge. Any text in the cells being merged will be concatenated and stored in the upper-left (“head”) cell of the range. If the range is non-rectangular (which can occur in some cases where the range covers cells that are already merged), a 400 bad request error is returned."]
         #[serde(
             rename = "tableRange",
             default,
@@ -4756,19 +4756,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum OutlineDashStyle {
-        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'."]
+        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dash’."]
         Dash,
-        #[doc = "Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'."]
+        #[doc = "Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dashDot’."]
         DashDot,
         #[doc = "Unspecified dash style."]
         DashStyleUnspecified,
-        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'."]
+        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dot’."]
         Dot,
-        #[doc = "Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'."]
+        #[doc = "Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘lgDash’."]
         LongDash,
-        #[doc = "Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'."]
+        #[doc = "Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘lgDashDot’."]
         LongDashDot,
-        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style."]
+        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘solid’. This is the default dash style."]
         Solid,
     }
     impl OutlineDashStyle {
@@ -4852,11 +4852,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum OutlinePropertyState {
-        #[doc = "If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
+        #[doc = "If a property’s state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
         Inherit,
-        #[doc = "If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
+        #[doc = "If a property’s state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
         NotRendered,
-        #[doc = "If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
+        #[doc = "If a property’s state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
         Rendered,
     }
     impl OutlinePropertyState {
@@ -5001,7 +5001,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_type: ::std::option::Option<crate::schemas::PagePageType>,
-        #[doc = "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
+        #[doc = "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn’t changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but an opaque string. The format of the revision ID might change over time. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
         #[serde(
             rename = "revisionId",
             default,
@@ -5150,11 +5150,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PageBackgroundFillPropertyState {
-        #[doc = "If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
+        #[doc = "If a property’s state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
         Inherit,
-        #[doc = "If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
+        #[doc = "If a property’s state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
         NotRendered,
-        #[doc = "If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
+        #[doc = "If a property’s state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
         Rendered,
     }
     impl PageBackgroundFillPropertyState {
@@ -5298,7 +5298,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "The transform of the page element. The visual appearance of the page element is determined by its absolute transform. To compute the absolute transform, preconcatenate a page element's transform with the transforms of all of its parent groups. If the page element is not in a group, its absolute transform is the same as the value in this field. The initial transform for the newly created Group is always the identity transform."]
+        #[doc = "The transform of the page element. The visual appearance of the page element is determined by its absolute transform. To compute the absolute transform, preconcatenate a page element’s transform with the transforms of all of its parent groups. If the page element is not in a group, its absolute transform is the same as the value in this field. The initial transform for the newly created Group is always the identity transform."]
         #[serde(
             rename = "transform",
             default,
@@ -5406,7 +5406,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bullet: ::std::option::Option<crate::schemas::Bullet>,
-        #[doc = "The paragraph's style"]
+        #[doc = "The paragraph’s style"]
         #[serde(
             rename = "style",
             default,
@@ -5760,7 +5760,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "The object ID of this shape's parent placeholder. If unset, the parent placeholder shape does not exist, so the shape does not inherit properties from any other shape."]
+        #[doc = "The object ID of this shape’s parent placeholder. If unset, the parent placeholder shape does not exist, so the shape does not inherit properties from any other shape."]
         #[serde(
             rename = "parentObjectId",
             default,
@@ -5977,7 +5977,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub presentation_id: ::std::option::Option<String>,
-        #[doc = "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn't changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but a nebulous string. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
+        #[doc = "Output only. The revision ID of the presentation. Can be used in update requests to assert the presentation revision hasn’t changed since the last read operation. Only populated if the user has edit access to the presentation. The revision ID is not a sequential number but a nebulous string. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the presentation has not changed. Conversely, a changed ID (for the same presentation and user) usually means the presentation has been updated. However, a changed ID can also be due to internal factors such as ID format changes."]
         #[serde(
             rename = "revisionId",
             default,
@@ -6139,7 +6139,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Recolor {
-        #[doc = "The name of the recolor effect. The name is determined from the `recolor_stops` by matching the gradient against the colors in the page's current color scheme. This property is read-only."]
+        #[doc = "The name of the recolor effect. The name is determined from the `recolor_stops` by matching the gradient against the colors in the page’s current color scheme. This property is read-only."]
         #[serde(
             rename = "name",
             default,
@@ -6168,47 +6168,47 @@ pub mod schemas {
     pub enum RecolorName {
         #[doc = "Custom recolor effect. Refer to `recolor_stops` for the concrete gradient."]
         Custom,
-        #[doc = "A recolor effect that darkens the image using the page's first available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s first available color from its color scheme."]
         Dark1,
-        #[doc = "A recolor effect that darkens the image using the page's tenth available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s tenth available color from its color scheme."]
         Dark10,
-        #[doc = "A recolor effect that darkens the image using the page's second available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s second available color from its color scheme."]
         Dark2,
-        #[doc = "A recolor effect that darkens the image using the page's third available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s third available color from its color scheme."]
         Dark3,
-        #[doc = "A recolor effect that darkens the image using the page's fourth available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s fourth available color from its color scheme."]
         Dark4,
-        #[doc = "A recolor effect that darkens the image using the page's fifth available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s fifth available color from its color scheme."]
         Dark5,
-        #[doc = "A recolor effect that darkens the image using the page's sixth available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s sixth available color from its color scheme."]
         Dark6,
-        #[doc = "A recolor effect that darkens the image using the page's seventh available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s seventh available color from its color scheme."]
         Dark7,
-        #[doc = "A recolor effect that darkens the image using the page's eighth available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s eighth available color from its color scheme."]
         Dark8,
-        #[doc = "A recolor effect that darkens the image using the page's ninth available color from its color scheme."]
+        #[doc = "A recolor effect that darkens the image using the page’s ninth available color from its color scheme."]
         Dark9,
         #[doc = "A recolor effect that recolors the image to grayscale."]
         Grayscale,
-        #[doc = "A recolor effect that lightens the image using the page's first available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s first available color from its color scheme."]
         Light1,
-        #[doc = "A recolor effect that lightens the image using the page's tenth available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s tenth available color from its color scheme."]
         Light10,
-        #[doc = "A recolor effect that lightens the image using the page's second available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s second available color from its color scheme."]
         Light2,
-        #[doc = "A recolor effect that lightens the image using the page's third available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s third available color from its color scheme."]
         Light3,
-        #[doc = "A recolor effect that lightens the image using the page's forth available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s forth available color from its color scheme."]
         Light4,
-        #[doc = "A recolor effect that lightens the image using the page's fifth available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s fifth available color from its color scheme."]
         Light5,
-        #[doc = "A recolor effect that lightens the image using the page's sixth available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s sixth available color from its color scheme."]
         Light6,
-        #[doc = "A recolor effect that lightens the image using the page's seventh available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s seventh available color from its color scheme."]
         Light7,
-        #[doc = "A recolor effect that lightens the image using the page's eighth available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s eighth available color from its color scheme."]
         Light8,
-        #[doc = "A recolor effect that lightens the image using the page's ninth available color from its color scheme."]
+        #[doc = "A recolor effect that lightens the image using the page’s ninth available color from its color scheme."]
         Light9,
         #[doc = "A recolor effect that recolors the image to negative grayscale."]
         Negative,
@@ -6417,7 +6417,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_url: ::std::option::Option<String>,
-        #[doc = "If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn't exist in the presentation."]
+        #[doc = "If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn’t exist in the presentation."]
         #[serde(
             rename = "pageObjectIds",
             default,
@@ -6447,7 +6447,7 @@ pub mod schemas {
     pub enum ReplaceAllShapesWithImageRequestImageReplaceMethod {
         #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape."]
         CenterCrop,
-        #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
+        #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image’s aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
         CenterInside,
         #[doc = "Unspecified image replace method. This value must not be used."]
         ImageReplaceMethodUnspecified,
@@ -6506,7 +6506,7 @@ pub mod schemas {
     pub enum ReplaceAllShapesWithImageRequestReplaceMethod {
         #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as that of the original shape."]
         CenterCrop,
-        #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
+        #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image’s aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
         CenterInside,
     }
     impl ReplaceAllShapesWithImageRequestReplaceMethod {
@@ -6642,7 +6642,7 @@ pub mod schemas {
         pub linking_mode: ::std::option::Option<
             crate::schemas::ReplaceAllShapesWithSheetsChartRequestLinkingMode,
         >,
-        #[doc = "If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn't exist in the presentation."]
+        #[doc = "If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes page or a notes master, or if a page with that object ID doesn’t exist in the presentation."]
         #[serde(
             rename = "pageObjectIds",
             default,
@@ -6797,7 +6797,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub contains_text: ::std::option::Option<crate::schemas::SubstringMatchCriteria>,
-        #[doc = "If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes master, or if a page with that object ID doesn't exist in the presentation."]
+        #[doc = "If non-empty, limits the matches to page elements only on the given pages. Returns a 400 bad request error if given the page object ID of a notes master, or if a page with that object ID doesn’t exist in the presentation."]
         #[serde(
             rename = "pageObjectIds",
             default,
@@ -6881,7 +6881,7 @@ pub mod schemas {
         )]
         pub image_replace_method:
             ::std::option::Option<crate::schemas::ReplaceImageRequestImageReplaceMethod>,
-        #[doc = "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can't surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field."]
+        #[doc = "The image URL. The image is fetched once at insertion time and a copy is stored for display inside the presentation. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URL can’t surpass 2 KB in length. The URL is saved with the image, and exposed through the Image.source_url field."]
         #[serde(
             rename = "url",
             default,
@@ -6903,7 +6903,7 @@ pub mod schemas {
     pub enum ReplaceImageRequestImageReplaceMethod {
         #[doc = "Scales and centers the image to fill the bounds of the original shape. The image may be cropped in order to fill the shape. The rendered size of the image will be the same as the original shape."]
         CenterCrop,
-        #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image's aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
+        #[doc = "Scales and centers the image to fit within the bounds of the original shape and maintains the image’s aspect ratio. The rendered size of the image may be smaller than the size of the shape. This is the default method when one is not specified."]
         CenterInside,
         #[doc = "Unspecified image replace method. This value must not be used."]
         ImageReplaceMethodUnspecified,
@@ -7157,7 +7157,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub replace_image: ::std::option::Option<crate::schemas::ReplaceImageRequest>,
-        #[doc = "Reroutes a line such that it's connected at the two closest connection sites on the connected page elements."]
+        #[doc = "Reroutes a line such that it’s connected at the two closest connection sites on the connected page elements."]
         #[serde(
             rename = "rerouteLine",
             default,
@@ -7336,7 +7336,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RerouteLineRequest {
-        #[doc = "The object ID of the line to reroute. Only a line with a category indicating it is a \"connector\" can be rerouted. The start and end connections of the line must be on different page elements."]
+        #[doc = "The object ID of the line to reroute. Only a line with a category indicating it is a “connector” can be rerouted. The start and end connections of the line must be on different page elements."]
         #[serde(
             rename = "objectId",
             default,
@@ -7511,7 +7511,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alignment: ::std::option::Option<crate::schemas::ShadowAlignment>,
-        #[doc = "The alpha of the shadow's color, from 0.0 to 1.0."]
+        #[doc = "The alpha of the shadow’s color, from 0.0 to 1.0."]
         #[serde(
             rename = "alpha",
             default,
@@ -7684,11 +7684,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ShadowPropertyState {
-        #[doc = "If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
+        #[doc = "If a property’s state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
         Inherit,
-        #[doc = "If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
+        #[doc = "If a property’s state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
         NotRendered,
-        #[doc = "If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
+        #[doc = "If a property’s state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
         Rendered,
     }
     impl ShadowPropertyState {
@@ -7874,7 +7874,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ShapeShapeType {
-        #[doc = "Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'"]
+        #[doc = "Curved arc shape. Corresponds to ECMA-376 ST_ShapeType ‘arc’"]
         Arc,
         #[doc = "East arrow shape."]
         ArrowEast,
@@ -7882,283 +7882,283 @@ pub mod schemas {
         ArrowNorth,
         #[doc = "Northeast arrow shape."]
         ArrowNorthEast,
-        #[doc = "Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'"]
+        #[doc = "Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘bentArrow’"]
         BentArrow,
-        #[doc = "Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'"]
+        #[doc = "Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘bentUpArrow’"]
         BentUpArrow,
-        #[doc = "Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'"]
+        #[doc = "Bevel shape. Corresponds to ECMA-376 ST_ShapeType ‘bevel’"]
         Bevel,
-        #[doc = "Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'"]
+        #[doc = "Block arc shape. Corresponds to ECMA-376 ST_ShapeType ‘blockArc’"]
         BlockArc,
-        #[doc = "Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'"]
+        #[doc = "Brace pair shape. Corresponds to ECMA-376 ST_ShapeType ‘bracePair’"]
         BracePair,
-        #[doc = "Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'"]
+        #[doc = "Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType ‘bracketPair’"]
         BracketPair,
-        #[doc = "Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'"]
+        #[doc = "Can shape. Corresponds to ECMA-376 ST_ShapeType ‘can’"]
         Can,
-        #[doc = "Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'"]
+        #[doc = "Chevron shape. Corresponds to ECMA-376 ST_ShapeType ‘chevron’"]
         Chevron,
-        #[doc = "Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'"]
+        #[doc = "Chord shape. Corresponds to ECMA-376 ST_ShapeType ‘chord’"]
         Chord,
-        #[doc = "Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'"]
+        #[doc = "Cloud shape. Corresponds to ECMA-376 ST_ShapeType ‘cloud’"]
         Cloud,
-        #[doc = "Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'"]
+        #[doc = "Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType ‘cloudCallout’"]
         CloudCallout,
-        #[doc = "Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'"]
+        #[doc = "Corner shape. Corresponds to ECMA-376 ST_ShapeType ‘corner’"]
         Corner,
-        #[doc = "Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'"]
+        #[doc = "Cube shape. Corresponds to ECMA-376 ST_ShapeType ‘cube’"]
         Cube,
-        #[doc = "Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'"]
+        #[doc = "Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedDownArrow’"]
         CurvedDownArrow,
-        #[doc = "Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'"]
+        #[doc = "Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedLeftArrow’"]
         CurvedLeftArrow,
-        #[doc = "Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'"]
+        #[doc = "Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedRightArrow’"]
         CurvedRightArrow,
-        #[doc = "Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'"]
+        #[doc = "Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘curvedUpArrow’"]
         CurvedUpArrow,
         #[doc = "Custom shape."]
         Custom,
-        #[doc = "Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'"]
+        #[doc = "Decagon shape. Corresponds to ECMA-376 ST_ShapeType ‘decagon’"]
         Decagon,
-        #[doc = "Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'"]
+        #[doc = "Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType ‘diagStripe’"]
         DiagonalStripe,
-        #[doc = "Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'"]
+        #[doc = "Diamond shape. Corresponds to ECMA-376 ST_ShapeType ‘diamond’"]
         Diamond,
-        #[doc = "Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'"]
+        #[doc = "Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType ‘dodecagon’"]
         Dodecagon,
-        #[doc = "Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'"]
+        #[doc = "Donut shape. Corresponds to ECMA-376 ST_ShapeType ‘donut’"]
         Donut,
-        #[doc = "Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'"]
+        #[doc = "Double wave shape. Corresponds to ECMA-376 ST_ShapeType ‘doubleWave’"]
         DoubleWave,
-        #[doc = "Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'"]
+        #[doc = "Down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘downArrow’"]
         DownArrow,
-        #[doc = "Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'"]
+        #[doc = "Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘downArrowCallout’"]
         DownArrowCallout,
-        #[doc = "Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'"]
+        #[doc = "Ellipse shape. Corresponds to ECMA-376 ST_ShapeType ‘ellipse’"]
         Ellipse,
-        #[doc = "Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'"]
+        #[doc = "Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType ‘ellipseRibbon’"]
         EllipseRibbon,
-        #[doc = "Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'"]
+        #[doc = "Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType ‘ellipseRibbon2’"]
         EllipseRibbon2,
-        #[doc = "Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'"]
+        #[doc = "Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartAlternateProcess’"]
         FlowChartAlternateProcess,
-        #[doc = "Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'"]
+        #[doc = "Collate flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartCollate’"]
         FlowChartCollate,
-        #[doc = "Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'"]
+        #[doc = "Connector flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartConnector’"]
         FlowChartConnector,
-        #[doc = "Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'"]
+        #[doc = "Decision flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDecision’"]
         FlowChartDecision,
-        #[doc = "Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'"]
+        #[doc = "Delay flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDelay’"]
         FlowChartDelay,
-        #[doc = "Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'"]
+        #[doc = "Display flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDisplay’"]
         FlowChartDisplay,
-        #[doc = "Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'"]
+        #[doc = "Document flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartDocument’"]
         FlowChartDocument,
-        #[doc = "Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'"]
+        #[doc = "Extract flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartExtract’"]
         FlowChartExtract,
-        #[doc = "Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'"]
+        #[doc = "Input output flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartInputOutput’"]
         FlowChartInputOutput,
-        #[doc = "Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'"]
+        #[doc = "Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartInternalStorage’"]
         FlowChartInternalStorage,
-        #[doc = "Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'"]
+        #[doc = "Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMagneticDisk’"]
         FlowChartMagneticDisk,
-        #[doc = "Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'"]
+        #[doc = "Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMagneticDrum’"]
         FlowChartMagneticDrum,
-        #[doc = "Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'"]
+        #[doc = "Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMagneticTape’"]
         FlowChartMagneticTape,
-        #[doc = "Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'"]
+        #[doc = "Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartManualInput’"]
         FlowChartManualInput,
-        #[doc = "Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'"]
+        #[doc = "Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartManualOperation’"]
         FlowChartManualOperation,
-        #[doc = "Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'"]
+        #[doc = "Merge flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMerge’"]
         FlowChartMerge,
-        #[doc = "Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'"]
+        #[doc = "Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartMultidocument’"]
         FlowChartMultidocument,
-        #[doc = "Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'"]
+        #[doc = "Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOfflineStorage’"]
         FlowChartOfflineStorage,
-        #[doc = "Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOffpageConnector'"]
+        #[doc = "Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOffpageConnector’"]
         FlowChartOffpageConnector,
-        #[doc = "Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'"]
+        #[doc = "Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOnlineStorage’"]
         FlowChartOnlineStorage,
-        #[doc = "Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'"]
+        #[doc = "Or flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartOr’"]
         FlowChartOr,
-        #[doc = "Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPredefinedProcess'"]
+        #[doc = "Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPredefinedProcess’"]
         FlowChartPredefinedProcess,
-        #[doc = "Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'"]
+        #[doc = "Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPreparation’"]
         FlowChartPreparation,
-        #[doc = "Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'"]
+        #[doc = "Process flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartProcess’"]
         FlowChartProcess,
-        #[doc = "Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'"]
+        #[doc = "Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPunchedCard’"]
         FlowChartPunchedCard,
-        #[doc = "Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'"]
+        #[doc = "Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartPunchedTape’"]
         FlowChartPunchedTape,
-        #[doc = "Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'"]
+        #[doc = "Sort flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartSort’"]
         FlowChartSort,
-        #[doc = "Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'"]
+        #[doc = "Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartSummingJunction’"]
         FlowChartSummingJunction,
-        #[doc = "Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'"]
+        #[doc = "Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType ‘flowChartTerminator’"]
         FlowChartTerminator,
-        #[doc = "Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'"]
+        #[doc = "Folded corner shape. Corresponds to ECMA-376 ST_ShapeType ‘foldedCorner’"]
         FoldedCorner,
-        #[doc = "Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'"]
+        #[doc = "Frame shape. Corresponds to ECMA-376 ST_ShapeType ‘frame’"]
         Frame,
-        #[doc = "Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'"]
+        #[doc = "Half frame shape. Corresponds to ECMA-376 ST_ShapeType ‘halfFrame’"]
         HalfFrame,
-        #[doc = "Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'"]
+        #[doc = "Heart shape. Corresponds to ECMA-376 ST_ShapeType ‘heart’"]
         Heart,
-        #[doc = "Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'"]
+        #[doc = "Heptagon shape. Corresponds to ECMA-376 ST_ShapeType ‘heptagon’"]
         Heptagon,
-        #[doc = "Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'"]
+        #[doc = "Hexagon shape. Corresponds to ECMA-376 ST_ShapeType ‘hexagon’"]
         Hexagon,
-        #[doc = "Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'"]
+        #[doc = "Home plate shape. Corresponds to ECMA-376 ST_ShapeType ‘homePlate’"]
         HomePlate,
-        #[doc = "Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'"]
+        #[doc = "Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType ‘horizontalScroll’"]
         HorizontalScroll,
-        #[doc = "Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'"]
+        #[doc = "Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType ‘irregularSeal1’"]
         IrregularSeal1,
-        #[doc = "Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'"]
+        #[doc = "Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType ‘irregularSeal2’"]
         IrregularSeal2,
-        #[doc = "Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'"]
+        #[doc = "Left arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftArrow’"]
         LeftArrow,
-        #[doc = "Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'"]
+        #[doc = "Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftArrowCallout’"]
         LeftArrowCallout,
-        #[doc = "Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'"]
+        #[doc = "Left brace shape. Corresponds to ECMA-376 ST_ShapeType ‘leftBrace’"]
         LeftBrace,
-        #[doc = "Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'"]
+        #[doc = "Left bracket shape. Corresponds to ECMA-376 ST_ShapeType ‘leftBracket’"]
         LeftBracket,
-        #[doc = "Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'"]
+        #[doc = "Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftRightArrow’"]
         LeftRightArrow,
-        #[doc = "Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'"]
+        #[doc = "Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftRightArrowCallout’"]
         LeftRightArrowCallout,
-        #[doc = "Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'"]
+        #[doc = "Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftRightUpArrow’"]
         LeftRightUpArrow,
-        #[doc = "Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'"]
+        #[doc = "Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘leftUpArrow’"]
         LeftUpArrow,
-        #[doc = "Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'"]
+        #[doc = "Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType ‘lightningBolt’"]
         LightningBolt,
-        #[doc = "Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'"]
+        #[doc = "Divide math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathDivide’"]
         MathDivide,
-        #[doc = "Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'"]
+        #[doc = "Equal math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathEqual’"]
         MathEqual,
-        #[doc = "Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'"]
+        #[doc = "Minus math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathMinus’"]
         MathMinus,
-        #[doc = "Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'"]
+        #[doc = "Multiply math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathMultiply’"]
         MathMultiply,
-        #[doc = "Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'"]
+        #[doc = "Not equal math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathNotEqual’"]
         MathNotEqual,
-        #[doc = "Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'"]
+        #[doc = "Plus math shape. Corresponds to ECMA-376 ST_ShapeType ‘mathPlus’"]
         MathPlus,
-        #[doc = "Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'"]
+        #[doc = "Moon shape. Corresponds to ECMA-376 ST_ShapeType ‘moon’"]
         Moon,
-        #[doc = "No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'"]
+        #[doc = "No smoking shape. Corresponds to ECMA-376 ST_ShapeType ‘noSmoking’"]
         NoSmoking,
-        #[doc = "Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'"]
+        #[doc = "Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘notchedRightArrow’"]
         NotchedRightArrow,
-        #[doc = "Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'"]
+        #[doc = "Octagon shape. Corresponds to ECMA-376 ST_ShapeType ‘octagon’"]
         Octagon,
-        #[doc = "Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'"]
+        #[doc = "Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType ‘parallelogram’"]
         Parallelogram,
-        #[doc = "Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'"]
+        #[doc = "Pentagon shape. Corresponds to ECMA-376 ST_ShapeType ‘pentagon’"]
         Pentagon,
-        #[doc = "Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'"]
+        #[doc = "Pie shape. Corresponds to ECMA-376 ST_ShapeType ‘pie’"]
         Pie,
-        #[doc = "Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'"]
+        #[doc = "Plaque shape. Corresponds to ECMA-376 ST_ShapeType ‘plaque’"]
         Plaque,
-        #[doc = "Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'"]
+        #[doc = "Plus shape. Corresponds to ECMA-376 ST_ShapeType ‘plus’"]
         Plus,
-        #[doc = "Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'"]
+        #[doc = "Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘quadArrow’"]
         QuadArrow,
-        #[doc = "Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'"]
+        #[doc = "Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘quadArrowCallout’"]
         QuadArrowCallout,
-        #[doc = "Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'."]
+        #[doc = "Rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘rect’."]
         Rectangle,
-        #[doc = "Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'"]
+        #[doc = "Ribbon shape. Corresponds to ECMA-376 ST_ShapeType ‘ribbon’"]
         Ribbon,
-        #[doc = "Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'"]
+        #[doc = "Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType ‘ribbon2’"]
         Ribbon2,
-        #[doc = "Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'"]
+        #[doc = "Right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘rightArrow’"]
         RightArrow,
-        #[doc = "Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'"]
+        #[doc = "Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘rightArrowCallout’"]
         RightArrowCallout,
-        #[doc = "Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'"]
+        #[doc = "Right brace shape. Corresponds to ECMA-376 ST_ShapeType ‘rightBrace’"]
         RightBrace,
-        #[doc = "Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'"]
+        #[doc = "Right bracket shape. Corresponds to ECMA-376 ST_ShapeType ‘rightBracket’"]
         RightBracket,
-        #[doc = "Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'"]
+        #[doc = "Right triangle shape. Corresponds to ECMA-376 ST_ShapeType ‘rtTriangle’"]
         RightTriangle,
-        #[doc = "One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'"]
+        #[doc = "One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘round1Rect’"]
         Round1Rectangle,
-        #[doc = "Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2DiagRect'"]
+        #[doc = "Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘round2DiagRect’"]
         Round2DiagonalRectangle,
-        #[doc = "Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round2SameRect'"]
+        #[doc = "Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘round2SameRect’"]
         Round2SameRectangle,
-        #[doc = "Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'"]
+        #[doc = "Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘roundRect’"]
         RoundRectangle,
-        #[doc = "Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'"]
+        #[doc = "Smiley face shape. Corresponds to ECMA-376 ST_ShapeType ‘smileyFace’"]
         SmileyFace,
-        #[doc = "One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'"]
+        #[doc = "One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snip1Rect’"]
         Snip1Rectangle,
-        #[doc = "Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'"]
+        #[doc = "Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snip2DiagRect’"]
         Snip2DiagonalRectangle,
-        #[doc = "Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2SameRect'"]
+        #[doc = "Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snip2SameRect’"]
         Snip2SameRectangle,
-        #[doc = "One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snipRoundRect'"]
+        #[doc = "One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘snipRoundRect’"]
         SnipRoundRectangle,
         #[doc = "Speech shape."]
         Speech,
-        #[doc = "Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'"]
+        #[doc = "Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star10’"]
         Star10,
-        #[doc = "Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'"]
+        #[doc = "Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star12’"]
         Star12,
-        #[doc = "Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'"]
+        #[doc = "Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star16’"]
         Star16,
-        #[doc = "Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'"]
+        #[doc = "Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star24’"]
         Star24,
-        #[doc = "Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'"]
+        #[doc = "Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star32’"]
         Star32,
-        #[doc = "Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'"]
+        #[doc = "Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star4’"]
         Star4,
-        #[doc = "Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'"]
+        #[doc = "Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star5’"]
         Star5,
-        #[doc = "Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'"]
+        #[doc = "Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star6’"]
         Star6,
-        #[doc = "Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'"]
+        #[doc = "Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star7’"]
         Star7,
-        #[doc = "Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'"]
+        #[doc = "Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType ‘star8’"]
         Star8,
         #[doc = "Star burst shape."]
         Starburst,
-        #[doc = "Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'"]
+        #[doc = "Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘stripedRightArrow’"]
         StripedRightArrow,
-        #[doc = "Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'"]
+        #[doc = "Sun shape. Corresponds to ECMA-376 ST_ShapeType ‘sun’"]
         Sun,
-        #[doc = "Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'"]
+        #[doc = "Teardrop shape. Corresponds to ECMA-376 ST_ShapeType ‘teardrop’"]
         Teardrop,
         #[doc = "Text box shape."]
         TextBox,
-        #[doc = "Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'"]
+        #[doc = "Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType ‘trapezoid’"]
         Trapezoid,
-        #[doc = "Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'"]
+        #[doc = "Triangle shape. Corresponds to ECMA-376 ST_ShapeType ‘triangle’"]
         Triangle,
         #[doc = "The shape type that is not predefined."]
         TypeUnspecified,
-        #[doc = "Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'"]
+        #[doc = "Up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘upArrow’"]
         UpArrow,
-        #[doc = "Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'"]
+        #[doc = "Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘upArrowCallout’"]
         UpArrowCallout,
-        #[doc = "Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'"]
+        #[doc = "Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘upDownArrow’"]
         UpDownArrow,
-        #[doc = "U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'"]
+        #[doc = "U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType ‘uturnArrow’"]
         UturnArrow,
-        #[doc = "Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'"]
+        #[doc = "Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType ‘verticalScroll’"]
         VerticalScroll,
-        #[doc = "Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'"]
+        #[doc = "Wave shape. Corresponds to ECMA-376 ST_ShapeType ‘wave’"]
         Wave,
-        #[doc = "Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'"]
+        #[doc = "Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType ‘wedgeEllipseCallout’"]
         WedgeEllipseCallout,
-        #[doc = "Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'"]
+        #[doc = "Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘wedgeRectCallout’"]
         WedgeRectangleCallout,
-        #[doc = "Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRoundRectCallout'"]
+        #[doc = "Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType ‘wedgeRoundRectCallout’"]
         WedgeRoundRectangleCallout,
     }
     impl ShapeShapeType {
@@ -8679,11 +8679,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ShapeBackgroundFillPropertyState {
-        #[doc = "If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
+        #[doc = "If a property’s state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
         Inherit,
-        #[doc = "If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
+        #[doc = "If a property’s state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
         NotRendered,
-        #[doc = "If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
+        #[doc = "If a property’s state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
         Rendered,
     }
     impl ShapeBackgroundFillPropertyState {
@@ -8813,15 +8813,15 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ShapePropertiesContentAlignment {
-        #[doc = "An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'."]
+        #[doc = "An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘b’."]
         Bottom,
         #[doc = "An unspecified content alignment. The content alignment is inherited from the parent if it exists."]
         ContentAlignmentUnspecified,
         #[doc = "An unsupported content alignment."]
         ContentAlignmentUnsupported,
-        #[doc = "An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'."]
+        #[doc = "An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘ctr’."]
         Middle,
-        #[doc = "An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'."]
+        #[doc = "An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘t’."]
         Top,
     }
     impl ShapePropertiesContentAlignment {
@@ -8920,7 +8920,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub chart_id: ::std::option::Option<i32>,
-        #[doc = "The URL of an image of the embedded chart, with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change."]
+        #[doc = "The URL of an image of the embedded chart, with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation’s sharing settings change."]
         #[serde(
             rename = "contentUrl",
             default,
@@ -9079,7 +9079,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct StretchedPictureFill {
-        #[doc = "Reading the content_url: An URL to a picture with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the picture as the original requester. Access to the picture may be lost if the presentation's sharing settings change. Writing the content_url: The picture is fetched once at insertion time and a copy is stored for display inside the presentation. Pictures must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length."]
+        #[doc = "Reading the content_url: An URL to a picture with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the picture as the original requester. Access to the picture may be lost if the presentation’s sharing settings change. Writing the content_url: The picture is fetched once at insertion time and a copy is stored for display inside the presentation. Pictures must be less than 50MB in size, cannot exceed 25 megapixels, and must be in one of PNG, JPEG, or GIF format. The provided URL can be at most 2 kB in length."]
         #[serde(
             rename = "contentUrl",
             default,
@@ -9153,7 +9153,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub columns: ::std::option::Option<i32>,
-        #[doc = "Properties of horizontal cell borders. A table's horizontal cell borders are represented as a grid. The grid has one more row than the number of rows in the table and the same number of columns as the table. For example, if the table is 3 x 3, its horizontal borders will be represented as a grid with 4 rows and 3 columns."]
+        #[doc = "Properties of horizontal cell borders. A table’s horizontal cell borders are represented as a grid. The grid has one more row than the number of rows in the table and the same number of columns as the table. For example, if the table is 3 x 3, its horizontal borders will be represented as a grid with 4 rows and 3 columns."]
         #[serde(
             rename = "horizontalBorderRows",
             default,
@@ -9181,7 +9181,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub table_rows: ::std::option::Option<Vec<crate::schemas::TableRow>>,
-        #[doc = "Properties of vertical cell borders. A table's vertical cell borders are represented as a grid. The grid has the same number of rows as the table and one more column than the number of columns in the table. For example, if the table is 3 x 3, its vertical borders will be represented as a grid with 3 rows and 4 columns."]
+        #[doc = "Properties of vertical cell borders. A table’s vertical cell borders are represented as a grid. The grid has the same number of rows as the table and one more column than the number of columns in the table. For example, if the table is 3 x 3, its vertical borders will be represented as a grid with 3 rows and 4 columns."]
         #[serde(
             rename = "verticalBorderRows",
             default,
@@ -9288,19 +9288,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TableBorderPropertiesDashStyle {
-        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'."]
+        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dash’."]
         Dash,
-        #[doc = "Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'."]
+        #[doc = "Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dashDot’."]
         DashDot,
         #[doc = "Unspecified dash style."]
         DashStyleUnspecified,
-        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'."]
+        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dot’."]
         Dot,
-        #[doc = "Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'."]
+        #[doc = "Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘lgDash’."]
         LongDash,
-        #[doc = "Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDashDot'."]
+        #[doc = "Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘lgDashDot’."]
         LongDashDot,
-        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style."]
+        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘solid’. This is the default dash style."]
         Solid,
     }
     impl TableBorderPropertiesDashStyle {
@@ -9386,7 +9386,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TableBorderRow {
-        #[doc = "Properties of each border cell. When a border's adjacent table cells are merged, it is not included in the response."]
+        #[doc = "Properties of each border cell. When a border’s adjacent table cells are merged, it is not included in the response."]
         #[serde(
             rename = "tableBorderCells",
             default,
@@ -9486,11 +9486,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TableCellBackgroundFillPropertyState {
-        #[doc = "If a property's state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
+        #[doc = "If a property’s state is INHERIT, then the property state uses the value of corresponding `property_state` field on the parent shape. Elements that do not inherit will never have an INHERIT property state."]
         Inherit,
-        #[doc = "If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
+        #[doc = "If a property’s state is NOT_RENDERED, then the element does not have the corresponding property when rendered on a page. However, the field may still be set so it can be inherited by child shapes. To remove a property from a rendered element, set its property_state to NOT_RENDERED."]
         NotRendered,
-        #[doc = "If a property's state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
+        #[doc = "If a property’s state is RENDERED, then the element has the corresponding property when rendered on a page. If the element is a placeholder shape as determined by the placeholder field, and it inherits from a placeholder shape, the corresponding field may be unset, meaning that the property value is inherited from a parent placeholder. If the element does not inherit, then the field will contain the rendered value. This is the default value."]
         Rendered,
     }
     impl TableCellBackgroundFillPropertyState {
@@ -9631,15 +9631,15 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TableCellPropertiesContentAlignment {
-        #[doc = "An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'."]
+        #[doc = "An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘b’."]
         Bottom,
         #[doc = "An unspecified content alignment. The content alignment is inherited from the parent if it exists."]
         ContentAlignmentUnspecified,
         #[doc = "An unsupported content alignment."]
         ContentAlignmentUnsupported,
-        #[doc = "An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'."]
+        #[doc = "An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘ctr’."]
         Middle,
-        #[doc = "An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'."]
+        #[doc = "An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘t’."]
         Top,
     }
     impl TableCellPropertiesContentAlignment {
@@ -9834,7 +9834,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TableRowProperties {
-        #[doc = "Minimum height of the row. The row will be rendered in the Slides editor at a height equal to or greater than this value in order to show all the text in the row's cell(s)."]
+        #[doc = "Minimum height of the row. The row will be rendered in the Slides editor at a height equal to or greater than this value in order to show all the text in the row’s cell(s)."]
         #[serde(
             rename = "minRowHeight",
             default,
@@ -9900,7 +9900,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_index: ::std::option::Option<i32>,
-        #[doc = "A marker representing the beginning of a new paragraph. The `start_index` and `end_index` of this TextElement represent the range of the paragraph. Other TextElements with an index range contained inside this paragraph's range are considered to be part of this paragraph. The range of indices of two separate paragraphs will never overlap."]
+        #[doc = "A marker representing the beginning of a new paragraph. The `start_index` and `end_index` of this TextElement represent the range of the paragraph. Other TextElements with an index range contained inside this paragraph’s range are considered to be part of this paragraph. The range of indices of two separate paragraphs will never overlap."]
         #[serde(
             rename = "paragraphMarker",
             default,
@@ -9972,7 +9972,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background_color: ::std::option::Option<crate::schemas::OptionalColor>,
-        #[doc = "The text's vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field."]
+        #[doc = "The text’s vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field."]
         #[serde(
             rename = "baselineOffset",
             default,
@@ -9986,14 +9986,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bold: ::std::option::Option<bool>,
-        #[doc = "The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. Some fonts can affect the weight of the text. If an update request specifies values for both `font_family` and `bold`, the explicitly-set `bold` value is used."]
+        #[doc = "The font family of the text. The font family can be any font from the Font menu in Slides or from \\[Google Fonts\\] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. Some fonts can affect the weight of the text. If an update request specifies values for both `font_family` and `bold`, the explicitly-set `bold` value is used."]
         #[serde(
             rename = "fontFamily",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub font_family: ::std::option::Option<String>,
-        #[doc = "The size of the text's font. When read, the `font_size` will specified in points."]
+        #[doc = "The size of the text’s font. When read, the `font_size` will specified in points."]
         #[serde(
             rename = "fontSize",
             default,
@@ -10042,7 +10042,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub underline: ::std::option::Option<bool>,
-        #[doc = "The font family and rendered weight of the text. This field is an extension of `font_family` meant to support explicit font weights without breaking backwards compatibility. As such, when reading the style of a range of text, the value of `weighted_font_family#font_family` will always be equal to that of `font_family`. However, when writing, if both fields are included in the field mask (either explicitly or through the wildcard `\"*\"`), their values are reconciled as follows: * If `font_family` is set and `weighted_font_family` is not, the value of `font_family` is applied with weight `400` (\"normal\"). * If both fields are set, the value of `font_family` must match that of `weighted_font_family#font_family`. If so, the font family and weight of `weighted_font_family` is applied. Otherwise, a 400 bad request error is returned. * If `weighted_font_family` is set and `font_family` is not, the font family and weight of `weighted_font_family` is applied. * If neither field is set, the font family and weight of the text inherit from the parent. Note that these properties cannot inherit separately from each other. If an update request specifies values for both `weighted_font_family` and `bold`, the `weighted_font_family` is applied first, then `bold`. If `weighted_font_family#weight` is not set, it defaults to `400`. If `weighted_font_family` is set, then `weighted_font_family#font_family` must also be set with a non-empty value. Otherwise, a 400 bad request error is returned."]
+        #[doc = "The font family and rendered weight of the text. This field is an extension of `font_family` meant to support explicit font weights without breaking backwards compatibility. As such, when reading the style of a range of text, the value of `weighted_font_family#font_family` will always be equal to that of `font_family`. However, when writing, if both fields are included in the field mask (either explicitly or through the wildcard `\"*\"`), their values are reconciled as follows: * If `font_family` is set and `weighted_font_family` is not, the value of `font_family` is applied with weight `400` (“normal”). * If both fields are set, the value of `font_family` must match that of `weighted_font_family#font_family`. If so, the font family and weight of `weighted_font_family` is applied. Otherwise, a 400 bad request error is returned. * If `weighted_font_family` is set and `font_family` is not, the font family and weight of `weighted_font_family` is applied. * If neither field is set, the font family and weight of the text inherit from the parent. Note that these properties cannot inherit separately from each other. If an update request specifies values for both `weighted_font_family` and `bold`, the `weighted_font_family` is applied first, then `bold`. If `weighted_font_family#weight` is not set, it defaults to `400`. If `weighted_font_family` is set, then `weighted_font_family#font_family` must also be set with a non-empty value. Otherwise, a 400 bad request error is returned."]
         #[serde(
             rename = "weightedFontFamily",
             default,
@@ -10062,7 +10062,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TextStyleBaselineOffset {
-        #[doc = "The text's baseline offset is inherited from the parent."]
+        #[doc = "The text’s baseline offset is inherited from the parent."]
         BaselineOffsetUnspecified,
         #[doc = "The text is not vertically offset."]
         None,
@@ -10329,7 +10329,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Thumbnail {
-        #[doc = "The content URL of the thumbnail image. The URL to the image has a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change. The mime type of the thumbnail image is the same as specified in the `GetPageThumbnailRequest`."]
+        #[doc = "The content URL of the thumbnail image. The URL to the image has a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation’s sharing settings change. The mime type of the thumbnail image is the same as specified in the `GetPageThumbnailRequest`."]
         #[serde(
             rename = "contentUrl",
             default,
@@ -10412,7 +10412,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The table range specifying which cells of the table to unmerge. All merged cells in this range will be unmerged, and cells that are already unmerged will not be affected. If the range has no merged cells, the request will do nothing. If there is text in any of the merged cells, the text will remain in the upper-left (\"head\") cell of the resulting block of unmerged cells."]
+        #[doc = "The table range specifying which cells of the table to unmerge. All merged cells in this range will be unmerged, and cells that are already unmerged will not be affected. If the range has no merged cells, the request will do nothing. If there is text in any of the merged cells, the text will remain in the upper-left (“head”) cell of the resulting block of unmerged cells."]
         #[serde(
             rename = "tableRange",
             default,
@@ -10479,7 +10479,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UpdateLineCategoryRequest {
-        #[doc = "The line category to update to. The exact line type is determined based on the category to update to and how it's routed to connect to other page elements."]
+        #[doc = "The line category to update to. The exact line type is determined based on the category to update to and how it’s routed to connect to other page elements."]
         #[serde(
             rename = "lineCategory",
             default,
@@ -10487,7 +10487,7 @@ pub mod schemas {
         )]
         pub line_category:
             ::std::option::Option<crate::schemas::UpdateLineCategoryRequestLineCategory>,
-        #[doc = "The object ID of the line the update is applied to. Only a line with a category indicating it is a \"connector\" can be updated. The line may be rerouted after updating its category."]
+        #[doc = "The object ID of the line the update is applied to. Only a line with a category indicating it is a “connector” can be updated. The line may be rerouted after updating its category."]
         #[serde(
             rename = "objectId",
             default,
@@ -10988,7 +10988,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<String>,
-        #[doc = "The paragraph's style."]
+        #[doc = "The paragraph’s style."]
         #[serde(
             rename = "style",
             default,
@@ -11053,7 +11053,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateSlidePropertiesRequest {
-        #[doc = "The fields that should be updated. At least one field must be specified. The root 'slideProperties' is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update whether a slide is skipped, set `fields` to `\"isSkipped\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root ‘slideProperties’ is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update whether a slide is skipped, set `fields` to `\"isSkipped\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
         #[serde(
             rename = "fields",
             default,
@@ -11342,7 +11342,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub column_indices: ::std::option::Option<Vec<i32>>,
-        #[doc = "The fields that should be updated. At least one field must be specified. The root `tableColumnProperties` is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update the column width, set `fields` to `\"column_width\"`. If '\"column_width\"' is included in the field mask but the property is left unset, the column width will default to 406,400 EMU (32 points)."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root `tableColumnProperties` is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update the column width, set `fields` to `\"column_width\"`. If ‘“column_width”’ is included in the field mask but the property is left unset, the column width will default to 406,400 EMU (32 points)."]
         #[serde(
             rename = "fields",
             default,
@@ -11378,7 +11378,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateTableRowPropertiesRequest {
-        #[doc = "The fields that should be updated. At least one field must be specified. The root `tableRowProperties` is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update the minimum row height, set `fields` to `\"min_row_height\"`. If '\"min_row_height\"' is included in the field mask but the property is left unset, the minimum row height will default to 0."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root `tableRowProperties` is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field. For example to update the minimum row height, set `fields` to `\"min_row_height\"`. If ‘“min_row_height”’ is included in the field mask but the property is left unset, the minimum row height will default to 0."]
         #[serde(
             rename = "fields",
             default,
@@ -11449,7 +11449,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub style: ::std::option::Option<crate::schemas::TextStyle>,
-        #[doc = "The range of text to style. The range may be extended to include adjacent newlines. If the range fully contains a paragraph belonging to a list, the paragraph's bullet is also updated with the matching text style."]
+        #[doc = "The range of text to style. The range may be extended to include adjacent newlines. If the range fully contains a paragraph belonging to a list, the paragraph’s bullet is also updated with the matching text style."]
         #[serde(
             rename = "textRange",
             default,
@@ -11507,7 +11507,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Video {
-        #[doc = "The video source's unique identifier for this video."]
+        #[doc = "The video source’s unique identifier for this video."]
         #[serde(
             rename = "id",
             default,
@@ -11633,7 +11633,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auto_play: ::std::option::Option<bool>,
-        #[doc = "The time at which to end playback, measured in seconds from the beginning of the video. If set, the end time should be after the start time. If not set or if you set this to a value that exceeds the video's length, the video will be played until its end."]
+        #[doc = "The time at which to end playback, measured in seconds from the beginning of the video. If set, the end time should be after the start time. If not set or if you set this to a value that exceeds the video’s length, the video will be played until its end."]
         #[serde(
             rename = "end",
             default,
@@ -11654,7 +11654,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub outline: ::std::option::Option<crate::schemas::Outline>,
-        #[doc = "The time at which to start playback, measured in seconds from the beginning of the video. If set, the start time should be before the end time. If you set this to a value that exceeds the video's length in seconds, the video will be played from the last second. If not set, the video will be played from the beginning."]
+        #[doc = "The time at which to start playback, measured in seconds from the beginning of the video. If set, the start time should be before the end time. If you set this to a value that exceeds the video’s length in seconds, the video will be played from the last second. If not set, the video will be played from the beginning."]
         #[serde(
             rename = "start",
             default,
@@ -11685,14 +11685,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WeightedFontFamily {
-        #[doc = "The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`."]
+        #[doc = "The font family of the text. The font family can be any font from the Font menu in Slides or from \\[Google Fonts\\] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`."]
         #[serde(
             rename = "fontFamily",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub font_family: ::std::option::Option<String>,
-        #[doc = "The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` (\"normal\")."]
+        #[doc = "The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` (“normal”)."]
         #[serde(
             rename = "weight",
             default,
@@ -11754,7 +11754,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WriteControl {
-        #[doc = "The revision ID of the presentation required for the write request. If specified and the required revision ID doesn't match the presentation's current revision ID, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied."]
+        #[doc = "The revision ID of the presentation required for the write request. If specified and the required revision ID doesn’t match the presentation’s current revision ID, the request is not processed and returns a 400 bad request error. When a required revision ID is returned in a response, it indicates the revision ID of the document after the request was applied."]
         #[serde(
             rename = "requiredRevisionId",
             default,
@@ -12084,12 +12084,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12246,12 +12246,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12400,12 +12400,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12754,12 +12754,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -12877,7 +12877,7 @@ pub mod resources {
             #[derive(Debug, Clone)]
             pub struct GetThumbnailRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , presentation_id : String , page_object_id : String , thumbnail_properties_mime_type : :: std :: option :: Option < crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesMimeType > , thumbnail_properties_thumbnail_size : :: std :: option :: Option < crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesThumbnailSize > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
             impl<'a> GetThumbnailRequestBuilder<'a> {
-                #[doc = "The optional mime type of the thumbnail image. If you don't specify the mime type, the mime type defaults to PNG."]
+                #[doc = "The optional mime type of the thumbnail image. If you don’t specify the mime type, the mime type defaults to PNG."]
                 pub fn thumbnail_properties_mime_type(
                     mut self,
                     value : crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesMimeType,
@@ -12885,7 +12885,7 @@ pub mod resources {
                     self.thumbnail_properties_mime_type = Some(value);
                     self
                 }
-                #[doc = "The optional thumbnail image size. If you don't specify the size, the server chooses a default size of the image."]
+                #[doc = "The optional thumbnail image size. If you don’t specify the size, the server chooses a default size of the image."]
                 pub fn thumbnail_properties_thumbnail_size(
                     mut self,
                     value : crate :: resources :: presentations :: pages :: params :: GetThumbnailThumbnailPropertiesThumbnailSize,
@@ -12923,12 +12923,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

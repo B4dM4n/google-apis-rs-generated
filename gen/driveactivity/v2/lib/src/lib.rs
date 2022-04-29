@@ -1154,7 +1154,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DriveFolderType {
-        #[doc = "The folder is the root of a user's MyDrive."]
+        #[doc = "The folder is the root of a user’s MyDrive."]
         MyDriveRoot,
         #[doc = "The folder is the root of a shared drive."]
         SharedDriveRoot,
@@ -1911,7 +1911,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Permission {
-        #[doc = "If true, the item can be discovered (e.g. in the user's \"Shared with me\" collection) without needing a link to the item."]
+        #[doc = "If true, the item can be discovered (e.g. in the user’s “Shared with me” collection) without needing a link to the item."]
         #[serde(
             rename = "allowDiscovery",
             default,
@@ -1939,7 +1939,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub group: ::std::option::Option<crate::schemas::Group>,
-        #[doc = "Indicates the [Google Drive permissions role](https://developers.google.com/drive/web/manage-sharing#roles). The role determines a user's ability to read, write, and comment on items."]
+        #[doc = "Indicates the [Google Drive permissions role](https://developers.google.com/drive/web/manage-sharing#roles). The role determines a user’s ability to read, write, and comment on items."]
         #[serde(
             rename = "role",
             default,
@@ -1968,7 +1968,7 @@ pub mod schemas {
     pub enum PermissionRole {
         #[doc = "A role granting the ability to view and comment on content."]
         Commenter,
-        #[doc = "A role granting the ability to contribute content. This role is sometimes also known as \"writer\"."]
+        #[doc = "A role granting the ability to contribute content. This role is sometimes also known as “writer”."]
         Editor,
         #[doc = "A role granting the ability to contribute and manage content."]
         FileOrganizer,
@@ -1976,11 +1976,11 @@ pub mod schemas {
         Organizer,
         #[doc = "A role granting full access."]
         Owner,
-        #[doc = "A role granting the ability to view content only after it has been published to the web. This role is sometimes also known as \"published reader\". See https://support.google.com/sites/answer/6372880 for more information."]
+        #[doc = "A role granting the ability to view content only after it has been published to the web. This role is sometimes also known as “published reader”. See https://support.google.com/sites/answer/6372880 for more information."]
         PublishedViewer,
         #[doc = "The role is not available."]
         RoleUnspecified,
-        #[doc = "A role granting the ability to view content. This role is sometimes also known as \"reader\"."]
+        #[doc = "A role granting the ability to view content. This role is sometimes also known as “reader”."]
         Viewer,
     }
     impl PermissionRole {
@@ -2257,7 +2257,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub consolidation_strategy: ::std::option::Option<crate::schemas::ConsolidationStrategy>,
-        #[doc = "The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional \"AND\", where each expression is of the form \"field operator value\". Supported fields: - `time`: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - `time > 1452409200000 AND time <= 1492812924310` - `time >= \"2016-01-10T01:02:03-05:00\"` - `detail.action_detail_case`: Uses the \"has\" operator (:) and either a singular value or a list of allowed action types enclosed in parentheses. Examples: - `detail.action_detail_case: RENAME` - `detail.action_detail_case:(CREATE EDIT)` - `-detail.action_detail_case:MOVE` "]
+        #[doc = "The filtering for items returned from this query request. The format of the filter string is a sequence of expressions, joined by an optional “AND”, where each expression is of the form “field operator value”. Supported fields: - `time`: Uses numerical operators on date values either in terms of milliseconds since Jan 1, 1970 or in RFC 3339 format. Examples: - `time > 1452409200000 AND time <= 1492812924310` - `time >= \"2016-01-10T01:02:03-05:00\"` - `detail.action_detail_case`: Uses the “has” operator (:) and either a singular value or a list of allowed action types enclosed in parentheses. Examples: - `detail.action_detail_case: RENAME` - `detail.action_detail_case:(CREATE EDIT)` - `-detail.action_detail_case:MOVE` "]
         #[serde(
             rename = "filter",
             default,
@@ -3535,12 +3535,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

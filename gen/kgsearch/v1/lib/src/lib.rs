@@ -278,7 +278,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SearchRequestBuilder<'a> {
-            #[doc = "The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in ...?ids=A&ids=B"]
+            #[doc = "The list of entity id to be used for search instead of query string. To specify multiple ids in the HTTP request, repeat the parameter in the URL as in …?ids=A&ids=B"]
             pub fn ids(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.ids = Some(value.into());
                 self
@@ -288,7 +288,7 @@ pub mod resources {
                 self.indent = Some(value);
                 self
             }
-            #[doc = "The list of language codes (defined in ISO 693) to run the query with, e.g. 'en'."]
+            #[doc = "The list of language codes (defined in ISO 693) to run the query with, e.g. ‘en’."]
             pub fn languages(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.languages = Some(value.into());
                 self
@@ -343,12 +343,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

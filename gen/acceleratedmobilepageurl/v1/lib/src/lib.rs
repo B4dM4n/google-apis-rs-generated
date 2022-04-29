@@ -14,7 +14,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AmpUrl {
-        #[doc = "The AMP URL pointing to the publisher's web server."]
+        #[doc = "The AMP URL pointing to the publisher’s web server."]
         #[serde(
             rename = "ampUrl",
             default,
@@ -97,7 +97,7 @@ pub mod schemas {
         ApplicationError,
         #[doc = "Not specified error."]
         ErrorCodeUnspecified,
-        #[doc = "Indicates the requested URL is not found in the index, possibly because it's unable to be found, not able to be accessed by Googlebot, or some other error."]
+        #[doc = "Indicates the requested URL is not found in the index, possibly because it’s unable to be found, not able to be accessed by Googlebot, or some other error."]
         InputUrlNotFound,
         #[doc = "Indicates no AMP URL has been found that corresponds to the requested URL."]
         NoAmpUrl,
@@ -594,12 +594,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

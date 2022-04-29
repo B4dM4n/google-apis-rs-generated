@@ -20,7 +20,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instruction: ::std::option::Option<String>,
-        #[doc = "Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -44,7 +44,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDatalabelingV1Alpha1ExportDataOperationMetadata {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
@@ -58,14 +58,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of dataset to be exported. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of dataset to be exported. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -100,14 +100,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Alpha1ExportDataOperationResponse {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotated_dataset: ::std::option::Option<String>,
-        #[doc = "Ouptut only. The name of dataset. \"projects/*/datasets/*\""]
+        #[doc = "Ouptut only. The name of dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
@@ -172,7 +172,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Alpha1GcsDestination {
-        #[doc = "Required. The format of the gcs destination. Only \"text/csv\" and \"application/json\" are supported."]
+        #[doc = "Required. The format of the gcs destination. Only “text/csv” and “application/json” are supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -328,14 +328,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of imported dataset. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of imported dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -629,7 +629,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDatalabelingV1Alpha1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. \"projects/*/datasets/*\""] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: [0, 100]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoObjectTrackingOperationMetadata > , }
+    pub struct GoogleCloudDatalabelingV1Alpha1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. “projects/*/datasets/*”"] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: \\[0, 100\\]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Alpha1LabelVideoObjectTrackingOperationMetadata > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDatalabelingV1Alpha1LabelOperationMetadata
     {
@@ -657,7 +657,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Alpha1LabelStats {
-        #[doc = "Map of each annotation spec's example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
+        #[doc = "Map of each annotation spec’s example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
         #[serde(
             rename = "exampleCount",
             default,
@@ -1596,7 +1596,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Output only. The AnnotationSpecSet resource name in the following format: \"projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}\""]
+        #[doc = "Output only. The AnnotationSpecSet resource name in the following format: “projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}”"]
         #[serde(
             rename = "name",
             default,
@@ -1791,7 +1791,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Beta1BigQuerySource {
-        #[doc = "Required. BigQuery URI to a table, up to 2,000 characters long. If you specify the URI of a table that does not exist, Data Labeling Service creates a table at the URI with the correct schema when you create your EvaluationJob. If you specify the URI of a table that already exists, it must have the [correct schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema). Provide the table URI in the following format: \"bq://{your_project_id}/ {your_dataset_name}/{your_table_name}\" [Learn more](/ml-engine/docs/continuous-evaluation/create-job#table-schema)."]
+        #[doc = "Required. BigQuery URI to a table, up to 2,000 characters long. If you specify the URI of a table that does not exist, Data Labeling Service creates a table at the URI with the correct schema when you create your EvaluationJob. If you specify the URI of a table that already exists, it must have the [correct schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema). Provide the table URI in the following format: “bq://{your_project_id}/ {your_dataset_name}/{your_table_name}” [Learn more](/ml-engine/docs/continuous-evaluation/create-job#table-schema)."]
         #[serde(
             rename = "inputUri",
             default,
@@ -1974,7 +1974,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Beta1ConfidenceMetricsEntry {
-        #[doc = "Threshold used for this entry. For classification tasks, this is a classification threshold: a predicted label is categorized as positive or negative (in the context of this point on the PR curve) based on whether the label's score meets this threshold. For image object detection (bounding box) tasks, this is the [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) threshold for the context of this point on the PR curve."]
+        #[doc = "Threshold used for this entry. For classification tasks, this is a classification threshold: a predicted label is categorized as positive or negative (in the context of this point on the PR curve) based on whether the label’s score meets this threshold. For image object detection (bounding box) tasks, this is the [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) threshold for the context of this point on the PR curve."]
         #[serde(
             rename = "confidenceThreshold",
             default,
@@ -2108,7 +2108,7 @@ pub mod schemas {
         )]
         pub annotation_spec:
             ::std::option::Option<crate::schemas::GoogleCloudDatalabelingV1Beta1AnnotationSpec>,
-        #[doc = "Number of items predicted to have this label. (The ground truth label for these items is the `Row.annotationSpec` of this entry's parent.)"]
+        #[doc = "Number of items predicted to have this label. (The ground truth label for these items is the `Row.annotationSpec` of this entry’s parent.)"]
         #[serde(
             rename = "itemCount",
             default,
@@ -2233,7 +2233,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instruction: ::std::option::Option<String>,
-        #[doc = "Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -2501,7 +2501,7 @@ pub mod schemas {
         )]
         pub evaluation_metrics:
             ::std::option::Option<crate::schemas::GoogleCloudDatalabelingV1Beta1EvaluationMetrics>,
-        #[doc = "Output only. Resource name of an evaluation. The name has the following format: \"projects/{project_id}/datasets/{dataset_id}/evaluations/ {evaluation_id}'"]
+        #[doc = "Output only. Resource name of an evaluation. The name has the following format: “projects/{project_id}/datasets/{dataset_id}/evaluations/ {evaluation_id}’"]
         #[serde(
             rename = "name",
             default,
@@ -2630,7 +2630,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDatalabelingV1Beta1EvaluationJob {
-        #[doc = "Required. Name of the AnnotationSpecSet describing all the labels that your machine learning model outputs. You must create this resource before you create an evaluation job and provide its name in the following format: \"projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}\""]
+        #[doc = "Required. Name of the AnnotationSpecSet describing all the labels that your machine learning model outputs. You must create this resource before you create an evaluation job and provide its name in the following format: “projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}”"]
         #[serde(
             rename = "annotationSpecSet",
             default,
@@ -2668,21 +2668,21 @@ pub mod schemas {
         pub evaluation_job_config: ::std::option::Option<
             crate::schemas::GoogleCloudDatalabelingV1Beta1EvaluationJobConfig,
         >,
-        #[doc = "Required. Whether you want Data Labeling Service to provide ground truth labels for prediction input. If you want the service to assign human labelers to annotate your data, set this to `true`. If you want to provide your own ground truth labels in the evaluation job's BigQuery table, set this to `false`."]
+        #[doc = "Required. Whether you want Data Labeling Service to provide ground truth labels for prediction input. If you want the service to assign human labelers to annotate your data, set this to `true`. If you want to provide your own ground truth labels in the evaluation job’s BigQuery table, set this to `false`."]
         #[serde(
             rename = "labelMissingGroundTruth",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label_missing_ground_truth: ::std::option::Option<bool>,
-        #[doc = "Required. The [AI Platform Prediction model version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction input and output is sampled from this model version. When creating an evaluation job, specify the model version in the following format: \"projects/{project_id}/models/{model_name}/versions/{version_name}\" There can only be one evaluation job per model version."]
+        #[doc = "Required. The [AI Platform Prediction model version](/ml-engine/docs/prediction-overview) to be evaluated. Prediction input and output is sampled from this model version. When creating an evaluation job, specify the model version in the following format: “projects/{project_id}/models/{model_name}/versions/{version_name}” There can only be one evaluation job per model version."]
         #[serde(
             rename = "modelVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_version: ::std::option::Option<String>,
-        #[doc = "Output only. After you create a job, Data Labeling Service assigns a name to the job with the following format: \"projects/{project_id}/evaluationJobs/ {evaluation_job_id}\""]
+        #[doc = "Output only. After you create a job, Data Labeling Service assigns a name to the job with the following format: “projects/{project_id}/evaluationJobs/ {evaluation_job_id}”"]
         #[serde(
             rename = "name",
             default,
@@ -2719,7 +2719,7 @@ pub mod schemas {
     pub enum GoogleCloudDatalabelingV1Beta1EvaluationJobState {
         #[doc = "The job is not sampling prediction input and output into your BigQuery table and it will not run according to its schedule. You can resume the job."]
         Paused,
-        #[doc = "The job is currently running. When the job runs, Data Labeling Service does several things: 1. If you have configured your job to use Data Labeling Service for ground truth labeling, the service creates a Dataset and a labeling task for all data sampled since the last time the job ran. Human labelers provide ground truth labels for your data. Human labeling may take hours, or even days, depending on how much data has been sampled. The job remains in the `RUNNING` state during this time, and it can even be running multiple times in parallel if it gets triggered again (for example 24 hours later) before the earlier run has completed. When human labelers have finished labeling the data, the next step occurs. If you have configured your job to provide your own ground truth labels, Data Labeling Service still creates a Dataset for newly sampled data, but it expects that you have already added ground truth labels to the BigQuery table by this time. The next step occurs immediately. 2. Data Labeling Service creates an Evaluation by comparing your model version's predictions with the ground truth labels. If the job remains in this state for a long time, it continues to sample prediction data into your BigQuery table and will run again at the next interval, even if it causes the job to run multiple times in parallel."]
+        #[doc = "The job is currently running. When the job runs, Data Labeling Service does several things: 1. If you have configured your job to use Data Labeling Service for ground truth labeling, the service creates a Dataset and a labeling task for all data sampled since the last time the job ran. Human labelers provide ground truth labels for your data. Human labeling may take hours, or even days, depending on how much data has been sampled. The job remains in the `RUNNING` state during this time, and it can even be running multiple times in parallel if it gets triggered again (for example 24 hours later) before the earlier run has completed. When human labelers have finished labeling the data, the next step occurs. If you have configured your job to provide your own ground truth labels, Data Labeling Service still creates a Dataset for newly sampled data, but it expects that you have already added ground truth labels to the BigQuery table by this time. The next step occurs immediately. 2. Data Labeling Service creates an Evaluation by comparing your model version’s predictions with the ground truth labels. If the job remains in this state for a long time, it continues to sample prediction data into your BigQuery table and will run again at the next interval, even if it causes the job to run multiple times in parallel."]
         Running,
         #[doc = "The job is scheduled to run at the configured interval. You can pause or delete the job. When the job is in this state, it samples prediction input and output from your model version into your BigQuery table as predictions occur."]
         Scheduled,
@@ -2819,7 +2819,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "Required. A number between 0 and 1 that describes a minimum mean average precision threshold. When the evaluation job runs, if it calculates that your model version's predictions from the recent interval have meanAveragePrecision below this threshold, then it sends an alert to your specified email."]
+        #[doc = "Required. A number between 0 and 1 that describes a minimum mean average precision threshold. When the evaluation job runs, if it calculates that your model version’s predictions from the recent interval have meanAveragePrecision below this threshold, then it sends an alert to your specified email."]
         #[serde(
             rename = "minAcceptableMeanAveragePrecision",
             default,
@@ -3101,7 +3101,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDatalabelingV1Beta1ExportDataOperationMetadata {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
@@ -3115,14 +3115,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of dataset to be exported. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of dataset to be exported. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -3157,14 +3157,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Beta1ExportDataOperationResponse {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotated_dataset: ::std::option::Option<String>,
-        #[doc = "Ouptut only. The name of dataset. \"projects/*/datasets/*\""]
+        #[doc = "Ouptut only. The name of dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
@@ -3229,7 +3229,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Beta1ExportDataRequest {
-        #[doc = "Required. Annotated dataset resource name. DataItem in Dataset and their annotations in specified annotated dataset will be exported. It's in format of projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}"]
+        #[doc = "Required. Annotated dataset resource name. DataItem in Dataset and their annotations in specified annotated dataset will be exported. It’s in format of projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}"]
         #[serde(
             rename = "annotatedDataset",
             default,
@@ -3296,14 +3296,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The image storing this feedback if the feedback is an image representing operator's comments."]
+        #[doc = "The image storing this feedback if the feedback is an image representing operator’s comments."]
         #[serde(
             rename = "image",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "Name of the feedback message in a feedback thread. Format: 'project/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}/feedbackMessage/{feedback_message_id}'"]
+        #[doc = "Name of the feedback message in a feedback thread. Format: ‘project/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}/feedbackMessage/{feedback_message_id}’"]
         #[serde(
             rename = "name",
             default,
@@ -3359,7 +3359,7 @@ pub mod schemas {
         pub feedback_thread_metadata: ::std::option::Option<
             crate::schemas::GoogleCloudDatalabelingV1Beta1FeedbackThreadMetadata,
         >,
-        #[doc = "Name of the feedback thread. Format: 'project/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}'"]
+        #[doc = "Name of the feedback thread. Format: ‘project/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}’"]
         #[serde(
             rename = "name",
             default,
@@ -3508,7 +3508,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Beta1GcsDestination {
-        #[doc = "Required. The format of the gcs destination. Only \"text/csv\" and \"application/json\" are supported."]
+        #[doc = "Required. The format of the gcs destination. Only “text/csv” and “application/json” are supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -3584,7 +3584,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_uri: ::std::option::Option<String>,
-        #[doc = "Required. The format of the source file. Only \"text/csv\" is supported."]
+        #[doc = "Required. The format of the source file. Only “text/csv” is supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -3990,7 +3990,7 @@ pub mod schemas {
                 crate::schemas::GoogleCloudDatalabelingV1Beta1AnnotationSpec,
             >,
         >,
-        #[doc = "A byte string of a full image's color map."]
+        #[doc = "A byte string of a full image’s color map."]
         #[serde(
             rename = "imageBytes",
             default,
@@ -4028,14 +4028,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of imported dataset. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of imported dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -5020,7 +5020,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDatalabelingV1Beta1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. \"projects/*/datasets/*\""] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: [0, 100]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoObjectTrackingOperationMetadata > , }
+    pub struct GoogleCloudDatalabelingV1Beta1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. “projects/*/datasets/*”"] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: \\[0, 100\\]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1Beta1LabelVideoObjectTrackingOperationMetadata > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDatalabelingV1Beta1LabelOperationMetadata
     {
@@ -5046,7 +5046,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1Beta1LabelStats {
-        #[doc = "Map of each annotation spec's example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
+        #[doc = "Map of each annotation spec’s example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
         #[serde(
             rename = "exampleCount",
             default,
@@ -6494,7 +6494,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub area_under_curve: ::std::option::Option<f32>,
-        #[doc = "Entries that make up the precision-recall graph. Each entry is a \"point\" on the graph drawn for a different `confidence_threshold`."]
+        #[doc = "Entries that make up the precision-recall graph. Each entry is a “point” on the graph drawn for a different `confidence_threshold`."]
         #[serde(
             rename = "confidenceMetricsEntries",
             default,
@@ -6677,7 +6677,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub page_size: ::std::option::Option<i32>,
-        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search rquest. If you don't specify this field, the API call requests the first page of the search."]
+        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search rquest. If you don’t specify this field, the API call requests the first page of the search."]
         #[serde(
             rename = "pageToken",
             default,
@@ -7427,7 +7427,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instruction: ::std::option::Option<String>,
-        #[doc = "Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -7451,7 +7451,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDatalabelingV1P1Alpha1ExportDataOperationMetadata {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
@@ -7465,14 +7465,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of dataset to be exported. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of dataset to be exported. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -7507,14 +7507,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1P1Alpha1ExportDataOperationResponse {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotated_dataset: ::std::option::Option<String>,
-        #[doc = "Ouptut only. The name of dataset. \"projects/*/datasets/*\""]
+        #[doc = "Ouptut only. The name of dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
@@ -7579,7 +7579,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1P1Alpha1GcsDestination {
-        #[doc = "Required. The format of the gcs destination. Only \"text/csv\" and \"application/json\" are supported."]
+        #[doc = "Required. The format of the gcs destination. Only “text/csv” and “application/json” are supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -7659,7 +7659,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The name of the dataset for which the analysis report is generated. Format: \"projects/*/datasets/*\""]
+        #[doc = "The name of the dataset for which the analysis report is generated. Format: “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
@@ -7781,14 +7781,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of imported dataset. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of imported dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -8082,7 +8082,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDatalabelingV1P1Alpha1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. \"projects/*/datasets/*\""] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: [0, 100]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoObjectTrackingOperationMetadata > , }
+    pub struct GoogleCloudDatalabelingV1P1Alpha1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. “projects/*/datasets/*”"] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: \\[0, 100\\]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P1Alpha1LabelVideoObjectTrackingOperationMetadata > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDatalabelingV1P1Alpha1LabelOperationMetadata
     {
@@ -8110,7 +8110,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1P1Alpha1LabelStats {
-        #[doc = "Map of each annotation spec's example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
+        #[doc = "Map of each annotation spec’s example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
         #[serde(
             rename = "exampleCount",
             default,
@@ -8407,7 +8407,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub instruction: ::std::option::Option<String>,
-        #[doc = "Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -8431,7 +8431,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudDatalabelingV1P2Alpha1ExportDataOperationMetadata {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
@@ -8445,14 +8445,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of dataset to be exported. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of dataset to be exported. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -8487,14 +8487,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1P2Alpha1ExportDataOperationResponse {
-        #[doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."]
+        #[doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."]
         #[serde(
             rename = "annotatedDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub annotated_dataset: ::std::option::Option<String>,
-        #[doc = "Ouptut only. The name of dataset. \"projects/*/datasets/*\""]
+        #[doc = "Ouptut only. The name of dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
@@ -8559,7 +8559,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1P2Alpha1GcsDestination {
-        #[doc = "Required. The format of the gcs destination. Only \"text/csv\" and \"application/json\" are supported."]
+        #[doc = "Required. The format of the gcs destination. Only “text/csv” and “application/json” are supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -8719,14 +8719,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Output only. The name of imported dataset. \"projects/*/datasets/*\""]
+        #[doc = "Output only. The name of imported dataset. “projects/*/datasets/*”"]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<String>,
-        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."]
+        #[doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."]
         #[serde(
             rename = "partialFailures",
             default,
@@ -9020,7 +9020,7 @@ pub mod schemas {
         }
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
-    pub struct GoogleCloudDatalabelingV1P2Alpha1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format \"projects/*/datasets/*/annotatedDatasets/*\"."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. \"projects/*/datasets/*\""] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: [0, 100]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoObjectTrackingOperationMetadata > , }
+    pub struct GoogleCloudDatalabelingV1P2Alpha1LabelOperationMetadata { # [doc = "Output only. The name of annotated dataset in format “projects/*/datasets/*/annotatedDatasets/\\*”."] # [serde (rename = "annotatedDataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub annotated_dataset : :: std :: option :: Option < String > , # [doc = "Output only. Timestamp when labeling request was created."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The name of dataset to be labeled. “projects/*/datasets/*”"] # [serde (rename = "dataset" , default , skip_serializing_if = "std::option::Option::is_none")] pub dataset : :: std :: option :: Option < String > , # [doc = "Details of label image bounding box operation."] # [serde (rename = "imageBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageBoundingBoxOperationMetadata > , # [doc = "Details of label image bounding poly operation."] # [serde (rename = "imageBoundingPolyDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_bounding_poly_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageBoundingPolyOperationMetadata > , # [doc = "Details of label image classification operation."] # [serde (rename = "imageClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageClassificationOperationMetadata > , # [doc = "Details of label image oriented bounding box operation."] # [serde (rename = "imageOrientedBoundingBoxDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_oriented_bounding_box_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageOrientedBoundingBoxOperationMetadata > , # [doc = "Details of label image polyline operation."] # [serde (rename = "imagePolylineDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_polyline_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImagePolylineOperationMetadata > , # [doc = "Details of label image segmentation operation."] # [serde (rename = "imageSegmentationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub image_segmentation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelImageSegmentationOperationMetadata > , # [doc = "Output only. Partial failures encountered. E.g. single files that couldn’t be read. Status details field will contain standard GCP error details."] # [serde (rename = "partialFailures" , default , skip_serializing_if = "std::option::Option::is_none")] pub partial_failures : :: std :: option :: Option < Vec < crate :: schemas :: GoogleRpcStatus > > , # [doc = "Output only. Progress of label operation. Range: \\[0, 100\\]."] # [serde (rename = "progressPercent" , default , skip_serializing_if = "std::option::Option::is_none")] pub progress_percent : :: std :: option :: Option < i32 > , # [doc = "Details of label text classification operation."] # [serde (rename = "textClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelTextClassificationOperationMetadata > , # [doc = "Details of label text entity extraction operation."] # [serde (rename = "textEntityExtractionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub text_entity_extraction_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelTextEntityExtractionOperationMetadata > , # [doc = "Details of label video classification operation."] # [serde (rename = "videoClassificationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_classification_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoClassificationOperationMetadata > , # [doc = "Details of label video event operation."] # [serde (rename = "videoEventDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_event_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoEventOperationMetadata > , # [doc = "Details of label video object detection operation."] # [serde (rename = "videoObjectDetectionDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_detection_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoObjectDetectionOperationMetadata > , # [doc = "Details of label video object tracking operation."] # [serde (rename = "videoObjectTrackingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub video_object_tracking_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudDatalabelingV1P2Alpha1LabelVideoObjectTrackingOperationMetadata > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudDatalabelingV1P2Alpha1LabelOperationMetadata
     {
@@ -9048,7 +9048,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatalabelingV1P2Alpha1LabelStats {
-        #[doc = "Map of each annotation spec's example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
+        #[doc = "Map of each annotation spec’s example count. Key is the annotation spec name and value is the number of examples for that annotation spec. If the annotated dataset does not have annotation spec, the map will return a pair where the key is empty string and value is the total number of annotations."]
         #[serde(
             rename = "exampleCount",
             default,
@@ -9860,12 +9860,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10028,12 +10028,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10188,12 +10188,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10337,7 +10337,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListAnnotationSpecSetsResponse.next_page_token of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return first page if empty."]
+                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListAnnotationSpecSetsResponse.next_page_token of the previous \\[DataLabelingService.ListAnnotationSpecSets\\] call. Return first page if empty."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -10372,12 +10372,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10886,12 +10886,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11050,12 +11050,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11211,12 +11211,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11375,12 +11375,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11538,12 +11538,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11685,7 +11685,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListDatasetsResponse.next_page_token of the previous [DataLabelingService.ListDatasets] call. Returns the first page if empty."]
+                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListDatasetsResponse.next_page_token of the previous \\[DataLabelingService.ListDatasets\\] call. Returns the first page if empty."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -11720,12 +11720,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -12140,12 +12140,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12302,12 +12302,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12451,7 +12451,7 @@ pub mod resources {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListAnnotatedDatasetsResponse.next_page_token of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return first page if empty."]
+                    #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListAnnotatedDatasetsResponse.next_page_token of the previous \\[DataLabelingService.ListAnnotatedDatasets\\] call. Return first page if empty."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
@@ -12486,12 +12486,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12866,12 +12866,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13017,7 +13017,7 @@ pub mod resources {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListDataItemsResponse.next_page_token of the previous [DataLabelingService.ListDataItems] call. Return first page if empty."]
+                        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListDataItemsResponse.next_page_token of the previous \\[DataLabelingService.ListDataItems\\] call. Return first page if empty."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
                             self
@@ -13052,12 +13052,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13424,7 +13424,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> GetRequestBuilder<'a> {
-                        #[doc = "Optional. An expression for filtering Examples. Filter by annotation_spec.display_name is supported. Format \"annotation_spec.display_name = {display_name}\""]
+                        #[doc = "Optional. An expression for filtering Examples. Filter by annotation_spec.display_name is supported. Format “annotation_spec.display_name = {display_name}”"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -13459,12 +13459,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -13601,7 +13601,7 @@ pub mod resources {
                         xgafv: ::std::option::Option<crate::params::Xgafv>,
                     }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Optional. An expression for filtering Examples. For annotated datasets that have annotation spec set, filter by annotation_spec.display_name is supported. Format \"annotation_spec.display_name = {display_name}\""]
+                        #[doc = "Optional. An expression for filtering Examples. For annotated datasets that have annotation spec set, filter by annotation_spec.display_name is supported. Format “annotation_spec.display_name = {display_name}”"]
                         pub fn filter(mut self, value: impl Into<String>) -> Self {
                             self.filter = Some(value.into());
                             self
@@ -13611,7 +13611,7 @@ pub mod resources {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListExamplesResponse.next_page_token of the previous [DataLabelingService.ListExamples] call. Return first page if empty."]
+                        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListExamplesResponse.next_page_token of the previous \\[DataLabelingService.ListExamples\\] call. Return first page if empty."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
                             self
@@ -13646,12 +13646,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14066,12 +14066,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14230,12 +14230,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14375,7 +14375,7 @@ pub mod resources {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListFeedbackThreads.next_page_token of the previous [DataLabelingService.ListFeedbackThreads] call. Return first page if empty."]
+                        #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListFeedbackThreads.next_page_token of the previous \\[DataLabelingService.ListFeedbackThreads\\] call. Return first page if empty."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
                             self
@@ -14410,12 +14410,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -14823,12 +14823,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -14989,12 +14989,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -15153,12 +15153,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -15298,7 +15298,7 @@ pub mod resources {
                                 self.page_size = Some(value);
                                 self
                             }
-                            #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListFeedbackMessages.next_page_token of the previous [DataLabelingService.ListFeedbackMessages] call. Return first page if empty."]
+                            #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListFeedbackMessages.next_page_token of the previous \\[DataLabelingService.ListFeedbackMessages\\] call. Return first page if empty."]
                             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                                 self.page_token = Some(value.into());
                                 self
@@ -15333,12 +15333,12 @@ pub mod resources {
                                 self.quota_user = Some(value.into());
                                 self
                             }
-                            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                                 self.upload_protocol = Some(value.into());
                                 self
                             }
-                            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                                 self.upload_type = Some(value.into());
                                 self
@@ -15706,12 +15706,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15851,7 +15851,7 @@ pub mod resources {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListDataItemsResponse.next_page_token of the previous [DataLabelingService.ListDataItems] call. Return first page if empty."]
+                    #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListDataItemsResponse.next_page_token of the previous \\[DataLabelingService.ListDataItems\\] call. Return first page if empty."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
@@ -15886,12 +15886,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16263,12 +16263,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16449,12 +16449,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -16645,12 +16645,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16846,12 +16846,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -17047,12 +17047,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -17258,7 +17258,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Updates an evaluation job. You can only update certain fields of the job's EvaluationJobConfig: `humanAnnotationConfig.instruction`, `exampleCount`, and `exampleSamplePercentage`. If you want to change any other aspect of the evaluation job, you must delete the job and create a new one."]
+                #[doc = "Updates an evaluation job. You can only update certain fields of the job’s EvaluationJobConfig: `humanAnnotationConfig.instruction`, `exampleCount`, and `exampleSamplePercentage`. If you want to change any other aspect of the evaluation job, you must delete the job and create a new one."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::GoogleCloudDatalabelingV1Beta1EvaluationJob,
@@ -17307,7 +17307,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Resumes a paused evaluation job. A deleted evaluation job can't be resumed. Resuming a running or scheduled evaluation job is a no-op."]
+                #[doc = "Resumes a paused evaluation job. A deleted evaluation job can’t be resumed. Resuming a running or scheduled evaluation job is a no-op."]
                 pub fn resume(
                     &self,
                     request : crate :: schemas :: GoogleCloudDatalabelingV1Beta1ResumeEvaluationJobRequest,
@@ -17382,12 +17382,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17546,12 +17546,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17706,12 +17706,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17841,7 +17841,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. You can filter the jobs to list by model_id (also known as model_name, as described in EvaluationJob.modelVersion) or by evaluation job state (as described in EvaluationJob.state). To filter by both criteria, use the `AND` operator or the `OR` operator. For example, you can use the following string for your filter: \"evaluation_job.model_id = {model_name} AND evaluation_job.state = {evaluation_job_state}\""]
+                #[doc = "Optional. You can filter the jobs to list by model_id (also known as model_name, as described in EvaluationJob.modelVersion) or by evaluation job state (as described in EvaluationJob.state). To filter by both criteria, use the `AND` operator or the `OR` operator. For example, you can use the following string for your filter: “evaluation_job.model_id = {model_name} AND evaluation_job.state = {evaluation_job_state}”"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -17886,12 +17886,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -18233,12 +18233,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -18398,12 +18398,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -18561,12 +18561,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -18730,7 +18730,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> SearchRequestBuilder<'a> {
-                #[doc = "Optional. To search evaluations, you can filter by the following: * evaluation_job.evaluation_job_id (the last part of EvaluationJob.name) * evaluation_job.model_id (the {model_name} portion of EvaluationJob.modelVersion) * evaluation_job.evaluation_job_run_time_start (Minimum threshold for the evaluationJobRunTime that created the evaluation) * evaluation_job.evaluation_job_run_time_end (Maximum threshold for the evaluationJobRunTime that created the evaluation) * evaluation_job.job_state (EvaluationJob.state) * annotation_spec.display_name (the Evaluation contains a metric for the annotation spec with this displayName) To filter by multiple critiera, use the `AND` operator or the `OR` operator. The following examples shows a string that filters by several critiera: \"evaluation_job.evaluation_job_id = {evaluation_job_id} AND evaluation_job.model_id = {model_name} AND evaluation_job.evaluation_job_run_time_start = {timestamp_1} AND evaluation_job.evaluation_job_run_time_end = {timestamp_2} AND annotation_spec.display_name = {display_name}\""]
+                #[doc = "Optional. To search evaluations, you can filter by the following: * evaluation_job.evaluation_job_id (the last part of EvaluationJob.name) * evaluation_job.model_id (the {model_name} portion of EvaluationJob.modelVersion) * evaluation_job.evaluation_job_run_time_start (Minimum threshold for the evaluationJobRunTime that created the evaluation) * evaluation_job.evaluation_job_run_time_end (Maximum threshold for the evaluationJobRunTime that created the evaluation) * evaluation_job.job_state (EvaluationJob.state) * annotation_spec.display_name (the Evaluation contains a metric for the annotation spec with this displayName) To filter by multiple critiera, use the `AND` operator or the `OR` operator. The following examples shows a string that filters by several critiera: “evaluation_job.evaluation_job_id = {evaluation_job_id} AND evaluation_job.model_id = {model_name} AND evaluation_job.evaluation_job_run_time_start = {timestamp_1} AND evaluation_job.evaluation_job_run_time_end = {timestamp_2} AND annotation_spec.display_name = {display_name}”"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -18740,7 +18740,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search request. If you don't specify this field, the API call requests the first page of the search."]
+                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search request. If you don’t specify this field, the API call requests the first page of the search."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -18775,12 +18775,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19212,12 +19212,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19376,12 +19376,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19536,12 +19536,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19681,7 +19681,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListInstructionsResponse.next_page_token of the previous [DataLabelingService.ListInstructions] call. Return first page if empty."]
+                #[doc = "Optional. A token identifying a page of results for the server to return. Typically obtained by ListInstructionsResponse.next_page_token of the previous \\[DataLabelingService.ListInstructions\\] call. Return first page if empty."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -19716,12 +19716,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -20018,7 +20018,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+                #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
                 pub fn cancel(&self, name: impl Into<String>) -> CancelRequestBuilder {
                     CancelRequestBuilder {
                         reqwest: &self.reqwest,
@@ -20037,7 +20037,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."]
+                #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -20075,7 +20075,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -20147,12 +20147,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -20308,12 +20308,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -20468,12 +20468,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -20648,12 +20648,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

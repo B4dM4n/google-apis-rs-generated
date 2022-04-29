@@ -40,14 +40,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub captcha_required: ::std::option::Option<bool>,
-        #[doc = "True if the authUri is for user's existing provider."]
+        #[doc = "True if the authUri is for user’s existing provider."]
         #[serde(
             rename = "forExistingProvider",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub for_existing_provider: ::std::option::Option<bool>,
-        #[doc = "The fixed string identitytoolkit#CreateAuthUriResponse\"."]
+        #[doc = "The fixed string identitytoolkit#CreateAuthUriResponse“."]
         #[serde(
             rename = "kind",
             default,
@@ -106,7 +106,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DeleteAccountResponse {
-        #[doc = "The fixed string \"identitytoolkit#DeleteAccountResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#DeleteAccountResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -128,7 +128,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct DownloadAccountResponse {
-        #[doc = "The fixed string \"identitytoolkit#DownloadAccountResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#DownloadAccountResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -178,7 +178,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EmailLinkSigninResponse {
-        #[doc = "The user's email."]
+        #[doc = "The user’s email."]
         #[serde(
             rename = "email",
             default,
@@ -207,7 +207,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_new_user: ::std::option::Option<bool>,
-        #[doc = "The fixed string \"identitytoolkit#EmailLinkSigninResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#EmailLinkSigninResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -309,7 +309,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GetAccountInfoResponse {
-        #[doc = "The fixed string \"identitytoolkit#GetAccountInfoResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#GetAccountInfoResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -354,7 +354,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The fixed string \"identitytoolkit#GetOobConfirmationCodeResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#GetOobConfirmationCodeResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -392,7 +392,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GetRecaptchaParamResponse {
-        #[doc = "The fixed string \"identitytoolkit#GetRecaptchaParamResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#GetRecaptchaParamResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -444,7 +444,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_id: ::std::option::Option<String>,
-        #[doc = "Explicitly specify the auth flow type. Currently only support \"CODE_FLOW\" type. The field is only used for Google provider."]
+        #[doc = "Explicitly specify the auth flow type. Currently only support “CODE_FLOW” type. The field is only used for Google provider."]
         #[serde(
             rename = "authFlowType",
             default,
@@ -493,7 +493,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub identifier: ::std::option::Option<String>,
-        #[doc = "The developer's consumer key for OpenId OAuth Extension"]
+        #[doc = "The developer’s consumer key for OpenId OAuth Extension"]
         #[serde(
             rename = "oauthConsumerKey",
             default,
@@ -507,7 +507,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oauth_scope: ::std::option::Option<String>,
-        #[doc = "Optional realm for OpenID protocol. The sub string \"scheme://domain:port\" of the param \"continueUri\" is used if this is not set."]
+        #[doc = "Optional realm for OpenID protocol. The sub string “scheme://domain:port” of the param “continueUri” is used if this is not set."]
         #[serde(
             rename = "openidRealm",
             default,
@@ -521,7 +521,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ota_app: ::std::option::Option<String>,
-        #[doc = "The IdP ID. For white listed IdPs it's a short domain name e.g. google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier."]
+        #[doc = "The IdP ID. For white listed IdPs it’s a short domain name e.g. google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it’s the OP identifier."]
         #[serde(
             rename = "providerId",
             default,
@@ -745,7 +745,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "The list of local ID's of the users to inquiry."]
+        #[doc = "The list of local ID’s of the users to inquiry."]
         #[serde(
             rename = "localId",
             default,
@@ -1059,7 +1059,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub created_at: ::std::option::Option<i64>,
-        #[doc = "The custom attributes to be set in the user's id token."]
+        #[doc = "The custom attributes to be set in the user’s id token."]
         #[serde(
             rename = "customAttributes",
             default,
@@ -1664,7 +1664,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct IdentitytoolkitRelyingpartyVerifyAssertionRequest {
-        #[doc = "When it's true, automatically creates a new account if the user doesn't exist. When it's false, allows existing user to sign in normally and throws exception if the user doesn't exist."]
+        #[doc = "When it’s true, automatically creates a new account if the user doesn’t exist. When it’s false, allows existing user to sign in normally and throws exception if the user doesn’t exist."]
         #[serde(
             rename = "autoCreate",
             default,
@@ -2219,7 +2219,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "iOS app store id to download the app if it's not already installed"]
+        #[doc = "iOS app store id to download the app if it’s not already installed"]
         #[serde(
             rename = "iOSAppStoreId",
             default,
@@ -2233,14 +2233,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub i_os_bundle_id: ::std::option::Option<String>,
-        #[doc = "The user's Gitkit login token for email change."]
+        #[doc = "The user’s Gitkit login token for email change."]
         #[serde(
             rename = "idToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "The fixed string \"identitytoolkit#relyingparty\"."]
+        #[doc = "The fixed string “identitytoolkit#relyingparty”."]
         #[serde(
             rename = "kind",
             default,
@@ -2292,21 +2292,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResetPasswordResponse {
-        #[doc = "The user's email. If the out-of-band code is for email recovery, the user's original email."]
+        #[doc = "The user’s email. If the out-of-band code is for email recovery, the user’s original email."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The fixed string \"identitytoolkit#ResetPasswordResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#ResetPasswordResponse”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "If the out-of-band code is for email recovery, the user's new email."]
+        #[doc = "If the out-of-band code is for email recovery, the user’s new email."]
         #[serde(
             rename = "newEmail",
             default,
@@ -2380,7 +2380,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "The fixed string \"identitytoolkit#SetAccountInfoResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#SetAccountInfoResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2401,7 +2401,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub new_email: ::std::option::Option<String>,
-        #[doc = "The user's hashed password."]
+        #[doc = "The user’s hashed password."]
         #[serde(
             rename = "passwordHash",
             default,
@@ -2415,7 +2415,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_url: ::std::option::Option<String>,
-        #[doc = "The user's profiles at the associated IdPs."]
+        #[doc = "The user’s profiles at the associated IdPs."]
         #[serde(
             rename = "providerUserInfo",
             default,
@@ -2454,28 +2454,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SetAccountInfoResponseProviderUserInfoItems {
-        #[doc = "The user's display name at the IDP."]
+        #[doc = "The user’s display name at the IDP."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "User's identifier at IDP."]
+        #[doc = "User’s identifier at IDP."]
         #[serde(
             rename = "federatedId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub federated_id: ::std::option::Option<String>,
-        #[doc = "The user's photo url at the IDP."]
+        #[doc = "The user’s photo url at the IDP."]
         #[serde(
             rename = "photoUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_url: ::std::option::Option<String>,
-        #[doc = "The IdP ID. For whitelisted IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier."]
+        #[doc = "The IdP ID. For whitelisted IdPs it’s a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it’s the OP identifier."]
         #[serde(
             rename = "providerId",
             default,
@@ -2535,7 +2535,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "The fixed string \"identitytoolkit#SignupNewUserResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#SignupNewUserResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2587,7 +2587,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error: ::std::option::Option<Vec<crate::schemas::UploadAccountResponseErrorItems>>,
-        #[doc = "The fixed string \"identitytoolkit#UploadAccountResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#UploadAccountResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2655,7 +2655,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub created_at: ::std::option::Option<i64>,
-        #[doc = "The custom attributes to be set in the user's id token."]
+        #[doc = "The custom attributes to be set in the user’s id token."]
         #[serde(
             rename = "customAttributes",
             default,
@@ -2712,7 +2712,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub local_id: ::std::option::Option<String>,
-        #[doc = "The user's hashed password."]
+        #[doc = "The user’s hashed password."]
         #[serde(
             rename = "passwordHash",
             default,
@@ -2726,7 +2726,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password_updated_at: ::std::option::Option<f64>,
-        #[doc = "User's phone number."]
+        #[doc = "User’s phone number."]
         #[serde(
             rename = "phoneNumber",
             default,
@@ -2748,21 +2748,21 @@ pub mod schemas {
         )]
         pub provider_user_info:
             ::std::option::Option<Vec<crate::schemas::UserInfoProviderUserInfoItems>>,
-        #[doc = "The user's plain text password."]
+        #[doc = "The user’s plain text password."]
         #[serde(
             rename = "rawPassword",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub raw_password: ::std::option::Option<String>,
-        #[doc = "The user's password salt."]
+        #[doc = "The user’s password salt."]
         #[serde(
             rename = "salt",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub salt: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "User's screen name at Twitter or login name at Github."]
+        #[doc = "User’s screen name at Twitter or login name at Github."]
         #[serde(
             rename = "screenName",
             default,
@@ -2777,7 +2777,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub valid_since: ::std::option::Option<i64>,
-        #[doc = "Version of the user's password."]
+        #[doc = "Version of the user’s password."]
         #[serde(
             rename = "version",
             default,
@@ -2808,56 +2808,56 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserInfoProviderUserInfoItems {
-        #[doc = "The user's display name at the IDP."]
+        #[doc = "The user’s display name at the IDP."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "User's email at IDP."]
+        #[doc = "User’s email at IDP."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "User's identifier at IDP."]
+        #[doc = "User’s identifier at IDP."]
         #[serde(
             rename = "federatedId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub federated_id: ::std::option::Option<String>,
-        #[doc = "User's phone number."]
+        #[doc = "User’s phone number."]
         #[serde(
             rename = "phoneNumber",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub phone_number: ::std::option::Option<String>,
-        #[doc = "The user's photo url at the IDP."]
+        #[doc = "The user’s photo url at the IDP."]
         #[serde(
             rename = "photoUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_url: ::std::option::Option<String>,
-        #[doc = "The IdP ID. For white listed IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier."]
+        #[doc = "The IdP ID. For white listed IdPs it’s a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it’s the OP identifier."]
         #[serde(
             rename = "providerId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub provider_id: ::std::option::Option<String>,
-        #[doc = "User's raw identifier directly returned from IDP."]
+        #[doc = "User’s raw identifier directly returned from IDP."]
         #[serde(
             rename = "rawId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub raw_id: ::std::option::Option<String>,
-        #[doc = "User's screen name at Twitter or login name at Github."]
+        #[doc = "User’s screen name at Twitter or login name at Github."]
         #[serde(
             rename = "screenName",
             default,
@@ -2937,7 +2937,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "It's true if the email is recycled."]
+        #[doc = "It’s true if the email is recycled."]
         #[serde(
             rename = "emailRecycled",
             default,
@@ -2994,21 +2994,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "It's the identifier param in the createAuthUri request if the identifier is an email. It can be used to check whether the user input email is different from the asserted email."]
+        #[doc = "It’s the identifier param in the createAuthUri request if the identifier is an email. It can be used to check whether the user input email is different from the asserted email."]
         #[serde(
             rename = "inputEmail",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_email: ::std::option::Option<String>,
-        #[doc = "True if it's a new user sign-in, false if it's a returning user."]
+        #[doc = "True if it’s a new user sign-in, false if it’s a returning user."]
         #[serde(
             rename = "isNewUser",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_new_user: ::std::option::Option<bool>,
-        #[doc = "The fixed string \"identitytoolkit#VerifyAssertionResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#VerifyAssertionResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3029,7 +3029,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_name: ::std::option::Option<String>,
-        #[doc = "The RP local ID if it's already been mapped to the IdP account identified by the federated ID."]
+        #[doc = "The RP local ID if it’s already been mapped to the IdP account identified by the federated ID."]
         #[serde(
             rename = "localId",
             default,
@@ -3106,7 +3106,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oauth_token_secret: ::std::option::Option<String>,
-        #[doc = "The original email stored in the mapping storage. It's returned when the federated ID is associated to a different email."]
+        #[doc = "The original email stored in the mapping storage. It’s returned when the federated ID is associated to a different email."]
         #[serde(
             rename = "originalEmail",
             default,
@@ -3120,7 +3120,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_url: ::std::option::Option<String>,
-        #[doc = "The IdP ID. For white listed IdPs it's a short domain name e.g. google.com, aol.com, live.net and yahoo.com. If the \"providerId\" param is set to OpenID OP identifer other than the whilte listed IdPs the OP identifier is returned. If the \"identifier\" param is federated ID in the createAuthUri request. The domain part of the federated ID is returned."]
+        #[doc = "The IdP ID. For white listed IdPs it’s a short domain name e.g. google.com, aol.com, live.net and yahoo.com. If the “providerId” param is set to OpenID OP identifer other than the whilte listed IdPs the OP identifier is returned. If the “identifier” param is federated ID in the createAuthUri request. The domain part of the federated ID is returned."]
         #[serde(
             rename = "providerId",
             default,
@@ -3155,7 +3155,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_zone: ::std::option::Option<String>,
-        #[doc = "When action is 'map', contains the idps which can be used for confirmation."]
+        #[doc = "When action is ‘map’, contains the idps which can be used for confirmation."]
         #[serde(
             rename = "verifiedProvider",
             default,
@@ -3201,14 +3201,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "True if it's a new user sign-in, false if it's a returning user."]
+        #[doc = "True if it’s a new user sign-in, false if it’s a returning user."]
         #[serde(
             rename = "isNewUser",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_new_user: ::std::option::Option<bool>,
-        #[doc = "The fixed string \"identitytoolkit#VerifyCustomTokenResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#VerifyCustomTokenResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3275,14 +3275,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_token: ::std::option::Option<String>,
-        #[doc = "The fixed string \"identitytoolkit#VerifyPasswordResponse\"."]
+        #[doc = "The fixed string “identitytoolkit#VerifyPasswordResponse”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The RP local ID if it's already been mapped to the IdP account identified by the federated ID."]
+        #[doc = "The RP local ID if it’s already been mapped to the IdP account identified by the federated ID."]
         #[serde(
             rename = "localId",
             default,
@@ -3310,7 +3310,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub oauth_expire_in: ::std::option::Option<i32>,
-        #[doc = "The URI of the user's photo at IdP"]
+        #[doc = "The URI of the user’s photo at IdP"]
         #[serde(
             rename = "photoUrl",
             default,

@@ -114,21 +114,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dynamic_link_info: ::std::option::Option<crate::schemas::DynamicLinkInfo>,
-        #[doc = "Full long Dynamic Link URL with desired query parameters specified. For example, \"https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample\", [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener)."]
+        #[doc = "Full long Dynamic Link URL with desired query parameters specified. For example, “https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample”, [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener)."]
         #[serde(
             rename = "longDynamicLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub long_dynamic_link: ::std::option::Option<String>,
-        #[doc = "Link name to associate with the link. It's used for marketer to identify manually-created links in the Firebase console (https://console.firebase.google.com/). Links must be named to be tracked."]
+        #[doc = "Link name to associate with the link. It’s used for marketer to identify manually-created links in the Firebase console (https://console.firebase.google.com/). Links must be named to be tracked."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Google SDK version. Version takes the form \"$major.$minor.$patch\""]
+        #[doc = "Google SDK version. Version takes the form “$major.$minor.$patch”"]
         #[serde(
             rename = "sdkVersion",
             default,
@@ -218,14 +218,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dynamic_link_info: ::std::option::Option<crate::schemas::DynamicLinkInfo>,
-        #[doc = "Full long Dynamic Link URL with desired query parameters specified. For example, \"https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample\", [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener)."]
+        #[doc = "Full long Dynamic Link URL with desired query parameters specified. For example, “https://sample.app.goo.gl/?link=http://www.google.com&apn=com.sample”, [Learn more](https://firebase.google.com/docs/reference/dynamic-links/link-shortener)."]
         #[serde(
             rename = "longDynamicLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub long_dynamic_link: ::std::option::Option<String>,
-        #[doc = "Google SDK version. Version takes the form \"$major.$minor.$patch\""]
+        #[doc = "Google SDK version. Version takes the form “$major.$minor.$patch”"]
         #[serde(
             rename = "sdkVersion",
             default,
@@ -451,7 +451,7 @@ pub mod schemas {
     pub enum DynamicLinkEventStatEvent {
         #[doc = "Indicates that the app is opened for the first time after an install triggered by FDLs"]
         AppFirstOpen,
-        #[doc = "Indicates that an FDL triggers an app install from Play store, currently it's impossible to get stats from App store."]
+        #[doc = "Indicates that an FDL triggers an app install from Play store, currently it’s impossible to get stats from App store."]
         AppInstall,
         #[doc = "Indicates that the app is opened via an FDL for non-first time."]
         AppReOpen,
@@ -691,7 +691,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ios_info: ::std::option::Option<crate::schemas::IosInfo>,
-        #[doc = "The link your app will open, You can specify any URL your app can handle. This link must be a well-formatted URL, be properly URL-encoded, and use the HTTP or HTTPS scheme. See 'link' parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Required."]
+        #[doc = "The link your app will open, You can specify any URL your app can handle. This link must be a well-formatted URL, be properly URL-encoded, and use the HTTP or HTTPS scheme. See ‘link’ parameters in the [documentation](https://firebase.google.com/docs/dynamic-links/create-manually). Required."]
         #[serde(
             rename = "link",
             default,
@@ -822,11 +822,11 @@ pub mod schemas {
         LinkLengthTooLong,
         #[doc = "Dynamic Link URL contains fragments."]
         LinkWithFragments,
-        #[doc = "The Android package does not match any in developer's DevConsole project."]
+        #[doc = "The Android package does not match any in developer’s DevConsole project."]
         NotInProjectAndroidPackageName,
-        #[doc = "The iOS bundle ID does not match any in developer's DevConsole project."]
+        #[doc = "The iOS bundle ID does not match any in developer’s DevConsole project."]
         NotInProjectIosBundleId,
-        #[doc = "The iPad bundle ID does not match any in developer's DevConsole project."]
+        #[doc = "The iPad bundle ID does not match any in developer’s DevConsole project."]
         NotInProjectIpadBundleId,
         #[doc = "The Android minimum version code has to be a valid integer."]
         NotIntegerAndroidPackageMinVersion,
@@ -847,13 +847,13 @@ pub mod schemas {
         NotUriSocialUrl,
         #[doc = "Indicates certain paramater is too long."]
         TooLongParam,
-        #[doc = "Android link param is not needed, e.g. when param 'al' and 'link' have the same value.."]
+        #[doc = "Android link param is not needed, e.g. when param ‘al’ and ‘link’ have the same value.."]
         UnnecessaryAndroidLink,
-        #[doc = "Android package min version param is not needed, e.g. when 'apn' is missing."]
+        #[doc = "Android package min version param is not needed, e.g. when ‘apn’ is missing."]
         UnnecessaryAndroidPackageMinVersion,
         #[doc = "iOS app store ID is not needed."]
         UnnecessaryIosAppStoreId,
-        #[doc = "iOS URL scheme is not needed, e.g. when 'ibi' are 'ipbi' are all missing."]
+        #[doc = "iOS URL scheme is not needed, e.g. when ‘ibi’ are ‘ipbi’ are all missing."]
         UnnecessaryIosUrlScheme,
         #[doc = "Indicates certain paramater is not recognized."]
         UnrecognizedParam,
@@ -1128,7 +1128,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device: ::std::option::Option<crate::schemas::DeviceInfo>,
-        #[doc = "iOS version, ie: 9.3.5. Consider adding \"build\"."]
+        #[doc = "iOS version, ie: 9.3.5. Consider adding “build”."]
         #[serde(
             rename = "iosVersion",
             default,
@@ -1144,7 +1144,7 @@ pub mod schemas {
         pub retrieval_method: ::std::option::Option<
             crate::schemas::GetIosPostInstallAttributionRequestRetrievalMethod,
         >,
-        #[doc = "Google SDK version. Version takes the form \"$major.$minor.$patch\""]
+        #[doc = "Google SDK version. Version takes the form “$major.$minor.$patch”"]
         #[serde(
             rename = "sdkVersion",
             default,
@@ -1386,7 +1386,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_strong_match_executable: ::std::option::Option<bool>,
-        #[doc = "Describes why match failed, ie: \"discarded due to low confidence\". This message will be publicly visible."]
+        #[doc = "Describes why match failed, ie: “discarded due to low confidence”. This message will be publicly visible."]
         #[serde(
             rename = "matchMessage",
             default,
@@ -1409,7 +1409,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub requested_link: ::std::option::Option<String>,
-        #[doc = "The entire FDL, expanded from a short link. It is the same as the requested_link, if it is long. Parameters from this should not be used directly (ie: server can default utm_[campaign|medium|source] to a value when requested_link lack them, server determine the best fallback_link when requested_link specifies >1 fallback links)."]
+        #[doc = "The entire FDL, expanded from a short link. It is the same as the requested_link, if it is long. Parameters from this should not be used directly (ie: server can default utm\\_\\[campaign|medium|source\\] to a value when requested_link lack them, server determine the best fallback_link when requested_link specifies >1 fallback links)."]
         #[serde(
             rename = "resolvedLink",
             default,
@@ -1466,7 +1466,7 @@ pub mod schemas {
     pub enum GetIosPostInstallAttributionResponseAttributionConfidence {
         #[doc = "Default confidence, match based on fingerprint"]
         Default,
-        #[doc = "Unique confidence, match based on \"unique match link to check\" or other means"]
+        #[doc = "Unique confidence, match based on “unique match link to check” or other means"]
         Unique,
         #[doc = "Unset."]
         UnknownAttributionConfidence,
@@ -1642,7 +1642,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub requested_link: ::std::option::Option<String>,
-        #[doc = "Google SDK version. Version takes the form \"$major.$minor.$patch\""]
+        #[doc = "Google SDK version. Version takes the form “$major.$minor.$patch”"]
         #[serde(
             rename = "sdkVersion",
             default,
@@ -1687,7 +1687,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invitation_id: ::std::option::Option<String>,
-        #[doc = "FDL input value of the \"&imv=\" parameter, minimum app version to be returned to Google Firebase SDK running on iOS-9."]
+        #[doc = "FDL input value of the “&imv=” parameter, minimum app version to be returned to Google Firebase SDK running on iOS-9."]
         #[serde(
             rename = "iosMinAppVersion",
             default,
@@ -1973,7 +1973,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub info: ::std::option::Option<crate::schemas::DynamicLinkInfo>,
-        #[doc = "Short durable link url, for example, \"https://sample.app.goo.gl/xyz123\". Required."]
+        #[doc = "Short durable link url, for example, “https://sample.app.goo.gl/xyz123”. Required."]
         #[serde(
             rename = "link",
             default,
@@ -2279,13 +2279,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum SuffixOption {
-        #[doc = "Custom DDL suffix is a client specified string, for example, \"buy2get1free\". NOTE: custom suffix should only be available to managed short link creation"]
+        #[doc = "Custom DDL suffix is a client specified string, for example, “buy2get1free”. NOTE: custom suffix should only be available to managed short link creation"]
         Custom,
         #[doc = "The suffix option is not specified, performs as UNGUESSABLE ."]
         OptionUnspecified,
-        #[doc = "Short Dynamic Link suffix is a base62 [0-9A-Za-z] string starting with a length of 4 chars. the length will increase when all the space is occupied."]
+        #[doc = "Short Dynamic Link suffix is a base62 \\[0-9A-Za-z\\] string starting with a length of 4 chars. the length will increase when all the space is occupied."]
         Short,
-        #[doc = "Short Dynamic Link suffix is a base62 [0-9A-Za-z] encoded string of a random generated 96 bit random number, which has a length of 17 chars. For example, \"nlAR8U4SlKRZw1cb2\". It prevents other people from guessing and crawling short Dynamic Links that contain personal identifiable information."]
+        #[doc = "Short Dynamic Link suffix is a base62 \\[0-9A-Za-z\\] encoded string of a random generated 96 bit random number, which has a length of 17 chars. For example, “nlAR8U4SlKRZw1cb2”. It prevents other people from guessing and crawling short Dynamic Links that contain personal identifiable information."]
         Unguessable,
     }
     impl SuffixOption {
@@ -2566,7 +2566,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Creates a managed short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire. This differs from CreateShortDynamicLink in the following ways: - The request will also contain a name for the link (non unique name for the front end). - The response must be authenticated with an auth token (generated with the admin service account). - The link will appear in the FDL list of links in the console front end. The Dynamic Link domain in the request must be owned by requester's Firebase project."]
+            #[doc = "Creates a managed short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire. This differs from CreateShortDynamicLink in the following ways: - The request will also contain a name for the link (non unique name for the front end). - The response must be authenticated with an auth token (generated with the admin service account). - The link will appear in the FDL list of links in the console front end. The Dynamic Link domain in the request must be owned by requester’s Firebase project."]
             pub fn create(
                 &self,
                 request: crate::schemas::CreateManagedShortLinkRequest,
@@ -2638,12 +2638,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2754,7 +2754,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Creates a short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire. Repeated calls with the same long Dynamic Link or Dynamic Link information will produce the same short Dynamic Link. The Dynamic Link domain in the request must be owned by requester's Firebase project."]
+            #[doc = "Creates a short Dynamic Link given either a valid long Dynamic Link or details such as Dynamic Link domain, Android and iOS app information. The created short Dynamic Link will not expire. Repeated calls with the same long Dynamic Link or Dynamic Link information will produce the same short Dynamic Link. The Dynamic Link domain in the request must be owned by requester’s Firebase project."]
             pub fn create(
                 &self,
                 request: crate::schemas::CreateShortDynamicLinkRequest,
@@ -2826,12 +2826,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3037,7 +3037,7 @@ pub mod resources {
                 self.duration_days = Some(value);
                 self
             }
-            #[doc = "Google SDK version. Version takes the form \"$major.$minor.$patch\""]
+            #[doc = "Google SDK version. Version takes the form “$major.$minor.$patch”"]
             pub fn sdk_version(mut self, value: impl Into<String>) -> Self {
                 self.sdk_version = Some(value.into());
                 self
@@ -3072,12 +3072,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3235,12 +3235,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3391,12 +3391,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

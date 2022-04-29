@@ -54,7 +54,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<u64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#account`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#account`”"]
         #[serde(
             rename = "kind",
             default,
@@ -68,7 +68,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[DEPRECATED] This field is never returned and will be ignored if provided."]
+        #[doc = "\\[DEPRECATED\\] This field is never returned and will be ignored if provided."]
         #[serde(
             rename = "reviewsUrl",
             default,
@@ -89,7 +89,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub users: ::std::option::Option<Vec<crate::schemas::AccountUser>>,
-        #[doc = "The merchant's website."]
+        #[doc = "The merchant’s website."]
         #[serde(
             rename = "websiteUrl",
             default,
@@ -128,7 +128,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountAddress {
-        #[doc = "CLDR country code (e.g. \"US\"). This value cannot be set for a sub-account of an MCA. All MCA sub-accounts inherit the country of their parent MCA."]
+        #[doc = "CLDR country code (e.g. “US”). This value cannot be set for a sub-account of an MCA. All MCA sub-accounts inherit the country of their parent MCA."]
         #[serde(
             rename = "country",
             default,
@@ -142,14 +142,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locality: ::std::option::Option<String>,
-        #[doc = "Postal code or ZIP (e.g. \"94043\")."]
+        #[doc = "Postal code or ZIP (e.g. “94043”)."]
         #[serde(
             rename = "postalCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code: ::std::option::Option<String>,
-        #[doc = "Top-level administrative subdivision of the country. For example, a state like California (\"CA\") or a province like Quebec (\"QC\")."]
+        #[doc = "Top-level administrative subdivision of the country. For example, a state like California (“CA”) or a province like Quebec (“QC”)."]
         #[serde(
             rename = "region",
             default,
@@ -195,7 +195,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub adwords_id: ::std::option::Option<u64>,
-        #[doc = "Status of the link between this Merchant Center account and the AdWords account. Upon retrieval, it represents the actual status of the link and can be either `active` if it was approved in Google AdWords or `pending` if it's pending approval. Upon insertion, it represents the *intended* status of the link. Re-uploading a link with status `active` when it's still pending or with status `pending` when it's already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status `inactive` is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending. Acceptable values are: - \"`active`\" - \"`pending`\" "]
+        #[doc = "Status of the link between this Merchant Center account and the AdWords account. Upon retrieval, it represents the actual status of the link and can be either `active` if it was approved in Google AdWords or `pending` if it’s pending approval. Upon insertion, it represents the *intended* status of the link. Re-uploading a link with status `active` when it’s still pending or with status `pending` when it’s already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status `inactive` is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending. Acceptable values are: - “`active`” - “`pending`” "]
         #[serde(
             rename = "status",
             default,
@@ -330,7 +330,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gmb_email: ::std::option::Option<String>,
-        #[doc = "Status of the link between this Merchant Center account and the GMB account. Acceptable values are: - \"`active`\" - \"`pending`\" "]
+        #[doc = "Status of the link between this Merchant Center account and the GMB account. Acceptable values are: - “`active`” - “`pending`” "]
         #[serde(
             rename = "status",
             default,
@@ -424,7 +424,7 @@ pub mod schemas {
         )]
         pub data_quality_issues:
             ::std::option::Option<Vec<crate::schemas::AccountStatusDataQualityIssue>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#accountStatus`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#accountStatus`”"]
         #[serde(
             rename = "kind",
             default,
@@ -438,7 +438,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub products: ::std::option::Option<Vec<crate::schemas::AccountStatusProducts>>,
-        #[doc = "Whether the account's website is claimed or not."]
+        #[doc = "Whether the account’s website is claimed or not."]
         #[serde(
             rename = "websiteClaimed",
             default,
@@ -504,7 +504,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Severity of the issue. Acceptable values are: - \"`critical`\" - \"`error`\" - \"`suggestion`\" "]
+        #[doc = "Severity of the issue. Acceptable values are: - “`critical`” - “`error`” - “`suggestion`” "]
         #[serde(
             rename = "severity",
             default,
@@ -596,7 +596,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub num_items: ::std::option::Option<u32>,
-        #[doc = "Acceptable values are: - \"`critical`\" - \"`error`\" - \"`suggestion`\" "]
+        #[doc = "Acceptable values are: - “`critical`” - “`error`” - “`suggestion`” "]
         #[serde(
             rename = "severity",
             default,
@@ -687,7 +687,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountStatusItemLevelIssue {
-        #[doc = "The attribute's name, if the issue is caused by a single attribute."]
+        #[doc = "The attribute’s name, if the issue is caused by a single attribute."]
         #[serde(
             rename = "attributeName",
             default,
@@ -768,7 +768,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountStatusProducts {
-        #[doc = "The channel the data applies to. Acceptable values are: - \"`local`\" - \"`online`\" "]
+        #[doc = "The channel the data applies to. Acceptable values are: - “`local`” - “`online`” "]
         #[serde(
             rename = "channel",
             default,
@@ -892,7 +892,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub account_id: ::std::option::Option<u64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountTax\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountTax”."]
         #[serde(
             rename = "kind",
             default,
@@ -997,7 +997,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub admin: ::std::option::Option<bool>,
-        #[doc = "User's email address."]
+        #[doc = "User’s email address."]
         #[serde(
             rename = "emailAddress",
             default,
@@ -1056,7 +1056,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_id: ::std::option::Option<String>,
-        #[doc = "Status of the link between this Merchant Center account and the YouTube channel. Upon retrieval, it represents the actual status of the link and can be either `active` if it was approved in YT Creator Studio or `pending` if it's pending approval. Upon insertion, it represents the *intended* status of the link. Re-uploading a link with status `active` when it's still pending or with status `pending` when it's already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status `inactive` is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending."]
+        #[doc = "Status of the link between this Merchant Center account and the YouTube channel. Upon retrieval, it represents the actual status of the link and can be either `active` if it was approved in YT Creator Studio or `pending` if it’s pending approval. Upon insertion, it represents the *intended* status of the link. Re-uploading a link with status `active` when it’s still pending or with status `pending` when it’s already active will have no effect: the status will remain unchanged. Re-uploading a link with deprecated status `inactive` is equivalent to not submitting the link at all and will delete the link if it was active or cancel the link request if it was pending."]
         #[serde(
             rename = "status",
             default,
@@ -1094,7 +1094,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_identifiers: ::std::option::Option<Vec<crate::schemas::AccountIdentifier>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountsAuthInfoResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountsAuthInfoResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1125,7 +1125,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountsClaimWebsiteResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountsClaimWebsiteResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountsClaimWebsiteResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1216,7 +1216,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub force: ::std::option::Option<bool>,
-        #[doc = "Label IDs for the 'updatelabels' request."]
+        #[doc = "Label IDs for the ‘updatelabels’ request."]
         #[serde(
             rename = "labelIds",
             default,
@@ -1239,7 +1239,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`claimWebsite`\" - \"`delete`\" - \"`get`\" - \"`insert`\" - \"`link`\" - \"`update`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`claimWebsite`” - “`delete`” - “`get`” - “`insert`” - “`link`” - “`update`” "]
         #[serde(
             rename = "method",
             default,
@@ -1277,14 +1277,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountsCustomBatchRequestEntryLinkRequest {
-        #[doc = "Action to perform for this link. The `\"request\"` action is only available to select merchants. Acceptable values are: - \"`approve`\" - \"`remove`\" - \"`request`\" "]
+        #[doc = "Action to perform for this link. The `\"request\"` action is only available to select merchants. Acceptable values are: - “`approve`” - “`remove`” - “`request`” "]
         #[serde(
             rename = "action",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<String>,
-        #[doc = "Type of the link between the two accounts. Acceptable values are: - \"`channelPartner`\" - \"`eCommercePlatform`\" "]
+        #[doc = "Type of the link between the two accounts. Acceptable values are: - “`channelPartner`” - “`eCommercePlatform`” "]
         #[serde(
             rename = "linkType",
             default,
@@ -1329,7 +1329,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::AccountsCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountsCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountsCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1381,14 +1381,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#accountsCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#accountsCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Deprecated. This field is never set. Acceptable values are: - \"`active`\" - \"`inactive`\" - \"`pending`\" "]
+        #[doc = "Deprecated. This field is never set. Acceptable values are: - “`active`” - “`inactive`” - “`pending`” "]
         #[serde(
             rename = "linkStatus",
             default,
@@ -1419,14 +1419,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountsLinkRequest {
-        #[doc = "Action to perform for this link. The `\"request\"` action is only available to select merchants. Acceptable values are: - \"`approve`\" - \"`remove`\" - \"`request`\" "]
+        #[doc = "Action to perform for this link. The `\"request\"` action is only available to select merchants. Acceptable values are: - “`approve`” - “`remove`” - “`request`” "]
         #[serde(
             rename = "action",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<String>,
-        #[doc = "Type of the link between the two accounts. Acceptable values are: - \"`channelPartner`\" - \"`eCommercePlatform`\" "]
+        #[doc = "Type of the link between the two accounts. Acceptable values are: - “`channelPartner`” - “`eCommercePlatform`” "]
         #[serde(
             rename = "linkType",
             default,
@@ -1464,7 +1464,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountsLinkResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountsLinkResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountsLinkResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1495,7 +1495,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1606,7 +1606,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`get`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`get`” "]
         #[serde(
             rename = "method",
             default,
@@ -1645,7 +1645,7 @@ pub mod schemas {
         )]
         pub entries:
             ::std::option::Option<Vec<crate::schemas::AccountstatusesCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountstatusesCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountstatusesCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1721,7 +1721,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountstatusesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accountstatusesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accountstatusesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1831,7 +1831,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`get`\" - \"`update`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`get`” - “`update`” "]
         #[serde(
             rename = "method",
             default,
@@ -1869,7 +1869,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::AccounttaxCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accounttaxCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accounttaxCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1921,7 +1921,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#accounttaxCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#accounttaxCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -1952,7 +1952,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccounttaxListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#accounttaxListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#accounttaxListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2001,7 +2001,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Address {
-        #[doc = "Required. Top-level administrative subdivision of the country. For example, a state like California (\"CA\") or a province like Quebec (\"QC\")."]
+        #[doc = "Required. Top-level administrative subdivision of the country. For example, a state like California (“CA”) or a province like Quebec (“QC”)."]
         #[serde(
             rename = "administrativeArea",
             default,
@@ -2015,14 +2015,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub city: ::std::option::Option<String>,
-        #[doc = "Required. [CLDR country code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)(e.g. \"US\")."]
+        #[doc = "Required. [CLDR country code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)(e.g. “US”)."]
         #[serde(
             rename = "country",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country: ::std::option::Option<String>,
-        #[doc = "Required. Postal code or ZIP (e.g. \"94043\"). Required."]
+        #[doc = "Required. Postal code or ZIP (e.g. “94043”). Required."]
         #[serde(
             rename = "postalCode",
             default,
@@ -2060,14 +2060,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Amount {
-        #[doc = "[required] Value before taxes."]
+        #[doc = "\\[required\\] Value before taxes."]
         #[serde(
             rename = "pretax",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pretax: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "[required] Tax value."]
+        #[doc = "\\[required\\] Tax value."]
         #[serde(
             rename = "tax",
             default,
@@ -2098,7 +2098,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BusinessDayConfig {
-        #[doc = "Regular business days, such as '\"monday\"'. May not be empty."]
+        #[doc = "Regular business days, such as ‘“monday”’. May not be empty."]
         #[serde(
             rename = "businessDays",
             default,
@@ -2195,7 +2195,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CarriersCarrier {
-        #[doc = "The CLDR country code of the carrier (e.g., \"US\"). Always present."]
+        #[doc = "The CLDR country code of the carrier (e.g., “US”). Always present."]
         #[serde(
             rename = "country",
             default,
@@ -2254,7 +2254,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The type of the attribute. Acceptable values are: - \"`boolean`\" - \"`datetimerange`\" - \"`float`\" - \"`group`\" - \"`int`\" - \"`price`\" - \"`text`\" - \"`time`\" - \"`url`\" "]
+        #[doc = "The type of the attribute. Acceptable values are: - “`boolean`” - “`datetimerange`” - “`float`” - “`group`” - “`int`” - “`price`” - “`text`” - “`time`” - “`url`” "]
         #[serde(
             rename = "type",
             default,
@@ -2344,7 +2344,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Code of the return reason. Acceptable values are: - \"`betterPriceFound`\" - \"`changedMind`\" - \"`damagedOrDefectiveItem`\" - \"`didNotMatchDescription`\" - \"`doesNotFit`\" - \"`expiredItem`\" - \"`incorrectItemReceived`\" - \"`noLongerNeeded`\" - \"`notSpecified`\" - \"`orderedWrongItem`\" - \"`other`\" - \"`qualityNotExpected`\" - \"`receivedTooLate`\" - \"`undeliverable`\" "]
+        #[doc = "Code of the return reason. Acceptable values are: - “`betterPriceFound`” - “`changedMind`” - “`damagedOrDefectiveItem`” - “`didNotMatchDescription`” - “`doesNotFit`” - “`expiredItem`” - “`incorrectItemReceived`” - “`noLongerNeeded`” - “`notSpecified`” - “`orderedWrongItem`” - “`other`” - “`qualityNotExpected`” - “`receivedTooLate`” - “`undeliverable`” "]
         #[serde(
             rename = "reasonCode",
             default,
@@ -2389,7 +2389,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minute: ::std::option::Option<u32>,
-        #[doc = "Timezone identifier for the cutoff time. A list of identifiers can be found in the AdWords API documentation. E.g. \"Europe/Zurich\". Required."]
+        #[doc = "Timezone identifier for the cutoff time. A list of identifiers can be found in the AdWords API documentation. E.g. “Europe/Zurich”. Required."]
         #[serde(
             rename = "timezone",
             default,
@@ -2427,14 +2427,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub attribute_language: ::std::option::Option<String>,
-        #[doc = "[DEPRECATED] Please use targets[].language instead. The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for `targetCountry`."]
+        #[doc = "\\[DEPRECATED\\] Please use targets\\[\\].language instead. The two-letter ISO 639-1 language of the items in the feed. Must be a valid language for `targetCountry`."]
         #[serde(
             rename = "contentLanguage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_language: ::std::option::Option<String>,
-        #[doc = "Required. The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported. Acceptable values are: - \"`local products`\" - \"`product inventory`\" - \"`products`\" "]
+        #[doc = "Required. The type of data feed. For product inventory feeds, only feeds for local stores, not online stores, are supported. Acceptable values are: - “`local products`” - “`product inventory`” - “`products`” "]
         #[serde(
             rename = "contentType",
             default,
@@ -2470,14 +2470,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "[DEPRECATED] Please use targets[].includedDestinations instead. The list of intended destinations (corresponds to checked check boxes in Merchant Center)."]
+        #[doc = "\\[DEPRECATED\\] Please use targets\\[\\].includedDestinations instead. The list of intended destinations (corresponds to checked check boxes in Merchant Center)."]
         #[serde(
             rename = "intendedDestinations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub intended_destinations: ::std::option::Option<Vec<String>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#datafeed`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#datafeed`”"]
         #[serde(
             rename = "kind",
             default,
@@ -2491,7 +2491,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[DEPRECATED] Please use targets[].country instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code."]
+        #[doc = "\\[DEPRECATED\\] Please use targets\\[\\].country instead. The country where the items in the feed will be included in the search index, represented as a CLDR territory code."]
         #[serde(
             rename = "targetCountry",
             default,
@@ -2571,7 +2571,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub paused: ::std::option::Option<bool>,
-        #[doc = "Time zone used for schedule. UTC by default. E.g., \"America/Los_Angeles\"."]
+        #[doc = "Time zone used for schedule. UTC by default. E.g., “America/Los_Angeles”."]
         #[serde(
             rename = "timeZone",
             default,
@@ -2585,7 +2585,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub username: ::std::option::Option<String>,
-        #[doc = "The day of the week the feed file should be fetched. Acceptable values are: - \"`monday`\" - \"`tuesday`\" - \"`wednesday`\" - \"`thursday`\" - \"`friday`\" - \"`saturday`\" - \"`sunday`\" "]
+        #[doc = "The day of the week the feed file should be fetched. Acceptable values are: - “`monday`” - “`tuesday`” - “`wednesday`” - “`thursday`” - “`friday`” - “`saturday`” - “`sunday`” "]
         #[serde(
             rename = "weekday",
             default,
@@ -2616,21 +2616,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatafeedFormat {
-        #[doc = "Delimiter for the separation of values in a delimiter-separated values feed. If not specified, the delimiter will be auto-detected. Ignored for non-DSV data feeds. Acceptable values are: - \"`pipe`\" - \"`tab`\" - \"`tilde`\" "]
+        #[doc = "Delimiter for the separation of values in a delimiter-separated values feed. If not specified, the delimiter will be auto-detected. Ignored for non-DSV data feeds. Acceptable values are: - “`pipe`” - “`tab`” - “`tilde`” "]
         #[serde(
             rename = "columnDelimiter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub column_delimiter: ::std::option::Option<String>,
-        #[doc = "Character encoding scheme of the data feed. If not specified, the encoding will be auto-detected. Acceptable values are: - \"`latin-1`\" - \"`utf-16be`\" - \"`utf-16le`\" - \"`utf-8`\" - \"`windows-1252`\" "]
+        #[doc = "Character encoding scheme of the data feed. If not specified, the encoding will be auto-detected. Acceptable values are: - “`latin-1`” - “`utf-16be`” - “`utf-16le`” - “`utf-8`” - “`windows-1252`” "]
         #[serde(
             rename = "fileEncoding",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_encoding: ::std::option::Option<String>,
-        #[doc = "Specifies how double quotes are interpreted. If not specified, the mode will be auto-detected. Ignored for non-DSV data feeds. Acceptable values are: - \"`normal character`\" - \"`value quoting`\" "]
+        #[doc = "Specifies how double quotes are interpreted. If not specified, the mode will be auto-detected. Ignored for non-DSV data feeds. Acceptable values are: - “`normal character`” - “`value quoting`” "]
         #[serde(
             rename = "quotingMode",
             default,
@@ -2699,7 +2699,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub items_valid: ::std::option::Option<u64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#datafeedStatus`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#datafeedStatus`”"]
         #[serde(
             rename = "kind",
             default,
@@ -2720,7 +2720,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_upload_date: ::std::option::Option<String>,
-        #[doc = "The processing status of the feed. Acceptable values are: - \"`\"`failure`\": The feed could not be processed or all items had errors.`\" - \"`in progress`\": The feed is being processed. - \"`none`\": The feed has not yet been processed. For example, a feed that has never been uploaded will have this processing status. - \"`success`\": The feed was processed successfully, though some items might have had errors. "]
+        #[doc = "The processing status of the feed. Acceptable values are: - “`\"`failure`\": The feed could not be processed or all items had errors.`” - “`in progress`”: The feed is being processed. - “`none`”: The feed has not yet been processed. For example, a feed that has never been uploaded will have this processing status. - “`success`”: The feed was processed successfully, though some items might have had errors. "]
         #[serde(
             rename = "processingStatus",
             default,
@@ -2758,7 +2758,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatafeedStatusError {
-        #[doc = "The code of the error, e.g., \"validation/invalid_value\"."]
+        #[doc = "The code of the error, e.g., “validation/invalid_value”."]
         #[serde(
             rename = "code",
             default,
@@ -2780,7 +2780,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub examples: ::std::option::Option<Vec<crate::schemas::DatafeedStatusExample>>,
-        #[doc = "The error message, e.g., \"Invalid price\"."]
+        #[doc = "The error message, e.g., “Invalid price”."]
         #[serde(
             rename = "message",
             default,
@@ -2970,7 +2970,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`delete`\" - \"`fetchNow`\" - \"`get`\" - \"`insert`\" - \"`update`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`delete`” - “`fetchNow`” - “`get`” - “`insert`” - “`update`” "]
         #[serde(
             rename = "method",
             default,
@@ -3008,7 +3008,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::DatafeedsCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#datafeedsCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#datafeedsCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3084,7 +3084,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatafeedsFetchNowResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#datafeedsFetchNowResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#datafeedsFetchNowResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3115,7 +3115,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatafeedsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#datafeedsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#datafeedsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3233,7 +3233,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`get`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`get`” "]
         #[serde(
             rename = "method",
             default,
@@ -3272,7 +3272,7 @@ pub mod schemas {
         )]
         pub entries:
             ::std::option::Option<Vec<crate::schemas::DatafeedstatusesCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#datafeedstatusesCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#datafeedstatusesCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3348,7 +3348,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatafeedstatusesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#datafeedstatusesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#datafeedstatusesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3681,7 +3681,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locations: ::std::option::Option<Vec<crate::schemas::LocationIdSet>>,
-        #[doc = "A list of inclusive number of items upper bounds. The last value can be `\"infinity\"`. For example `[\"10\", \"50\", \"infinity\"]` represents the headers \"<= 10 items\", \"<= 50 items\", and \"> 50 items\". Must be non-empty. Can only be set if all other fields are not set."]
+        #[doc = "A list of inclusive number of items upper bounds. The last value can be `\"infinity\"`. For example `[\"10\", \"50\", \"infinity\"]` represents the headers “\\<= 10 items”, “\\<= 50 items”, and “\\> 50 items”. Must be non-empty. Can only be set if all other fields are not set."]
         #[serde(
             rename = "numberOfItems",
             default,
@@ -3695,14 +3695,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code_group_names: ::std::option::Option<Vec<String>>,
-        #[doc = "A list of inclusive order price upper bounds. The last price's value can be `\"infinity\"`. For example `[{\"value\": \"10\", \"currency\": \"USD\"}, {\"value\": \"500\", \"currency\": \"USD\"}, {\"value\": \"infinity\", \"currency\": \"USD\"}]` represents the headers \"<= $10\", \"<= $500\", and \"> $500\". All prices within a service must have the same currency. Must be non-empty. Can only be set if all other fields are not set."]
+        #[doc = "A list of inclusive order price upper bounds. The last price’s value can be `\"infinity\"`. For example `[{\"value\": \"10\", \"currency\": \"USD\"}, {\"value\": \"500\", \"currency\": \"USD\"}, {\"value\": \"infinity\", \"currency\": \"USD\"}]` represents the headers “\\<= $10”, “\\<= $500”, and “\\> $500”. All prices within a service must have the same currency. Must be non-empty. Can only be set if all other fields are not set."]
         #[serde(
             rename = "prices",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub prices: ::std::option::Option<Vec<crate::schemas::Price>>,
-        #[doc = "A list of inclusive order weight upper bounds. The last weight's value can be `\"infinity\"`. For example `[{\"value\": \"10\", \"unit\": \"kg\"}, {\"value\": \"50\", \"unit\": \"kg\"}, {\"value\": \"infinity\", \"unit\": \"kg\"}]` represents the headers \"<= 10kg\", \"<= 50kg\", and \"> 50kg\". All weights within a service must have the same unit. Must be non-empty. Can only be set if all other fields are not set."]
+        #[doc = "A list of inclusive order weight upper bounds. The last weight’s value can be `\"infinity\"`. For example `[{\"value\": \"10\", \"unit\": \"kg\"}, {\"value\": \"50\", \"unit\": \"kg\"}, {\"value\": \"infinity\", \"unit\": \"kg\"}]` represents the headers “\\<= 10kg”, “\\<= 50kg”, and “\\> 50kg”. All weights within a service must have the same unit. Must be non-empty. Can only be set if all other fields are not set."]
         #[serde(
             rename = "weights",
             default,
@@ -3733,21 +3733,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct HolidayCutoff {
-        #[doc = "Date of the order deadline, in ISO 8601 format. E.g. \"2016-11-29\" for 29th November 2016. Required."]
+        #[doc = "Date of the order deadline, in ISO 8601 format. E.g. “2016-11-29” for 29th November 2016. Required."]
         #[serde(
             rename = "deadlineDate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deadline_date: ::std::option::Option<String>,
-        #[doc = "Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Required."]
+        #[doc = "Hour of the day on the deadline date until which the order has to be placed to qualify for the delivery guarantee. Possible values are: 0 (midnight), 1, …, 12 (noon), 13, …, 23. Required."]
         #[serde(
             rename = "deadlineHour",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deadline_hour: ::std::option::Option<u32>,
-        #[doc = "Timezone identifier for the deadline hour. A list of identifiers can be found in the AdWords API documentation. E.g. \"Europe/Zurich\". Required."]
+        #[doc = "Timezone identifier for the deadline hour. A list of identifiers can be found in the AdWords API documentation. E.g. “Europe/Zurich”. Required."]
         #[serde(
             rename = "deadlineTimezone",
             default,
@@ -3761,7 +3761,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub holiday_id: ::std::option::Option<String>,
-        #[doc = "Date on which the deadline will become visible to consumers in ISO 8601 format. E.g. \"2016-10-31\" for 31st October 2016. Required."]
+        #[doc = "Date on which the deadline will become visible to consumers in ISO 8601 format. E.g. “2016-10-31” for 31st October 2016. Required."]
         #[serde(
             rename = "visibleFromDate",
             default,
@@ -3792,28 +3792,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct HolidaysHoliday {
-        #[doc = "The CLDR territory code of the country in which the holiday is available. E.g. \"US\", \"DE\", \"GB\". A holiday cutoff can only be configured in a shipping settings service with matching delivery country. Always present."]
+        #[doc = "The CLDR territory code of the country in which the holiday is available. E.g. “US”, “DE”, “GB”. A holiday cutoff can only be configured in a shipping settings service with matching delivery country. Always present."]
         #[serde(
             rename = "countryCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country_code: ::std::option::Option<String>,
-        #[doc = "Date of the holiday, in ISO 8601 format. E.g. \"2016-12-25\" for Christmas 2016. Always present."]
+        #[doc = "Date of the holiday, in ISO 8601 format. E.g. “2016-12-25” for Christmas 2016. Always present."]
         #[serde(
             rename = "date",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date: ::std::option::Option<String>,
-        #[doc = "Date on which the order has to arrive at the customer's, in ISO 8601 format. E.g. \"2016-12-24\" for 24th December 2016. Always present."]
+        #[doc = "Date on which the order has to arrive at the customer’s, in ISO 8601 format. E.g. “2016-12-24” for 24th December 2016. Always present."]
         #[serde(
             rename = "deliveryGuaranteeDate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delivery_guarantee_date: ::std::option::Option<String>,
-        #[doc = "Hour of the day in the delivery location's timezone on the guaranteed delivery date by which the order has to arrive at the customer's. Possible values are: 0 (midnight), 1, ..., 12 (noon), 13, ..., 23. Always present."]
+        #[doc = "Hour of the day in the delivery location’s timezone on the guaranteed delivery date by which the order has to arrive at the customer’s. Possible values are: 0 (midnight), 1, …, 12 (noon), 13, …, 23. Always present."]
         #[serde(
             rename = "deliveryGuaranteeHour",
             default,
@@ -3828,7 +3828,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "The holiday type. Always present. Acceptable values are: - \"`Christmas`\" - \"`Easter`\" - \"`Father's Day`\" - \"`Halloween`\" - \"`Independence Day (USA)`\" - \"`Mother's Day`\" - \"`Thanksgiving`\" - \"`Valentine's Day`\" "]
+        #[doc = "The holiday type. Always present. Acceptable values are: - “`Christmas`” - “`Easter`” - “`Father's Day`” - “`Halloween`” - “`Independence Day (USA)`” - “`Mother's Day`” - “`Thanksgiving`” - “`Valentine's Day`” "]
         #[serde(
             rename = "type",
             default,
@@ -3927,7 +3927,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub merchant_balance: ::std::option::Option<crate::schemas::Amount>,
-        #[doc = "[required] Total price for the product."]
+        #[doc = "\\[required\\] Total price for the product."]
         #[serde(
             rename = "productTotal",
             default,
@@ -3965,14 +3965,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct InvoiceSummaryAdditionalChargeSummary {
-        #[doc = "[required] Type of the additional charge. Acceptable values are: - \"`shipping`\" "]
+        #[doc = "\\[required\\] Type of the additional charge. Acceptable values are: - “`shipping`” "]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "[required] Total additional charge for this type."]
+        #[doc = "\\[required\\] Total additional charge for this type."]
         #[serde(
             rename = "totalAmount",
             default,
@@ -4003,7 +4003,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiaAboutPageSettings {
-        #[doc = "The status of the verification process for the About page. Acceptable values are: - \"`active`\" - \"`inactive`\" - \"`pending`\" "]
+        #[doc = "The status of the verification process for the About page. Acceptable values are: - “`active`” - “`inactive`” - “`pending`” "]
         #[serde(
             rename = "status",
             default,
@@ -4048,14 +4048,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub about: ::std::option::Option<crate::schemas::LiaAboutPageSettings>,
-        #[doc = "Required. CLDR country code (e.g. \"US\")."]
+        #[doc = "Required. CLDR country code (e.g. “US”)."]
         #[serde(
             rename = "country",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country: ::std::option::Option<String>,
-        #[doc = "The status of the \"Merchant hosted local storefront\" feature."]
+        #[doc = "The status of the “Merchant hosted local storefront” feature."]
         #[serde(
             rename = "hostedLocalStorefrontActive",
             default,
@@ -4069,7 +4069,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inventory: ::std::option::Option<crate::schemas::LiaInventorySettings>,
-        #[doc = "LIA \"On Display To Order\" settings."]
+        #[doc = "LIA “On Display To Order” settings."]
         #[serde(
             rename = "onDisplayToOrder",
             default,
@@ -4083,7 +4083,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pos_data_provider: ::std::option::Option<crate::schemas::LiaPosDataProvider>,
-        #[doc = "The status of the \"Store pickup\" feature."]
+        #[doc = "The status of the “Store pickup” feature."]
         #[serde(
             rename = "storePickupActive",
             default,
@@ -4128,14 +4128,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inventory_verification_contact_name: ::std::option::Option<String>,
-        #[doc = "The status of the verification contact. Acceptable values are: - \"`active`\" - \"`inactive`\" - \"`pending`\" "]
+        #[doc = "The status of the verification contact. Acceptable values are: - “`active`” - “`inactive`” - “`pending`” "]
         #[serde(
             rename = "inventoryVerificationContactStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inventory_verification_contact_status: ::std::option::Option<String>,
-        #[doc = "The status of the inventory verification process. Acceptable values are: - \"`active`\" - \"`inactive`\" - \"`pending`\" "]
+        #[doc = "The status of the inventory verification process. Acceptable values are: - “`active`” - “`inactive`” - “`pending`” "]
         #[serde(
             rename = "status",
             default,
@@ -4173,7 +4173,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_cost_policy_url: ::std::option::Option<String>,
-        #[doc = "The status of the ?On display to order? feature. Acceptable values are: - \"`active`\" - \"`inactive`\" - \"`pending`\" "]
+        #[doc = "The status of the ?On display to order? feature. Acceptable values are: - “`active`” - “`inactive`” - “`pending`” "]
         #[serde(
             rename = "status",
             default,
@@ -4258,7 +4258,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country_settings: ::std::option::Option<Vec<crate::schemas::LiaCountrySettings>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#liaSettings`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#liaSettings`”"]
         #[serde(
             rename = "kind",
             default,
@@ -4378,7 +4378,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`get`\" - \"`getAccessibleGmbAccounts`\" - \"`requestGmbAccess`\" - \"`requestInventoryVerification`\" - \"`setInventoryVerificationContact`\" - \"`update`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`get`” - “`getAccessibleGmbAccounts`” - “`requestGmbAccess`” - “`requestInventoryVerification`” - “`setInventoryVerificationContact`” - “`update`” "]
         #[serde(
             rename = "method",
             default,
@@ -4432,7 +4432,7 @@ pub mod schemas {
         )]
         pub entries:
             ::std::option::Option<Vec<crate::schemas::LiasettingsCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4484,7 +4484,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gmb_accounts: ::std::option::Option<crate::schemas::GmbAccounts>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#liasettingsCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#liasettingsCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -4544,7 +4544,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gmb_accounts: ::std::option::Option<Vec<crate::schemas::GmbAccountsGmbAccount>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsGetAccessibleGmbAccountsResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsGetAccessibleGmbAccountsResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4575,7 +4575,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiasettingsListPosDataProvidersResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsListPosDataProvidersResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsListPosDataProvidersResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4613,7 +4613,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiasettingsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4662,7 +4662,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiasettingsRequestGmbAccessResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsRequestGmbAccessResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsRequestGmbAccessResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4693,7 +4693,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiasettingsRequestInventoryVerificationResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsRequestInventoryVerificationResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsRequestInventoryVerificationResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4724,7 +4724,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiasettingsSetInventoryVerificationContactResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsSetInventoryVerificationContactResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsSetInventoryVerificationContactResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4755,7 +4755,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LiasettingsSetPosDataProviderResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#liasettingsSetPosDataProviderResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#liasettingsSetPosDataProviderResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4815,7 +4815,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The retailer's loyalty points in absolute value."]
+        #[doc = "The retailer’s loyalty points in absolute value."]
         #[serde(
             rename = "pointsValue",
             default,
@@ -4955,7 +4955,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub return_shipment_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "State of the item. Acceptable values are: - \"`canceled`\" - \"`new`\" - \"`received`\" - \"`refunded`\" - \"`rejected`\" "]
+        #[doc = "State of the item. Acceptable values are: - “`canceled`” - “`new`” - “`received`” - “`refunded`” - “`rejected`” "]
         #[serde(
             rename = "state",
             default,
@@ -5062,7 +5062,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub acknowledged: ::std::option::Option<bool>,
-        #[doc = "Deprecated. Acceptable values are: - \"`googleExpress`\" - \"`purchasesOnGoogle`\" "]
+        #[doc = "Deprecated. Acceptable values are: - “`googleExpress`” - “`purchasesOnGoogle`” "]
         #[serde(
             rename = "channelType",
             default,
@@ -5090,7 +5090,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#order`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#order`”"]
         #[serde(
             rename = "kind",
             default,
@@ -5132,7 +5132,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payment_method: ::std::option::Option<crate::schemas::OrderPaymentMethod>,
-        #[doc = "The status of the payment. Acceptable values are: - \"`paymentCaptured`\" - \"`paymentRejected`\" - \"`paymentSecured`\" - \"`pendingAuthorization`\" "]
+        #[doc = "The status of the payment. Acceptable values are: - “`paymentCaptured`” - “`paymentRejected`” - “`paymentSecured`” - “`pendingAuthorization`” "]
         #[serde(
             rename = "paymentStatus",
             default,
@@ -5188,21 +5188,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_cost_tax: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "Deprecated. Shipping details are provided with line items instead. Acceptable values are: - \"`economy`\" - \"`expedited`\" - \"`oneDay`\" - \"`sameDay`\" - \"`standard`\" - \"`twoDay`\" "]
+        #[doc = "Deprecated. Shipping details are provided with line items instead. Acceptable values are: - “`economy`” - “`expedited`” - “`oneDay`” - “`sameDay`” - “`standard`” - “`twoDay`” "]
         #[serde(
             rename = "shippingOption",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_option: ::std::option::Option<String>,
-        #[doc = "The status of the order. Acceptable values are: - \"`canceled`\" - \"`delivered`\" - \"`inProgress`\" - \"`partiallyDelivered`\" - \"`partiallyReturned`\" - \"`partiallyShipped`\" - \"`pendingShipment`\" - \"`returned`\" - \"`shipped`\" "]
+        #[doc = "The status of the order. Acceptable values are: - “`canceled`” - “`delivered`” - “`inProgress`” - “`partiallyDelivered`” - “`partiallyReturned`” - “`partiallyShipped`” - “`pendingShipment`” - “`returned`” - “`shipped`” "]
         #[serde(
             rename = "status",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<String>,
-        #[doc = "The party responsible for collecting and remitting taxes. Acceptable values are: - \"`marketplaceFacilitator`\" - \"`merchant`\" "]
+        #[doc = "The party responsible for collecting and remitting taxes. Acceptable values are: - “`marketplaceFacilitator`” - “`merchant`” "]
         #[serde(
             rename = "taxCollector",
             default,
@@ -5233,7 +5233,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderAddress {
-        #[doc = "CLDR country code (e.g. \"US\")."]
+        #[doc = "CLDR country code (e.g. “US”)."]
         #[serde(
             rename = "country",
             default,
@@ -5261,7 +5261,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locality: ::std::option::Option<String>,
-        #[doc = "Postal Code or ZIP (e.g. \"94043\")."]
+        #[doc = "Postal Code or ZIP (e.g. “94043”)."]
         #[serde(
             rename = "postalCode",
             default,
@@ -5275,7 +5275,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recipient_name: ::std::option::Option<String>,
-        #[doc = "Top-level administrative subdivision of the country. For example, a state like California (\"CA\") or a province like Quebec (\"QC\")."]
+        #[doc = "Top-level administrative subdivision of the country. For example, a state like California (“CA”) or a province like Quebec (“QC”)."]
         #[serde(
             rename = "region",
             default,
@@ -5313,7 +5313,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderCancellation {
-        #[doc = "The actor that created the cancellation. Acceptable values are: - \"`customer`\" - \"`googleBot`\" - \"`googleCustomerService`\" - \"`googlePayments`\" - \"`googleSabre`\" - \"`merchant`\" "]
+        #[doc = "The actor that created the cancellation. Acceptable values are: - “`customer`” - “`googleBot`” - “`googleCustomerService`” - “`googlePayments`” - “`googleSabre`” - “`merchant`” "]
         #[serde(
             rename = "actor",
             default,
@@ -5334,7 +5334,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the cancellation. Orders that are canceled with a noInventory reason will lead to the removal of the product from Buy on Google until you make an update to that product. This will not affect your Shopping ads. Acceptable values are: - \"`autoPostInternal`\" - \"`autoPostInvalidBillingAddress`\" - \"`autoPostNoInventory`\" - \"`autoPostPriceError`\" - \"`autoPostUndeliverableShippingAddress`\" - \"`couponAbuse`\" - \"`customerCanceled`\" - \"`customerInitiatedCancel`\" - \"`customerSupportRequested`\" - \"`failToPushOrderGoogleError`\" - \"`failToPushOrderMerchantError`\" - \"`failToPushOrderMerchantFulfillmentError`\" - \"`failToPushOrderToMerchant`\" - \"`failToPushOrderToMerchantOutOfStock`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`merchantDidNotShipOnTime`\" - \"`noInventory`\" - \"`orderTimeout`\" - \"`other`\" - \"`paymentAbuse`\" - \"`paymentDeclined`\" - \"`priceError`\" - \"`returnRefundAbuse`\" - \"`shippingPriceError`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" "]
+        #[doc = "The reason for the cancellation. Orders that are canceled with a noInventory reason will lead to the removal of the product from Buy on Google until you make an update to that product. This will not affect your Shopping ads. Acceptable values are: - “`autoPostInternal`” - “`autoPostInvalidBillingAddress`” - “`autoPostNoInventory`” - “`autoPostPriceError`” - “`autoPostUndeliverableShippingAddress`” - “`couponAbuse`” - “`customerCanceled`” - “`customerInitiatedCancel`” - “`customerSupportRequested`” - “`failToPushOrderGoogleError`” - “`failToPushOrderMerchantError`” - “`failToPushOrderMerchantFulfillmentError`” - “`failToPushOrderToMerchant`” - “`failToPushOrderToMerchantOutOfStock`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`merchantDidNotShipOnTime`” - “`noInventory`” - “`orderTimeout`” - “`other`” - “`paymentAbuse`” - “`paymentDeclined`” - “`priceError`” - “`returnRefundAbuse`” - “`shippingPriceError`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” "]
         #[serde(
             rename = "reason",
             default,
@@ -5400,7 +5400,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invoice_receiving_email: ::std::option::Option<String>,
-        #[doc = "Customer's marketing preferences. Contains the marketing opt-in information that is current at the time that the merchant call. User preference selections can change from one order to the next so preferences must be checked with every order."]
+        #[doc = "Customer’s marketing preferences. Contains the marketing opt-in information that is current at the time that the merchant call. User preference selections can change from one order to the next so preferences must be checked with every order."]
         #[serde(
             rename = "marketingRightsInfo",
             default,
@@ -5432,21 +5432,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderCustomerMarketingRightsInfo {
-        #[doc = "Last known customer selection regarding marketing preferences. In certain cases this selection might not be known, so this field would be empty. If a customer selected `granted` in their most recent order, they can be subscribed to marketing emails. Customers who have chosen `denied` must not be subscribed, or must be unsubscribed if already opted-in. Acceptable values are: - \"`denied`\" - \"`granted`\" "]
+        #[doc = "Last known customer selection regarding marketing preferences. In certain cases this selection might not be known, so this field would be empty. If a customer selected `granted` in their most recent order, they can be subscribed to marketing emails. Customers who have chosen `denied` must not be subscribed, or must be unsubscribed if already opted-in. Acceptable values are: - “`denied`” - “`granted`” "]
         #[serde(
             rename = "explicitMarketingPreference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub explicit_marketing_preference: ::std::option::Option<String>,
-        #[doc = "Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet."]
+        #[doc = "Timestamp when last time marketing preference was updated. Could be empty, if user wasn’t offered a selection yet."]
         #[serde(
             rename = "lastUpdatedTimestamp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_updated_timestamp: ::std::option::Option<String>,
-        #[doc = "Email address that can be used for marketing purposes. The field may be empty even if `explicitMarketingPreference` is 'granted'. This happens when retrieving an old order from the customer who deleted their account."]
+        #[doc = "Email address that can be used for marketing purposes. The field may be empty even if `explicitMarketingPreference` is ‘granted’. This happens when retrieving an old order from the customer who deleted their account."]
         #[serde(
             rename = "marketingEmailAddress",
             default,
@@ -5549,14 +5549,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub long_title: ::std::option::Option<String>,
-        #[doc = "Whether the promotion is applicable to all products or only specific products. Acceptable values are: - \"`allProducts`\" - \"`specificProducts`\" "]
+        #[doc = "Whether the promotion is applicable to all products or only specific products. Acceptable values are: - “`allProducts`” - “`specificProducts`” "]
         #[serde(
             rename = "productApplicability",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_applicability: ::std::option::Option<String>,
-        #[doc = "Indicates that the promotion is valid online. Acceptable values are: - \"`online`\" "]
+        #[doc = "Indicates that the promotion is valid online. Acceptable values are: - “`online`” "]
         #[serde(
             rename = "redemptionChannel",
             default,
@@ -5601,14 +5601,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offer_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping). Acceptable values are: - \"`product`\" - \"`shipping`\" "]
+        #[doc = "Describes whether the promotion applies to products (e.g. 20% off) or to shipping (e.g. Free Shipping). Acceptable values are: - “`product`” - “`shipping`” "]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types. Acceptable values are: - \"`buyMGetMoneyOff`\" - \"`buyMGetNMoneyOff`\" - \"`buyMGetNPercentOff`\" - \"`buyMGetPercentOff`\" - \"`freeGift`\" - \"`freeGiftWithItemId`\" - \"`freeGiftWithValue`\" - \"`freeOvernightShipping`\" - \"`freeShipping`\" - \"`freeTwoDayShipping`\" - \"`moneyOff`\" - \"`percentageOff`\" - \"`rewardPoints`\" - \"`salePrice`\" "]
+        #[doc = "Further describes the benefit of the promotion. Note that we will expand on this enumeration as we support new promotion sub-types. Acceptable values are: - “`buyMGetMoneyOff`” - “`buyMGetNMoneyOff`” - “`buyMGetNPercentOff`” - “`buyMGetPercentOff`” - “`freeGift`” - “`freeGiftWithItemId`” - “`freeGiftWithValue`” - “`freeOvernightShipping`” - “`freeShipping`” - “`freeTwoDayShipping`” - “`moneyOff`” - “`percentageOff`” - “`rewardPoints`” - “`salePrice`” "]
         #[serde(
             rename = "subType",
             default,
@@ -5790,14 +5790,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brand: ::std::option::Option<String>,
-        #[doc = "The item's channel (online or local). Acceptable values are: - \"`local`\" - \"`online`\" "]
+        #[doc = "The item’s channel (online or local). Acceptable values are: - “`local`” - “`online`” "]
         #[serde(
             rename = "channel",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel: ::std::option::Option<String>,
-        #[doc = "Condition or state of the item. Acceptable values are: - \"`new`\" - \"`refurbished`\" - \"`used`\" "]
+        #[doc = "Condition or state of the item. Acceptable values are: - “`new`” - “`refurbished`” - “`used`” "]
         #[serde(
             rename = "condition",
             default,
@@ -6055,7 +6055,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub method: ::std::option::Option<crate::schemas::OrderLineItemShippingDetailsMethod>,
-        #[doc = "Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment. Acceptable values are: - \"`delivery`\" - \"`pickup`\" "]
+        #[doc = "Type of shipment. Indicates whether `deliveryDetails` or `pickupDetails` is applicable for this shipment. Acceptable values are: - “`delivery`” - “`pickup`” "]
         #[serde(
             rename = "type",
             default,
@@ -6218,7 +6218,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub phone_number: ::std::option::Option<String>,
-        #[doc = "The type of instrument. Acceptable values are: - \"`AMEX`\" - \"`DISCOVER`\" - \"`JCB`\" - \"`MASTERCARD`\" - \"`UNIONPAY`\" - \"`VISA`\" - \"``\" "]
+        #[doc = "The type of instrument. Acceptable values are: - “`AMEX`” - “`DISCOVER`” - “`JCB`” - “`MASTERCARD`” - “`UNIONPAY`” - “`VISA`” - “\\``” "]
         #[serde(
             rename = "type",
             default,
@@ -6332,7 +6332,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderRefund {
-        #[doc = "The actor that created the refund. Acceptable values are: - \"`customer`\" - \"`googleBot`\" - \"`googleCustomerService`\" - \"`googlePayments`\" - \"`googleSabre`\" - \"`merchant`\" "]
+        #[doc = "The actor that created the refund. Acceptable values are: - “`customer`” - “`googleBot`” - “`googleCustomerService`” - “`googlePayments`” - “`googleSabre`” - “`merchant`” "]
         #[serde(
             rename = "actor",
             default,
@@ -6353,7 +6353,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_date: ::std::option::Option<String>,
-        #[doc = "The reason for the refund. Acceptable values are: - \"`adjustment`\" - \"`autoPostInternal`\" - \"`autoPostInvalidBillingAddress`\" - \"`autoPostNoInventory`\" - \"`autoPostPriceError`\" - \"`autoPostUndeliverableShippingAddress`\" - \"`couponAbuse`\" - \"`courtesyAdjustment`\" - \"`customerCanceled`\" - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`customerSupportRequested`\" - \"`deliveredLateByCarrier`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`failToPushOrderGoogleError`\" - \"`failToPushOrderMerchantError`\" - \"`failToPushOrderMerchantFulfillmentError`\" - \"`failToPushOrderToMerchant`\" - \"`failToPushOrderToMerchantOutOfStock`\" - \"`feeAdjustment`\" - \"`invalidCoupon`\" - \"`lateShipmentCredit`\" - \"`malformedShippingAddress`\" - \"`merchantDidNotShipOnTime`\" - \"`noInventory`\" - \"`orderTimeout`\" - \"`other`\" - \"`paymentAbuse`\" - \"`paymentDeclined`\" - \"`priceAdjustment`\" - \"`priceError`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`promoReallocation`\" - \"`qualityNotAsExpected`\" - \"`returnRefundAbuse`\" - \"`shippingCostAdjustment`\" - \"`shippingPriceError`\" - \"`taxAdjustment`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the refund. Acceptable values are: - “`adjustment`” - “`autoPostInternal`” - “`autoPostInvalidBillingAddress`” - “`autoPostNoInventory`” - “`autoPostPriceError`” - “`autoPostUndeliverableShippingAddress`” - “`couponAbuse`” - “`courtesyAdjustment`” - “`customerCanceled`” - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`customerSupportRequested`” - “`deliveredLateByCarrier`” - “`deliveredTooLate`” - “`expiredItem`” - “`failToPushOrderGoogleError`” - “`failToPushOrderMerchantError`” - “`failToPushOrderMerchantFulfillmentError`” - “`failToPushOrderToMerchant`” - “`failToPushOrderToMerchantOutOfStock`” - “`feeAdjustment`” - “`invalidCoupon`” - “`lateShipmentCredit`” - “`malformedShippingAddress`” - “`merchantDidNotShipOnTime`” - “`noInventory`” - “`orderTimeout`” - “`other`” - “`paymentAbuse`” - “`paymentDeclined`” - “`priceAdjustment`” - “`priceError`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`promoReallocation`” - “`qualityNotAsExpected`” - “`returnRefundAbuse`” - “`shippingCostAdjustment`” - “`shippingPriceError`” - “`taxAdjustment`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -6546,7 +6546,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderReturn {
-        #[doc = "The actor that created the refund. Acceptable values are: - \"`customer`\" - \"`googleBot`\" - \"`googleCustomerService`\" - \"`googlePayments`\" - \"`googleSabre`\" - \"`merchant`\" "]
+        #[doc = "The actor that created the refund. Acceptable values are: - “`customer`” - “`googleBot`” - “`googleCustomerService`” - “`googlePayments`” - “`googleSabre`” - “`merchant`” "]
         #[serde(
             rename = "actor",
             default,
@@ -6567,7 +6567,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -6605,7 +6605,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderShipment {
-        #[doc = "The carrier handling the shipment. For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. *Note:* You can also use unsupported carriers, but emails to customers will not include the carrier name or tracking URL, and there will be no automatic order status updates. Supported carriers for US are: - \"`ups`\" (United Parcel Service) *automatic status updates* - \"`usps`\" (United States Postal Service) *automatic status updates* - \"`fedex`\" (FedEx) *automatic status updates * - \"`dhl`\" (DHL eCommerce) *automatic status updates* (US only) - \"`ontrac`\" (OnTrac) *automatic status updates * - \"`dhl express`\" (DHL Express) - \"`deliv`\" (Deliv) - \"`dynamex`\" (TForce) - \"`lasership`\" (LaserShip) - \"`mpx`\" (Military Parcel Xpress) - \"`uds`\" (United Delivery Service) - \"`efw`\" (Estes Forwarding Worldwide) - \"`jd logistics`\" (JD Logistics) - \"`yunexpress`\" (YunExpress) - \"`china post`\" (China Post) - \"`china ems`\" (China Post Express Mail Service) - \"`singapore post`\" (Singapore Post) - \"`pos malaysia`\" (Pos Malaysia) - \"`postnl`\" (PostNL) - \"`ptt`\" (PTT Turkish Post) - \"`eub`\" (ePacket) - \"`chukou1`\" (Chukou1 Logistics) - \"`bestex`\" (Best Express) - \"`canada post`\" (Canada Post) - \"`purolator`\" (Purolator) - \"`canpar`\" (Canpar) - \"`india post`\" (India Post) - \"`blue dart`\" (Blue Dart) - \"`delhivery`\" (Delhivery) - \"`dtdc`\" (DTDC) - \"`tpc india`\" (TPC India) Supported carriers for FR are: - \"`la poste`\" (La Poste) *automatic status updates * - \"`colissimo`\" (Colissimo by La Poste) *automatic status updates* - \"`ups`\" (United Parcel Service) *automatic status updates * - \"`chronopost`\" (Chronopost by La Poste) - \"`gls`\" (General Logistics Systems France) - \"`dpd`\" (DPD Group by GeoPost) - \"`bpost`\" (Belgian Post Group) - \"`colis prive`\" (Colis Privé) - \"`boxtal`\" (Boxtal) - \"`geodis`\" (GEODIS) - \"`tnt`\" (TNT) - \"`db schenker`\" (DB Schenker) - \"`aramex`\" (Aramex) "]
+        #[doc = "The carrier handling the shipment. For supported carriers, Google includes the carrier name and tracking URL in emails to customers. For select supported carriers, Google also automatically updates the shipment status based on the provided shipment ID. *Note:* You can also use unsupported carriers, but emails to customers will not include the carrier name or tracking URL, and there will be no automatic order status updates. Supported carriers for US are: - “`ups`” (United Parcel Service) *automatic status updates* - “`usps`” (United States Postal Service) *automatic status updates* - “`fedex`” (FedEx) \\*automatic status updates * - “`dhl`” (DHL eCommerce) *automatic status updates* (US only) - “`ontrac`” (OnTrac) \\*automatic status updates * - “`dhl express`” (DHL Express) - “`deliv`” (Deliv) - “`dynamex`” (TForce) - “`lasership`” (LaserShip) - “`mpx`” (Military Parcel Xpress) - “`uds`” (United Delivery Service) - “`efw`” (Estes Forwarding Worldwide) - “`jd logistics`” (JD Logistics) - “`yunexpress`” (YunExpress) - “`china post`” (China Post) - “`china ems`” (China Post Express Mail Service) - “`singapore post`” (Singapore Post) - “`pos malaysia`” (Pos Malaysia) - “`postnl`” (PostNL) - “`ptt`” (PTT Turkish Post) - “`eub`” (ePacket) - “`chukou1`” (Chukou1 Logistics) - “`bestex`” (Best Express) - “`canada post`” (Canada Post) - “`purolator`” (Purolator) - “`canpar`” (Canpar) - “`india post`” (India Post) - “`blue dart`” (Blue Dart) - “`delhivery`” (Delhivery) - “`dtdc`” (DTDC) - “`tpc india`” (TPC India) Supported carriers for FR are: - “`la poste`” (La Poste) \\*automatic status updates * - “`colissimo`” (Colissimo by La Poste) *automatic status updates* - “`ups`” (United Parcel Service) \\*automatic status updates * - “`chronopost`” (Chronopost by La Poste) - “`gls`” (General Logistics Systems France) - “`dpd`” (DPD Group by GeoPost) - “`bpost`” (Belgian Post Group) - “`colis prive`” (Colis Privé) - “`boxtal`” (Boxtal) - “`geodis`” (GEODIS) - “`tnt`” (TNT) - “`db schenker`” (DB Schenker) - “`aramex`” (Aramex) "]
         #[serde(
             rename = "carrier",
             default,
@@ -6648,7 +6648,7 @@ pub mod schemas {
         )]
         pub scheduled_delivery_details:
             ::std::option::Option<crate::schemas::OrderShipmentScheduledDeliveryDetails>,
-        #[doc = "The status of the shipment. Acceptable values are: - \"`delivered`\" - \"`readyForPickup`\" - \"`shipped`\" - \"`undeliverable`\" "]
+        #[doc = "The status of the shipment. Acceptable values are: - “`delivered`” - “`readyForPickup`” - “`shipped`” - “`undeliverable`” "]
         #[serde(
             rename = "status",
             default,
@@ -6731,7 +6731,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderShipmentScheduledDeliveryDetails {
-        #[doc = "The phone number of the carrier fulfilling the delivery. The phone number is formatted as the international notation in ITU-T Recommendation E.123 (e.g., \"+41 44 668 1800\")."]
+        #[doc = "The phone number of the carrier fulfilling the delivery. The phone number is formatted as the international notation in ITU-T Recommendation E.123 (e.g., “+41 44 668 1800”)."]
         #[serde(
             rename = "carrierPhoneNumber",
             default,
@@ -6769,21 +6769,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderinvoicesCreateChargeInvoiceRequest {
-        #[doc = "[required] The ID of the invoice."]
+        #[doc = "\\[required\\] The ID of the invoice."]
         #[serde(
             rename = "invoiceId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invoice_id: ::std::option::Option<String>,
-        #[doc = "[required] Invoice summary."]
+        #[doc = "\\[required\\] Invoice summary."]
         #[serde(
             rename = "invoiceSummary",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invoice_summary: ::std::option::Option<crate::schemas::InvoiceSummary>,
-        #[doc = "[required] Invoice details per line item."]
+        #[doc = "\\[required\\] Invoice details per line item."]
         #[serde(
             rename = "lineItemInvoices",
             default,
@@ -6791,14 +6791,14 @@ pub mod schemas {
         )]
         pub line_item_invoices:
             ::std::option::Option<Vec<crate::schemas::ShipmentInvoiceLineItemInvoice>>,
-        #[doc = "[required] The ID of the operation, unique across all operations for a given order."]
+        #[doc = "\\[required\\] The ID of the operation, unique across all operations for a given order."]
         #[serde(
             rename = "operationId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_id: ::std::option::Option<String>,
-        #[doc = "[required] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges."]
+        #[doc = "\\[required\\] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges."]
         #[serde(
             rename = "shipmentGroupId",
             default,
@@ -6829,14 +6829,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderinvoicesCreateChargeInvoiceResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#orderinvoicesCreateChargeInvoiceResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#orderinvoicesCreateChargeInvoiceResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -6867,14 +6867,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderinvoicesCreateRefundInvoiceRequest {
-        #[doc = "[required] The ID of the invoice."]
+        #[doc = "\\[required\\] The ID of the invoice."]
         #[serde(
             rename = "invoiceId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invoice_id: ::std::option::Option<String>,
-        #[doc = "[required] The ID of the operation, unique across all operations for a given order."]
+        #[doc = "\\[required\\] The ID of the operation, unique across all operations for a given order."]
         #[serde(
             rename = "operationId",
             default,
@@ -6930,14 +6930,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderinvoicesCreateRefundInvoiceResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#orderinvoicesCreateRefundInvoiceResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#orderinvoicesCreateRefundInvoiceResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -6975,7 +6975,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[required] Reason for the refund. Acceptable values are: - \"`adjustment`\" - \"`autoPostInternal`\" - \"`autoPostInvalidBillingAddress`\" - \"`autoPostNoInventory`\" - \"`autoPostPriceError`\" - \"`autoPostUndeliverableShippingAddress`\" - \"`couponAbuse`\" - \"`courtesyAdjustment`\" - \"`customerCanceled`\" - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`customerSupportRequested`\" - \"`deliveredLateByCarrier`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`failToPushOrderGoogleError`\" - \"`failToPushOrderMerchantError`\" - \"`failToPushOrderMerchantFulfillmentError`\" - \"`failToPushOrderToMerchant`\" - \"`failToPushOrderToMerchantOutOfStock`\" - \"`feeAdjustment`\" - \"`invalidCoupon`\" - \"`lateShipmentCredit`\" - \"`malformedShippingAddress`\" - \"`merchantDidNotShipOnTime`\" - \"`noInventory`\" - \"`orderTimeout`\" - \"`other`\" - \"`paymentAbuse`\" - \"`paymentDeclined`\" - \"`priceAdjustment`\" - \"`priceError`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`promoReallocation`\" - \"`qualityNotAsExpected`\" - \"`returnRefundAbuse`\" - \"`shippingCostAdjustment`\" - \"`shippingPriceError`\" - \"`taxAdjustment`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "\\[required\\] Reason for the refund. Acceptable values are: - “`adjustment`” - “`autoPostInternal`” - “`autoPostInvalidBillingAddress`” - “`autoPostNoInventory`” - “`autoPostPriceError`” - “`autoPostUndeliverableShippingAddress`” - “`couponAbuse`” - “`courtesyAdjustment`” - “`customerCanceled`” - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`customerSupportRequested`” - “`deliveredLateByCarrier`” - “`deliveredTooLate`” - “`expiredItem`” - “`failToPushOrderGoogleError`” - “`failToPushOrderMerchantError`” - “`failToPushOrderMerchantFulfillmentError`” - “`failToPushOrderToMerchant`” - “`failToPushOrderToMerchantOutOfStock`” - “`feeAdjustment`” - “`invalidCoupon`” - “`lateShipmentCredit`” - “`malformedShippingAddress`” - “`merchantDidNotShipOnTime`” - “`noInventory`” - “`orderTimeout`” - “`other`” - “`paymentAbuse`” - “`paymentDeclined`” - “`priceAdjustment`” - “`priceError`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`promoReallocation`” - “`qualityNotAsExpected`” - “`returnRefundAbuse`” - “`shippingCostAdjustment`” - “`shippingPriceError`” - “`taxAdjustment`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -7017,7 +7017,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[required] Reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "\\[required\\] Reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -7059,7 +7059,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disbursements: ::std::option::Option<Vec<crate::schemas::OrderReportDisbursement>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#orderreportsListDisbursementsResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#orderreportsListDisbursementsResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7102,7 +7102,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderreportsListTransactionsResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#orderreportsListTransactionsResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#orderreportsListTransactionsResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7152,7 +7152,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderreturnsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#orderreturnsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#orderreturnsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7232,14 +7232,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersAcknowledgeResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersAcknowledgeResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersAcknowledgeResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7270,7 +7270,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersAdvanceTestOrderResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersAdvanceTestOrderResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersAdvanceTestOrderResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7350,7 +7350,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the cancellation. Acceptable values are: - \"`customerInitiatedCancel`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`noInventory`\" - \"`other`\" - \"`priceError`\" - \"`shippingPriceError`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" "]
+        #[doc = "The reason for the cancellation. Acceptable values are: - “`customerInitiatedCancel`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`noInventory`” - “`other`” - “`priceError`” - “`shippingPriceError`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” "]
         #[serde(
             rename = "reason",
             default,
@@ -7388,14 +7388,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCancelLineItemResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersCancelLineItemResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersCancelLineItemResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7433,7 +7433,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_id: ::std::option::Option<String>,
-        #[doc = "The reason for the cancellation. Acceptable values are: - \"`customerInitiatedCancel`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`noInventory`\" - \"`other`\" - \"`priceError`\" - \"`shippingPriceError`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" "]
+        #[doc = "The reason for the cancellation. Acceptable values are: - “`customerInitiatedCancel`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`noInventory`” - “`other`” - “`priceError`” - “`shippingPriceError`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” "]
         #[serde(
             rename = "reason",
             default,
@@ -7471,14 +7471,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCancelResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersCancelResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersCancelResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7509,7 +7509,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCancelTestOrderByCustomerRequest {
-        #[doc = "The reason for the cancellation. Acceptable values are: - \"`changedMind`\" - \"`orderedWrongItem`\" - \"`other`\" "]
+        #[doc = "The reason for the cancellation. Acceptable values are: - “`changedMind`” - “`orderedWrongItem`” - “`other`” "]
         #[serde(
             rename = "reason",
             default,
@@ -7540,7 +7540,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCancelTestOrderByCustomerResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersCancelTestOrderByCustomerResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersCancelTestOrderByCustomerResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7571,14 +7571,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCreateTestOrderRequest {
-        #[doc = "The CLDR territory code of the country of the test order to create. Affects the currency and addresses of orders created via `template_name`, or the addresses of orders created via `test_order`. Acceptable values are: - \"`US`\" - \"`FR`\" Defaults to `US`."]
+        #[doc = "The CLDR territory code of the country of the test order to create. Affects the currency and addresses of orders created via `template_name`, or the addresses of orders created via `test_order`. Acceptable values are: - “`US`” - “`FR`” Defaults to `US`."]
         #[serde(
             rename = "country",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub country: ::std::option::Option<String>,
-        #[doc = "The test order template to use. Specify as an alternative to `testOrder` as a shortcut for retrieving a template and then creating an order using that template. Acceptable values are: - \"`template1`\" - \"`template1a`\" - \"`template1b`\" - \"`template2`\" - \"`template3`\" "]
+        #[doc = "The test order template to use. Specify as an alternative to `testOrder` as a shortcut for retrieving a template and then creating an order using that template. Acceptable values are: - “`template1`” - “`template1a`” - “`template1b`” - “`template2`” - “`template3`” "]
         #[serde(
             rename = "templateName",
             default,
@@ -7616,7 +7616,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCreateTestOrderResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersCreateTestOrderResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersCreateTestOrderResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7687,7 +7687,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCreateTestReturnResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersCreateTestReturnResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersCreateTestReturnResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -7802,7 +7802,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub merchant_order_id: ::std::option::Option<String>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`acknowledge`\" - \"`cancel`\" - \"`cancelLineItem`\" - \"`get`\" - \"`getByMerchantOrderId`\" - \"`inStoreRefundLineItem`\" - \"`refund`\" - \"`rejectReturnLineItem`\" - \"`returnLineItem`\" - \"`returnRefundLineItem`\" - \"`setLineItemMetadata`\" - \"`shipLineItems`\" - \"`updateLineItemShippingDetails`\" - \"`updateMerchantOrderId`\" - \"`updateShipment`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`acknowledge`” - “`cancel`” - “`cancelLineItem`” - “`get`” - “`getByMerchantOrderId`” - “`inStoreRefundLineItem`” - “`refund`” - “`rejectReturnLineItem`” - “`returnLineItem`” - “`returnRefundLineItem`” - “`setLineItemMetadata`” - “`shipLineItems`” - “`updateLineItemShippingDetails`” - “`updateMerchantOrderId`” - “`updateShipment`” "]
         #[serde(
             rename = "method",
             default,
@@ -7913,7 +7913,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersCustomBatchRequestEntryCancel {
-        #[doc = "The reason for the cancellation. Acceptable values are: - \"`customerInitiatedCancel`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`noInventory`\" - \"`other`\" - \"`priceError`\" - \"`shippingPriceError`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" "]
+        #[doc = "The reason for the cancellation. Acceptable values are: - “`customerInitiatedCancel`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`noInventory`” - “`other`” - “`priceError`” - “`shippingPriceError`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” "]
         #[serde(
             rename = "reason",
             default,
@@ -7993,7 +7993,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the cancellation. Acceptable values are: - \"`customerInitiatedCancel`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`noInventory`\" - \"`other`\" - \"`priceError`\" - \"`shippingPriceError`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" "]
+        #[doc = "The reason for the cancellation. Acceptable values are: - “`customerInitiatedCancel`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`noInventory`” - “`other`” - “`priceError`” - “`shippingPriceError`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8108,7 +8108,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8167,7 +8167,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub amount_tax: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "The reason for the refund. Acceptable values are: - \"`adjustment`\" - \"`courtesyAdjustment`\" - \"`customerCanceled`\" - \"`customerDiscretionaryReturn`\" - \"`deliveredLateByCarrier`\" - \"`feeAdjustment`\" - \"`lateShipmentCredit`\" - \"`noInventory`\" - \"`other`\" - \"`priceError`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`shippingCostAdjustment`\" - \"`taxAdjustment`\" - \"`undeliverableShippingAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the refund. Acceptable values are: - “`adjustment`” - “`courtesyAdjustment`” - “`customerCanceled`” - “`customerDiscretionaryReturn`” - “`deliveredLateByCarrier`” - “`feeAdjustment`” - “`lateShipmentCredit`” - “`noInventory`” - “`other`” - “`priceError`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`shippingCostAdjustment`” - “`taxAdjustment`” - “`undeliverableShippingAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8226,7 +8226,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`damagedOrUsed`\" - \"`missingComponent`\" - \"`notEligible`\" - \"`other`\" - \"`outOfReturnWindow`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`damagedOrUsed`” - “`missingComponent`” - “`notEligible`” - “`other`” - “`outOfReturnWindow`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8285,7 +8285,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8358,7 +8358,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8635,7 +8635,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipment_id: ::std::option::Option<String>,
-        #[doc = "New status for the shipment. Not updated if missing. Acceptable values are: - \"`delivered`\" - \"`undeliverable`\" - \"`readyForPickup`\" "]
+        #[doc = "New status for the shipment. Not updated if missing. Acceptable values are: - “`delivered`” - “`undeliverable`” - “`readyForPickup`” "]
         #[serde(
             rename = "status",
             default,
@@ -8680,7 +8680,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::OrdersCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -8725,14 +8725,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "The status of the execution. Only defined if 1. the request was successful; and 2. the method is not `get`, `getByMerchantOrderId`, or one of the test methods. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Only defined if 1. the request was successful; and 2. the method is not `get`, `getByMerchantOrderId`, or one of the test methods. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#ordersCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#ordersCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -8770,7 +8770,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersGetByMerchantOrderIdResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersGetByMerchantOrderIdResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersGetByMerchantOrderIdResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -8808,7 +8808,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersGetTestOrderTemplateResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersGetTestOrderTemplateResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersGetTestOrderTemplateResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -8888,7 +8888,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -8926,14 +8926,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersInStoreRefundLineItemResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersInStoreRefundLineItemResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersInStoreRefundLineItemResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -8964,7 +8964,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9041,7 +9041,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_id: ::std::option::Option<String>,
-        #[doc = "The reason for the refund. Acceptable values are: - \"`adjustment`\" - \"`courtesyAdjustment`\" - \"`customerCanceled`\" - \"`customerDiscretionaryReturn`\" - \"`deliveredLateByCarrier`\" - \"`feeAdjustment`\" - \"`lateShipmentCredit`\" - \"`noInventory`\" - \"`other`\" - \"`priceError`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`shippingCostAdjustment`\" - \"`taxAdjustment`\" - \"`undeliverableShippingAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the refund. Acceptable values are: - “`adjustment`” - “`courtesyAdjustment`” - “`customerCanceled`” - “`customerDiscretionaryReturn`” - “`deliveredLateByCarrier`” - “`feeAdjustment`” - “`lateShipmentCredit`” - “`noInventory`” - “`other`” - “`priceError`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`shippingCostAdjustment`” - “`taxAdjustment`” - “`undeliverableShippingAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -9079,14 +9079,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersRefundResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersRefundResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersRefundResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9145,7 +9145,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`damagedOrUsed`\" - \"`missingComponent`\" - \"`notEligible`\" - \"`other`\" - \"`outOfReturnWindow`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`damagedOrUsed`” - “`missingComponent`” - “`notEligible`” - “`other`” - “`outOfReturnWindow`” "]
         #[serde(
             rename = "reason",
             default,
@@ -9183,14 +9183,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersRejectReturnLineItemResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersRejectReturnLineItemResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersRejectReturnLineItemResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9249,7 +9249,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -9287,14 +9287,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersReturnLineItemResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersReturnLineItemResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersReturnLineItemResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9367,7 +9367,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quantity: ::std::option::Option<u32>,
-        #[doc = "The reason for the return. Acceptable values are: - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`invalidCoupon`\" - \"`malformedShippingAddress`\" - \"`other`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`qualityNotAsExpected`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "The reason for the return. Acceptable values are: - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`deliveredTooLate`” - “`expiredItem`” - “`invalidCoupon`” - “`malformedShippingAddress`” - “`other`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`qualityNotAsExpected`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reason",
             default,
@@ -9405,14 +9405,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersReturnRefundLineItemResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersReturnRefundLineItemResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersReturnRefundLineItemResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9495,14 +9495,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersSetLineItemMetadataResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersSetLineItemMetadataResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersSetLineItemMetadataResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9608,14 +9608,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersShipLineItemsResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersShipLineItemsResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersShipLineItemsResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9705,14 +9705,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersUpdateLineItemShippingDetailsResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersUpdateLineItemShippingDetailsResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersUpdateLineItemShippingDetailsResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9781,14 +9781,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersUpdateMerchantOrderIdResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersUpdateMerchantOrderIdResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersUpdateMerchantOrderIdResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9847,7 +9847,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipment_id: ::std::option::Option<String>,
-        #[doc = "New status for the shipment. Not updated if missing. Acceptable values are: - \"`delivered`\" - \"`undeliverable`\" - \"`readyForPickup`\" "]
+        #[doc = "New status for the shipment. Not updated if missing. Acceptable values are: - “`delivered`” - “`undeliverable`” - “`readyForPickup`” "]
         #[serde(
             rename = "status",
             default,
@@ -9885,14 +9885,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersUpdateShipmentResponse {
-        #[doc = "The status of the execution. Acceptable values are: - \"`duplicate`\" - \"`executed`\" "]
+        #[doc = "The status of the execution. Acceptable values are: - “`duplicate`” - “`executed`” "]
         #[serde(
             rename = "executionStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_status: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#ordersUpdateShipmentResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#ordersUpdateShipmentResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9968,7 +9968,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub carrier_name: ::std::option::Option<String>,
-        #[doc = "The CLDR country code of the carrier (e.g., \"US\"). Always present."]
+        #[doc = "The CLDR country code of the carrier (e.g., “US”). Always present."]
         #[serde(
             rename = "country",
             default,
@@ -10059,7 +10059,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`delete`\" - \"`get`\" - \"`insert`\" - \"`inventory`\" - \"`sale`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`delete`” - “`get`” - “`insert`” - “`inventory`” - “`sale`” "]
         #[serde(
             rename = "method",
             default,
@@ -10126,7 +10126,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::PosCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#posCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#posCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -10178,7 +10178,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inventory: ::std::option::Option<crate::schemas::PosInventory>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#posCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#posCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -10329,7 +10329,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#posInventory`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#posInventory`”"]
         #[serde(
             rename = "kind",
             default,
@@ -10351,7 +10351,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub quantity: ::std::option::Option<i64>,
-        #[doc = "Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
+        #[doc = "Required. The identifier of the merchant’s store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
         #[serde(
             rename = "storeCode",
             default,
@@ -10432,7 +10432,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub quantity: ::std::option::Option<i64>,
-        #[doc = "Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
+        #[doc = "Required. The identifier of the merchant’s store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
         #[serde(
             rename = "storeCode",
             default,
@@ -10498,7 +10498,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#posInventoryResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#posInventoryResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -10520,7 +10520,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub quantity: ::std::option::Option<i64>,
-        #[doc = "Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
+        #[doc = "Required. The identifier of the merchant’s store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
         #[serde(
             rename = "storeCode",
             default,
@@ -10565,7 +10565,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PosListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#posListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#posListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -10623,7 +10623,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#posSale`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#posSale`”"]
         #[serde(
             rename = "kind",
             default,
@@ -10652,7 +10652,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sale_id: ::std::option::Option<String>,
-        #[doc = "Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
+        #[doc = "Required. The identifier of the merchant’s store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
         #[serde(
             rename = "storeCode",
             default,
@@ -10740,7 +10740,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sale_id: ::std::option::Option<String>,
-        #[doc = "Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
+        #[doc = "Required. The identifier of the merchant’s store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
         #[serde(
             rename = "storeCode",
             default,
@@ -10806,7 +10806,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#posSaleResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#posSaleResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -10835,7 +10835,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sale_id: ::std::option::Option<String>,
-        #[doc = "Required. The identifier of the merchant's store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
+        #[doc = "Required. The identifier of the merchant’s store. Either a `storeCode` inserted via the API or the code of the store in Google My Business."]
         #[serde(
             rename = "storeCode",
             default,
@@ -10887,7 +10887,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcid_category: ::std::option::Option<Vec<String>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#posStore`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#posStore`”"]
         #[serde(
             rename = "kind",
             default,
@@ -11114,7 +11114,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub adwords_redirect: ::std::option::Option<String>,
-        #[doc = "Target age group of the item. Acceptable values are: - \"`adult`\" - \"`infant`\" - \"`kids`\" - \"`newborn`\" - \"`toddler`\" - \"`youngAdult`\" "]
+        #[doc = "Target age group of the item. Acceptable values are: - “`adult`” - “`infant`” - “`kids`” - “`newborn`” - “`toddler`” - “`youngAdult`” "]
         #[serde(
             rename = "ageGroup",
             default,
@@ -11128,7 +11128,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub aspects: ::std::option::Option<Vec<crate::schemas::ProductAspect>>,
-        #[doc = "Availability status of the item. Acceptable values are: - \"`in stock`\" - \"`out of stock`\" - \"`preorder`\" "]
+        #[doc = "Availability status of the item. Acceptable values are: - “`in stock`” - “`out of stock`” - “`preorder`” "]
         #[serde(
             rename = "availability",
             default,
@@ -11149,14 +11149,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brand: ::std::option::Option<String>,
-        #[doc = "URL for the canonical version of your item's landing page."]
+        #[doc = "URL for the canonical version of your item’s landing page."]
         #[serde(
             rename = "canonicalLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub canonical_link: ::std::option::Option<String>,
-        #[doc = "Required. The item's channel (online or local). Acceptable values are: - \"`local`\" - \"`online`\" "]
+        #[doc = "Required. The item’s channel (online or local). Acceptable values are: - “`local`” - “`online`” "]
         #[serde(
             rename = "channel",
             default,
@@ -11170,7 +11170,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<String>,
-        #[doc = "Condition or state of the item. Acceptable values are: - \"`new`\" - \"`refurbished`\" - \"`used`\" "]
+        #[doc = "Condition or state of the item. Acceptable values are: - “`new`” - “`refurbished`” - “`used`” "]
         #[serde(
             rename = "condition",
             default,
@@ -11261,7 +11261,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_ads_id: ::std::option::Option<String>,
-        #[doc = "URL directly to your item's landing page for dynamic remarketing campaigns."]
+        #[doc = "URL directly to your item’s landing page for dynamic remarketing campaigns."]
         #[serde(
             rename = "displayAdsLink",
             default,
@@ -11289,7 +11289,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_ads_value: ::std::option::Option<f64>,
-        #[doc = "The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - \"`A`\" - \"`A+`\" - \"`A++`\" - \"`A+++`\" - \"`B`\" - \"`C`\" - \"`D`\" - \"`E`\" - \"`F`\" - \"`G`\" "]
+        #[doc = "The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - “`A`” - “`A+`” - “`A++`” - “`A+++`” - “`B`” - “`C`” - “`D`” - “`E`” - “`F`” - “`G`” "]
         #[serde(
             rename = "energyEfficiencyClass",
             default,
@@ -11303,14 +11303,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expiration_date: ::std::option::Option<String>,
-        #[doc = "Target gender of the item. Acceptable values are: - \"`female`\" - \"`male`\" - \"`unisex`\" "]
+        #[doc = "Target gender of the item. Acceptable values are: - “`female`” - “`male`” - “`unisex`” "]
         #[serde(
             rename = "gender",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gender: ::std::option::Option<String>,
-        #[doc = "Google's category of the item (see [Google product taxonomy](https://support.google.com/merchants/answer/1705911)). When querying products, this field will contain the user provided value. There is currently no way to get back the auto assigned google product categories through the API."]
+        #[doc = "Google’s category of the item (see [Google product taxonomy](https://support.google.com/merchants/answer/1705911)). When querying products, this field will contain the user provided value. There is currently no way to get back the auto assigned google product categories through the API."]
         #[serde(
             rename = "googleProductCategory",
             default,
@@ -11366,14 +11366,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub item_group_id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#product`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#product`”"]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "URL directly linking to your item's page on your website."]
+        #[doc = "URL directly linking to your item’s page on your website."]
         #[serde(
             rename = "link",
             default,
@@ -11394,7 +11394,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub material: ::std::option::Option<String>,
-        #[doc = "The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - \"`A`\" - \"`A+`\" - \"`A++`\" - \"`A+++`\" - \"`B`\" - \"`C`\" - \"`D`\" - \"`E`\" - \"`F`\" - \"`G`\" "]
+        #[doc = "The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - “`A`” - “`A+`” - “`A++`” - “`A+++`” - “`B`” - “`C`” - “`D`” - “`E`” - “`F`” - “`G`” "]
         #[serde(
             rename = "maxEnergyEfficiencyClass",
             default,
@@ -11409,7 +11409,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_handling_time: ::std::option::Option<i64>,
-        #[doc = "The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - \"`A`\" - \"`A+`\" - \"`A++`\" - \"`A+++`\" - \"`B`\" - \"`C`\" - \"`D`\" - \"`E`\" - \"`F`\" - \"`G`\" "]
+        #[doc = "The energy efficiency class as defined in EU directive 2010/30/EU. Acceptable values are: - “`A`” - “`A+`” - “`A++`” - “`A+++`” - “`B`” - “`C`” - “`D`” - “`E`” - “`F`” - “`G`” "]
         #[serde(
             rename = "minEnergyEfficiencyClass",
             default,
@@ -11424,7 +11424,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub min_handling_time: ::std::option::Option<i64>,
-        #[doc = "URL for the mobile-optimized version of your item's landing page."]
+        #[doc = "URL for the mobile-optimized version of your item’s landing page."]
         #[serde(
             rename = "mobileLink",
             default,
@@ -11460,7 +11460,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub online_only: ::std::option::Option<bool>,
-        #[doc = "The item's pattern (e.g. polka dots)."]
+        #[doc = "The item’s pattern (e.g. polka dots)."]
         #[serde(
             rename = "pattern",
             default,
@@ -11552,14 +11552,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_width: ::std::option::Option<crate::schemas::ProductShippingDimension>,
-        #[doc = "System in which the size is specified. Recommended for apparel items. Acceptable values are: - \"`AU`\" - \"`BR`\" - \"`CN`\" - \"`DE`\" - \"`EU`\" - \"`FR`\" - \"`IT`\" - \"`JP`\" - \"`MEX`\" - \"`UK`\" - \"`US`\" "]
+        #[doc = "System in which the size is specified. Recommended for apparel items. Acceptable values are: - “`AU`” - “`BR`” - “`CN`” - “`DE`” - “`EU`” - “`FR`” - “`IT`” - “`JP`” - “`MEX`” - “`UK`” - “`US`” "]
         #[serde(
             rename = "sizeSystem",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub size_system: ::std::option::Option<String>,
-        #[doc = "The cut of the item. Recommended for apparel items. Acceptable values are: - \"`big and tall`\" - \"`maternity`\" - \"`oversize`\" - \"`petite`\" - \"`plus`\" - \"`regular`\" "]
+        #[doc = "The cut of the item. Recommended for apparel items. Acceptable values are: - “`big and tall`” - “`maternity`” - “`oversize`” - “`petite`” - “`plus`” - “`regular`” "]
         #[serde(
             rename = "sizeType",
             default,
@@ -11573,7 +11573,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sizes: ::std::option::Option<Vec<String>>,
-        #[doc = "The source of the offer, i.e., how the offer was created. Acceptable values are: - \"`api`\" - \"`crawl`\" - \"`feed`\" "]
+        #[doc = "The source of the offer, i.e., how the offer was created. Acceptable values are: - “`api`” - “`crawl`” - “`feed`” "]
         #[serde(
             rename = "source",
             default,
@@ -11751,7 +11751,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_name: ::std::option::Option<String>,
-        #[doc = "Whether the destination is required, excluded or should be validated. Acceptable values are: - \"`default`\" - \"`excluded`\" - \"`optional`\" - \"`required`\" "]
+        #[doc = "Whether the destination is required, excluded or should be validated. Acceptable values are: - “`default`” - “`excluded`” - “`optional`” - “`required`” "]
         #[serde(
             rename = "intention",
             default,
@@ -11943,7 +11943,7 @@ pub mod schemas {
         )]
         pub item_level_issues:
             ::std::option::Option<Vec<crate::schemas::ProductStatusItemLevelIssue>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#productStatus`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#productStatus`”"]
         #[serde(
             rename = "kind",
             default,
@@ -12094,7 +12094,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub approval_pending: ::std::option::Option<bool>,
-        #[doc = "The destination's approval status. Acceptable values are: - \"`approved`\" - \"`disapproved`\" "]
+        #[doc = "The destination’s approval status. Acceptable values are: - “`approved`” - “`disapproved`” "]
         #[serde(
             rename = "approvalStatus",
             default,
@@ -12108,7 +12108,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination: ::std::option::Option<String>,
-        #[doc = "Provided for backward compatibility only. Always set to \"required\". Acceptable values are: - \"`default`\" - \"`excluded`\" - \"`optional`\" - \"`required`\" "]
+        #[doc = "Provided for backward compatibility only. Always set to “required”. Acceptable values are: - “`default`” - “`excluded`” - “`optional`” - “`required`” "]
         #[serde(
             rename = "intention",
             default,
@@ -12139,7 +12139,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ProductStatusItemLevelIssue {
-        #[doc = "The attribute's name, if the issue is caused by a single attribute."]
+        #[doc = "The attribute’s name, if the issue is caused by a single attribute."]
         #[serde(
             rename = "attributeName",
             default,
@@ -12225,7 +12225,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub location_id: ::std::option::Option<i64>,
-        #[doc = "The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*."]
+        #[doc = "The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94\\*, 94002-95460, 94\\*-95\\*."]
         #[serde(
             rename = "postalCode",
             default,
@@ -12373,7 +12373,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`delete`\" - \"`get`\" - \"`insert`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`delete`” - “`get`” - “`insert`” "]
         #[serde(
             rename = "method",
             default,
@@ -12416,7 +12416,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::ProductsCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#productsCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#productsCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12452,7 +12452,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#productsCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#productsCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -12481,7 +12481,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ProductsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#productsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#productsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12590,7 +12590,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`get`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`get`” "]
         #[serde(
             rename = "method",
             default,
@@ -12627,7 +12627,7 @@ pub mod schemas {
         )]
         pub entries:
             ::std::option::Option<Vec<crate::schemas::ProductstatusesCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#productstatusesCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#productstatusesCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12663,7 +12663,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#productstatusesCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#productstatusesCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -12692,7 +12692,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ProductstatusesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#productstatusesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#productstatusesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12741,14 +12741,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Promotion {
-        #[doc = "[required] Amount of the promotion. The values here are the promotion applied to the unit price pretax and to the total of the tax amounts."]
+        #[doc = "\\[required\\] Amount of the promotion. The values here are the promotion applied to the unit price pretax and to the total of the tax amounts."]
         #[serde(
             rename = "promotionAmount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotion_amount: ::std::option::Option<crate::schemas::Amount>,
-        #[doc = "[required] ID of the promotion."]
+        #[doc = "\\[required\\] ID of the promotion."]
         #[serde(
             rename = "promotionId",
             default,
@@ -12852,7 +12852,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "Code of the refund reason. Acceptable values are: - \"`adjustment`\" - \"`autoPostInternal`\" - \"`autoPostInvalidBillingAddress`\" - \"`autoPostNoInventory`\" - \"`autoPostPriceError`\" - \"`autoPostUndeliverableShippingAddress`\" - \"`couponAbuse`\" - \"`courtesyAdjustment`\" - \"`customerCanceled`\" - \"`customerDiscretionaryReturn`\" - \"`customerInitiatedMerchantCancel`\" - \"`customerSupportRequested`\" - \"`deliveredLateByCarrier`\" - \"`deliveredTooLate`\" - \"`expiredItem`\" - \"`failToPushOrderGoogleError`\" - \"`failToPushOrderMerchantError`\" - \"`failToPushOrderMerchantFulfillmentError`\" - \"`failToPushOrderToMerchant`\" - \"`failToPushOrderToMerchantOutOfStock`\" - \"`feeAdjustment`\" - \"`invalidCoupon`\" - \"`lateShipmentCredit`\" - \"`malformedShippingAddress`\" - \"`merchantDidNotShipOnTime`\" - \"`noInventory`\" - \"`orderTimeout`\" - \"`other`\" - \"`paymentAbuse`\" - \"`paymentDeclined`\" - \"`priceAdjustment`\" - \"`priceError`\" - \"`productArrivedDamaged`\" - \"`productNotAsDescribed`\" - \"`promoReallocation`\" - \"`qualityNotAsExpected`\" - \"`returnRefundAbuse`\" - \"`shippingCostAdjustment`\" - \"`shippingPriceError`\" - \"`taxAdjustment`\" - \"`taxError`\" - \"`undeliverableShippingAddress`\" - \"`unsupportedPoBoxAddress`\" - \"`wrongProductShipped`\" "]
+        #[doc = "Code of the refund reason. Acceptable values are: - “`adjustment`” - “`autoPostInternal`” - “`autoPostInvalidBillingAddress`” - “`autoPostNoInventory`” - “`autoPostPriceError`” - “`autoPostUndeliverableShippingAddress`” - “`couponAbuse`” - “`courtesyAdjustment`” - “`customerCanceled`” - “`customerDiscretionaryReturn`” - “`customerInitiatedMerchantCancel`” - “`customerSupportRequested`” - “`deliveredLateByCarrier`” - “`deliveredTooLate`” - “`expiredItem`” - “`failToPushOrderGoogleError`” - “`failToPushOrderMerchantError`” - “`failToPushOrderMerchantFulfillmentError`” - “`failToPushOrderToMerchant`” - “`failToPushOrderToMerchantOutOfStock`” - “`feeAdjustment`” - “`invalidCoupon`” - “`lateShipmentCredit`” - “`malformedShippingAddress`” - “`merchantDidNotShipOnTime`” - “`noInventory`” - “`orderTimeout`” - “`other`” - “`paymentAbuse`” - “`paymentDeclined`” - “`priceAdjustment`” - “`priceError`” - “`productArrivedDamaged`” - “`productNotAsDescribed`” - “`promoReallocation`” - “`qualityNotAsExpected`” - “`returnRefundAbuse`” - “`shippingCostAdjustment`” - “`shippingPriceError`” - “`taxAdjustment`” - “`taxError`” - “`undeliverableShippingAddress`” - “`unsupportedPoBoxAddress`” - “`wrongProductShipped`” "]
         #[serde(
             rename = "reasonCode",
             default,
@@ -12897,7 +12897,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delivery_date: ::std::option::Option<String>,
-        #[doc = "Type of the return method. Acceptable values are: - \"`byMail`\" - \"`contactCustomerSupport`\" - \"`returnless`\" "]
+        #[doc = "Type of the return method. Acceptable values are: - “`byMail`” - “`contactCustomerSupport`” - “`returnless`” "]
         #[serde(
             rename = "returnMethodType",
             default,
@@ -12926,7 +12926,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_date: ::std::option::Option<String>,
-        #[doc = "State of the shipment. Acceptable values are: - \"`completed`\" - \"`new`\" - \"`shipped`\" - \"`undeliverable`\" - \"`pending`\" "]
+        #[doc = "State of the shipment. Acceptable values are: - “`completed`” - “`new`” - “`shipped`” - “`undeliverable`” - “`pending`” "]
         #[serde(
             rename = "state",
             default,
@@ -13016,7 +13016,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delivery_time: ::std::option::Option<crate::schemas::DeliveryTime>,
-        #[doc = "Eligibility for this service. Acceptable values are: - \"`All scenarios`\" - \"`All scenarios except Shopping Actions`\" - \"`Shopping Actions`\" "]
+        #[doc = "Eligibility for this service. Acceptable values are: - “`All scenarios`” - “`All scenarios except Shopping Actions`” - “`Shopping Actions`” "]
         #[serde(
             rename = "eligibility",
             default,
@@ -13052,14 +13052,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pickup_service: ::std::option::Option<crate::schemas::PickupCarrierService>,
-        #[doc = "Shipping rate group definitions. Only the last one is allowed to have an empty `applicableShippingLabels`, which means \"everything else\". The other `applicableShippingLabels` must not overlap."]
+        #[doc = "Shipping rate group definitions. Only the last one is allowed to have an empty `applicableShippingLabels`, which means “everything else”. The other `applicableShippingLabels` must not overlap."]
         #[serde(
             rename = "rateGroups",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rate_groups: ::std::option::Option<Vec<crate::schemas::RateGroup>>,
-        #[doc = "Type of locations this service ships orders to. Acceptable values are: - \"`delivery`\" - \"`pickup`\" "]
+        #[doc = "Type of locations this service ships orders to. Acceptable values are: - “`delivery`” - “`pickup`” "]
         #[serde(
             rename = "shipmentType",
             default,
@@ -13090,14 +13090,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ShipmentInvoice {
-        #[doc = "[required] Invoice summary."]
+        #[doc = "\\[required\\] Invoice summary."]
         #[serde(
             rename = "invoiceSummary",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub invoice_summary: ::std::option::Option<crate::schemas::InvoiceSummary>,
-        #[doc = "[required] Invoice details per line item."]
+        #[doc = "\\[required\\] Invoice details per line item."]
         #[serde(
             rename = "lineItemInvoices",
             default,
@@ -13105,7 +13105,7 @@ pub mod schemas {
         )]
         pub line_item_invoices:
             ::std::option::Option<Vec<crate::schemas::ShipmentInvoiceLineItemInvoice>>,
-        #[doc = "[required] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges."]
+        #[doc = "\\[required\\] ID of the shipment group. It is assigned by the merchant in the `shipLineItems` method and is used to group multiple line items that have the same kind of shipping charges."]
         #[serde(
             rename = "shipmentGroupId",
             default,
@@ -13150,14 +13150,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_id: ::std::option::Option<String>,
-        #[doc = "[required] The shipment unit ID is assigned by the merchant and defines individual quantities within a line item. The same ID can be assigned to units that are the same while units that differ must be assigned a different ID (for example: free or promotional units)."]
+        #[doc = "\\[required\\] The shipment unit ID is assigned by the merchant and defines individual quantities within a line item. The same ID can be assigned to units that are the same while units that differ must be assigned a different ID (for example: free or promotional units)."]
         #[serde(
             rename = "shipmentUnitIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipment_unit_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "[required] Invoice details for a single unit."]
+        #[doc = "\\[required\\] Invoice details for a single unit."]
         #[serde(
             rename = "unitInvoice",
             default,
@@ -13188,7 +13188,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ShipmentTrackingInfo {
-        #[doc = "The shipping carrier that handles the package. Acceptable values are: - \"`boxtal`\" - \"`bpost`\" - \"`chronopost`\" - \"`colisPrive`\" - \"`colissimo`\" - \"`cxt`\" - \"`deliv`\" - \"`dhl`\" - \"`dpd`\" - \"`dynamex`\" - \"`eCourier`\" - \"`easypost`\" - \"`efw`\" - \"`fedex`\" - \"`fedexSmartpost`\" - \"`geodis`\" - \"`gls`\" - \"`googleCourier`\" - \"`gsx`\" - \"`jdLogistics`\" - \"`laPoste`\" - \"`lasership`\" - \"`manual`\" - \"`mpx`\" - \"`onTrac`\" - \"`other`\" - \"`tnt`\" - \"`uds`\" - \"`ups`\" - \"`usps`\" "]
+        #[doc = "The shipping carrier that handles the package. Acceptable values are: - “`boxtal`” - “`bpost`” - “`chronopost`” - “`colisPrive`” - “`colissimo`” - “`cxt`” - “`deliv`” - “`dhl`” - “`dpd`” - “`dynamex`” - “`eCourier`” - “`easypost`” - “`efw`” - “`fedex`” - “`fedexSmartpost`” - “`geodis`” - “`gls`” - “`googleCourier`” - “`gsx`” - “`jdLogistics`” - “`laPoste`” - “`lasership`” - “`manual`” - “`mpx`” - “`onTrac`” - “`other`” - “`tnt`” - “`uds`” - “`ups`” - “`usps`” "]
         #[serde(
             rename = "carrier",
             default,
@@ -13241,7 +13241,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code_groups: ::std::option::Option<Vec<crate::schemas::PostalCodeGroup>>,
-        #[doc = "The target account's list of services. Optional."]
+        #[doc = "The target account’s list of services. Optional."]
         #[serde(
             rename = "services",
             default,
@@ -13334,7 +13334,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub merchant_id: ::std::option::Option<u64>,
-        #[doc = "The method of the batch entry. Acceptable values are: - \"`get`\" - \"`update`\" "]
+        #[doc = "The method of the batch entry. Acceptable values are: - “`get`” - “`update`” "]
         #[serde(
             rename = "method",
             default,
@@ -13380,7 +13380,7 @@ pub mod schemas {
         )]
         pub entries:
             ::std::option::Option<Vec<crate::schemas::ShippingsettingsCustomBatchResponseEntry>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#shippingsettingsCustomBatchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#shippingsettingsCustomBatchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13425,7 +13425,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<crate::schemas::Errors>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#shippingsettingsCustomBatchResponseEntry`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#shippingsettingsCustomBatchResponseEntry`”"]
         #[serde(
             rename = "kind",
             default,
@@ -13470,7 +13470,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub carriers: ::std::option::Option<Vec<crate::schemas::CarriersCarrier>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#shippingsettingsGetSupportedCarriersResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#shippingsettingsGetSupportedCarriersResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13508,7 +13508,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub holidays: ::std::option::Option<Vec<crate::schemas::HolidaysHoliday>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#shippingsettingsGetSupportedHolidaysResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#shippingsettingsGetSupportedHolidaysResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13539,7 +13539,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ShippingsettingsGetSupportedPickupServicesResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#shippingsettingsGetSupportedPickupServicesResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#shippingsettingsGetSupportedPickupServicesResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13578,7 +13578,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ShippingsettingsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"content#shippingsettingsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “content#shippingsettingsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13627,7 +13627,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Table {
-        #[doc = "Headers of the table's columns. Optional: if not set then the table has only one dimension."]
+        #[doc = "Headers of the table’s columns. Optional: if not set then the table has only one dimension."]
         #[serde(
             rename = "columnHeaders",
             default,
@@ -13641,7 +13641,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Headers of the table's rows. Required."]
+        #[doc = "Headers of the table’s rows. Required."]
         #[serde(
             rename = "rowHeaders",
             default,
@@ -13693,7 +13693,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_orderinvoices: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"`content#testOrder`\""]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “`content#testOrder`”"]
         #[serde(
             rename = "kind",
             default,
@@ -13721,14 +13721,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payment_method: ::std::option::Option<crate::schemas::TestOrderPaymentMethod>,
-        #[doc = "Required. Identifier of one of the predefined delivery addresses for the delivery. Acceptable values are: - \"`dwight`\" - \"`jim`\" - \"`pam`\" "]
+        #[doc = "Required. Identifier of one of the predefined delivery addresses for the delivery. Acceptable values are: - “`dwight`” - “`jim`” - “`pam`” "]
         #[serde(
             rename = "predefinedDeliveryAddress",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub predefined_delivery_address: ::std::option::Option<String>,
-        #[doc = "Identifier of one of the predefined pickup details. Required for orders containing line items with shipping type `pickup`. Acceptable values are: - \"`dwight`\" - \"`jim`\" - \"`pam`\" "]
+        #[doc = "Identifier of one of the predefined pickup details. Required for orders containing line items with shipping type `pickup`. Acceptable values are: - “`dwight`” - “`jim`” - “`pam`” "]
         #[serde(
             rename = "predefinedPickupDetails",
             default,
@@ -13756,7 +13756,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shipping_cost_tax: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "Required. The requested shipping option. Acceptable values are: - \"`economy`\" - \"`expedited`\" - \"`oneDay`\" - \"`sameDay`\" - \"`standard`\" - \"`twoDay`\" "]
+        #[doc = "Required. The requested shipping option. Acceptable values are: - “`economy`” - “`expedited`” - “`oneDay`” - “`sameDay`” - “`standard`” - “`twoDay`” "]
         #[serde(
             rename = "shippingOption",
             default,
@@ -13787,7 +13787,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestOrderCustomer {
-        #[doc = "Required. Email address of the customer. Acceptable values are: - \"`pog.dwight.schrute@gmail.com`\" - \"`pog.jim.halpert@gmail.com`\" - \"`penpog.pam.beesly@gmail.comding`\" "]
+        #[doc = "Required. Email address of the customer. Acceptable values are: - “`pog.dwight.schrute@gmail.com`” - “`pog.jim.halpert@gmail.com`” - “`penpog.pam.beesly@gmail.comding`” "]
         #[serde(
             rename = "email",
             default,
@@ -13808,7 +13808,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub full_name: ::std::option::Option<String>,
-        #[doc = "Customer's marketing preferences."]
+        #[doc = "Customer’s marketing preferences."]
         #[serde(
             rename = "marketingRightsInfo",
             default,
@@ -13840,14 +13840,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestOrderCustomerMarketingRightsInfo {
-        #[doc = "Last know user use selection regards marketing preferences. In certain cases selection might not be known, so this field would be empty. Acceptable values are: - \"`denied`\" - \"`granted`\" "]
+        #[doc = "Last know user use selection regards marketing preferences. In certain cases selection might not be known, so this field would be empty. Acceptable values are: - “`denied`” - “`granted`” "]
         #[serde(
             rename = "explicitMarketingPreference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub explicit_marketing_preference: ::std::option::Option<String>,
-        #[doc = "Timestamp when last time marketing preference was updated. Could be empty, if user wasn't offered a selection yet."]
+        #[doc = "Timestamp when last time marketing preference was updated. Could be empty, if user wasn’t offered a selection yet."]
         #[serde(
             rename = "lastUpdatedTimestamp",
             default,
@@ -13944,21 +13944,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brand: ::std::option::Option<String>,
-        #[doc = "Deprecated. Acceptable values are: - \"`online`\" "]
+        #[doc = "Deprecated. Acceptable values are: - “`online`” "]
         #[serde(
             rename = "channel",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel: ::std::option::Option<String>,
-        #[doc = "Required. Condition or state of the item. Acceptable values are: - \"`new`\" "]
+        #[doc = "Required. Condition or state of the item. Acceptable values are: - “`new`” "]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<String>,
-        #[doc = "Required. The two-letter ISO 639-1 language code for the item. Acceptable values are: - \"`en`\" - \"`fr`\" "]
+        #[doc = "Required. The two-letter ISO 639-1 language code for the item. Acceptable values are: - “`en`” - “`fr`” "]
         #[serde(
             rename = "contentLanguage",
             default,
@@ -14081,14 +14081,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_four_digits: ::std::option::Option<String>,
-        #[doc = "The billing address. Acceptable values are: - \"`dwight`\" - \"`jim`\" - \"`pam`\" "]
+        #[doc = "The billing address. Acceptable values are: - “`dwight`” - “`jim`” - “`pam`” "]
         #[serde(
             rename = "predefinedBillingAddress",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub predefined_billing_address: ::std::option::Option<String>,
-        #[doc = "The type of instrument. Note that real orders might have different values than the four values accepted by `createTestOrder`. Acceptable values are: - \"`AMEX`\" - \"`DISCOVER`\" - \"`MASTERCARD`\" - \"`VISA`\" "]
+        #[doc = "The type of instrument. Note that real orders might have different values than the four values accepted by `createTestOrder`. Acceptable values are: - “`AMEX`” - “`DISCOVER`” - “`MASTERCARD`” - “`VISA`” "]
         #[serde(
             rename = "type",
             default,
@@ -14247,7 +14247,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub promotions: ::std::option::Option<Vec<crate::schemas::Promotion>>,
-        #[doc = "[required] Price of the unit, before applying taxes."]
+        #[doc = "\\[required\\] Price of the unit, before applying taxes."]
         #[serde(
             rename = "unitPricePretax",
             default,
@@ -14285,7 +14285,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UnitInvoiceAdditionalCharge {
-        #[doc = "[required] Amount of the additional charge."]
+        #[doc = "\\[required\\] Amount of the additional charge."]
         #[serde(
             rename = "additionalChargeAmount",
             default,
@@ -14299,7 +14299,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_charge_promotions: ::std::option::Option<Vec<crate::schemas::Promotion>>,
-        #[doc = "[required] Type of the additional charge. Acceptable values are: - \"`shipping`\" "]
+        #[doc = "\\[required\\] Type of the additional charge. Acceptable values are: - “`shipping`” "]
         #[serde(
             rename = "type",
             default,
@@ -14330,7 +14330,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UnitInvoiceTaxLine {
-        #[doc = "[required] Tax amount for the tax type."]
+        #[doc = "\\[required\\] Tax amount for the tax type."]
         #[serde(
             rename = "taxAmount",
             default,
@@ -14344,7 +14344,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tax_name: ::std::option::Option<String>,
-        #[doc = "[required] Type of the tax. Acceptable values are: - \"`otherFee`\" - \"`otherFeeTax`\" - \"`sales`\" "]
+        #[doc = "\\[required\\] Type of the tax. Acceptable values are: - “`otherFee`” - “`otherFeeTax`” - “`sales`” "]
         #[serde(
             rename = "taxType",
             default,
@@ -14389,7 +14389,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub flat_rate: ::std::option::Option<crate::schemas::Price>,
-        #[doc = "If true, then the product can't ship. Must be true when set, can only be set if all other fields are not set."]
+        #[doc = "If true, then the product can’t ship. Must be true when set, can only be set if all other fields are not set."]
         #[serde(
             rename = "noShipping",
             default,
@@ -14508,21 +14508,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub carrier_service: ::std::option::Option<String>,
-        #[doc = "Shipping origin's state."]
+        #[doc = "Shipping origin’s state."]
         #[serde(
             rename = "originAdministrativeArea",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub origin_administrative_area: ::std::option::Option<String>,
-        #[doc = "Shipping origin's city."]
+        #[doc = "Shipping origin’s city."]
         #[serde(
             rename = "originCity",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub origin_city: ::std::option::Option<String>,
-        #[doc = "Shipping origin's country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)."]
+        #[doc = "Shipping origin’s country represented as a [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)."]
         #[serde(
             rename = "originCountry",
             default,
@@ -14536,7 +14536,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub origin_postal_code: ::std::option::Option<String>,
-        #[doc = "Shipping origin's street address"]
+        #[doc = "Shipping origin’s street address"]
         #[serde(
             rename = "originStreetAddress",
             default,
@@ -14612,7 +14612,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Weight {
-        #[doc = "Required. The weight unit. Acceptable values are: - \"`kg`\" - \"`lb`\" "]
+        #[doc = "Required. The weight unit. Acceptable values are: - “`kg`” - “`lb`” "]
         #[serde(
             rename = "unit",
             default,
@@ -15176,12 +15176,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -15336,12 +15336,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -15513,12 +15513,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -15681,12 +15681,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -15799,12 +15799,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -15975,12 +15975,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -16140,12 +16140,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -16323,12 +16323,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -16648,12 +16648,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -16896,12 +16896,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -17059,12 +17059,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -17249,12 +17249,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -17678,12 +17678,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -17834,12 +17834,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -18015,12 +18015,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -18340,12 +18340,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -18687,12 +18687,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -18849,12 +18849,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -18972,12 +18972,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19144,12 +19144,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19320,12 +19320,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19495,12 +19495,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19820,12 +19820,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -20068,12 +20068,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -20237,12 +20237,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -20420,12 +20420,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -21000,12 +21000,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -21156,12 +21156,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -21326,12 +21326,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -21510,12 +21510,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -21826,12 +21826,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -21983,12 +21983,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22158,12 +22158,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22342,12 +22342,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22536,12 +22536,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22719,12 +22719,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22956,12 +22956,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -23130,12 +23130,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -23389,12 +23389,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -23737,12 +23737,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -24195,12 +24195,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -24396,12 +24396,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -24895,7 +24895,7 @@ pub mod resources {
                     order_id: order_id.into(),
                 }
             }
-            #[doc = "Sandbox only. Moves a test order from state \"`inProgress`\" to state \"`pendingShipment`\"."]
+            #[doc = "Sandbox only. Moves a test order from state “`inProgress`” to state “`pendingShipment`”."]
             pub fn advancetestorder(
                 &self,
                 merchant_id: u64,
@@ -25398,7 +25398,7 @@ pub mod resources {
                     order_id: order_id.into(),
                 }
             }
-            #[doc = "Updates a shipment's status, carrier, and/or tracking ID."]
+            #[doc = "Updates a shipment’s status, carrier, and/or tracking ID."]
             pub fn updateshipment(
                 &self,
                 request: crate::schemas::OrdersUpdateShipmentRequest,
@@ -25476,12 +25476,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25647,12 +25647,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25818,12 +25818,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -25990,12 +25990,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26162,12 +26162,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26335,12 +26335,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26499,12 +26499,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26669,12 +26669,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26824,12 +26824,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -26993,12 +26993,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27170,12 +27170,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27344,12 +27344,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27562,12 +27562,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -27888,12 +27888,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28060,12 +28060,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28234,12 +28234,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28406,12 +28406,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28580,12 +28580,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28754,12 +28754,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -28926,12 +28926,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29100,12 +29100,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29274,12 +29274,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29639,12 +29639,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29802,12 +29802,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29928,12 +29928,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30113,12 +30113,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30293,12 +30293,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30466,12 +30466,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30644,12 +30644,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30953,12 +30953,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31115,12 +31115,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31231,12 +31231,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31406,12 +31406,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31587,12 +31587,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31999,12 +31999,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32169,12 +32169,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32371,12 +32371,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32871,12 +32871,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33029,12 +33029,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33198,12 +33198,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33361,12 +33361,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33524,12 +33524,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33703,12 +33703,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34028,12 +34028,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

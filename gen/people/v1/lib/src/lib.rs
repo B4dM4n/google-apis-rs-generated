@@ -70,7 +70,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub extended_address: ::std::option::Option<String>,
-        #[doc = "Output only. The type of the address translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the address translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -440,7 +440,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchDeleteContactsRequest {
-        #[doc = "Required. The resource names of the contact to delete. It's repeatable. Allows up to 500 resource names in a single request."]
+        #[doc = "Required. The resource names of the contact to delete. It’s repeatable. Allows up to 500 resource names in a single request."]
         #[serde(
             rename = "resourceNames",
             default,
@@ -807,7 +807,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::FieldMetadata>,
-        #[doc = "Prefer to use the `date` field if set. A free-form string representing the user's birthday. This value is not validated."]
+        #[doc = "Prefer to use the `date` field if set. A free-form string representing the user’s birthday. This value is not validated."]
         #[serde(
             rename = "text",
             default,
@@ -876,7 +876,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CalendarUrl {
-        #[doc = "Output only. The type of the calendar URL translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the calendar URL translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -973,7 +973,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ContactGroup {
-        #[doc = "The group's client data."]
+        #[doc = "The group’s client data."]
         #[serde(
             rename = "clientData",
             default,
@@ -987,7 +987,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Output only. The name translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale for system groups names. Group names set by the owner are the same as name."]
+        #[doc = "Output only. The name translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale for system groups names. Group names set by the owner are the same as name."]
         #[serde(
             rename = "formattedName",
             default,
@@ -1143,7 +1143,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub contact_group_id: ::std::option::Option<String>,
-        #[doc = "The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`. Only contact_group_resource_name can be used for modifying memberships. Any contact group membership can be removed, but only user group or \"myContacts\" or \"starred\" system groups memberships can be added. A contact must always have at least one contact group membership."]
+        #[doc = "The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`. Only contact_group_resource_name can be used for modifying memberships. Any contact group membership can be removed, but only user group or “myContacts” or “starred” system groups memberships can be added. A contact must always have at least one contact group membership."]
         #[serde(
             rename = "contactGroupResourceName",
             default,
@@ -1471,7 +1471,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Date {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -1547,7 +1547,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DomainMembership {
-        #[doc = "True if the person is in the viewer's Google Workspace domain."]
+        #[doc = "True if the person is in the viewer’s Google Workspace domain."]
         #[serde(
             rename = "inViewerDomain",
             default,
@@ -1585,7 +1585,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Output only. The type of the email address translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the email address translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -1668,7 +1668,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date: ::std::option::Option<crate::schemas::Date>,
-        #[doc = "Output only. The type of the event translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the event translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -1713,7 +1713,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExternalId {
-        #[doc = "Output only. The type of the event translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the event translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -1862,7 +1862,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address_me_as: ::std::option::Option<String>,
-        #[doc = "Output only. The value of the gender translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale. Unspecified or custom value are not localized."]
+        #[doc = "Output only. The value of the gender translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale. Unspecified or custom value are not localized."]
         #[serde(
             rename = "formattedValue",
             default,
@@ -1965,14 +1965,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ImClient {
-        #[doc = "Output only. The protocol of the IM client formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The protocol of the IM client formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedProtocol",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub formatted_protocol: ::std::option::Option<String>,
-        #[doc = "Output only. The type of the IM client translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the IM client translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -2254,7 +2254,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub next_sync_token: ::std::option::Option<String>,
-        #[doc = "The list of \"Other contacts\" returned as Person resources. \"Other contacts\" support a limited subset of fields. See ListOtherContactsRequest.request_mask for more detailed information."]
+        #[doc = "The list of “Other contacts” returned as Person resources. “Other contacts” support a limited subset of fields. See ListOtherContactsRequest.request_mask for more detailed information."]
         #[serde(
             rename = "otherContacts",
             default,
@@ -2460,7 +2460,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MiscKeyword {
-        #[doc = "Output only. The type of the miscellaneous keyword translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the miscellaneous keyword translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -2709,14 +2709,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Name {
-        #[doc = "Output only. The display name formatted according to the locale specified by the viewer's account or the `Accept-Language` HTTP header."]
+        #[doc = "Output only. The display name formatted according to the locale specified by the viewer’s account or the `Accept-Language` HTTP header."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Output only. The display name with the last name first formatted according to the locale specified by the viewer's account or the `Accept-Language` HTTP header."]
+        #[doc = "Output only. The display name with the last name first formatted according to the locale specified by the viewer’s account or the `Accept-Language` HTTP header."]
         #[serde(
             rename = "displayNameLastFirst",
             default,
@@ -2880,11 +2880,11 @@ pub mod schemas {
         Gplus,
         #[doc = "Initials."]
         Initials,
-        #[doc = "Maiden name or birth family name. Used when the person's family name has changed as a result of marriage."]
+        #[doc = "Maiden name or birth family name. Used when the person’s family name has changed as a result of marriage."]
         MaidenName,
         #[doc = "A professional affiliation or other name; for example, `Dr. Smith.`"]
         OtherName,
-        #[doc = "A shorter version of the person's name."]
+        #[doc = "A shorter version of the person’s name."]
         ShortName,
     }
     impl NicknameType {
@@ -3017,21 +3017,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Organization {
-        #[doc = "The person's cost center at the organization."]
+        #[doc = "The person’s cost center at the organization."]
         #[serde(
             rename = "costCenter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cost_center: ::std::option::Option<String>,
-        #[doc = "True if the organization is the person's current organization; false if the organization is a past organization."]
+        #[doc = "True if the organization is the person’s current organization; false if the organization is a past organization."]
         #[serde(
             rename = "current",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current: ::std::option::Option<bool>,
-        #[doc = "The person's department at the organization."]
+        #[doc = "The person’s department at the organization."]
         #[serde(
             rename = "department",
             default,
@@ -3052,21 +3052,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_date: ::std::option::Option<crate::schemas::Date>,
-        #[doc = "Output only. The type of the organization translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the organization translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub formatted_type: ::std::option::Option<String>,
-        #[doc = "The person's full-time equivalent millipercent within the organization (100000 = 100%)."]
+        #[doc = "The person’s full-time equivalent millipercent within the organization (100000 = 100%)."]
         #[serde(
             rename = "fullTimeEquivalentMillipercent",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub full_time_equivalent_millipercent: ::std::option::Option<i32>,
-        #[doc = "The person's job description at the organization."]
+        #[doc = "The person’s job description at the organization."]
         #[serde(
             rename = "jobDescription",
             default,
@@ -3122,7 +3122,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub symbol: ::std::option::Option<String>,
-        #[doc = "The person's job title at the organization."]
+        #[doc = "The person’s job title at the organization."]
         #[serde(
             rename = "title",
             default,
@@ -3153,70 +3153,70 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Person {
-        #[doc = "The person's street addresses."]
+        #[doc = "The person’s street addresses."]
         #[serde(
             rename = "addresses",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub addresses: ::std::option::Option<Vec<crate::schemas::Address>>,
-        #[doc = "Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The person's age range."]
+        #[doc = "Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The person’s age range."]
         #[serde(
             rename = "ageRange",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub age_range: ::std::option::Option<crate::schemas::PersonAgeRange>,
-        #[doc = "Output only. The person's age ranges."]
+        #[doc = "Output only. The person’s age ranges."]
         #[serde(
             rename = "ageRanges",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub age_ranges: ::std::option::Option<Vec<crate::schemas::AgeRangeType>>,
-        #[doc = "The person's biographies. This field is a singleton for contact sources."]
+        #[doc = "The person’s biographies. This field is a singleton for contact sources."]
         #[serde(
             rename = "biographies",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub biographies: ::std::option::Option<Vec<crate::schemas::Biography>>,
-        #[doc = "The person's birthdays. This field is a singleton for contact sources."]
+        #[doc = "The person’s birthdays. This field is a singleton for contact sources."]
         #[serde(
             rename = "birthdays",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub birthdays: ::std::option::Option<Vec<crate::schemas::Birthday>>,
-        #[doc = "**DEPRECATED**: No data will be returned The person's bragging rights."]
+        #[doc = "**DEPRECATED**: No data will be returned The person’s bragging rights."]
         #[serde(
             rename = "braggingRights",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bragging_rights: ::std::option::Option<Vec<crate::schemas::BraggingRights>>,
-        #[doc = "The person's calendar URLs."]
+        #[doc = "The person’s calendar URLs."]
         #[serde(
             rename = "calendarUrls",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub calendar_urls: ::std::option::Option<Vec<crate::schemas::CalendarUrl>>,
-        #[doc = "The person's client data."]
+        #[doc = "The person’s client data."]
         #[serde(
             rename = "clientData",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub client_data: ::std::option::Option<Vec<crate::schemas::ClientData>>,
-        #[doc = "Output only. The person's cover photos."]
+        #[doc = "Output only. The person’s cover photos."]
         #[serde(
             rename = "coverPhotos",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cover_photos: ::std::option::Option<Vec<crate::schemas::CoverPhoto>>,
-        #[doc = "The person's email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople."]
+        #[doc = "The person’s email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople."]
         #[serde(
             rename = "emailAddresses",
             default,
@@ -3230,63 +3230,63 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The person's events."]
+        #[doc = "The person’s events."]
         #[serde(
             rename = "events",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub events: ::std::option::Option<Vec<crate::schemas::Event>>,
-        #[doc = "The person's external IDs."]
+        #[doc = "The person’s external IDs."]
         #[serde(
             rename = "externalIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub external_ids: ::std::option::Option<Vec<crate::schemas::ExternalId>>,
-        #[doc = "The person's file-ases."]
+        #[doc = "The person’s file-ases."]
         #[serde(
             rename = "fileAses",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_ases: ::std::option::Option<Vec<crate::schemas::FileAs>>,
-        #[doc = "The person's genders. This field is a singleton for contact sources."]
+        #[doc = "The person’s genders. This field is a singleton for contact sources."]
         #[serde(
             rename = "genders",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub genders: ::std::option::Option<Vec<crate::schemas::Gender>>,
-        #[doc = "The person's instant messaging clients."]
+        #[doc = "The person’s instant messaging clients."]
         #[serde(
             rename = "imClients",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub im_clients: ::std::option::Option<Vec<crate::schemas::ImClient>>,
-        #[doc = "The person's interests."]
+        #[doc = "The person’s interests."]
         #[serde(
             rename = "interests",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub interests: ::std::option::Option<Vec<crate::schemas::Interest>>,
-        #[doc = "The person's locale preferences."]
+        #[doc = "The person’s locale preferences."]
         #[serde(
             rename = "locales",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locales: ::std::option::Option<Vec<crate::schemas::Locale>>,
-        #[doc = "The person's locations."]
+        #[doc = "The person’s locations."]
         #[serde(
             rename = "locations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locations: ::std::option::Option<Vec<crate::schemas::Location>>,
-        #[doc = "The person's group memberships."]
+        #[doc = "The person’s group memberships."]
         #[serde(
             rename = "memberships",
             default,
@@ -3300,63 +3300,63 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::PersonMetadata>,
-        #[doc = "The person's miscellaneous keywords."]
+        #[doc = "The person’s miscellaneous keywords."]
         #[serde(
             rename = "miscKeywords",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub misc_keywords: ::std::option::Option<Vec<crate::schemas::MiscKeyword>>,
-        #[doc = "The person's names. This field is a singleton for contact sources."]
+        #[doc = "The person’s names. This field is a singleton for contact sources."]
         #[serde(
             rename = "names",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub names: ::std::option::Option<Vec<crate::schemas::Name>>,
-        #[doc = "The person's nicknames."]
+        #[doc = "The person’s nicknames."]
         #[serde(
             rename = "nicknames",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub nicknames: ::std::option::Option<Vec<crate::schemas::Nickname>>,
-        #[doc = "The person's occupations."]
+        #[doc = "The person’s occupations."]
         #[serde(
             rename = "occupations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub occupations: ::std::option::Option<Vec<crate::schemas::Occupation>>,
-        #[doc = "The person's past or current organizations."]
+        #[doc = "The person’s past or current organizations."]
         #[serde(
             rename = "organizations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub organizations: ::std::option::Option<Vec<crate::schemas::Organization>>,
-        #[doc = "The person's phone numbers. For `people.connections.list` and `otherContacts.list` the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling GetPeople."]
+        #[doc = "The person’s phone numbers. For `people.connections.list` and `otherContacts.list` the number of phone numbers is limited to 100. If a Person has more phone numbers the entire set can be obtained by calling GetPeople."]
         #[serde(
             rename = "phoneNumbers",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub phone_numbers: ::std::option::Option<Vec<crate::schemas::PhoneNumber>>,
-        #[doc = "Output only. The person's photos."]
+        #[doc = "Output only. The person’s photos."]
         #[serde(
             rename = "photos",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photos: ::std::option::Option<Vec<crate::schemas::Photo>>,
-        #[doc = "The person's relations."]
+        #[doc = "The person’s relations."]
         #[serde(
             rename = "relations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub relations: ::std::option::Option<Vec<crate::schemas::Relation>>,
-        #[doc = "Output only. **DEPRECATED**: No data will be returned The person's relationship interests."]
+        #[doc = "Output only. **DEPRECATED**: No data will be returned The person’s relationship interests."]
         #[serde(
             rename = "relationshipInterests",
             default,
@@ -3364,14 +3364,14 @@ pub mod schemas {
         )]
         pub relationship_interests:
             ::std::option::Option<Vec<crate::schemas::RelationshipInterest>>,
-        #[doc = "Output only. **DEPRECATED**: No data will be returned The person's relationship statuses."]
+        #[doc = "Output only. **DEPRECATED**: No data will be returned The person’s relationship statuses."]
         #[serde(
             rename = "relationshipStatuses",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub relationship_statuses: ::std::option::Option<Vec<crate::schemas::RelationshipStatus>>,
-        #[doc = "**DEPRECATED**: (Please use `person.locations` instead) The person's residences."]
+        #[doc = "**DEPRECATED**: (Please use `person.locations` instead) The person’s residences."]
         #[serde(
             rename = "residences",
             default,
@@ -3385,35 +3385,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_name: ::std::option::Option<String>,
-        #[doc = "The person's SIP addresses."]
+        #[doc = "The person’s SIP addresses."]
         #[serde(
             rename = "sipAddresses",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sip_addresses: ::std::option::Option<Vec<crate::schemas::SipAddress>>,
-        #[doc = "The person's skills."]
+        #[doc = "The person’s skills."]
         #[serde(
             rename = "skills",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub skills: ::std::option::Option<Vec<crate::schemas::Skill>>,
-        #[doc = "Output only. **DEPRECATED**: No data will be returned The person's taglines."]
+        #[doc = "Output only. **DEPRECATED**: No data will be returned The person’s taglines."]
         #[serde(
             rename = "taglines",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub taglines: ::std::option::Option<Vec<crate::schemas::Tagline>>,
-        #[doc = "The person's associated URLs."]
+        #[doc = "The person’s associated URLs."]
         #[serde(
             rename = "urls",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub urls: ::std::option::Option<Vec<crate::schemas::Url>>,
-        #[doc = "The person's user defined data."]
+        #[doc = "The person’s user defined data."]
         #[serde(
             rename = "userDefined",
             default,
@@ -3649,7 +3649,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct PersonResponse {
-        #[doc = "**DEPRECATED** (Please use status instead) [HTTP 1.1 status code] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)."]
+        #[doc = "**DEPRECATED** (Please use status instead) \\[HTTP 1.1 status code\\] (http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)."]
         #[serde(
             rename = "httpStatusCode",
             default,
@@ -3708,7 +3708,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub canonical_form: ::std::option::Option<String>,
-        #[doc = "Output only. The type of the phone number translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the phone number translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -4000,7 +4000,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Relation {
-        #[doc = "Output only. The type of the relation translated and formatted in the viewer's account locale or the locale specified in the Accept-Language HTTP header."]
+        #[doc = "Output only. The type of the relation translated and formatted in the viewer’s account locale or the locale specified in the Accept-Language HTTP header."]
         #[serde(
             rename = "formattedType",
             default,
@@ -4021,7 +4021,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub person: ::std::option::Option<String>,
-        #[doc = "The person's relation to the other person. The type can be custom or one of these predefined values: * `spouse` * `child` * `mother` * `father` * `parent` * `brother` * `sister` * `friend` * `relative` * `domesticPartner` * `manager` * `assistant` * `referredBy` * `partner`"]
+        #[doc = "The person’s relation to the other person. The type can be custom or one of these predefined values: * `spouse` * `child` * `mother` * `father` * `parent` * `brother` * `sister` * `friend` * `relative` * `domesticPartner` * `manager` * `assistant` * `referredBy` * `partner`"]
         #[serde(
             rename = "type",
             default,
@@ -4052,7 +4052,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RelationshipInterest {
-        #[doc = "Output only. The value of the relationship interest translated and formatted in the viewer's account locale or the locale specified in the Accept-Language HTTP header."]
+        #[doc = "Output only. The value of the relationship interest translated and formatted in the viewer’s account locale or the locale specified in the Accept-Language HTTP header."]
         #[serde(
             rename = "formattedValue",
             default,
@@ -4097,7 +4097,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RelationshipStatus {
-        #[doc = "Output only. The value of the relationship status translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The value of the relationship status translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedValue",
             default,
@@ -4142,7 +4142,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Residence {
-        #[doc = "True if the residence is the person's current residence; false if the residence is a past residence."]
+        #[doc = "True if the residence is the person’s current residence; false if the residence is a past residence."]
         #[serde(
             rename = "current",
             default,
@@ -4299,7 +4299,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SipAddress {
-        #[doc = "Output only. The type of the SIP address translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the SIP address translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -4445,7 +4445,7 @@ pub mod schemas {
         DomainContact,
         #[doc = "[Google Workspace domain profile](https://support.google.com/a/answer/1628008)."]
         DomainProfile,
-        #[doc = "[Google \"Other contact\"](https://contacts.google.com/other)."]
+        #[doc = "[Google “Other contact”](https://contacts.google.com/other)."]
         OtherContact,
         #[doc = "[Google profile](https://profiles.google.com). You can view the profile at [https://profiles.google.com/](https://profiles.google.com/){id}, where {id} is the source id."]
         Profile,
@@ -4844,7 +4844,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Url {
-        #[doc = "Output only. The type of the URL translated and formatted in the viewer's account locale or the `Accept-Language` HTTP header locale."]
+        #[doc = "Output only. The type of the URL translated and formatted in the viewer’s account locale or the `Accept-Language` HTTP header locale."]
         #[serde(
             rename = "formattedType",
             default,
@@ -5338,12 +5338,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5496,12 +5496,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5656,12 +5656,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5829,12 +5829,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6014,12 +6014,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6326,12 +6326,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6523,12 +6523,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6744,7 +6744,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Copies an \"Other contact\" to a new contact in the user's \"myContacts\" group Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
+            #[doc = "Copies an “Other contact” to a new contact in the user’s “myContacts” group Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn copy_other_contact_to_my_contacts_group(
                 &self,
                 request: crate::schemas::CopyOtherContactToMyContactsGroupRequest,
@@ -6768,7 +6768,7 @@ pub mod resources {
                     resource_name: resource_name.into(),
                 }
             }
-            #[doc = "List all \"Other contacts\", that is contacts that are not in a contact group. \"Other contacts\" are typically auto created contacts from interactions. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's other contacts that have changed](/people/v1/other-contacts#list_the_users_other_contacts_that_have_changed)."]
+            #[doc = "List all “Other contacts”, that is contacts that are not in a contact group. “Other contacts” are typically auto created contacts from interactions. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user’s other contacts that have changed](/people/v1/other-contacts#list_the_users_other_contacts_that_have_changed)."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -6792,7 +6792,7 @@ pub mod resources {
                     sync_token: None,
                 }
             }
-            #[doc = "Provides a list of contacts in the authenticated user's other contacts that matches the search query. The query matches on a contact's `names`, `emailAddresses`, and `phoneNumbers` fields that are from the OTHER_CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/other-contacts#search_the_users_other_contacts"]
+            #[doc = "Provides a list of contacts in the authenticated user’s other contacts that matches the search query. The query matches on a contact’s `names`, `emailAddresses`, and `phoneNumbers` fields that are from the OTHER_CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/other-contacts#search_the_users_other_contacts"]
             pub fn search(&self) -> SearchRequestBuilder {
                 SearchRequestBuilder {
                     reqwest: &self.reqwest,
@@ -6864,12 +6864,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7003,7 +7003,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Optional. The number of \"Other contacts\" to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0."]
+            #[doc = "Optional. The number of “Other contacts” to include in the response. Valid values are between 1 and 1000, inclusive. Defaults to 100 if not set or set to 0."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
@@ -7066,12 +7066,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7358,7 +7358,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name \"foo name\" matches queries such as \"f\", \"fo\", \"foo\", \"foo n\", \"nam\", etc., but not \"oo n\"."]
+            #[doc = "Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name “foo name” matches queries such as “f”, “fo”, “foo”, “foo n”, “nam”, etc., but not “oo n”."]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
@@ -7398,12 +7398,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8553,7 +8553,7 @@ pub mod resources {
                     resource_name: resource_name.into(),
                 }
             }
-            #[doc = "Delete a contact's photo. Mutate requests for the same user should be done sequentially to avoid // lock contention."]
+            #[doc = "Delete a contact’s photo. Mutate requests for the same user should be done sequentially to avoid // lock contention."]
             pub fn delete_contact_photo(
                 &self,
                 resource_name: impl Into<String>,
@@ -8577,7 +8577,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Provides information about a person by specifying a resource name. Use `people/me` to indicate the authenticated user. The request returns a 400 error if 'personFields' is not specified."]
+            #[doc = "Provides information about a person by specifying a resource name. Use `people/me` to indicate the authenticated user. The request returns a 400 error if ‘personFields’ is not specified."]
             pub fn get(&self, resource_name: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8599,7 +8599,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Provides information about a list of specific people by specifying a list of requested resource names. Use `people/me` to indicate the authenticated user. The request returns a 400 error if 'personFields' is not specified."]
+            #[doc = "Provides information about a list of specific people by specifying a list of requested resource names. Use `people/me` to indicate the authenticated user. The request returns a 400 error if ‘personFields’ is not specified."]
             pub fn get_batch_get(&self) -> GetBatchGetRequestBuilder {
                 GetBatchGetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8621,7 +8621,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the directory people that have changed](/people/v1/directory#list_the_directory_people_that_have_changed)."]
+            #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user’s domain directory. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the directory people that have changed](/people/v1/directory#list_the_directory_people_that_have_changed)."]
             pub fn list_directory_people(&self) -> ListDirectoryPeopleRequestBuilder {
                 ListDirectoryPeopleRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8646,7 +8646,7 @@ pub mod resources {
                     sync_token: None,
                 }
             }
-            #[doc = "Provides a list of contacts in the authenticated user's grouped contacts that matches the search query. The query matches on a contact's `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields that are from the CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/contacts#search_the_users_contacts"]
+            #[doc = "Provides a list of contacts in the authenticated user’s grouped contacts that matches the search query. The query matches on a contact’s `names`, `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields that are from the CONTACT source. **IMPORTANT**: Before searching, clients should send a warmup request with an empty query to update the cache. See https://developers.google.com/people/v1/contacts#search_the_users_contacts"]
             pub fn search_contacts(&self) -> SearchContactsRequestBuilder {
                 SearchContactsRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8668,7 +8668,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user's domain directory that match the search query."]
+            #[doc = "Provides a list of domain profiles and domain contacts in the authenticated user’s domain directory that match the search query."]
             pub fn search_directory_people(&self) -> SearchDirectoryPeopleRequestBuilder {
                 SearchDirectoryPeopleRequestBuilder {
                     reqwest: &self.reqwest,
@@ -8692,7 +8692,7 @@ pub mod resources {
                     sources: None,
                 }
             }
-            #[doc = "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact's etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
+            #[doc = "Update contact data for an existing contact person. Any non-contact data will not be modified. Any non-contact data in the person to update will be ignored. All fields specified in the `update_mask` will be replaced. The server returns a 400 error if `person.metadata.sources` is not specified for the contact to be updated or if there is no contact source. The server returns a 400 error with reason `\"failedPrecondition\"` if `person.metadata.sources.etag` is different than the contact’s etag, which indicates the contact has changed since its data was read. Clients should get the latest person and merge their updates into the latest person. The server returns a 400 error if `memberships` are being updated and there are no contact group memberships specified on the person. The server returns a 400 error if more than one field is specified on a field that is a singleton for contact sources: * biographies * birthdays * genders * names Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn update_contact(
                 &self,
                 request: crate::schemas::Person,
@@ -8719,7 +8719,7 @@ pub mod resources {
                     update_person_fields: None,
                 }
             }
-            #[doc = "Update a contact's photo. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
+            #[doc = "Update a contact’s photo. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures."]
             pub fn update_contact_photo(
                 &self,
                 request: crate::schemas::UpdateContactPhotoRequest,
@@ -8800,12 +8800,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8954,12 +8954,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9108,12 +9108,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9279,12 +9279,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9437,12 +9437,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9615,12 +9615,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9801,12 +9801,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9951,7 +9951,7 @@ pub mod resources {
                 self.request_mask_include_field = Some(value.into());
                 self
             }
-            #[doc = "Required. The resource names of the people to provide information about. It's repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&... - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`. There is a maximum of 200 resource names."]
+            #[doc = "Required. The resource names of the people to provide information about. It’s repeatable. The URL query parameter should be resourceNames=<name1>&resourceNames=<name2>&… - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`. There is a maximum of 200 resource names."]
             pub fn resource_names(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.resource_names = Some(value.into());
                 self
@@ -9994,12 +9994,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -10208,12 +10208,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -10506,7 +10506,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name \"foo name\" matches queries such as \"f\", \"fo\", \"foo\", \"foo n\", \"nam\", etc., but not \"oo n\"."]
+            #[doc = "Required. The plain-text query for the request. The query is used to match prefix phrases of the fields on a person. For example, a person with name “foo name” matches queries such as “f”, “fo”, “foo”, “foo n”, “nam”, etc., but not “oo n”."]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
@@ -10554,12 +10554,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -10762,12 +10762,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11103,12 +11103,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11271,12 +11271,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11569,7 +11569,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Provides a list of the authenticated user's contacts. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user's contacts that have changed](/people/v1/contacts#list_the_users_contacts_that_have_changed)."]
+                #[doc = "Provides a list of the authenticated user’s contacts. Sync tokens expire 7 days after the full sync. A request with an expired sync token will result in a 410 error. In the case of such an error clients should make a full sync request without a `sync_token`. The first page of a full sync request has an additional quota. If the quota is exceeded, a 429 error will be returned. This quota is fixed and can not be increased. When the `sync_token` is specified, resources deleted since the last sync will be returned as a person with `PersonMetadata.deleted` set to true. When the `page_token` or `sync_token` is specified, all other request parameters must match the first call. Writes may have a propagation delay of several minutes for sync requests. Incremental syncs are not intended for read-after-write use cases. See example usage at [List the user’s contacts that have changed](/people/v1/contacts#list_the_users_contacts_that_have_changed)."]
                 pub fn list(&self, resource_name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -11706,12 +11706,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

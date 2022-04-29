@@ -6,7 +6,7 @@ pub mod scopes {
 pub mod schemas {
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudPolicysimulatorV1Beta1AccessStateDiff {
-        #[doc = "How the member's access, specified in the AccessState field, changed between the current (baseline) policies and proposed (simulated) policies."]
+        #[doc = "How the member’s access, specified in the AccessState field, changed between the current (baseline) policies and proposed (simulated) policies."]
         #[serde(
             rename = "accessChange",
             default,
@@ -15,7 +15,7 @@ pub mod schemas {
         pub access_change: ::std::option::Option<
             crate::schemas::GoogleCloudPolicysimulatorV1Beta1AccessStateDiffAccessChange,
         >,
-        #[doc = "The results of evaluating the access tuple under the current (baseline) policies. If the AccessState couldn't be fully evaluated, this field explains why."]
+        #[doc = "The results of evaluating the access tuple under the current (baseline) policies. If the AccessState couldn’t be fully evaluated, this field explains why."]
         #[serde(
             rename = "baseline",
             default,
@@ -23,7 +23,7 @@ pub mod schemas {
         )]
         pub baseline:
             ::std::option::Option<crate::schemas::GoogleCloudPolicysimulatorV1Beta1ExplainedAccess>,
-        #[doc = "The results of evaluating the access tuple under the proposed (simulated) policies. If the AccessState couldn't be fully evaluated, this field explains why."]
+        #[doc = "The results of evaluating the access tuple under the proposed (simulated) policies. If the AccessState couldn’t be fully evaluated, this field explains why."]
         #[serde(
             rename = "simulated",
             default,
@@ -48,15 +48,15 @@ pub mod schemas {
         AccessChangeTypeUnspecified,
         #[doc = "The member did not have access under the current policies (`NOT_GRANTED`), but will have access after the proposed changes (`GRANTED`)."]
         AccessGained,
-        #[doc = "This result can occur for the following reasons: * The member did not have access under the current policies (`NOT_GRANTED`), but their access after the proposed changes is `UNKNOWN`. * The member's access under the current policies is `UNKNOWN`, but they will have access after the proposed changes (`GRANTED`)."]
+        #[doc = "This result can occur for the following reasons: * The member did not have access under the current policies (`NOT_GRANTED`), but their access after the proposed changes is `UNKNOWN`. * The member’s access under the current policies is `UNKNOWN`, but they will have access after the proposed changes (`GRANTED`)."]
         AccessMaybeGained,
-        #[doc = "This result can occur for the following reasons: * The member had access under the current policies (`GRANTED`), but their access after the proposed changes is `UNKNOWN`. * The member's access under the current policies is `UNKNOWN`, but they will not have access after the proposed changes (`NOT_GRANTED`)."]
+        #[doc = "This result can occur for the following reasons: * The member had access under the current policies (`GRANTED`), but their access after the proposed changes is `UNKNOWN`. * The member’s access under the current policies is `UNKNOWN`, but they will not have access after the proposed changes (`NOT_GRANTED`)."]
         AccessMaybeRevoked,
         #[doc = "The member had access under the current policies (`GRANTED`), but will no longer have access after the proposed changes (`NOT_GRANTED`)."]
         AccessRevoked,
-        #[doc = "The member's access did not change. This includes the case where both baseline and simulated are UNKNOWN, but the unknown information is equivalent."]
+        #[doc = "The member’s access did not change. This includes the case where both baseline and simulated are UNKNOWN, but the unknown information is equivalent."]
         NoChange,
-        #[doc = "The member's access under both the current policies and the proposed policies is `UNKNOWN`, but the unknown information differs between them."]
+        #[doc = "The member’s access under both the current policies and the proposed policies is `UNKNOWN`, but the unknown information differs between them."]
         UnknownChange,
     }
     impl GoogleCloudPolicysimulatorV1Beta1AccessStateDiffAccessChange {
@@ -173,7 +173,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPolicysimulatorV1Beta1BindingExplanation { # [doc = "Required. Indicates whether *this binding* provides the specified permission to the specified principal for the specified resource. This field does *not* indicate whether the principal actually has the permission for the resource. There might be another binding that overrides this binding. To determine whether the principal actually has the permission, use the `access` field in the TroubleshootIamPolicyResponse."] # [serde (rename = "access" , default , skip_serializing_if = "std::option::Option::is_none")] pub access : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAccess > , # [doc = "A condition expression that prevents this binding from granting access unless the expression evaluates to `true`. To learn about IAM Conditions, see https://cloud.google.com/iam/docs/conditions-overview."] # [serde (rename = "condition" , default , skip_serializing_if = "std::option::Option::is_none")] pub condition : :: std :: option :: Option < crate :: schemas :: GoogleTypeExpr > , # [doc = "Indicates whether each principal in the binding includes the principal specified in the request, either directly or indirectly. Each key identifies a principal in the binding, and each value indicates whether the principal in the binding includes the principal in the request. For example, suppose that a binding includes the following principals: * `user:alice@example.com` * `group:product-eng@example.com` The principal in the replayed access tuple is `user:bob@example.com`. This user is a principal of the group `group:product-eng@example.com`. For the first principal in the binding, the key is `user:alice@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_NOT_INCLUDED`. For the second principal in the binding, the key is `group:product-eng@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_INCLUDED`."] # [serde (rename = "memberships" , default , skip_serializing_if = "std::option::Option::is_none")] pub memberships : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembership > > , # [doc = "The relevance of this binding to the overall determination for the entire policy."] # [serde (rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationRelevance > , # [doc = "The role that this binding grants. For example, `roles/compute.serviceAgent`. For a complete list of predefined IAM roles, as well as the permissions in each role, see https://cloud.google.com/iam/help/roles/reference."] # [serde (rename = "role" , default , skip_serializing_if = "std::option::Option::is_none")] pub role : :: std :: option :: Option < String > , # [doc = "Indicates whether the role granted by this binding contains the specified permission."] # [serde (rename = "rolePermission" , default , skip_serializing_if = "std::option::Option::is_none")] pub role_permission : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationRolePermission > , # [doc = "The relevance of the permission's existence, or nonexistence, in the role to the overall determination for the entire policy."] # [serde (rename = "rolePermissionRelevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub role_permission_relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationRolePermissionRelevance > , }
+    pub struct GoogleCloudPolicysimulatorV1Beta1BindingExplanation { # [doc = "Required. Indicates whether *this binding* provides the specified permission to the specified principal for the specified resource. This field does *not* indicate whether the principal actually has the permission for the resource. There might be another binding that overrides this binding. To determine whether the principal actually has the permission, use the `access` field in the TroubleshootIamPolicyResponse."] # [serde (rename = "access" , default , skip_serializing_if = "std::option::Option::is_none")] pub access : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAccess > , # [doc = "A condition expression that prevents this binding from granting access unless the expression evaluates to `true`. To learn about IAM Conditions, see https://cloud.google.com/iam/docs/conditions-overview."] # [serde (rename = "condition" , default , skip_serializing_if = "std::option::Option::is_none")] pub condition : :: std :: option :: Option < crate :: schemas :: GoogleTypeExpr > , # [doc = "Indicates whether each principal in the binding includes the principal specified in the request, either directly or indirectly. Each key identifies a principal in the binding, and each value indicates whether the principal in the binding includes the principal in the request. For example, suppose that a binding includes the following principals: * `user:alice@example.com` * `group:product-eng@example.com` The principal in the replayed access tuple is `user:bob@example.com`. This user is a principal of the group `group:product-eng@example.com`. For the first principal in the binding, the key is `user:alice@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_NOT_INCLUDED`. For the second principal in the binding, the key is `group:product-eng@example.com`, and the `membership` field in the value is set to `MEMBERSHIP_INCLUDED`."] # [serde (rename = "memberships" , default , skip_serializing_if = "std::option::Option::is_none")] pub memberships : :: std :: option :: Option < :: std :: collections :: BTreeMap < String , crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembership > > , # [doc = "The relevance of this binding to the overall determination for the entire policy."] # [serde (rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationRelevance > , # [doc = "The role that this binding grants. For example, `roles/compute.serviceAgent`. For a complete list of predefined IAM roles, as well as the permissions in each role, see https://cloud.google.com/iam/help/roles/reference."] # [serde (rename = "role" , default , skip_serializing_if = "std::option::Option::is_none")] pub role : :: std :: option :: Option < String > , # [doc = "Indicates whether the role granted by this binding contains the specified permission."] # [serde (rename = "rolePermission" , default , skip_serializing_if = "std::option::Option::is_none")] pub role_permission : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationRolePermission > , # [doc = "The relevance of the permission’s existence, or nonexistence, in the role to the overall determination for the entire policy."] # [serde (rename = "rolePermissionRelevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub role_permission_relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationRolePermissionRelevance > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPolicysimulatorV1Beta1BindingExplanation
     {
@@ -480,7 +480,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembership { # [doc = "Indicates whether the binding includes the principal."] # [serde (rename = "membership" , default , skip_serializing_if = "std::option::Option::is_none")] pub membership : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembershipMembership > , # [doc = "The relevance of the principal's status to the overall determination for the binding."] # [serde (rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembershipRelevance > , }
+    pub struct GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembership { # [doc = "Indicates whether the binding includes the principal."] # [serde (rename = "membership" , default , skip_serializing_if = "std::option::Option::is_none")] pub membership : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembershipMembership > , # [doc = "The relevance of the principal’s status to the overall determination for the binding."] # [serde (rename = "relevance" , default , skip_serializing_if = "std::option::Option::is_none")] pub relevance : :: std :: option :: Option < crate :: schemas :: GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembershipRelevance > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPolicysimulatorV1Beta1BindingExplanationAnnotatedMembership
     {
@@ -781,7 +781,7 @@ pub mod schemas {
         pub access: ::std::option::Option<
             crate::schemas::GoogleCloudPolicysimulatorV1Beta1ExplainedPolicyAccess,
         >,
-        #[doc = "Details about how each binding in the policy affects the principal's ability, or inability, to use the permission for the resource. If the user who created the Replay does not have access to the policy, this field is omitted."]
+        #[doc = "Details about how each binding in the policy affects the principal’s ability, or inability, to use the permission for the resource. If the user who created the Replay does not have access to the policy, this field is omitted."]
         #[serde(
             rename = "bindingExplanations",
             default,
@@ -1321,7 +1321,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct GoogleCloudPolicysimulatorV1Beta1ReplayDiff {
-        #[doc = "A summary and comparison of the member's access under the current (baseline) policies and the proposed (simulated) policies for a single access tuple. The evaluation of the member's access is reported in the AccessState field."]
+        #[doc = "A summary and comparison of the member’s access under the current (baseline) policies and the proposed (simulated) policies for a single access tuple. The evaluation of the member’s access is reported in the AccessState field."]
         #[serde(
             rename = "accessDiff",
             default,
@@ -1385,7 +1385,7 @@ pub mod schemas {
         )]
         pub access_tuple:
             ::std::option::Option<crate::schemas::GoogleCloudPolicysimulatorV1Beta1AccessTuple>,
-        #[doc = "The difference between the member's access under the current (baseline) policies and the member's access under the proposed (simulated) policies. This field is only included for access tuples that were successfully replayed and had different results under the current policies and the proposed policies."]
+        #[doc = "The difference between the member’s access under the current (baseline) policies and the member’s access under the proposed (simulated) policies. This field is only included for access tuples that were successfully replayed and had different results under the current policies and the proposed policies."]
         #[serde(
             rename = "diff",
             default,
@@ -2252,7 +2252,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDate {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -2691,12 +2691,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -2855,12 +2855,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3026,7 +3026,7 @@ pub mod resources {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to [Simulator.ListReplayResults[] must match the call that provided the page token."]
+                        #[doc = "A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to \\[Simulator.ListReplayResults\\[\\] must match the call that provided the page token."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
                             self
@@ -3061,12 +3061,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -3363,7 +3363,7 @@ pub mod resources {
                     name: name.into(),
                 }
             }
-            #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+            #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -3435,12 +3435,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3573,7 +3573,7 @@ pub mod resources {
                 self.filter = Some(value.into());
                 self
             }
-            #[doc = "The name of the operation's parent resource."]
+            #[doc = "The name of the operation’s parent resource."]
             pub fn name(mut self, value: impl Into<String>) -> Self {
                 self.name = Some(value.into());
                 self
@@ -3618,12 +3618,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4043,12 +4043,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4207,12 +4207,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4378,7 +4378,7 @@ pub mod resources {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to [Simulator.ListReplayResults[] must match the call that provided the page token."]
+                        #[doc = "A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to \\[Simulator.ListReplayResults\\[\\] must match the call that provided the page token."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
                             self
@@ -4413,12 +4413,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -4839,12 +4839,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5003,12 +5003,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5174,7 +5174,7 @@ pub mod resources {
                             self.page_size = Some(value);
                             self
                         }
-                        #[doc = "A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to [Simulator.ListReplayResults[] must match the call that provided the page token."]
+                        #[doc = "A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to \\[Simulator.ListReplayResults\\[\\] must match the call that provided the page token."]
                         pub fn page_token(mut self, value: impl Into<String>) -> Self {
                             self.page_token = Some(value.into());
                             self
@@ -5209,12 +5209,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self

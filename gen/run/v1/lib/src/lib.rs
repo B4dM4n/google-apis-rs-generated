@@ -287,7 +287,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConfigMapEnvSource {
-        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the \"name\" field instead."]
+        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the “name” field instead."]
         #[serde(
             rename = "localObjectReference",
             default,
@@ -339,7 +339,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the \"name\" field instead."]
+        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the “name” field instead."]
         #[serde(
             rename = "localObjectReference",
             default,
@@ -436,14 +436,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Configuration {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "The kind of resource, in this case always \"Configuration\"."]
+        #[doc = "The kind of resource, in this case always “Configuration”."]
         #[serde(
             rename = "kind",
             default,
@@ -526,7 +526,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConfigurationStatus {
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the \"spec\" inline with the observed state of the world."]
+        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world."]
         #[serde(
             rename = "conditions",
             default,
@@ -540,14 +540,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_created_revision_name: ::std::option::Option<String>,
-        #[doc = "LatestReadyRevisionName holds the name of the latest Revision stamped out from this Configuration that has had its \"Ready\" condition become \"True\"."]
+        #[doc = "LatestReadyRevisionName holds the name of the latest Revision stamped out from this Configuration that has had its “Ready” condition become “True”."]
         #[serde(
             rename = "latestReadyRevisionName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_ready_revision_name: ::std::option::Option<String>,
-        #[doc = "ObservedGeneration is the 'Generation' of the Configuration that was last processed by the controller. The observed generation is updated even if the controller failed to process the spec and create the Revision. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False."]
+        #[doc = "ObservedGeneration is the ‘Generation’ of the Configuration that was last processed by the controller. The observed generation is updated even if the controller failed to process the spec and create the Revision. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition’s status is True or False."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -578,7 +578,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Container {
-        #[doc = "(Optional) Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell"]
+        #[doc = "(Optional) Arguments to the entrypoint. The docker image’s CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container’s environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell"]
         #[serde(
             rename = "args",
             default,
@@ -668,7 +668,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub startup_probe: ::std::option::Option<crate::schemas::Probe>,
-        #[doc = "(Optional) Path at which the file to which the container's termination message will be written is mounted into the container's filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log."]
+        #[doc = "(Optional) Path at which the file to which the container’s termination message will be written is mounted into the container’s filesystem. Message written is intended to be brief final status, such as an assertion failure message. Will be truncated by the node if greater than 4096 bytes. The total message length across all containers will be limited to 12kb. Defaults to /dev/termination-log."]
         #[serde(
             rename = "terminationMessagePath",
             default,
@@ -682,14 +682,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub termination_message_policy: ::std::option::Option<String>,
-        #[doc = "(Optional) Volume to mount into the container's filesystem. Only supports SecretVolumeSources. Pod volumes to mount into the container's filesystem."]
+        #[doc = "(Optional) Volume to mount into the container’s filesystem. Only supports SecretVolumeSources. Pod volumes to mount into the container’s filesystem."]
         #[serde(
             rename = "volumeMounts",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub volume_mounts: ::std::option::Option<Vec<crate::schemas::VolumeMount>>,
-        #[doc = "(Optional) Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image."]
+        #[doc = "(Optional) Container’s working directory. If not specified, the container runtime’s default will be used, which might be configured in the container image."]
         #[serde(
             rename = "workingDir",
             default,
@@ -720,21 +720,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ContainerPort {
-        #[doc = "(Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536."]
+        #[doc = "(Optional) Port number the container listens on. This must be a valid port number, 0 \\< x \\< 65536."]
         #[serde(
             rename = "containerPort",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container_port: ::std::option::Option<i32>,
-        #[doc = "(Optional) If specified, used to specify which protocol to use. Allowed values are \"http1\" and \"h2c\"."]
+        #[doc = "(Optional) If specified, used to specify which protocol to use. Allowed values are “http1” and “h2c”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Protocol for port. Must be \"TCP\". Defaults to \"TCP\"."]
+        #[doc = "(Optional) Protocol for port. Must be “TCP”. Defaults to “TCP”."]
         #[serde(
             rename = "protocol",
             default,
@@ -803,14 +803,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DomainMapping {
-        #[doc = "The API version for this call such as \"domains.cloudrun.com/v1\"."]
+        #[doc = "The API version for this call such as “domains.cloudrun.com/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "The kind of resource, in this case \"DomainMapping\"."]
+        #[doc = "The kind of resource, in this case “DomainMapping”."]
         #[serde(
             rename = "kind",
             default,
@@ -1003,14 +1003,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mapped_route_name: ::std::option::Option<String>,
-        #[doc = "ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False."]
+        #[doc = "ObservedGeneration is the ‘Generation’ of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False."]
         #[serde(
             rename = "observedGeneration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub observed_generation: ::std::option::Option<i32>,
-        #[doc = "The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping."]
+        #[doc = "The resource records required to configure this domain mapping. These records must be added to the domain’s DNS configuration in order to serve the application via this domain mapping."]
         #[serde(
             rename = "resourceRecords",
             default,
@@ -1100,14 +1100,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "(Optional) Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to \"\"."]
+        #[doc = "(Optional) Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any route environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to “”."]
         #[serde(
             rename = "value",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub value: ::std::option::Option<String>,
-        #[doc = "(Optional) Source for the environment variable's value. Only supports secret_key_ref. Source for the environment variable's value. Cannot be used if value is not empty."]
+        #[doc = "(Optional) Source for the environment variable’s value. Only supports secret_key_ref. Source for the environment variable’s value. Cannot be used if value is not empty."]
         #[serde(
             rename = "valueFrom",
             default,
@@ -1176,7 +1176,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecAction {
-        #[doc = "(Optional) Command is the command line to execute inside the container, the working directory for the command is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy."]
+        #[doc = "(Optional) Command is the command line to execute inside the container, the working directory for the command is root (‘/’) in the container’s filesystem. The command is simply exec’d, it is not run inside a shell, so traditional shell instructions (‘\\|’, etc) won’t work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy."]
         #[serde(
             rename = "command",
             default,
@@ -1221,7 +1221,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Optional. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
+        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
         #[serde(
             rename = "metadata",
             default,
@@ -1304,7 +1304,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecutionSpec {
-        #[doc = "Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be <= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed remaining, i.e. when the work left to do is less than max parallelism. +optional"]
+        #[doc = "Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be \\<= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed remaining, i.e. when the work left to do is less than max parallelism. +optional"]
         #[serde(
             rename = "parallelism",
             default,
@@ -1363,7 +1363,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub completion_time: ::std::option::Option<String>,
-        #[doc = "Optional. The latest available observations of an execution's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
+        #[doc = "Optional. The latest available observations of an execution’s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
         #[serde(
             rename = "conditions",
             default,
@@ -1384,7 +1384,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub log_uri: ::std::option::Option<String>,
-        #[doc = "Optional. The 'generation' of the execution that was last processed by the controller."]
+        #[doc = "Optional. The ‘generation’ of the execution that was last processed by the controller."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -1547,14 +1547,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message: ::std::option::Option<String>,
-        #[doc = "type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * \"Ready\": True when the Resource is ready."]
+        #[doc = "type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * “Ready”: True when the Resource is ready."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "Optional. One-word CamelCase reason for the condition's last transition."]
+        #[doc = "Optional. One-word CamelCase reason for the condition’s last transition."]
         #[serde(
             rename = "reason",
             default,
@@ -1634,7 +1634,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct HttpgetAction {
-        #[doc = "(Optional) Host name to connect to, defaults to the pod IP. You probably want to set \"Host\" in httpHeaders instead."]
+        #[doc = "(Optional) Host name to connect to, defaults to the pod IP. You probably want to set “Host” in httpHeaders instead."]
         #[serde(
             rename = "host",
             default,
@@ -1738,7 +1738,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Optional. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
+        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
         #[serde(
             rename = "metadata",
             default,
@@ -1814,7 +1814,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatus {
-        #[doc = "The latest available observations of a job's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/"]
+        #[doc = "The latest available observations of a job’s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/"]
         #[serde(
             rename = "conditions",
             default,
@@ -1842,7 +1842,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_created_execution: ::std::option::Option<crate::schemas::ExecutionReference>,
-        #[doc = "The 'generation' of the job that was last processed by the controller."]
+        #[doc = "The ‘generation’ of the job that was last processed by the controller."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -1873,21 +1873,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct KeyToPath {
-        #[doc = "The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version. The key to project."]
+        #[doc = "The Cloud Secret Manager secret version. Can be ‘latest’ for the latest value or an integer for a specific version. The key to project."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "(Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set."]
+        #[doc = "(Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume’s default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set."]
         #[serde(
             rename = "mode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mode: ::std::option::Option<i32>,
-        #[doc = "The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'."]
+        #[doc = "The relative path of the file to map the key to. May not be an absolute path. May not contain the path element ‘..’. May not start with the string ‘..’."]
         #[serde(
             rename = "path",
             default,
@@ -1961,7 +1961,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListConfigurationsResponse {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -1975,7 +1975,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Configuration>>,
-        #[doc = "The kind of this resource, in this case \"ConfigurationList\"."]
+        #[doc = "The kind of this resource, in this case “ConfigurationList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2020,7 +2020,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListDomainMappingsResponse {
-        #[doc = "The API version for this call such as \"domains.cloudrun.com/v1\"."]
+        #[doc = "The API version for this call such as “domains.cloudrun.com/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2034,7 +2034,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::DomainMapping>>,
-        #[doc = "The kind of this resource, in this case \"DomainMappingList\"."]
+        #[doc = "The kind of this resource, in this case “DomainMappingList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2079,7 +2079,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListExecutionsResponse {
-        #[doc = "The API version for this call such as \"run.googleapis.com/v1\"."]
+        #[doc = "The API version for this call such as “run.googleapis.com/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2093,7 +2093,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Execution>>,
-        #[doc = "The kind of this resource, in this case \"ExecutionsList\"."]
+        #[doc = "The kind of this resource, in this case “ExecutionsList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2138,7 +2138,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListJobsResponse {
-        #[doc = "The API version for this call such as \"run.googleapis.com/v1\"."]
+        #[doc = "The API version for this call such as “run.googleapis.com/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2152,7 +2152,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Job>>,
-        #[doc = "The kind of this resource, in this case \"JobsList\"."]
+        #[doc = "The kind of this resource, in this case “JobsList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2236,7 +2236,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#continue: ::std::option::Option<String>,
-        #[doc = "String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency +optional"]
+        #[doc = "String that identifies the server’s internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency +optional"]
         #[serde(
             rename = "resourceVersion",
             default,
@@ -2274,7 +2274,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListRevisionsResponse {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2288,7 +2288,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Revision>>,
-        #[doc = "The kind of this resource, in this case \"RevisionList\"."]
+        #[doc = "The kind of this resource, in this case “RevisionList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2333,7 +2333,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListRoutesResponse {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2347,7 +2347,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Route>>,
-        #[doc = "The kind of this resource, in this case always \"RouteList\"."]
+        #[doc = "The kind of this resource, in this case always “RouteList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2392,7 +2392,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListServicesResponse {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2406,7 +2406,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Service>>,
-        #[doc = "The kind of this resource, in this case \"ServiceList\"."]
+        #[doc = "The kind of this resource, in this case “ServiceList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2440,7 +2440,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListTasksResponse {
-        #[doc = "The API version for this call such as \"run.googleapis.com/v1\"."]
+        #[doc = "The API version for this call such as “run.googleapis.com/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
@@ -2454,7 +2454,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::Task>>,
-        #[doc = "The kind of this resource, in this case \"TasksList\"."]
+        #[doc = "The kind of this resource, in this case “TasksList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2519,14 +2519,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Location {
-        #[doc = "The friendly name for this location, typically a nearby city name. For example, \"Tokyo\"."]
+        #[doc = "The friendly name for this location, typically a nearby city name. For example, “Tokyo”."]
         #[serde(
             rename = "displayName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Cross-service attributes for the location. For example {\"cloud.googleapis.com/region\": \"us-east1\"}"]
+        #[doc = "Cross-service attributes for the location. For example {“cloud.googleapis.com/region”: “us-east1”}"]
         #[serde(
             rename = "labels",
             default,
@@ -2715,7 +2715,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs \"delete\" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned. +optional"]
+        #[doc = "If true, AND if the owner has the “foregroundDeletion” finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs “delete” permission of the owner, otherwise 422 (Unprocessable Entity) will be returned. +optional"]
         #[serde(
             rename = "blockOwnerDeletion",
             default,
@@ -2906,7 +2906,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceRecord {
-        #[doc = "Relative name of the object affected by this record. Only applicable for `CNAME` records. Example: 'www'."]
+        #[doc = "Relative name of the object affected by this record. Only applicable for `CNAME` records. Example: ‘www’."]
         #[serde(
             rename = "name",
             default,
@@ -3032,14 +3032,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceRequirements {
-        #[doc = "(Optional) Only memory and CPU are supported. Limits describes the maximum amount of compute resources allowed. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
+        #[doc = "(Optional) Only memory and CPU are supported. Limits describes the maximum amount of compute resources allowed. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
         #[serde(
             rename = "limits",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limits: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "(Optional) Only memory and CPU are supported. Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
+        #[doc = "(Optional) Only memory and CPU are supported. Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. The values of the map is string form of the ‘quantity’ k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go"]
         #[serde(
             rename = "requests",
             default,
@@ -3070,14 +3070,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Revision {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "The kind of this resource, in this case \"Revision\"."]
+        #[doc = "The kind of this resource, in this case “Revision”."]
         #[serde(
             rename = "kind",
             default,
@@ -3143,7 +3143,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub containers: ::std::option::Option<Vec<crate::schemas::Container>>,
-        #[doc = "Indicates whether information about services should be injected into pod's environment variables, matching the syntax of Docker links. Cloud Run fully managed: Not supported. Cloud Run for Anthos: supported, defaults to true."]
+        #[doc = "Indicates whether information about services should be injected into pod’s environment variables, matching the syntax of Docker links. Cloud Run fully managed: Not supported. Cloud Run for Anthos: supported, defaults to true."]
         #[serde(
             rename = "enableServiceLinks",
             default,
@@ -3157,7 +3157,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_pull_secrets: ::std::option::Option<Vec<crate::schemas::LocalObjectReference>>,
-        #[doc = "Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account."]
+        #[doc = "Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project’s default service account."]
         #[serde(
             rename = "serviceAccountName",
             default,
@@ -3201,7 +3201,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RevisionStatus {
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the \"spec\" inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions. Revision-specific conditions include: * \"ResourcesAvailable\": True when underlying resources have been provisioned. * \"ContainerHealthy\": True when the Revision readiness check completes. * \"Active\": True when the Revision may receive traffic."]
+        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions. Revision-specific conditions include: * “ResourcesAvailable”: True when underlying resources have been provisioned. * “ContainerHealthy”: True when the Revision readiness check completes. * “Active”: True when the Revision may receive traffic."]
         #[serde(
             rename = "conditions",
             default,
@@ -3215,14 +3215,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_digest: ::std::option::Option<String>,
-        #[doc = "Optional. Specifies the generated logging url for this particular revision based on the revision url template specified in the controller's config."]
+        #[doc = "Optional. Specifies the generated logging url for this particular revision based on the revision url template specified in the controller’s config."]
         #[serde(
             rename = "logUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub log_url: ::std::option::Option<String>,
-        #[doc = "ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False."]
+        #[doc = "ObservedGeneration is the ‘Generation’ of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition’s status is True or False."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -3298,14 +3298,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Route {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "The kind of this resource, in this case always \"Route\"."]
+        #[doc = "The kind of this resource, in this case always “Route”."]
         #[serde(
             rename = "kind",
             default,
@@ -3395,14 +3395,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address: ::std::option::Option<crate::schemas::Addressable>,
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the \"spec\" inline with the observed state of the world."]
+        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world."]
         #[serde(
             rename = "conditions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. Note that providing a trafficTarget that only has a configurationName will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new \"latest ready\" revisions from the Configuration are processed without an update to the Route's spec."]
+        #[doc = "ObservedGeneration is the ‘Generation’ of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False. Note that providing a trafficTarget that only has a configurationName will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new “latest ready” revisions from the Configuration are processed without an update to the Route’s spec."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -3471,7 +3471,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecretEnvSource {
-        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the \"name\" field instead."]
+        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the “name” field instead."]
         #[serde(
             rename = "localObjectReference",
             default,
@@ -3516,21 +3516,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecretKeySelector {
-        #[doc = "A Cloud Secret Manager secret version. Must be 'latest' for the latest version or an integer for a specific version. The key of the secret to select from. Must be a valid secret key."]
+        #[doc = "A Cloud Secret Manager secret version. Must be ‘latest’ for the latest version or an integer for a specific version. The key of the secret to select from. Must be a valid secret key."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the \"name\" field instead."]
+        #[doc = "This field should not be used directly as it is meant to be inlined directly into the message. Use the “name” field instead."]
         #[serde(
             rename = "localObjectReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub local_object_reference: ::std::option::Option<crate::schemas::LocalObjectReference>,
-        #[doc = "The name of the secret in Cloud Secret Manager. By default, the secret is assumed to be in the same project. If the secret is in another project, you must define an alias. An alias definition has the form: :projects//secrets/. If multiple alias definitions are needed, they must be separated by commas. The alias definitions must be set on the run.googleapis.com/secrets annotation. The name of the secret in the pod's namespace to select from."]
+        #[doc = "The name of the secret in Cloud Secret Manager. By default, the secret is assumed to be in the same project. If the secret is in another project, you must define an alias. An alias definition has the form: :projects//secrets/. If multiple alias definitions are needed, they must be separated by commas. The alias definitions must be set on the run.googleapis.com/secrets annotation. The name of the secret in the pod’s namespace to select from."]
         #[serde(
             rename = "name",
             default,
@@ -3589,7 +3589,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub optional: ::std::option::Option<bool>,
-        #[doc = "The name of the secret in Cloud Secret Manager. By default, the secret is assumed to be in the same project. If the secret is in another project, you must define an alias. An alias definition has the form: :projects//secrets/. If multiple alias definitions are needed, they must be separated by commas. The alias definitions must be set on the run.googleapis.com/secrets annotation. Name of the secret in the container's namespace to use."]
+        #[doc = "The name of the secret in Cloud Secret Manager. By default, the secret is assumed to be in the same project. If the secret is in another project, you must define an alias. An alias definition has the form: :projects//secrets/. If multiple alias definitions are needed, they must be separated by commas. The alias definitions must be set on the run.googleapis.com/secrets annotation. Name of the secret in the container’s namespace to use."]
         #[serde(
             rename = "secretName",
             default,
@@ -3651,14 +3651,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Service {
-        #[doc = "The API version for this call such as \"serving.knative.dev/v1\"."]
+        #[doc = "The API version for this call such as “serving.knative.dev/v1”."]
         #[serde(
             rename = "apiVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_version: ::std::option::Option<String>,
-        #[doc = "The kind of resource, in this case \"Service\"."]
+        #[doc = "The kind of resource, in this case “Service”."]
         #[serde(
             rename = "kind",
             default,
@@ -3755,28 +3755,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address: ::std::option::Option<crate::schemas::Addressable>,
-        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the \"spec\" inline with the observed state of the world. Service-specific conditions include: * \"ConfigurationsReady\": true when the underlying Configuration is ready. * \"RoutesReady\": true when the underlying Route is ready. * \"Ready\": true when both the underlying Route and Configuration are ready."]
+        #[doc = "Conditions communicates information about ongoing/complete reconciliation processes that bring the “spec” inline with the observed state of the world. Service-specific conditions include: * “ConfigurationsReady”: true when the underlying Configuration is ready. * “RoutesReady”: true when the underlying Route is ready. * “Ready”: true when both the underlying Route and Configuration are ready."]
         #[serde(
             rename = "conditions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditions: ::std::option::Option<Vec<crate::schemas::GoogleCloudRunV1Condition>>,
-        #[doc = "From ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created from this Service's Configuration. It might not be ready yet, for that use LatestReadyRevisionName."]
+        #[doc = "From ConfigurationStatus. LatestCreatedRevisionName is the last revision that was created from this Service’s Configuration. It might not be ready yet, for that use LatestReadyRevisionName."]
         #[serde(
             rename = "latestCreatedRevisionName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_created_revision_name: ::std::option::Option<String>,
-        #[doc = "From ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision stamped out from this Service's Configuration that has had its \"Ready\" condition become \"True\"."]
+        #[doc = "From ConfigurationStatus. LatestReadyRevisionName holds the name of the latest Revision stamped out from this Service’s Configuration that has had its “Ready” condition become “True”."]
         #[serde(
             rename = "latestReadyRevisionName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latest_ready_revision_name: ::std::option::Option<String>,
-        #[doc = "ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False."]
+        #[doc = "ObservedGeneration is the ‘Generation’ of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition’s status is True or False."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -3887,14 +3887,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<crate::schemas::ListMeta>,
-        #[doc = "A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it. +optional"]
+        #[doc = "A machine-readable description of why this operation is in the “Failure” status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it. +optional"]
         #[serde(
             rename = "reason",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reason: ::std::option::Option<String>,
-        #[doc = "Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status +optional"]
+        #[doc = "Status of the operation. One of: “Success” or “Failure”. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status +optional"]
         #[serde(
             rename = "status",
             default,
@@ -3925,7 +3925,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StatusCause {
-        #[doc = "The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed. Fields may appear more than once in an array of causes due to fields having multiple errors. Optional. Examples: \"name\" - the field \"name\" on the current resource \"items[0].name\" - the field \"name\" on the first array entry in \"items\" +optional"]
+        #[doc = "The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed. Fields may appear more than once in an array of causes due to fields having multiple errors. Optional. Examples: “name” - the field “name” on the current resource “items\\[0\\].name” - the field “name” on the first array entry in “items” +optional"]
         #[serde(
             rename = "field",
             default,
@@ -4039,7 +4039,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Optional. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
+        #[doc = "Optional. Standard object’s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata +optional"]
         #[serde(
             rename = "metadata",
             default,
@@ -4125,7 +4125,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_retries: ::std::option::Option<i32>,
-        #[doc = "Optional. Email address of the IAM service account associated with the task of a job execution. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project's default service account. +optional"]
+        #[doc = "Optional. Email address of the IAM service account associated with the task of a job execution. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project’s default service account. +optional"]
         #[serde(
             rename = "serviceAccountName",
             default,
@@ -4167,7 +4167,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub completion_time: ::std::option::Option<String>,
-        #[doc = "Optional. The latest available observations of a task's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
+        #[doc = "Optional. The latest available observations of a task’s current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional"]
         #[serde(
             rename = "conditions",
             default,
@@ -4195,7 +4195,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub log_uri: ::std::option::Option<String>,
-        #[doc = "Optional. The 'generation' of the execution that was last processed by the controller."]
+        #[doc = "Optional. The ‘generation’ of the execution that was last processed by the controller."]
         #[serde(
             rename = "observedGeneration",
             default,
@@ -4278,7 +4278,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub host: ::std::option::Option<String>,
-        #[doc = "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type."]
+        #[doc = "Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto’s inability to properly support the IntOrString golang type."]
         #[serde(
             rename = "port",
             default,
@@ -4371,7 +4371,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TrafficTarget {
-        #[doc = "ConfigurationName of a configuration to whose latest revision we will send this portion of traffic. When the \"status.latestReadyRevisionName\" of the referenced configuration changes, we will automatically migrate traffic from the prior \"latest ready\" revision to the new one. This field is never set in Route's status, only its spec. This is mutually exclusive with RevisionName. Cloud Run currently supports a single ConfigurationName."]
+        #[doc = "ConfigurationName of a configuration to whose latest revision we will send this portion of traffic. When the “status.latestReadyRevisionName” of the referenced configuration changes, we will automatically migrate traffic from the prior “latest ready” revision to the new one. This field is never set in Route’s status, only its spec. This is mutually exclusive with RevisionName. Cloud Run currently supports a single ConfigurationName."]
         #[serde(
             rename = "configurationName",
             default,
@@ -4443,7 +4443,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub config_map: ::std::option::Option<crate::schemas::ConfigMapVolumeSource>,
-        #[doc = "Volume's name. In Cloud Run Fully Managed, the name 'cloudsql' is reserved."]
+        #[doc = "Volume’s name. In Cloud Run Fully Managed, the name ‘cloudsql’ is reserved."]
         #[serde(
             rename = "name",
             default,
@@ -4480,7 +4480,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VolumeMount {
-        #[doc = "Path within the container at which the volume should be mounted. Must not contain ':'."]
+        #[doc = "Path within the container at which the volume should be mounted. Must not contain ‘:’."]
         #[serde(
             rename = "mountPath",
             default,
@@ -4501,7 +4501,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub read_only: ::std::option::Option<bool>,
-        #[doc = "(Optional) Path within the volume from which the container's volume should be mounted. Defaults to \"\" (volume's root)."]
+        #[doc = "(Optional) Path within the volume from which the container’s volume should be mounted. Defaults to “” (volume’s root)."]
         #[serde(
             rename = "subPath",
             default,
@@ -4884,12 +4884,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5264,12 +5264,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5401,7 +5401,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -5466,12 +5466,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5748,12 +5748,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5935,12 +5935,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6099,12 +6099,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6236,7 +6236,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -6301,12 +6301,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6568,12 +6568,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6731,12 +6731,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6868,7 +6868,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -6933,12 +6933,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7154,7 +7154,7 @@ pub mod resources {
                         watch: None,
                     }
                 }
-                #[doc = "Replace a job. Only the spec and metadata labels and annotations are modifiable. After the Replace request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
+                #[doc = "Replace a job. Only the spec and metadata labels and annotations are modifiable. After the Replace request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
                 pub fn replace_job(
                     &self,
                     request: crate::schemas::Job,
@@ -7253,12 +7253,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7433,12 +7433,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7596,12 +7596,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7733,7 +7733,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -7798,12 +7798,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7967,12 +7967,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8129,12 +8129,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8395,12 +8395,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8559,12 +8559,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8696,7 +8696,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -8761,12 +8761,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8986,12 +8986,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9123,7 +9123,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -9188,12 +9188,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9411,7 +9411,7 @@ pub mod resources {
                         watch: None,
                     }
                 }
-                #[doc = "Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
+                #[doc = "Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
                 pub fn replace_service(
                     &self,
                     request: crate::schemas::Service,
@@ -9493,12 +9493,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9680,12 +9680,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9844,12 +9844,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9981,7 +9981,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -10046,12 +10046,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10221,12 +10221,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10440,12 +10440,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10577,7 +10577,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                 pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                     self.field_selector = Some(value.into());
                     self
@@ -10642,12 +10642,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10884,12 +10884,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11318,12 +11318,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -11682,12 +11682,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12065,12 +12065,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12202,7 +12202,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
@@ -12267,12 +12267,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12549,12 +12549,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12736,12 +12736,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -12900,12 +12900,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -13037,7 +13037,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
@@ -13102,12 +13102,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -13361,12 +13361,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -13527,12 +13527,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -13690,12 +13690,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -13958,12 +13958,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14122,12 +14122,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14259,7 +14259,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
@@ -14324,12 +14324,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14551,12 +14551,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14688,7 +14688,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
@@ -14753,12 +14753,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15001,7 +15001,7 @@ pub mod resources {
                             watch: None,
                         }
                     }
-                    #[doc = "Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
+                    #[doc = "Replace a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the ‘status’ match the requested ‘spec’. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control."]
                     pub fn replace_service(
                         &self,
                         request: crate::schemas::Service,
@@ -15131,12 +15131,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15318,12 +15318,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15482,12 +15482,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15648,12 +15648,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15790,7 +15790,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
+                    #[doc = "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. ‘metadata.name%3Dlorem’. Not currently used by Cloud Run."]
                     pub fn field_selector(mut self, value: impl Into<String>) -> Self {
                         self.field_selector = Some(value.into());
                         self
@@ -15855,12 +15855,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16032,12 +16032,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16195,12 +16195,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16358,12 +16358,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

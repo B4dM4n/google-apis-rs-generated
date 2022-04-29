@@ -45,7 +45,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification: ::std::option::Option<crate::schemas::AndroidNotification>,
-        #[doc = "Message priority. Can take \"normal\" and \"high\" values. For more information, see [Setting the priority of a message](https://goo.gl/GjONJv)."]
+        #[doc = "Message priority. Can take “normal” and “high” values. For more information, see [Setting the priority of a message](https://goo.gl/GjONJv)."]
         #[serde(
             rename = "priority",
             default,
@@ -59,7 +59,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub restricted_package_name: ::std::option::Option<String>,
-        #[doc = "How long (in seconds) the message should be kept in FCM storage if the device is offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks if not set. Set it to 0 if want to send the message immediately. In JSON format, the Duration type is encoded as a string rather than an object, where the string ends in the suffix \"s\" (indicating seconds) and is preceded by the number of seconds, with nanoseconds expressed as fractional seconds. For example, 3 seconds with 0 nanoseconds should be encoded in JSON format as \"3s\", while 3 seconds and 1 nanosecond should be expressed in JSON format as \"3.000000001s\". The ttl will be rounded down to the nearest second."]
+        #[doc = "How long (in seconds) the message should be kept in FCM storage if the device is offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks if not set. Set it to 0 if want to send the message immediately. In JSON format, the Duration type is encoded as a string rather than an object, where the string ends in the suffix “s” (indicating seconds) and is preceded by the number of seconds, with nanoseconds expressed as fractional seconds. For example, 3 seconds with 0 nanoseconds should be encoded in JSON format as “3s”, while 3 seconds and 1 nanosecond should be expressed in JSON format as “3.000000001s”. The ttl will be rounded down to the nearest second."]
         #[serde(
             rename = "ttl",
             default,
@@ -79,9 +79,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum AndroidConfigPriority {
-        #[doc = "Default priority for notification messages. FCM attempts to deliver high priority messages immediately, allowing the FCM service to wake a sleeping device when possible and open a network connection to your app server. Apps with instant messaging, chat, or voice call alerts, for example, generally need to open a network connection and make sure FCM delivers the message to the device without delay. Set high priority if the message is time-critical and requires the user's immediate interaction, but beware that setting your messages to high priority contributes more to battery drain compared with normal priority messages."]
+        #[doc = "Default priority for notification messages. FCM attempts to deliver high priority messages immediately, allowing the FCM service to wake a sleeping device when possible and open a network connection to your app server. Apps with instant messaging, chat, or voice call alerts, for example, generally need to open a network connection and make sure FCM delivers the message to the device without delay. Set high priority if the message is time-critical and requires the user’s immediate interaction, but beware that setting your messages to high priority contributes more to battery drain compared with normal priority messages."]
         High,
-        #[doc = "Default priority for data messages. Normal priority messages won't open network connections on a sleeping device, and their delivery may be delayed to conserve the battery. For less time-sensitive messages, such as notifications of new email or other data to sync, choose normal delivery priority."]
+        #[doc = "Default priority for data messages. Normal priority messages won’t open network connections on a sleeping device, and their delivery may be delayed to conserve the battery. For less time-sensitive messages, such as notifications of new email or other data to sync, choose normal delivery priority."]
         Normal,
     }
     impl AndroidConfigPriority {
@@ -161,7 +161,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AndroidFcmOptions {
-        #[doc = "Label associated with the message's analytics data."]
+        #[doc = "Label associated with the message’s analytics data."]
         #[serde(
             rename = "analyticsLabel",
             default,
@@ -183,21 +183,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct AndroidNotification {
-        #[doc = "The notification's body text. If present, it will override google.firebase.fcm.v1.Notification.body."]
+        #[doc = "The notification’s body text. If present, it will override google.firebase.fcm.v1.Notification.body."]
         #[serde(
             rename = "body",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub body: ::std::option::Option<String>,
-        #[doc = "Variable string values to be used in place of the format specifiers in body_loc_key to use to localize the body text to the user's current localization. See [Formatting and Styling](https://goo.gl/MalYE3) for more information."]
+        #[doc = "Variable string values to be used in place of the format specifiers in body_loc_key to use to localize the body text to the user’s current localization. See [Formatting and Styling](https://goo.gl/MalYE3) for more information."]
         #[serde(
             rename = "bodyLocArgs",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub body_loc_args: ::std::option::Option<Vec<String>>,
-        #[doc = "The key to the body string in the app's string resources to use to localize the body text to the user's current localization. See [String Resources](https://goo.gl/NdFZGI) for more information."]
+        #[doc = "The key to the body string in the app’s string resources to use to localize the body text to the user’s current localization. See [String Resources](https://goo.gl/NdFZGI) for more information."]
         #[serde(
             rename = "bodyLocKey",
             default,
@@ -211,7 +211,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bypass_proxy_notification: ::std::option::Option<bool>,
-        #[doc = "The [notification's channel id](https://developer.android.com/guide/topics/ui/notifiers/notifications#ManageChannels) (new in Android O). The app must create a channel with this channel ID before any notification with this channel ID is received. If you don't send this channel ID in the request, or if the channel ID provided has not yet been created by the app, FCM uses the channel ID specified in the app manifest."]
+        #[doc = "The [notification’s channel id](https://developer.android.com/guide/topics/ui/notifiers/notifications#ManageChannels) (new in Android O). The app must create a channel with this channel ID before any notification with this channel ID is received. If you don’t send this channel ID in the request, or if the channel ID provided has not yet been created by the app, FCM uses the channel ID specified in the app manifest."]
         #[serde(
             rename = "channelId",
             default,
@@ -225,28 +225,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub click_action: ::std::option::Option<String>,
-        #[doc = "The notification's icon color, expressed in #rrggbb format."]
+        #[doc = "The notification’s icon color, expressed in #rrggbb format."]
         #[serde(
             rename = "color",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<String>,
-        #[doc = "If set to true, use the Android framework's default LED light settings for the notification. Default values are specified in [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml). If `default_light_settings` is set to true and `light_settings` is also set, the user-specified `light_settings` is used instead of the default value."]
+        #[doc = "If set to true, use the Android framework’s default LED light settings for the notification. Default values are specified in [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml). If `default_light_settings` is set to true and `light_settings` is also set, the user-specified `light_settings` is used instead of the default value."]
         #[serde(
             rename = "defaultLightSettings",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_light_settings: ::std::option::Option<bool>,
-        #[doc = "If set to true, use the Android framework's default sound for the notification. Default values are specified in [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml)."]
+        #[doc = "If set to true, use the Android framework’s default sound for the notification. Default values are specified in [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml)."]
         #[serde(
             rename = "defaultSound",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_sound: ::std::option::Option<bool>,
-        #[doc = "If set to true, use the Android framework's default vibrate pattern for the notification. Default values are specified in [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml). If `default_vibrate_timings` is set to true and `vibrate_timings` is also set, the default value is used instead of the user-specified `vibrate_timings`."]
+        #[doc = "If set to true, use the Android framework’s default vibrate pattern for the notification. Default values are specified in [config.xml](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml). If `default_vibrate_timings` is set to true and `vibrate_timings` is also set, the default value is used instead of the user-specified `vibrate_timings`."]
         #[serde(
             rename = "defaultVibrateTimings",
             default,
@@ -260,7 +260,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event_time: ::std::option::Option<String>,
-        #[doc = "The notification's icon. Sets the notification icon to myicon for drawable resource myicon. If you don't send this key in the request, FCM displays the launcher icon specified in your app manifest."]
+        #[doc = "The notification’s icon. Sets the notification icon to myicon for drawable resource myicon. If you don’t send this key in the request, FCM displays the launcher icon specified in your app manifest."]
         #[serde(
             rename = "icon",
             default,
@@ -274,7 +274,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<String>,
-        #[doc = "Settings to control the notification's LED blinking rate and color if LED is available on the device. The total blinking time is controlled by the OS."]
+        #[doc = "Settings to control the notification’s LED blinking rate and color if LED is available on the device. The total blinking time is controlled by the OS."]
         #[serde(
             rename = "lightSettings",
             default,
@@ -288,14 +288,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub local_only: ::std::option::Option<bool>,
-        #[doc = "Sets the number of items this notification represents. May be displayed as a badge count for launchers that support badging.See [Notification Badge](https://developer.android.com/training/notify-user/badges). For example, this might be useful if you're using just one notification to represent multiple new messages but you want the count here to represent the number of total new messages. If zero or unspecified, systems that support badging use the default, which is to increment a number displayed on the long-press menu each time a new notification arrives."]
+        #[doc = "Sets the number of items this notification represents. May be displayed as a badge count for launchers that support badging.See [Notification Badge](https://developer.android.com/training/notify-user/badges). For example, this might be useful if you’re using just one notification to represent multiple new messages but you want the count here to represent the number of total new messages. If zero or unspecified, systems that support badging use the default, which is to increment a number displayed on the long-press menu each time a new notification arrives."]
         #[serde(
             rename = "notificationCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub notification_count: ::std::option::Option<i32>,
-        #[doc = "Set the relative priority for this notification. Priority is an indication of how much of the user's attention should be consumed by this notification. Low-priority notifications may be hidden from the user in certain situations, while the user might be interrupted for a higher-priority notification. The effect of setting the same priorities may differ slightly on different platforms. Note this priority differs from `AndroidMessagePriority`. This priority is processed by the client after the message has been delivered, whereas [AndroidMessagePriority](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#androidmessagepriority) is an FCM concept that controls when the message is delivered."]
+        #[doc = "Set the relative priority for this notification. Priority is an indication of how much of the user’s attention should be consumed by this notification. Low-priority notifications may be hidden from the user in certain situations, while the user might be interrupted for a higher-priority notification. The effect of setting the same priorities may differ slightly on different platforms. Note this priority differs from `AndroidMessagePriority`. This priority is processed by the client after the message has been delivered, whereas [AndroidMessagePriority](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#androidmessagepriority) is an FCM concept that controls when the message is delivered."]
         #[serde(
             rename = "notificationPriority",
             default,
@@ -303,7 +303,7 @@ pub mod schemas {
         )]
         pub notification_priority:
             ::std::option::Option<crate::schemas::AndroidNotificationNotificationPriority>,
-        #[doc = "The sound to play when the device receives the notification. Supports \"default\" or the filename of a sound resource bundled in the app. Sound files must reside in /res/raw/."]
+        #[doc = "The sound to play when the device receives the notification. Supports “default” or the filename of a sound resource bundled in the app. Sound files must reside in /res/raw/."]
         #[serde(
             rename = "sound",
             default,
@@ -324,28 +324,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tag: ::std::option::Option<String>,
-        #[doc = "Sets the \"ticker\" text, which is sent to accessibility services. Prior to API level 21 (`Lollipop`), sets the text that is displayed in the status bar when the notification first arrives."]
+        #[doc = "Sets the “ticker” text, which is sent to accessibility services. Prior to API level 21 (`Lollipop`), sets the text that is displayed in the status bar when the notification first arrives."]
         #[serde(
             rename = "ticker",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ticker: ::std::option::Option<String>,
-        #[doc = "The notification's title. If present, it will override google.firebase.fcm.v1.Notification.title."]
+        #[doc = "The notification’s title. If present, it will override google.firebase.fcm.v1.Notification.title."]
         #[serde(
             rename = "title",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title: ::std::option::Option<String>,
-        #[doc = "Variable string values to be used in place of the format specifiers in title_loc_key to use to localize the title text to the user's current localization. See [Formatting and Styling](https://goo.gl/MalYE3) for more information."]
+        #[doc = "Variable string values to be used in place of the format specifiers in title_loc_key to use to localize the title text to the user’s current localization. See [Formatting and Styling](https://goo.gl/MalYE3) for more information."]
         #[serde(
             rename = "titleLocArgs",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub title_loc_args: ::std::option::Option<Vec<String>>,
-        #[doc = "The key to the title string in the app's string resources to use to localize the title text to the user's current localization. See [String Resources](https://goo.gl/NdFZGI) for more information."]
+        #[doc = "The key to the title string in the app’s string resources to use to localize the title text to the user’s current localization. See [String Resources](https://goo.gl/NdFZGI) for more information."]
         #[serde(
             rename = "titleLocKey",
             default,
@@ -385,7 +385,7 @@ pub mod schemas {
         PriorityHigh,
         #[doc = "Lower notification priority. The UI may choose to show the notifications smaller, or at a different position in the list, compared with notifications with `PRIORITY_DEFAULT`."]
         PriorityLow,
-        #[doc = "Highest notification priority. Use this for the application's most important items that require the user's prompt attention or input."]
+        #[doc = "Highest notification priority. Use this for the application’s most important items that require the user’s prompt attention or input."]
         PriorityMax,
         #[doc = "Lowest notification priority. Notifications with this `PRIORITY_MIN` might not be shown to the user except under special circumstances, such as detailed notification logs."]
         PriorityMin,
@@ -603,7 +603,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ApnsFcmOptions {
-        #[doc = "Label associated with the message's analytics data."]
+        #[doc = "Label associated with the message’s analytics data."]
         #[serde(
             rename = "analyticsLabel",
             default,
@@ -639,21 +639,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alpha: ::std::option::Option<f32>,
-        #[doc = "The amount of blue in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of blue in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "blue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blue: ::std::option::Option<f32>,
-        #[doc = "The amount of green in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of green in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "green",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub green: ::std::option::Option<f32>,
-        #[doc = "The amount of red in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of red in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "red",
             default,
@@ -684,7 +684,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FcmOptions {
-        #[doc = "Label associated with the message's analytics data."]
+        #[doc = "Label associated with the message’s analytics data."]
         #[serde(
             rename = "analyticsLabel",
             default,
@@ -754,14 +754,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub apns: ::std::option::Option<crate::schemas::ApnsConfig>,
-        #[doc = "Condition to send a message to, e.g. \"'foo' in topics && 'bar' in topics\"."]
+        #[doc = "Condition to send a message to, e.g. “‘foo’ in topics && ‘bar’ in topics”."]
         #[serde(
             rename = "condition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub condition: ::std::option::Option<String>,
-        #[doc = "Input only. Arbitrary key/value payload, which must be UTF-8 encoded. The key should not be a reserved word (\"from\", \"message_type\", or any word starting with \"google\" or \"gcm\"). When sending payloads containing only data fields to iOS devices, only normal priority (`\"apns-priority\": \"5\"`) is allowed in [`ApnsConfig`](/docs/reference/fcm/rest/v1/projects.messages#apnsconfig)."]
+        #[doc = "Input only. Arbitrary key/value payload, which must be UTF-8 encoded. The key should not be a reserved word (“from”, “message_type”, or any word starting with “google” or “gcm”). When sending payloads containing only data fields to iOS devices, only normal priority (`\"apns-priority\": \"5\"`) is allowed in [`ApnsConfig`](/docs/reference/fcm/rest/v1/projects.messages#apnsconfig)."]
         #[serde(
             rename = "data",
             default,
@@ -796,7 +796,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub token: ::std::option::Option<String>,
-        #[doc = "Topic name to send a message to, e.g. \"weather\". Note: \"/topics/\" prefix should not be provided."]
+        #[doc = "Topic name to send a message to, e.g. “weather”. Note: “/topics/” prefix should not be provided."]
         #[serde(
             rename = "topic",
             default,
@@ -834,7 +834,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Notification {
-        #[doc = "The notification's body text."]
+        #[doc = "The notification’s body text."]
         #[serde(
             rename = "body",
             default,
@@ -848,7 +848,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image: ::std::option::Option<String>,
-        #[doc = "The notification's title."]
+        #[doc = "The notification’s title."]
         #[serde(
             rename = "title",
             default,
@@ -909,14 +909,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fcm_options: ::std::option::Option<crate::schemas::WebpushFcmOptions>,
-        #[doc = "HTTP headers defined in webpush protocol. Refer to [Webpush protocol](https://tools.ietf.org/html/rfc8030#section-5) for supported headers, e.g. \"TTL\": \"15\"."]
+        #[doc = "HTTP headers defined in webpush protocol. Refer to [Webpush protocol](https://tools.ietf.org/html/rfc8030#section-5) for supported headers, e.g. “TTL”: “15”."]
         #[serde(
             rename = "headers",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub headers: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Web Notification options as a JSON object. Supports Notification instance properties as defined in [Web Notification API](https://developer.mozilla.org/en-US/docs/Web/API/Notification). If present, \"title\" and \"body\" fields override [google.firebase.fcm.v1.Notification.title] and [google.firebase.fcm.v1.Notification.body]."]
+        #[doc = "Web Notification options as a JSON object. Supports Notification instance properties as defined in [Web Notification API](https://developer.mozilla.org/en-US/docs/Web/API/Notification). If present, “title” and “body” fields override \\[google.firebase.fcm.v1.Notification.title\\] and \\[google.firebase.fcm.v1.Notification.body\\]."]
         #[serde(
             rename = "notification",
             default,
@@ -948,7 +948,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WebpushFcmOptions {
-        #[doc = "Label associated with the message's analytics data."]
+        #[doc = "Label associated with the message’s analytics data."]
         #[serde(
             rename = "analyticsLabel",
             default,
@@ -1258,12 +1258,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

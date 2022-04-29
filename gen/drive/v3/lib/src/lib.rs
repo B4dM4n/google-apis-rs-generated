@@ -83,7 +83,7 @@ pub mod schemas {
         )]
         pub import_formats:
             ::std::option::Option<::std::collections::BTreeMap<String, Vec<String>>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#about\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#about”."]
         #[serde(
             rename = "kind",
             default,
@@ -105,7 +105,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_upload_size: ::std::option::Option<i64>,
-        #[doc = "The user's storage quota limits and usage. All fields are measured in bytes."]
+        #[doc = "The user’s storage quota limits and usage. All fields are measured in bytes."]
         #[serde(
             rename = "storageQuota",
             default,
@@ -151,7 +151,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AboutDriveThemesItems {
-        #[doc = "A link to this theme's background image."]
+        #[doc = "A link to this theme’s background image."]
         #[serde(
             rename = "backgroundImageLink",
             default,
@@ -323,7 +323,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#change\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#change”."]
         #[serde(
             rename = "kind",
             default,
@@ -387,7 +387,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub changes: ::std::option::Option<Vec<crate::schemas::Change>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#changeList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#changeList”."]
         #[serde(
             rename = "kind",
             default,
@@ -459,7 +459,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies this as a notification channel used to watch for changes to a resource, which is \"api#channel\"."]
+        #[doc = "Identifies this as a notification channel used to watch for changes to a resource, which is “api#channel”."]
         #[serde(
             rename = "kind",
             default,
@@ -480,7 +480,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payload: ::std::option::Option<bool>,
-        #[doc = "The type of delivery mechanism used for this channel. Valid values are \"web_hook\" (or \"webhook\"). Both values refer to a channel where Http requests are used to deliver messages."]
+        #[doc = "The type of delivery mechanism used for this channel. Valid values are “web_hook” (or “webhook”). Both values refer to a channel where Http requests are used to deliver messages."]
         #[serde(
             rename = "type",
             default,
@@ -539,7 +539,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub anchor: ::std::option::Option<String>,
-        #[doc = "The author of the comment. The author's email address and permission ID will not be populated."]
+        #[doc = "The author of the comment. The author’s email address and permission ID will not be populated."]
         #[serde(
             rename = "author",
             default,
@@ -581,7 +581,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#comment\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#comment”."]
         #[serde(
             rename = "kind",
             default,
@@ -685,7 +685,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub comments: ::std::option::Option<Vec<crate::schemas::Comment>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#commentList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#commentList”."]
         #[serde(
             rename = "kind",
             default,
@@ -778,14 +778,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Drive {
-        #[doc = "An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set."]
+        #[doc = "An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on drive.drives.update requests that don’t set themeId. When specified, all fields of the backgroundImageFile must be set."]
         #[serde(
             rename = "backgroundImageFile",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background_image_file: ::std::option::Option<crate::schemas::DriveBackgroundImageFile>,
-        #[doc = "A short-lived link to this shared drive's background image."]
+        #[doc = "A short-lived link to this shared drive’s background image."]
         #[serde(
             rename = "backgroundImageLink",
             default,
@@ -827,7 +827,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#drive\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#drive”."]
         #[serde(
             rename = "kind",
             default,
@@ -855,7 +855,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub restrictions: ::std::option::Option<crate::schemas::DriveRestrictions>,
-        #[doc = "The ID of the theme from which the background image and color will be set. The set of possible driveThemes can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile."]
+        #[doc = "The ID of the theme from which the background image and color will be set. The set of possible driveThemes can be retrieved from a drive.about.get response. When not specified on a drive.drives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don’t set colorRgb or backgroundImageFile."]
         #[serde(
             rename = "themeId",
             default,
@@ -1129,7 +1129,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub drives: ::std::option::Option<Vec<crate::schemas::Drive>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#driveList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#driveList”."]
         #[serde(
             rename = "kind",
             default,
@@ -1247,7 +1247,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub folder_color_rgb: ::std::option::Option<String>,
-        #[doc = "The full file extension extracted from the name field. May contain multiple concatenated extensions, such as \"tar.gz\". This is only available for files with binary content in Google Drive.\nThis is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension."]
+        #[doc = "The full file extension extracted from the name field. May contain multiple concatenated extensions, such as “tar.gz”. This is only available for files with binary content in Google Drive.\nThis is automatically updated when the name field changes, however it is not cleared if the new name does not contain a valid extension."]
         #[serde(
             rename = "fullFileExtension",
             default,
@@ -1268,14 +1268,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub has_thumbnail: ::std::option::Option<bool>,
-        #[doc = "The ID of the file's head revision. This is currently only available for files with binary content in Google Drive."]
+        #[doc = "The ID of the file’s head revision. This is currently only available for files with binary content in Google Drive."]
         #[serde(
             rename = "headRevisionId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub head_revision_id: ::std::option::Option<String>,
-        #[doc = "A static, unauthenticated link to the file's icon."]
+        #[doc = "A static, unauthenticated link to the file’s icon."]
         #[serde(
             rename = "iconLink",
             default,
@@ -1303,7 +1303,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_app_authorized: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#file\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#file”."]
         #[serde(
             rename = "kind",
             default,
@@ -1380,14 +1380,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub owned_by_me: ::std::option::Option<bool>,
-        #[doc = "The owner of this file. Only certain legacy files may have more than one owner. This field isn't populated for items in shared drives."]
+        #[doc = "The owner of this file. Only certain legacy files may have more than one owner. This field isn’t populated for items in shared drives."]
         #[serde(
             rename = "owners",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub owners: ::std::option::Option<Vec<crate::schemas::User>>,
-        #[doc = "The IDs of the parent folders which contain the file.\nIf not specified as part of a create request, the file will be placed directly in the user's My Drive folder. If not specified as part of a copy request, the file will inherit any discoverable parents of the source file. Update requests must use the addParents and removeParents parameters to modify the parents list."]
+        #[doc = "The IDs of the parent folders which contain the file.\nIf not specified as part of a create request, the file will be placed directly in the user’s My Drive folder. If not specified as part of a copy request, the file will inherit any discoverable parents of the source file. Update requests must use the addParents and removeParents parameters to modify the parents list."]
         #[serde(
             rename = "parents",
             default,
@@ -1458,7 +1458,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shortcut_details: ::std::option::Option<crate::schemas::FileShortcutDetails>,
-        #[doc = "The size of the file's content in bytes. This is applicable to binary files in Google Drive and Google Docs files."]
+        #[doc = "The size of the file’s content in bytes. This is applicable to binary files in Google Drive and Google Docs files."]
         #[serde(
             rename = "size",
             default,
@@ -1466,7 +1466,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub size: ::std::option::Option<i64>,
-        #[doc = "The list of spaces which contain the file. The currently supported values are 'drive', 'appDataFolder' and 'photos'."]
+        #[doc = "The list of spaces which contain the file. The currently supported values are ‘drive’, ‘appDataFolder’ and ‘photos’."]
         #[serde(
             rename = "spaces",
             default,
@@ -1487,7 +1487,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub team_drive_id: ::std::option::Option<String>,
-        #[doc = "A short-lived link to the file's thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file's content. If the file isn't shared publicly, the URL returned in Files.thumbnailLink must be fetched using a credentialed request."]
+        #[doc = "A short-lived link to the file’s thumbnail, if available. Typically lasts on the order of hours. Only populated when the requesting app can access the file’s content. If the file isn’t shared publicly, the URL returned in Files.thumbnailLink must be fetched using a credentialed request."]
         #[serde(
             rename = "thumbnailLink",
             default,
@@ -1573,7 +1573,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub web_view_link: ::std::option::Option<String>,
-        #[doc = "Whether users with only writer permission can modify the file's permissions. Not populated for items in shared drives."]
+        #[doc = "Whether users with only writer permission can modify the file’s permissions. Not populated for items in shared drives."]
         #[serde(
             rename = "writersCanShare",
             default,
@@ -1730,7 +1730,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub can_move_children_out_of_team_drive: ::std::option::Option<bool>,
-        #[doc = "Whether the current user can move children of this folder within this drive. This is false when the item is not a folder. Note that a request to move the child may still fail depending on the current user's access to the child and to the destination folder."]
+        #[doc = "Whether the current user can move children of this folder within this drive. This is false when the item is not a folder. Note that a request to move the child may still fail depending on the current user’s access to the child and to the destination folder."]
         #[serde(
             rename = "canMoveChildrenWithinDrive",
             default,
@@ -2052,7 +2052,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metering_mode: ::std::option::Option<String>,
-        #[doc = "The number of clockwise 90 degree rotations applied from the image's original orientation."]
+        #[doc = "The number of clockwise 90 degree rotations applied from the image’s original orientation."]
         #[serde(
             rename = "rotation",
             default,
@@ -2199,7 +2199,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_id: ::std::option::Option<String>,
-        #[doc = "The MIME type of the file that this shortcut points to. The value of this field is a snapshot of the target's MIME type, captured when the shortcut is created."]
+        #[doc = "The MIME type of the file that this shortcut points to. The value of this field is a snapshot of the target’s MIME type, captured when the shortcut is created."]
         #[serde(
             rename = "targetMimeType",
             default,
@@ -2281,14 +2281,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub files: ::std::option::Option<Vec<crate::schemas::File>>,
-        #[doc = "Whether the search process was incomplete. If true, then some search results may be missing, since all documents were not searched. This may occur when searching multiple drives with the \"allDrives\" corpora, but all corpora could not be searched. When this happens, it is suggested that clients narrow their query by choosing a different corpus such as \"user\" or \"drive\"."]
+        #[doc = "Whether the search process was incomplete. If true, then some search results may be missing, since all documents were not searched. This may occur when searching multiple drives with the “allDrives” corpora, but all corpora could not be searched. When this happens, it is suggested that clients narrow their query by choosing a different corpus such as “user” or “drive”."]
         #[serde(
             rename = "incompleteSearch",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub incomplete_search: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#fileList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#fileList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2338,7 +2338,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#generatedIds\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#generatedIds”."]
         #[serde(
             rename = "kind",
             default,
@@ -2390,7 +2390,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deleted: ::std::option::Option<bool>,
-        #[doc = "The \"pretty\" name of the value of the permission. The following is a list of examples for each type of permission:\n\n* user - User's full name, as defined for their Google account, such as \"Joe Smith.\" \n* group - Name of the Google Group, such as \"The Company Administrators.\" \n* domain - String domain name, such as \"thecompany.com.\" \n* anyone - No displayName is present."]
+        #[doc = "The “pretty” name of the value of the permission. The following is a list of examples for each type of permission:\n\n* user - User’s full name, as defined for their Google account, such as “Joe Smith.” \n* group - Name of the Google Group, such as “The Company Administrators.” \n* domain - String domain name, such as “thecompany.com.” \n* anyone - No displayName is present."]
         #[serde(
             rename = "displayName",
             default,
@@ -2425,7 +2425,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#permission\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#permission”."]
         #[serde(
             rename = "kind",
             default,
@@ -2447,14 +2447,14 @@ pub mod schemas {
         )]
         pub permission_details:
             ::std::option::Option<Vec<crate::schemas::PermissionPermissionDetailsItems>>,
-        #[doc = "A link to the user's profile photo, if available."]
+        #[doc = "A link to the user’s profile photo, if available."]
         #[serde(
             rename = "photoLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_link: ::std::option::Option<String>,
-        #[doc = "The type of the grantee. Valid values are:\n\n* user \n* group \n* domain \n* anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn't extra information required for a anyone type."]
+        #[doc = "The type of the grantee. Valid values are:\n\n* user \n* group \n* domain \n* anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn’t extra information required for a anyone type."]
         #[serde(
             rename = "type",
             default,
@@ -2611,7 +2611,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PermissionList {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#permissionList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#permissionList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2668,7 +2668,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub action: ::std::option::Option<String>,
-        #[doc = "The author of the reply. The author's email address and permission ID will not be populated."]
+        #[doc = "The author of the reply. The author’s email address and permission ID will not be populated."]
         #[serde(
             rename = "author",
             default,
@@ -2710,7 +2710,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#reply\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#reply”."]
         #[serde(
             rename = "kind",
             default,
@@ -2748,7 +2748,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReplyList {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#replyList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#replyList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2819,7 +2819,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub keep_forever: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#revision\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#revision”."]
         #[serde(
             rename = "kind",
             default,
@@ -2833,7 +2833,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_modifying_user: ::std::option::Option<crate::schemas::User>,
-        #[doc = "The MD5 checksum of the revision's content. This is only applicable to files with binary content in Drive."]
+        #[doc = "The MD5 checksum of the revision’s content. This is only applicable to files with binary content in Drive."]
         #[serde(
             rename = "md5Checksum",
             default,
@@ -2889,7 +2889,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub published_outside_domain: ::std::option::Option<bool>,
-        #[doc = "The size of the revision's content in bytes. This is only applicable to files with binary content in Drive."]
+        #[doc = "The size of the revision’s content in bytes. This is only applicable to files with binary content in Drive."]
         #[serde(
             rename = "size",
             default,
@@ -2921,7 +2921,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RevisionList {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#revisionList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#revisionList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2971,7 +2971,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StartPageToken {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#startPageToken\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#startPageToken”."]
         #[serde(
             rename = "kind",
             default,
@@ -3000,7 +3000,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TeamDrive {
-        #[doc = "An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on drive.teamdrives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set."]
+        #[doc = "An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on drive.teamdrives.update requests that don’t set themeId. When specified, all fields of the backgroundImageFile must be set."]
         #[serde(
             rename = "backgroundImageFile",
             default,
@@ -3008,7 +3008,7 @@ pub mod schemas {
         )]
         pub background_image_file:
             ::std::option::Option<crate::schemas::TeamDriveBackgroundImageFile>,
-        #[doc = "A short-lived link to this Team Drive's background image."]
+        #[doc = "A short-lived link to this Team Drive’s background image."]
         #[serde(
             rename = "backgroundImageLink",
             default,
@@ -3043,7 +3043,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#teamDrive\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#teamDrive”."]
         #[serde(
             rename = "kind",
             default,
@@ -3071,7 +3071,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub restrictions: ::std::option::Option<crate::schemas::TeamDriveRestrictions>,
-        #[doc = "The ID of the theme from which the background image and color will be set. The set of possible teamDriveThemes can be retrieved from a drive.about.get response. When not specified on a drive.teamdrives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don't set colorRgb or backgroundImageFile."]
+        #[doc = "The ID of the theme from which the background image and color will be set. The set of possible teamDriveThemes can be retrieved from a drive.about.get response. When not specified on a drive.teamdrives.create request, a random theme is chosen from which the background image and color are set. This is a write-only field; it can only be set on requests that don’t set colorRgb or backgroundImageFile."]
         #[serde(
             rename = "themeId",
             default,
@@ -3345,7 +3345,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TeamDriveList {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#teamDriveList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#teamDriveList”."]
         #[serde(
             rename = "kind",
             default,
@@ -3409,7 +3409,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email_address: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"drive#user\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “drive#user”."]
         #[serde(
             rename = "kind",
             default,
@@ -3423,14 +3423,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub me: ::std::option::Option<bool>,
-        #[doc = "The user's ID as visible in Permission resources."]
+        #[doc = "The user’s ID as visible in Permission resources."]
         #[serde(
             rename = "permissionId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub permission_id: ::std::option::Option<String>,
-        #[doc = "A link to the user's profile photo, if available."]
+        #[doc = "A link to the user’s profile photo, if available."]
         #[serde(
             rename = "photoLink",
             default,
@@ -3627,7 +3627,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Gets information about the user, the user's Drive, and system capabilities."]
+            #[doc = "Gets information about the user, the user’s Drive, and system capabilities."]
             pub fn get(&self) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -4049,7 +4049,7 @@ pub mod resources {
                 self.include_items_from_all_drives = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
@@ -4074,7 +4074,7 @@ pub mod resources {
                 self.restrict_to_my_drive = Some(value);
                 self
             }
-            #[doc = "A comma-separated list of spaces to query within the user corpus. Supported values are 'drive', 'appDataFolder' and 'photos'."]
+            #[doc = "A comma-separated list of spaces to query within the user corpus. Supported values are ‘drive’, ‘appDataFolder’ and ‘photos’."]
             pub fn spaces(mut self, value: impl Into<String>) -> Self {
                 self.spaces = Some(value.into());
                 self
@@ -4418,7 +4418,7 @@ pub mod resources {
                 self.include_items_from_all_drives = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
@@ -4443,7 +4443,7 @@ pub mod resources {
                 self.restrict_to_my_drive = Some(value);
                 self
             }
-            #[doc = "A comma-separated list of spaces to query within the user corpus. Supported values are 'drive', 'appDataFolder' and 'photos'."]
+            #[doc = "A comma-separated list of spaces to query within the user corpus. Supported values are ‘drive’, ‘appDataFolder’ and ‘photos’."]
             pub fn spaces(mut self, value: impl Into<String>) -> Self {
                 self.spaces = Some(value.into());
                 self
@@ -4764,7 +4764,7 @@ pub mod resources {
                     include_deleted: None,
                 }
             }
-            #[doc = "Lists a file's comments."]
+            #[doc = "Lists a file’s comments."]
             pub fn list(&self, file_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5205,12 +5205,12 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."]
+            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of ‘nextPageToken’ from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "The minimum value of 'modifiedTime' for the result comments (RFC 3339 date-time)."]
+            #[doc = "The minimum value of ‘modifiedTime’ for the result comments (RFC 3339 date-time)."]
             pub fn start_modified_time(mut self, value: impl Into<String>) -> Self {
                 self.start_modified_time = Some(value.into());
                 self
@@ -5680,7 +5680,7 @@ pub mod resources {
                     use_domain_admin_access: None,
                 }
             }
-            #[doc = "Gets a shared drive's metadata by ID."]
+            #[doc = "Gets a shared drive’s metadata by ID."]
             pub fn get(&self, drive_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5711,7 +5711,7 @@ pub mod resources {
                     drive_id: drive_id.into(),
                 }
             }
-            #[doc = "Lists the user's shared drives."]
+            #[doc = "Lists the user’s shared drives."]
             pub fn list(&self) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -6841,9 +6841,9 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum ListCorpus {
-                #[doc = "Files shared to the user's domain."]
+                #[doc = "Files shared to the user’s domain."]
                 Domain,
-                #[doc = "Files owned by or shared to the user. If a user has permissions on a Shared Drive, the files inside it won't be retrieved unless the user has created, opened, or shared the file."]
+                #[doc = "Files owned by or shared to the user. If a user has permissions on a Shared Drive, the files inside it won’t be retrieved unless the user has created, opened, or shared the file."]
                 User,
             }
             impl ListCorpus {
@@ -6987,7 +6987,7 @@ pub mod resources {
                     supports_team_drives: None,
                 }
             }
-            #[doc = "Permanently deletes all of the user's trashed files."]
+            #[doc = "Permanently deletes all of the user’s trashed files."]
             pub fn empty_trash(&self) -> EmptyTrashRequestBuilder {
                 EmptyTrashRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7039,7 +7039,7 @@ pub mod resources {
                     space: None,
                 }
             }
-            #[doc = "Gets a file's metadata or content by ID."]
+            #[doc = "Gets a file’s metadata or content by ID."]
             pub fn get(&self, file_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -7086,7 +7086,7 @@ pub mod resources {
                     team_drive_id: None,
                 }
             }
-            #[doc = "Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics."]
+            #[doc = "Updates a file’s metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics."]
             pub fn update(
                 &self,
                 request: crate::schemas::File,
@@ -7115,7 +7115,7 @@ pub mod resources {
                     use_content_as_indexable_text: None,
                 }
             }
-            #[doc = "Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won't create a notification."]
+            #[doc = "Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won’t create a notification."]
             pub fn watch(
                 &self,
                 request: crate::schemas::Channel,
@@ -7168,17 +7168,17 @@ pub mod resources {
                 self.enforce_single_parent = Some(value);
                 self
             }
-            #[doc = "Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders."]
+            #[doc = "Whether to ignore the domain’s default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders."]
             pub fn ignore_default_visibility(mut self, value: bool) -> Self {
                 self.ignore_default_visibility = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
             }
-            #[doc = "Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions."]
+            #[doc = "Whether to set the ‘keepForever’ field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions."]
             pub fn keep_revision_forever(mut self, value: bool) -> Self {
                 self.keep_revision_forever = Some(value);
                 self
@@ -7355,17 +7355,17 @@ pub mod resources {
                 self.enforce_single_parent = Some(value);
                 self
             }
-            #[doc = "Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders."]
+            #[doc = "Whether to ignore the domain’s default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders."]
             pub fn ignore_default_visibility(mut self, value: bool) -> Self {
                 self.ignore_default_visibility = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
             }
-            #[doc = "Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions."]
+            #[doc = "Whether to set the ‘keepForever’ field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions."]
             pub fn keep_revision_forever(mut self, value: bool) -> Self {
                 self.keep_revision_forever = Some(value);
                 self
@@ -7613,7 +7613,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "Deprecated. If an item is not in a shared drive and its last parent is deleted but the item itself is not, the item will be placed under its owner's root."]
+            #[doc = "Deprecated. If an item is not in a shared drive and its last parent is deleted but the item itself is not, the item will be placed under its owner’s root."]
             pub fn enforce_single_parent(mut self, value: bool) -> Self {
                 self.enforce_single_parent = Some(value);
                 self
@@ -7709,7 +7709,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> EmptyTrashRequestBuilder<'a> {
-            #[doc = "Deprecated. If an item is not in a shared drive and its last parent is deleted but the item itself is not, the item will be placed under its owner's root."]
+            #[doc = "Deprecated. If an item is not in a shared drive and its last parent is deleted but the item itself is not, the item will be placed under its owner’s root."]
             pub fn enforce_single_parent(mut self, value: bool) -> Self {
                 self.enforce_single_parent = Some(value);
                 self
@@ -7902,12 +7902,12 @@ pub mod resources {
                 self.count = Some(value);
                 self
             }
-            #[doc = "The type of items which the IDs can be used for. Supported values are 'files' and 'shortcuts'. Note that 'shortcuts' are only supported in the drive 'space'. (Default: 'files')"]
+            #[doc = "The type of items which the IDs can be used for. Supported values are ‘files’ and ‘shortcuts’. Note that ‘shortcuts’ are only supported in the drive ‘space’. (Default: ‘files’)"]
             pub fn r#type(mut self, value: impl Into<String>) -> Self {
                 self.r#type = Some(value.into());
                 self
             }
-            #[doc = "The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'. (Default: 'drive')"]
+            #[doc = "The space in which the IDs can be used to create new files. Supported values are ‘drive’ and ‘appDataFolder’. (Default: ‘drive’)"]
             pub fn space(mut self, value: impl Into<String>) -> Self {
                 self.space = Some(value.into());
                 self
@@ -8049,7 +8049,7 @@ pub mod resources {
                 self.acknowledge_abuse = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
@@ -8243,12 +8243,12 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Groupings of files to which the query applies. Supported groupings are: 'user' (files created by, opened by, or shared directly with the user), 'drive' (files in the specified shared drive as indicated by the 'driveId'), 'domain' (files shared to the user's domain), and 'allDrives' (A combination of 'user' and 'drive' for all drives where the user is a member). When able, use 'user' or 'drive', instead of 'allDrives', for efficiency."]
+            #[doc = "Groupings of files to which the query applies. Supported groupings are: ‘user’ (files created by, opened by, or shared directly with the user), ‘drive’ (files in the specified shared drive as indicated by the ‘driveId’), ‘domain’ (files shared to the user’s domain), and ‘allDrives’ (A combination of ‘user’ and ‘drive’ for all drives where the user is a member). When able, use ‘user’ or ‘drive’, instead of ‘allDrives’, for efficiency."]
             pub fn corpora(mut self, value: impl Into<String>) -> Self {
                 self.corpora = Some(value.into());
                 self
             }
-            #[doc = "The source of files to list. Deprecated: use 'corpora' instead."]
+            #[doc = "The source of files to list. Deprecated: use ‘corpora’ instead."]
             pub fn corpus(mut self, value: crate::resources::files::params::ListCorpus) -> Self {
                 self.corpus = Some(value);
                 self
@@ -8263,7 +8263,7 @@ pub mod resources {
                 self.include_items_from_all_drives = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
@@ -8273,7 +8273,7 @@ pub mod resources {
                 self.include_team_drive_items = Some(value);
                 self
             }
-            #[doc = "A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but may be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name. Please note that there is a current limitation for users with approximately one million files in which the requested sort order is ignored."]
+            #[doc = "A comma-separated list of sort keys. Valid keys are ‘createdTime’, ‘folder’, ‘modifiedByMeTime’, ‘modifiedTime’, ‘name’, ‘name_natural’, ‘quotaBytesUsed’, ‘recency’, ‘sharedWithMeTime’, ‘starred’, and ‘viewedByMeTime’. Each key sorts ascending by default, but may be reversed with the ‘desc’ modifier. Example usage: ?orderBy=folder,modifiedTime desc,name. Please note that there is a current limitation for users with approximately one million files in which the requested sort order is ignored."]
             pub fn order_by(mut self, value: impl Into<String>) -> Self {
                 self.order_by = Some(value.into());
                 self
@@ -8283,17 +8283,17 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."]
+            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of ‘nextPageToken’ from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "A query for filtering the file results. See the \"Search for Files\" guide for supported syntax."]
+            #[doc = "A query for filtering the file results. See the “Search for Files” guide for supported syntax."]
             pub fn q(mut self, value: impl Into<String>) -> Self {
                 self.q = Some(value.into());
                 self
             }
-            #[doc = "A comma-separated list of spaces to query within the corpus. Supported values are 'drive' and 'appDataFolder'."]
+            #[doc = "A comma-separated list of spaces to query within the corpus. Supported values are ‘drive’ and ‘appDataFolder’."]
             pub fn spaces(mut self, value: impl Into<String>) -> Self {
                 self.spaces = Some(value.into());
                 self
@@ -8630,12 +8630,12 @@ pub mod resources {
                 self.enforce_single_parent = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
             }
-            #[doc = "Whether to set the 'keepForever' field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions."]
+            #[doc = "Whether to set the ‘keepForever’ field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions."]
             pub fn keep_revision_forever(mut self, value: bool) -> Self {
                 self.keep_revision_forever = Some(value);
                 self
@@ -8917,7 +8917,7 @@ pub mod resources {
                 self.acknowledge_abuse = Some(value);
                 self
             }
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
@@ -9171,7 +9171,7 @@ pub mod resources {
                     use_domain_admin_access: None,
                 }
             }
-            #[doc = "Lists a file's or shared drive's permissions."]
+            #[doc = "Lists a file’s or shared drive’s permissions."]
             pub fn list(&self, file_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -9254,7 +9254,7 @@ pub mod resources {
                 self.enforce_single_parent = Some(value);
                 self
             }
-            #[doc = "This parameter will only take effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item. If set to true, the item will be moved to the new owner's My Drive root folder and all prior parents removed. If set to false, parents are not changed."]
+            #[doc = "This parameter will only take effect if the item is not in a shared drive and the request is attempting to transfer the ownership of the item. If set to true, the item will be moved to the new owner’s My Drive root folder and all prior parents removed. If set to false, parents are not changed."]
             pub fn move_to_new_owners_root(mut self, value: bool) -> Self {
                 self.move_to_new_owners_root = Some(value);
                 self
@@ -9702,7 +9702,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Specifies which additional view's permissions to include in the response. Only 'published' is supported."]
+            #[doc = "Specifies which additional view’s permissions to include in the response. Only ‘published’ is supported."]
             pub fn include_permissions_for_view(mut self, value: impl Into<String>) -> Self {
                 self.include_permissions_for_view = Some(value.into());
                 self
@@ -9712,7 +9712,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."]
+            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of ‘nextPageToken’ from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -10267,7 +10267,7 @@ pub mod resources {
                     include_deleted: None,
                 }
             }
-            #[doc = "Lists a comment's replies."]
+            #[doc = "Lists a comment’s replies."]
             pub fn list(
                 &self,
                 file_id: impl Into<String>,
@@ -10741,7 +10741,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."]
+            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of ‘nextPageToken’ from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -11190,7 +11190,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted."]
+            #[doc = "Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can’t be deleted."]
             pub fn delete(
                 &self,
                 file_id: impl Into<String>,
@@ -11210,7 +11210,7 @@ pub mod resources {
                     revision_id: revision_id.into(),
                 }
             }
-            #[doc = "Gets a revision's metadata or content by ID."]
+            #[doc = "Gets a revision’s metadata or content by ID."]
             pub fn get(
                 &self,
                 file_id: impl Into<String>,
@@ -11231,7 +11231,7 @@ pub mod resources {
                     acknowledge_abuse: None,
                 }
             }
-            #[doc = "Lists a file's revisions."]
+            #[doc = "Lists a file’s revisions."]
             pub fn list(&self, file_id: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -11563,7 +11563,7 @@ pub mod resources {
                 self.page_size = Some(value);
                 self
             }
-            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response."]
+            #[doc = "The token for continuing a previous list request on the next page. This should be set to the value of ‘nextPageToken’ from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self

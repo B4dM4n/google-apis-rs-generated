@@ -14,7 +14,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlatformSummary {
-        #[doc = "The site's Ad Experience Report status on this platform."]
+        #[doc = "The site’s Ad Experience Report status on this platform."]
         #[serde(
             rename = "betterAdsStatus",
             default,
@@ -29,21 +29,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enforcement_time: ::std::option::Option<String>,
-        #[doc = "The site's [enforcement status](https://support.google.com/webtools/answer/7308033) on this platform."]
+        #[doc = "The site’s [enforcement status](https://support.google.com/webtools/answer/7308033) on this platform."]
         #[serde(
             rename = "filterStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter_status: ::std::option::Option<crate::schemas::PlatformSummaryFilterStatus>,
-        #[doc = "The time at which the site's status last changed on this platform."]
+        #[doc = "The time at which the site’s status last changed on this platform."]
         #[serde(
             rename = "lastChangeTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_change_time: ::std::option::Option<String>,
-        #[doc = "The site's regions on this platform. No longer populated, because there is no longer any semantic difference between sites in different regions."]
+        #[doc = "The site’s regions on this platform. No longer populated, because there is no longer any semantic difference between sites in different regions."]
         #[serde(
             rename = "region",
             default,
@@ -336,14 +336,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SiteSummaryResponse {
-        #[doc = "The site's Ad Experience Report summary on desktop."]
+        #[doc = "The site’s Ad Experience Report summary on desktop."]
         #[serde(
             rename = "desktopSummary",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desktop_summary: ::std::option::Option<crate::schemas::PlatformSummary>,
-        #[doc = "The site's Ad Experience Report summary on mobile."]
+        #[doc = "The site’s Ad Experience Report summary on mobile."]
         #[serde(
             rename = "mobileSummary",
             default,
@@ -598,7 +598,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Gets a site's Ad Experience Report summary."]
+            #[doc = "Gets a site’s Ad Experience Report summary."]
             pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -667,12 +667,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -856,12 +856,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

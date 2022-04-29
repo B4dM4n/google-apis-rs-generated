@@ -34,28 +34,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub acl: ::std::option::Option<Vec<crate::schemas::BucketAccessControl>>,
-        #[doc = "The bucket's Autoclass configuration."]
+        #[doc = "The bucket’s Autoclass configuration."]
         #[serde(
             rename = "autoclass",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub autoclass: ::std::option::Option<crate::schemas::BucketAutoclass>,
-        #[doc = "The bucket's billing configuration."]
+        #[doc = "The bucket’s billing configuration."]
         #[serde(
             rename = "billing",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub billing: ::std::option::Option<crate::schemas::BucketBilling>,
-        #[doc = "The bucket's Cross-Origin Resource Sharing (CORS) configuration."]
+        #[doc = "The bucket’s Cross-Origin Resource Sharing (CORS) configuration."]
         #[serde(
             rename = "cors",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cors: ::std::option::Option<Vec<crate::schemas::BucketCorsItems>>,
-        #[doc = "The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed."]
+        #[doc = "The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold’s release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed."]
         #[serde(
             rename = "defaultEventBasedHold",
             default,
@@ -83,7 +83,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The bucket's IAM configuration."]
+        #[doc = "The bucket’s IAM configuration."]
         #[serde(
             rename = "iamConfiguration",
             default,
@@ -111,14 +111,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The bucket's lifecycle configuration. See lifecycle management for more information."]
+        #[doc = "The bucket’s lifecycle configuration. See lifecycle management for more information."]
         #[serde(
             rename = "lifecycle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lifecycle: ::std::option::Option<crate::schemas::BucketLifecycle>,
-        #[doc = "The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer's guide for the authoritative list."]
+        #[doc = "The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer’s guide for the authoritative list."]
         #[serde(
             rename = "location",
             default,
@@ -132,7 +132,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location_type: ::std::option::Option<String>,
-        #[doc = "The bucket's logging configuration, which defines the destination bucket and optional name prefix for the current bucket's logs."]
+        #[doc = "The bucket’s logging configuration, which defines the destination bucket and optional name prefix for the current bucket’s logs."]
         #[serde(
             rename = "logging",
             default,
@@ -154,7 +154,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The owner of the bucket. This is always the project team's owner group."]
+        #[doc = "The owner of the bucket. This is always the project team’s owner group."]
         #[serde(
             rename = "owner",
             default,
@@ -169,7 +169,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub project_number: ::std::option::Option<u64>,
-        #[doc = "The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error."]
+        #[doc = "The bucket’s retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error."]
         #[serde(
             rename = "retentionPolicy",
             default,
@@ -197,7 +197,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes."]
+        #[doc = "The bucket’s default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes."]
         #[serde(
             rename = "storageClass",
             default,
@@ -218,14 +218,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub updated: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The bucket's versioning configuration."]
+        #[doc = "The bucket’s versioning configuration."]
         #[serde(
             rename = "versioning",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub versioning: ::std::option::Option<crate::schemas::BucketVersioning>,
-        #[doc = "The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information."]
+        #[doc = "The bucket’s website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information."]
         #[serde(
             rename = "website",
             default,
@@ -263,7 +263,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
-        #[doc = "A date and time in RFC 3339 format representing the instant at which \"enabled\" was last toggled."]
+        #[doc = "A date and time in RFC 3339 format representing the instant at which “enabled” was last toggled."]
         #[serde(
             rename = "toggleTime",
             default,
@@ -332,14 +332,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_age_seconds: ::std::option::Option<i32>,
-        #[doc = "The list of HTTP methods on which to include CORS response headers, (GET, OPTIONS, POST, etc) Note: \"*\" is permitted in the list of methods, and means \"any method\"."]
+        #[doc = "The list of HTTP methods on which to include CORS response headers, (GET, OPTIONS, POST, etc) Note: “\\*” is permitted in the list of methods, and means “any method”."]
         #[serde(
             rename = "method",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub method: ::std::option::Option<Vec<String>>,
-        #[doc = "The list of Origins eligible to receive CORS response headers. Note: \"*\" is permitted in the list of origins, and means \"any Origin\"."]
+        #[doc = "The list of Origins eligible to receive CORS response headers. Note: “\\*” is permitted in the list of origins, and means “any Origin”."]
         #[serde(
             rename = "origin",
             default,
@@ -408,7 +408,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BucketIamConfiguration {
-        #[doc = "The bucket's uniform bucket-level access configuration. The feature was formerly known as Bucket Policy Only. For backward compatibility, this field will be populated with identical information as the uniformBucketLevelAccess field. We recommend using the uniformBucketLevelAccess field to enable and disable the feature."]
+        #[doc = "The bucket’s uniform bucket-level access configuration. The feature was formerly known as Bucket Policy Only. For backward compatibility, this field will be populated with identical information as the uniformBucketLevelAccess field. We recommend using the uniformBucketLevelAccess field to enable and disable the feature."]
         #[serde(
             rename = "bucketPolicyOnly",
             default,
@@ -416,14 +416,14 @@ pub mod schemas {
         )]
         pub bucket_policy_only:
             ::std::option::Option<crate::schemas::BucketIamConfigurationBucketPolicyOnly>,
-        #[doc = "The bucket's Public Access Prevention configuration. Currently, 'inherited' and 'enforced' are supported."]
+        #[doc = "The bucket’s Public Access Prevention configuration. Currently, ‘inherited’ and ‘enforced’ are supported."]
         #[serde(
             rename = "publicAccessPrevention",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub public_access_prevention: ::std::option::Option<String>,
-        #[doc = "The bucket's uniform bucket-level access configuration."]
+        #[doc = "The bucket’s uniform bucket-level access configuration."]
         #[serde(
             rename = "uniformBucketLevelAccess",
             default,
@@ -645,14 +645,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub age: ::std::option::Option<i32>,
-        #[doc = "A date in RFC 3339 format with only the date part (for instance, \"2013-01-15\"). This condition is satisfied when an object is created before midnight of the specified date in UTC."]
+        #[doc = "A date in RFC 3339 format with only the date part (for instance, “2013-01-15”). This condition is satisfied when an object is created before midnight of the specified date in UTC."]
         #[serde(
             rename = "createdBefore",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub created_before: ::std::option::Option<::chrono::NaiveDate>,
-        #[doc = "A date in RFC 3339 format with only the date part (for instance, \"2013-01-15\"). This condition is satisfied when the custom time on an object is before this date in UTC."]
+        #[doc = "A date in RFC 3339 format with only the date part (for instance, “2013-01-15”). This condition is satisfied when the custom time on an object is before this date in UTC."]
         #[serde(
             rename = "customTimeBefore",
             default,
@@ -666,7 +666,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub days_since_custom_time: ::std::option::Option<i32>,
-        #[doc = "Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it's zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent."]
+        #[doc = "Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it’s zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent."]
         #[serde(
             rename = "daysSinceNoncurrentTime",
             default,
@@ -680,7 +680,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_live: ::std::option::Option<bool>,
-        #[doc = "A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the \"Early Access\" launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released."]
+        #[doc = "A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the “Early Access” launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released."]
         #[serde(
             rename = "matchesPattern",
             default,
@@ -694,7 +694,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub matches_storage_class: ::std::option::Option<Vec<String>>,
-        #[doc = "A date in RFC 3339 format with only the date part (for instance, \"2013-01-15\"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects."]
+        #[doc = "A date in RFC 3339 format with only the date part (for instance, “2013-01-15”). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects."]
         #[serde(
             rename = "noncurrentTimeBefore",
             default,
@@ -732,7 +732,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BucketLogging {
-        #[doc = "The destination bucket where the current bucket's logs should be placed."]
+        #[doc = "The destination bucket where the current bucket’s logs should be placed."]
         #[serde(
             rename = "logBucket",
             default,
@@ -885,7 +885,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BucketWebsite {
-        #[doc = "If the requested object path is missing, the service will ensure the path has a trailing '/', append this suffix, and attempt to retrieve the resulting object. This allows the creation of index.html objects to represent directory pages."]
+        #[doc = "If the requested object path is missing, the service will ensure the path has a trailing ‘/’, append this suffix, and attempt to retrieve the resulting object. This allows the creation of index.html objects to represent directory pages."]
         #[serde(
             rename = "mainPageSuffix",
             default,
@@ -1172,7 +1172,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies this as a notification channel used to watch for changes to a resource, which is \"api#channel\"."]
+        #[doc = "Identifies this as a notification channel used to watch for changes to a resource, which is “api#channel”."]
         #[serde(
             rename = "kind",
             default,
@@ -1299,7 +1299,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub generation: ::std::option::Option<i64>,
-        #[doc = "The source object's name. All source objects must reside in the same bucket."]
+        #[doc = "The source object’s name. All source objects must reside in the same bucket."]
         #[serde(
             rename = "name",
             default,
@@ -1512,7 +1512,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "The email address of the key's associated service account."]
+        #[doc = "The email address of the key’s associated service account."]
         #[serde(
             rename = "serviceAccountEmail",
             default,
@@ -1670,7 +1670,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "The Cloud PubSub topic to which this subscription publishes. Formatted as: '//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}'"]
+        #[doc = "The Cloud PubSub topic to which this subscription publishes. Formatted as: ‘//pubsub.googleapis.com/projects/{project-identifier}/topics/{my-topic}’"]
         #[serde(
             rename = "topic",
             default,
@@ -1823,7 +1823,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false."]
+        #[doc = "Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold’s release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false."]
         #[serde(
             rename = "eventBasedHold",
             default,
@@ -1902,7 +1902,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub owner: ::std::option::Option<crate::schemas::ObjectOwner>,
-        #[doc = "A server-determined value that specifies the earliest time that the object's retention period expires. This value is in RFC 3339 format. Note 1: This field is not provided for objects with an active event-based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when temporary hold is set (so that the user can reason about policy without having to first unset the temporary hold)."]
+        #[doc = "A server-determined value that specifies the earliest time that the object’s retention period expires. This value is in RFC 3339 format. Note 1: This field is not provided for objects with an active event-based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when temporary hold is set (so that the user can reason about policy without having to first unset the temporary hold)."]
         #[serde(
             rename = "retentionExpirationTime",
             default,
@@ -1953,7 +1953,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_deleted: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "The time at which the object's storage class was last changed. When the object is initially created, it will be set to timeCreated."]
+        #[doc = "The time at which the object’s storage class was last changed. When the object is initially created, it will be set to timeCreated."]
         #[serde(
             rename = "timeStorageClassUpdated",
             default,
@@ -2338,7 +2338,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The ID of the resource to which this policy belongs. Will be of the form projects/*/buckets/bucket for buckets, and projects/*/buckets/bucket/objects/object for objects. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input."]
+        #[doc = "The ID of the resource to which this policy belongs. Will be of the form projects/*/buckets/bucket for buckets, and projects/*/buckets/bucket/objects/object for objects. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/\\_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input."]
         #[serde(
             rename = "resourceId",
             default,
@@ -2898,7 +2898,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2999,7 +2999,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3154,7 +3154,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3302,7 +3302,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3451,7 +3451,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3608,7 +3608,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4919,7 +4919,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4994,12 +4994,12 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value."]
+            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value."]
+            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -5037,7 +5037,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5165,7 +5165,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> GetIamPolicyRequestBuilder<'a> {
-            #[doc = "The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails."]
+            #[doc = "The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn’t support part of the requested IAM policy, the request fails."]
             pub fn options_requested_policy_version(mut self, value: i32) -> Self {
                 self.options_requested_policy_version = Some(value);
                 self
@@ -5195,7 +5195,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5377,7 +5377,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5551,7 +5551,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5848,7 +5848,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5980,12 +5980,12 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value."]
+            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value."]
+            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -6039,7 +6039,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6198,7 +6198,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6347,7 +6347,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6481,12 +6481,12 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> UpdateRequestBuilder<'a> {
-            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value."]
+            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value."]
+            #[doc = "Makes the return of the bucket metadata conditional on whether the bucket’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -6540,7 +6540,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6720,7 +6720,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6951,7 +6951,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7052,7 +7052,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7207,7 +7207,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7332,12 +7332,12 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "If present, only return default ACL listing if the bucket's current metageneration matches this value."]
+            #[doc = "If present, only return default ACL listing if the bucket’s current metageneration matches this value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "If present, only return default ACL listing if the bucket's current metageneration does not match the given value."]
+            #[doc = "If present, only return default ACL listing if the bucket’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -7367,7 +7367,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7521,7 +7521,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7678,7 +7678,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7929,7 +7929,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8030,7 +8030,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8185,7 +8185,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8333,7 +8333,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8652,7 +8652,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8769,7 +8769,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -8940,7 +8940,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9104,7 +9104,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9269,7 +9269,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -9442,7 +9442,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -10911,7 +10911,7 @@ pub mod resources {
                     versions: None,
                 }
             }
-            #[doc = "Patches an object's metadata."]
+            #[doc = "Patches an object’s metadata."]
             pub fn patch(
                 &self,
                 request: crate::schemas::Object,
@@ -11034,7 +11034,7 @@ pub mod resources {
                     user_project: None,
                 }
             }
-            #[doc = "Updates an object's metadata."]
+            #[doc = "Updates an object’s metadata."]
             pub fn update(
                 &self,
                 request: crate::schemas::Object,
@@ -11130,17 +11130,17 @@ pub mod resources {
                 self.destination_predefined_acl = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any."]
+            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata’s kms_key_name value, if any."]
             pub fn kms_key_name(mut self, value: impl Into<String>) -> Self {
                 self.kms_key_name = Some(value.into());
                 self
@@ -11170,7 +11170,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11323,7 +11323,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> CopyRequestBuilder<'a> {
-            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any."]
+            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata’s kms_key_name value, if any."]
             pub fn destination_kms_key_name(mut self, value: impl Into<String>) -> Self {
                 self.destination_kms_key_name = Some(value.into());
                 self
@@ -11336,42 +11336,42 @@ pub mod resources {
                 self.destination_predefined_acl = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the destination object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the destination object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the destination object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the destination object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the destination object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the destination object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the destination object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the destination object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current generation matches the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current generation matches the given value."]
             pub fn if_source_generation_match(mut self, value: i64) -> Self {
                 self.if_source_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current generation does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current generation does not match the given value."]
             pub fn if_source_generation_not_match(mut self, value: i64) -> Self {
                 self.if_source_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current metageneration matches the given value."]
             pub fn if_source_metageneration_match(mut self, value: i64) -> Self {
                 self.if_source_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current metageneration does not match the given value."]
             pub fn if_source_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_source_metageneration_not_match = Some(value);
                 self
@@ -11414,7 +11414,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11595,22 +11595,22 @@ pub mod resources {
                 self.generation = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -11640,7 +11640,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11735,22 +11735,22 @@ pub mod resources {
                 self.generation = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -11788,7 +11788,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11993,7 +11993,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12140,32 +12140,32 @@ pub mod resources {
                 self.content_encoding = Some(value.into());
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
             }
-            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any."]
+            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata’s kms_key_name value, if any."]
             pub fn kms_key_name(mut self, value: impl Into<String>) -> Self {
                 self.kms_key_name = Some(value.into());
                 self
             }
-            #[doc = "Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts."]
+            #[doc = "Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata’s name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts."]
             pub fn name(mut self, value: impl Into<String>) -> Self {
                 self.name = Some(value.into());
                 self
@@ -12211,7 +12211,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12524,7 +12524,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12888,22 +12888,22 @@ pub mod resources {
                 self.generation = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -12949,7 +12949,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -13109,7 +13109,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> RewriteRequestBuilder<'a> {
-            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any."]
+            #[doc = "Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata’s kms_key_name value, if any."]
             pub fn destination_kms_key_name(mut self, value: impl Into<String>) -> Self {
                 self.destination_kms_key_name = Some(value.into());
                 self
@@ -13122,47 +13122,47 @@ pub mod resources {
                 self.destination_predefined_acl = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the destination object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the destination object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the destination object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the destination object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current generation matches the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current generation matches the given value."]
             pub fn if_source_generation_match(mut self, value: i64) -> Self {
                 self.if_source_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current generation does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current generation does not match the given value."]
             pub fn if_source_generation_not_match(mut self, value: i64) -> Self {
                 self.if_source_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current metageneration matches the given value."]
             pub fn if_source_metageneration_match(mut self, value: i64) -> Self {
                 self.if_source_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the source object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the source object’s current metageneration does not match the given value."]
             pub fn if_source_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_source_metageneration_not_match = Some(value);
                 self
             }
-            #[doc = "The maximum number of bytes that will be rewritten per rewrite request. Most callers shouldn't need to specify this parameter - it is primarily in place to support testing. If specified the value must be an integral multiple of 1 MiB (1048576). Also, this only applies to requests where the source and destination span locations and/or storage classes. Finally, this value must not change across rewrite calls else you'll get an error that the rewriteToken is invalid."]
+            #[doc = "The maximum number of bytes that will be rewritten per rewrite request. Most callers shouldn’t need to specify this parameter - it is primarily in place to support testing. If specified the value must be an integral multiple of 1 MiB (1048576). Also, this only applies to requests where the source and destination span locations and/or storage classes. Finally, this value must not change across rewrite calls else you’ll get an error that the rewriteToken is invalid."]
             pub fn max_bytes_rewritten_per_call(mut self, value: i64) -> Self {
                 self.max_bytes_rewritten_per_call = Some(value);
                 self
@@ -13175,7 +13175,7 @@ pub mod resources {
                 self.projection = Some(value);
                 self
             }
-            #[doc = "Include this field (from the previous rewrite response) on each rewrite request after the first one, until the rewrite response 'done' flag is true. Calls that provide a rewriteToken can omit all other request fields, but if included those fields must match the values provided in the first rewrite request."]
+            #[doc = "Include this field (from the previous rewrite response) on each rewrite request after the first one, until the rewrite response ‘done’ flag is true. Calls that provide a rewriteToken can omit all other request fields, but if included those fields must match the values provided in the first rewrite request."]
             pub fn rewrite_token(mut self, value: impl Into<String>) -> Self {
                 self.rewrite_token = Some(value.into());
                 self
@@ -13210,7 +13210,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -13418,7 +13418,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -13583,7 +13583,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -13732,22 +13732,22 @@ pub mod resources {
                 self.generation = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object."]
             pub fn if_generation_match(mut self, value: i64) -> Self {
                 self.if_generation_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
+            #[doc = "Makes the operation conditional on whether the object’s current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object."]
             pub fn if_generation_not_match(mut self, value: i64) -> Self {
                 self.if_generation_not_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration matches the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration matches the given value."]
             pub fn if_metageneration_match(mut self, value: i64) -> Self {
                 self.if_metageneration_match = Some(value);
                 self
             }
-            #[doc = "Makes the operation conditional on whether the object's current metageneration does not match the given value."]
+            #[doc = "Makes the operation conditional on whether the object’s current metageneration does not match the given value."]
             pub fn if_metageneration_not_match(mut self, value: i64) -> Self {
                 self.if_metageneration_not_match = Some(value);
                 self
@@ -13793,7 +13793,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -14017,7 +14017,7 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+            #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -14214,7 +14214,7 @@ pub mod resources {
                         user_project: None,
                     }
                 }
-                #[doc = "Retrieves an HMAC key's metadata"]
+                #[doc = "Retrieves an HMAC key’s metadata"]
                 pub fn get(
                     &self,
                     project_id: impl Into<String>,
@@ -14325,7 +14325,7 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14474,7 +14474,7 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14575,7 +14575,7 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14753,7 +14753,7 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -15064,7 +15064,7 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -15188,7 +15188,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Get the email address of this project's Google Cloud Storage service account."]
+                #[doc = "Get the email address of this project’s Google Cloud Storage service account."]
                 pub fn get(&self, project_id: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -15248,7 +15248,7 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"media\", \"multipart\", \"resumable\")."]
+                #[doc = "Upload protocol for media (e.g. “media”, “multipart”, “resumable”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

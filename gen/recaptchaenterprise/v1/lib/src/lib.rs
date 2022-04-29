@@ -125,7 +125,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_all_package_names: ::std::option::Option<bool>,
-        #[doc = "Android package names of apps allowed to use the key. Example: 'com.companyname.appname'"]
+        #[doc = "Android package names of apps allowed to use the key. Example: ‘com.companyname.appname’"]
         #[serde(
             rename = "allowedPackageNames",
             default,
@@ -250,7 +250,7 @@ pub mod schemas {
         Chargeback,
         #[doc = "Indicates a chargeback related to the cardholder having provided their card details but allegedly not being satisfied with the purchase (for example, misrepresentation, attempted cancellation)."]
         ChargebackDispute,
-        #[doc = "Indicates a chargeback related to an alleged unauthorized transaction from the cardholder's perspective (for example, the card number was stolen)."]
+        #[doc = "Indicates a chargeback related to an alleged unauthorized transaction from the cardholder’s perspective (for example, the card number was stolen)."]
         ChargebackFraud,
         #[doc = "Indicates the user provided the correct password."]
         CorrectPassword,
@@ -376,7 +376,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event: ::std::option::Option<crate::schemas::GoogleCloudRecaptchaenterpriseV1Event>,
-        #[doc = "Output only. The resource name for the Assessment in the format \"projects/{project}/assessments/{assessment}\"."]
+        #[doc = "Output only. The resource name for the Assessment in the format “projects/{project}/assessments/{assessment}”."]
         #[serde(
             rename = "name",
             default,
@@ -507,14 +507,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub token: ::std::option::Option<String>,
-        #[doc = "Optional. The user agent present in the request from the user's device related to this event."]
+        #[doc = "Optional. The user agent present in the request from the user’s device related to this event."]
         #[serde(
             rename = "userAgent",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_agent: ::std::option::Option<String>,
-        #[doc = "Optional. The IP address in the request from the user's device related to this event."]
+        #[doc = "Optional. The IP address in the request from the user’s device related to this event."]
         #[serde(
             rename = "userIpAddress",
             default,
@@ -552,7 +552,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_all_bundle_ids: ::std::option::Option<bool>,
-        #[doc = "iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'"]
+        #[doc = "iOS bundle ids of apps allowed to use the key. Example: ‘com.companyname.productname.appname’"]
         #[serde(
             rename = "allowedBundleIds",
             default,
@@ -612,7 +612,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The resource name for the Key in the format \"projects/{project}/keys/{key}\"."]
+        #[doc = "The resource name for the Key in the format “projects/{project}/keys/{key}”."]
         #[serde(
             rename = "name",
             default,
@@ -810,7 +810,7 @@ pub mod schemas {
         pub challenge_metrics: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudRecaptchaenterpriseV1ChallengeMetrics>,
         >,
-        #[doc = "Output only. The name of the metrics, in the format \"projects/{project}/keys/{key}/metrics\"."]
+        #[doc = "Output only. The name of the metrics, in the format “projects/{project}/keys/{key}/metrics”."]
         #[serde(
             rename = "name",
             default,
@@ -1057,7 +1057,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecaptchaenterpriseV1ScoreDistribution {
-        #[doc = "Map key is score value multiplied by 100. The scores are discrete values between [0, 1]. The maximum number of buckets is on order of a few dozen, but typically much lower (ie. 10)."]
+        #[doc = "Map key is score value multiplied by 100. The scores are discrete values between \\[0, 1\\]. The maximum number of buckets is on order of a few dozen, but typically much lower (ie. 10)."]
         #[serde(
             rename = "scoreBuckets",
             default,
@@ -1088,7 +1088,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudRecaptchaenterpriseV1ScoreMetrics {
-        #[doc = "Action-based metrics. The map key is the action name which specified by the site owners at time of the \"execute\" client-side call. Populated only for SCORE keys."]
+        #[doc = "Action-based metrics. The map key is the action name which specified by the site owners at time of the “execute” client-side call. Populated only for SCORE keys."]
         #[serde(
             rename = "actionMetrics",
             default,
@@ -1500,7 +1500,7 @@ pub mod schemas {
         ActionToken,
         #[doc = "Redirects suspicious traffic to reCAPTCHA."]
         ChallengePage,
-        #[doc = "Use reCAPTCHA session-tokens to protect the whole user session on the site's domain."]
+        #[doc = "Use reCAPTCHA session-tokens to protect the whole user session on the site’s domain."]
         SessionToken,
         #[doc = "Undefined feature."]
         WafFeatureUnspecified,
@@ -1702,7 +1702,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudRecaptchaenterpriseV1WebKeySettings { # [doc = "If set to true, it means allowed_domains will not be enforced."] # [serde (rename = "allowAllDomains" , default , skip_serializing_if = "std::option::Option::is_none")] pub allow_all_domains : :: std :: option :: Option < bool > , # [doc = "If set to true, the key can be used on AMP (Accelerated Mobile Pages) websites. This is supported only for the SCORE integration type."] # [serde (rename = "allowAmpTraffic" , default , skip_serializing_if = "std::option::Option::is_none")] pub allow_amp_traffic : :: std :: option :: Option < bool > , # [doc = "Domains or subdomains of websites allowed to use the key. All subdomains of an allowed domain are automatically allowed. A valid domain requires a host and must not include any path, port, query or fragment. Examples: 'example.com' or 'subdomain.example.com'"] # [serde (rename = "allowedDomains" , default , skip_serializing_if = "std::option::Option::is_none")] pub allowed_domains : :: std :: option :: Option < Vec < String > > , # [doc = "Settings for the frequency and difficulty at which this key triggers captcha challenges. This should only be specified for IntegrationTypes CHECKBOX and INVISIBLE."] # [serde (rename = "challengeSecurityPreference" , default , skip_serializing_if = "std::option::Option::is_none")] pub challenge_security_preference : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1WebKeySettingsChallengeSecurityPreference > , # [doc = "Required. Describes how this key is integrated with the website."] # [serde (rename = "integrationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub integration_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1WebKeySettingsIntegrationType > , }
+    pub struct GoogleCloudRecaptchaenterpriseV1WebKeySettings { # [doc = "If set to true, it means allowed_domains will not be enforced."] # [serde (rename = "allowAllDomains" , default , skip_serializing_if = "std::option::Option::is_none")] pub allow_all_domains : :: std :: option :: Option < bool > , # [doc = "If set to true, the key can be used on AMP (Accelerated Mobile Pages) websites. This is supported only for the SCORE integration type."] # [serde (rename = "allowAmpTraffic" , default , skip_serializing_if = "std::option::Option::is_none")] pub allow_amp_traffic : :: std :: option :: Option < bool > , # [doc = "Domains or subdomains of websites allowed to use the key. All subdomains of an allowed domain are automatically allowed. A valid domain requires a host and must not include any path, port, query or fragment. Examples: ‘example.com’ or ‘subdomain.example.com’"] # [serde (rename = "allowedDomains" , default , skip_serializing_if = "std::option::Option::is_none")] pub allowed_domains : :: std :: option :: Option < Vec < String > > , # [doc = "Settings for the frequency and difficulty at which this key triggers captcha challenges. This should only be specified for IntegrationTypes CHECKBOX and INVISIBLE."] # [serde (rename = "challengeSecurityPreference" , default , skip_serializing_if = "std::option::Option::is_none")] pub challenge_security_preference : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1WebKeySettingsChallengeSecurityPreference > , # [doc = "Required. Describes how this key is integrated with the website."] # [serde (rename = "integrationType" , default , skip_serializing_if = "std::option::Option::is_none")] pub integration_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudRecaptchaenterpriseV1WebKeySettingsIntegrationType > , }
     impl ::google_field_selector::FieldSelector for GoogleCloudRecaptchaenterpriseV1WebKeySettings {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -1717,7 +1717,7 @@ pub mod schemas {
     pub enum GoogleCloudRecaptchaenterpriseV1WebKeySettingsChallengeSecurityPreference {
         #[doc = "Key tends to show balanced (in amount and difficulty) challenges."]
         Balance,
-        #[doc = "Default type that indicates this enum hasn't been specified."]
+        #[doc = "Default type that indicates this enum hasn’t been specified."]
         ChallengeSecurityPreferenceUnspecified,
         #[doc = "Key tends to show more and harder challenges."]
         Security,
@@ -1793,13 +1793,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudRecaptchaenterpriseV1WebKeySettingsIntegrationType {
-        #[doc = "Displays the \"I'm not a robot\" checkbox and may show captcha challenges after it is checked."]
+        #[doc = "Displays the “I’m not a robot” checkbox and may show captcha challenges after it is checked."]
         Checkbox,
-        #[doc = "Default type that indicates this enum hasn't been specified. This is not a valid IntegrationType, one of the other types must be specified instead."]
+        #[doc = "Default type that indicates this enum hasn’t been specified. This is not a valid IntegrationType, one of the other types must be specified instead."]
         IntegrationTypeUnspecified,
-        #[doc = "Doesn't display the \"I'm not a robot\" checkbox, but may show captcha challenges after risk analysis."]
+        #[doc = "Doesn’t display the “I’m not a robot” checkbox, but may show captcha challenges after risk analysis."]
         Invisible,
-        #[doc = "Only used to produce scores. It doesn't display the \"I'm not a robot\" checkbox and never shows captcha challenges."]
+        #[doc = "Only used to produce scores. It doesn’t display the “I’m not a robot” checkbox and never shows captcha challenges."]
         Score,
     }
     impl GoogleCloudRecaptchaenterpriseV1WebKeySettingsIntegrationType {
@@ -2214,12 +2214,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2383,12 +2383,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2711,12 +2711,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2875,12 +2875,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3035,12 +3035,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3197,12 +3197,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3371,12 +3371,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3711,12 +3711,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3882,12 +3882,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -4067,12 +4067,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -4275,12 +4275,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -4631,12 +4631,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

@@ -520,7 +520,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct AppendCellsRequest {
-        #[doc = "The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; 'row.values.' should not be specified. A single `\"*\"` can be used as short-hand for listing every field."]
+        #[doc = "The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; ‘row.values.’ should not be specified. A single `\"*\"` can be used as short-hand for listing every field."]
         #[serde(
             rename = "fields",
             default,
@@ -734,7 +734,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_and_destination: ::std::option::Option<crate::schemas::SourceAndDestination>,
-        #[doc = "True if we should generate data with the \"alternate\" series. This differs based on the type and amount of source data."]
+        #[doc = "True if we should generate data with the “alternate” series. This differs based on the type and amount of source data."]
         #[serde(
             rename = "useAlternateSeries",
             default,
@@ -1286,7 +1286,7 @@ pub mod schemas {
         )]
         pub style_overrides:
             ::std::option::Option<Vec<crate::schemas::BasicSeriesDataPointStyleOverride>>,
-        #[doc = "The minor axis that will specify the range of values for this series. For example, if charting stocks over time, the \"Volume\" series may want to be pinned to the right with the prices pinned to the left, because the scale of trading volume is different than the scale of prices. It is an error to specify an axis that isn't a valid minor axis for the chart's type."]
+        #[doc = "The minor axis that will specify the range of values for this series. For example, if charting stocks over time, the “Volume” series may want to be pinned to the right with the prices pinned to the left, because the scale of trading volume is different than the scale of prices. It is an error to specify an axis that isn’t a valid minor axis for the chart’s type."]
         #[serde(
             rename = "targetAxis",
             default,
@@ -1524,7 +1524,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub domains: ::std::option::Option<Vec<crate::schemas::BasicChartDomain>>,
-        #[doc = "The number of rows or columns in the data that are \"headers\". If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.)"]
+        #[doc = "The number of rows or columns in the data that are “headers”. If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.)"]
         #[serde(
             rename = "headerCount",
             default,
@@ -1968,7 +1968,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BasicFilter {
-        #[doc = "The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column. This field is deprecated in favor of filter_specs."]
+        #[doc = "The criteria for showing/hiding values per column. The map’s key is the column index, and the value is the criteria for that column. This field is deprecated in favor of filter_specs."]
         #[serde(
             rename = "criteria",
             default,
@@ -2096,7 +2096,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchClearValuesByDataFilterResponse {
-        #[doc = "The ranges that were cleared, in [A1 notation](/sheets/api/guides/concepts#cell). If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet's limits."]
+        #[doc = "The ranges that were cleared, in [A1 notation](/sheets/api/guides/concepts#cell). If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet’s limits."]
         #[serde(
             rename = "clearedRanges",
             default,
@@ -2165,7 +2165,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchClearValuesResponse {
-        #[doc = "The ranges that were cleared, in A1 notation. If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet's limits."]
+        #[doc = "The ranges that were cleared, in A1 notation. If the requests are for an unbounded range or a ranger larger than the bounds of the sheet, this is the actual ranges that were cleared, bounded to the sheet’s limits."]
         #[serde(
             rename = "clearedRanges",
             default,
@@ -2251,7 +2251,7 @@ pub mod schemas {
     pub enum BatchGetValuesByDataFilterRequestDateTimeRenderOption {
         #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
         FormattedString,
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
         SerialNumber,
     }
     impl BatchGetValuesByDataFilterRequestDateTimeRenderOption {
@@ -2423,7 +2423,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BatchGetValuesByDataFilterRequestValueRenderOption {
-        #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+        #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
         FormattedValue,
         #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
         Formula,
@@ -2583,14 +2583,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub requests: ::std::option::Option<Vec<crate::schemas::Request>>,
-        #[doc = "True if grid data should be returned. Meaningful only if include_spreadsheet_in_response is 'true'. This parameter is ignored if a field mask was set in the request."]
+        #[doc = "True if grid data should be returned. Meaningful only if include_spreadsheet_in_response is ‘true’. This parameter is ignored if a field mask was set in the request."]
         #[serde(
             rename = "responseIncludeGridData",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub response_include_grid_data: ::std::option::Option<bool>,
-        #[doc = "Limits the ranges included in the response spreadsheet. Meaningful only if include_spreadsheet_in_response is 'true'."]
+        #[doc = "Limits the ranges included in the response spreadsheet. Meaningful only if include_spreadsheet_in_response is ‘true’."]
         #[serde(
             rename = "responseRanges",
             default,
@@ -2702,7 +2702,7 @@ pub mod schemas {
     pub enum BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption {
         #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
         FormattedString,
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
         SerialNumber,
     }
     impl BatchUpdateValuesByDataFilterRequestResponseDateTimeRenderOption {
@@ -2768,7 +2768,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BatchUpdateValuesByDataFilterRequestResponseValueRenderOption {
-        #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+        #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
         FormattedValue,
         #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
         Formula,
@@ -3037,7 +3037,7 @@ pub mod schemas {
     pub enum BatchUpdateValuesRequestResponseDateTimeRenderOption {
         #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
         FormattedString,
-        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+        #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
         SerialNumber,
     }
     impl BatchUpdateValuesRequestResponseDateTimeRenderOption {
@@ -3123,7 +3123,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BatchUpdateValuesRequestResponseValueRenderOption {
-        #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+        #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
         FormattedValue,
         #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
         Formula,
@@ -3511,69 +3511,69 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum BooleanConditionType {
-        #[doc = "The cell's value must be empty. Supported by conditional formatting and filters. Requires no ConditionValues."]
+        #[doc = "The cell’s value must be empty. Supported by conditional formatting and filters. Requires no ConditionValues."]
         Blank,
-        #[doc = "The cell's value must be TRUE/FALSE or in the list of condition values. Supported by data validation. Renders as a cell checkbox. Supports zero, one or two ConditionValues. No values indicates the cell must be TRUE or FALSE, where TRUE renders as checked and FALSE renders as unchecked. One value indicates the cell will render as checked when it contains that value and unchecked when it is blank. Two values indicate that the cell will render as checked when it contains the first value and unchecked when it contains the second value. For example, [\"Yes\",\"No\"] indicates that the cell will render a checked box when it has the value \"Yes\" and an unchecked box when it has the value \"No\"."]
+        #[doc = "The cell’s value must be TRUE/FALSE or in the list of condition values. Supported by data validation. Renders as a cell checkbox. Supports zero, one or two ConditionValues. No values indicates the cell must be TRUE or FALSE, where TRUE renders as checked and FALSE renders as unchecked. One value indicates the cell will render as checked when it contains that value and unchecked when it is blank. Two values indicate that the cell will render as checked when it contains the first value and unchecked when it contains the second value. For example, \\[“Yes”,“No”\\] indicates that the cell will render a checked box when it has the value “Yes” and an unchecked box when it has the value “No”."]
         Boolean,
         #[doc = "The default value, do not use."]
         ConditionTypeUnspecified,
-        #[doc = "The condition's formula must evaluate to true. Supported by data validation, conditional formatting and filters. Not supported by data source sheet filters. Requires a single ConditionValue."]
+        #[doc = "The condition’s formula must evaluate to true. Supported by data validation, conditional formatting and filters. Not supported by data source sheet filters. Requires a single ConditionValue."]
         CustomFormula,
-        #[doc = "The cell's value must be after the date of the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue that may be a relative date."]
+        #[doc = "The cell’s value must be after the date of the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue that may be a relative date."]
         DateAfter,
-        #[doc = "The cell's value must be before the date of the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue that may be a relative date."]
+        #[doc = "The cell’s value must be before the date of the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue that may be a relative date."]
         DateBefore,
-        #[doc = "The cell's value must be between the dates of the two condition values. Supported by data validation. Requires exactly two ConditionValues."]
+        #[doc = "The cell’s value must be between the dates of the two condition values. Supported by data validation. Requires exactly two ConditionValues."]
         DateBetween,
-        #[doc = "The cell's value must be the same date as the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
+        #[doc = "The cell’s value must be the same date as the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
         DateEq,
-        #[doc = "The cell's value must be a date. Supported by data validation. Requires no ConditionValues."]
+        #[doc = "The cell’s value must be a date. Supported by data validation. Requires no ConditionValues."]
         DateIsValid,
-        #[doc = "The cell's value must be outside the dates of the two condition values. Supported by data validation. Requires exactly two ConditionValues."]
+        #[doc = "The cell’s value must be outside the dates of the two condition values. Supported by data validation. Requires exactly two ConditionValues."]
         DateNotBetween,
-        #[doc = "The cell's value must be exactly not the condition's value. Supported by filters on data source objects. Requires at least one ConditionValue."]
+        #[doc = "The cell’s value must be exactly not the condition’s value. Supported by filters on data source objects. Requires at least one ConditionValue."]
         DateNotEq,
-        #[doc = "The cell's value must be on or after the date of the condition's value. Supported by data validation. Requires a single ConditionValue that may be a relative date."]
+        #[doc = "The cell’s value must be on or after the date of the condition’s value. Supported by data validation. Requires a single ConditionValue that may be a relative date."]
         DateOnOrAfter,
-        #[doc = "The cell's value must be on or before the date of the condition's value. Supported by data validation. Requires a single ConditionValue that may be a relative date."]
+        #[doc = "The cell’s value must be on or before the date of the condition’s value. Supported by data validation. Requires a single ConditionValue that may be a relative date."]
         DateOnOrBefore,
-        #[doc = "The cell's value must not be empty. Supported by conditional formatting and filters. Requires no ConditionValues."]
+        #[doc = "The cell’s value must not be empty. Supported by conditional formatting and filters. Requires no ConditionValues."]
         NotBlank,
-        #[doc = "The cell's value must be between the two condition values. Supported by data validation, conditional formatting and filters. Requires exactly two ConditionValues."]
+        #[doc = "The cell’s value must be between the two condition values. Supported by data validation, conditional formatting and filters. Requires exactly two ConditionValues."]
         NumberBetween,
-        #[doc = "The cell's value must be equal to the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
+        #[doc = "The cell’s value must be equal to the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
         NumberEq,
-        #[doc = "The cell's value must be greater than the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must be greater than the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
         NumberGreater,
-        #[doc = "The cell's value must be greater than or equal to the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must be greater than or equal to the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
         NumberGreaterThanEq,
-        #[doc = "The cell's value must be less than the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must be less than the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
         NumberLess,
-        #[doc = "The cell's value must be less than or equal to the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must be less than or equal to the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
         NumberLessThanEq,
-        #[doc = "The cell's value must not be between the two condition values. Supported by data validation, conditional formatting and filters. Requires exactly two ConditionValues."]
+        #[doc = "The cell’s value must not be between the two condition values. Supported by data validation, conditional formatting and filters. Requires exactly two ConditionValues."]
         NumberNotBetween,
-        #[doc = "The cell's value must be not equal to the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
+        #[doc = "The cell’s value must be not equal to the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
         NumberNotEq,
-        #[doc = "The cell's value must be in the list of condition values. Supported by data validation. Supports any number of condition values, one per item in the list. Formulas are not supported in the values."]
+        #[doc = "The cell’s value must be in the list of condition values. Supported by data validation. Supports any number of condition values, one per item in the list. Formulas are not supported in the values."]
         OneOfList,
-        #[doc = "The cell's value must be listed in the grid in condition value's range. Supported by data validation. Requires a single ConditionValue, and the value must be a valid range in A1 notation."]
+        #[doc = "The cell’s value must be listed in the grid in condition value’s range. Supported by data validation. Requires a single ConditionValue, and the value must be a valid range in A1 notation."]
         OneOfRange,
-        #[doc = "The cell's value must contain the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must contain the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
         TextContains,
-        #[doc = "The cell's value must end with the condition's value. Supported by conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must end with the condition’s value. Supported by conditional formatting and filters. Requires a single ConditionValue."]
         TextEndsWith,
-        #[doc = "The cell's value must be exactly the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
+        #[doc = "The cell’s value must be exactly the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue for data validation, conditional formatting, and filters on non-data source objects and at least one ConditionValue for filters on data source objects."]
         TextEq,
-        #[doc = "The cell's value must be a valid email address. Supported by data validation. Requires no ConditionValues."]
+        #[doc = "The cell’s value must be a valid email address. Supported by data validation. Requires no ConditionValues."]
         TextIsEmail,
-        #[doc = "The cell's value must be a valid URL. Supported by data validation. Requires no ConditionValues."]
+        #[doc = "The cell’s value must be a valid URL. Supported by data validation. Requires no ConditionValues."]
         TextIsUrl,
-        #[doc = "The cell's value must not contain the condition's value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must not contain the condition’s value. Supported by data validation, conditional formatting and filters. Requires a single ConditionValue."]
         TextNotContains,
-        #[doc = "The cell's value must be exactly not the condition's value. Supported by filters on data source objects. Requires at least one ConditionValue."]
+        #[doc = "The cell’s value must be exactly not the condition’s value. Supported by filters on data source objects. Requires at least one ConditionValue."]
         TextNotEq,
-        #[doc = "The cell's value must start with the condition's value. Supported by conditional formatting and filters. Requires a single ConditionValue."]
+        #[doc = "The cell’s value must start with the condition’s value. Supported by conditional formatting and filters. Requires a single ConditionValue."]
         TextStartsWith,
     }
     impl BooleanConditionType {
@@ -3784,7 +3784,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub style: ::std::option::Option<crate::schemas::BorderStyle>,
-        #[doc = "The width of the border, in pixels. Deprecated; the width is determined by the \"style\" field."]
+        #[doc = "The width of the border, in pixels. Deprecated; the width is determined by the “style” field."]
         #[serde(
             rename = "width",
             default,
@@ -4187,14 +4187,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub close_series: ::std::option::Option<crate::schemas::CandlestickSeries>,
-        #[doc = "The range data (vertical axis) for the high/maximum value for each candle. This is the top of the candle's center line."]
+        #[doc = "The range data (vertical axis) for the high/maximum value for each candle. This is the top of the candle’s center line."]
         #[serde(
             rename = "highSeries",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub high_series: ::std::option::Option<crate::schemas::CandlestickSeries>,
-        #[doc = "The range data (vertical axis) for the low/minimum value for each candle. This is the bottom of the candle's center line."]
+        #[doc = "The range data (vertical axis) for the low/minimum value for each candle. This is the bottom of the candle’s center line."]
         #[serde(
             rename = "lowSeries",
             default,
@@ -4309,7 +4309,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub effective_value: ::std::option::Option<crate::schemas::ExtendedValue>,
-        #[doc = "The formatted value of the cell. This is the value as it's shown to the user. This field is read-only."]
+        #[doc = "The formatted value of the cell. This is the value as it’s shown to the user. This field is read-only."]
         #[serde(
             rename = "formattedValue",
             default,
@@ -4431,7 +4431,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text_direction: ::std::option::Option<crate::schemas::CellFormatTextDirection>,
-        #[doc = "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell's existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link."]
+        #[doc = "The format of the text in the cell (unless overridden by a format run). Setting a cell-level link here will clear the cell’s existing links. Setting the link field in a TextFormatRun will take precedence over the cell-level link."]
         #[serde(
             rename = "textFormat",
             default,
@@ -4804,13 +4804,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CellFormatWrapStrategy {
-        #[doc = "Lines that are longer than the cell width will be clipped. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline t| <- Text is clipped | Next newline. |"]
+        #[doc = "Lines that are longer than the cell width will be clipped. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline t| \\<- Text is clipped | Next newline. |"]
         Clip,
-        #[doc = "This wrap strategy represents the old Google Sheets wrap strategy where words that are longer than a line are clipped rather than broken. This strategy is not supported on all platforms and is being phased out. Example: | Cell has a | | loooooooooo| <- Word is clipped. | word. |"]
+        #[doc = "This wrap strategy represents the old Google Sheets wrap strategy where words that are longer than a line are clipped rather than broken. This strategy is not supported on all platforms and is being phased out. Example: | Cell has a | | loooooooooo| \\<- Word is clipped. | word. |"]
         LegacyWrap,
-        #[doc = "Lines that are longer than the cell width will be written in the next cell over, so long as that cell is empty. If the next cell over is non-empty, this behaves the same as `CLIP`. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline that is very long. <- Text continues into next cell | Next newline. |"]
+        #[doc = "Lines that are longer than the cell width will be written in the next cell over, so long as that cell is empty. If the next cell over is non-empty, this behaves the same as `CLIP`. The text will never wrap to the next line unless the user manually inserts a new line. Example: | First sentence. | | Manual newline that is very long. \\<- Text continues into next cell | Next newline. |"]
         OverflowCell,
-        #[doc = "Words that are longer than a line are wrapped at the character level rather than clipped. Example: | Cell has a | | loooooooooo| <- Word is broken. | ong word. |"]
+        #[doc = "Words that are longer than a line are wrapped at the character level rather than clipped. Example: | Cell has a | | loooooooooo| \\<- Word is broken. | ong word. |"]
         Wrap,
         #[doc = "The default value, do not use."]
         WrapStrategyUnspecified,
@@ -4906,7 +4906,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub view_window_min: ::std::option::Option<f64>,
-        #[doc = "The view window's mode."]
+        #[doc = "The view window’s mode."]
         #[serde(
             rename = "viewWindowMode",
             default,
@@ -5560,7 +5560,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub histogram_chart: ::std::option::Option<crate::schemas::HistogramChartSpec>,
-        #[doc = "True to make a chart fill the entire space in which it's rendered with minimum padding. False to use the default padding. (Not applicable to Geo and Org charts.)"]
+        #[doc = "True to make a chart fill the entire space in which it’s rendered with minimum padding. False to use the default padding. (Not applicable to Geo and Org charts.)"]
         #[serde(
             rename = "maximized",
             default,
@@ -5828,7 +5828,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ClearValuesResponse {
-        #[doc = "The range (in A1 notation) that was cleared. (If the request was for an unbounded range or a ranger larger than the bounds of the sheet, this will be the actual range that was cleared, bounded to the sheet's limits.)"]
+        #[doc = "The range (in A1 notation) that was cleared. (If the request was for an unbounded range or a ranger larger than the bounds of the sheet, this will be the actual range that was cleared, bounded to the sheet’s limits.)"]
         #[serde(
             rename = "clearedRange",
             default,
@@ -5864,21 +5864,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alpha: ::std::option::Option<f32>,
-        #[doc = "The amount of blue in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of blue in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "blue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blue: ::std::option::Option<f32>,
-        #[doc = "The amount of green in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of green in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "green",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub green: ::std::option::Option<f32>,
-        #[doc = "The amount of red in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of red in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "red",
             default,
@@ -6056,7 +6056,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub relative_date: ::std::option::Option<crate::schemas::ConditionValueRelativeDate>,
-        #[doc = "A value the condition is based on. The value is parsed as if the user typed into a cell. Formulas are supported (and must begin with an `=` or a '+')."]
+        #[doc = "A value the condition is based on. The value is parsed as if the user typed into a cell. Formulas are supported (and must begin with an `=` or a ‘+’)."]
         #[serde(
             rename = "userEnteredValue",
             default,
@@ -6174,7 +6174,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ConditionalFormatRule {
-        #[doc = "The formatting is either \"on\" or \"off\" according to the rule."]
+        #[doc = "The formatting is either “on” or “off” according to the rule."]
         #[serde(
             rename = "booleanRule",
             default,
@@ -6219,7 +6219,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CopyPasteRequest {
-        #[doc = "The location to paste to. If the range covers a span that's a multiple of the source's height or width, then the data will be repeated to fill in the destination range. If the range is smaller than the source range, the entire source data will still be copied (beyond the end of the destination range)."]
+        #[doc = "The location to paste to. If the range covers a span that’s a multiple of the source’s height or width, then the data will be repeated to fill in the destination range. If the range is smaller than the source range, the entire source data will still be copied (beyond the end of the destination range)."]
         #[serde(
             rename = "destination",
             default,
@@ -6730,7 +6730,7 @@ pub mod schemas {
         ConcurrentQuery,
         #[doc = "Default value, do not use."]
         DataExecutionErrorCodeUnspecified,
-        #[doc = "The database referenced by the data source is not found. */"]
+        #[doc = "The database referenced by the data source is not found. \\*/"]
         DataNotFound,
         #[doc = "The data execution returns duplicate column names or aliases."]
         DuplicateColumnNames,
@@ -8338,7 +8338,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_message: ::std::option::Option<String>,
-        #[doc = "True if the UI should be customized based on the kind of condition. If true, \"List\" conditions will show a dropdown."]
+        #[doc = "True if the UI should be customized based on the kind of condition. If true, “List” conditions will show a dropdown."]
         #[serde(
             rename = "showCustomUi",
             default,
@@ -9186,7 +9186,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata_key: ::std::option::Option<String>,
-        #[doc = "Data associated with the metadata's key."]
+        #[doc = "Data associated with the metadata’s key."]
         #[serde(
             rename = "metadataValue",
             default,
@@ -9759,7 +9759,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DimensionGroup {
-        #[doc = "This field is true if this group is collapsed. A collapsed group remains collapsed if an overlapping group at a shallower depth is expanded. A true value does not imply that all dimensions within the group are hidden, since a dimension's visibility can change independently from this group property. However, when this property is updated, all dimensions within it are set to hidden if this field is true, or set to visible if this field is false."]
+        #[doc = "This field is true if this group is collapsed. A collapsed group remains collapsed if an overlapping group at a shallower depth is expanded. A true value does not imply that all dimensions within the group are hidden, since a dimension’s visibility can change independently from this group property. However, when this property is updated, all dimensions within it are set to hidden if this field is true, or set to visible if this field is false."]
         #[serde(
             rename = "collapsed",
             default,
@@ -10119,7 +10119,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Editors {
-        #[doc = "True if anyone in the document's domain has edit access to the protected range. Domain protection is only supported on documents within a domain."]
+        #[doc = "True if anyone in the document’s domain has edit access to the protected range. Domain protection is only supported on documents within a domain."]
         #[serde(
             rename = "domainUsersCanEdit",
             default,
@@ -10281,7 +10281,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ErrorValue {
-        #[doc = "A message with more information about the error (in the spreadsheet's locale)."]
+        #[doc = "A message with more information about the error (in the spreadsheet’s locale)."]
         #[serde(
             rename = "message",
             default,
@@ -10471,7 +10471,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct FilterCriteria {
-        #[doc = "A condition that must be true for values to be shown. (This does not override hidden_values -- if a value is listed there, it will still be hidden.)"]
+        #[doc = "A condition that must be true for values to be shown. (This does not override hidden_values – if a value is listed there, it will still be hidden.)"]
         #[serde(
             rename = "condition",
             default,
@@ -10565,7 +10565,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct FilterView {
-        #[doc = "The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column. This field is deprecated in favor of filter_specs."]
+        #[doc = "The criteria for showing/hiding values per column. The map’s key is the column index, and the value is the criteria for that column. This field is deprecated in favor of filter_specs."]
         #[serde(
             rename = "criteria",
             default,
@@ -10983,7 +10983,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub frozen_row_count: ::std::option::Option<i32>,
-        #[doc = "True if the grid isn't showing gridlines in the UI."]
+        #[doc = "True if the grid isn’t showing gridlines in the UI."]
         #[serde(
             rename = "hideGridlines",
             default,
@@ -11736,13 +11736,13 @@ pub mod schemas {
         Invisible,
         #[doc = "Default value, do not use."]
         LineDashTypeUnspecified,
-        #[doc = "A dashed line where the dashes have \"long\" length."]
+        #[doc = "A dashed line where the dashes have “long” length."]
         LongDashed,
-        #[doc = "A line that alternates between a \"long\" dash and a dot."]
+        #[doc = "A line that alternates between a “long” dash and a dot."]
         LongDashedDotted,
-        #[doc = "A dashed line where the dashes have \"medium\" length."]
+        #[doc = "A dashed line where the dashes have “medium” length."]
         MediumDashed,
-        #[doc = "A line that alternates between a \"medium\" dash and a dot."]
+        #[doc = "A line that alternates between a “medium” dash and a dot."]
         MediumDashedDotted,
         #[doc = "A solid line."]
         Solid,
@@ -12189,7 +12189,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct NumberFormat {
-        #[doc = "Pattern string used for formatting. If not set, a default pattern based on the user's locale will be used if necessary for the given type. See the [Date and Number Formats guide](/sheets/api/guides/formats) for more information about the supported patterns."]
+        #[doc = "Pattern string used for formatting. If not set, a default pattern based on the user’s locale will be used if necessary for the given type. See the [Date and Number Formats guide](/sheets/api/guides/formats) for more information about the supported patterns."]
         #[serde(
             rename = "pattern",
             default,
@@ -12909,7 +12909,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PivotFilterCriteria {
-        #[doc = "A condition that must be true for values to be shown. (`visibleValues` does not override this -- even if a value is listed there, it is still hidden if it does not meet the condition.) Condition values that refer to ranges in A1-notation are evaluated relative to the pivot table sheet. References are treated absolutely, so are not filled down the pivot table. For example, a condition value of `=A1` on \"Pivot Table 1\" is treated as `'Pivot Table 1'!$A$1`. The source data of the pivot table can be referenced by column header name. For example, if the source data has columns named \"Revenue\" and \"Cost\" and a condition is applied to the \"Revenue\" column with type `NUMBER_GREATER` and value `=Cost`, then only columns where \"Revenue\" > \"Cost\" are included."]
+        #[doc = "A condition that must be true for values to be shown. (`visibleValues` does not override this – even if a value is listed there, it is still hidden if it does not meet the condition.) Condition values that refer to ranges in A1-notation are evaluated relative to the pivot table sheet. References are treated absolutely, so are not filled down the pivot table. For example, a condition value of `=A1` on “Pivot Table 1” is treated as `'Pivot Table 1'!$A$1`. The source data of the pivot table can be referenced by column header name. For example, if the source data has columns named “Revenue” and “Cost” and a condition is applied to the “Revenue” column with type `NUMBER_GREATER` and value `=Cost`, then only columns where “Revenue” > “Cost” are included."]
         #[serde(
             rename = "condition",
             default,
@@ -13013,14 +13013,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub group_rule: ::std::option::Option<crate::schemas::PivotGroupRule>,
-        #[doc = "The labels to use for the row/column groups which can be customized. For example, in the following pivot table, the row label is `Region` (which could be renamed to `State`) and the column label is `Product` (which could be renamed `Item`). Pivot tables created before December 2017 do not have header labels. If you'd like to add header labels to an existing pivot table, please delete the existing pivot table and then create a new pivot table with same parameters. +--------------+---------+-------+ | SUM of Units | Product | | | Region | Pen | Paper | +--------------+---------+-------+ | New York | 345 | 98 | | Oregon | 234 | 123 | | Tennessee | 531 | 415 | +--------------+---------+-------+ | Grand Total | 1110 | 636 | +--------------+---------+-------+"]
+        #[doc = "The labels to use for the row/column groups which can be customized. For example, in the following pivot table, the row label is `Region` (which could be renamed to `State`) and the column label is `Product` (which could be renamed `Item`). Pivot tables created before December 2017 do not have header labels. If you’d like to add header labels to an existing pivot table, please delete the existing pivot table and then create a new pivot table with same parameters. +–––––––+———+—––+ | SUM of Units | Product | | | Region | Pen | Paper | +–––––––+———+—––+ | New York | 345 | 98 | | Oregon | 234 | 123 | | Tennessee | 531 | 415 | +–––––––+———+—––+ | Grand Total | 1110 | 636 | +–––––––+———+—––+"]
         #[serde(
             rename = "label",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "True if the headings in this pivot group should be repeated. This is only valid for row groupings and is ignored by columns. By default, we minimize repetition of headings by not showing higher level headings where they are the same. For example, even though the third row below corresponds to \"Q1 Mar\", \"Q1\" is not shown because it is redundant with previous rows. Setting repeat_headings to true would cause \"Q1\" to be repeated for \"Feb\" and \"Mar\". +--------------+ | Q1 | Jan | | | Feb | | | Mar | +--------+-----+ | Q1 Total | +--------------+"]
+        #[doc = "True if the headings in this pivot group should be repeated. This is only valid for row groupings and is ignored by columns. By default, we minimize repetition of headings by not showing higher level headings where they are the same. For example, even though the third row below corresponds to “Q1 Mar”, “Q1” is not shown because it is redundant with previous rows. Setting repeat_headings to true would cause “Q1” to be repeated for “Feb” and “Mar”. +–––––––+ | Q1 | Jan | | | Feb | | | Mar | +––––+—–+ | Q1 Total | +–––––––+"]
         #[serde(
             rename = "repeatHeadings",
             default,
@@ -13048,7 +13048,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_column_offset: ::std::option::Option<i32>,
-        #[doc = "The bucket of the opposite pivot group to sort by. If not specified, sorting is alphabetical by this group's values."]
+        #[doc = "The bucket of the opposite pivot group to sort by. If not specified, sorting is alphabetical by this group’s values."]
         #[serde(
             rename = "valueBucket",
             default,
@@ -13227,7 +13227,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct PivotGroupSortValueBucket {
-        #[doc = "Determines the bucket from which values are chosen to sort. For example, in a pivot table with one row group & two column groups, the row group can list up to two values. The first value corresponds to a value within the first column group, and the second value corresponds to a value in the second column group. If no values are listed, this would indicate that the row should be sorted according to the \"Grand Total\" over the column groups. If a single value is listed, this would correspond to using the \"Total\" of that bucket."]
+        #[doc = "Determines the bucket from which values are chosen to sort. For example, in a pivot table with one row group & two column groups, the row group can list up to two values. The first value corresponds to a value within the first column group, and the second value corresponds to a value in the second column group. If no values are listed, this would indicate that the row should be sorted according to the “Grand Total” over the column groups. If a single value is listed, this would correspond to using the “Total” of that bucket."]
         #[serde(
             rename = "buckets",
             default,
@@ -13292,7 +13292,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub columns: ::std::option::Option<Vec<crate::schemas::PivotGroup>>,
-        #[doc = "An optional mapping of filters per source column offset. The filters are applied before aggregating data into the pivot table. The map's key is the column offset of the source range that you want to filter, and the value is the criteria for that column. For example, if the source was `C10:E15`, a key of `0` will have the filter for column `C`, whereas the key `1` is for column `D`. This field is deprecated in favor of filter_specs."]
+        #[doc = "An optional mapping of filters per source column offset. The filters are applied before aggregating data into the pivot table. The map’s key is the column offset of the source range that you want to filter, and the value is the criteria for that column. For example, if the source was `C10:E15`, a key of `0` will have the filter for column `C`, whereas the key `1` is for column `D`. This field is deprecated in favor of filter_specs."]
         #[serde(
             rename = "criteria",
             default,
@@ -13445,7 +13445,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PivotValue {
-        #[doc = "If specified, indicates that pivot values should be displayed as the result of a calculation with another pivot value. For example, if calculated_display_type is specified as PERCENT_OF_GRAND_TOTAL, all the pivot values are displayed as the percentage of the grand total. In the Sheets editor, this is referred to as \"Show As\" in the value section of a pivot table."]
+        #[doc = "If specified, indicates that pivot values should be displayed as the result of a calculation with another pivot value. For example, if calculated_display_type is specified as PERCENT_OF_GRAND_TOTAL, all the pivot values are displayed as the percentage of the grand total. In the Sheets editor, this is referred to as “Show As” in the value section of a pivot table."]
         #[serde(
             rename = "calculatedDisplayType",
             default,
@@ -14503,7 +14503,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub update_cells: ::std::option::Option<crate::schemas::UpdateCellsRequest>,
-        #[doc = "Updates a chart's specifications."]
+        #[doc = "Updates a chart’s specifications."]
         #[serde(
             rename = "updateChartSpec",
             default,
@@ -14541,7 +14541,7 @@ pub mod schemas {
         )]
         pub update_dimension_group:
             ::std::option::Option<crate::schemas::UpdateDimensionGroupRequest>,
-        #[doc = "Updates dimensions' properties."]
+        #[doc = "Updates dimensions’ properties."]
         #[serde(
             rename = "updateDimensionProperties",
             default,
@@ -14549,7 +14549,7 @@ pub mod schemas {
         )]
         pub update_dimension_properties:
             ::std::option::Option<crate::schemas::UpdateDimensionPropertiesRequest>,
-        #[doc = "Updates an embedded object's border."]
+        #[doc = "Updates an embedded object’s border."]
         #[serde(
             rename = "updateEmbeddedObjectBorder",
             default,
@@ -14557,7 +14557,7 @@ pub mod schemas {
         )]
         pub update_embedded_object_border:
             ::std::option::Option<crate::schemas::UpdateEmbeddedObjectBorderRequest>,
-        #[doc = "Updates an embedded object's (e.g. chart, image) position."]
+        #[doc = "Updates an embedded object’s (e.g. chart, image) position."]
         #[serde(
             rename = "updateEmbeddedObjectPosition",
             default,
@@ -14587,7 +14587,7 @@ pub mod schemas {
         )]
         pub update_protected_range:
             ::std::option::Option<crate::schemas::UpdateProtectedRangeRequest>,
-        #[doc = "Updates a sheet's properties."]
+        #[doc = "Updates a sheet’s properties."]
         #[serde(
             rename = "updateSheetProperties",
             default,
@@ -14595,14 +14595,14 @@ pub mod schemas {
         )]
         pub update_sheet_properties:
             ::std::option::Option<crate::schemas::UpdateSheetPropertiesRequest>,
-        #[doc = "Updates a slicer's specifications."]
+        #[doc = "Updates a slicer’s specifications."]
         #[serde(
             rename = "updateSlicerSpec",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub update_slicer_spec: ::std::option::Option<crate::schemas::UpdateSlicerSpecRequest>,
-        #[doc = "Updates the spreadsheet's properties."]
+        #[doc = "Updates the spreadsheet’s properties."]
         #[serde(
             rename = "updateSpreadsheetProperties",
             default,
@@ -14786,7 +14786,7 @@ pub mod schemas {
         )]
         pub update_developer_metadata:
             ::std::option::Option<crate::schemas::UpdateDeveloperMetadataResponse>,
-        #[doc = "A reply from updating an embedded object's position."]
+        #[doc = "A reply from updating an embedded object’s position."]
         #[serde(
             rename = "updateEmbeddedObjectPosition",
             default,
@@ -15332,14 +15332,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub grid_properties: ::std::option::Option<crate::schemas::GridProperties>,
-        #[doc = "True if the sheet is hidden in the UI, false if it's visible."]
+        #[doc = "True if the sheet is hidden in the UI, false if it’s visible."]
         #[serde(
             rename = "hidden",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hidden: ::std::option::Option<bool>,
-        #[doc = "The index of the sheet within the spreadsheet. When adding or updating sheet properties, if this field is excluded then the sheet is added or moved to the end of the sheet list. When updating sheet indices or inserting sheets, movement is considered in \"before the move\" indexes. For example, if there were 3 sheets (S1, S2, S3) in order to move S1 ahead of S2 the index would have to be set to 2. A sheet index update request is ignored if the requested index is identical to the sheets current index or if the requested new index is equal to the current sheet index + 1."]
+        #[doc = "The index of the sheet within the spreadsheet. When adding or updating sheet properties, if this field is excluded then the sheet is added or moved to the end of the sheet list. When updating sheet indices or inserting sheets, movement is considered in “before the move” indexes. For example, if there were 3 sheets (S1, S2, S3) in order to move S1 ahead of S2 the index would have to be set to 2. A sheet index update request is ignored if the requested index is identical to the sheets current index or if the requested new index is equal to the current sheet index + 1."]
         #[serde(
             rename = "index",
             default,
@@ -16056,7 +16056,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auto_recalc: ::std::option::Option<crate::schemas::SpreadsheetPropertiesAutoRecalc>,
-        #[doc = "The default format of all cells in the spreadsheet. CellData.effectiveFormat will not be set if the cell's format is equal to this default format. This field is read-only."]
+        #[doc = "The default format of all cells in the spreadsheet. CellData.effectiveFormat will not be set if the cell’s format is equal to this default format. This field is read-only."]
         #[serde(
             rename = "defaultFormat",
             default,
@@ -16085,7 +16085,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spreadsheet_theme: ::std::option::Option<crate::schemas::SpreadsheetTheme>,
-        #[doc = "The time zone of the spreadsheet, in CLDR format such as `America/New_York`. If the time zone isn't recognized, this may be a custom time zone such as `GMT-07:00`."]
+        #[doc = "The time zone of the spreadsheet, in CLDR format such as `America/New_York`. If the time zone isn’t recognized, this may be a custom time zone such as `GMT-07:00`."]
         #[serde(
             rename = "timeZone",
             default,
@@ -16272,7 +16272,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub italic: ::std::option::Option<bool>,
-        #[doc = "The link destination of the text, if any. Setting the link field in a TextFormatRun will clear the cell's existing links or a cell-level link set in the same request. When a link is set, the text foreground color will be set to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults."]
+        #[doc = "The link destination of the text, if any. Setting the link field in a TextFormatRun will clear the cell’s existing links or a cell-level link set in the same request. When a link is set, the text foreground color will be set to the default link color and the text will be underlined. If these fields are modified in the same request, those values will be used instead of the link defaults."]
         #[serde(
             rename = "link",
             default,
@@ -16308,7 +16308,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TextFormatRun {
-        #[doc = "The format of this run. Absent values inherit the cell's format."]
+        #[doc = "The format of this run. Absent values inherit the cell’s format."]
         #[serde(
             rename = "format",
             default,
@@ -16540,17 +16540,17 @@ pub mod schemas {
     pub enum TextToColumnsRequestDelimiterType {
         #[doc = "Automatically detect columns."]
         Autodetect,
-        #[doc = "\",\""]
+        #[doc = "“,”"]
         Comma,
         #[doc = "A custom value as defined in delimiter."]
         Custom,
         #[doc = "Default value. This value must not be used."]
         DelimiterTypeUnspecified,
-        #[doc = "\".\""]
+        #[doc = "“.”"]
         Period,
-        #[doc = "\";\""]
+        #[doc = "“;”"]
         Semicolon,
-        #[doc = "\" \""]
+        #[doc = "“ “"]
         Space,
     }
     impl TextToColumnsRequestDelimiterType {
@@ -16797,7 +16797,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimeOfDay {
-        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time."]
+        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
@@ -16981,7 +16981,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_value: ::std::option::Option<f64>,
-        #[doc = "The data the contains the treemap cells' parent labels."]
+        #[doc = "The data the contains the treemap cells’ parent labels."]
         #[serde(
             rename = "parentLabels",
             default,
@@ -17203,7 +17203,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateCellsRequest {
-        #[doc = "The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; 'row.values.' should not be specified. A single `\"*\"` can be used as short-hand for listing every field."]
+        #[doc = "The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; ‘row.values.’ should not be specified. A single `\"*\"` can be used as short-hand for listing every field."]
         #[serde(
             rename = "fields",
             default,
@@ -17850,7 +17850,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateSlicerSpecRequest {
-        #[doc = "The fields that should be updated. At least one field must be specified. The root `SlicerSpec` is implied and should not be specified. A single \"*\"` can be used as short-hand for listing every field."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root `SlicerSpec` is implied and should not be specified. A single “\\*”\\` can be used as short-hand for listing every field."]
         #[serde(
             rename = "fields",
             default,
@@ -17886,7 +17886,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateSpreadsheetPropertiesRequest {
-        #[doc = "The fields that should be updated. At least one field must be specified. The root 'properties' is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root ‘properties’ is implied and should not be specified. A single `\"*\"` can be used as short-hand for listing every field."]
         #[serde(
             rename = "fields",
             default,
@@ -17934,7 +17934,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub updated_columns: ::std::option::Option<i32>,
-        #[doc = "The values of the cells in the range matched by the dataFilter after all updates were applied. This is only included if the request's `includeValuesInResponse` field was `true`."]
+        #[doc = "The values of the cells in the range matched by the dataFilter after all updates were applied. This is only included if the request’s `includeValuesInResponse` field was `true`."]
         #[serde(
             rename = "updatedData",
             default,
@@ -17989,7 +17989,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub updated_columns: ::std::option::Option<i32>,
-        #[doc = "The values of the cells after updates were applied. This is only included if the request's `includeValuesInResponse` field was `true`."]
+        #[doc = "The values of the cells after updates were applied. This is only included if the request’s `includeValuesInResponse` field was `true`."]
         #[serde(
             rename = "updatedData",
             default,
@@ -18149,7 +18149,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color_style: ::std::option::Option<crate::schemas::ColorStyle>,
-        #[doc = "The label of the column's legend."]
+        #[doc = "The label of the column’s legend."]
         #[serde(
             rename = "label",
             default,
@@ -18810,12 +18810,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -18972,12 +18972,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19138,12 +19138,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19303,12 +19303,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -19426,7 +19426,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Returns the developer metadata with the specified ID. The caller must specify the spreadsheet ID and the developer metadata's unique metadataId."]
+                #[doc = "Returns the developer metadata with the specified ID. The caller must specify the spreadsheet ID and the developer metadata’s unique metadataId."]
                 pub fn get(
                     &self,
                     spreadsheet_id: impl Into<String>,
@@ -19525,12 +19525,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19695,12 +19695,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -19899,12 +19899,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -20099,7 +20099,7 @@ pub mod resources {
                 pub enum AppendResponseDateTimeRenderOption {
                     #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl AppendResponseDateTimeRenderOption {
@@ -20177,7 +20177,7 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum AppendResponseValueRenderOption {
-                    #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+                    #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
                     FormattedValue,
                     #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
                     Formula,
@@ -20346,7 +20346,7 @@ pub mod resources {
                 pub enum BatchGetDateTimeRenderOption {
                     #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl BatchGetDateTimeRenderOption {
@@ -20494,7 +20494,7 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum BatchGetValueRenderOption {
-                    #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+                    #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
                     FormattedValue,
                     #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
                     Formula,
@@ -20572,7 +20572,7 @@ pub mod resources {
                 pub enum GetDateTimeRenderOption {
                     #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl GetDateTimeRenderOption {
@@ -20717,7 +20717,7 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum GetValueRenderOption {
-                    #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+                    #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
                     FormattedValue,
                     #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
                     Formula,
@@ -20795,7 +20795,7 @@ pub mod resources {
                 pub enum UpdateResponseDateTimeRenderOption {
                     #[doc = "Instructs date, time, datetime, and duration fields to be output as strings in their given number format (which depends on the spreadsheet locale)."]
                     FormattedString,
-                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in \"serial number\" format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it's 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
+                    #[doc = "Instructs date, time, datetime, and duration fields to be output as doubles in “serial number” format, as popularized by Lotus 1-2-3. The whole number portion of the value (left of the decimal) counts the days since December 30th 1899. The fractional portion (right of the decimal) counts the time as a fraction of the day. For example, January 1st 1900 at noon would be 2.5, 2 because it’s 2 days after December 30th 1899, and .5 because noon is half a day. February 1st 1900 at 3pm would be 33.625. This correctly treats the year 1900 as not a leap year."]
                     SerialNumber,
                 }
                 impl UpdateResponseDateTimeRenderOption {
@@ -20873,7 +20873,7 @@ pub mod resources {
                 }
                 #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                 pub enum UpdateResponseValueRenderOption {
-                    #[doc = "Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
+                    #[doc = "Values will be calculated & formatted in the reply according to the cell’s formatting. Formatting is based on the spreadsheet’s locale, not the requesting user’s locale. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then `A2` would return `\"$1.23\"`."]
                     FormattedValue,
                     #[doc = "Values will not be calculated. The reply will include the formulas. For example, if `A1` is `1.23` and `A2` is `=A1` and formatted as currency, then A2 would return `\"=A1\"`."]
                     Formula,
@@ -21047,7 +21047,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Appends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table. See the [guide](/sheets/api/guides/values#appending_values) and [sample code](/sheets/api/samples/writing#append_values) for specific details of how tables are detected and data is appended. The caller must specify the spreadsheet ID, range, and a valueInputOption. The `valueInputOption` only controls how the input data will be added to the sheet (column-wise or row-wise), it does not influence what cell the data starts being written to."]
+                #[doc = "Appends values to a spreadsheet. The input range is used to search for existing data and find a “table” within that range. Values will be appended to the next row of the table, starting with the first column of the table. See the [guide](/sheets/api/guides/values#appending_values) and [sample code](/sheets/api/samples/writing#append_values) for specific details of how tables are detected and data is appended. The caller must specify the spreadsheet ID, range, and a valueInputOption. The `valueInputOption` only controls how the input data will be added to the sheet (column-wise or row-wise), it does not influence what cell the data starts being written to."]
                 pub fn append(
                     &self,
                     request: crate::schemas::ValueRange,
@@ -21078,7 +21078,7 @@ pub mod resources {
                         value_input_option: None,
                     }
                 }
-                #[doc = "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept."]
+                #[doc = "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared – all other properties of the cell (such as formatting and data validation) are kept."]
                 pub fn batch_clear(
                     &self,
                     request: crate::schemas::BatchClearValuesRequest,
@@ -21102,7 +21102,7 @@ pub mod resources {
                         spreadsheet_id: spreadsheet_id.into(),
                     }
                 }
-                #[doc = "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept."]
+                #[doc = "Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared – all other properties of the cell (such as formatting, data validation, etc..) are kept."]
                 pub fn batch_clear_by_data_filter(
                     &self,
                     request: crate::schemas::BatchClearValuesByDataFilterRequest,
@@ -21224,7 +21224,7 @@ pub mod resources {
                         spreadsheet_id: spreadsheet_id.into(),
                     }
                 }
-                #[doc = "Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept."]
+                #[doc = "Clears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared – all other properties of the cell (such as formatting, data validation, etc..) are kept."]
                 pub fn clear(
                     &self,
                     request: crate::schemas::ClearValuesRequest,
@@ -21379,12 +21379,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -21562,12 +21562,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -21727,12 +21727,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -21930,12 +21930,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22098,12 +22098,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22263,12 +22263,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22428,12 +22428,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22594,12 +22594,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22798,12 +22798,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22983,12 +22983,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

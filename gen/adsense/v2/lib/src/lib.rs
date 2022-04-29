@@ -33,14 +33,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Resource name of the account. Format: accounts/pub-[0-9]+"]
+        #[doc = "Resource name of the account. Format: accounts/pub-\\[0-9\\]+"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Outstanding tasks that need to be completed as part of the sign-up process for a new account. e.g. \"billing-profile-creation\", \"phone-pin-verification\"."]
+        #[doc = "Output only. Outstanding tasks that need to be completed as part of the sign-up process for a new account. e.g. “billing-profile-creation”, “phone-pin-verification”."]
         #[serde(
             rename = "pendingTasks",
             default,
@@ -81,7 +81,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum AccountState {
-        #[doc = "The account is closed and can't serve ads."]
+        #[doc = "The account is closed and can’t serve ads."]
         Closed,
         #[doc = "There are some issues with this account. Publishers should visit AdSense in order to fix the account."]
         NeedsAttention,
@@ -180,7 +180,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Product code of the ad client. For example, \"AFC\" for AdSense for Content."]
+        #[doc = "Output only. Product code of the ad client. For example, “AFC” for AdSense for Content."]
         #[serde(
             rename = "productCode",
             default,
@@ -218,7 +218,7 @@ pub mod schemas {
         GettingReady,
         #[doc = "The ad client is ready to show ads."]
         Ready,
-        #[doc = "The ad client hasn't been checked yet. There are tasks pending before AdSense will start the review."]
+        #[doc = "The ad client hasn’t been checked yet. There are tasks pending before AdSense will start the review."]
         RequiresReview,
         #[doc = "State unspecified."]
         StateUnspecified,
@@ -531,7 +531,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Type of alert. This identifies the broad type of this alert, and provides a stable machine-readable identifier that will not be translated. For example, \"payment-hold\"."]
+        #[doc = "Output only. Type of alert. This identifies the broad type of this alert, and provides a stable machine-readable identifier that will not be translated. For example, “payment-hold”."]
         #[serde(
             rename = "type",
             default,
@@ -688,7 +688,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::ContentAdsSettingsType>,
-        #[doc = "Required. Size of the ad unit. e.g. \"728x90\", \"1x3\" (for responsive ad units)."]
+        #[doc = "Required. Size of the ad unit. e.g. “728x90”, “1x3” (for responsive ad units)."]
         #[serde(
             rename = "size",
             default,
@@ -855,7 +855,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Date {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -1083,7 +1083,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accounts: ::std::option::Option<Vec<crate::schemas::Account>>,
-        #[doc = "Continuation token used to page through accounts. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through accounts. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1126,7 +1126,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ad_clients: ::std::option::Option<Vec<crate::schemas::AdClient>>,
-        #[doc = "Continuation token used to page through ad clients. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through ad clients. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1169,7 +1169,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ad_units: ::std::option::Option<Vec<crate::schemas::AdUnit>>,
-        #[doc = "Continuation token used to page through ad units. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through ad units. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1243,7 +1243,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accounts: ::std::option::Option<Vec<crate::schemas::Account>>,
-        #[doc = "Continuation token used to page through accounts. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through accounts. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1286,7 +1286,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_channels: ::std::option::Option<Vec<crate::schemas::CustomChannel>>,
-        #[doc = "Continuation token used to page through alerts. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through alerts. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1329,7 +1329,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ad_units: ::std::option::Option<Vec<crate::schemas::AdUnit>>,
-        #[doc = "Continuation token used to page through ad units. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through ad units. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1372,7 +1372,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_channels: ::std::option::Option<Vec<crate::schemas::CustomChannel>>,
-        #[doc = "Continuation token used to page through alerts. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through alerts. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1439,7 +1439,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListSavedReportsResponse {
-        #[doc = "Continuation token used to page through reports. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through reports. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1482,7 +1482,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListSitesResponse {
-        #[doc = "Continuation token used to page through sites. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through sites. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1525,7 +1525,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ListUrlChannelsResponse {
-        #[doc = "Continuation token used to page through url channels. To retrieve the next page of the results, set the next request's \"page_token\" value to this."]
+        #[doc = "Continuation token used to page through url channels. To retrieve the next page of the results, set the next request’s “page_token” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1568,7 +1568,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Payment {
-        #[doc = "Output only. The amount of unpaid or paid earnings, as a formatted string, including the currency. E.g. \"¥1,235 JPY\", \"$1,234.57\", \"£87.65\"."]
+        #[doc = "Output only. The amount of unpaid or paid earnings, as a formatted string, including the currency. E.g. “¥1,235 JPY”, “$1,234.57”, “£87.65”."]
         #[serde(
             rename = "amount",
             default,
@@ -1770,7 +1770,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auto_ads_enabled: ::std::option::Option<bool>,
-        #[doc = "Domain (or subdomain) of the site, e.g. \"example.com\" or \"www.example.com\". This is used in the `OWNED_SITE_DOMAIN_NAME` reporting dimension."]
+        #[doc = "Domain (or subdomain) of the site, e.g. “example.com” or “www.example.com”. This is used in the `OWNED_SITE_DOMAIN_NAME` reporting dimension."]
         #[serde(
             rename = "domain",
             default,
@@ -1817,7 +1817,7 @@ pub mod schemas {
         NeedsAttention,
         #[doc = "The site is ready to show ads."]
         Ready,
-        #[doc = "The site hasn't been checked yet."]
+        #[doc = "The site hasn’t been checked yet."]
         RequiresReview,
         #[doc = "State unspecified."]
         StateUnspecified,
@@ -1908,14 +1908,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimeZone {
-        #[doc = "IANA Time Zone Database time zone, e.g. \"America/New_York\"."]
+        #[doc = "IANA Time Zone Database time zone, e.g. “America/New_York”."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Optional. IANA Time Zone Database version number, e.g. \"2019a\"."]
+        #[doc = "Optional. IANA Time Zone Database version number, e.g. “2019a”."]
         #[serde(
             rename = "version",
             default,
@@ -1960,7 +1960,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reporting_dimension_id: ::std::option::Option<String>,
-        #[doc = "URI pattern of the channel. Does not include \"http://\" or \"https://\". Example: www.example.com/home"]
+        #[doc = "URI pattern of the channel. Does not include “http://” or “https://”. Example: www.example.com/home"]
         #[serde(
             rename = "uriPattern",
             default,
@@ -2318,12 +2318,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2489,12 +2489,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2810,12 +2810,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3088,7 +3088,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Gets the AdSense code for a given ad client. This returns what was previously known as the 'auto ad code'. This is only supported for ad clients with a product_code of AFC. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634)."]
+                #[doc = "Gets the AdSense code for a given ad client. This returns what was previously known as the ‘auto ad code’. This is only supported for ad clients with a product_code of AFC. For more information, see [About the AdSense code](https://support.google.com/adsense/answer/9274634)."]
                 pub fn get_adcode(&self, name: impl Into<String>) -> GetAdcodeRequestBuilder {
                     GetAdcodeRequestBuilder {
                         reqwest: &self.reqwest,
@@ -3208,12 +3208,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3381,12 +3381,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3794,12 +3794,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3954,12 +3954,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4127,12 +4127,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4463,12 +4463,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -4872,12 +4872,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5044,12 +5044,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5383,12 +5383,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -5752,12 +5752,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -6082,7 +6082,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "The language to use for translating alert messages. If unspecified, this defaults to the user's display language. If the given language is not supported, alerts will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
+                #[doc = "The language to use for translating alert messages. If unspecified, this defaults to the user’s display language. If the given language is not supported, alerts will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
                 pub fn language_code(mut self, value: impl Into<String>) -> Self {
                     self.language_code = Some(value.into());
                     self
@@ -6117,12 +6117,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6310,12 +6310,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6433,13 +6433,13 @@ pub mod resources {
                     Last30Days,
                     #[doc = "Last 7 days, excluding current day."]
                     Last7Days,
-                    #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-03-01, 2020-03-12]."]
+                    #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-03-01, 2020-03-12\\]."]
                     MonthToDate,
                     #[doc = "Unspecified date range."]
                     ReportingDateRangeUnspecified,
                     #[doc = "Current day."]
                     Today,
-                    #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-01-01, 2020-03-12]."]
+                    #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-01-01, 2020-03-12\\]."]
                     YearToDate,
                     #[doc = "Yesterday."]
                     Yesterday,
@@ -6538,41 +6538,41 @@ pub mod resources {
                     AccountName,
                     #[doc = "Unique ID of an ad client. The members of this dimension match the values from AdClient.reporting_dimension_id."]
                     AdClientId,
-                    #[doc = "Ad format code indicating the way an ad is shown to the users on your site (e.g. \"ON_PAGE\", \"ANCHOR\", \"INTERSTITIAL\")."]
+                    #[doc = "Ad format code indicating the way an ad is shown to the users on your site (e.g. “ON_PAGE”, “ANCHOR”, “INTERSTITIAL”)."]
                     AdFormatCode,
-                    #[doc = "Localized ad format name indicating the way an ad is shown to the users on your site (e.g. \"In-page\", \"Anchor\", \"Vignette\")."]
+                    #[doc = "Localized ad format name indicating the way an ad is shown to the users on your site (e.g. “In-page”, “Anchor”, “Vignette”)."]
                     AdFormatName,
-                    #[doc = "Ad placement code (e.g. \"AD_UNIT\", \"ca-pub-123456:78910\", \"OTHER\")."]
+                    #[doc = "Ad placement code (e.g. “AD_UNIT”, “ca-pub-123456:78910”, “OTHER”)."]
                     AdPlacementCode,
-                    #[doc = "Localized ad placement name (e.g. \"Ad unit\", \"Global settings\", \"Manual\")."]
+                    #[doc = "Localized ad placement name (e.g. “Ad unit”, “Global settings”, “Manual”)."]
                     AdPlacementName,
                     #[doc = "Unique ID of an ad unit (within which an ad was served). The members of this dimension match the values from AdUnit.reporting_dimension_id."]
                     AdUnitId,
                     #[doc = "Ad unit name (within which an ad was served). The members of this dimension match the values from AdUnit.display_name."]
                     AdUnitName,
-                    #[doc = "The size code of an ad unit (e.g. \"728x90\", \"responsive\")."]
+                    #[doc = "The size code of an ad unit (e.g. “728x90”, “responsive”)."]
                     AdUnitSizeCode,
-                    #[doc = "Localized size of an ad unit (e.g. \"728x90\", \"Responsive\")."]
+                    #[doc = "Localized size of an ad unit (e.g. “728x90”, “Responsive”)."]
                     AdUnitSizeName,
-                    #[doc = "Type of a bid (e.g. \"cpc\", \"cpm\") for a served ad."]
+                    #[doc = "Type of a bid (e.g. “cpc”, “cpm”) for a served ad."]
                     BidTypeCode,
-                    #[doc = "Localized bid type name (e.g. \"CPC bids\", \"CPM bids\") for a served ad."]
+                    #[doc = "Localized bid type name (e.g. “CPC bids”, “CPM bids”) for a served ad."]
                     BidTypeName,
                     #[doc = "Unique (opaque) ID of an ad network that returned the winning ads for an ad request."]
                     BuyerNetworkId,
-                    #[doc = "Name of an ad network that returned the winning ads for an ad request (e.g. \"Google AdWords\"). Note that unlike other \"NAME\" dimensions, the members of this dimensions are not localized."]
+                    #[doc = "Name of an ad network that returned the winning ads for an ad request (e.g. “Google AdWords”). Note that unlike other “NAME” dimensions, the members of this dimensions are not localized."]
                     BuyerNetworkName,
-                    #[doc = "Content platform code an ad request was made from (e.g. \"AMP\", \"HTML\")."]
+                    #[doc = "Content platform code an ad request was made from (e.g. “AMP”, “HTML”)."]
                     ContentPlatformCode,
-                    #[doc = "Localized content platform name an ad request was made from (e.g. \"AMP\", \"Web\")."]
+                    #[doc = "Localized content platform name an ad request was made from (e.g. “AMP”, “Web”)."]
                     ContentPlatformName,
-                    #[doc = "CLDR region code of a user viewing an ad (e.g. \"US\", \"FR\")."]
+                    #[doc = "CLDR region code of a user viewing an ad (e.g. “US”, “FR”)."]
                     CountryCode,
-                    #[doc = "Localized region name of a user viewing an ad (e.g. \"United States\", \"France\")."]
+                    #[doc = "Localized region name of a user viewing an ad (e.g. “United States”, “France”)."]
                     CountryName,
-                    #[doc = "Creative size code (e.g. \"728x90\", \"dynamic\") of a served ad."]
+                    #[doc = "Creative size code (e.g. “728x90”, “dynamic”) of a served ad."]
                     CreativeSizeCode,
-                    #[doc = "Localized creative size name (e.g. \"728x90\", \"Dynamic\") of a served ad."]
+                    #[doc = "Localized creative size name (e.g. “728x90”, “Dynamic”) of a served ad."]
                     CreativeSizeName,
                     #[doc = "Unique ID of a custom channel. The members of this dimension match the values from CustomChannel.reporting_dimension_id."]
                     CustomChannelId,
@@ -6582,41 +6582,41 @@ pub mod resources {
                     CustomSearchStyleId,
                     #[doc = "Custom search style name."]
                     CustomSearchStyleName,
-                    #[doc = "Date dimension in YYYY-MM-DD format (e.g. \"2010-02-10\")."]
+                    #[doc = "Date dimension in YYYY-MM-DD format (e.g. “2010-02-10”)."]
                     Date,
                     #[doc = "Unspecified dimension."]
                     DimensionUnspecified,
-                    #[doc = "Name of a host on which an ad was served (e.g. \"www.google.com\", \"webcaches\", \"xn--bcher-kva.example\")."]
+                    #[doc = "Name of a host on which an ad was served (e.g. “www.google.com”, “webcaches”, “xn–bcher-kva.example”)."]
                     DomainCode,
-                    #[doc = "Localized name of a host on which an ad was served, after IDNA decoding (e.g. \"www.google.com\", \"Web caches and other\", \"bücher.example\")."]
+                    #[doc = "Localized name of a host on which an ad was served, after IDNA decoding (e.g. “www.google.com”, “Web caches and other”, “bücher.example”)."]
                     DomainName,
                     #[doc = "Domain registrants."]
                     DomainRegistrant,
-                    #[doc = "Month dimension in YYYY-MM format (e.g. \"2010-02\")."]
+                    #[doc = "Month dimension in YYYY-MM format (e.g. “2010-02”)."]
                     Month,
-                    #[doc = "Domain name of a verified site (e.g. \"example.com\"). The members of this dimension match the values from Site.domain."]
+                    #[doc = "Domain name of a verified site (e.g. “example.com”). The members of this dimension match the values from Site.domain."]
                     OwnedSiteDomainName,
                     #[doc = "Unique ID of a verified site. The members of this dimension match the values from Site.reporting_dimension_id."]
                     OwnedSiteId,
-                    #[doc = "Platform type code (e.g. \"HighEndMobile\", \"Desktop\")."]
+                    #[doc = "Platform type code (e.g. “HighEndMobile”, “Desktop”)."]
                     PlatformTypeCode,
-                    #[doc = "Localized platform type name (e.g. \"High-end mobile devices\", \"Desktop\")."]
+                    #[doc = "Localized platform type name (e.g. “High-end mobile devices”, “Desktop”)."]
                     PlatformTypeName,
-                    #[doc = "Product code (e.g. \"AFC\", \"AFS\"). The members of this dimension match the values from AdClient.product_code."]
+                    #[doc = "Product code (e.g. “AFC”, “AFS”). The members of this dimension match the values from AdClient.product_code."]
                     ProductCode,
-                    #[doc = "Localized product name (e.g. \"AdSense for Content\", \"AdSense for Search\")."]
+                    #[doc = "Localized product name (e.g. “AdSense for Content”, “AdSense for Search”)."]
                     ProductName,
-                    #[doc = "Requested ad type code (e.g. \"IMAGE\", \"RADLINK\", \"OTHER\")."]
+                    #[doc = "Requested ad type code (e.g. “IMAGE”, “RADLINK”, “OTHER”)."]
                     RequestedAdTypeCode,
-                    #[doc = "Localized requested ad type name (e.g. \"Display\", \"Link unit\", \"Other\")."]
+                    #[doc = "Localized requested ad type name (e.g. “Display”, “Link unit”, “Other”)."]
                     RequestedAdTypeName,
-                    #[doc = "Served ad type code (e.g. \"IMAGE\", \"RADLINK\", \"OTHER\")."]
+                    #[doc = "Served ad type code (e.g. “IMAGE”, “RADLINK”, “OTHER”)."]
                     ServedAdTypeCode,
-                    #[doc = "Localized served ad type name (e.g. \"Display\", \"Link unit\", \"Other\")."]
+                    #[doc = "Localized served ad type name (e.g. “Display”, “Link unit”, “Other”)."]
                     ServedAdTypeName,
-                    #[doc = "Targeting type code (e.g. \"Keyword\", \"UserInterest\", \"RunOfNetwork\")."]
+                    #[doc = "Targeting type code (e.g. “Keyword”, “UserInterest”, “RunOfNetwork”)."]
                     TargetingTypeCode,
-                    #[doc = "Localized targeting type name (e.g. \"Contextual\", \"Personalized\", \"Run of Network\")."]
+                    #[doc = "Localized targeting type name (e.g. “Contextual”, “Personalized”, “Run of Network”)."]
                     TargetingTypeName,
                     #[doc = "Unique ID of a URL channel. The members of this dimension match the values from UrlChannel.reporting_dimension_id."]
                     UrlChannelId,
@@ -6624,7 +6624,7 @@ pub mod resources {
                     UrlChannelName,
                     #[doc = "Query strings for web searches."]
                     WebsearchQueryString,
-                    #[doc = "Week dimension in YYYY-MM-DD format, representing the first day of each week (e.g. \"2010-02-08\"). The first day of the week is determined by the language_code specified in a report generation request (so e.g. this would be a Monday for \"en-GB\" or \"es\", but a Sunday for \"en\" or \"fr-CA\")."]
+                    #[doc = "Week dimension in YYYY-MM-DD format, representing the first day of each week (e.g. “2010-02-08”). The first day of the week is determined by the language_code specified in a report generation request (so e.g. this would be a Monday for “en-GB” or “es”, but a Sunday for “en” or “fr-CA”)."]
                     Week,
                 }
                 impl GenerateDimensionsItems {
@@ -7223,13 +7223,13 @@ pub mod resources {
                     Last30Days,
                     #[doc = "Last 7 days, excluding current day."]
                     Last7Days,
-                    #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-03-01, 2020-03-12]."]
+                    #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-03-01, 2020-03-12\\]."]
                     MonthToDate,
                     #[doc = "Unspecified date range."]
                     ReportingDateRangeUnspecified,
                     #[doc = "Current day."]
                     Today,
-                    #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-01-01, 2020-03-12]."]
+                    #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-01-01, 2020-03-12\\]."]
                     YearToDate,
                     #[doc = "Yesterday."]
                     Yesterday,
@@ -7328,41 +7328,41 @@ pub mod resources {
                     AccountName,
                     #[doc = "Unique ID of an ad client. The members of this dimension match the values from AdClient.reporting_dimension_id."]
                     AdClientId,
-                    #[doc = "Ad format code indicating the way an ad is shown to the users on your site (e.g. \"ON_PAGE\", \"ANCHOR\", \"INTERSTITIAL\")."]
+                    #[doc = "Ad format code indicating the way an ad is shown to the users on your site (e.g. “ON_PAGE”, “ANCHOR”, “INTERSTITIAL”)."]
                     AdFormatCode,
-                    #[doc = "Localized ad format name indicating the way an ad is shown to the users on your site (e.g. \"In-page\", \"Anchor\", \"Vignette\")."]
+                    #[doc = "Localized ad format name indicating the way an ad is shown to the users on your site (e.g. “In-page”, “Anchor”, “Vignette”)."]
                     AdFormatName,
-                    #[doc = "Ad placement code (e.g. \"AD_UNIT\", \"ca-pub-123456:78910\", \"OTHER\")."]
+                    #[doc = "Ad placement code (e.g. “AD_UNIT”, “ca-pub-123456:78910”, “OTHER”)."]
                     AdPlacementCode,
-                    #[doc = "Localized ad placement name (e.g. \"Ad unit\", \"Global settings\", \"Manual\")."]
+                    #[doc = "Localized ad placement name (e.g. “Ad unit”, “Global settings”, “Manual”)."]
                     AdPlacementName,
                     #[doc = "Unique ID of an ad unit (within which an ad was served). The members of this dimension match the values from AdUnit.reporting_dimension_id."]
                     AdUnitId,
                     #[doc = "Ad unit name (within which an ad was served). The members of this dimension match the values from AdUnit.display_name."]
                     AdUnitName,
-                    #[doc = "The size code of an ad unit (e.g. \"728x90\", \"responsive\")."]
+                    #[doc = "The size code of an ad unit (e.g. “728x90”, “responsive”)."]
                     AdUnitSizeCode,
-                    #[doc = "Localized size of an ad unit (e.g. \"728x90\", \"Responsive\")."]
+                    #[doc = "Localized size of an ad unit (e.g. “728x90”, “Responsive”)."]
                     AdUnitSizeName,
-                    #[doc = "Type of a bid (e.g. \"cpc\", \"cpm\") for a served ad."]
+                    #[doc = "Type of a bid (e.g. “cpc”, “cpm”) for a served ad."]
                     BidTypeCode,
-                    #[doc = "Localized bid type name (e.g. \"CPC bids\", \"CPM bids\") for a served ad."]
+                    #[doc = "Localized bid type name (e.g. “CPC bids”, “CPM bids”) for a served ad."]
                     BidTypeName,
                     #[doc = "Unique (opaque) ID of an ad network that returned the winning ads for an ad request."]
                     BuyerNetworkId,
-                    #[doc = "Name of an ad network that returned the winning ads for an ad request (e.g. \"Google AdWords\"). Note that unlike other \"NAME\" dimensions, the members of this dimensions are not localized."]
+                    #[doc = "Name of an ad network that returned the winning ads for an ad request (e.g. “Google AdWords”). Note that unlike other “NAME” dimensions, the members of this dimensions are not localized."]
                     BuyerNetworkName,
-                    #[doc = "Content platform code an ad request was made from (e.g. \"AMP\", \"HTML\")."]
+                    #[doc = "Content platform code an ad request was made from (e.g. “AMP”, “HTML”)."]
                     ContentPlatformCode,
-                    #[doc = "Localized content platform name an ad request was made from (e.g. \"AMP\", \"Web\")."]
+                    #[doc = "Localized content platform name an ad request was made from (e.g. “AMP”, “Web”)."]
                     ContentPlatformName,
-                    #[doc = "CLDR region code of a user viewing an ad (e.g. \"US\", \"FR\")."]
+                    #[doc = "CLDR region code of a user viewing an ad (e.g. “US”, “FR”)."]
                     CountryCode,
-                    #[doc = "Localized region name of a user viewing an ad (e.g. \"United States\", \"France\")."]
+                    #[doc = "Localized region name of a user viewing an ad (e.g. “United States”, “France”)."]
                     CountryName,
-                    #[doc = "Creative size code (e.g. \"728x90\", \"dynamic\") of a served ad."]
+                    #[doc = "Creative size code (e.g. “728x90”, “dynamic”) of a served ad."]
                     CreativeSizeCode,
-                    #[doc = "Localized creative size name (e.g. \"728x90\", \"Dynamic\") of a served ad."]
+                    #[doc = "Localized creative size name (e.g. “728x90”, “Dynamic”) of a served ad."]
                     CreativeSizeName,
                     #[doc = "Unique ID of a custom channel. The members of this dimension match the values from CustomChannel.reporting_dimension_id."]
                     CustomChannelId,
@@ -7372,41 +7372,41 @@ pub mod resources {
                     CustomSearchStyleId,
                     #[doc = "Custom search style name."]
                     CustomSearchStyleName,
-                    #[doc = "Date dimension in YYYY-MM-DD format (e.g. \"2010-02-10\")."]
+                    #[doc = "Date dimension in YYYY-MM-DD format (e.g. “2010-02-10”)."]
                     Date,
                     #[doc = "Unspecified dimension."]
                     DimensionUnspecified,
-                    #[doc = "Name of a host on which an ad was served (e.g. \"www.google.com\", \"webcaches\", \"xn--bcher-kva.example\")."]
+                    #[doc = "Name of a host on which an ad was served (e.g. “www.google.com”, “webcaches”, “xn–bcher-kva.example”)."]
                     DomainCode,
-                    #[doc = "Localized name of a host on which an ad was served, after IDNA decoding (e.g. \"www.google.com\", \"Web caches and other\", \"bücher.example\")."]
+                    #[doc = "Localized name of a host on which an ad was served, after IDNA decoding (e.g. “www.google.com”, “Web caches and other”, “bücher.example”)."]
                     DomainName,
                     #[doc = "Domain registrants."]
                     DomainRegistrant,
-                    #[doc = "Month dimension in YYYY-MM format (e.g. \"2010-02\")."]
+                    #[doc = "Month dimension in YYYY-MM format (e.g. “2010-02”)."]
                     Month,
-                    #[doc = "Domain name of a verified site (e.g. \"example.com\"). The members of this dimension match the values from Site.domain."]
+                    #[doc = "Domain name of a verified site (e.g. “example.com”). The members of this dimension match the values from Site.domain."]
                     OwnedSiteDomainName,
                     #[doc = "Unique ID of a verified site. The members of this dimension match the values from Site.reporting_dimension_id."]
                     OwnedSiteId,
-                    #[doc = "Platform type code (e.g. \"HighEndMobile\", \"Desktop\")."]
+                    #[doc = "Platform type code (e.g. “HighEndMobile”, “Desktop”)."]
                     PlatformTypeCode,
-                    #[doc = "Localized platform type name (e.g. \"High-end mobile devices\", \"Desktop\")."]
+                    #[doc = "Localized platform type name (e.g. “High-end mobile devices”, “Desktop”)."]
                     PlatformTypeName,
-                    #[doc = "Product code (e.g. \"AFC\", \"AFS\"). The members of this dimension match the values from AdClient.product_code."]
+                    #[doc = "Product code (e.g. “AFC”, “AFS”). The members of this dimension match the values from AdClient.product_code."]
                     ProductCode,
-                    #[doc = "Localized product name (e.g. \"AdSense for Content\", \"AdSense for Search\")."]
+                    #[doc = "Localized product name (e.g. “AdSense for Content”, “AdSense for Search”)."]
                     ProductName,
-                    #[doc = "Requested ad type code (e.g. \"IMAGE\", \"RADLINK\", \"OTHER\")."]
+                    #[doc = "Requested ad type code (e.g. “IMAGE”, “RADLINK”, “OTHER”)."]
                     RequestedAdTypeCode,
-                    #[doc = "Localized requested ad type name (e.g. \"Display\", \"Link unit\", \"Other\")."]
+                    #[doc = "Localized requested ad type name (e.g. “Display”, “Link unit”, “Other”)."]
                     RequestedAdTypeName,
-                    #[doc = "Served ad type code (e.g. \"IMAGE\", \"RADLINK\", \"OTHER\")."]
+                    #[doc = "Served ad type code (e.g. “IMAGE”, “RADLINK”, “OTHER”)."]
                     ServedAdTypeCode,
-                    #[doc = "Localized served ad type name (e.g. \"Display\", \"Link unit\", \"Other\")."]
+                    #[doc = "Localized served ad type name (e.g. “Display”, “Link unit”, “Other”)."]
                     ServedAdTypeName,
-                    #[doc = "Targeting type code (e.g. \"Keyword\", \"UserInterest\", \"RunOfNetwork\")."]
+                    #[doc = "Targeting type code (e.g. “Keyword”, “UserInterest”, “RunOfNetwork”)."]
                     TargetingTypeCode,
-                    #[doc = "Localized targeting type name (e.g. \"Contextual\", \"Personalized\", \"Run of Network\")."]
+                    #[doc = "Localized targeting type name (e.g. “Contextual”, “Personalized”, “Run of Network”)."]
                     TargetingTypeName,
                     #[doc = "Unique ID of a URL channel. The members of this dimension match the values from UrlChannel.reporting_dimension_id."]
                     UrlChannelId,
@@ -7414,7 +7414,7 @@ pub mod resources {
                     UrlChannelName,
                     #[doc = "Query strings for web searches."]
                     WebsearchQueryString,
-                    #[doc = "Week dimension in YYYY-MM-DD format, representing the first day of each week (e.g. \"2010-02-08\"). The first day of the week is determined by the language_code specified in a report generation request (so e.g. this would be a Monday for \"en-GB\" or \"es\", but a Sunday for \"en\" or \"fr-CA\")."]
+                    #[doc = "Week dimension in YYYY-MM-DD format, representing the first day of each week (e.g. “2010-02-08”). The first day of the week is determined by the language_code specified in a report generation request (so e.g. this would be a Monday for “en-GB” or “es”, but a Sunday for “en” or “fr-CA”)."]
                     Week,
                 }
                 impl GenerateCsvDimensionsItems {
@@ -8180,7 +8180,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GenerateRequestBuilder<'a> {
-                #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account's currency if not set."]
+                #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account’s currency if not set."]
                 pub fn currency_code(mut self, value: impl Into<String>) -> Self {
                     self.currency_code = Some(value.into());
                     self
@@ -8203,7 +8203,7 @@ pub mod resources {
                     self.dimensions = Some(value.into());
                     self
                 }
-                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                 pub fn end_date_day(mut self, value: i32) -> Self {
                     self.end_date_day = Some(value);
                     self
@@ -8223,7 +8223,7 @@ pub mod resources {
                     self.filters = Some(value.into());
                     self
                 }
-                #[doc = "The language to use for translating report output. If unspecified, this defaults to English (\"en\"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
+                #[doc = "The language to use for translating report output. If unspecified, this defaults to English (“en”). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
                 pub fn language_code(mut self, value: impl Into<String>) -> Self {
                     self.language_code = Some(value.into());
                     self
@@ -8243,7 +8243,7 @@ pub mod resources {
                     self.metrics = Some(value.into());
                     self
                 }
-                #[doc = "The name of a dimension or metric to sort the resulting report on, can be prefixed with \"+\" to sort ascending or \"-\" to sort descending. If no prefix is specified, the column is sorted ascending."]
+                #[doc = "The name of a dimension or metric to sort the resulting report on, can be prefixed with “+” to sort ascending or “-” to sort descending. If no prefix is specified, the column is sorted ascending."]
                 pub fn order_by(mut self, value: impl Into<Vec<String>>) -> Self {
                     self.order_by = Some(value.into());
                     self
@@ -8256,7 +8256,7 @@ pub mod resources {
                     self.reporting_time_zone = Some(value);
                     self
                 }
-                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                 pub fn start_date_day(mut self, value: i32) -> Self {
                     self.start_date_day = Some(value);
                     self
@@ -8301,12 +8301,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8478,7 +8478,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GenerateCsvRequestBuilder<'a> {
-                #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account's currency if not set."]
+                #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account’s currency if not set."]
                 pub fn currency_code(mut self, value: impl Into<String>) -> Self {
                     self.currency_code = Some(value.into());
                     self
@@ -8503,7 +8503,7 @@ pub mod resources {
                     self.dimensions = Some(value.into());
                     self
                 }
-                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                 pub fn end_date_day(mut self, value: i32) -> Self {
                     self.end_date_day = Some(value);
                     self
@@ -8523,7 +8523,7 @@ pub mod resources {
                     self.filters = Some(value.into());
                     self
                 }
-                #[doc = "The language to use for translating report output. If unspecified, this defaults to English (\"en\"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
+                #[doc = "The language to use for translating report output. If unspecified, this defaults to English (“en”). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
                 pub fn language_code(mut self, value: impl Into<String>) -> Self {
                     self.language_code = Some(value.into());
                     self
@@ -8543,7 +8543,7 @@ pub mod resources {
                     self.metrics = Some(value.into());
                     self
                 }
-                #[doc = "The name of a dimension or metric to sort the resulting report on, can be prefixed with \"+\" to sort ascending or \"-\" to sort descending. If no prefix is specified, the column is sorted ascending."]
+                #[doc = "The name of a dimension or metric to sort the resulting report on, can be prefixed with “+” to sort ascending or “-” to sort descending. If no prefix is specified, the column is sorted ascending."]
                 pub fn order_by(mut self, value: impl Into<Vec<String>>) -> Self {
                     self.order_by = Some(value.into());
                     self
@@ -8556,7 +8556,7 @@ pub mod resources {
                     self.reporting_time_zone = Some(value);
                     self
                 }
-                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                 pub fn start_date_day(mut self, value: i32) -> Self {
                     self.start_date_day = Some(value);
                     self
@@ -8601,12 +8601,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8746,13 +8746,13 @@ pub mod resources {
                         Last30Days,
                         #[doc = "Last 7 days, excluding current day."]
                         Last7Days,
-                        #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-03-01, 2020-03-12]."]
+                        #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-03-01, 2020-03-12\\]."]
                         MonthToDate,
                         #[doc = "Unspecified date range."]
                         ReportingDateRangeUnspecified,
                         #[doc = "Current day."]
                         Today,
-                        #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-01-01, 2020-03-12]."]
+                        #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-01-01, 2020-03-12\\]."]
                         YearToDate,
                         #[doc = "Yesterday."]
                         Yesterday,
@@ -8944,13 +8944,13 @@ pub mod resources {
                         Last30Days,
                         #[doc = "Last 7 days, excluding current day."]
                         Last7Days,
-                        #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-03-01, 2020-03-12]."]
+                        #[doc = "From the start of the current month to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-03-01, 2020-03-12\\]."]
                         MonthToDate,
                         #[doc = "Unspecified date range."]
                         ReportingDateRangeUnspecified,
                         #[doc = "Current day."]
                         Today,
-                        #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be [2020-01-01, 2020-03-12]."]
+                        #[doc = "From the start of the current year to the current day. e.g. if the current date is 2020-03-12 then the range will be \\[2020-01-01, 2020-03-12\\]."]
                         YearToDate,
                         #[doc = "Yesterday."]
                         Yesterday,
@@ -9236,7 +9236,7 @@ pub mod resources {
                 #[derive(Debug, Clone)]
                 pub struct GenerateRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , currency_code : :: std :: option :: Option < String > , date_range : :: std :: option :: Option < crate :: resources :: accounts :: reports :: saved :: params :: GenerateDateRange > , end_date_day : :: std :: option :: Option < i32 > , end_date_month : :: std :: option :: Option < i32 > , end_date_year : :: std :: option :: Option < i32 > , language_code : :: std :: option :: Option < String > , reporting_time_zone : :: std :: option :: Option < crate :: resources :: accounts :: reports :: saved :: params :: GenerateReportingTimeZone > , start_date_day : :: std :: option :: Option < i32 > , start_date_month : :: std :: option :: Option < i32 > , start_date_year : :: std :: option :: Option < i32 > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
                 impl<'a> GenerateRequestBuilder<'a> {
-                    #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account's currency if not set."]
+                    #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account’s currency if not set."]
                     pub fn currency_code(mut self, value: impl Into<String>) -> Self {
                         self.currency_code = Some(value.into());
                         self
@@ -9249,7 +9249,7 @@ pub mod resources {
                         self.date_range = Some(value);
                         self
                     }
-                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                     pub fn end_date_day(mut self, value: i32) -> Self {
                         self.end_date_day = Some(value);
                         self
@@ -9264,7 +9264,7 @@ pub mod resources {
                         self.end_date_year = Some(value);
                         self
                     }
-                    #[doc = "The language to use for translating report output. If unspecified, this defaults to English (\"en\"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
+                    #[doc = "The language to use for translating report output. If unspecified, this defaults to English (“en”). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
                     pub fn language_code(mut self, value: impl Into<String>) -> Self {
                         self.language_code = Some(value.into());
                         self
@@ -9277,7 +9277,7 @@ pub mod resources {
                         self.reporting_time_zone = Some(value);
                         self
                     }
-                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                     pub fn start_date_day(mut self, value: i32) -> Self {
                         self.start_date_day = Some(value);
                         self
@@ -9322,12 +9322,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9448,7 +9448,7 @@ pub mod resources {
                 #[derive(Debug, Clone)]
                 pub struct GenerateCsvRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , name : String , currency_code : :: std :: option :: Option < String > , date_range : :: std :: option :: Option < crate :: resources :: accounts :: reports :: saved :: params :: GenerateCsvDateRange > , end_date_day : :: std :: option :: Option < i32 > , end_date_month : :: std :: option :: Option < i32 > , end_date_year : :: std :: option :: Option < i32 > , language_code : :: std :: option :: Option < String > , reporting_time_zone : :: std :: option :: Option < crate :: resources :: accounts :: reports :: saved :: params :: GenerateCsvReportingTimeZone > , start_date_day : :: std :: option :: Option < i32 > , start_date_month : :: std :: option :: Option < i32 > , start_date_year : :: std :: option :: Option < i32 > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
                 impl<'a> GenerateCsvRequestBuilder<'a> {
-                    #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account's currency if not set."]
+                    #[doc = "The [ISO-4217 currency code](https://en.wikipedia.org/wiki/ISO_4217) to use when reporting on monetary metrics. Defaults to the account’s currency if not set."]
                     pub fn currency_code(mut self, value: impl Into<String>) -> Self {
                         self.currency_code = Some(value.into());
                         self
@@ -9461,7 +9461,7 @@ pub mod resources {
                         self.date_range = Some(value);
                         self
                     }
-                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                     pub fn end_date_day(mut self, value: i32) -> Self {
                         self.end_date_day = Some(value);
                         self
@@ -9476,7 +9476,7 @@ pub mod resources {
                         self.end_date_year = Some(value);
                         self
                     }
-                    #[doc = "The language to use for translating report output. If unspecified, this defaults to English (\"en\"). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
+                    #[doc = "The language to use for translating report output. If unspecified, this defaults to English (“en”). If the given language is not supported, report output will be returned in English. The language is specified as an [IETF BCP-47 language code](https://en.wikipedia.org/wiki/IETF_language_tag)."]
                     pub fn language_code(mut self, value: impl Into<String>) -> Self {
                         self.language_code = Some(value.into());
                         self
@@ -9489,7 +9489,7 @@ pub mod resources {
                         self.reporting_time_zone = Some(value);
                         self
                     }
-                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+                    #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
                     pub fn start_date_day(mut self, value: i32) -> Self {
                         self.start_date_day = Some(value);
                         self
@@ -9534,12 +9534,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -9717,12 +9717,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -10096,12 +10096,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10268,12 +10268,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

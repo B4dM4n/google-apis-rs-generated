@@ -73,7 +73,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disclosure_date: ::std::option::Option<String>,
-        #[doc = "A list of excluded destinations such as \"ClientExport\", \"ClientShoppingCatalog\" or \"PartnerShoppingCatalog\". For more information, see https://support.google.com/manufacturers/answer/7443550"]
+        #[doc = "A list of excluded destinations such as “ClientExport”, “ClientShoppingCatalog” or “PartnerShoppingCatalog”. For more information, see https://support.google.com/manufacturers/answer/7443550"]
         #[serde(
             rename = "excludedDestination",
             default,
@@ -122,7 +122,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_link: ::std::option::Option<crate::schemas::Image>,
-        #[doc = "A list of included destinations such as \"ClientExport\", \"ClientShoppingCatalog\" or \"PartnerShoppingCatalog\". For more information, see https://support.google.com/manufacturers/answer/7443550"]
+        #[doc = "A list of included destinations such as “ClientExport”, “ClientShoppingCatalog” or “PartnerShoppingCatalog”. For more information, see https://support.google.com/manufacturers/answer/7443550"]
         #[serde(
             rename = "includedDestination",
             default,
@@ -684,7 +684,7 @@ pub mod schemas {
         DecodingError,
         #[doc = "The image crawl was postponed to avoid overloading the host."]
         Hostloaded,
-        #[doc = "The image URL returned a \"404 Not Found\" error."]
+        #[doc = "The image URL returned a “404 Not Found” error."]
         Http404,
         #[doc = "The image was processed and it meets the requirements."]
         Ok,
@@ -960,7 +960,7 @@ pub mod schemas {
     pub enum IssueSeverity {
         #[doc = "Error severity. The issue prevents the usage of the whole item."]
         Error,
-        #[doc = "Info severity. The issue is one that doesn't require immediate attention. It is, for example, used to communicate which attributes are still pending review."]
+        #[doc = "Info severity. The issue is one that doesn’t require immediate attention. It is, for example, used to communicate which attributes are still pending review."]
         Info,
         #[doc = "Unspecified severity, never used."]
         SeverityUnspecified,
@@ -1764,12 +1764,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1944,12 +1944,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2140,12 +2140,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2464,12 +2464,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

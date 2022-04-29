@@ -33,14 +33,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub monitoring_notification_channels: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. The name of the Pub/Sub topic where budget related messages will be published, in the form `projects/{project_id}/topics/{topic_id}`. Updates are sent at regular intervals to the topic. The topic needs to be created before the budget is created; see https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications for more details. Caller is expected to have `pubsub.topics.setIamPolicy` permission on the topic when it's set for a budget, otherwise, the API call will fail with PERMISSION_DENIED. See https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#permissions_required_for_this_task for more details on Pub/Sub roles and permissions."]
+        #[doc = "Optional. The name of the Pub/Sub topic where budget related messages will be published, in the form `projects/{project_id}/topics/{topic_id}`. Updates are sent at regular intervals to the topic. The topic needs to be created before the budget is created; see https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications for more details. Caller is expected to have `pubsub.topics.setIamPolicy` permission on the topic when it’s set for a budget, otherwise, the API call will fail with PERMISSION_DENIED. See https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#permissions_required_for_this_task for more details on Pub/Sub roles and permissions."]
         #[serde(
             rename = "pubsubTopic",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pubsub_topic: ::std::option::Option<String>,
-        #[doc = "Optional. Required when AllUpdatesRule.pubsub_topic is set. The schema version of the notification sent to AllUpdatesRule.pubsub_topic. Only \"1.0\" is accepted. It represents the JSON schema as defined in https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format."]
+        #[doc = "Optional. Required when AllUpdatesRule.pubsub_topic is set. The schema version of the notification sent to AllUpdatesRule.pubsub_topic. Only “1.0” is accepted. It represents the JSON schema as defined in https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format."]
         #[serde(
             rename = "schemaVersion",
             default,
@@ -76,7 +76,7 @@ pub mod schemas {
         )]
         pub amount:
             ::std::option::Option<crate::schemas::GoogleCloudBillingBudgetsV1Beta1BudgetAmount>,
-        #[doc = "Optional. Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget's time period, as well as other filters."]
+        #[doc = "Optional. Filters that define which resources are used to compute the actual spend against the budget amount, such as projects, services, and the budget’s time period, as well as other filters."]
         #[serde(
             rename = "budgetFilter",
             default,
@@ -84,7 +84,7 @@ pub mod schemas {
         )]
         pub budget_filter:
             ::std::option::Option<crate::schemas::GoogleCloudBillingBudgetsV1Beta1Filter>,
-        #[doc = "User data for display name in UI. Validation: <= 60 chars."]
+        #[doc = "User data for display name in UI. Validation: \\<= 60 chars."]
         #[serde(
             rename = "displayName",
             default,
@@ -138,7 +138,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudBillingBudgetsV1Beta1BudgetAmount {
-        #[doc = "Use the last period's actual spend as the budget for the present period. LastPeriodAmount can only be set when the budget's time period is a Filter.calendar_period. It cannot be set in combination with Filter.custom_period."]
+        #[doc = "Use the last period’s actual spend as the budget for the present period. LastPeriodAmount can only be set when the budget’s time period is a Filter.calendar_period. It cannot be set in combination with Filter.custom_period."]
         #[serde(
             rename = "lastPeriodAmount",
             default,
@@ -199,7 +199,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudBillingBudgetsV1Beta1CustomPeriod {
-        #[doc = "Optional. The end date of the time period. Budgets with elapsed end date won't be processed. If unset, specifies to track all usage incurred since the start_date."]
+        #[doc = "Optional. The end date of the time period. Budgets with elapsed end date won’t be processed. If unset, specifies to track all usage incurred since the start_date."]
         #[serde(
             rename = "endDate",
             default,
@@ -552,7 +552,7 @@ pub mod schemas {
         BasisUnspecified,
         #[doc = "Use current spend as the basis for comparison against the threshold."]
         CurrentSpend,
-        #[doc = "Use forecasted spend for the period as the basis for comparison against the threshold. FORECASTED_SPEND can only be set when the budget's time period is a Filter.calendar_period. It cannot be set in combination with Filter.custom_period."]
+        #[doc = "Use forecasted spend for the period as the basis for comparison against the threshold. FORECASTED_SPEND can only be set when the budget’s time period is a Filter.calendar_period. It cannot be set in combination with Filter.custom_period."]
         ForecastedSpend,
     }
     impl GoogleCloudBillingBudgetsV1Beta1ThresholdRuleSpendBasis {
@@ -713,7 +713,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDate {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -1044,7 +1044,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Returns a budget. WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console."]
+                #[doc = "Returns a budget. WARNING: There are some fields exposed on the Google Cloud Console that aren’t available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console."]
                 pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                     GetRequestBuilder {
                         reqwest: &self.reqwest,
@@ -1063,7 +1063,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Returns a list of budgets for a billing account. WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console."]
+                #[doc = "Returns a list of budgets for a billing account. WARNING: There are some fields exposed on the Google Cloud Console that aren’t available on this API. When reading from the API, you will not see these fields in the return value, though they may have been set in the Cloud Console."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -1084,7 +1084,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Updates a budget and returns the updated budget. WARNING: There are some fields exposed on the Google Cloud Console that aren't available on this API. Budget fields that are not exposed in this API will not be changed by this method."]
+                #[doc = "Updates a budget and returns the updated budget. WARNING: There are some fields exposed on the Google Cloud Console that aren’t available on this API. Budget fields that are not exposed in this API will not be changed by this method."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::GoogleCloudBillingBudgetsV1Beta1UpdateBudgetRequest,
@@ -1159,12 +1159,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1323,12 +1323,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1483,12 +1483,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1657,12 +1657,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1997,12 +1997,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

@@ -185,7 +185,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_bundle: ::std::option::Option<crate::schemas::AppBundle>,
-        #[doc = "The java package for the application under test. The default value is determined by examining the application's manifest."]
+        #[doc = "The java package for the application under test. The default value is determined by examining the application’s manifest."]
         #[serde(
             rename = "appPackageId",
             default,
@@ -214,21 +214,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub test_apk: ::std::option::Option<crate::schemas::FileReference>,
-        #[doc = "The java package for the test to be executed. The default value is determined by examining the application's manifest."]
+        #[doc = "The java package for the test to be executed. The default value is determined by examining the application’s manifest."]
         #[serde(
             rename = "testPackageId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub test_package_id: ::std::option::Option<String>,
-        #[doc = "The InstrumentationTestRunner class. The default value is determined by examining the application's manifest."]
+        #[doc = "The InstrumentationTestRunner class. The default value is determined by examining the application’s manifest."]
         #[serde(
             rename = "testRunnerClass",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub test_runner_class: ::std::option::Option<String>,
-        #[doc = "Each target must be fully qualified with the package name or class name, in one of these formats: - \"package package_name\" - \"class package_name.class_name\" - \"class package_name.class_name#method_name\" If empty, all targets in the module will be run."]
+        #[doc = "Each target must be fully qualified with the package name or class name, in one of these formats: - “package package_name” - “class package_name.class_name” - “class package_name.class_name#method_name” If empty, all targets in the module will be run."]
         #[serde(
             rename = "testTargets",
             default,
@@ -401,7 +401,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AndroidModel {
-        #[doc = "The company that this device is branded with. Example: \"Google\", \"Samsung\"."]
+        #[doc = "The company that this device is branded with. Example: “Google”, “Samsung”."]
         #[serde(
             rename = "brand",
             default,
@@ -450,7 +450,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub manufacturer: ::std::option::Option<String>,
-        #[doc = "The human-readable marketing name for this device model. Examples: \"Nexus 5\", \"Galaxy S5\"."]
+        #[doc = "The human-readable marketing name for this device model. Examples: “Nexus 5”, “Galaxy S5”."]
         #[serde(
             rename = "name",
             default,
@@ -478,7 +478,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub screen_y: ::std::option::Option<i32>,
-        #[doc = "The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list. Elements are optionally prefixed by \"version_id:\" (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version."]
+        #[doc = "The list of supported ABIs for this device. This corresponds to either android.os.Build.SUPPORTED_ABIS (for API level 21 and above) or android.os.Build.CPU_ABI/CPU_ABI2. The most preferred ABI is the first element in the list. Elements are optionally prefixed by “version_id:” (where version_id is the id of an AndroidVersion), denoting an ABI that is supported only on a particular version."]
         #[serde(
             rename = "supportedAbis",
             default,
@@ -492,7 +492,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub supported_version_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Tags for this dimension. Examples: \"default\", \"preview\", \"deprecated\"."]
+        #[doc = "Tags for this dimension. Examples: “default”, “preview”, “deprecated”."]
         #[serde(
             rename = "tags",
             default,
@@ -719,7 +719,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_initial_activity: ::std::option::Option<String>,
-        #[doc = "The java package for the application under test. The default value is determined by examining the application's manifest."]
+        #[doc = "The java package for the application under test. The default value is determined by examining the application’s manifest."]
         #[serde(
             rename = "appPackageId",
             default,
@@ -920,21 +920,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_bundle: ::std::option::Option<crate::schemas::AppBundle>,
-        #[doc = "The java package for the application under test. The default is determined by examining the application's manifest."]
+        #[doc = "The java package for the application under test. The default is determined by examining the application’s manifest."]
         #[serde(
             rename = "appPackageId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub app_package_id: ::std::option::Option<String>,
-        #[doc = "The list of scenario labels that should be run during the test. The scenario labels should map to labels defined in the application's manifest. For example, player_experience and com.google.test.loops.player_experience add all of the loops labeled in the manifest with the com.google.test.loops.player_experience name to the execution. Scenarios can also be specified in the scenarios field."]
+        #[doc = "The list of scenario labels that should be run during the test. The scenario labels should map to labels defined in the application’s manifest. For example, player_experience and com.google.test.loops.player_experience add all of the loops labeled in the manifest with the com.google.test.loops.player_experience name to the execution. Scenarios can also be specified in the scenarios field."]
         #[serde(
             rename = "scenarioLabels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub scenario_labels: ::std::option::Option<Vec<String>>,
-        #[doc = "The list of scenarios that should be run during the test. The default is all test loops, derived from the application's manifest."]
+        #[doc = "The list of scenarios that should be run during the test. The default is all test loops, derived from the application’s manifest."]
         #[serde(
             rename = "scenarios",
             default,
@@ -963,7 +963,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_level: ::std::option::Option<i32>,
-        #[doc = "The code name for this Android version. Examples: \"JellyBean\", \"KitKat\"."]
+        #[doc = "The code name for this Android version. Examples: “JellyBean”, “KitKat”."]
         #[serde(
             rename = "codeName",
             default,
@@ -991,14 +991,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub release_date: ::std::option::Option<crate::schemas::Date>,
-        #[doc = "Tags for this dimension. Examples: \"default\", \"preview\", \"deprecated\"."]
+        #[doc = "Tags for this dimension. Examples: “default”, “preview”, “deprecated”."]
         #[serde(
             rename = "tags",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tags: ::std::option::Option<Vec<String>>,
-        #[doc = "A string representing this version of the Android OS. Examples: \"4.3\", \"4.4\"."]
+        #[doc = "A string representing this version of the Android OS. Examples: “4.3”, “4.4”."]
         #[serde(
             rename = "versionString",
             default,
@@ -1036,7 +1036,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<crate::schemas::FileReference>,
-        #[doc = "The java package for the APK to be installed. Value is determined by examining the application's manifest."]
+        #[doc = "The java package for the APK to be installed. Value is determined by examining the application’s manifest."]
         #[serde(
             rename = "packageName",
             default,
@@ -1124,7 +1124,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min_sdk_version: ::std::option::Option<i32>,
-        #[doc = "Full Java-style package name for this application, e.g. \"com.example.foo\"."]
+        #[doc = "Full Java-style package name for this application, e.g. “com.example.foo”."]
         #[serde(
             rename = "packageName",
             default,
@@ -1228,7 +1228,7 @@ pub mod schemas {
         Finished,
         #[doc = "The execution was not run because the provided inputs are incompatible with the requested architecture. Example: requested device does not support running the native code in the supplied APK Can only be set on an execution."]
         IncompatibleArchitecture,
-        #[doc = "The execution was not run because the provided inputs are incompatible with the requested environment. Example: requested AndroidVersion is lower than APK's minSdkVersion Can only be set on an execution."]
+        #[doc = "The execution was not run because the provided inputs are incompatible with the requested environment. Example: requested AndroidVersion is lower than APK’s minSdkVersion Can only be set on an execution."]
         IncompatibleEnvironment,
         #[doc = "The execution or matrix was not run because the provided inputs are not valid. Examples: input file is not of the expected type, is malformed/corrupt, or was flagged as malware"]
         Invalid,
@@ -1441,7 +1441,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Date {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -2111,7 +2111,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content: ::std::option::Option<crate::schemas::FileReference>,
-        #[doc = "Location of the file on the device, inside the app's sandboxed filesystem"]
+        #[doc = "Location of the file on the device, inside the app’s sandboxed filesystem"]
         #[serde(
             rename = "devicePath",
             default,
@@ -2194,7 +2194,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "The human-readable name for this device model. Examples: \"iPhone 4s\", \"iPad Mini 2\"."]
+        #[doc = "The human-readable name for this device model. Examples: “iPhone 4s”, “iPad Mini 2”."]
         #[serde(
             rename = "name",
             default,
@@ -2229,7 +2229,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub supported_version_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Tags for this dimension. Examples: \"default\", \"preview\", \"deprecated\"."]
+        #[doc = "Tags for this dimension. Examples: “default”, “preview”, “deprecated”."]
         #[serde(
             rename = "tags",
             default,
@@ -2438,7 +2438,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub network_profile: ::std::option::Option<String>,
-        #[doc = "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (such as /private/var/mobile/Media) or within an accessible directory inside the app's filesystem (such as /Documents) by specifying the bundle ID."]
+        #[doc = "List of directories on the device to upload to Cloud Storage at the end of the test. Directories should either be in a shared directory (such as /private/var/mobile/Media) or within an accessible directory inside the app’s filesystem (such as /Documents) by specifying the bundle ID."]
         #[serde(
             rename = "pullDirectories",
             default,
@@ -2483,14 +2483,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "An integer representing the major iOS version. Examples: \"8\", \"9\"."]
+        #[doc = "An integer representing the major iOS version. Examples: “8”, “9”."]
         #[serde(
             rename = "majorVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub major_version: ::std::option::Option<i32>,
-        #[doc = "An integer representing the minor iOS version. Examples: \"1\", \"2\"."]
+        #[doc = "An integer representing the minor iOS version. Examples: “1”, “2”."]
         #[serde(
             rename = "minorVersion",
             default,
@@ -2504,7 +2504,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub supported_xcode_version_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Tags for this dimension. Examples: \"default\", \"preview\", \"deprecated\"."]
+        #[doc = "Tags for this dimension. Examples: “default”, “preview”, “deprecated”."]
         #[serde(
             rename = "tags",
             default,
@@ -2618,28 +2618,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Locale {
-        #[doc = "The id for this locale. Example: \"en_US\"."]
+        #[doc = "The id for this locale. Example: “en_US”."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "A human-friendly name for this language/locale. Example: \"English\"."]
+        #[doc = "A human-friendly name for this language/locale. Example: “English”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "A human-friendly string representing the region for this locale. Example: \"United States\". Not present for every locale."]
+        #[doc = "A human-friendly string representing the region for this locale. Example: “United States”. Not present for every locale."]
         #[serde(
             rename = "region",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region: ::std::option::Option<String>,
-        #[doc = "Tags for this dimension. Example: \"default\"."]
+        #[doc = "Tags for this dimension. Example: “default”."]
         #[serde(
             rename = "tags",
             default,
@@ -2670,7 +2670,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ManualSharding {
-        #[doc = "Required. Group of packages, classes, and/or test methods to be run for each shard. When any physical devices are selected, the number of test_targets_for_shard must be >= 1 and <= 50. When no physical devices are selected, the number must be >= 1 and <= 500."]
+        #[doc = "Required. Group of packages, classes, and/or test methods to be run for each shard. When any physical devices are selected, the number of test_targets_for_shard must be >= 1 and \\<= 50. When no physical devices are selected, the number must be >= 1 and \\<= 500."]
         #[serde(
             rename = "testTargetsForShard",
             default,
@@ -2765,7 +2765,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub obb: ::std::option::Option<crate::schemas::FileReference>,
-        #[doc = "Required. OBB file name which must conform to the format as specified by Android e.g. [main|patch].0300110.com.example.android.obb which will be installed into /Android/obb// on the device."]
+        #[doc = "Required. OBB file name which must conform to the format as specified by Android e.g. \\[main|patch\\].0300110.com.example.android.obb which will be installed into /Android/obb// on the device."]
         #[serde(
             rename = "obbFileName",
             default,
@@ -2796,21 +2796,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Orientation {
-        #[doc = "The id for this orientation. Example: \"portrait\"."]
+        #[doc = "The id for this orientation. Example: “portrait”."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "A human-friendly name for this orientation. Example: \"portrait\"."]
+        #[doc = "A human-friendly name for this orientation. Example: “portrait”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Tags for this dimension. Example: \"default\"."]
+        #[doc = "Tags for this dimension. Example: “default”."]
         #[serde(
             rename = "tags",
             default,
@@ -2983,7 +2983,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub input_text: ::std::option::Option<String>,
-        #[doc = "Required. The android resource name of the target UI element. For example, in Java: R.string.foo in xml: @string/foo Only the \"foo\" part is needed. Reference doc: https://developer.android.com/guide/topics/resources/accessing-resources.html"]
+        #[doc = "Required. The android resource name of the target UI element. For example, in Java: R.string.foo in xml: @string/foo Only the “foo” part is needed. Reference doc: https://developer.android.com/guide/topics/resources/accessing-resources.html"]
         #[serde(
             rename = "resourceName",
             default,
@@ -3306,7 +3306,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_message: ::std::option::Option<String>,
-        #[doc = "Output only. Human-readable, detailed descriptions of the test's progress. For example: \"Provisioning a device\", \"Starting Test\". During the course of execution new data may be appended to the end of progress_messages."]
+        #[doc = "Output only. Human-readable, detailed descriptions of the test’s progress. For example: “Provisioning a device”, “Starting Test”. During the course of execution new data may be appended to the end of progress_messages."]
         #[serde(
             rename = "progressMessages",
             default,
@@ -3479,7 +3479,7 @@ pub mod schemas {
         Finished,
         #[doc = "The execution was not run because the provided inputs are incompatible with the requested architecture. Example: requested device does not support running the native code in the supplied APK Can only be set on an execution."]
         IncompatibleArchitecture,
-        #[doc = "The execution was not run because the provided inputs are incompatible with the requested environment. Example: requested AndroidVersion is lower than APK's minSdkVersion Can only be set on an execution."]
+        #[doc = "The execution was not run because the provided inputs are incompatible with the requested environment. Example: requested AndroidVersion is lower than APK’s minSdkVersion Can only be set on an execution."]
         IncompatibleEnvironment,
         #[doc = "The execution or matrix was not run because the provided inputs are not valid. Examples: input file is not of the expected type, is malformed/corrupt, or was flagged as malware"]
         Invalid,
@@ -3711,7 +3711,7 @@ pub mod schemas {
         DeviceAdminReceiver,
         #[doc = "The app declares one or more permissions that are not allowed."]
         ForbiddenPermissions,
-        #[doc = "The test runner class specified by user or in the test APK's manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption."]
+        #[doc = "The test runner class specified by user or in the test APK’s manifest file is not compatible with Android Test Orchestrator. Orchestrator is only compatible with AndroidJUnitRunner version 1.1 or higher. Orchestrator can be disabled by using DO_NOT_USE_ORCHESTRATOR OrchestratorOption."]
         InstrumentationOrchestratorIncompatible,
         #[doc = "APK is built for a preview SDK which is unsupported"]
         InvalidApkPreviewSdk,
@@ -3729,7 +3729,7 @@ pub mod schemas {
         InvalidRoboDirectives,
         #[doc = "The input app APK could not be parsed."]
         MalformedApk,
-        #[doc = "The iOS application bundle (.app) couldn't be processed."]
+        #[doc = "The iOS application bundle (.app) couldn’t be processed."]
         MalformedAppBundle,
         #[doc = "The input IPA could not be parsed."]
         MalformedIpa,
@@ -3737,7 +3737,7 @@ pub mod schemas {
         MalformedTestApk,
         #[doc = "The zipped XCTest was malformed. The zip did not contain a single .xctestrun file and the contents of the DerivedData/Build/Products directory."]
         MalformedXcTestZip,
-        #[doc = "The application doesn't register the game loop URL scheme."]
+        #[doc = "The application doesn’t register the game loop URL scheme."]
         MissingUrlScheme,
         #[doc = "APK contains no code. See also https://developer.android.com/guide/topics/manifest/application-element.html#code"]
         NoCodeApk,
@@ -3751,13 +3751,13 @@ pub mod schemas {
         NoPackageName,
         #[doc = "The input app apk does not have a signature."]
         NoSignature,
-        #[doc = "The test APK does not contain the test runner class specified by user or in the manifest file. This can be caused by either of the following reasons: - the user provided a runner class name that's incorrect, or - the test runner isn't built into the test APK (might be in the app APK instead)."]
+        #[doc = "The test APK does not contain the test runner class specified by user or in the manifest file. This can be caused by either of the following reasons: - the user provided a runner class name that’s incorrect, or - the test runner isn’t built into the test APK (might be in the app APK instead)."]
         NoTestRunnerClass,
         #[doc = "The .xctestrun file did not specify any test targets."]
         NoTestsInXcTestZip,
         #[doc = "An Info.plist file in the XCTest zip could not be parsed."]
         PlistCannotBeParsed,
-        #[doc = "There was an error when parsing a label's value."]
+        #[doc = "There was an error when parsing a label’s value."]
         ScenarioLabelMalformed,
         #[doc = "The request contains a scenario label that was not declared in the manifest."]
         ScenarioLabelNotDeclared,
@@ -3765,13 +3765,13 @@ pub mod schemas {
         ScenarioNotDeclared,
         #[doc = "There is no test loop intent filter, or the one that is given is not formatted correctly."]
         TestLoopIntentFilterNotFound,
-        #[doc = "XC tests which run on physical devices must have \"IsAppHostedTestBundle\" == \"true\" in the xctestrun file."]
+        #[doc = "XC tests which run on physical devices must have “IsAppHostedTestBundle” == “true” in the xctestrun file."]
         TestNotAppHosted,
-        #[doc = "The APK is marked as \"testOnly\". Deprecated and not currently used."]
+        #[doc = "The APK is marked as “testOnly”. Deprecated and not currently used."]
         TestOnlyApk,
         #[doc = "The test package and app package are the same."]
         TestSameAsApp,
-        #[doc = "One or more of the test targets defined in the .xctestrun file specifies \"UseDestinationArtifacts\", which is disallowed."]
+        #[doc = "One or more of the test targets defined in the .xctestrun file specifies “UseDestinationArtifacts”, which is disallowed."]
         UseDestinationArtifacts,
     }
     impl TestMatrixInvalidMatrixDetails {
@@ -4081,7 +4081,7 @@ pub mod schemas {
         Finished,
         #[doc = "The execution was not run because the provided inputs are incompatible with the requested architecture. Example: requested device does not support running the native code in the supplied APK Can only be set on an execution."]
         IncompatibleArchitecture,
-        #[doc = "The execution was not run because the provided inputs are incompatible with the requested environment. Example: requested AndroidVersion is lower than APK's minSdkVersion Can only be set on an execution."]
+        #[doc = "The execution was not run because the provided inputs are incompatible with the requested environment. Example: requested AndroidVersion is lower than APK’s minSdkVersion Can only be set on an execution."]
         IncompatibleEnvironment,
         #[doc = "The execution or matrix was not run because the provided inputs are not valid. Examples: input file is not of the expected type, is malformed/corrupt, or was flagged as malware"]
         Invalid,
@@ -4375,7 +4375,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestTargetsForShard {
-        #[doc = "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, \"package com.my.packages\" \"class com.my.package.MyClass\". The number of test_targets must be greater than 0."]
+        #[doc = "Group of packages, classes, and/or test methods to be run for each shard. The targets need to be specified in AndroidJUnitRunner argument format. For example, “package com.my.packages” “class com.my.package.MyClass”. The number of test_targets must be greater than 0."]
         #[serde(
             rename = "testTargets",
             default,
@@ -4591,7 +4591,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UniformSharding {
-        #[doc = "Required. Total number of shards. When any physical devices are selected, the number must be >= 1 and <= 50. When no physical devices are selected, the number must be >= 1 and <= 500."]
+        #[doc = "Required. Total number of shards. When any physical devices are selected, the number must be >= 1 and \\<= 50. When no physical devices are selected, the number must be >= 1 and \\<= 500."]
         #[serde(
             rename = "numShards",
             default,
@@ -4622,14 +4622,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct XcodeVersion {
-        #[doc = "Tags for this Xcode version. Example: \"default\"."]
+        #[doc = "Tags for this Xcode version. Example: “default”."]
         #[serde(
             rename = "tags",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tags: ::std::option::Option<Vec<String>>,
-        #[doc = "The id for this version. Example: \"9.2\"."]
+        #[doc = "The id for this version. Example: “9.2”."]
         #[serde(
             rename = "version",
             default,
@@ -4929,12 +4929,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5189,12 +5189,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5367,12 +5367,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5531,12 +5531,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5840,12 +5840,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

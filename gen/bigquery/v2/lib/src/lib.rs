@@ -1214,7 +1214,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AvroOptions {
-        #[doc = "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER)."]
+        #[doc = "\\[Optional\\] If sourceFormat is set to “AVRO”, indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER)."]
         #[serde(
             rename = "useAvroLogicalTypes",
             default,
@@ -1245,14 +1245,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BiEngineReason {
-        #[doc = "[Output-only] High-level BI Engine reason for partial or disabled acceleration."]
+        #[doc = "\\[Output-only\\] High-level BI Engine reason for partial or disabled acceleration."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<String>,
-        #[doc = "[Output-only] Free form human-readable reason for partial or disabled acceleration."]
+        #[doc = "\\[Output-only\\] Free form human-readable reason for partial or disabled acceleration."]
         #[serde(
             rename = "message",
             default,
@@ -1283,7 +1283,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BiEngineStatistics {
-        #[doc = "[Output-only] Specifies which mode of BI Engine acceleration was performed (if any)."]
+        #[doc = "\\[Output-only\\] Specifies which mode of BI Engine acceleration was performed (if any)."]
         #[serde(
             rename = "biEngineMode",
             default,
@@ -1321,14 +1321,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BigQueryModelTraining {
-        #[doc = "[Output-only, Beta] Index of current ML training iteration. Updated during create model query job to show job progress."]
+        #[doc = "\\[Output-only, Beta\\] Index of current ML training iteration. Updated during create model query job to show job progress."]
         #[serde(
             rename = "currentIteration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_iteration: ::std::option::Option<i32>,
-        #[doc = "[Output-only, Beta] Expected number of iterations for the create model query job specified as num_iterations in the input query. The actual total number of iterations may be less than this number due to early stop."]
+        #[doc = "\\[Output-only, Beta\\] Expected number of iterations for the create model query job specified as num_iterations in the input query. The actual total number of iterations may be less than this number due to early stop."]
         #[serde(
             rename = "expectedTotalIterations",
             default,
@@ -1360,28 +1360,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BigtableColumn {
-        #[doc = "[Optional] The encoding of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. 'encoding' can also be set at the column family level. However, the setting at this level takes precedence if 'encoding' is set at both levels."]
+        #[doc = "\\[Optional\\] The encoding of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. ‘encoding’ can also be set at the column family level. However, the setting at this level takes precedence if ‘encoding’ is set at both levels."]
         #[serde(
             rename = "encoding",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encoding: ::std::option::Option<String>,
-        #[doc = "[Optional] If the qualifier is not a valid BigQuery field identifier i.e. does not match [a-zA-Z][a-zA-Z0-9_]*, a valid identifier must be provided as the column field name and is used as field name in queries."]
+        #[doc = "\\[Optional\\] If the qualifier is not a valid BigQuery field identifier i.e. does not match \\[a-zA-Z\\]\\[a-zA-Z0-9\\_\\]\\*, a valid identifier must be provided as the column field name and is used as field name in queries."]
         #[serde(
             rename = "fieldName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_name: ::std::option::Option<String>,
-        #[doc = "[Optional] If this is set, only the latest version of value in this column are exposed. 'onlyReadLatest' can also be set at the column family level. However, the setting at this level takes precedence if 'onlyReadLatest' is set at both levels."]
+        #[doc = "\\[Optional\\] If this is set, only the latest version of value in this column are exposed. ‘onlyReadLatest’ can also be set at the column family level. However, the setting at this level takes precedence if ‘onlyReadLatest’ is set at both levels."]
         #[serde(
             rename = "onlyReadLatest",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub only_read_latest: ::std::option::Option<bool>,
-        #[doc = "[Required] Qualifier of the column. Columns in the parent column family that has this exact qualifier are exposed as . field. If the qualifier is valid UTF-8 string, it can be specified in the qualifier_string field. Otherwise, a base-64 encoded value must be set to qualifier_encoded. The column field name is the same as the column qualifier. However, if the qualifier is not a valid BigQuery field identifier i.e. does not match [a-zA-Z][a-zA-Z0-9_]*, a valid identifier must be provided as field_name."]
+        #[doc = "\\[Required\\] Qualifier of the column. Columns in the parent column family that has this exact qualifier are exposed as . field. If the qualifier is valid UTF-8 string, it can be specified in the qualifier_string field. Otherwise, a base-64 encoded value must be set to qualifier_encoded. The column field name is the same as the column qualifier. However, if the qualifier is not a valid BigQuery field identifier i.e. does not match \\[a-zA-Z\\]\\[a-zA-Z0-9\\_\\]\\*, a valid identifier must be provided as field_name."]
         #[serde(
             rename = "qualifierEncoded",
             default,
@@ -1394,7 +1394,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub qualifier_string: ::std::option::Option<String>,
-        #[doc = "[Optional] The type to convert the value in cells of this column. The values are expected to be encoded using HBase Bytes.toBytes function when using the BINARY encoding value. Following BigQuery types are allowed (case-sensitive) - BYTES STRING INTEGER FLOAT BOOLEAN Default type is BYTES. 'type' can also be set at the column family level. However, the setting at this level takes precedence if 'type' is set at both levels."]
+        #[doc = "\\[Optional\\] The type to convert the value in cells of this column. The values are expected to be encoded using HBase Bytes.toBytes function when using the BINARY encoding value. Following BigQuery types are allowed (case-sensitive) - BYTES STRING INTEGER FLOAT BOOLEAN Default type is BYTES. ‘type’ can also be set at the column family level. However, the setting at this level takes precedence if ‘type’ is set at both levels."]
         #[serde(
             rename = "type",
             default,
@@ -1425,14 +1425,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BigtableColumnFamily {
-        #[doc = "[Optional] Lists of columns that should be exposed as individual fields as opposed to a list of (column name, value) pairs. All columns whose qualifier matches a qualifier in this list can be accessed as .. Other columns can be accessed as a list through .Column field."]
+        #[doc = "\\[Optional\\] Lists of columns that should be exposed as individual fields as opposed to a list of (column name, value) pairs. All columns whose qualifier matches a qualifier in this list can be accessed as .. Other columns can be accessed as a list through .Column field."]
         #[serde(
             rename = "columns",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub columns: ::std::option::Option<Vec<crate::schemas::BigtableColumn>>,
-        #[doc = "[Optional] The encoding of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. This can be overridden for a specific column by listing that column in 'columns' and specifying an encoding for it."]
+        #[doc = "\\[Optional\\] The encoding of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. This can be overridden for a specific column by listing that column in ‘columns’ and specifying an encoding for it."]
         #[serde(
             rename = "encoding",
             default,
@@ -1446,14 +1446,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub family_id: ::std::option::Option<String>,
-        #[doc = "[Optional] If this is set only the latest version of value are exposed for all columns in this column family. This can be overridden for a specific column by listing that column in 'columns' and specifying a different setting for that column."]
+        #[doc = "\\[Optional\\] If this is set only the latest version of value are exposed for all columns in this column family. This can be overridden for a specific column by listing that column in ‘columns’ and specifying a different setting for that column."]
         #[serde(
             rename = "onlyReadLatest",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub only_read_latest: ::std::option::Option<bool>,
-        #[doc = "[Optional] The type to convert the value in cells of this column family. The values are expected to be encoded using HBase Bytes.toBytes function when using the BINARY encoding value. Following BigQuery types are allowed (case-sensitive) - BYTES STRING INTEGER FLOAT BOOLEAN Default type is BYTES. This can be overridden for a specific column by listing that column in 'columns' and specifying a type for it."]
+        #[doc = "\\[Optional\\] The type to convert the value in cells of this column family. The values are expected to be encoded using HBase Bytes.toBytes function when using the BINARY encoding value. Following BigQuery types are allowed (case-sensitive) - BYTES STRING INTEGER FLOAT BOOLEAN Default type is BYTES. This can be overridden for a specific column by listing that column in ‘columns’ and specifying a type for it."]
         #[serde(
             rename = "type",
             default,
@@ -1484,21 +1484,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BigtableOptions {
-        #[doc = "[Optional] List of column families to expose in the table schema along with their types. This list restricts the column families that can be referenced in queries and specifies their value types. You can use this list to do type conversions - see the 'type' field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable."]
+        #[doc = "\\[Optional\\] List of column families to expose in the table schema along with their types. This list restricts the column families that can be referenced in queries and specifies their value types. You can use this list to do type conversions - see the ‘type’ field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable."]
         #[serde(
             rename = "columnFamilies",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub column_families: ::std::option::Option<Vec<crate::schemas::BigtableColumnFamily>>,
-        #[doc = "[Optional] If field is true, then the column families that are not specified in columnFamilies list are not exposed in the table schema. Otherwise, they are read with BYTES type values. The default value is false."]
+        #[doc = "\\[Optional\\] If field is true, then the column families that are not specified in columnFamilies list are not exposed in the table schema. Otherwise, they are read with BYTES type values. The default value is false."]
         #[serde(
             rename = "ignoreUnspecifiedColumnFamilies",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ignore_unspecified_column_families: ::std::option::Option<bool>,
-        #[doc = "[Optional] If field is true, then the rowkey column families will be read and converted to string. Otherwise they are read with BYTES type values and users need to manually cast them with CAST if necessary. The default value is false."]
+        #[doc = "\\[Optional\\] If field is true, then the rowkey column families will be read and converted to string. Otherwise they are read with BYTES type values and users need to manually cast them with CAST if necessary. The default value is false."]
         #[serde(
             rename = "readRowkeyAsString",
             default,
@@ -1692,7 +1692,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BqmlIterationResult {
-        #[doc = "[Output-only, Beta] Time taken to run the training iteration in milliseconds."]
+        #[doc = "\\[Output-only, Beta\\] Time taken to run the training iteration in milliseconds."]
         #[serde(
             rename = "durationMs",
             default,
@@ -1700,28 +1700,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub duration_ms: ::std::option::Option<i64>,
-        #[doc = "[Output-only, Beta] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows."]
+        #[doc = "\\[Output-only, Beta\\] Eval loss computed on the eval data at the end of the iteration. The eval loss is used for early stopping to avoid overfitting. No eval loss if eval_split_method option is specified as no_split or auto_split with input data size less than 500 rows."]
         #[serde(
             rename = "evalLoss",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub eval_loss: ::std::option::Option<f64>,
-        #[doc = "[Output-only, Beta] Index of the ML training iteration, starting from zero for each training run."]
+        #[doc = "\\[Output-only, Beta\\] Index of the ML training iteration, starting from zero for each training run."]
         #[serde(
             rename = "index",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "[Output-only, Beta] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant."]
+        #[doc = "\\[Output-only, Beta\\] Learning rate used for this iteration, it varies for different training iterations if learn_rate_strategy option is not constant."]
         #[serde(
             rename = "learnRate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub learn_rate: ::std::option::Option<f64>,
-        #[doc = "[Output-only, Beta] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type."]
+        #[doc = "\\[Output-only, Beta\\] Training loss computed on the training data at the end of the iteration. The training loss function is defined by model type."]
         #[serde(
             rename = "trainingLoss",
             default,
@@ -1743,28 +1743,28 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct BqmlTrainingRun {
-        #[doc = "[Output-only, Beta] List of each iteration results."]
+        #[doc = "\\[Output-only, Beta\\] List of each iteration results."]
         #[serde(
             rename = "iterationResults",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub iteration_results: ::std::option::Option<Vec<crate::schemas::BqmlIterationResult>>,
-        #[doc = "[Output-only, Beta] Training run start time in milliseconds since the epoch."]
+        #[doc = "\\[Output-only, Beta\\] Training run start time in milliseconds since the epoch."]
         #[serde(
             rename = "startTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "[Output-only, Beta] Different state applicable for a training run. IN PROGRESS: Training run is in progress. FAILED: Training run ended due to a non-retryable failure. SUCCEEDED: Training run successfully completed. CANCELLED: Training run cancelled by the user."]
+        #[doc = "\\[Output-only, Beta\\] Different state applicable for a training run. IN PROGRESS: Training run is in progress. FAILED: Training run ended due to a non-retryable failure. SUCCEEDED: Training run successfully completed. CANCELLED: Training run cancelled by the user."]
         #[serde(
             rename = "state",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state: ::std::option::Option<String>,
-        #[doc = "[Output-only, Beta] Training options used by this training run. These options are mutable for subsequent training runs. Default values are explicitly stored for options not specified in the input query of the first training run. For subsequent training runs, any option not explicitly specified in the input query will be copied from the previous training run."]
+        #[doc = "\\[Output-only, Beta\\] Training options used by this training run. These options are mutable for subsequent training runs. Default values are explicitly stored for options not specified in the input query of the first training run. For subsequent training runs, any option not explicitly specified in the input query will be copied from the previous training run."]
         #[serde(
             rename = "trainingOptions",
             default,
@@ -1865,7 +1865,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CategoricalValue {
-        #[doc = "Counts of all categories for the categorical feature. If there are more than ten categories, we return top ten (by count) and return one more CategoryCount with category \"*OTHER*\" and count as aggregate counts of remaining categories."]
+        #[doc = "Counts of all categories for the categorical feature. If there are more than ten categories, we return top ten (by count) and return one more CategoryCount with category “*OTHER*” and count as aggregate counts of remaining categories."]
         #[serde(
             rename = "categoryCounts",
             default,
@@ -1935,14 +1935,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CloneDefinition {
-        #[doc = "[Required] Reference describing the ID of the table that was cloned."]
+        #[doc = "\\[Required\\] Reference describing the ID of the table that was cloned."]
         #[serde(
             rename = "baseTableReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_table_reference: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Required] The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format."]
+        #[doc = "\\[Required\\] The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format."]
         #[serde(
             rename = "cloneTime",
             default,
@@ -2049,7 +2049,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Clustering {
-        #[doc = "[Repeated] One or more fields on which data should be clustered. Only top-level, non-repeated, simple-type fields are supported. When you cluster a table using multiple columns, the order of columns you specify is important. The order of the specified columns determines the sort order of the data."]
+        #[doc = "\\[Repeated\\] One or more fields on which data should be clustered. Only top-level, non-repeated, simple-type fields are supported. When you cluster a table using multiple columns, the order of columns you specify is important. The order of the specified columns determines the sort order of the data."]
         #[serde(
             rename = "fields",
             default,
@@ -2145,14 +2145,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ConnectionProperty {
-        #[doc = "[Required] Name of the connection property to set."]
+        #[doc = "\\[Required\\] Name of the connection property to set."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "[Required] Value of the connection property."]
+        #[doc = "\\[Required\\] Value of the connection property."]
         #[serde(
             rename = "value",
             default,
@@ -2183,49 +2183,49 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CsvOptions {
-        #[doc = "[Optional] Indicates if BigQuery should accept rows that are missing trailing optional columns. If true, BigQuery treats missing trailing columns as null values. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false."]
+        #[doc = "\\[Optional\\] Indicates if BigQuery should accept rows that are missing trailing optional columns. If true, BigQuery treats missing trailing columns as null values. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false."]
         #[serde(
             rename = "allowJaggedRows",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_jagged_rows: ::std::option::Option<bool>,
-        #[doc = "[Optional] Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false."]
+        #[doc = "\\[Optional\\] Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false."]
         #[serde(
             rename = "allowQuotedNewlines",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_quoted_newlines: ::std::option::Option<bool>,
-        #[doc = "[Optional] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties."]
+        #[doc = "\\[Optional\\] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties."]
         #[serde(
             rename = "encoding",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encoding: ::std::option::Option<String>,
-        #[doc = "[Optional] The separator for fields in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence \"\\t\" to specify a tab separator. The default value is a comma (',')."]
+        #[doc = "\\[Optional\\] The separator for fields in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence “\\\\t” to specify a tab separator. The default value is a comma (‘,’)."]
         #[serde(
             rename = "fieldDelimiter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_delimiter: ::std::option::Option<String>,
-        #[doc = "[Optional] An custom string that will represent a NULL value in CSV import data."]
+        #[doc = "\\[Optional\\] An custom string that will represent a NULL value in CSV import data."]
         #[serde(
             rename = "null_marker",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub null_marker: ::std::option::Option<String>,
-        #[doc = "[Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('\"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true."]
+        #[doc = "\\[Optional\\] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote (‘“’). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true."]
         #[serde(
             rename = "quote",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quote: ::std::option::Option<String>,
-        #[doc = "[Optional] The number of rows at the top of a CSV file that BigQuery will skip when reading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. When autodetect is on, the behavior is the following: * skipLeadingRows unspecified - Autodetect tries to detect headers in the first row. If they are not detected, the row is read as data. Otherwise data is read starting from the second row. * skipLeadingRows is 0 - Instructs autodetect that there are no headers and data should be read starting from the first row. * skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected, row N is just skipped. Otherwise row N is used to extract column names for the detected schema."]
+        #[doc = "\\[Optional\\] The number of rows at the top of a CSV file that BigQuery will skip when reading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. When autodetect is on, the behavior is the following: * skipLeadingRows unspecified - Autodetect tries to detect headers in the first row. If they are not detected, the row is read as data. Otherwise data is read starting from the second row. * skipLeadingRows is 0 - Instructs autodetect that there are no headers and data should be read starting from the first row. * skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected, row N is just skipped. Otherwise row N is used to extract column names for the detected schema."]
         #[serde(
             rename = "skipLeadingRows",
             default,
@@ -2302,14 +2302,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Dataset {
-        #[doc = "[Optional] An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER;"]
+        #[doc = "\\[Optional\\] An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: \\[dataset creator email\\]; access.role: OWNER;"]
         #[serde(
             rename = "access",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub access: ::std::option::Option<Vec<crate::schemas::DatasetAccessItems>>,
-        #[doc = "[Output-only] The time when this dataset was created, in milliseconds since the epoch."]
+        #[doc = "\\[Output-only\\] The time when this dataset was created, in milliseconds since the epoch."]
         #[serde(
             rename = "creationTime",
             default,
@@ -2317,14 +2317,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
-        #[doc = "[Required] A reference that identifies the dataset."]
+        #[doc = "\\[Required\\] A reference that identifies the dataset."]
         #[serde(
             rename = "datasetReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_reference: ::std::option::Option<crate::schemas::DatasetReference>,
-        #[doc = "[Output-only] The default collation of the dataset."]
+        #[doc = "\\[Output-only\\] The default collation of the dataset."]
         #[serde(
             rename = "defaultCollation",
             default,
@@ -2338,7 +2338,7 @@ pub mod schemas {
         )]
         pub default_encryption_configuration:
             ::std::option::Option<crate::schemas::EncryptionConfiguration>,
-        #[doc = "[Optional] The default partition expiration for all partitioned tables in the dataset, in milliseconds. Once this property is set, all newly-created partitioned tables in the dataset will have an expirationMs property in the timePartitioning settings set to this value, and changing the value will only affect new tables, not existing ones. The storage in a partition will have an expiration time of its partition time plus this value. Setting this property overrides the use of defaultTableExpirationMs for partitioned tables: only one of defaultTableExpirationMs and defaultPartitionExpirationMs will be used for any new partitioned table. If you provide an explicit timePartitioning.expirationMs when creating or updating a partitioned table, that value takes precedence over the default partition expiration time indicated by this property."]
+        #[doc = "\\[Optional\\] The default partition expiration for all partitioned tables in the dataset, in milliseconds. Once this property is set, all newly-created partitioned tables in the dataset will have an expirationMs property in the timePartitioning settings set to this value, and changing the value will only affect new tables, not existing ones. The storage in a partition will have an expiration time of its partition time plus this value. Setting this property overrides the use of defaultTableExpirationMs for partitioned tables: only one of defaultTableExpirationMs and defaultPartitionExpirationMs will be used for any new partitioned table. If you provide an explicit timePartitioning.expirationMs when creating or updating a partitioned table, that value takes precedence over the default partition expiration time indicated by this property."]
         #[serde(
             rename = "defaultPartitionExpirationMs",
             default,
@@ -2346,7 +2346,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub default_partition_expiration_ms: ::std::option::Option<i64>,
-        #[doc = "[Optional] The default lifetime of all tables in the dataset, in milliseconds. The minimum value is 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table's expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property."]
+        #[doc = "\\[Optional\\] The default lifetime of all tables in the dataset, in milliseconds. The minimum value is 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table’s expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property."]
         #[serde(
             rename = "defaultTableExpirationMs",
             default,
@@ -2354,42 +2354,42 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub default_table_expiration_ms: ::std::option::Option<i64>,
-        #[doc = "[Optional] A user-friendly description of the dataset."]
+        #[doc = "\\[Optional\\] A user-friendly description of the dataset."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[Output-only] A hash of the resource."]
+        #[doc = "\\[Output-only\\] A hash of the resource."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "[Optional] A descriptive name for the dataset."]
+        #[doc = "\\[Optional\\] A descriptive name for the dataset."]
         #[serde(
             rename = "friendlyName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub friendly_name: ::std::option::Option<String>,
-        #[doc = "[Output-only] The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field."]
+        #[doc = "\\[Output-only\\] The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "[Optional] Indicates if table names are case insensitive in the dataset."]
+        #[doc = "\\[Optional\\] Indicates if table names are case insensitive in the dataset."]
         #[serde(
             rename = "isCaseInsensitive",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_case_insensitive: ::std::option::Option<bool>,
-        #[doc = "[Output-only] The resource type."]
+        #[doc = "\\[Output-only\\] The resource type."]
         #[serde(
             rename = "kind",
             default,
@@ -2403,7 +2403,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "[Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch."]
+        #[doc = "\\[Output-only\\] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch."]
         #[serde(
             rename = "lastModifiedTime",
             default,
@@ -2418,7 +2418,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "[Optional] Number of hours for the max time travel for all tables in the dataset."]
+        #[doc = "\\[Optional\\] Number of hours for the max time travel for all tables in the dataset."]
         #[serde(
             rename = "maxTimeTravelHours",
             default,
@@ -2426,21 +2426,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_time_travel_hours: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Reserved for future use."]
+        #[doc = "\\[Output-only\\] Reserved for future use."]
         #[serde(
             rename = "satisfiesPZS",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub satisfies_pzs: ::std::option::Option<bool>,
-        #[doc = "[Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource."]
+        #[doc = "\\[Output-only\\] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource."]
         #[serde(
             rename = "selfLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "[Optional]The tags associated with this dataset. Tag keys are globally unique."]
+        #[doc = "\\[Optional\\]The tags associated with this dataset. Tag keys are globally unique."]
         #[serde(
             rename = "tags",
             default,
@@ -2471,63 +2471,63 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatasetAccessItems {
-        #[doc = "[Pick one] A grant authorizing all resources of a particular type in a particular dataset access to this dataset. Only views are supported for now. The role field is not required when this field is set. If that dataset is deleted and re-created, its access needs to be granted again via an update operation."]
+        #[doc = "\\[Pick one\\] A grant authorizing all resources of a particular type in a particular dataset access to this dataset. Only views are supported for now. The role field is not required when this field is set. If that dataset is deleted and re-created, its access needs to be granted again via an update operation."]
         #[serde(
             rename = "dataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset: ::std::option::Option<crate::schemas::DatasetAccessEntry>,
-        #[doc = "[Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: \"example.com\". Maps to IAM policy member \"domain:DOMAIN\"."]
+        #[doc = "\\[Pick one\\] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: “example.com”. Maps to IAM policy member “domain:DOMAIN”."]
         #[serde(
             rename = "domain",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub domain: ::std::option::Option<String>,
-        #[doc = "[Pick one] An email address of a Google Group to grant access to. Maps to IAM policy member \"group:GROUP\"."]
+        #[doc = "\\[Pick one\\] An email address of a Google Group to grant access to. Maps to IAM policy member “group:GROUP”."]
         #[serde(
             rename = "groupByEmail",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub group_by_email: ::std::option::Option<String>,
-        #[doc = "[Pick one] Some other type of member that appears in the IAM Policy but isn't a user, group, domain, or special group."]
+        #[doc = "\\[Pick one\\] Some other type of member that appears in the IAM Policy but isn’t a user, group, domain, or special group."]
         #[serde(
             rename = "iamMember",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub iam_member: ::std::option::Option<String>,
-        #[doc = "[Required] An IAM role ID that should be granted to the user, group, or domain specified in this access entry. The following legacy mappings will be applied: OWNER  roles/bigquery.dataOwner WRITER  roles/bigquery.dataEditor READER  roles/bigquery.dataViewer This field will accept any of the above formats, but will return only the legacy format. For example, if you set this field to \"roles/bigquery.dataOwner\", it will be returned back as \"OWNER\"."]
+        #[doc = "\\[Required\\] An IAM role ID that should be granted to the user, group, or domain specified in this access entry. The following legacy mappings will be applied: OWNER  roles/bigquery.dataOwner WRITER  roles/bigquery.dataEditor READER  roles/bigquery.dataViewer This field will accept any of the above formats, but will return only the legacy format. For example, if you set this field to “roles/bigquery.dataOwner”, it will be returned back as “OWNER”."]
         #[serde(
             rename = "role",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub role: ::std::option::Option<String>,
-        #[doc = "[Pick one] A routine from a different dataset to grant access to. Queries executed against that routine will have read access to views/tables/routines in this dataset. Only UDF is supported for now. The role field is not required when this field is set. If that routine is updated by any user, access to the routine needs to be granted again via an update operation."]
+        #[doc = "\\[Pick one\\] A routine from a different dataset to grant access to. Queries executed against that routine will have read access to views/tables/routines in this dataset. Only UDF is supported for now. The role field is not required when this field is set. If that routine is updated by any user, access to the routine needs to be granted again via an update operation."]
         #[serde(
             rename = "routine",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub routine: ::std::option::Option<crate::schemas::RoutineReference>,
-        #[doc = "[Pick one] A special group to grant access to. Possible values include: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users. Maps to similarly-named IAM members."]
+        #[doc = "\\[Pick one\\] A special group to grant access to. Possible values include: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users. Maps to similarly-named IAM members."]
         #[serde(
             rename = "specialGroup",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub special_group: ::std::option::Option<String>,
-        #[doc = "[Pick one] An email address of a user to grant access to. For example: fred@example.com. Maps to IAM policy member \"user:EMAIL\" or \"serviceAccount:EMAIL\"."]
+        #[doc = "\\[Pick one\\] An email address of a user to grant access to. For example: fred@example.com. Maps to IAM policy member “user:EMAIL” or “serviceAccount:EMAIL”."]
         #[serde(
             rename = "userByEmail",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_by_email: ::std::option::Option<String>,
-        #[doc = "[Pick one] A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation."]
+        #[doc = "\\[Pick one\\] A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation."]
         #[serde(
             rename = "view",
             default,
@@ -2558,14 +2558,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatasetTagsItems {
-        #[doc = "[Required] The namespaced friendly name of the tag key, e.g. \"12345/environment\" where 12345 is org id."]
+        #[doc = "\\[Required\\] The namespaced friendly name of the tag key, e.g. “12345/environment” where 12345 is org id."]
         #[serde(
             rename = "tagKey",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tag_key: ::std::option::Option<String>,
-        #[doc = "[Required] Friendly short name of the tag value, e.g. \"production\"."]
+        #[doc = "\\[Required\\] Friendly short name of the tag value, e.g. “production”."]
         #[serde(
             rename = "tagValue",
             default,
@@ -2596,7 +2596,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatasetAccessEntry {
-        #[doc = "[Required] The dataset this entry applies to."]
+        #[doc = "\\[Required\\] The dataset this entry applies to."]
         #[serde(
             rename = "dataset",
             default,
@@ -2725,7 +2725,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "The list type. This property always returns the value \"bigquery#datasetList\"."]
+        #[doc = "The list type. This property always returns the value “bigquery#datasetList”."]
         #[serde(
             rename = "kind",
             default,
@@ -2768,7 +2768,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatasetListDatasetsItems {
-        #[doc = "The dataset reference. Use this property to access specific parts of the dataset's ID, such as project ID or dataset ID."]
+        #[doc = "The dataset reference. Use this property to access specific parts of the dataset’s ID, such as project ID or dataset ID."]
         #[serde(
             rename = "datasetReference",
             default,
@@ -2789,7 +2789,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "The resource type. This property always returns the value \"bigquery#dataset\"."]
+        #[doc = "The resource type. This property always returns the value “bigquery#dataset”."]
         #[serde(
             rename = "kind",
             default,
@@ -2834,14 +2834,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DatasetReference {
-        #[doc = "[Required] A unique ID for this dataset, without the project name. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters."]
+        #[doc = "\\[Required\\] A unique ID for this dataset, without the project name. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_). The maximum length is 1,024 characters."]
         #[serde(
             rename = "datasetId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_id: ::std::option::Option<String>,
-        #[doc = "[Optional] The ID of the project containing this dataset."]
+        #[doc = "\\[Optional\\] The ID of the project containing this dataset."]
         #[serde(
             rename = "projectId",
             default,
@@ -2872,28 +2872,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DestinationTableProperties {
-        #[doc = "[Optional] The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail."]
+        #[doc = "\\[Optional\\] The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[Internal] This field is for Google internal use only."]
+        #[doc = "\\[Internal\\] This field is for Google internal use only."]
         #[serde(
             rename = "expirationTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expiration_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "[Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail."]
+        #[doc = "\\[Optional\\] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail."]
         #[serde(
             rename = "friendlyName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub friendly_name: ::std::option::Option<String>,
-        #[doc = "[Optional] The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail."]
+        #[doc = "\\[Optional\\] The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail."]
         #[serde(
             rename = "labels",
             default,
@@ -3074,7 +3074,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EncryptionConfiguration {
-        #[doc = "[Optional] Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table. The BigQuery Service Account associated with your project requires access to this encryption key."]
+        #[doc = "\\[Optional\\] Describes the Cloud KMS encryption key that will be used to protect destination BigQuery table. The BigQuery Service Account associated with your project requires access to this encryption key."]
         #[serde(
             rename = "kmsKeyName",
             default,
@@ -3640,21 +3640,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub avro_options: ::std::option::Option<crate::schemas::AvroOptions>,
-        #[doc = "[Optional] Additional options if sourceFormat is set to BIGTABLE."]
+        #[doc = "\\[Optional\\] Additional options if sourceFormat is set to BIGTABLE."]
         #[serde(
             rename = "bigtableOptions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bigtable_options: ::std::option::Option<crate::schemas::BigtableOptions>,
-        #[doc = "[Optional] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats."]
+        #[doc = "\\[Optional\\] The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats."]
         #[serde(
             rename = "compression",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compression: ::std::option::Option<String>,
-        #[doc = "[Optional, Trusted Tester] Connection for external data source."]
+        #[doc = "\\[Optional, Trusted Tester\\] Connection for external data source."]
         #[serde(
             rename = "connectionId",
             default,
@@ -3668,21 +3668,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub csv_options: ::std::option::Option<crate::schemas::CsvOptions>,
-        #[doc = "[Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats."]
+        #[doc = "\\[Optional\\] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is \\[“NUMERIC”, “BIGNUMERIC”\\]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, \\[“BIGNUMERIC”, “NUMERIC”\\] is the same as \\[“NUMERIC”, “BIGNUMERIC”\\] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to \\[“NUMERIC”, “STRING”\\] for ORC and \\[“NUMERIC”\\] for the other file formats."]
         #[serde(
             rename = "decimalTargetTypes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub decimal_target_types: ::std::option::Option<Vec<String>>,
-        #[doc = "[Optional] Additional options if sourceFormat is set to GOOGLE_SHEETS."]
+        #[doc = "\\[Optional\\] Additional options if sourceFormat is set to GOOGLE_SHEETS."]
         #[serde(
             rename = "googleSheetsOptions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub google_sheets_options: ::std::option::Option<crate::schemas::GoogleSheetsOptions>,
-        #[doc = "[Optional] Options to configure hive partitioning support."]
+        #[doc = "\\[Optional\\] Options to configure hive partitioning support."]
         #[serde(
             rename = "hivePartitioningOptions",
             default,
@@ -3690,14 +3690,14 @@ pub mod schemas {
         )]
         pub hive_partitioning_options:
             ::std::option::Option<crate::schemas::HivePartitioningOptions>,
-        #[doc = "[Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored."]
+        #[doc = "\\[Optional\\] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don’t match any column names Google Cloud Bigtable: This setting is ignored. Google Cloud Datastore backups: This setting is ignored. Avro: This setting is ignored."]
         #[serde(
             rename = "ignoreUnknownValues",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ignore_unknown_values: ::std::option::Option<bool>,
-        #[doc = "[Optional] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats."]
+        #[doc = "\\[Optional\\] The maximum number of bad records that BigQuery can ignore when reading data. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV, JSON, and Google Sheets. The default value is 0, which requires that all records are valid. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups and Avro formats."]
         #[serde(
             rename = "maxBadRecords",
             default,
@@ -3711,21 +3711,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parquet_options: ::std::option::Option<crate::schemas::ParquetOptions>,
-        #[doc = "[Optional] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats."]
+        #[doc = "\\[Optional\\] The schema for the data. Schema is required for CSV and JSON formats. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, and Avro formats."]
         #[serde(
             rename = "schema",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
-        #[doc = "[Required] The data format. For CSV files, specify \"CSV\". For Google sheets, specify \"GOOGLE_SHEETS\". For newline-delimited JSON, specify \"NEWLINE_DELIMITED_JSON\". For Avro files, specify \"AVRO\". For Google Cloud Datastore backups, specify \"DATASTORE_BACKUP\". [Beta] For Google Cloud Bigtable, specify \"BIGTABLE\"."]
+        #[doc = "\\[Required\\] The data format. For CSV files, specify “CSV”. For Google sheets, specify “GOOGLE_SHEETS”. For newline-delimited JSON, specify “NEWLINE_DELIMITED_JSON”. For Avro files, specify “AVRO”. For Google Cloud Datastore backups, specify “DATASTORE_BACKUP”. \\[Beta\\] For Google Cloud Bigtable, specify “BIGTABLE”."]
         #[serde(
             rename = "sourceFormat",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_format: ::std::option::Option<String>,
-        #[doc = "[Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups, exactly one URI can be specified. Also, the '*' wildcard character is not allowed."]
+        #[doc = "\\[Required\\] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one ‘*’ wildcard character and it must come after the ‘bucket’ name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups, exactly one URI can be specified. Also, the ‘*’ wildcard character is not allowed."]
         #[serde(
             rename = "sourceUris",
             default,
@@ -3850,7 +3850,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cache_hit: ::std::option::Option<bool>,
-        #[doc = "[Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
+        #[doc = "\\[Output-only\\] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
         #[serde(
             rename = "errors",
             default,
@@ -3885,7 +3885,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "[Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
+        #[doc = "\\[Output-only\\] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
         #[serde(
             rename = "numDmlAffectedRows",
             default,
@@ -4021,14 +4021,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleSheetsOptions {
-        #[doc = "[Optional] Range of a sheet to query from. Only used when non-empty. Typical format: sheet_name!top_left_cell_id:bottom_right_cell_id For example: sheet1!A1:B20"]
+        #[doc = "\\[Optional\\] Range of a sheet to query from. Only used when non-empty. Typical format: sheet_name!top_left_cell_id:bottom_right_cell_id For example: sheet1!A1:B20"]
         #[serde(
             rename = "range",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub range: ::std::option::Option<String>,
-        #[doc = "[Optional] The number of rows at the top of a sheet that BigQuery will skip when reading the data. The default value is 0. This property is useful if you have header rows that should be skipped. When autodetect is on, behavior is the following: * skipLeadingRows unspecified - Autodetect tries to detect headers in the first row. If they are not detected, the row is read as data. Otherwise data is read starting from the second row. * skipLeadingRows is 0 - Instructs autodetect that there are no headers and data should be read starting from the first row. * skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected, row N is just skipped. Otherwise row N is used to extract column names for the detected schema."]
+        #[doc = "\\[Optional\\] The number of rows at the top of a sheet that BigQuery will skip when reading the data. The default value is 0. This property is useful if you have header rows that should be skipped. When autodetect is on, behavior is the following: * skipLeadingRows unspecified - Autodetect tries to detect headers in the first row. If they are not detected, the row is read as data. Otherwise data is read starting from the second row. * skipLeadingRows is 0 - Instructs autodetect that there are no headers and data should be read starting from the first row. * skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected, row N is just skipped. Otherwise row N is used to extract column names for the detected schema."]
         #[serde(
             rename = "skipLeadingRows",
             default,
@@ -4060,21 +4060,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct HivePartitioningOptions {
-        #[doc = "[Optional] When set, what mode of hive partitioning to use when reading data. The following modes are supported. (1) AUTO: automatically infer partition key name(s) and type(s). (2) STRINGS: automatically infer partition key name(s). All types are interpreted as strings. (3) CUSTOM: partition key schema is encoded in the source URI prefix. Not all storage formats support hive partitioning. Requesting hive partitioning on an unsupported format will lead to an error. Currently supported types include: AVRO, CSV, JSON, ORC and Parquet."]
+        #[doc = "\\[Optional\\] When set, what mode of hive partitioning to use when reading data. The following modes are supported. (1) AUTO: automatically infer partition key name(s) and type(s). (2) STRINGS: automatically infer partition key name(s). All types are interpreted as strings. (3) CUSTOM: partition key schema is encoded in the source URI prefix. Not all storage formats support hive partitioning. Requesting hive partitioning on an unsupported format will lead to an error. Currently supported types include: AVRO, CSV, JSON, ORC and Parquet."]
         #[serde(
             rename = "mode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mode: ::std::option::Option<String>,
-        #[doc = "[Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. Note that this field should only be true when creating a permanent external table or querying a temporary external table. Hive-partitioned loads with requirePartitionFilter explicitly set to true will fail."]
+        #[doc = "\\[Optional\\] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. Note that this field should only be true when creating a permanent external table or querying a temporary external table. Hive-partitioned loads with requirePartitionFilter explicitly set to true will fail."]
         #[serde(
             rename = "requirePartitionFilter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub require_partition_filter: ::std::option::Option<bool>,
-        #[doc = "[Optional] When hive partition detection is requested, a common prefix for all source uris should be supplied. The prefix must end immediately before the partition key encoding begins. For example, consider files following this data layout. gs://bucket/path_to_table/dt=2019-01-01/country=BR/id=7/file.avro gs://bucket/path_to_table/dt=2018-12-31/country=CA/id=3/file.avro When hive partitioning is requested with either AUTO or STRINGS detection, the common prefix can be either of gs://bucket/path_to_table or gs://bucket/path_to_table/ (trailing slash does not matter)."]
+        #[doc = "\\[Optional\\] When hive partition detection is requested, a common prefix for all source uris should be supplied. The prefix must end immediately before the partition key encoding begins. For example, consider files following this data layout. gs://bucket/path_to_table/dt=2019-01-01/country=BR/id=7/file.avro gs://bucket/path_to_table/dt=2018-12-31/country=CA/id=3/file.avro When hive partitioning is requested with either AUTO or STRINGS detection, the common prefix can be either of gs://bucket/path_to_table or gs://bucket/path_to_table/ (trailing slash does not matter)."]
         #[serde(
             rename = "sourceUriPrefix",
             default,
@@ -4360,7 +4360,7 @@ pub mod schemas {
         NotStarted,
         #[doc = "Running state."]
         Running,
-        #[doc = "Trial stopped early because it's not promising."]
+        #[doc = "Trial stopped early because it’s not promising."]
         StoppedEarly,
         #[doc = "The trial succeeded."]
         Succeeded,
@@ -4669,63 +4669,63 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Job {
-        #[doc = "[Required] Describes the job configuration."]
+        #[doc = "\\[Required\\] Describes the job configuration."]
         #[serde(
             rename = "configuration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub configuration: ::std::option::Option<crate::schemas::JobConfiguration>,
-        #[doc = "[Output-only] A hash of this resource."]
+        #[doc = "\\[Output-only\\] A hash of this resource."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "[Output-only] Opaque ID field of the job"]
+        #[doc = "\\[Output-only\\] Opaque ID field of the job"]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "[Optional] Reference describing the unique-per-user name of the job."]
+        #[doc = "\\[Optional\\] Reference describing the unique-per-user name of the job."]
         #[serde(
             rename = "jobReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_reference: ::std::option::Option<crate::schemas::JobReference>,
-        #[doc = "[Output-only] The type of the resource."]
+        #[doc = "\\[Output-only\\] The type of the resource."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "[Output-only] A URL that can be used to access this resource again."]
+        #[doc = "\\[Output-only\\] A URL that can be used to access this resource again."]
         #[serde(
             rename = "selfLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "[Output-only] Information about the job, including starting time and ending time of the job."]
+        #[doc = "\\[Output-only\\] Information about the job, including starting time and ending time of the job."]
         #[serde(
             rename = "statistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub statistics: ::std::option::Option<crate::schemas::JobStatistics>,
-        #[doc = "[Output-only] The status of this job. Examine this value when polling an asynchronous job to see if the job is complete."]
+        #[doc = "\\[Output-only\\] The status of this job. Examine this value when polling an asynchronous job to see if the job is complete."]
         #[serde(
             rename = "status",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::JobStatus>,
-        #[doc = "[Output-only] Email address of the user who ran the job."]
+        #[doc = "\\[Output-only\\] Email address of the user who ran the job."]
         #[serde(
             rename = "user_email",
             default,
@@ -4772,28 +4772,28 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct JobConfiguration {
-        #[doc = "[Pick one] Copies a table."]
+        #[doc = "\\[Pick one\\] Copies a table."]
         #[serde(
             rename = "copy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub copy: ::std::option::Option<crate::schemas::JobConfigurationTableCopy>,
-        #[doc = "[Optional] If set, don't actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn't a dry run. Behavior of non-query jobs is undefined."]
+        #[doc = "\\[Optional\\] If set, don’t actually run this job. A valid query will return a mostly empty response with some processing statistics, while an invalid query will return the same error it would if it wasn’t a dry run. Behavior of non-query jobs is undefined."]
         #[serde(
             rename = "dryRun",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dry_run: ::std::option::Option<bool>,
-        #[doc = "[Pick one] Configures an extract job."]
+        #[doc = "\\[Pick one\\] Configures an extract job."]
         #[serde(
             rename = "extract",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub extract: ::std::option::Option<crate::schemas::JobConfigurationExtract>,
-        #[doc = "[Optional] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job."]
+        #[doc = "\\[Optional\\] Job timeout in milliseconds. If this time limit is exceeded, BigQuery may attempt to terminate the job."]
         #[serde(
             rename = "jobTimeoutMs",
             default,
@@ -4801,7 +4801,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub job_timeout_ms: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The type of the job. Can be QUERY, LOAD, EXTRACT, COPY or UNKNOWN."]
+        #[doc = "\\[Output-only\\] The type of the job. Can be QUERY, LOAD, EXTRACT, COPY or UNKNOWN."]
         #[serde(
             rename = "jobType",
             default,
@@ -4815,14 +4815,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "[Pick one] Configures a load job."]
+        #[doc = "\\[Pick one\\] Configures a load job."]
         #[serde(
             rename = "load",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub load: ::std::option::Option<crate::schemas::JobConfigurationLoad>,
-        #[doc = "[Pick one] Configures a query job."]
+        #[doc = "\\[Pick one\\] Configures a query job."]
         #[serde(
             rename = "query",
             default,
@@ -4853,42 +4853,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobConfigurationExtract {
-        #[doc = "[Optional] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro. Not applicable when extracting models."]
+        #[doc = "\\[Optional\\] The compression type to use for exported files. Possible values include GZIP, DEFLATE, SNAPPY, and NONE. The default value is NONE. DEFLATE and SNAPPY are only supported for Avro. Not applicable when extracting models."]
         #[serde(
             rename = "compression",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compression: ::std::option::Option<String>,
-        #[doc = "[Optional] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON, PARQUET or AVRO for tables and ML_TF_SAVED_MODEL or ML_XGBOOST_BOOSTER for models. The default value for tables is CSV. Tables with nested or repeated fields cannot be exported as CSV. The default value for models is ML_TF_SAVED_MODEL."]
+        #[doc = "\\[Optional\\] The exported file format. Possible values include CSV, NEWLINE_DELIMITED_JSON, PARQUET or AVRO for tables and ML_TF_SAVED_MODEL or ML_XGBOOST_BOOSTER for models. The default value for tables is CSV. Tables with nested or repeated fields cannot be exported as CSV. The default value for models is ML_TF_SAVED_MODEL."]
         #[serde(
             rename = "destinationFormat",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_format: ::std::option::Option<String>,
-        #[doc = "[Pick one] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written."]
+        #[doc = "\\[Pick one\\] DEPRECATED: Use destinationUris instead, passing only one URI as necessary. The fully-qualified Google Cloud Storage URI where the extracted table should be written."]
         #[serde(
             rename = "destinationUri",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_uri: ::std::option::Option<String>,
-        #[doc = "[Pick one] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written."]
+        #[doc = "\\[Pick one\\] A list of fully-qualified Google Cloud Storage URIs where the extracted table should be written."]
         #[serde(
             rename = "destinationUris",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_uris: ::std::option::Option<Vec<String>>,
-        #[doc = "[Optional] Delimiter to use between fields in the exported data. Default is ','. Not applicable when extracting models."]
+        #[doc = "\\[Optional\\] Delimiter to use between fields in the exported data. Default is ‘,’. Not applicable when extracting models."]
         #[serde(
             rename = "fieldDelimiter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_delimiter: ::std::option::Option<String>,
-        #[doc = "[Optional] Whether to print out a header row in the results. Default is true. Not applicable when extracting models."]
+        #[doc = "\\[Optional\\] Whether to print out a header row in the results. Default is true. Not applicable when extracting models."]
         #[serde(
             rename = "printHeader",
             default,
@@ -4909,7 +4909,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Optional] If destinationFormat is set to \"AVRO\", this flag indicates whether to enable extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical types (timestamp-micros), instead of only using their raw types (avro-long). Not applicable when extracting models."]
+        #[doc = "\\[Optional\\] If destinationFormat is set to “AVRO”, this flag indicates whether to enable extracting applicable column types (such as TIMESTAMP) to their corresponding AVRO logical types (timestamp-micros), instead of only using their raw types (avro-long). Not applicable when extracting models."]
         #[serde(
             rename = "useAvroLogicalTypes",
             default,
@@ -4940,7 +4940,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobConfigurationLoad {
-        #[doc = "[Optional] Accept rows that are missing trailing optional columns. The missing values are treated as nulls. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. Only applicable to CSV, ignored for other formats."]
+        #[doc = "\\[Optional\\] Accept rows that are missing trailing optional columns. The missing values are treated as nulls. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. Only applicable to CSV, ignored for other formats."]
         #[serde(
             rename = "allowJaggedRows",
             default,
@@ -4954,28 +4954,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_quoted_newlines: ::std::option::Option<bool>,
-        #[doc = "[Optional] Indicates if we should automatically infer the options and schema for CSV and JSON sources."]
+        #[doc = "\\[Optional\\] Indicates if we should automatically infer the options and schema for CSV and JSON sources."]
         #[serde(
             rename = "autodetect",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub autodetect: ::std::option::Option<bool>,
-        #[doc = "[Beta] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered."]
+        #[doc = "\\[Beta\\] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered."]
         #[serde(
             rename = "clustering",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub clustering: ::std::option::Option<crate::schemas::Clustering>,
-        #[doc = "[Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
+        #[doc = "\\[Optional\\] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a ‘notFound’ error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "createDisposition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_disposition: ::std::option::Option<String>,
-        #[doc = "[Optional] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is [\"NUMERIC\", \"BIGNUMERIC\"]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, [\"BIGNUMERIC\", \"NUMERIC\"] is the same as [\"NUMERIC\", \"BIGNUMERIC\"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to [\"NUMERIC\", \"STRING\"] for ORC and [\"NUMERIC\"] for the other file formats."]
+        #[doc = "\\[Optional\\] Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is \\[“NUMERIC”, “BIGNUMERIC”\\]. If (precision,scale) is: (38,9) -> NUMERIC; (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); (76,38) -> BIGNUMERIC; (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, \\[“BIGNUMERIC”, “NUMERIC”\\] is the same as \\[“NUMERIC”, “BIGNUMERIC”\\] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to \\[“NUMERIC”, “STRING”\\] for ORC and \\[“NUMERIC”\\] for the other file formats."]
         #[serde(
             rename = "decimalTargetTypes",
             default,
@@ -4990,14 +4990,14 @@ pub mod schemas {
         )]
         pub destination_encryption_configuration:
             ::std::option::Option<crate::schemas::EncryptionConfiguration>,
-        #[doc = "[Required] The destination table to load the data into."]
+        #[doc = "\\[Required\\] The destination table to load the data into."]
         #[serde(
             rename = "destinationTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Beta] [Optional] Properties with which to create the destination table if it is new."]
+        #[doc = "\\[Beta\\] \\[Optional\\] Properties with which to create the destination table if it is new."]
         #[serde(
             rename = "destinationTableProperties",
             default,
@@ -5005,21 +5005,21 @@ pub mod schemas {
         )]
         pub destination_table_properties:
             ::std::option::Option<crate::schemas::DestinationTableProperties>,
-        #[doc = "[Optional] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties."]
+        #[doc = "\\[Optional\\] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties."]
         #[serde(
             rename = "encoding",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encoding: ::std::option::Option<String>,
-        #[doc = "[Optional] The separator for fields in a CSV file. The separator can be any ISO-8859-1 single-byte character. To use a character in the range 128-255, you must encode the character as UTF8. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence \"\\t\" to specify a tab separator. The default value is a comma (',')."]
+        #[doc = "\\[Optional\\] The separator for fields in a CSV file. The separator can be any ISO-8859-1 single-byte character. To use a character in the range 128-255, you must encode the character as UTF8. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence “\\\\t” to specify a tab separator. The default value is a comma (‘,’)."]
         #[serde(
             rename = "fieldDelimiter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_delimiter: ::std::option::Option<String>,
-        #[doc = "[Optional] Options to configure hive partitioning support."]
+        #[doc = "\\[Optional\\] Options to configure hive partitioning support."]
         #[serde(
             rename = "hivePartitioningOptions",
             default,
@@ -5027,84 +5027,84 @@ pub mod schemas {
         )]
         pub hive_partitioning_options:
             ::std::option::Option<crate::schemas::HivePartitioningOptions>,
-        #[doc = "[Optional] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don't match any column names"]
+        #[doc = "\\[Optional\\] Indicates if BigQuery should allow extra values that are not represented in the table schema. If true, the extra values are ignored. If false, records with extra columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing columns JSON: Named values that don’t match any column names"]
         #[serde(
             rename = "ignoreUnknownValues",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ignore_unknown_values: ::std::option::Option<bool>,
-        #[doc = "[Optional] If sourceFormat is set to newline-delimited JSON, indicates whether it should be processed as a JSON variant such as GeoJSON. For a sourceFormat other than JSON, omit this field. If the sourceFormat is newline-delimited JSON: - for newline-delimited GeoJSON: set to GEOJSON."]
+        #[doc = "\\[Optional\\] If sourceFormat is set to newline-delimited JSON, indicates whether it should be processed as a JSON variant such as GeoJSON. For a sourceFormat other than JSON, omit this field. If the sourceFormat is newline-delimited JSON: - for newline-delimited GeoJSON: set to GEOJSON."]
         #[serde(
             rename = "jsonExtension",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub json_extension: ::std::option::Option<String>,
-        #[doc = "[Optional] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid."]
+        #[doc = "\\[Optional\\] The maximum number of bad records that BigQuery can ignore when running the job. If the number of bad records exceeds this value, an invalid error is returned in the job result. This is only valid for CSV and JSON. The default value is 0, which requires that all records are valid."]
         #[serde(
             rename = "maxBadRecords",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_bad_records: ::std::option::Option<i32>,
-        #[doc = "[Optional] Specifies a string that represents a null value in a CSV file. For example, if you specify \"\\N\", BigQuery interprets \"\\N\" as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value."]
+        #[doc = "\\[Optional\\] Specifies a string that represents a null value in a CSV file. For example, if you specify “\\\\N”, BigQuery interprets “\\\\N” as a null value when loading a CSV file. The default value is the empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is present for all data types except for STRING and BYTE. For STRING and BYTE columns, BigQuery interprets the empty string as an empty value."]
         #[serde(
             rename = "nullMarker",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub null_marker: ::std::option::Option<String>,
-        #[doc = "[Optional] Options to configure parquet support."]
+        #[doc = "\\[Optional\\] Options to configure parquet support."]
         #[serde(
             rename = "parquetOptions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parquet_options: ::std::option::Option<crate::schemas::ParquetOptions>,
-        #[doc = "[Optional] Preserves the embedded ASCII control characters (the first 32 characters in the ASCII-table, from '\\x00' to '\\x1F') when loading from CSV. Only applicable to CSV, ignored for other formats."]
+        #[doc = "\\[Optional\\] Preserves the embedded ASCII control characters (the first 32 characters in the ASCII-table, from ‘\\\\x00’ to ‘\\\\x1F’) when loading from CSV. Only applicable to CSV, ignored for other formats."]
         #[serde(
             rename = "preserveAsciiControlCharacters",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preserve_ascii_control_characters: ::std::option::Option<bool>,
-        #[doc = "If sourceFormat is set to \"DATASTORE_BACKUP\", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result."]
+        #[doc = "If sourceFormat is set to “DATASTORE_BACKUP”, indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn’t found in the Cloud Datastore backup, an invalid error is returned in the job result."]
         #[serde(
             rename = "projectionFields",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub projection_fields: ::std::option::Option<Vec<String>>,
-        #[doc = "[Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('\"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true."]
+        #[doc = "\\[Optional\\] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote (‘“’). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true."]
         #[serde(
             rename = "quote",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quote: ::std::option::Option<String>,
-        #[doc = "[TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified."]
+        #[doc = "\\[TrustedTester\\] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified."]
         #[serde(
             rename = "rangePartitioning",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub range_partitioning: ::std::option::Option<crate::schemas::RangePartitioning>,
-        #[doc = "[Optional] The schema for the destination table. The schema can be omitted if the destination table already exists, or if you're loading data from Google Cloud Datastore."]
+        #[doc = "\\[Optional\\] The schema for the destination table. The schema can be omitted if the destination table already exists, or if you’re loading data from Google Cloud Datastore."]
         #[serde(
             rename = "schema",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
-        #[doc = "[Deprecated] The inline schema. For CSV schemas, specify as \"Field1:Type1[,Field2:Type2]*\". For example, \"foo:STRING, bar:INTEGER, baz:FLOAT\"."]
+        #[doc = "\\[Deprecated\\] The inline schema. For CSV schemas, specify as “Field1:Type1\\[,Field2:Type2\\]\\*”. For example, “foo:STRING, bar:INTEGER, baz:FLOAT”."]
         #[serde(
             rename = "schemaInline",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema_inline: ::std::option::Option<String>,
-        #[doc = "[Deprecated] The format of the schemaInline property."]
+        #[doc = "\\[Deprecated\\] The format of the schemaInline property."]
         #[serde(
             rename = "schemaInlineFormat",
             default,
@@ -5118,21 +5118,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema_update_options: ::std::option::Option<Vec<String>>,
-        #[doc = "[Optional] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped."]
+        #[doc = "\\[Optional\\] The number of rows at the top of a CSV file that BigQuery will skip when loading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped."]
         #[serde(
             rename = "skipLeadingRows",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub skip_leading_rows: ::std::option::Option<i32>,
-        #[doc = "[Optional] The format of the data files. For CSV files, specify \"CSV\". For datastore backups, specify \"DATASTORE_BACKUP\". For newline-delimited JSON, specify \"NEWLINE_DELIMITED_JSON\". For Avro, specify \"AVRO\". For parquet, specify \"PARQUET\". For orc, specify \"ORC\". The default value is CSV."]
+        #[doc = "\\[Optional\\] The format of the data files. For CSV files, specify “CSV”. For datastore backups, specify “DATASTORE_BACKUP”. For newline-delimited JSON, specify “NEWLINE_DELIMITED_JSON”. For Avro, specify “AVRO”. For parquet, specify “PARQUET”. For orc, specify “ORC”. The default value is CSV."]
         #[serde(
             rename = "sourceFormat",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_format: ::std::option::Option<String>,
-        #[doc = "[Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the '*' wildcard character is not allowed."]
+        #[doc = "\\[Required\\] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one ‘*’ wildcard character and it must come after the ‘bucket’ name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the ‘*’ wildcard character is not allowed."]
         #[serde(
             rename = "sourceUris",
             default,
@@ -5146,14 +5146,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_partitioning: ::std::option::Option<crate::schemas::TimePartitioning>,
-        #[doc = "[Optional] If sourceFormat is set to \"AVRO\", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER)."]
+        #[doc = "\\[Optional\\] If sourceFormat is set to “AVRO”, indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER)."]
         #[serde(
             rename = "useAvroLogicalTypes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub use_avro_logical_types: ::std::option::Option<bool>,
-        #[doc = "[Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_APPEND. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion."]
+        #[doc = "\\[Optional\\] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a ‘duplicate’ error is returned in the job result. The default value is WRITE_APPEND. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "writeDisposition",
             default,
@@ -5184,14 +5184,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobConfigurationQuery {
-        #[doc = "[Optional] If true and query uses legacy SQL dialect, allows the query to produce arbitrarily large result tables at a slight cost in performance. Requires destinationTable to be set. For standard SQL queries, this flag is ignored and large results are always allowed. However, you must still set destinationTable when result size exceeds the allowed maximum response size."]
+        #[doc = "\\[Optional\\] If true and query uses legacy SQL dialect, allows the query to produce arbitrarily large result tables at a slight cost in performance. Requires destinationTable to be set. For standard SQL queries, this flag is ignored and large results are always allowed. However, you must still set destinationTable when result size exceeds the allowed maximum response size."]
         #[serde(
             rename = "allowLargeResults",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_large_results: ::std::option::Option<bool>,
-        #[doc = "[Beta] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered."]
+        #[doc = "\\[Beta\\] Clustering specification for the destination table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered."]
         #[serde(
             rename = "clustering",
             default,
@@ -5205,7 +5205,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub connection_properties: ::std::option::Option<Vec<crate::schemas::ConnectionProperty>>,
-        #[doc = "[Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
+        #[doc = "\\[Optional\\] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a ‘notFound’ error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "createDisposition",
             default,
@@ -5219,7 +5219,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_session: ::std::option::Option<bool>,
-        #[doc = "[Optional] Specifies the default dataset to use for unqualified table names in the query. Note that this does not alter behavior of unqualified dataset names."]
+        #[doc = "\\[Optional\\] Specifies the default dataset to use for unqualified table names in the query. Note that this does not alter behavior of unqualified dataset names."]
         #[serde(
             rename = "defaultDataset",
             default,
@@ -5234,28 +5234,28 @@ pub mod schemas {
         )]
         pub destination_encryption_configuration:
             ::std::option::Option<crate::schemas::EncryptionConfiguration>,
-        #[doc = "[Optional] Describes the table where the query results should be stored. If not present, a new table will be created to store the results. This property must be set for large results that exceed the maximum response size."]
+        #[doc = "\\[Optional\\] Describes the table where the query results should be stored. If not present, a new table will be created to store the results. This property must be set for large results that exceed the maximum response size."]
         #[serde(
             rename = "destinationTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Optional] If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For standard SQL queries, this flag is ignored and results are never flattened."]
+        #[doc = "\\[Optional\\] If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For standard SQL queries, this flag is ignored and results are never flattened."]
         #[serde(
             rename = "flattenResults",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub flatten_results: ::std::option::Option<bool>,
-        #[doc = "[Optional] Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail (without incurring a charge). If unspecified, this will be set to your project default."]
+        #[doc = "\\[Optional\\] Limits the billing tier for this job. Queries that have resource usage beyond this tier will fail (without incurring a charge). If unspecified, this will be set to your project default."]
         #[serde(
             rename = "maximumBillingTier",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub maximum_billing_tier: ::std::option::Option<i32>,
-        #[doc = "[Optional] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default."]
+        #[doc = "\\[Optional\\] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default."]
         #[serde(
             rename = "maximumBytesBilled",
             default,
@@ -5270,21 +5270,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameter_mode: ::std::option::Option<String>,
-        #[doc = "[Deprecated] This property is deprecated."]
+        #[doc = "\\[Deprecated\\] This property is deprecated."]
         #[serde(
             rename = "preserveNulls",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preserve_nulls: ::std::option::Option<bool>,
-        #[doc = "[Optional] Specifies a priority for the query. Possible values include INTERACTIVE and BATCH. The default value is INTERACTIVE."]
+        #[doc = "\\[Optional\\] Specifies a priority for the query. Possible values include INTERACTIVE and BATCH. The default value is INTERACTIVE."]
         #[serde(
             rename = "priority",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub priority: ::std::option::Option<String>,
-        #[doc = "[Required] SQL query text to execute. The useLegacySql field can be used to indicate whether the query uses legacy SQL or standard SQL."]
+        #[doc = "\\[Required\\] SQL query text to execute. The useLegacySql field can be used to indicate whether the query uses legacy SQL or standard SQL."]
         #[serde(
             rename = "query",
             default,
@@ -5298,7 +5298,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query_parameters: ::std::option::Option<Vec<crate::schemas::QueryParameter>>,
-        #[doc = "[TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified."]
+        #[doc = "\\[TrustedTester\\] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified."]
         #[serde(
             rename = "rangePartitioning",
             default,
@@ -5312,7 +5312,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema_update_options: ::std::option::Option<Vec<String>>,
-        #[doc = "[Optional] If querying an external data source outside of BigQuery, describes the data format, location and other properties of the data source. By defining these properties, the data source can then be queried as if it were a standard BigQuery table."]
+        #[doc = "\\[Optional\\] If querying an external data source outside of BigQuery, describes the data format, location and other properties of the data source. By defining these properties, the data source can then be queried as if it were a standard BigQuery table."]
         #[serde(
             rename = "tableDefinitions",
             default,
@@ -5328,14 +5328,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_partitioning: ::std::option::Option<crate::schemas::TimePartitioning>,
-        #[doc = "Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false."]
+        #[doc = "Specifies whether to use BigQuery’s legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery’s standard SQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false."]
         #[serde(
             rename = "useLegacySql",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub use_legacy_sql: ::std::option::Option<bool>,
-        #[doc = "[Optional] Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. Moreover, the query cache is only available when a query does not have a destination table specified. The default value is true."]
+        #[doc = "\\[Optional\\] Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. Moreover, the query cache is only available when a query does not have a destination table specified. The default value is true."]
         #[serde(
             rename = "useQueryCache",
             default,
@@ -5350,7 +5350,7 @@ pub mod schemas {
         )]
         pub user_defined_function_resources:
             ::std::option::Option<Vec<crate::schemas::UserDefinedFunctionResource>>,
-        #[doc = "[Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema from the query result. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion."]
+        #[doc = "\\[Optional\\] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema from the query result. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a ‘duplicate’ error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "writeDisposition",
             default,
@@ -5370,7 +5370,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct JobConfigurationTableCopy {
-        #[doc = "[Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
+        #[doc = "\\[Optional\\] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a ‘notFound’ error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "createDisposition",
             default,
@@ -5385,42 +5385,42 @@ pub mod schemas {
         )]
         pub destination_encryption_configuration:
             ::std::option::Option<crate::schemas::EncryptionConfiguration>,
-        #[doc = "[Optional] The time when the destination table expires. Expired tables will be deleted and their storage reclaimed."]
+        #[doc = "\\[Optional\\] The time when the destination table expires. Expired tables will be deleted and their storage reclaimed."]
         #[serde(
             rename = "destinationExpirationTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_expiration_time: ::std::option::Option<::serde_json::Value>,
-        #[doc = "[Required] The destination table"]
+        #[doc = "\\[Required\\] The destination table"]
         #[serde(
             rename = "destinationTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Optional] Supported operation types in table copy job."]
+        #[doc = "\\[Optional\\] Supported operation types in table copy job."]
         #[serde(
             rename = "operationType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_type: ::std::option::Option<String>,
-        #[doc = "[Pick one] Source table to copy."]
+        #[doc = "\\[Pick one\\] Source table to copy."]
         #[serde(
             rename = "sourceTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Pick one] Source tables to copy."]
+        #[doc = "\\[Pick one\\] Source tables to copy."]
         #[serde(
             rename = "sourceTables",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_tables: ::std::option::Option<Vec<crate::schemas::TableReference>>,
-        #[doc = "[Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion."]
+        #[doc = "\\[Optional\\] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a ‘duplicate’ error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion."]
         #[serde(
             rename = "writeDisposition",
             default,
@@ -5486,7 +5486,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct JobListJobsItems {
-        #[doc = "[Full-projection-only] Specifies the job configuration."]
+        #[doc = "\\[Full-projection-only\\] Specifies the job configuration."]
         #[serde(
             rename = "configuration",
             default,
@@ -5528,21 +5528,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state: ::std::option::Option<String>,
-        #[doc = "[Output-only] Information about the job, including starting time and ending time of the job."]
+        #[doc = "\\[Output-only\\] Information about the job, including starting time and ending time of the job."]
         #[serde(
             rename = "statistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub statistics: ::std::option::Option<crate::schemas::JobStatistics>,
-        #[doc = "[Full-projection-only] Describes the state of the job."]
+        #[doc = "\\[Full-projection-only\\] Describes the state of the job."]
         #[serde(
             rename = "status",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::JobStatus>,
-        #[doc = "[Full-projection-only] Email address of the user who ran the job."]
+        #[doc = "\\[Full-projection-only\\] Email address of the user who ran the job."]
         #[serde(
             rename = "user_email",
             default,
@@ -5573,7 +5573,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobReference {
-        #[doc = "[Required] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters."]
+        #[doc = "\\[Required\\] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (\\_), or dashes (-). The maximum length is 1,024 characters."]
         #[serde(
             rename = "jobId",
             default,
@@ -5587,7 +5587,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the project containing this job."]
+        #[doc = "\\[Required\\] The ID of the project containing this job."]
         #[serde(
             rename = "projectId",
             default,
@@ -5609,21 +5609,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct JobStatistics {
-        #[doc = "[TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs."]
+        #[doc = "\\[TrustedTester\\] \\[Output-only\\] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs."]
         #[serde(
             rename = "completionRatio",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub completion_ratio: ::std::option::Option<f64>,
-        #[doc = "[Output-only] Statistics for a copy job."]
+        #[doc = "\\[Output-only\\] Statistics for a copy job."]
         #[serde(
             rename = "copy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub copy: ::std::option::Option<crate::schemas::JobStatistics5>,
-        #[doc = "[Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs."]
+        #[doc = "\\[Output-only\\] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs."]
         #[serde(
             rename = "creationTime",
             default,
@@ -5631,7 +5631,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
-        #[doc = "[Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state."]
+        #[doc = "\\[Output-only\\] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state."]
         #[serde(
             rename = "endTime",
             default,
@@ -5639,21 +5639,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub end_time: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Statistics for an extract job."]
+        #[doc = "\\[Output-only\\] Statistics for an extract job."]
         #[serde(
             rename = "extract",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub extract: ::std::option::Option<crate::schemas::JobStatistics4>,
-        #[doc = "[Output-only] Statistics for a load job."]
+        #[doc = "\\[Output-only\\] Statistics for a load job."]
         #[serde(
             rename = "load",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub load: ::std::option::Option<crate::schemas::JobStatistics3>,
-        #[doc = "[Output-only] Number of child jobs executed."]
+        #[doc = "\\[Output-only\\] Number of child jobs executed."]
         #[serde(
             rename = "numChildJobs",
             default,
@@ -5661,35 +5661,35 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_child_jobs: ::std::option::Option<i64>,
-        #[doc = "[Output-only] If this is a child job, the id of the parent."]
+        #[doc = "\\[Output-only\\] If this is a child job, the id of the parent."]
         #[serde(
             rename = "parentJobId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parent_job_id: ::std::option::Option<String>,
-        #[doc = "[Output-only] Statistics for a query job."]
+        #[doc = "\\[Output-only\\] Statistics for a query job."]
         #[serde(
             rename = "query",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<crate::schemas::JobStatistics2>,
-        #[doc = "[Output-only] Quotas which delayed this job's start time."]
+        #[doc = "\\[Output-only\\] Quotas which delayed this job’s start time."]
         #[serde(
             rename = "quotaDeferments",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quota_deferments: ::std::option::Option<Vec<String>>,
-        #[doc = "[Output-only] Name of the primary reservation assigned to this job. Note that this could be different than reservations reported in the reservation usage field if parent reservations were used to execute this job."]
+        #[doc = "\\[Output-only\\] Name of the primary reservation assigned to this job. Note that this could be different than reservations reported in the reservation usage field if parent reservations were used to execute this job."]
         #[serde(
             rename = "reservation_id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reservation_id: ::std::option::Option<String>,
-        #[doc = "[Output-only] Job resource usage breakdown by reservation."]
+        #[doc = "\\[Output-only\\] Job resource usage breakdown by reservation."]
         #[serde(
             rename = "reservationUsage",
             default,
@@ -5697,7 +5697,7 @@ pub mod schemas {
         )]
         pub reservation_usage:
             ::std::option::Option<Vec<crate::schemas::JobStatisticsReservationUsageItems>>,
-        #[doc = "[Output-only] [Preview] Statistics for row-level security. Present only for query and extract jobs."]
+        #[doc = "\\[Output-only\\] \\[Preview\\] Statistics for row-level security. Present only for query and extract jobs."]
         #[serde(
             rename = "rowLevelSecurityStatistics",
             default,
@@ -5705,21 +5705,21 @@ pub mod schemas {
         )]
         pub row_level_security_statistics:
             ::std::option::Option<crate::schemas::RowLevelSecurityStatistics>,
-        #[doc = "[Output-only] Statistics for a child job of a script."]
+        #[doc = "\\[Output-only\\] Statistics for a child job of a script."]
         #[serde(
             rename = "scriptStatistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub script_statistics: ::std::option::Option<crate::schemas::ScriptStatistics>,
-        #[doc = "[Output-only] [Preview] Information of the session if this job is part of one."]
+        #[doc = "\\[Output-only\\] \\[Preview\\] Information of the session if this job is part of one."]
         #[serde(
             rename = "sessionInfo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub session_info: ::std::option::Option<crate::schemas::SessionInfo>,
-        #[doc = "[Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE."]
+        #[doc = "\\[Output-only\\] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE."]
         #[serde(
             rename = "startTime",
             default,
@@ -5727,7 +5727,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub start_time: ::std::option::Option<i64>,
-        #[doc = "[Output-only] [Deprecated] Use the bytes processed in the query statistics instead."]
+        #[doc = "\\[Output-only\\] \\[Deprecated\\] Use the bytes processed in the query statistics instead."]
         #[serde(
             rename = "totalBytesProcessed",
             default,
@@ -5735,7 +5735,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_bytes_processed: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Slot-milliseconds for the job."]
+        #[doc = "\\[Output-only\\] Slot-milliseconds for the job."]
         #[serde(
             rename = "totalSlotMs",
             default,
@@ -5743,7 +5743,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_slot_ms: ::std::option::Option<i64>,
-        #[doc = "[Output-only] [Alpha] Information of the multi-statement transaction if this job is part of one."]
+        #[doc = "\\[Output-only\\] \\[Alpha\\] Information of the multi-statement transaction if this job is part of one."]
         #[serde(
             rename = "transactionInfo",
             default,
@@ -5774,14 +5774,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatisticsReservationUsageItems {
-        #[doc = "[Output-only] Reservation name or \"unreserved\" for on-demand resources usage."]
+        #[doc = "\\[Output-only\\] Reservation name or “unreserved” for on-demand resources usage."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[Output-only] Slot-milliseconds the job spent in the given reservation."]
+        #[doc = "\\[Output-only\\] Slot-milliseconds the job spent in the given reservation."]
         #[serde(
             rename = "slotMs",
             default,
@@ -5804,28 +5804,28 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct JobStatistics2 {
-        #[doc = "BI Engine specific Statistics. [Output-only] BI Engine specific Statistics."]
+        #[doc = "BI Engine specific Statistics. \\[Output-only\\] BI Engine specific Statistics."]
         #[serde(
             rename = "biEngineStatistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bi_engine_statistics: ::std::option::Option<crate::schemas::BiEngineStatistics>,
-        #[doc = "[Output-only] Billing tier for the job."]
+        #[doc = "\\[Output-only\\] Billing tier for the job."]
         #[serde(
             rename = "billingTier",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub billing_tier: ::std::option::Option<i32>,
-        #[doc = "[Output-only] Whether the query result was fetched from the query cache."]
+        #[doc = "\\[Output-only\\] Whether the query result was fetched from the query cache."]
         #[serde(
             rename = "cacheHit",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cache_hit: ::std::option::Option<bool>,
-        #[doc = "[Output-only] [Preview] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries."]
+        #[doc = "\\[Output-only\\] \\[Preview\\] The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries."]
         #[serde(
             rename = "ddlAffectedRowAccessPolicyCount",
             default,
@@ -5833,21 +5833,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub ddl_affected_row_access_policy_count: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information."]
+        #[doc = "\\[Output-only\\] The DDL destination table. Present only for ALTER TABLE RENAME TO queries. Note that ddl_target_table is used just for its type information."]
         #[serde(
             rename = "ddlDestinationTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_destination_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): \"CREATE\": The query created the DDL target. \"SKIP\": No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. \"REPLACE\": The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. \"DROP\": The query deleted the DDL target."]
+        #[doc = "The DDL operation performed, possibly dependent on the pre-existence of the DDL target. Possible values (new values might be added in the future): “CREATE”: The query created the DDL target. “SKIP”: No-op. Example cases: the query is CREATE TABLE IF NOT EXISTS while the table already exists, or the query is DROP TABLE IF EXISTS while the table does not exist. “REPLACE”: The query replaced the DDL target. Example case: the query is CREATE OR REPLACE TABLE, and the table already exists. “DROP”: The query deleted the DDL target."]
         #[serde(
             rename = "ddlOperationPerformed",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_operation_performed: ::std::option::Option<String>,
-        #[doc = "[Output-only] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries."]
+        #[doc = "\\[Output-only\\] The DDL target dataset. Present only for CREATE/ALTER/DROP SCHEMA queries."]
         #[serde(
             rename = "ddlTargetDataset",
             default,
@@ -5861,7 +5861,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_target_routine: ::std::option::Option<crate::schemas::RoutineReference>,
-        #[doc = "[Output-only] [Preview] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries."]
+        #[doc = "\\[Output-only\\] \\[Preview\\] The DDL target row access policy. Present only for CREATE/DROP ROW ACCESS POLICY queries."]
         #[serde(
             rename = "ddlTargetRowAccessPolicy",
             default,
@@ -5869,21 +5869,21 @@ pub mod schemas {
         )]
         pub ddl_target_row_access_policy:
             ::std::option::Option<crate::schemas::RowAccessPolicyReference>,
-        #[doc = "[Output-only] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries."]
+        #[doc = "\\[Output-only\\] The DDL target table. Present only for CREATE/DROP TABLE/VIEW and DROP ALL ROW ACCESS POLICIES queries."]
         #[serde(
             rename = "ddlTargetTable",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ddl_target_table: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
+        #[doc = "\\[Output-only\\] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
         #[serde(
             rename = "dmlStats",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dml_stats: ::std::option::Option<crate::schemas::DmlStatistics>,
-        #[doc = "[Output-only] The original estimate of bytes processed for the job."]
+        #[doc = "\\[Output-only\\] The original estimate of bytes processed for the job."]
         #[serde(
             rename = "estimatedBytesProcessed",
             default,
@@ -5891,28 +5891,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub estimated_bytes_processed: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Statistics of a BigQuery ML training job."]
+        #[doc = "\\[Output-only\\] Statistics of a BigQuery ML training job."]
         #[serde(
             rename = "mlStatistics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ml_statistics: ::std::option::Option<crate::schemas::MlStatistics>,
-        #[doc = "[Output-only, Beta] Information about create model query job progress."]
+        #[doc = "\\[Output-only, Beta\\] Information about create model query job progress."]
         #[serde(
             rename = "modelTraining",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_training: ::std::option::Option<crate::schemas::BigQueryModelTraining>,
-        #[doc = "[Output-only, Beta] Deprecated; do not use."]
+        #[doc = "\\[Output-only, Beta\\] Deprecated; do not use."]
         #[serde(
             rename = "modelTrainingCurrentIteration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_training_current_iteration: ::std::option::Option<i32>,
-        #[doc = "[Output-only, Beta] Deprecated; do not use."]
+        #[doc = "\\[Output-only, Beta\\] Deprecated; do not use."]
         #[serde(
             rename = "modelTrainingExpectedTotalIteration",
             default,
@@ -5920,7 +5920,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub model_training_expected_total_iteration: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
+        #[doc = "\\[Output-only\\] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
         #[serde(
             rename = "numDmlAffectedRows",
             default,
@@ -5928,28 +5928,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_dml_affected_rows: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Describes execution plan for the query."]
+        #[doc = "\\[Output-only\\] Describes execution plan for the query."]
         #[serde(
             rename = "queryPlan",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query_plan: ::std::option::Option<Vec<crate::schemas::ExplainQueryStage>>,
-        #[doc = "[Output-only] Referenced routines (persistent user-defined functions and stored procedures) for the job."]
+        #[doc = "\\[Output-only\\] Referenced routines (persistent user-defined functions and stored procedures) for the job."]
         #[serde(
             rename = "referencedRoutines",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referenced_routines: ::std::option::Option<Vec<crate::schemas::RoutineReference>>,
-        #[doc = "[Output-only] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list."]
+        #[doc = "\\[Output-only\\] Referenced tables for the job. Queries that reference more than 50 tables will not have a complete list."]
         #[serde(
             rename = "referencedTables",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referenced_tables: ::std::option::Option<Vec<crate::schemas::TableReference>>,
-        #[doc = "[Output-only] Job resource usage breakdown by reservation."]
+        #[doc = "\\[Output-only\\] Job resource usage breakdown by reservation."]
         #[serde(
             rename = "reservationUsage",
             default,
@@ -5957,28 +5957,28 @@ pub mod schemas {
         )]
         pub reservation_usage:
             ::std::option::Option<Vec<crate::schemas::JobStatistics2ReservationUsageItems>>,
-        #[doc = "[Output-only] The schema of the results. Present only for successful dry run of non-legacy SQL queries."]
+        #[doc = "\\[Output-only\\] The schema of the results. Present only for successful dry run of non-legacy SQL queries."]
         #[serde(
             rename = "schema",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
-        #[doc = "The type of query statement, if valid. Possible values (new values might be added in the future): \"SELECT\": SELECT query. \"INSERT\": INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \"UPDATE\": UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \"DELETE\": DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \"MERGE\": MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. \"ALTER_TABLE\": ALTER TABLE query. \"ALTER_VIEW\": ALTER VIEW query. \"ASSERT\": ASSERT condition AS 'description'. \"CREATE_FUNCTION\": CREATE FUNCTION query. \"CREATE_MODEL\": CREATE [OR REPLACE] MODEL ... AS SELECT ... . \"CREATE_PROCEDURE\": CREATE PROCEDURE query. \"CREATE_TABLE\": CREATE [OR REPLACE] TABLE without AS SELECT. \"CREATE_TABLE_AS_SELECT\": CREATE [OR REPLACE] TABLE ... AS SELECT ... . \"CREATE_VIEW\": CREATE [OR REPLACE] VIEW ... AS SELECT ... . \"DROP_FUNCTION\" : DROP FUNCTION query. \"DROP_PROCEDURE\": DROP PROCEDURE query. \"DROP_TABLE\": DROP TABLE query. \"DROP_VIEW\": DROP VIEW query."]
+        #[doc = "The type of query statement, if valid. Possible values (new values might be added in the future): “SELECT”: SELECT query. “INSERT”: INSERT query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “UPDATE”: UPDATE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “DELETE”: DELETE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “MERGE”: MERGE query; see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-manipulation-language. “ALTER_TABLE”: ALTER TABLE query. “ALTER_VIEW”: ALTER VIEW query. “ASSERT”: ASSERT condition AS ‘description’. “CREATE_FUNCTION”: CREATE FUNCTION query. “CREATE_MODEL”: CREATE \\[OR REPLACE\\] MODEL … AS SELECT … . “CREATE_PROCEDURE”: CREATE PROCEDURE query. “CREATE_TABLE”: CREATE \\[OR REPLACE\\] TABLE without AS SELECT. “CREATE_TABLE_AS_SELECT”: CREATE \\[OR REPLACE\\] TABLE … AS SELECT … . “CREATE_VIEW”: CREATE \\[OR REPLACE\\] VIEW … AS SELECT … . “DROP_FUNCTION” : DROP FUNCTION query. “DROP_PROCEDURE”: DROP PROCEDURE query. “DROP_TABLE”: DROP TABLE query. “DROP_VIEW”: DROP VIEW query."]
         #[serde(
             rename = "statementType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub statement_type: ::std::option::Option<String>,
-        #[doc = "[Output-only] [Beta] Describes a timeline of job execution."]
+        #[doc = "\\[Output-only\\] \\[Beta\\] Describes a timeline of job execution."]
         #[serde(
             rename = "timeline",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timeline: ::std::option::Option<Vec<crate::schemas::QueryTimelineSample>>,
-        #[doc = "[Output-only] Total bytes billed for the job."]
+        #[doc = "\\[Output-only\\] Total bytes billed for the job."]
         #[serde(
             rename = "totalBytesBilled",
             default,
@@ -5986,7 +5986,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_bytes_billed: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Total bytes processed for the job."]
+        #[doc = "\\[Output-only\\] Total bytes processed for the job."]
         #[serde(
             rename = "totalBytesProcessed",
             default,
@@ -5994,14 +5994,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_bytes_processed: ::std::option::Option<i64>,
-        #[doc = "[Output-only] For dry-run jobs, totalBytesProcessed is an estimate and this field specifies the accuracy of the estimate. Possible values can be: UNKNOWN: accuracy of the estimate is unknown. PRECISE: estimate is precise. LOWER_BOUND: estimate is lower bound of what the query would cost. UPPER_BOUND: estimate is upper bound of what the query would cost."]
+        #[doc = "\\[Output-only\\] For dry-run jobs, totalBytesProcessed is an estimate and this field specifies the accuracy of the estimate. Possible values can be: UNKNOWN: accuracy of the estimate is unknown. PRECISE: estimate is precise. LOWER_BOUND: estimate is lower bound of what the query would cost. UPPER_BOUND: estimate is upper bound of what the query would cost."]
         #[serde(
             rename = "totalBytesProcessedAccuracy",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub total_bytes_processed_accuracy: ::std::option::Option<String>,
-        #[doc = "[Output-only] Total number of partitions processed from all partitioned tables referenced in the job."]
+        #[doc = "\\[Output-only\\] Total number of partitions processed from all partitioned tables referenced in the job."]
         #[serde(
             rename = "totalPartitionsProcessed",
             default,
@@ -6009,7 +6009,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub total_partitions_processed: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Slot-milliseconds for the job."]
+        #[doc = "\\[Output-only\\] Slot-milliseconds for the job."]
         #[serde(
             rename = "totalSlotMs",
             default,
@@ -6048,14 +6048,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatistics2ReservationUsageItems {
-        #[doc = "[Output-only] Reservation name or \"unreserved\" for on-demand resources usage."]
+        #[doc = "\\[Output-only\\] Reservation name or “unreserved” for on-demand resources usage."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[Output-only] Slot-milliseconds the job spent in the given reservation."]
+        #[doc = "\\[Output-only\\] Slot-milliseconds the job spent in the given reservation."]
         #[serde(
             rename = "slotMs",
             default,
@@ -6087,7 +6087,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatistics3 {
-        #[doc = "[Output-only] The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data."]
+        #[doc = "\\[Output-only\\] The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data."]
         #[serde(
             rename = "badRecords",
             default,
@@ -6095,7 +6095,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub bad_records: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of bytes of source data in a load job."]
+        #[doc = "\\[Output-only\\] Number of bytes of source data in a load job."]
         #[serde(
             rename = "inputFileBytes",
             default,
@@ -6103,7 +6103,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub input_file_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of source files in a load job."]
+        #[doc = "\\[Output-only\\] Number of source files in a load job."]
         #[serde(
             rename = "inputFiles",
             default,
@@ -6111,7 +6111,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub input_files: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change."]
+        #[doc = "\\[Output-only\\] Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change."]
         #[serde(
             rename = "outputBytes",
             default,
@@ -6119,7 +6119,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub output_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change."]
+        #[doc = "\\[Output-only\\] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change."]
         #[serde(
             rename = "outputRows",
             default,
@@ -6151,14 +6151,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatistics4 {
-        #[doc = "[Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the 'destinationUris' field."]
+        #[doc = "\\[Output-only\\] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the ‘destinationUris’ field."]
         #[serde(
             rename = "destinationUriFileCounts",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub destination_uri_file_counts: ::std::option::Option<Vec<i64>>,
-        #[doc = "[Output-only] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes."]
+        #[doc = "\\[Output-only\\] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes."]
         #[serde(
             rename = "inputBytes",
             default,
@@ -6190,7 +6190,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatistics5 {
-        #[doc = "[Output-only] Number of logical bytes copied to the destination table."]
+        #[doc = "\\[Output-only\\] Number of logical bytes copied to the destination table."]
         #[serde(
             rename = "copied_logical_bytes",
             default,
@@ -6198,7 +6198,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub copied_logical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of rows copied to the destination table."]
+        #[doc = "\\[Output-only\\] Number of rows copied to the destination table."]
         #[serde(
             rename = "copied_rows",
             default,
@@ -6230,21 +6230,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct JobStatus {
-        #[doc = "[Output-only] Final error result of the job. If present, indicates that the job has completed and was unsuccessful."]
+        #[doc = "\\[Output-only\\] Final error result of the job. If present, indicates that the job has completed and was unsuccessful."]
         #[serde(
             rename = "errorResult",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error_result: ::std::option::Option<crate::schemas::ErrorProto>,
-        #[doc = "[Output-only] The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
+        #[doc = "\\[Output-only\\] The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
         #[serde(
             rename = "errors",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<Vec<crate::schemas::ErrorProto>>,
-        #[doc = "[Output-only] Running state of the job."]
+        #[doc = "\\[Output-only\\] Running state of the job."]
         #[serde(
             rename = "state",
             default,
@@ -6428,14 +6428,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MaterializedViewDefinition {
-        #[doc = "[Optional] [TrustedTester] Enable automatic refresh of the materialized view when the base table is updated. The default value is \"true\"."]
+        #[doc = "\\[Optional\\] \\[TrustedTester\\] Enable automatic refresh of the materialized view when the base table is updated. The default value is “true”."]
         #[serde(
             rename = "enableRefresh",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_refresh: ::std::option::Option<bool>,
-        #[doc = "[Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch."]
+        #[doc = "\\[Output-only\\] \\[TrustedTester\\] The time when this materialized view was last modified, in milliseconds since the epoch."]
         #[serde(
             rename = "lastRefreshTime",
             default,
@@ -6443,14 +6443,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub last_refresh_time: ::std::option::Option<i64>,
-        #[doc = "[Required] A query whose result is persisted."]
+        #[doc = "\\[Required\\] A query whose result is persisted."]
         #[serde(
             rename = "query",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
-        #[doc = "[Optional] [TrustedTester] The maximum frequency at which this materialized view will be refreshed. The default value is \"1800000\" (30 minutes)."]
+        #[doc = "\\[Optional\\] \\[TrustedTester\\] The maximum frequency at which this materialized view will be refreshed. The default value is “1800000” (30 minutes)."]
         #[serde(
             rename = "refreshIntervalMs",
             default,
@@ -6480,7 +6480,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub iteration_results: ::std::option::Option<Vec<crate::schemas::IterationResult>>,
-        #[doc = "Maximum number of iterations specified as max_iterations in the 'CREATE MODEL' query. The actual number of iterations may be less than this number due to early stop."]
+        #[doc = "Maximum number of iterations specified as max_iterations in the ‘CREATE MODEL’ query. The actual number of iterations may be less than this number due to early stop."]
         #[serde(
             rename = "maxIterations",
             default,
@@ -6585,7 +6585,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hparam_trials: ::std::option::Option<Vec<crate::schemas::HparamTuningTrial>>,
-        #[doc = "Output only. Label columns that were used to train this model. The output of the model will have a \"predicted_\" prefix to these columns."]
+        #[doc = "Output only. Label columns that were used to train this model. The output of the model will have a “predicted\\_” prefix to these columns."]
         #[serde(
             rename = "labelColumns",
             default,
@@ -6797,14 +6797,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ModelDefinition {
-        #[doc = "[Output-only, Beta] Model options used for the first training run. These options are immutable for subsequent training runs. Default values are used for any options not specified in the input query."]
+        #[doc = "\\[Output-only, Beta\\] Model options used for the first training run. These options are immutable for subsequent training runs. Default values are used for any options not specified in the input query."]
         #[serde(
             rename = "modelOptions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_options: ::std::option::Option<crate::schemas::ModelDefinitionModelOptions>,
-        #[doc = "[Output-only, Beta] Information about ml training runs, each training run comprises of multiple iterations and there may be multiple training runs for the model if warm start is used or if a user decides to continue a previously cancelled query."]
+        #[doc = "\\[Output-only, Beta\\] Information about ml training runs, each training run comprises of multiple iterations and there may be multiple training runs for the model if warm start is used or if a user decides to continue a previously cancelled query."]
         #[serde(
             rename = "trainingRuns",
             default,
@@ -6877,21 +6877,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ModelReference {
-        #[doc = "[Required] The ID of the dataset containing this model."]
+        #[doc = "\\[Required\\] The ID of the dataset containing this model."]
         #[serde(
             rename = "datasetId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the model. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters."]
+        #[doc = "\\[Required\\] The ID of the model. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_). The maximum length is 1,024 characters."]
         #[serde(
             rename = "modelId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the project containing this model."]
+        #[doc = "\\[Required\\] The ID of the project containing this model."]
         #[serde(
             rename = "projectId",
             default,
@@ -6952,14 +6952,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ParquetOptions {
-        #[doc = "[Optional] Indicates whether to use schema inference specifically for Parquet LIST logical type."]
+        #[doc = "\\[Optional\\] Indicates whether to use schema inference specifically for Parquet LIST logical type."]
         #[serde(
             rename = "enableListInference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enable_list_inference: ::std::option::Option<bool>,
-        #[doc = "[Optional] Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default."]
+        #[doc = "\\[Optional\\] Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default."]
         #[serde(
             rename = "enumAsString",
             default,
@@ -7210,7 +7210,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ProjectReference {
-        #[doc = "[Required] ID of the project. Can be either the numeric ID or the assigned ID of the project."]
+        #[doc = "\\[Required\\] ID of the project. Can be either the numeric ID or the assigned ID of the project."]
         #[serde(
             rename = "projectId",
             default,
@@ -7241,21 +7241,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct QueryParameter {
-        #[doc = "[Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query."]
+        #[doc = "\\[Optional\\] If unset, this is a positional parameter. Otherwise, should be unique within a query."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[Required] The type of this parameter."]
+        #[doc = "\\[Required\\] The type of this parameter."]
         #[serde(
             rename = "parameterType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameter_type: ::std::option::Option<crate::schemas::QueryParameterType>,
-        #[doc = "[Required] The value of this parameter."]
+        #[doc = "\\[Required\\] The value of this parameter."]
         #[serde(
             rename = "parameterValue",
             default,
@@ -7286,21 +7286,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct QueryParameterType {
-        #[doc = "[Optional] The type of the array's elements, if this is an array."]
+        #[doc = "\\[Optional\\] The type of the array’s elements, if this is an array."]
         #[serde(
             rename = "arrayType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub array_type: ::std::option::Option<Box<crate::schemas::QueryParameterType>>,
-        #[doc = "[Required] The top level type of this field."]
+        #[doc = "\\[Required\\] The top level type of this field."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "[Optional] The types of the fields of this struct, in order, if this is a struct."]
+        #[doc = "\\[Optional\\] The types of the fields of this struct, in order, if this is a struct."]
         #[serde(
             rename = "structTypes",
             default,
@@ -7332,21 +7332,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct QueryParameterTypeStructTypesItems {
-        #[doc = "[Optional] Human-oriented description of the field."]
+        #[doc = "\\[Optional\\] Human-oriented description of the field."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[Optional] The name of this field."]
+        #[doc = "\\[Optional\\] The name of this field."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[Required] The type of this field."]
+        #[doc = "\\[Required\\] The type of this field."]
         #[serde(
             rename = "type",
             default,
@@ -7377,14 +7377,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct QueryParameterValue {
-        #[doc = "[Optional] The array values, if this is an array type."]
+        #[doc = "\\[Optional\\] The array values, if this is an array type."]
         #[serde(
             rename = "arrayValues",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub array_values: ::std::option::Option<Vec<crate::schemas::QueryParameterValue>>,
-        #[doc = "[Optional] The struct field values, in order of the struct type's declaration."]
+        #[doc = "\\[Optional\\] The struct field values, in order of the struct type’s declaration."]
         #[serde(
             rename = "structValues",
             default,
@@ -7393,7 +7393,7 @@ pub mod schemas {
         pub struct_values: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::QueryParameterValue>,
         >,
-        #[doc = "[Optional] The value of this value, if a simple scalar type."]
+        #[doc = "\\[Optional\\] The value of this value, if a simple scalar type."]
         #[serde(
             rename = "value",
             default,
@@ -7438,14 +7438,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_session: ::std::option::Option<bool>,
-        #[doc = "[Optional] Specifies the default datasetId and projectId to assume for any unqualified table names in the query. If not set, all table names in the query string must be qualified in the format 'datasetId.tableId'."]
+        #[doc = "\\[Optional\\] Specifies the default datasetId and projectId to assume for any unqualified table names in the query. If not set, all table names in the query string must be qualified in the format ‘datasetId.tableId’."]
         #[serde(
             rename = "defaultDataset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_dataset: ::std::option::Option<crate::schemas::DatasetReference>,
-        #[doc = "[Optional] If set to true, BigQuery doesn't run the job. Instead, if the query is valid, BigQuery returns statistics about the job such as how many bytes would be processed. If the query is invalid, an error returns. The default value is false."]
+        #[doc = "\\[Optional\\] If set to true, BigQuery doesn’t run the job. Instead, if the query is valid, BigQuery returns statistics about the job such as how many bytes would be processed. If the query is invalid, an error returns. The default value is false."]
         #[serde(
             rename = "dryRun",
             default,
@@ -7473,14 +7473,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "[Optional] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies."]
+        #[doc = "\\[Optional\\] The maximum number of rows of data to return per page of results. Setting this flag to a small value such as 1000 and then paging through results might improve reliability when the query result set is large. In addition to this limit, responses are also limited to 10 MB. By default, there is no maximum row count, and only the byte limit applies."]
         #[serde(
             rename = "maxResults",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_results: ::std::option::Option<u32>,
-        #[doc = "[Optional] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default."]
+        #[doc = "\\[Optional\\] Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit will fail (without incurring a charge). If unspecified, this will be set to your project default."]
         #[serde(
             rename = "maximumBytesBilled",
             default,
@@ -7495,14 +7495,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameter_mode: ::std::option::Option<String>,
-        #[doc = "[Deprecated] This property is deprecated."]
+        #[doc = "\\[Deprecated\\] This property is deprecated."]
         #[serde(
             rename = "preserveNulls",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub preserve_nulls: ::std::option::Option<bool>,
-        #[doc = "[Required] A query string, following the BigQuery query syntax, of the query to execute. Example: \"SELECT count(f1) FROM [myProjectId:myDatasetId.myTableId]\"."]
+        #[doc = "\\[Required\\] A query string, following the BigQuery query syntax, of the query to execute. Example: “SELECT count(f1) FROM \\[myProjectId:myDatasetId.myTableId\\]”."]
         #[serde(
             rename = "query",
             default,
@@ -7516,28 +7516,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query_parameters: ::std::option::Option<Vec<crate::schemas::QueryParameter>>,
-        #[doc = "A unique user provided identifier to ensure idempotent behavior for queries. Note that this is different from the job_id. It has the following properties: 1. It is case-sensitive, limited to up to 36 ASCII characters. A UUID is recommended. 2. Read only queries can ignore this token since they are nullipotent by definition. 3. For the purposes of idempotency ensured by the request_id, a request is considered duplicate of another only if they have the same request_id and are actually duplicates. When determining whether a request is a duplicate of the previous request, all parameters in the request that may affect the behavior are considered. For example, query, connection_properties, query_parameters, use_legacy_sql are parameters that affect the result and are considered when determining whether a request is a duplicate, but properties like timeout_ms don't affect the result and are thus not considered. Dry run query requests are never considered duplicate of another request. 4. When a duplicate mutating query request is detected, it returns: a. the results of the mutation if it completes successfully within the timeout. b. the running operation if it is still in progress at the end of the timeout. 5. Its lifetime is limited to 15 minutes. In other words, if two requests are sent with the same request_id, but more than 15 minutes apart, idempotency is not guaranteed."]
+        #[doc = "A unique user provided identifier to ensure idempotent behavior for queries. Note that this is different from the job_id. It has the following properties: 1. It is case-sensitive, limited to up to 36 ASCII characters. A UUID is recommended. 2. Read only queries can ignore this token since they are nullipotent by definition. 3. For the purposes of idempotency ensured by the request_id, a request is considered duplicate of another only if they have the same request_id and are actually duplicates. When determining whether a request is a duplicate of the previous request, all parameters in the request that may affect the behavior are considered. For example, query, connection_properties, query_parameters, use_legacy_sql are parameters that affect the result and are considered when determining whether a request is a duplicate, but properties like timeout_ms don’t affect the result and are thus not considered. Dry run query requests are never considered duplicate of another request. 4. When a duplicate mutating query request is detected, it returns: a. the results of the mutation if it completes successfully within the timeout. b. the running operation if it is still in progress at the end of the timeout. 5. Its lifetime is limited to 15 minutes. In other words, if two requests are sent with the same request_id, but more than 15 minutes apart, idempotency is not guaranteed."]
         #[serde(
             rename = "requestId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub request_id: ::std::option::Option<String>,
-        #[doc = "[Optional] How long to wait for the query to complete, in milliseconds, before the request times out and returns. Note that this is only a timeout for the request, not the query. If the query takes longer to run than the timeout value, the call returns without any results and with the 'jobComplete' flag set to false. You can call GetQueryResults() to wait for the query to complete and read the results. The default value is 10000 milliseconds (10 seconds)."]
+        #[doc = "\\[Optional\\] How long to wait for the query to complete, in milliseconds, before the request times out and returns. Note that this is only a timeout for the request, not the query. If the query takes longer to run than the timeout value, the call returns without any results and with the ‘jobComplete’ flag set to false. You can call GetQueryResults() to wait for the query to complete and read the results. The default value is 10000 milliseconds (10 seconds)."]
         #[serde(
             rename = "timeoutMs",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timeout_ms: ::std::option::Option<u32>,
-        #[doc = "Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false."]
+        #[doc = "Specifies whether to use BigQuery’s legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery’s standard SQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false."]
         #[serde(
             rename = "useLegacySql",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub use_legacy_sql: ::std::option::Option<bool>,
-        #[doc = "[Optional] Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. The default value is true."]
+        #[doc = "\\[Optional\\] Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. The default value is true."]
         #[serde(
             rename = "useQueryCache",
             default,
@@ -7564,14 +7564,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cache_hit: ::std::option::Option<bool>,
-        #[doc = "[Output-only] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
+        #[doc = "\\[Output-only\\] Detailed statistics for DML statements Present only for DML statements INSERT, UPDATE, DELETE or TRUNCATE."]
         #[serde(
             rename = "dmlStats",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dml_stats: ::std::option::Option<crate::schemas::DmlStatistics>,
-        #[doc = "[Output-only] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
+        #[doc = "\\[Output-only\\] The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful."]
         #[serde(
             rename = "errors",
             default,
@@ -7599,7 +7599,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "[Output-only] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
+        #[doc = "\\[Output-only\\] The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE."]
         #[serde(
             rename = "numDmlAffectedRows",
             default,
@@ -7628,7 +7628,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
-        #[doc = "[Output-only] [Preview] Information of the session if this job is part of one."]
+        #[doc = "\\[Output-only\\] \\[Preview\\] Information of the session if this job is part of one."]
         #[serde(
             rename = "sessionInfo",
             default,
@@ -7739,14 +7739,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RangePartitioning {
-        #[doc = "[TrustedTester] [Required] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64."]
+        #[doc = "\\[TrustedTester\\] \\[Required\\] The table is partitioned by this field. The field must be a top-level NULLABLE/REQUIRED field. The only supported type is INTEGER/INT64."]
         #[serde(
             rename = "field",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field: ::std::option::Option<String>,
-        #[doc = "[TrustedTester] [Required] Defines the ranges for range partitioning."]
+        #[doc = "\\[TrustedTester\\] \\[Required\\] Defines the ranges for range partitioning."]
         #[serde(
             rename = "range",
             default,
@@ -7777,7 +7777,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RangePartitioningRange {
-        #[doc = "[TrustedTester] [Required] The end of range partitioning, exclusive."]
+        #[doc = "\\[TrustedTester\\] \\[Required\\] The end of range partitioning, exclusive."]
         #[serde(
             rename = "end",
             default,
@@ -7785,7 +7785,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub end: ::std::option::Option<i64>,
-        #[doc = "[TrustedTester] [Required] The width of each interval."]
+        #[doc = "\\[TrustedTester\\] \\[Required\\] The width of each interval."]
         #[serde(
             rename = "interval",
             default,
@@ -7793,7 +7793,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub interval: ::std::option::Option<i64>,
-        #[doc = "[TrustedTester] [Required] The start of range partitioning, inclusive."]
+        #[doc = "\\[TrustedTester\\] \\[Required\\] The start of range partitioning, inclusive."]
         #[serde(
             rename = "start",
             default,
@@ -7961,14 +7961,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Optional. If language = \"JAVASCRIPT\", this field stores the path of the imported JAVASCRIPT libraries."]
+        #[doc = "Optional. If language = “JAVASCRIPT”, this field stores the path of the imported JAVASCRIPT libraries."]
         #[serde(
             rename = "importedLibraries",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub imported_libraries: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. Defaults to \"SQL\"."]
+        #[doc = "Optional. Defaults to “SQL”."]
         #[serde(
             rename = "language",
             default,
@@ -7983,14 +7983,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub last_modified_time: ::std::option::Option<i64>,
-        #[doc = "Optional. Can be set only if routine_type = \"TABLE_VALUED_FUNCTION\". If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specificed in return table type, at query time."]
+        #[doc = "Optional. Can be set only if routine_type = “TABLE_VALUED_FUNCTION”. If absent, the return table type is inferred from definition_body at query time in each query that references this routine. If present, then the columns in the evaluated table result will be cast to match the column types specificed in return table type, at query time."]
         #[serde(
             rename = "returnTableType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub return_table_type: ::std::option::Option<crate::schemas::StandardSqlTableType>,
-        #[doc = "Optional if language = \"SQL\"; required otherwise. Cannot be set if routine_type = \"TABLE_VALUED_FUNCTION\". If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: \"FLOAT64\"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64."]
+        #[doc = "Optional if language = “SQL”; required otherwise. Cannot be set if routine_type = “TABLE_VALUED_FUNCTION”. If absent, the return type is inferred from definition_body at query time in each query that references this routine. If present, then the evaluated result will be cast to the specified returned type at query time. For example, for the functions created with the following statements: * `CREATE FUNCTION Add(x FLOAT64, y FLOAT64) RETURNS FLOAT64 AS (x + y);` * `CREATE FUNCTION Increment(x FLOAT64) AS (Add(x, 1));` * `CREATE FUNCTION Decrement(x FLOAT64) RETURNS FLOAT64 AS (Add(x, -1));` The return_type is `{type_kind: \"FLOAT64\"}` for `Add` and `Decrement`, and is absent for `Increment` (inferred as FLOAT64 at query time). Suppose the function `Add` is replaced by `CREATE OR REPLACE FUNCTION Add(x INT64, y INT64) AS (x + y);` Then the inferred return type of `Increment` is automatically changed to INT64 at query time, while the return type of `Decrement` remains FLOAT64."]
         #[serde(
             rename = "returnType",
             default,
@@ -8279,21 +8279,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RoutineReference {
-        #[doc = "[Required] The ID of the dataset containing this routine."]
+        #[doc = "\\[Required\\] The ID of the dataset containing this routine."]
         #[serde(
             rename = "datasetId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the project containing this routine."]
+        #[doc = "\\[Required\\] The ID of the project containing this routine."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the routine. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters."]
+        #[doc = "\\[Required\\] The ID of the routine. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_). The maximum length is 256 characters."]
         #[serde(
             rename = "routineId",
             default,
@@ -8376,7 +8376,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Required. A SQL boolean expression that represents the rows defined by this row access policy, similar to the boolean expression in a WHERE clause of a SELECT query on a table. References to other tables, routines, and temporary functions are not supported. Examples: region=\"EU\" date_field = CAST('2019-9-27' as DATE) nullable_field is not NULL numeric_field BETWEEN 1.0 AND 5.0"]
+        #[doc = "Required. A SQL boolean expression that represents the rows defined by this row access policy, similar to the boolean expression in a WHERE clause of a SELECT query on a table. References to other tables, routines, and temporary functions are not supported. Examples: region=“EU” date_field = CAST(‘2019-9-27’ as DATE) nullable_field is not NULL numeric_field BETWEEN 1.0 AND 5.0"]
         #[serde(
             rename = "filterPredicate",
             default,
@@ -8422,28 +8422,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RowAccessPolicyReference {
-        #[doc = "[Required] The ID of the dataset containing this row access policy."]
+        #[doc = "\\[Required\\] The ID of the dataset containing this row access policy."]
         #[serde(
             rename = "datasetId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the row access policy. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters."]
+        #[doc = "\\[Required\\] The ID of the row access policy. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_). The maximum length is 256 characters."]
         #[serde(
             rename = "policyId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the project containing this row access policy."]
+        #[doc = "\\[Required\\] The ID of the project containing this row access policy."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the table containing this row access policy."]
+        #[doc = "\\[Required\\] The ID of the table containing this row access policy."]
         #[serde(
             rename = "tableId",
             default,
@@ -8474,7 +8474,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RowLevelSecurityStatistics {
-        #[doc = "[Output-only] [Preview] Whether any accessed data was protected by row access policies."]
+        #[doc = "\\[Output-only\\] \\[Preview\\] Whether any accessed data was protected by row access policies."]
         #[serde(
             rename = "rowLevelSecurityApplied",
             default,
@@ -8505,42 +8505,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ScriptStackFrame {
-        #[doc = "[Output-only] One-based end column."]
+        #[doc = "\\[Output-only\\] One-based end column."]
         #[serde(
             rename = "endColumn",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_column: ::std::option::Option<i32>,
-        #[doc = "[Output-only] One-based end line."]
+        #[doc = "\\[Output-only\\] One-based end line."]
         #[serde(
             rename = "endLine",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_line: ::std::option::Option<i32>,
-        #[doc = "[Output-only] Name of the active procedure, empty if in a top-level script."]
+        #[doc = "\\[Output-only\\] Name of the active procedure, empty if in a top-level script."]
         #[serde(
             rename = "procedureId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub procedure_id: ::std::option::Option<String>,
-        #[doc = "[Output-only] One-based start column."]
+        #[doc = "\\[Output-only\\] One-based start column."]
         #[serde(
             rename = "startColumn",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_column: ::std::option::Option<i32>,
-        #[doc = "[Output-only] One-based start line."]
+        #[doc = "\\[Output-only\\] One-based start line."]
         #[serde(
             rename = "startLine",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_line: ::std::option::Option<i32>,
-        #[doc = "[Output-only] Text of the current statement/expression."]
+        #[doc = "\\[Output-only\\] Text of the current statement/expression."]
         #[serde(
             rename = "text",
             default,
@@ -8571,7 +8571,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ScriptStatistics {
-        #[doc = "[Output-only] Whether this child job was a statement or expression."]
+        #[doc = "\\[Output-only\\] Whether this child job was a statement or expression."]
         #[serde(
             rename = "evaluationKind",
             default,
@@ -8609,7 +8609,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SessionInfo {
-        #[doc = "[Output-only] // [Preview] Id of the session."]
+        #[doc = "\\[Output-only\\] // \\[Preview\\] Id of the session."]
         #[serde(
             rename = "sessionId",
             default,
@@ -8678,14 +8678,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SnapshotDefinition {
-        #[doc = "[Required] Reference describing the ID of the table that was snapshot."]
+        #[doc = "\\[Required\\] Reference describing the ID of the table that was snapshot."]
         #[serde(
             rename = "baseTableReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_table_reference: ::std::option::Option<crate::schemas::TableReference>,
-        #[doc = "[Required] The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format."]
+        #[doc = "\\[Required\\] The time at which the base table was snapshot. This value is reported in the JSON response using RFC3339 format."]
         #[serde(
             rename = "snapshotTime",
             default,
@@ -8716,21 +8716,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct StandardSqlDataType {
-        #[doc = "The type of the array's elements, if type_kind = \"ARRAY\"."]
+        #[doc = "The type of the array’s elements, if type_kind = “ARRAY”."]
         #[serde(
             rename = "arrayElementType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub array_element_type: ::std::option::Option<Box<crate::schemas::StandardSqlDataType>>,
-        #[doc = "The fields of this struct, in order, if type_kind = \"STRUCT\"."]
+        #[doc = "The fields of this struct, in order, if type_kind = “STRUCT”."]
         #[serde(
             rename = "structType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub struct_type: ::std::option::Option<crate::schemas::StandardSqlStructType>,
-        #[doc = "Required. The top level type of this field. Can be any standard SQL data type (e.g., \"INT64\", \"DATE\", \"ARRAY\")."]
+        #[doc = "Required. The top level type of this field. Can be any standard SQL data type (e.g., “INT64”, “DATE”, “ARRAY”)."]
         #[serde(
             rename = "typeKind",
             default,
@@ -8754,15 +8754,15 @@ pub mod schemas {
         Array,
         #[doc = "Encoded as a decimal string."]
         Bignumeric,
-        #[doc = "Encoded as a boolean \"false\" or \"true\"."]
+        #[doc = "Encoded as a boolean “false” or “true”."]
         Bool,
         #[doc = "Encoded as a base64 string per RFC 4648, section 4."]
         Bytes,
         #[doc = "Encoded as RFC 3339 full-date format string: 1985-04-12"]
         Date,
-        #[doc = "Encoded as RFC 3339 full-date \"T\" partial-time: 1985-04-12T23:20:50.52"]
+        #[doc = "Encoded as RFC 3339 full-date “T” partial-time: 1985-04-12T23:20:50.52"]
         Datetime,
-        #[doc = "Encoded as a number, or string \"NaN\", \"Infinity\" or \"-Infinity\"."]
+        #[doc = "Encoded as a number, or string “NaN”, “Infinity” or “-Infinity”."]
         Float64,
         #[doc = "Encoded as WKT"]
         Geography,
@@ -8776,11 +8776,11 @@ pub mod schemas {
         Numeric,
         #[doc = "Encoded as a string value."]
         String,
-        #[doc = "Encoded as a list with fields of type Type.struct_type[i]. List is used because a JSON object cannot have duplicate field names."]
+        #[doc = "Encoded as a list with fields of type Type.struct_type\\[i\\]. List is used because a JSON object cannot have duplicate field names."]
         Struct,
         #[doc = "Encoded as RFC 3339 partial-time format string: 23:20:50.52"]
         Time,
-        #[doc = "Encoded as an RFC 3339 timestamp with mandatory \"Z\" time zone string: 1985-04-12T23:20:50.52Z"]
+        #[doc = "Encoded as an RFC 3339 timestamp with mandatory “Z” time zone string: 1985-04-12T23:20:50.52Z"]
         Timestamp,
         #[doc = "Invalid type."]
         TypeKindUnspecified,
@@ -8914,7 +8914,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Optional. The type of this parameter. Absent if not explicitly specified (e.g., CREATE FUNCTION statement can omit the return type; in this case the output parameter does not have this \"type\" field)."]
+        #[doc = "Optional. The type of this parameter. Absent if not explicitly specified (e.g., CREATE FUNCTION statement can omit the return type; in this case the output parameter does not have this “type” field)."]
         #[serde(
             rename = "type",
             default,
@@ -9006,7 +9006,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Streamingbuffer {
-        #[doc = "[Output-only] A lower-bound estimate of the number of bytes currently in the streaming buffer."]
+        #[doc = "\\[Output-only\\] A lower-bound estimate of the number of bytes currently in the streaming buffer."]
         #[serde(
             rename = "estimatedBytes",
             default,
@@ -9014,7 +9014,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub estimated_bytes: ::std::option::Option<u64>,
-        #[doc = "[Output-only] A lower-bound estimate of the number of rows currently in the streaming buffer."]
+        #[doc = "\\[Output-only\\] A lower-bound estimate of the number of rows currently in the streaming buffer."]
         #[serde(
             rename = "estimatedRows",
             default,
@@ -9022,7 +9022,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub estimated_rows: ::std::option::Option<u64>,
-        #[doc = "[Output-only] Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available."]
+        #[doc = "\\[Output-only\\] Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available."]
         #[serde(
             rename = "oldestEntryTime",
             default,
@@ -9076,21 +9076,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Table {
-        #[doc = "[Output-only] Clone definition."]
+        #[doc = "\\[Output-only\\] Clone definition."]
         #[serde(
             rename = "cloneDefinition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub clone_definition: ::std::option::Option<crate::schemas::CloneDefinition>,
-        #[doc = "[Beta] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered."]
+        #[doc = "\\[Beta\\] Clustering specification for the table. Must be specified with partitioning, data in the table will be first partitioned and subsequently clustered."]
         #[serde(
             rename = "clustering",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub clustering: ::std::option::Option<crate::schemas::Clustering>,
-        #[doc = "[Output-only] The time when this table was created, in milliseconds since the epoch."]
+        #[doc = "\\[Output-only\\] The time when this table was created, in milliseconds since the epoch."]
         #[serde(
             rename = "creationTime",
             default,
@@ -9098,14 +9098,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The default collation of the table."]
+        #[doc = "\\[Output-only\\] The default collation of the table."]
         #[serde(
             rename = "defaultCollation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_collation: ::std::option::Option<String>,
-        #[doc = "[Optional] A user-friendly description of this table."]
+        #[doc = "\\[Optional\\] A user-friendly description of this table."]
         #[serde(
             rename = "description",
             default,
@@ -9120,14 +9120,14 @@ pub mod schemas {
         )]
         pub encryption_configuration:
             ::std::option::Option<crate::schemas::EncryptionConfiguration>,
-        #[doc = "[Output-only] A hash of the table metadata. Used to ensure there were no concurrent modifications to the resource when attempting an update. Not guaranteed to change when the table contents or the fields numRows, numBytes, numLongTermBytes or lastModifiedTime change."]
+        #[doc = "\\[Output-only\\] A hash of the table metadata. Used to ensure there were no concurrent modifications to the resource when attempting an update. Not guaranteed to change when the table contents or the fields numRows, numBytes, numLongTermBytes or lastModifiedTime change."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "[Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables."]
+        #[doc = "\\[Optional\\] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables."]
         #[serde(
             rename = "expirationTime",
             default,
@@ -9135,7 +9135,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub expiration_time: ::std::option::Option<i64>,
-        #[doc = "[Optional] Describes the data format, location, and other properties of a table stored outside of BigQuery. By defining these properties, the data source can then be queried as if it were a standard BigQuery table."]
+        #[doc = "\\[Optional\\] Describes the data format, location, and other properties of a table stored outside of BigQuery. By defining these properties, the data source can then be queried as if it were a standard BigQuery table."]
         #[serde(
             rename = "externalDataConfiguration",
             default,
@@ -9143,21 +9143,21 @@ pub mod schemas {
         )]
         pub external_data_configuration:
             ::std::option::Option<crate::schemas::ExternalDataConfiguration>,
-        #[doc = "[Optional] A descriptive name for this table."]
+        #[doc = "\\[Optional\\] A descriptive name for this table."]
         #[serde(
             rename = "friendlyName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub friendly_name: ::std::option::Option<String>,
-        #[doc = "[Output-only] An opaque ID uniquely identifying the table."]
+        #[doc = "\\[Output-only\\] An opaque ID uniquely identifying the table."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "[Output-only] The type of the resource."]
+        #[doc = "\\[Output-only\\] The type of the resource."]
         #[serde(
             rename = "kind",
             default,
@@ -9171,7 +9171,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "[Output-only] The time when this table was last modified, in milliseconds since the epoch."]
+        #[doc = "\\[Output-only\\] The time when this table was last modified, in milliseconds since the epoch."]
         #[serde(
             rename = "lastModifiedTime",
             default,
@@ -9179,28 +9179,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub last_modified_time: ::std::option::Option<u64>,
-        #[doc = "[Output-only] The geographic location where the table resides. This value is inherited from the dataset."]
+        #[doc = "\\[Output-only\\] The geographic location where the table resides. This value is inherited from the dataset."]
         #[serde(
             rename = "location",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "[Optional] Materialized view definition."]
+        #[doc = "\\[Optional\\] Materialized view definition."]
         #[serde(
             rename = "materializedView",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub materialized_view: ::std::option::Option<crate::schemas::MaterializedViewDefinition>,
-        #[doc = "[Output-only, Beta] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run 'PREDICT' queries."]
+        #[doc = "\\[Output-only, Beta\\] Present iff this table represents a ML model. Describes the training information for the model, and it is required to run ‘PREDICT’ queries."]
         #[serde(
             rename = "model",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub model: ::std::option::Option<crate::schemas::ModelDefinition>,
-        #[doc = "[Output-only] Number of logical bytes that are less than 90 days old."]
+        #[doc = "\\[Output-only\\] Number of logical bytes that are less than 90 days old."]
         #[serde(
             rename = "num_active_logical_bytes",
             default,
@@ -9208,7 +9208,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_active_logical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[doc = "\\[Output-only\\] Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
         #[serde(
             rename = "num_active_physical_bytes",
             default,
@@ -9216,7 +9216,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_active_physical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The size of this table in bytes, excluding any data in the streaming buffer."]
+        #[doc = "\\[Output-only\\] The size of this table in bytes, excluding any data in the streaming buffer."]
         #[serde(
             rename = "numBytes",
             default,
@@ -9224,7 +9224,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The number of bytes in the table that are considered \"long-term storage\"."]
+        #[doc = "\\[Output-only\\] The number of bytes in the table that are considered “long-term storage”."]
         #[serde(
             rename = "numLongTermBytes",
             default,
@@ -9232,7 +9232,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_long_term_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of logical bytes that are more than 90 days old."]
+        #[doc = "\\[Output-only\\] Number of logical bytes that are more than 90 days old."]
         #[serde(
             rename = "num_long_term_logical_bytes",
             default,
@@ -9240,7 +9240,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_long_term_logical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[doc = "\\[Output-only\\] Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
         #[serde(
             rename = "num_long_term_physical_bytes",
             default,
@@ -9248,7 +9248,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_long_term_physical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[doc = "\\[Output-only\\] The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
         #[serde(
             rename = "num_partitions",
             default,
@@ -9256,7 +9256,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_partitions: ::std::option::Option<i64>,
-        #[doc = "[Output-only] [TrustedTester] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel."]
+        #[doc = "\\[Output-only\\] \\[TrustedTester\\] The physical size of this table in bytes, excluding any data in the streaming buffer. This includes compression and storage used for time travel."]
         #[serde(
             rename = "numPhysicalBytes",
             default,
@@ -9264,7 +9264,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_physical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The number of rows of data in this table, excluding any data in the streaming buffer."]
+        #[doc = "\\[Output-only\\] The number of rows of data in this table, excluding any data in the streaming buffer."]
         #[serde(
             rename = "numRows",
             default,
@@ -9272,7 +9272,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_rows: ::std::option::Option<u64>,
-        #[doc = "[Output-only] Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[doc = "\\[Output-only\\] Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
         #[serde(
             rename = "num_time_travel_physical_bytes",
             default,
@@ -9280,7 +9280,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_time_travel_physical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Total number of logical bytes in the table or materialized view."]
+        #[doc = "\\[Output-only\\] Total number of logical bytes in the table or materialized view."]
         #[serde(
             rename = "num_total_logical_bytes",
             default,
@@ -9288,7 +9288,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_total_logical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
+        #[doc = "\\[Output-only\\] The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes."]
         #[serde(
             rename = "num_total_physical_bytes",
             default,
@@ -9296,56 +9296,56 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub num_total_physical_bytes: ::std::option::Option<i64>,
-        #[doc = "[Output-only] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. SNAPSHOT: An immutable, read-only table that is a copy of another table. [TrustedTester] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE."]
+        #[doc = "\\[Output-only\\] Describes the table type. The following values are supported: TABLE: A normal BigQuery table. VIEW: A virtual table defined by a SQL query. SNAPSHOT: An immutable, read-only table that is a copy of another table. \\[TrustedTester\\] MATERIALIZED_VIEW: SQL query whose result is persisted. EXTERNAL: A table that references data stored in an external storage system, such as Google Cloud Storage. The default value is TABLE."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "[TrustedTester] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified."]
+        #[doc = "\\[TrustedTester\\] Range partitioning specification for this table. Only one of timePartitioning and rangePartitioning should be specified."]
         #[serde(
             rename = "rangePartitioning",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub range_partitioning: ::std::option::Option<crate::schemas::RangePartitioning>,
-        #[doc = "[Optional] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified."]
+        #[doc = "\\[Optional\\] If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified."]
         #[serde(
             rename = "requirePartitionFilter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub require_partition_filter: ::std::option::Option<bool>,
-        #[doc = "[Optional] Describes the schema of this table."]
+        #[doc = "\\[Optional\\] Describes the schema of this table."]
         #[serde(
             rename = "schema",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub schema: ::std::option::Option<crate::schemas::TableSchema>,
-        #[doc = "[Output-only] A URL that can be used to access this resource again."]
+        #[doc = "\\[Output-only\\] A URL that can be used to access this resource again."]
         #[serde(
             rename = "selfLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "[Output-only] Snapshot definition."]
+        #[doc = "\\[Output-only\\] Snapshot definition."]
         #[serde(
             rename = "snapshotDefinition",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub snapshot_definition: ::std::option::Option<crate::schemas::SnapshotDefinition>,
-        #[doc = "[Output-only] Contains information regarding this table's streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer."]
+        #[doc = "\\[Output-only\\] Contains information regarding this table’s streaming buffer, if one is present. This field will be absent if the table is not being streamed to or if there is no data in the streaming buffer."]
         #[serde(
             rename = "streamingBuffer",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub streaming_buffer: ::std::option::Option<crate::schemas::Streamingbuffer>,
-        #[doc = "[Required] Reference describing the ID of this table."]
+        #[doc = "\\[Required\\] Reference describing the ID of this table."]
         #[serde(
             rename = "tableReference",
             default,
@@ -9359,7 +9359,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub time_partitioning: ::std::option::Option<crate::schemas::TimePartitioning>,
-        #[doc = "[Optional] The view definition."]
+        #[doc = "\\[Optional\\] The view definition."]
         #[serde(
             rename = "view",
             default,
@@ -9398,7 +9398,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct TableDataInsertAllRequest {
-        #[doc = "[Optional] Accept rows that contain values that do not match the schema. The unknown values are ignored. Default is false, which treats unknown values as errors."]
+        #[doc = "\\[Optional\\] Accept rows that contain values that do not match the schema. The unknown values are ignored. Default is false, which treats unknown values as errors."]
         #[serde(
             rename = "ignoreUnknownValues",
             default,
@@ -9419,14 +9419,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rows: ::std::option::Option<Vec<crate::schemas::TableDataInsertAllRequestRowsItems>>,
-        #[doc = "[Optional] Insert all valid rows of a request, even if invalid rows exist. The default value is false, which causes the entire request to fail if any invalid rows exist."]
+        #[doc = "\\[Optional\\] Insert all valid rows of a request, even if invalid rows exist. The default value is false, which causes the entire request to fail if any invalid rows exist."]
         #[serde(
             rename = "skipInvalidRows",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub skip_invalid_rows: ::std::option::Option<bool>,
-        #[doc = "If specified, treats the destination table as a base template, and inserts the rows into an instance table named \"{destination}{templateSuffix}\". BigQuery will manage creation of the instance table, using the schema of the base template table. See https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables for considerations when working with templates tables."]
+        #[doc = "If specified, treats the destination table as a base template, and inserts the rows into an instance table named “{destination}{templateSuffix}”. BigQuery will manage creation of the instance table, using the schema of the base template table. See https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables for considerations when working with templates tables."]
         #[serde(
             rename = "templateSuffix",
             default,
@@ -9446,14 +9446,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct TableDataInsertAllRequestRowsItems {
-        #[doc = "[Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis."]
+        #[doc = "\\[Optional\\] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis."]
         #[serde(
             rename = "insertId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub insert_id: ::std::option::Option<String>,
-        #[doc = "[Required] A JSON object that contains a row of data. The object's properties and values must match the destination table's schema."]
+        #[doc = "\\[Required\\] A JSON object that contains a row of data. The object’s properties and values must match the destination table’s schema."]
         #[serde(
             rename = "json",
             default,
@@ -9611,7 +9611,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TableFieldSchema {
-        #[doc = "[Optional] The categories attached to this field, used for field-level access control."]
+        #[doc = "\\[Optional\\] The categories attached to this field, used for field-level access control."]
         #[serde(
             rename = "categories",
             default,
@@ -9625,21 +9625,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub collation_spec: ::std::option::Option<String>,
-        #[doc = "[Optional] The field description. The maximum length is 1,024 characters."]
+        #[doc = "\\[Optional\\] The field description. The maximum length is 1,024 characters."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[Optional] Describes the nested schema fields if the type property is set to RECORD."]
+        #[doc = "\\[Optional\\] Describes the nested schema fields if the type property is set to RECORD."]
         #[serde(
             rename = "fields",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fields: ::std::option::Option<Vec<crate::schemas::TableFieldSchema>>,
-        #[doc = "[Optional] Maximum length of values of this field for STRINGS or BYTES. If max_length is not specified, no maximum length constraint is imposed on this field. If type = \"STRING\", then max_length represents the maximum UTF-8 length of strings in this field. If type = \"BYTES\", then max_length represents the maximum number of bytes in this field. It is invalid to set this field if type ≠ \"STRING\" and ≠ \"BYTES\"."]
+        #[doc = "\\[Optional\\] Maximum length of values of this field for STRINGS or BYTES. If max_length is not specified, no maximum length constraint is imposed on this field. If type = “STRING”, then max_length represents the maximum UTF-8 length of strings in this field. If type = “BYTES”, then max_length represents the maximum number of bytes in this field. It is invalid to set this field if type ≠ “STRING” and ≠ “BYTES”."]
         #[serde(
             rename = "maxLength",
             default,
@@ -9647,14 +9647,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_length: ::std::option::Option<i64>,
-        #[doc = "[Optional] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE."]
+        #[doc = "\\[Optional\\] The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE."]
         #[serde(
             rename = "mode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mode: ::std::option::Option<String>,
-        #[doc = "[Required] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 300 characters."]
+        #[doc = "\\[Required\\] The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_), and must start with a letter or underscore. The maximum length is 300 characters."]
         #[serde(
             rename = "name",
             default,
@@ -9667,7 +9667,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_tags: ::std::option::Option<crate::schemas::TableFieldSchemaPolicyTags>,
-        #[doc = "[Optional] Precision (maximum number of total digits in base 10) and scale (maximum number of digits in the fractional part in base 10) constraints for values of this field for NUMERIC or BIGNUMERIC. It is invalid to set precision or scale if type ≠ \"NUMERIC\" and ≠ \"BIGNUMERIC\". If precision and scale are not specified, no value range constraint is imposed on this field insofar as values are permitted by the type. Values of this NUMERIC or BIGNUMERIC field must be in this range when: - Precision (P) and scale (S) are specified: [-10P-S + 10-S, 10P-S - 10-S] - Precision (P) is specified but not scale (and thus scale is interpreted to be equal to zero): [-10P + 1, 10P - 1]. Acceptable values for precision and scale if both are specified: - If type = \"NUMERIC\": 1 ≤ precision - scale ≤ 29 and 0 ≤ scale ≤ 9. - If type = \"BIGNUMERIC\": 1 ≤ precision - scale ≤ 38 and 0 ≤ scale ≤ 38. Acceptable values for precision if only precision is specified but not scale (and thus scale is interpreted to be equal to zero): - If type = \"NUMERIC\": 1 ≤ precision ≤ 29. - If type = \"BIGNUMERIC\": 1 ≤ precision ≤ 38. If scale is specified but not precision, then it is invalid."]
+        #[doc = "\\[Optional\\] Precision (maximum number of total digits in base 10) and scale (maximum number of digits in the fractional part in base 10) constraints for values of this field for NUMERIC or BIGNUMERIC. It is invalid to set precision or scale if type ≠ “NUMERIC” and ≠ “BIGNUMERIC”. If precision and scale are not specified, no value range constraint is imposed on this field insofar as values are permitted by the type. Values of this NUMERIC or BIGNUMERIC field must be in this range when: - Precision (P) and scale (S) are specified: \\[-10P-S + 10-S, 10P-S - 10-S\\] - Precision (P) is specified but not scale (and thus scale is interpreted to be equal to zero): \\[-10P + 1, 10P - 1\\]. Acceptable values for precision and scale if both are specified: - If type = “NUMERIC”: 1 ≤ precision - scale ≤ 29 and 0 ≤ scale ≤ 9. - If type = “BIGNUMERIC”: 1 ≤ precision - scale ≤ 38 and 0 ≤ scale ≤ 38. Acceptable values for precision if only precision is specified but not scale (and thus scale is interpreted to be equal to zero): - If type = “NUMERIC”: 1 ≤ precision ≤ 29. - If type = “BIGNUMERIC”: 1 ≤ precision ≤ 38. If scale is specified but not precision, then it is invalid."]
         #[serde(
             rename = "precision",
             default,
@@ -9675,14 +9675,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub precision: ::std::option::Option<i64>,
-        #[doc = "[Required] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, INTERVAL, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD)."]
+        #[doc = "\\[Required\\] The field data type. Possible values include STRING, BYTES, INTEGER, INT64 (same as INTEGER), FLOAT, FLOAT64 (same as FLOAT), NUMERIC, BIGNUMERIC, BOOLEAN, BOOL (same as BOOLEAN), TIMESTAMP, DATE, TIME, DATETIME, INTERVAL, RECORD (where RECORD indicates that the field contains a nested schema) or STRUCT (same as RECORD)."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "[Optional] See documentation for precision."]
+        #[doc = "\\[Optional\\] See documentation for precision."]
         #[serde(
             rename = "scale",
             default,
@@ -9714,7 +9714,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TableFieldSchemaCategories {
-        #[doc = "A list of category resource names. For example, \"projects/1/taxonomies/2/categories/3\". At most 5 categories are allowed."]
+        #[doc = "A list of category resource names. For example, “projects/1/taxonomies/2/categories/3”. At most 5 categories are allowed."]
         #[serde(
             rename = "names",
             default,
@@ -9745,7 +9745,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TableFieldSchemaPolicyTags {
-        #[doc = "A list of category resource names. For example, \"projects/1/location/eu/taxonomies/2/policyTags/3\". At most 1 policy tag is allowed."]
+        #[doc = "A list of category resource names. For example, “projects/1/location/eu/taxonomies/2/policyTags/3”. At most 1 policy tag is allowed."]
         #[serde(
             rename = "names",
             default,
@@ -9840,7 +9840,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TableListTablesItems {
-        #[doc = "[Beta] Clustering specification for this table, if configured."]
+        #[doc = "\\[Beta\\] Clustering specification for this table, if configured."]
         #[serde(
             rename = "clustering",
             default,
@@ -9855,7 +9855,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creation_time: ::std::option::Option<i64>,
-        #[doc = "[Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed."]
+        #[doc = "\\[Optional\\] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed."]
         #[serde(
             rename = "expirationTime",
             default,
@@ -9981,21 +9981,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TableReference {
-        #[doc = "[Required] The ID of the dataset containing this table."]
+        #[doc = "\\[Required\\] The ID of the dataset containing this table."]
         #[serde(
             rename = "datasetId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dataset_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the project containing this table."]
+        #[doc = "\\[Required\\] The ID of the project containing this table."]
         #[serde(
             rename = "projectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub project_id: ::std::option::Option<String>,
-        #[doc = "[Required] The ID of the table. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters."]
+        #[doc = "\\[Required\\] The ID of the table. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (\\_). The maximum length is 1,024 characters."]
         #[serde(
             rename = "tableId",
             default,
@@ -10077,7 +10077,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestIamPermissionsRequest {
-        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as '*' or 'storage.*') are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
+        #[doc = "The set of permissions to check for the `resource`. Permissions with wildcards (such as ‘*’ or ‘storage.*’) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions)."]
         #[serde(
             rename = "permissions",
             default,
@@ -10139,7 +10139,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimePartitioning {
-        #[doc = "[Optional] Number of milliseconds for which to keep the storage for partitions in the table. The storage in a partition will have an expiration time of its partition time plus this value."]
+        #[doc = "\\[Optional\\] Number of milliseconds for which to keep the storage for partitions in the table. The storage in a partition will have an expiration time of its partition time plus this value."]
         #[serde(
             rename = "expirationMs",
             default,
@@ -10147,14 +10147,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub expiration_ms: ::std::option::Option<i64>,
-        #[doc = "[Beta] [Optional] If not set, the table is partitioned by pseudo column, referenced via either '_PARTITIONTIME' as TIMESTAMP type, or '_PARTITIONDATE' as DATE type. If field is specified, the table is instead partitioned by this field. The field must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or REQUIRED."]
+        #[doc = "\\[Beta\\] \\[Optional\\] If not set, the table is partitioned by pseudo column, referenced via either ‘\\_PARTITIONTIME’ as TIMESTAMP type, or ‘\\_PARTITIONDATE’ as DATE type. If field is specified, the table is instead partitioned by this field. The field must be a top-level TIMESTAMP or DATE field. Its mode must be NULLABLE or REQUIRED."]
         #[serde(
             rename = "field",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field: ::std::option::Option<String>,
-        #[doc = "[Required] The supported types are DAY, HOUR, MONTH, and YEAR, which will generate one partition per day, hour, month, and year, respectively. When the type is not specified, the default behavior is DAY."]
+        #[doc = "\\[Required\\] The supported types are DAY, HOUR, MONTH, and YEAR, which will generate one partition per day, hour, month, and year, respectively. When the type is not specified, the default behavior is DAY."]
         #[serde(
             rename = "type",
             default,
@@ -10269,7 +10269,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_frequency: ::std::option::Option<crate::schemas::TrainingOptionsDataFrequency>,
-        #[doc = "The column to split data with. This column won't be used as a feature. 1. When data_split_method is CUSTOM, the corresponding column should be boolean. The rows with true value tag are eval data, and the false are training data. 2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION rows (from smallest to largest) in the corresponding column are used as training data, and the rest are eval data. It respects the order in Orderable data types: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties"]
+        #[doc = "The column to split data with. This column won’t be used as a feature. 1. When data_split_method is CUSTOM, the corresponding column should be boolean. The rows with true value tag are eval data, and the false are training data. 2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION rows (from smallest to largest) in the corresponding column are used as training data, and the rest are eval data. It respects the order in Orderable data types: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties"]
         #[serde(
             rename = "dataSplitColumn",
             default,
@@ -10312,7 +10312,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dropout: ::std::option::Option<f64>,
-        #[doc = "Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms."]
+        #[doc = "Whether to stop early when the loss doesn’t improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms."]
         #[serde(
             rename = "earlyStop",
             default,
@@ -10481,7 +10481,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub max_tree_depth: ::std::option::Option<i64>,
-        #[doc = "When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms."]
+        #[doc = "When early_stop is true, stops training when accuracy improvement is less than ‘min_relative_progress’. Used only for iterative training algorithms."]
         #[serde(
             rename = "minRelativeProgress",
             default,
@@ -11597,13 +11597,13 @@ pub mod schemas {
         MeanSquaredError,
         #[doc = "Mean squared log error. mean_squared_log_error = AVG(POW(LN(1 + label) - LN(1 + predicted), 2))"]
         MeanSquaredLogError,
-        #[doc = "Mean absolute error. median_absolute_error = APPROX_QUANTILES(absolute_error, 2)[OFFSET(1)]"]
+        #[doc = "Mean absolute error. median_absolute_error = APPROX_QUANTILES(absolute_error, 2)\\[OFFSET(1)\\]"]
         MedianAbsoluteError,
         #[doc = "Normalized Discounted Cumulative Gain."]
         NormalizedDiscountedCumulativeGain,
         #[doc = "Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier."]
         Precision,
-        #[doc = "R^2 score. This corresponds to r2_score in ML.EVALUATE. r_squared = 1 - SUM(squared_error)/(COUNT(label)*VAR_POP(label))"]
+        #[doc = "R^2 score. This corresponds to r2_score in ML.EVALUATE. r_squared = 1 - SUM(squared_error)/(COUNT(label)\\*VAR_POP(label))"]
         RSquared,
         #[doc = "Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric."]
         Recall,
@@ -12220,7 +12220,7 @@ pub mod schemas {
         )]
         pub model_level_global_explanation:
             ::std::option::Option<crate::schemas::GlobalExplanation>,
-        #[doc = "Output of each iteration run, results.size() <= max_iterations."]
+        #[doc = "Output of each iteration run, results.size() \\<= max_iterations."]
         #[serde(
             rename = "results",
             default,
@@ -12279,7 +12279,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TransactionInfo {
-        #[doc = "[Output-only] // [Alpha] Id of the transaction."]
+        #[doc = "\\[Output-only\\] // \\[Alpha\\] Id of the transaction."]
         #[serde(
             rename = "transactionId",
             default,
@@ -12310,14 +12310,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserDefinedFunctionResource {
-        #[doc = "[Pick one] An inline resource that contains code for a user-defined function (UDF). Providing a inline code resource is equivalent to providing a URI for a file containing the same code."]
+        #[doc = "\\[Pick one\\] An inline resource that contains code for a user-defined function (UDF). Providing a inline code resource is equivalent to providing a URI for a file containing the same code."]
         #[serde(
             rename = "inlineCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inline_code: ::std::option::Option<String>,
-        #[doc = "[Pick one] A code resource to load from a Google Cloud Storage URI (gs://bucket/path)."]
+        #[doc = "\\[Pick one\\] A code resource to load from a Google Cloud Storage URI (gs://bucket/path)."]
         #[serde(
             rename = "resourceUri",
             default,
@@ -12348,21 +12348,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ViewDefinition {
-        #[doc = "[Required] A query that BigQuery executes when the view is referenced."]
+        #[doc = "\\[Required\\] A query that BigQuery executes when the view is referenced."]
         #[serde(
             rename = "query",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
-        #[doc = "True if the column names are explicitly specified. For example by using the 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set using BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/"]
+        #[doc = "True if the column names are explicitly specified. For example by using the ‘CREATE VIEW v(c1, c2) AS …’ syntax. Can only be set using BigQuery’s standard SQL: https://cloud.google.com/bigquery/sql-reference/"]
         #[serde(
             rename = "useExplicitColumnNames",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub use_explicit_column_names: ::std::option::Option<bool>,
-        #[doc = "Specifies whether to use BigQuery's legacy SQL for this view. The default value is true. If set to false, the view will use BigQuery's standard SQL: https://cloud.google.com/bigquery/sql-reference/ Queries and views that reference this view must use the same flag value."]
+        #[doc = "Specifies whether to use BigQuery’s legacy SQL for this view. The default value is true. If set to false, the view will use BigQuery’s standard SQL: https://cloud.google.com/bigquery/sql-reference/ Queries and views that reference this view must use the same flag value."]
         #[serde(
             rename = "useLegacySql",
             default,
@@ -13074,7 +13074,7 @@ pub mod resources {
                 self.all = Some(value);
                 self
             }
-            #[doc = "An expression for filtering the results of the request by label. The syntax is \"labels.<name>[:<value>]\". Multiple filters can be ANDed together by connecting with a space. Example: \"labels.department:receiving labels.active\". See Filtering datasets using labels for details."]
+            #[doc = "An expression for filtering the results of the request by label. The syntax is “labels.<name>\\[:<value>\\]”. Multiple filters can be ANDed together by connecting with a space. Example: “labels.department:receiving labels.active”. See Filtering datasets using labels for details."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -13831,7 +13831,7 @@ pub mod resources {
                     location: None,
                 }
             }
-            #[doc = "Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted."]
+            #[doc = "Requests the deletion of the metadata of a job. This call returns when the job’s metadata is deleted."]
             pub fn delete(
                 &self,
                 project_id: impl Into<String>,
@@ -13852,7 +13852,7 @@ pub mod resources {
                     location: None,
                 }
             }
-            #[doc = "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role."]
+            #[doc = "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you’re the person who ran the job, or have the Is Owner project role."]
             pub fn get(
                 &self,
                 project_id: impl Into<String>,
@@ -14395,7 +14395,7 @@ pub mod resources {
                 self.start_index = Some(value);
                 self
             }
-            #[doc = "How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false"]
+            #[doc = "How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the ‘jobComplete’ field in the response will be false"]
             pub fn timeout_ms(mut self, value: u32) -> Self {
                 self.timeout_ms = Some(value);
                 self
@@ -17071,7 +17071,7 @@ pub mod resources {
             user_ip: ::std::option::Option<String>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "If set, then only the Routines matching this filter are returned. The current supported form is either \"routine_type:\" or \"routineType:\", where is a RoutineType enum. Example: \"routineType:SCALAR_FUNCTION\"."]
+            #[doc = "If set, then only the Routines matching this filter are returned. The current supported form is either “routine_type:” or “routineType:”, where is a RoutineType enum. Example: “routineType:SCALAR_FUNCTION”."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -17602,7 +17602,7 @@ pub mod resources {
                     resource: resource.into(),
                 }
             }
-            #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."]
+            #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may “fail open” without warning."]
             pub fn test_iam_permissions(
                 &self,
                 request: crate::schemas::TestIamPermissionsRequest,
@@ -18903,7 +18903,7 @@ pub mod resources {
                     resource: resource.into(),
                 }
             }
-            #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."]
+            #[doc = "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may “fail open” without warning."]
             pub fn test_iam_permissions(
                 &self,
                 request: crate::schemas::TestIamPermissionsRequest,

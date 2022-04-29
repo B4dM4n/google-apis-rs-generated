@@ -14,7 +14,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SiteSummaryResponse {
-        #[doc = "The site's Abusive Experience Report status."]
+        #[doc = "The site’s Abusive Experience Report status."]
         #[serde(
             rename = "abusiveStatus",
             default,
@@ -28,14 +28,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enforcement_time: ::std::option::Option<String>,
-        #[doc = "The site's [enforcement status](https://support.google.com/webtools/answer/7538608)."]
+        #[doc = "The site’s [enforcement status](https://support.google.com/webtools/answer/7538608)."]
         #[serde(
             rename = "filterStatus",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter_status: ::std::option::Option<crate::schemas::SiteSummaryResponseFilterStatus>,
-        #[doc = "The time at which the site's status last changed."]
+        #[doc = "The time at which the site’s status last changed."]
         #[serde(
             rename = "lastChangeTime",
             default,
@@ -466,7 +466,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Gets a site's Abusive Experience Report summary."]
+            #[doc = "Gets a site’s Abusive Experience Report summary."]
             pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -535,12 +535,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -724,12 +724,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

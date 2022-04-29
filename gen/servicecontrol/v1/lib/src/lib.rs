@@ -87,7 +87,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_id: ::std::option::Option<String>,
-        #[doc = "Quota metrics to indicate the result of allocation. Depending on the request, one or more of the following metrics will be included: 1. Per quota group or per quota metric incremental usage will be specified using the following delta metric : \"serviceruntime.googleapis.com/api/consumer/quota_used_count\" 2. The quota limit reached condition will be specified using the following boolean metric : \"serviceruntime.googleapis.com/quota/exceeded\""]
+        #[doc = "Quota metrics to indicate the result of allocation. Depending on the request, one or more of the following metrics will be included: 1. Per quota group or per quota metric incremental usage will be specified using the following delta metric : “serviceruntime.googleapis.com/api/consumer/quota_used_count” 2. The quota limit reached condition will be specified using the following boolean metric : “serviceruntime.googleapis.com/quota/exceeded”"]
         #[serde(
             rename = "quotaMetrics",
             default,
@@ -171,7 +171,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Attributes {
-        #[doc = "The set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the Boolean values `true` and `false`. For example: \"/instance_id\": \"my-instance\" \"/http/user_agent\": \"\" \"/http/request_bytes\": 300 \"abc.com/myattribute\": true"]
+        #[doc = "The set of attributes. Each attribute’s key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the Boolean values `true` and `false`. For example: “/instance_id”: “my-instance” “/http/user_agent”: “” “/http/request_bytes”: 300 “abc.com/myattribute”: true"]
         #[serde(
             rename = "attributeMap",
             default,
@@ -222,7 +222,7 @@ pub mod schemas {
         )]
         pub metadata:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The name of the service method or operation. For API calls, this should be the name of the API method. For example, \"google.cloud.bigquery.v2.TableService.InsertTable\" \"google.logging.v2.ConfigServiceV2.CreateSink\""]
+        #[doc = "The name of the service method or operation. For API calls, this should be the name of the API method. For example, “google.cloud.bigquery.v2.TableService.InsertTable” “google.logging.v2.ConfigServiceV2.CreateSink”"]
         #[serde(
             rename = "methodName",
             default,
@@ -266,14 +266,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_location: ::std::option::Option<crate::schemas::ResourceLocation>,
-        #[doc = "The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. For example: \"projects/PROJECT_ID/zones/us-central1-a/instances\" \"projects/PROJECT_ID/datasets/DATASET_ID\""]
+        #[doc = "The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. For example: “projects/PROJECT_ID/zones/us-central1-a/instances” “projects/PROJECT_ID/datasets/DATASET_ID”"]
         #[serde(
             rename = "resourceName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_name: ::std::option::Option<String>,
-        #[doc = "The resource's original state before mutation. Present only for operations which have successfully modified the targeted resource(s). In general, this field should contain all changed fields, except those that are already been included in `request`, `response`, `metadata` or `service_data` fields. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the `@type` property."]
+        #[doc = "The resource’s original state before mutation. Present only for operations which have successfully modified the targeted resource(s). In general, this field should contain all changed fields, except those that are already been included in `request`, `response`, `metadata` or `service_data` fields. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the `@type` property."]
         #[serde(
             rename = "resourceOriginalState",
             default,
@@ -324,21 +324,21 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Auth {
-        #[doc = "A list of access level resource names that allow resources to be accessed by authenticated requester. It is part of Secure GCP processing for the incoming request. An access level string has the format: \"//{api_service_name}/accessPolicies/{policy_id}/accessLevels/{short_name}\" Example: \"//accesscontextmanager.googleapis.com/accessPolicies/MY_POLICY_ID/accessLevels/MY_LEVEL\""]
+        #[doc = "A list of access level resource names that allow resources to be accessed by authenticated requester. It is part of Secure GCP processing for the incoming request. An access level string has the format: “//{api_service_name}/accessPolicies/{policy_id}/accessLevels/{short_name}” Example: “//accesscontextmanager.googleapis.com/accessPolicies/MY_POLICY_ID/accessLevels/MY_LEVEL”"]
         #[serde(
             rename = "accessLevels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub access_levels: ::std::option::Option<Vec<String>>,
-        #[doc = "The intended audience(s) for this authentication information. Reflects the audience (`aud`) claim within a JWT. The audience value(s) depends on the `issuer`, but typically include one or more of the following pieces of information: * The services intended to receive the credential. For example, [\"https://pubsub.googleapis.com/\", \"https://storage.googleapis.com/\"]. * A set of service-based scopes. For example, [\"https://www.googleapis.com/auth/cloud-platform\"]. * The client id of an app, such as the Firebase project id for JWTs from Firebase Auth. Consult the documentation for the credential issuer to determine the information provided."]
+        #[doc = "The intended audience(s) for this authentication information. Reflects the audience (`aud`) claim within a JWT. The audience value(s) depends on the `issuer`, but typically include one or more of the following pieces of information: * The services intended to receive the credential. For example, \\[“https://pubsub.googleapis.com/”, “https://storage.googleapis.com/”\\]. * A set of service-based scopes. For example, \\[“https://www.googleapis.com/auth/cloud-platform”\\]. * The client id of an app, such as the Firebase project id for JWTs from Firebase Auth. Consult the documentation for the credential issuer to determine the information provided."]
         #[serde(
             rename = "audiences",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audiences: ::std::option::Option<Vec<String>>,
-        #[doc = "Structured claims presented with the credential. JWTs include `{key: value}` pairs for standard and private claims. The following is a subset of the standard required and optional claims that would typically be presented for a Google-based JWT: {'iss': 'accounts.google.com', 'sub': '113289723416554971153', 'aud': ['123456789012', 'pubsub.googleapis.com'], 'azp': '123456789012.apps.googleusercontent.com', 'email': 'jsmith@example.com', 'iat': 1353601026, 'exp': 1353604926} SAML assertions are similarly specified, but with an identity provider dependent structure."]
+        #[doc = "Structured claims presented with the credential. JWTs include `{key: value}` pairs for standard and private claims. The following is a subset of the standard required and optional claims that would typically be presented for a Google-based JWT: {‘iss’: ‘accounts.google.com’, ‘sub’: ‘113289723416554971153’, ‘aud’: \\[‘123456789012’, ‘pubsub.googleapis.com’\\], ‘azp’: ‘123456789012.apps.googleusercontent.com’, ‘email’: ‘jsmith@example.com’, ‘iat’: 1353601026, ‘exp’: 1353604926} SAML assertions are similarly specified, but with an identity provider dependent structure."]
         #[serde(
             rename = "claims",
             default,
@@ -346,14 +346,14 @@ pub mod schemas {
         )]
         pub claims:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The authorized presenter of the credential. Reflects the optional Authorized Presenter (`azp`) claim within a JWT or the OAuth client id. For example, a Google Cloud Platform client id looks as follows: \"123456789012.apps.googleusercontent.com\"."]
+        #[doc = "The authorized presenter of the credential. Reflects the optional Authorized Presenter (`azp`) claim within a JWT or the OAuth client id. For example, a Google Cloud Platform client id looks as follows: “123456789012.apps.googleusercontent.com”."]
         #[serde(
             rename = "presenter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub presenter: ::std::option::Option<String>,
-        #[doc = "The authenticated principal. Reflects the issuer (`iss`) and subject (`sub`) claims within a JWT. The issuer and subject should be `/` delimited, with `/` percent-encoded within the subject fragment. For Google accounts, the principal format is: \"https://accounts.google.com/{id}\""]
+        #[doc = "The authenticated principal. Reflects the issuer (`iss`) and subject (`sub`) claims within a JWT. The issuer and subject should be `/` delimited, with `/` percent-encoded within the subject fragment. For Google accounts, the principal format is: “https://accounts.google.com/{id}”"]
         #[serde(
             rename = "principal",
             default,
@@ -402,7 +402,7 @@ pub mod schemas {
         )]
         pub service_account_delegation_info:
             ::std::option::Option<Vec<crate::schemas::ServiceAccountDelegationInfo>>,
-        #[doc = "The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example: \"//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}\""]
+        #[doc = "The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example: “//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}”"]
         #[serde(
             rename = "serviceAccountKeyName",
             default,
@@ -503,7 +503,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::Status>,
-        #[doc = "Subject to whom this error applies. See the specific code enum for more details on this field. For example: - \"project:\" - \"folder:\" - \"organization:\""]
+        #[doc = "Subject to whom this error applies. See the specific code enum for more details on this field. For example: - “project:” - “folder:” - “organization:”"]
         #[serde(
             rename = "subject",
             default,
@@ -525,11 +525,11 @@ pub mod schemas {
     pub enum CheckErrorCode {
         #[doc = "The consumer has been flagged as an abuser."]
         AbuserDetected,
-        #[doc = "The consumer's API Key has expired."]
+        #[doc = "The consumer’s API Key has expired."]
         ApiKeyExpired,
-        #[doc = "The consumer's API key is invalid."]
+        #[doc = "The consumer’s API key is invalid."]
         ApiKeyInvalid,
-        #[doc = "The consumer's API Key was not found in config record."]
+        #[doc = "The consumer’s API Key was not found in config record."]
         ApiKeyNotFound,
         #[doc = "The API targeted by this request is invalid for the specified consumer project."]
         ApiTargetBlocked,
@@ -545,7 +545,7 @@ pub mod schemas {
         CloudResourceManagerBackendUnavailable,
         #[doc = "The input consumer info does not represent a valid consumer folder or organization."]
         ConsumerInvalid,
-        #[doc = "The consumer's request has been flagged as a DoS attack."]
+        #[doc = "The consumer’s request has been flagged as a DoS attack."]
         DenialOfServiceDetected,
         #[doc = "This is never used in `CheckResponse`."]
         ErrorCodeUnspecified,
@@ -553,13 +553,13 @@ pub mod schemas {
         InvalidCredential,
         #[doc = "The IP address of the consumer is invalid for the specific consumer project."]
         IpAddressBlocked,
-        #[doc = "The consumer's request should be rejected in order to protect the service from being overloaded."]
+        #[doc = "The consumer’s request should be rejected in order to protect the service from being overloaded."]
         LoadShedding,
-        #[doc = "The consumer's LOAS project is not `ACTIVE` in LoquatV2."]
+        #[doc = "The consumer’s LOAS project is not `ACTIVE` in LoquatV2."]
         LoasProjectDisabled,
         #[doc = "The Spanner for looking up LOAS project is unavailable."]
         LoasProjectLookupUnavailable,
-        #[doc = "The consumer's LOAS role is invalid."]
+        #[doc = "The consumer’s LOAS role is invalid."]
         LoasRoleInvalid,
         #[doc = "Backend server for evaluating location policy is unavailable."]
         LocationPolicyBackendUnavailable,
@@ -567,15 +567,15 @@ pub mod schemas {
         LocationPolicyViolated,
         #[doc = "The backend server for looking up project id/number is unavailable."]
         NamespaceLookupUnavailable,
-        #[doc = "The consumer's LOAS role has no associated project."]
+        #[doc = "The consumer’s LOAS role has no associated project."]
         NoLoasProject,
-        #[doc = "The consumer's project id, network container, or resource container was not found. Same as google.rpc.Code.NOT_FOUND."]
+        #[doc = "The consumer’s project id, network container, or resource container was not found. Same as google.rpc.Code.NOT_FOUND."]
         NotFound,
-        #[doc = "The consumer doesn't have access to the specified resource. Same as google.rpc.Code.PERMISSION_DENIED."]
+        #[doc = "The consumer doesn’t have access to the specified resource. Same as google.rpc.Code.PERMISSION_DENIED."]
         PermissionDenied,
-        #[doc = "The consumer's project has been marked as deleted (soft deletion)."]
+        #[doc = "The consumer’s project has been marked as deleted (soft deletion)."]
         ProjectDeleted,
-        #[doc = "The consumer's project number or id does not represent a valid project."]
+        #[doc = "The consumer’s project number or id does not represent a valid project."]
         ProjectInvalid,
         #[doc = "The backend server for checking quota limits is unavailable."]
         QuotaCheckUnavailable,
@@ -587,11 +587,11 @@ pub mod schemas {
         SecurityPolicyBackendUnavailable,
         #[doc = "Request is not allowed as per security policies defined in Org Policy."]
         SecurityPolicyViolated,
-        #[doc = "The consumer hasn't activated the service."]
+        #[doc = "The consumer hasn’t activated the service."]
         ServiceNotActivated,
         #[doc = "The backend server for checking service status is unavailable."]
         ServiceStatusUnavailable,
-        #[doc = "The consumer's spatula header is invalid."]
+        #[doc = "The consumer’s spatula header is invalid."]
         SpatulaHeaderInvalid,
         #[doc = "The consumer cannot access the service due to visibility configuration."]
         VisibilityDenied,
@@ -800,7 +800,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub consumer_info: ::std::option::Option<crate::schemas::ConsumerInfo>,
-        #[doc = "A list of fields and label keys that are ignored by the server. The client doesn't need to send them for following requests to improve performance and allow better aggregation."]
+        #[doc = "A list of fields and label keys that are ignored by the server. The client doesn’t need to send them for following requests to improve performance and allow better aggregation."]
         #[serde(
             rename = "unusedArguments",
             default,
@@ -841,7 +841,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_config_id: ::std::option::Option<String>,
-        #[doc = "Indicates if service activation check should be skipped for this request. Default behavior is to perform the check and apply relevant quota. WARNING: Setting this flag to \"true\" will disable quota enforcement."]
+        #[doc = "Indicates if service activation check should be skipped for this request. Default behavior is to perform the check and apply relevant quota. WARNING: Setting this flag to “true” will disable quota enforcement."]
         #[serde(
             rename = "skipActivationCheck",
             default,
@@ -1049,7 +1049,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Distribution {
-        #[doc = "The number of samples in each histogram bucket. `bucket_counts` are optional. If present, they must sum to the `count` value. The buckets are defined below in `bucket_option`. There are N buckets. `bucket_counts[0]` is the number of samples in the underflow bucket. `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples in each of the finite buckets. And `bucket_counts[N] is the number of samples in the overflow bucket. See the comments of `bucket_option` below for more details. Any suffix of trailing zeros may be omitted."]
+        #[doc = "The number of samples in each histogram bucket. `bucket_counts` are optional. If present, they must sum to the `count` value. The buckets are defined below in `bucket_option`. There are N buckets. `bucket_counts[0]` is the number of samples in the underflow bucket. `bucket_counts[1]` to `bucket_counts[N-1]` are the numbers of samples in each of the finite buckets. And `bucket_counts[N] is the number of samples in the overflow bucket. See the comments of `bucket_option\\` below for more details. Any suffix of trailing zeros may be omitted."]
         #[serde(
             rename = "bucketCounts",
             default,
@@ -1113,7 +1113,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub minimum: ::std::option::Option<f64>,
-        #[doc = "The sum of squared deviations from the mean: Sum[i=1..count]((x_i - mean)^2) where each x_i is a sample values. If `count` is zero then this field must be zero, otherwise validation of the request fails."]
+        #[doc = "The sum of squared deviations from the mean: Sum\\[i=1..count\\]((x_i - mean)^2) where each x_i is a sample values. If `count` is zero then this field must be zero, otherwise validation of the request fails."]
         #[serde(
             rename = "sumOfSquaredDeviation",
             default,
@@ -1170,7 +1170,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ExplicitBuckets {
-        #[doc = "'bound' is a list of strictly increasing boundaries between buckets. Note that a list of length N-1 defines N buckets because of fenceposting. See comments on `bucket_options` for details. The i'th finite bucket covers the interval [bound[i-1], bound[i]) where i ranges from 1 to bound_size() - 1. Note that there are no finite buckets at all if 'bound' only contains a single element; in that special case the single bound defines the boundary between the underflow and overflow buckets. bucket number lower bound upper bound i == 0 (underflow) -inf bound[i] 0 < i < bound_size() bound[i-1] bound[i] i == bound_size() (overflow) bound[i-1] +inf"]
+        #[doc = "‘bound’ is a list of strictly increasing boundaries between buckets. Note that a list of length N-1 defines N buckets because of fenceposting. See comments on `bucket_options` for details. The i’th finite bucket covers the interval \\[bound\\[i-1\\], bound\\[i\\]) where i ranges from 1 to bound_size() - 1. Note that there are no finite buckets at all if ‘bound’ only contains a single element; in that special case the single bound defines the boundary between the underflow and overflow buckets. bucket number lower bound upper bound i == 0 (underflow) -inf bound\\[i\\] 0 \\< i \\< bound_size() bound\\[i-1\\] bound\\[i\\] i == bound_size() (overflow) bound\\[i-1\\] +inf"]
         #[serde(
             rename = "bounds",
             default,
@@ -1192,7 +1192,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ExponentialBuckets {
-        #[doc = "The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0."]
+        #[doc = "The i’th exponential bucket covers the interval \\[scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be larger than 1.0."]
         #[serde(
             rename = "growthFactor",
             default,
@@ -1206,7 +1206,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub num_finite_buckets: ::std::option::Option<i32>,
-        #[doc = "The i'th exponential bucket covers the interval [scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be > 0."]
+        #[doc = "The i’th exponential bucket covers the interval \\[scale * growth_factor^(i-1), scale * growth_factor^i) where i ranges from 1 to num_finite_buckets inclusive. Must be > 0."]
         #[serde(
             rename = "scale",
             default,
@@ -1301,7 +1301,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latency: ::std::option::Option<String>,
-        #[doc = "Protocol used for the request. Examples: \"HTTP/1.1\", \"HTTP/2\", \"websocket\""]
+        #[doc = "Protocol used for the request. Examples: “HTTP/1.1”, “HTTP/2”, “websocket”"]
         #[serde(
             rename = "protocol",
             default,
@@ -1395,14 +1395,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub num_finite_buckets: ::std::option::Option<i32>,
-        #[doc = "The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive."]
+        #[doc = "The i’th linear bucket covers the interval \\[offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive."]
         #[serde(
             rename = "offset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset: ::std::option::Option<f64>,
-        #[doc = "The i'th linear bucket covers the interval [offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive."]
+        #[doc = "The i’th linear bucket covers the interval \\[offset + (i-1) * width, offset + i * width) where i ranges from 1 to num_finite_buckets, inclusive. Must be strictly positive."]
         #[serde(
             rename = "width",
             default,
@@ -1746,7 +1746,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub double_value: ::std::option::Option<f64>,
-        #[doc = "The end of the time period over which this metric value's measurement applies. If not specified, google.api.servicecontrol.v1.Operation.end_time will be used."]
+        #[doc = "The end of the time period over which this metric value’s measurement applies. If not specified, google.api.servicecontrol.v1.Operation.end_time will be used."]
         #[serde(
             rename = "endTime",
             default,
@@ -1775,7 +1775,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub money_value: ::std::option::Option<crate::schemas::Money>,
-        #[doc = "The start of the time period over which this metric value's measurement applies. The time period has different semantics for different metric types (cumulative, delta, and gauge). See the metric definition documentation in the service configuration for details. If not specified, google.api.servicecontrol.v1.Operation.start_time will be used."]
+        #[doc = "The start of the time period over which this metric value’s measurement applies. The time period has different semantics for different metric types (cumulative, delta, and gauge). See the metric definition documentation in the service configuration for details. If not specified, google.api.servicecontrol.v1.Operation.start_time will be used."]
         #[serde(
             rename = "startTime",
             default,
@@ -2207,7 +2207,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::Status>,
-        #[doc = "Subject to whom this error applies. See the specific enum for more details on this field. For example, \"clientip:\" or \"project:\"."]
+        #[doc = "Subject to whom this error applies. See the specific enum for more details on this field. For example, “clientip:” or “project:”."]
         #[serde(
             rename = "subject",
             default,
@@ -2235,13 +2235,13 @@ pub mod schemas {
         BillingNotActive,
         #[doc = "The backend server for checking billing status is unavailable."]
         BillingStatusUnavailable,
-        #[doc = "The consumer's LOAS role is invalid."]
+        #[doc = "The consumer’s LOAS role is invalid."]
         LoasRoleInvalid,
-        #[doc = "The consumer's LOAS role has no associated project."]
+        #[doc = "The consumer’s LOAS role has no associated project."]
         NoLoasProject,
-        #[doc = "Quota release failed. This error is ONLY returned on a NORMAL release. More formally: if a user requests a release of 10 tokens, but only 5 tokens were previously allocated, in a BEST_EFFORT release, this will be considered a success, 5 tokens will be released, and the result will be \"Ok\". If this is done in NORMAL mode, no tokens will be released, and an OUT_OF_RANGE error will be returned. Same as google.rpc.Code.OUT_OF_RANGE."]
+        #[doc = "Quota release failed. This error is ONLY returned on a NORMAL release. More formally: if a user requests a release of 10 tokens, but only 5 tokens were previously allocated, in a BEST_EFFORT release, this will be considered a success, 5 tokens will be released, and the result will be “Ok”. If this is done in NORMAL mode, no tokens will be released, and an OUT_OF_RANGE error will be returned. Same as google.rpc.Code.OUT_OF_RANGE."]
         OutOfRange,
-        #[doc = "Consumer's project has been marked as deleted (soft deletion)."]
+        #[doc = "Consumer’s project has been marked as deleted (soft deletion)."]
         ProjectDeleted,
         #[doc = "The backend server for looking up project id/number is unavailable."]
         ProjectStatusUnavailable,
@@ -2251,7 +2251,7 @@ pub mod schemas {
         ResourceExhausted,
         #[doc = "The backend server for checking service status is unavailable."]
         ServiceStatusUnavailable,
-        #[doc = "Consumer's spatula header is invalid."]
+        #[doc = "Consumer’s spatula header is invalid."]
         SpatulaHeaderInvalid,
         #[doc = "This is never used."]
         Unspecified,
@@ -2365,14 +2365,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limit_exceeded: ::std::option::Option<Vec<String>>,
-        #[doc = "Map of quota group name to the actual number of tokens consumed. If the quota check was not successful, then this will not be populated due to no quota consumption. We are not merging this field with 'quota_metrics' field because of the complexity of scaling in Chemist client code base. For simplicity, we will keep this field for Castor (that scales quota usage) and 'quota_metrics' for SuperQuota (that doesn't scale quota usage). "]
+        #[doc = "Map of quota group name to the actual number of tokens consumed. If the quota check was not successful, then this will not be populated due to no quota consumption. We are not merging this field with ‘quota_metrics’ field because of the complexity of scaling in Chemist client code base. For simplicity, we will keep this field for Castor (that scales quota usage) and ‘quota_metrics’ for SuperQuota (that doesn’t scale quota usage). "]
         #[serde(
             rename = "quotaConsumed",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub quota_consumed: ::std::option::Option<::std::collections::BTreeMap<String, i32>>,
-        #[doc = "Quota metrics to indicate the usage. Depending on the check request, one or more of the following metrics will be included: 1. For rate quota, per quota group or per quota metric incremental usage will be specified using the following delta metric: \"serviceruntime.googleapis.com/api/consumer/quota_used_count\" 2. For allocation quota, per quota metric total usage will be specified using the following gauge metric: \"serviceruntime.googleapis.com/allocation/consumer/quota_used_count\" 3. For both rate quota and allocation quota, the quota limit reached condition will be specified using the following boolean metric: \"serviceruntime.googleapis.com/quota/exceeded\""]
+        #[doc = "Quota metrics to indicate the usage. Depending on the check request, one or more of the following metrics will be included: 1. For rate quota, per quota group or per quota metric incremental usage will be specified using the following delta metric: “serviceruntime.googleapis.com/api/consumer/quota_used_count” 2. For allocation quota, per quota metric total usage will be specified using the following gauge metric: “serviceruntime.googleapis.com/allocation/consumer/quota_used_count” 3. For both rate quota and allocation quota, the quota limit reached condition will be specified using the following boolean metric: “serviceruntime.googleapis.com/quota/exceeded”"]
         #[serde(
             rename = "quotaMetrics",
             default,
@@ -2704,7 +2704,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ReportResponse {
-        #[doc = "Partial failures, one for each `Operation` in the request that failed processing. There are three possible combinations of the RPC status: 1. The combination of a successful RPC status and an empty `report_errors` list indicates a complete success where all `Operations` in the request are processed successfully. 2. The combination of a successful RPC status and a non-empty `report_errors` list indicates a partial success where some `Operations` in the request succeeded. Each `Operation` that failed processing has a corresponding item in this list. 3. A failed RPC status indicates a general non-deterministic failure. When this happens, it's impossible to know which of the 'Operations' in the request succeeded or failed."]
+        #[doc = "Partial failures, one for each `Operation` in the request that failed processing. There are three possible combinations of the RPC status: 1. The combination of a successful RPC status and an empty `report_errors` list indicates a complete success where all `Operations` in the request are processed successfully. 2. The combination of a successful RPC status and a non-empty `report_errors` list indicates a partial success where some `Operations` in the request succeeded. Each `Operation` that failed processing has a corresponding item in this list. 3. A failed RPC status indicates a general non-deterministic failure. When this happens, it’s impossible to know which of the ‘Operations’ in the request succeeded or failed."]
         #[serde(
             rename = "reportErrors",
             default,
@@ -2780,7 +2780,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "The network protocol used with the request, such as \"http/1.1\", \"spdy/3\", \"h2\", \"h2c\", \"webrtc\", \"tcp\", \"udp\", \"quic\". See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for details."]
+        #[doc = "The network protocol used with the request, such as “http/1.1”, “spdy/3”, “h2”, “h2c”, “webrtc”, “tcp”, “udp”, “quic”. See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for details."]
         #[serde(
             rename = "protocol",
             default,
@@ -2836,14 +2836,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct RequestMetadata {
-        #[doc = "The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from a Compute Engine VM with external IP address, this will be the VM's external IP address. For caller from a Compute Engine VM without external IP address, if the VM is in the same organization (or project) as the accessed resource, `caller_ip` will be the VM's internal IPv4 address, otherwise the `caller_ip` will be redacted to \"gce-internal-ip\". See https://cloud.google.com/compute/docs/vpc/ for more information."]
+        #[doc = "The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from a Compute Engine VM with external IP address, this will be the VM’s external IP address. For caller from a Compute Engine VM without external IP address, if the VM is in the same organization (or project) as the accessed resource, `caller_ip` will be the VM’s internal IPv4 address, otherwise the `caller_ip` will be redacted to “gce-internal-ip”. See https://cloud.google.com/compute/docs/vpc/ for more information."]
         #[serde(
             rename = "callerIp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub caller_ip: ::std::option::Option<String>,
-        #[doc = "The network of the caller. Set only if the network host project is part of the same GCP organization (or project) as the accessed resource. See https://cloud.google.com/compute/docs/vpc/ for more information. This is a scheme-less URI full resource name. For example: \"//compute.googleapis.com/projects/PROJECT_ID/global/networks/NETWORK_ID\""]
+        #[doc = "The network of the caller. Set only if the network host project is part of the same GCP organization (or project) as the accessed resource. See https://cloud.google.com/compute/docs/vpc/ for more information. This is a scheme-less URI full resource name. For example: “//compute.googleapis.com/projects/PROJECT_ID/global/networks/NETWORK_ID”"]
         #[serde(
             rename = "callerNetwork",
             default,
@@ -2916,7 +2916,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delete_time: ::std::option::Option<String>,
-        #[doc = "Mutable. The display name set by clients. Must be <= 63 characters."]
+        #[doc = "Mutable. The display name set by clients. Must be \\<= 63 characters."]
         #[serde(
             rename = "displayName",
             default,
@@ -2944,14 +2944,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "The stable identifier (name) of a resource on the `service`. A resource can be logically identified as \"//{resource.service}/{resource.name}\". The differences between a resource name and a URI are: * Resource name is a logical identifier, independent of network protocol and API version. For example, `//pubsub.googleapis.com/projects/123/topics/news-feed`. * URI often includes protocol and version information, so it can be used directly by applications. For example, `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`. See https://cloud.google.com/apis/design/resource_names for details."]
+        #[doc = "The stable identifier (name) of a resource on the `service`. A resource can be logically identified as “//{resource.service}/{resource.name}”. The differences between a resource name and a URI are: * Resource name is a logical identifier, independent of network protocol and API version. For example, `//pubsub.googleapis.com/projects/123/topics/news-feed`. * URI often includes protocol and version information, so it can be used directly by applications. For example, `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`. See https://cloud.google.com/apis/design/resource_names for details."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The type of the resource. The syntax is platform-specific because different platforms define their resources differently. For Google APIs, the type format must be \"{service}/{kind}\", such as \"pubsub.googleapis.com/Topic\"."]
+        #[doc = "The type of the resource. The syntax is platform-specific because different platforms define their resources differently. For Google APIs, the type format must be “{service}/{kind}”, such as “pubsub.googleapis.com/Topic”."]
         #[serde(
             rename = "type",
             default,
@@ -3010,7 +3010,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_container: ::std::option::Option<String>,
-        #[doc = "The location of the resource. If not empty, the resource will be checked against location policy. The value must be a valid zone, region or multiregion. For example: \"europe-west4\" or \"northamerica-northeast1-a\""]
+        #[doc = "The location of the resource. If not empty, the resource will be checked against location policy. The value must be a valid zone, region or multiregion. For example: “europe-west4” or “northamerica-northeast1-a”"]
         #[serde(
             rename = "resourceLocation",
             default,
@@ -3048,14 +3048,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceLocation {
-        #[doc = "The locations of a resource after the execution of the operation. Requests to create or delete a location based resource must populate the 'current_locations' field and not the 'original_locations' field. For example: \"europe-west1-a\" \"us-east1\" \"nam3\""]
+        #[doc = "The locations of a resource after the execution of the operation. Requests to create or delete a location based resource must populate the ‘current_locations’ field and not the ‘original_locations’ field. For example: “europe-west1-a” “us-east1” “nam3”"]
         #[serde(
             rename = "currentLocations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_locations: ::std::option::Option<Vec<String>>,
-        #[doc = "The locations of a resource prior to the execution of the operation. Requests that mutate the resource's location must populate both the 'original_locations' as well as the 'current_locations' fields. For example: \"europe-west1-a\" \"us-east1\" \"nam3\""]
+        #[doc = "The locations of a resource prior to the execution of the operation. Requests that mutate the resource’s location must populate both the ‘original_locations’ as well as the ‘current_locations’ fields. For example: “europe-west1-a” “us-east1” “nam3”"]
         #[serde(
             rename = "originalLocations",
             default,
@@ -3120,7 +3120,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SpanContext {
-        #[doc = "The resource name of the span. The format is: projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID] `[TRACE_ID]` is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. `[SPAN_ID]` is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
+        #[doc = "The resource name of the span. The format is: projects/\\[PROJECT_ID_OR_NUMBER\\]/traces/\\[TRACE_ID\\]/spans/\\[SPAN_ID\\] `[TRACE_ID]` is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. `[SPAN_ID]` is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
         #[serde(
             rename = "spanName",
             default,
@@ -3210,7 +3210,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub child_span_count: ::std::option::Option<i32>,
-        #[doc = "A description of the span's operation (up to 128 bytes). Stackdriver Trace displays the description in the Google Cloud Platform Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces."]
+        #[doc = "A description of the span’s operation (up to 128 bytes). Stackdriver Trace displays the description in the Google Cloud Platform Console. For example, the display name can be a qualified method name or a file name and a line number where the operation is called. A best practice is to use the same display name within an application and at the same call point. This makes it easier to correlate spans in different traces."]
         #[serde(
             rename = "displayName",
             default,
@@ -3224,14 +3224,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "The resource name of the span in the following format: projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/SPAN_ID is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. [SPAN_ID] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
+        #[doc = "The resource name of the span in the following format: projects/\\[PROJECT_ID\\]/traces/\\[TRACE_ID\\]/spans/SPAN_ID is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. \\[SPAN_ID\\] is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The [SPAN_ID] of this span's parent span. If this is a root span, then this field must be empty."]
+        #[doc = "The \\[SPAN_ID\\] of this span’s parent span. If this is a root span, then this field must be empty."]
         #[serde(
             rename = "parentSpanId",
             default,
@@ -3245,7 +3245,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub same_process_as_parent_span: ::std::option::Option<bool>,
-        #[doc = "The [SPAN_ID] portion of the span's resource name."]
+        #[doc = "The \\[SPAN_ID\\] portion of the span’s resource name."]
         #[serde(
             rename = "spanId",
             default,
@@ -3259,7 +3259,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub span_kind: ::std::option::Option<crate::schemas::TraceSpanSpanKind>,
-        #[doc = "The start time of the span. On the client side, this is the time kept by the local machine where the span execution starts. On the server side, this is the time when the server's application handler starts running."]
+        #[doc = "The start time of the span. On the client side, this is the time kept by the local machine where the span execution starts. On the server side, this is the time when the server’s application handler starts running."]
         #[serde(
             rename = "startTime",
             default,
@@ -3462,7 +3462,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latency: ::std::option::Option<String>,
-        #[doc = "Protocol used for the request. Examples: \"HTTP/1.1\", \"HTTP/2\", \"websocket\""]
+        #[doc = "Protocol used for the request. Examples: “HTTP/1.1”, “HTTP/2”, “websocket”"]
         #[serde(
             rename = "protocol",
             default,
@@ -4304,12 +4304,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4467,12 +4467,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4630,12 +4630,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

@@ -53,14 +53,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Content {
-        #[doc = "The list of script project files. One of the files is a script manifest; it must be named \"appsscript\", must have type of JSON, and include the manifest configurations for the project."]
+        #[doc = "The list of script project files. One of the files is a script manifest; it must be named “appsscript”, must have type of JSON, and include the manifest configurations for the project."]
         #[serde(
             rename = "files",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub files: ::std::option::Option<Vec<crate::schemas::File>>,
-        #[doc = "The script project's Drive ID."]
+        #[doc = "The script project’s Drive ID."]
         #[serde(
             rename = "scriptId",
             default,
@@ -143,7 +143,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deployment_id: ::std::option::Option<String>,
-        #[doc = "The deployment's entry points."]
+        #[doc = "The deployment’s entry points."]
         #[serde(
             rename = "entryPoints",
             default,
@@ -195,7 +195,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub manifest_file_name: ::std::option::Option<String>,
-        #[doc = "The script project's Drive ID."]
+        #[doc = "The script project’s Drive ID."]
         #[serde(
             rename = "scriptId",
             default,
@@ -417,7 +417,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExecutionError {
-        #[doc = "The error message thrown by Apps Script, usually localized into the user's language."]
+        #[doc = "The error message thrown by Apps Script, usually localized into the user’s language."]
         #[serde(
             rename = "errorMessage",
             default,
@@ -473,7 +473,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameters: ::std::option::Option<Vec<::serde_json::Value>>,
-        #[doc = "*Deprecated*. For use with Android add-ons only. An ID that represents the user's current session in the Android app for Google Docs or Sheets, included as extra data in the [Intent](https://developer.android.com/guide/components/intents-filters.html) that launches the add-on. When an Android add-on is run with a session state, it gains the privileges of a [bound](https://developers.google.com/apps-script/guides/bound) script—that is, it can access information like the user's current cursor position (in Docs) or selected cell (in Sheets). To retrieve the state, call `Intent.getStringExtra(\"com.google.android.apps.docs.addons.SessionState\")`. Optional."]
+        #[doc = "*Deprecated*. For use with Android add-ons only. An ID that represents the user’s current session in the Android app for Google Docs or Sheets, included as extra data in the [Intent](https://developer.android.com/guide/components/intents-filters.html) that launches the add-on. When an Android add-on is run with a session state, it gains the privileges of a [bound](https://developers.google.com/apps-script/guides/bound) script—that is, it can access information like the user’s current cursor position (in Docs) or selected cell (in Sheets). To retrieve the state, call `Intent.getStringExtra(\"com.google.android.apps.docs.addons.SessionState\")`. Optional."]
         #[serde(
             rename = "sessionState",
             default,
@@ -590,7 +590,7 @@ pub mod schemas {
         EnumTypeUnspecified,
         #[doc = "A file containing client-side HTML."]
         Html,
-        #[doc = "A file in JSON format. This type is only used for the script project's manifest. The manifest file content must match the structure of a valid [ScriptManifest](/apps-script/concepts/manifests)"]
+        #[doc = "A file in JSON format. This type is only used for the script project’s manifest. The manifest file content must match the structure of a valid [ScriptManifest](/apps-script/concepts/manifests)"]
         Json,
         #[doc = "An Apps Script server-side code file."]
         ServerJs,
@@ -678,7 +678,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsScriptTypeAddOnEntryPoint {
-        #[doc = "The add-on's required list of supported container types."]
+        #[doc = "The add-on’s required list of supported container types."]
         #[serde(
             rename = "addOnType",
             default,
@@ -686,35 +686,35 @@ pub mod schemas {
         )]
         pub add_on_type:
             ::std::option::Option<crate::schemas::GoogleAppsScriptTypeAddOnEntryPointAddOnType>,
-        #[doc = "The add-on's optional description."]
+        #[doc = "The add-on’s optional description."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The add-on's optional help URL."]
+        #[doc = "The add-on’s optional help URL."]
         #[serde(
             rename = "helpUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub help_url: ::std::option::Option<String>,
-        #[doc = "The add-on's required post install tip URL."]
+        #[doc = "The add-on’s required post install tip URL."]
         #[serde(
             rename = "postInstallTipUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub post_install_tip_url: ::std::option::Option<String>,
-        #[doc = "The add-on's optional report issue URL."]
+        #[doc = "The add-on’s optional report issue URL."]
         #[serde(
             rename = "reportIssueUrl",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub report_issue_url: ::std::option::Option<String>,
-        #[doc = "The add-on's required title."]
+        #[doc = "The add-on’s required title."]
         #[serde(
             rename = "title",
             default,
@@ -949,7 +949,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsScriptTypeExecutionApiEntryPoint {
-        #[doc = "The entry point's configuration."]
+        #[doc = "The entry point’s configuration."]
         #[serde(
             rename = "entryPointConfig",
             default,
@@ -1451,28 +1451,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsScriptTypeUser {
-        #[doc = "The user's domain."]
+        #[doc = "The user’s domain."]
         #[serde(
             rename = "domain",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub domain: ::std::option::Option<String>,
-        #[doc = "The user's identifying email address."]
+        #[doc = "The user’s identifying email address."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The user's display name."]
+        #[doc = "The user’s display name."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The user's photo."]
+        #[doc = "The user’s photo."]
         #[serde(
             rename = "photoUrl",
             default,
@@ -1706,7 +1706,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleAppsScriptTypeWebAppEntryPoint {
-        #[doc = "The entry point's configuration."]
+        #[doc = "The entry point’s configuration."]
         #[serde(
             rename = "entryPointConfig",
             default,
@@ -2024,14 +2024,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub done: ::std::option::Option<bool>,
-        #[doc = "If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, this field contains a Status object. The `Status` object's `details` field contains an array with a single ExecutionError object that provides information about the nature of the error."]
+        #[doc = "If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, this field contains a Status object. The `Status` object’s `details` field contains an array with a single ExecutionError object that provides information about the nature of the error."]
         #[serde(
             rename = "error",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error: ::std::option::Option<crate::schemas::Status>,
-        #[doc = "If the script function returns successfully, this field contains an ExecutionResponse object with the function's return value."]
+        #[doc = "If the script function returns successfully, this field contains an ExecutionResponse object with the function’s return value."]
         #[serde(
             rename = "response",
             default,
@@ -2084,14 +2084,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_modify_user: ::std::option::Option<crate::schemas::GoogleAppsScriptTypeUser>,
-        #[doc = "The parent's Drive ID that the script will be attached to. This is usually the ID of a Google Document or Google Sheet. This filed is optional, and if not set, a stand-alone script will be created."]
+        #[doc = "The parent’s Drive ID that the script will be attached to. This is usually the ID of a Google Document or Google Sheet. This filed is optional, and if not set, a stand-alone script will be created."]
         #[serde(
             rename = "parentId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parent_id: ::std::option::Option<String>,
-        #[doc = "The script project's Drive ID."]
+        #[doc = "The script project’s Drive ID."]
         #[serde(
             rename = "scriptId",
             default,
@@ -2439,7 +2439,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The script project's Drive ID."]
+        #[doc = "The script project’s Drive ID."]
         #[serde(
             rename = "scriptId",
             default,
@@ -3291,7 +3291,7 @@ pub mod resources {
                     user_process_filter_user_access_levels: None,
                 }
             }
-            #[doc = "List information about a script's executed processes, such as process type and current status."]
+            #[doc = "List information about a script’s executed processes, such as process type and current status."]
             pub fn list_script_processes(&self) -> ListScriptProcessesRequestBuilder {
                 ListScriptProcessesRequestBuilder {
                     reqwest: &self.reqwest,
@@ -3455,12 +3455,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3843,12 +3843,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4251,7 +4251,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Gets a script project's metadata."]
+            #[doc = "Gets a script project’s metadata."]
             pub fn get(&self, script_id: impl Into<String>) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -4401,12 +4401,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4555,12 +4555,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4686,7 +4686,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetContentRequestBuilder<'a> {
-            #[doc = "The version number of the project to retrieve. If not provided, the project's HEAD version is returned."]
+            #[doc = "The version number of the project to retrieve. If not provided, the project’s HEAD version is returned."]
             pub fn version_number(mut self, value: i32) -> Self {
                 self.version_number = Some(value);
                 self
@@ -4721,12 +4721,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4900,12 +4900,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5067,12 +5067,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5360,12 +5360,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5523,12 +5523,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5692,12 +5692,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5872,12 +5872,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6193,12 +6193,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6444,12 +6444,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6607,12 +6607,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -6788,12 +6788,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7070,7 +7070,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Runs a function in an Apps Script project. The script project must be deployed for use with the Apps Script API and the calling application must share the same Cloud Platform project. This method requires authorization with an OAuth 2.0 token that includes at least one of the scopes listed in the [Authorization](#authorization-scopes) section; script projects that do not require authorization cannot be executed through this API. To find the correct scopes to include in the authentication token, open the script project **Overview** page and scroll down to \"Project OAuth Scopes.\" The error `403, PERMISSION_DENIED: The caller does not have permission` indicates that the Cloud Platform project used to authorize the request is not the same as the one used by the script."]
+            #[doc = "Runs a function in an Apps Script project. The script project must be deployed for use with the Apps Script API and the calling application must share the same Cloud Platform project. This method requires authorization with an OAuth 2.0 token that includes at least one of the scopes listed in the [Authorization](#authorization-scopes) section; script projects that do not require authorization cannot be executed through this API. To find the correct scopes to include in the authentication token, open the script project **Overview** page and scroll down to “Project OAuth Scopes.” The error `403, PERMISSION_DENIED: The caller does not have permission` indicates that the Cloud Platform project used to authorize the request is not the same as the one used by the script."]
             pub fn run(
                 &self,
                 request: crate::schemas::ExecutionRequest,
@@ -7145,12 +7145,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

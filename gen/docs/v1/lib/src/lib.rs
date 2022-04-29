@@ -271,7 +271,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Body {
-        #[doc = "The contents of the body. The indexes for the body's content begin at zero."]
+        #[doc = "The contents of the body. The indexes for the body’s content begin at zero."]
         #[serde(
             rename = "content",
             default,
@@ -604,7 +604,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_of_segment_location: ::std::option::Option<crate::schemas::EndOfSegmentLocation>,
-        #[doc = "Inserts the footnote reference at a specific index in the document. The footnote reference must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table's start index (i.e. between the table and its preceding paragraph). Footnote references cannot be inserted inside an equation, header, footer or footnote. Since footnote references can only be inserted in the body, the segment ID field must be empty."]
+        #[doc = "Inserts the footnote reference at a specific index in the document. The footnote reference must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table’s start index (i.e. between the table and its preceding paragraph). Footnote references cannot be inserted inside an equation, header, footer or footnote. Since footnote references can only be inserted in the body, the segment ID field must be empty."]
         #[serde(
             rename = "location",
             default,
@@ -673,7 +673,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::CreateHeaderRequestType>,
-        #[doc = "The location of the SectionBreak which begins the section this header should belong to. If `section_break_location' is unset or if it refers to the first section break in the document body, the header applies to the DocumentStyle"]
+        #[doc = "The location of the SectionBreak which begins the section this header should belong to. If \\`section_break_location’ is unset or if it refers to the first section break in the document body, the header applies to the DocumentStyle"]
         #[serde(
             rename = "sectionBreakLocation",
             default,
@@ -933,7 +933,7 @@ pub mod schemas {
         NumberedDecimalAlphaRoman,
         #[doc = "A numbered list with `DECIMAL`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by parenthesis."]
         NumberedDecimalAlphaRomanParens,
-        #[doc = "A numbered list with `DECIMAL` numeric glyphs separated by periods, where each nesting level uses the previous nesting level's glyph as a prefix. For example: '1.', '1.1.', '2.', '2.2.'."]
+        #[doc = "A numbered list with `DECIMAL` numeric glyphs separated by periods, where each nesting level uses the previous nesting level’s glyph as a prefix. For example: ‘1.’, ‘1.1.’, ‘2.’, ‘2.2.’."]
         NumberedDecimalNested,
         #[doc = "A numbered list with `UPPERALPHA`, `ALPHA` and `ROMAN` numeric glyphs for the first 3 list nesting levels, followed by periods."]
         NumberedUpperalphaAlphaRoman,
@@ -1151,28 +1151,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub angle: ::std::option::Option<f32>,
-        #[doc = "The offset specifies how far inwards the bottom edge of the crop rectangle is from the bottom edge of the original content as a fraction of the original content's height."]
+        #[doc = "The offset specifies how far inwards the bottom edge of the crop rectangle is from the bottom edge of the original content as a fraction of the original content’s height."]
         #[serde(
             rename = "offsetBottom",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset_bottom: ::std::option::Option<f32>,
-        #[doc = "The offset specifies how far inwards the left edge of the crop rectangle is from the left edge of the original content as a fraction of the original content's width."]
+        #[doc = "The offset specifies how far inwards the left edge of the crop rectangle is from the left edge of the original content as a fraction of the original content’s width."]
         #[serde(
             rename = "offsetLeft",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset_left: ::std::option::Option<f32>,
-        #[doc = "The offset specifies how far inwards the right edge of the crop rectangle is from the right edge of the original content as a fraction of the original content's width."]
+        #[doc = "The offset specifies how far inwards the right edge of the crop rectangle is from the right edge of the original content as a fraction of the original content’s width."]
         #[serde(
             rename = "offsetRight",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset_right: ::std::option::Option<f32>,
-        #[doc = "The offset specifies how far inwards the top edge of the crop rectangle is from the top edge of the original content as a fraction of the original content's height."]
+        #[doc = "The offset specifies how far inwards the top edge of the crop rectangle is from the top edge of the original content as a fraction of the original content’s height."]
         #[serde(
             rename = "offsetTop",
             default,
@@ -1748,7 +1748,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum DocumentSuggestionsViewMode {
-        #[doc = "The SuggestionsViewMode applied to the returned document depends on the user's current access level. If the user only has view access, PREVIEW_WITHOUT_SUGGESTIONS is applied. Otherwise, SUGGESTIONS_INLINE is applied. This is the default suggestions view mode."]
+        #[doc = "The SuggestionsViewMode applied to the returned document depends on the user’s current access level. If the user only has view access, PREVIEW_WITHOUT_SUGGESTIONS is applied. Otherwise, SUGGESTIONS_INLINE is applied. This is the default suggestions view mode."]
         DefaultForCurrentAccess,
         #[doc = "The returned document is a preview with all suggested changes accepted. Requests to retrieve a document using this mode will return a 403 error if the user does not have permission to view suggested changes."]
         PreviewSuggestionsAccepted,
@@ -2324,13 +2324,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum EmbeddedObjectBorderDashStyle {
-        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'."]
+        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dash’."]
         Dash,
         #[doc = "Unspecified dash style."]
         DashStyleUnspecified,
-        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'."]
+        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dot’."]
         Dot,
-        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style."]
+        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘solid’. This is the default dash style."]
         Solid,
     }
     impl EmbeddedObjectBorderDashStyle {
@@ -2405,9 +2405,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum EmbeddedObjectBorderPropertyState {
-        #[doc = "If a property's state is NOT_RENDERED, then the element does not have the corresponding property when rendered in the document."]
+        #[doc = "If a property’s state is NOT_RENDERED, then the element does not have the corresponding property when rendered in the document."]
         NotRendered,
-        #[doc = "If a property's state is RENDERED, then the element has the corresponding property when rendered in the document. This is the default value."]
+        #[doc = "If a property’s state is RENDERED, then the element has the corresponding property when rendered in the document. This is the default value."]
         Rendered,
     }
     impl EmbeddedObjectBorderPropertyState {
@@ -2644,7 +2644,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct EndOfSegmentLocation {
-        #[doc = "The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document's body."]
+        #[doc = "The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document’s body."]
         #[serde(
             rename = "segmentId",
             default,
@@ -2704,7 +2704,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Footer {
-        #[doc = "The contents of the footer. The indexes for a footer's content begin at zero."]
+        #[doc = "The contents of the footer. The indexes for a footer’s content begin at zero."]
         #[serde(
             rename = "content",
             default,
@@ -2733,7 +2733,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Footnote {
-        #[doc = "The contents of the footnote. The indexes for a footnote's content begin at zero."]
+        #[doc = "The contents of the footnote. The indexes for a footnote’s content begin at zero."]
         #[serde(
             rename = "content",
             default,
@@ -2821,7 +2821,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Header {
-        #[doc = "The contents of the header. The indexes for a header's content begin at zero."]
+        #[doc = "The contents of the header. The indexes for a header’s content begin at zero."]
         #[serde(
             rename = "content",
             default,
@@ -2902,21 +2902,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub angle: ::std::option::Option<f32>,
-        #[doc = "The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect."]
+        #[doc = "The brightness effect of the image. The value should be in the interval \\[-1.0, 1.0\\], where 0 means no effect."]
         #[serde(
             rename = "brightness",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub brightness: ::std::option::Option<f32>,
-        #[doc = "A URI to the image with a default lifetime of 30 minutes. This URI is tagged with the account of the requester. Anyone with the URI effectively accesses the image as the original requester. Access to the image may be lost if the document's sharing settings change."]
+        #[doc = "A URI to the image with a default lifetime of 30 minutes. This URI is tagged with the account of the requester. Anyone with the URI effectively accesses the image as the original requester. Access to the image may be lost if the document’s sharing settings change."]
         #[serde(
             rename = "contentUri",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_uri: ::std::option::Option<String>,
-        #[doc = "The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect."]
+        #[doc = "The contrast effect of the image. The value should be in the interval \\[-1.0, 1.0\\], where 0 means no effect."]
         #[serde(
             rename = "contrast",
             default,
@@ -2937,7 +2937,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub source_uri: ::std::option::Option<String>,
-        #[doc = "The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent."]
+        #[doc = "The transparency effect of the image. The value should be in the interval \\[0.0, 1.0\\], where 0 means no effect and 1 means completely transparent."]
         #[serde(
             rename = "transparency",
             default,
@@ -3198,7 +3198,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_of_segment_location: ::std::option::Option<crate::schemas::EndOfSegmentLocation>,
-        #[doc = "Inserts the image at a specific index in the document. The image must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table's start index (i.e. between the table and its preceding paragraph). Inline images cannot be inserted inside a footnote or equation."]
+        #[doc = "Inserts the image at a specific index in the document. The image must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table’s start index (i.e. between the table and its preceding paragraph). Inline images cannot be inserted inside a footnote or equation."]
         #[serde(
             rename = "location",
             default,
@@ -3312,7 +3312,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_of_segment_location: ::std::option::Option<crate::schemas::EndOfSegmentLocation>,
-        #[doc = "Inserts the page break at a specific index in the document. The page break must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table's start index (i.e. between the table and its preceding paragraph). Page breaks cannot be inserted inside a table, equation, footnote, header or footer. Since page breaks can only be inserted inside the body, the segment ID field must be empty."]
+        #[doc = "Inserts the page break at a specific index in the document. The page break must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table’s start index (i.e. between the table and its preceding paragraph). Page breaks cannot be inserted inside a table, equation, footnote, header or footer. Since page breaks can only be inserted inside the body, the segment ID field must be empty."]
         #[serde(
             rename = "location",
             default,
@@ -3350,7 +3350,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_of_segment_location: ::std::option::Option<crate::schemas::EndOfSegmentLocation>,
-        #[doc = "Inserts a newline and a section break at a specific index in the document. The section break must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table's start index (i.e. between the table and its preceding paragraph). Section breaks cannot be inserted inside a table, equation, footnote, header, or footer. Since section breaks can only be inserted inside the body, the segment ID field must be empty."]
+        #[doc = "Inserts a newline and a section break at a specific index in the document. The section break must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table’s start index (i.e. between the table and its preceding paragraph). Section breaks cannot be inserted inside a table, equation, footnote, header, or footer. Since section breaks can only be inserted inside the body, the segment ID field must be empty."]
         #[serde(
             rename = "location",
             default,
@@ -3523,7 +3523,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_of_segment_location: ::std::option::Option<crate::schemas::EndOfSegmentLocation>,
-        #[doc = "Inserts the table at a specific model index. A newline character will be inserted before the inserted table, therefore the table start index will be at the specified location index + 1. The table must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table's start index (i.e. between an existing table and its preceding paragraph). Tables cannot be inserted inside a footnote or equation."]
+        #[doc = "Inserts the table at a specific model index. A newline character will be inserted before the inserted table, therefore the table start index will be at the specified location index + 1. The table must be inserted inside the bounds of an existing Paragraph. For instance, it cannot be inserted at a table’s start index (i.e. between an existing table and its preceding paragraph). Tables cannot be inserted inside a footnote or equation."]
         #[serde(
             rename = "location",
             default,
@@ -3606,7 +3606,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_of_segment_location: ::std::option::Option<crate::schemas::EndOfSegmentLocation>,
-        #[doc = "Inserts the text at a specific index in the document. Text must be inserted inside the bounds of an existing Paragraph. For instance, text cannot be inserted at a table's start index (i.e. between the table and its preceding paragraph). The text must be inserted in the preceding paragraph."]
+        #[doc = "Inserts the text at a specific index in the document. Text must be inserted inside the bounds of an existing Paragraph. For instance, text cannot be inserted at a table’s start index (i.e. between the table and its preceding paragraph). The text must be inserted in the preceding paragraph."]
         #[serde(
             rename = "location",
             default,
@@ -3858,7 +3858,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document's body."]
+        #[doc = "The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document’s body."]
         #[serde(
             rename = "segmentId",
             default,
@@ -3889,7 +3889,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MergeTableCellsRequest {
-        #[doc = "The table range specifying which cells of the table to merge. Any text in the cells being merged will be concatenated and stored in the \"head\" cell of the range. This is the upper-left cell of the range when the content direction is left to right, and the upper-right cell of the range otherwise. If the range is non-rectangular (which can occur in some cases where the range covers cells that are already merged or where the table is non-rectangular), a 400 bad request error is returned."]
+        #[doc = "The table range specifying which cells of the table to merge. Any text in the cells being merged will be concatenated and stored in the “head” cell of the range. This is the upper-left cell of the range when the content direction is left to right, and the upper-right cell of the range otherwise. If the range is non-rectangular (which can occur in some cases where the range covers cells that are already merged or where the table is non-rectangular), a 400 bad request error is returned."]
         #[serde(
             rename = "tableRange",
             default,
@@ -4373,7 +4373,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bullet_alignment: ::std::option::Option<crate::schemas::NestingLevelBulletAlignment>,
-        #[doc = "The format string used by bullets at this level of nesting. The glyph format contains one or more placeholders, and these placeholder are replaced with the appropriate values depending on the glyph_type or glyph_symbol. The placeholders follow the pattern `%[nesting_level]`. Furthermore, placeholders can have prefixes and suffixes. Thus, the glyph format follows the pattern `%[nesting_level]`. Note that the prefix and suffix are optional and can be arbitrary strings. For example, the glyph format `%0.` indicates that the rendered glyph will replace the placeholder with the corresponding glyph for nesting level 0 followed by a period as the suffix. So a list with a glyph type of UPPER_ALPHA and glyph format `%0.` at nesting level 0 will result in a list with rendered glyphs `A.` `B.` `C.` The glyph format can contain placeholders for the current nesting level as well as placeholders for parent nesting levels. For example, a list can have a glyph format of `%0.` at nesting level 0 and a glyph format of `%0.%1.` at nesting level 1. Assuming both nesting levels have DECIMAL glyph types, this would result in a list with rendered glyphs `1.` `2.` ` 2.1.` ` 2.2.` `3.` For nesting levels that are ordered, the string that replaces a placeholder in the glyph format for a particular paragraph depends on the paragraph's order within the list."]
+        #[doc = "The format string used by bullets at this level of nesting. The glyph format contains one or more placeholders, and these placeholder are replaced with the appropriate values depending on the glyph_type or glyph_symbol. The placeholders follow the pattern `%[nesting_level]`. Furthermore, placeholders can have prefixes and suffixes. Thus, the glyph format follows the pattern `%[nesting_level]`. Note that the prefix and suffix are optional and can be arbitrary strings. For example, the glyph format `%0.` indicates that the rendered glyph will replace the placeholder with the corresponding glyph for nesting level 0 followed by a period as the suffix. So a list with a glyph type of UPPER_ALPHA and glyph format `%0.` at nesting level 0 will result in a list with rendered glyphs `A.` `B.` `C.` The glyph format can contain placeholders for the current nesting level as well as placeholders for parent nesting levels. For example, a list can have a glyph format of `%0.` at nesting level 0 and a glyph format of `%0.%1.` at nesting level 1. Assuming both nesting levels have DECIMAL glyph types, this would result in a list with rendered glyphs `1.` `2.` ` 2.1.` ` 2.2.` `3.` For nesting levels that are ordered, the string that replaces a placeholder in the glyph format for a particular paragraph depends on the paragraph’s order within the list."]
         #[serde(
             rename = "glyphFormat",
             default,
@@ -4387,7 +4387,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub glyph_symbol: ::std::option::Option<String>,
-        #[doc = "The type of glyph used by bullets when paragraphs at this level of nesting are ordered. The glyph type determines the type of glyph used to replace placeholders within the glyph_format when paragraphs at this level of nesting are ordered. For example, if the nesting level is 0, the glyph_format is `%0.` and the glyph type is DECIMAL, then the rendered glyph would replace the placeholder `%0` in the glyph format with a number corresponding to list item's order within the list."]
+        #[doc = "The type of glyph used by bullets when paragraphs at this level of nesting are ordered. The glyph type determines the type of glyph used to replace placeholders within the glyph_format when paragraphs at this level of nesting are ordered. For example, if the nesting level is 0, the glyph_format is `%0.` and the glyph type is DECIMAL, then the rendered glyph would replace the placeholder `%0` in the glyph format with a number corresponding to list item’s order within the list."]
         #[serde(
             rename = "glyphType",
             default,
@@ -4401,7 +4401,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub indent_first_line: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The amount of indentation for paragraphs at this level of nesting. Applied to the side that corresponds to the start of the text, based on the paragraph's content direction."]
+        #[doc = "The amount of indentation for paragraphs at this level of nesting. Applied to the side that corresponds to the start of the text, based on the paragraph’s content direction."]
         #[serde(
             rename = "indentStart",
             default,
@@ -4832,7 +4832,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub positioned_object_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "The suggested changes to this paragraph's bullet."]
+        #[doc = "The suggested changes to this paragraph’s bullet."]
         #[serde(
             rename = "suggestedBulletChanges",
             default,
@@ -4915,13 +4915,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ParagraphBorderDashStyle {
-        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'."]
+        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dash’."]
         Dash,
         #[doc = "Unspecified dash style."]
         DashStyleUnspecified,
-        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'."]
+        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dot’."]
         Dot,
-        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style."]
+        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘solid’. This is the default dash style."]
         Solid,
     }
     impl ParagraphBorderDashStyle {
@@ -5798,14 +5798,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub person_properties: ::std::option::Option<crate::schemas::PersonProperties>,
-        #[doc = "IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion."]
+        #[doc = "IDs for suggestions that remove this person link from the document. A Person might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn’t suggested for deletion."]
         #[serde(
             rename = "suggestedDeletionIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion."]
+        #[doc = "IDs for suggestions that insert this person link into the document. A Person might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn’t a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -5859,7 +5859,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "Output only. The name of the person if it is displayed in the link text instead of the person's email address."]
+        #[doc = "Output only. The name of the person if it is displayed in the link text instead of the person’s email address."]
         #[serde(
             rename = "name",
             default,
@@ -5944,14 +5944,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub layout: ::std::option::Option<crate::schemas::PositionedObjectPositioningLayout>,
-        #[doc = "The offset of the left edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document's styling."]
+        #[doc = "The offset of the left edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document’s styling."]
         #[serde(
             rename = "leftOffset",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub left_offset: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The offset of the top edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document's styling."]
+        #[doc = "The offset of the top edge of the positioned object relative to the beginning of the Paragraph it is tethered to. The exact positioning of the object can depend on other content in the document and the document’s styling."]
         #[serde(
             rename = "topOffset",
             default,
@@ -6205,7 +6205,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_index: ::std::option::Option<i32>,
-        #[doc = "The ID of the header, footer or footnote that this range is contained in. An empty segment ID signifies the document's body."]
+        #[doc = "The ID of the header, footer or footnote that this range is contained in. An empty segment ID signifies the document’s body."]
         #[serde(
             rename = "segmentId",
             default,
@@ -6327,7 +6327,7 @@ pub mod schemas {
         )]
         pub image_replace_method:
             ::std::option::Option<crate::schemas::ReplaceImageRequestImageReplaceMethod>,
-        #[doc = "The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URI can't surpass 2 KB in length. The URI is saved with the image, and exposed through the ImageProperties.source_uri field."]
+        #[doc = "The URI of the new image. The image is fetched once at insertion time and a copy is stored for display inside the document. Images must be less than 50MB, cannot exceed 25 megapixels, and must be in PNG, JPEG, or GIF format. The provided URI can’t surpass 2 KB in length. The URI is saved with the image, and exposed through the ImageProperties.source_uri field."]
         #[serde(
             rename = "uri",
             default,
@@ -6347,7 +6347,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum ReplaceImageRequestImageReplaceMethod {
-        #[doc = "Scales and centers the image to fill the bounds of the original image. The image may be cropped in order to fill the original image's bounds. The rendered size of the image will be the same as the original image."]
+        #[doc = "Scales and centers the image to fill the bounds of the original image. The image may be cropped in order to fill the original image’s bounds. The rendered size of the image will be the same as the original image."]
         CenterCrop,
         #[doc = "Unspecified image replace method. This value must not be used."]
         ImageReplaceMethodUnspecified,
@@ -6843,14 +6843,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rich_link_properties: ::std::option::Option<crate::schemas::RichLinkProperties>,
-        #[doc = "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn't suggested for deletion."]
+        #[doc = "IDs for suggestions that remove this link from the document. A RichLink might have multiple deletion IDs if, for example, multiple users suggest to delete it. If empty, then this person link isn’t suggested for deletion."]
         #[serde(
             rename = "suggestedDeletionIds",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suggested_deletion_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn't a suggested insertion."]
+        #[doc = "IDs for suggestions that insert this link into the document. A RichLink might have multiple insertion IDs if it is a nested suggested change (a suggestion within a suggestion made by a different user, for example). If empty, then this person link isn’t a suggested insertion."]
         #[serde(
             rename = "suggestedInsertionIds",
             default,
@@ -6998,7 +6998,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SectionStyle {
-        #[doc = "The section's columns properties. If empty, the section contains one column with the default properties in the Docs editor. A section can be updated to have no more than three columns. When updating this property, setting a concrete value is required. Unsetting this property will result in a 400 bad request error."]
+        #[doc = "The section’s columns properties. If empty, the section contains one column with the default properties in the Docs editor. A section can be updated to have no more than three columns. When updating this property, setting a concrete value is required. Unsetting this property will result in a 400 bad request error."]
         #[serde(
             rename = "columnProperties",
             default,
@@ -7020,42 +7020,42 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_direction: ::std::option::Option<crate::schemas::SectionStyleContentDirection>,
-        #[doc = "The ID of the default footer. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's default_footer_id. This property is read-only."]
+        #[doc = "The ID of the default footer. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s default_footer_id. This property is read-only."]
         #[serde(
             rename = "defaultFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the default header. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's default_header_id. This property is read-only."]
+        #[doc = "The ID of the default header. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s default_header_id. This property is read-only."]
         #[serde(
             rename = "defaultHeaderId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_header_id: ::std::option::Option<String>,
-        #[doc = "The ID of the footer used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the footers on even pages in the section. If it is false, the footers on even pages uses the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_footer_id. This property is read-only."]
+        #[doc = "The ID of the footer used only for even pages. If the value of DocumentStyle’s use_even_page_header_footer is true, this value is used for the footers on even pages in the section. If it is false, the footers on even pages uses the default_footer_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s even_page_footer_id. This property is read-only."]
         #[serde(
             rename = "evenPageFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub even_page_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the header used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages uses the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_header_id. This property is read-only."]
+        #[doc = "The ID of the header used only for even pages. If the value of DocumentStyle’s use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages uses the default_header_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s even_page_header_id. This property is read-only."]
         #[serde(
             rename = "evenPageHeaderId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub even_page_header_id: ::std::option::Option<String>,
-        #[doc = "The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it is false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_footer_id. This property is read-only."]
+        #[doc = "The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it is false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s first_page_footer_id. This property is read-only."]
         #[serde(
             rename = "firstPageFooterId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub first_page_footer_id: ::std::option::Option<String>,
-        #[doc = "The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it is false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_header_id. This property is read-only."]
+        #[doc = "The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it is false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak’s SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle’s first_page_header_id. This property is read-only."]
         #[serde(
             rename = "firstPageHeaderId",
             default,
@@ -7104,7 +7104,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub margin_top: ::std::option::Option<crate::schemas::Dimension>,
-        #[doc = "The page number from which to start counting the number of pages for this section. If unset, page numbering continues from the previous section. If the value is unset in the first SectionBreak, refer to DocumentStyle's page_number_start. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "The page number from which to start counting the number of pages for this section. If unset, page numbering continues from the previous section. If the value is unset in the first SectionBreak, refer to DocumentStyle’s page_number_start. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "pageNumberStart",
             default,
@@ -7118,7 +7118,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub section_type: ::std::option::Option<crate::schemas::SectionStyleSectionType>,
-        #[doc = "Indicates whether to use the first page header / footer IDs for the first page of the section. If unset, it inherits from DocumentStyle's use_first_page_header_footer for the first section. If the value is unset for subsequent sectors, it should be interpreted as false. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
+        #[doc = "Indicates whether to use the first page header / footer IDs for the first page of the section. If unset, it inherits from DocumentStyle’s use_first_page_header_footer for the first section. If the value is unset for subsequent sectors, it should be interpreted as false. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error."]
         #[serde(
             rename = "useFirstPageHeaderFooter",
             default,
@@ -8238,13 +8238,13 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TableCellBorderDashStyle {
-        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'."]
+        #[doc = "Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dash’."]
         Dash,
         #[doc = "Unspecified dash style."]
         DashStyleUnspecified,
-        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'."]
+        #[doc = "Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘dot’."]
         Dot,
-        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default dash style."]
+        #[doc = "Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value ‘solid’. This is the default dash style."]
         Solid,
     }
     impl TableCellBorderDashStyle {
@@ -8464,15 +8464,15 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TableCellStyleContentAlignment {
-        #[doc = "An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'b'."]
+        #[doc = "An alignment that aligns the content to the bottom of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘b’."]
         Bottom,
         #[doc = "An unspecified content alignment. The content alignment is inherited from the parent if one exists."]
         ContentAlignmentUnspecified,
         #[doc = "An unsupported content alignment."]
         ContentAlignmentUnsupported,
-        #[doc = "An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 'ctr'."]
+        #[doc = "An alignment that aligns the content to the middle of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘ctr’."]
         Middle,
-        #[doc = "An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType 't'."]
+        #[doc = "An alignment that aligns the content to the top of the content holder. Corresponds to ECMA-376 ST_TextAnchoringType ‘t’."]
         Top,
     }
     impl TableCellStyleContentAlignment {
@@ -8672,7 +8672,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TableColumnProperties {
-        #[doc = "The width of the column. Set when the column's `width_type` is FIXED_WIDTH."]
+        #[doc = "The width of the column. Set when the column’s `width_type` is FIXED_WIDTH."]
         #[serde(
             rename = "width",
             default,
@@ -8701,7 +8701,7 @@ pub mod schemas {
     pub enum TableColumnPropertiesWidthType {
         #[doc = "The column width is evenly distributed among the other evenly distrubted columns. The width of the column is automatically determined and will have an equal portion of the width remaining for the table after accounting for all columns with specified widths."]
         EvenlyDistributed,
-        #[doc = "A fixed column width. The width property contains the column's width."]
+        #[doc = "A fixed column width. The width property contains the column’s width."]
         FixedWidth,
         #[doc = "The column width type is unspecified."]
         WidthTypeUnspecified,
@@ -8924,7 +8924,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TableRowStyle {
-        #[doc = "The minimum height of the row. The row will be rendered in the Docs editor at a height equal to or greater than this value in order to show all the content in the row's cells."]
+        #[doc = "The minimum height of the row. The row will be rendered in the Docs editor at a height equal to or greater than this value in order to show all the content in the row’s cells."]
         #[serde(
             rename = "minRowHeight",
             default,
@@ -8977,7 +8977,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct TableStyle {
-        #[doc = "The properties of each column. Note that in Docs, tables contain rows and rows contain cells, similar to HTML. So the properties for a row can be found on the row's table_row_style."]
+        #[doc = "The properties of each column. Note that in Docs, tables contain rows and rows contain cells, similar to HTML. So the properties for a row can be found on the row’s table_row_style."]
         #[serde(
             rename = "tableColumnProperties",
             default,
@@ -9059,7 +9059,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background_color: ::std::option::Option<crate::schemas::OptionalColor>,
-        #[doc = "The text's vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field."]
+        #[doc = "The text’s vertical offset from its normal position. Text with `SUPERSCRIPT` or `SUBSCRIPT` baseline offsets is automatically rendered in a smaller font size, computed based on the `font_size` field. The `font_size` itself is not affected by changes in this field."]
         #[serde(
             rename = "baselineOffset",
             default,
@@ -9073,7 +9073,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bold: ::std::option::Option<bool>,
-        #[doc = "The size of the text's font."]
+        #[doc = "The size of the text’s font."]
         #[serde(
             rename = "fontSize",
             default,
@@ -9142,7 +9142,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum TextStyleBaselineOffset {
-        #[doc = "The text's baseline offset is inherited from the parent."]
+        #[doc = "The text’s baseline offset is inherited from the parent."]
         BaselineOffsetUnspecified,
         #[doc = "The text is not vertically offset."]
         None,
@@ -9335,7 +9335,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UnmergeTableCellsRequest {
-        #[doc = "The table range specifying which cells of the table to unmerge. All merged cells in this range will be unmerged, and cells that are already unmerged will not be affected. If the range has no merged cells, the request will do nothing. If there is text in any of the merged cells, the text will remain in the \"head\" cell of the resulting block of unmerged cells. The \"head\" cell is the upper-left cell when the content direction is from left to right, and the upper-right otherwise."]
+        #[doc = "The table range specifying which cells of the table to unmerge. All merged cells in this range will be unmerged, and cells that are already unmerged will not be affected. If the range has no merged cells, the request will do nothing. If there is text in any of the merged cells, the text will remain in the “head” cell of the resulting block of unmerged cells. The “head” cell is the upper-left cell when the content direction is from left to right, and the upper-right otherwise."]
         #[serde(
             rename = "tableRange",
             default,
@@ -9386,7 +9386,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct UpdateParagraphStyleRequest {
-        #[doc = "The fields that should be updated. At least one field must be specified. The root `paragraph_style` is implied and should not be specified. For example, to update the paragraph style's alignment property, set `fields` to `\"alignment\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
+        #[doc = "The fields that should be updated. At least one field must be specified. The root `paragraph_style` is implied and should not be specified. For example, to update the paragraph style’s alignment property, set `fields` to `\"alignment\"`. To reset a property to its default value, include its field name in the field mask but leave the field itself unset."]
         #[serde(
             rename = "fields",
             default,
@@ -9594,7 +9594,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fields: ::std::option::Option<String>,
-        #[doc = "The range of text to style. The range may be extended to include adjacent newlines. If the range fully contains a paragraph belonging to a list, the paragraph's bullet is also updated with the matching text style. Ranges cannot be inserted inside a relative UpdateTextStyleRequest."]
+        #[doc = "The range of text to style. The range may be extended to include adjacent newlines. If the range fully contains a paragraph belonging to a list, the paragraph’s bullet is also updated with the matching text style. Ranges cannot be inserted inside a relative UpdateTextStyleRequest."]
         #[serde(
             rename = "range",
             default,
@@ -9632,14 +9632,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WeightedFontFamily {
-        #[doc = "The font family of the text. The font family can be any font from the Font menu in Docs or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`."]
+        #[doc = "The font family of the text. The font family can be any font from the Font menu in Docs or from \\[Google Fonts\\] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`."]
         #[serde(
             rename = "fontFamily",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub font_family: ::std::option::Option<String>,
-        #[doc = "The weight of the font. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` (\"normal\"). The font weight makes up just one component of the rendered font weight. The rendered weight is determined by a combination of the `weight` and the text style's resolved `bold` value, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight."]
+        #[doc = "The weight of the font. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` (“normal”). The font weight makes up just one component of the rendered font weight. The rendered weight is determined by a combination of the `weight` and the text style’s resolved `bold` value, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight."]
         #[serde(
             rename = "weight",
             default,
@@ -9677,7 +9677,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub required_revision_id: ::std::option::Option<String>,
-        #[doc = "The optional target revision ID of the document the write request is applied to. If collaborator changes have occurred after the document was read using the API, the changes produced by this write request are applied against the collaborator changes. This results in a new revision of the document that incorporates both the collaborator changes and the changes in the request, with the Docs server resolving conflicting changes. When using target revision ID, the API client can be thought of as another collaborator of the document. The target revision ID can only be used to write to recent versions of a document. If the target revision is too far behind the latest revision, the request is not processed and returns a 400 bad request error. The request should be tried again after retrieving the latest version of the document. Usually a revision ID remains valid for use as a target revision for several minutes after it's read, but for frequently edited documents this window might be shorter."]
+        #[doc = "The optional target revision ID of the document the write request is applied to. If collaborator changes have occurred after the document was read using the API, the changes produced by this write request are applied against the collaborator changes. This results in a new revision of the document that incorporates both the collaborator changes and the changes in the request, with the Docs server resolving conflicting changes. When using target revision ID, the API client can be thought of as another collaborator of the document. The target revision ID can only be used to write to recent versions of a document. If the target revision is too far behind the latest revision, the request is not processed and returns a 400 bad request error. The request should be tried again after retrieving the latest version of the document. Usually a revision ID remains valid for use as a target revision for several minutes after it’s read, but for frequently edited documents this window might be shorter."]
         #[serde(
             rename = "targetRevisionId",
             default,
@@ -9881,7 +9881,7 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum GetSuggestionsViewMode {
-                #[doc = "The SuggestionsViewMode applied to the returned document depends on the user's current access level. If the user only has view access, PREVIEW_WITHOUT_SUGGESTIONS is applied. Otherwise, SUGGESTIONS_INLINE is applied. This is the default suggestions view mode."]
+                #[doc = "The SuggestionsViewMode applied to the returned document depends on the user’s current access level. If the user only has view access, PREVIEW_WITHOUT_SUGGESTIONS is applied. Otherwise, SUGGESTIONS_INLINE is applied. This is the default suggestions view mode."]
                 DefaultForCurrentAccess,
                 #[doc = "The returned document is a preview with all suggested changes accepted. Requests to retrieve a document using this mode will return a 403 error if the user does not have permission to view suggested changes."]
                 PreviewSuggestionsAccepted,
@@ -10101,12 +10101,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -10263,12 +10263,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -10427,12 +10427,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

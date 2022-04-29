@@ -195,7 +195,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Candidate {
-        #[doc = "The URL for the candidate's campaign web site."]
+        #[doc = "The URL for the candidate’s campaign web site."]
         #[serde(
             rename = "candidateUrl",
             default,
@@ -209,14 +209,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channels: ::std::option::Option<Vec<crate::schemas::Channel>>,
-        #[doc = "The email address for the candidate's campaign."]
+        #[doc = "The email address for the candidate’s campaign."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The candidate's name. If this is a joint ticket it will indicate the name of the candidate at the top of a ticket followed by a / and that name of candidate at the bottom of the ticket. e.g. \"Mitt Romney / Paul Ryan\""]
+        #[doc = "The candidate’s name. If this is a joint ticket it will indicate the name of the candidate at the top of a ticket followed by a / and that name of candidate at the bottom of the ticket. e.g. “Mitt Romney / Paul Ryan”"]
         #[serde(
             rename = "name",
             default,
@@ -238,7 +238,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub party: ::std::option::Option<String>,
-        #[doc = "The voice phone number for the candidate's campaign office."]
+        #[doc = "The voice phone number for the candidate’s campaign office."]
         #[serde(
             rename = "phone",
             default,
@@ -276,7 +276,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Channel {
-        #[doc = "The unique public identifier for the candidate's channel."]
+        #[doc = "The unique public identifier for the candidate’s channel."]
         #[serde(
             rename = "id",
             default,
@@ -314,7 +314,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Contest {
-        #[doc = "A number specifying the position of this contest on the voter's ballot."]
+        #[doc = "A number specifying the position of this contest on the voter’s ballot."]
         #[serde(
             rename = "ballotPlacement",
             default,
@@ -350,7 +350,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub electorate_specifications: ::std::option::Option<String>,
-        #[doc = "The levels of government of the office for this contest. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at \"locality\" level, but also effectively at both \"administrative-area-2\" and \"administrative-area-1\"."]
+        #[doc = "The levels of government of the office for this contest. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at “locality” level, but also effectively at both “administrative-area-2” and “administrative-area-1”."]
         #[serde(
             rename = "level",
             default,
@@ -387,84 +387,84 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub primary_parties: ::std::option::Option<Vec<String>>,
-        #[doc = "[DEPRECATED] If this is a partisan election, the name of the party it is for. This field as deprecated in favor of the array \"primaryParties\", as contests may contain more than one party."]
+        #[doc = "\\[DEPRECATED\\] If this is a partisan election, the name of the party it is for. This field as deprecated in favor of the array “primaryParties”, as contests may contain more than one party."]
         #[serde(
             rename = "primaryParty",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub primary_party: ::std::option::Option<String>,
-        #[doc = "The type of contest. Usually this will be 'General', 'Primary', or 'Run-off' for contests with candidates. For referenda this will be 'Referendum'. For Retention contests this will typically be 'Retention'."]
+        #[doc = "The type of contest. Usually this will be ‘General’, ‘Primary’, or ‘Run-off’ for contests with candidates. For referenda this will be ‘Referendum’. For Retention contests this will typically be ‘Retention’."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include \"yes\" or \"no\" for referenda. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include “yes” or “no” for referenda. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumBallotResponses",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_ballot_responses: ::std::option::Option<Vec<String>>,
-        #[doc = "Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumBrief",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_brief: ::std::option::Option<String>,
-        #[doc = "A statement in opposition to the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "A statement in opposition to the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumConStatement",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_con_statement: ::std::option::Option<String>,
-        #[doc = "Specifies what effect abstaining (not voting) on the proposition will have (i.e. whether abstaining is considered a vote against it). This field is only populated for contests of type 'Referendum'."]
+        #[doc = "Specifies what effect abstaining (not voting) on the proposition will have (i.e. whether abstaining is considered a vote against it). This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumEffectOfAbstain",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_effect_of_abstain: ::std::option::Option<String>,
-        #[doc = "The threshold of votes that the referendum needs in order to pass, e.g. \"two-thirds\". This field is only populated for contests of type 'Referendum'."]
+        #[doc = "The threshold of votes that the referendum needs in order to pass, e.g. “two-thirds”. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumPassageThreshold",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_passage_threshold: ::std::option::Option<String>,
-        #[doc = "A statement in favor of the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "A statement in favor of the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumProStatement",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_pro_statement: ::std::option::Option<String>,
-        #[doc = "A brief description of the referendum. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "A brief description of the referendum. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumSubtitle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_subtitle: ::std::option::Option<String>,
-        #[doc = "The full text of the referendum. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "The full text of the referendum. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumText",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_text: ::std::option::Option<String>,
-        #[doc = "The title of the referendum (e.g. 'Proposition 42'). This field is only populated for contests of type 'Referendum'."]
+        #[doc = "The title of the referendum (e.g. ‘Proposition 42’). This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumTitle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub referendum_title: ::std::option::Option<String>,
-        #[doc = "A link to the referendum. This field is only populated for contests of type 'Referendum'."]
+        #[doc = "A link to the referendum. This field is only populated for contests of type ‘Referendum’."]
         #[serde(
             rename = "referendumUrl",
             default,
@@ -485,7 +485,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sources: ::std::option::Option<Vec<crate::schemas::Source>>,
-        #[doc = "\"Yes\" or \"No\" depending on whether this a contest being held outside the normal election cycle."]
+        #[doc = "“Yes” or “No” depending on whether this a contest being held outside the normal election cycle."]
         #[serde(
             rename = "special",
             default,
@@ -722,7 +722,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DivisionSearchResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"civicinfo#divisionSearchResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “civicinfo#divisionSearchResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -759,7 +759,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DivisionSearchResult {
-        #[doc = "Other Open Civic Data identifiers that refer to the same division -- for example, those that refer to other political divisions whose boundaries are defined to be coterminous with this one. For example, ocd-division/country:us/state:wy will include an alias of ocd-division/country:us/state:wy/cd:1, since Wyoming has only one Congressional district."]
+        #[doc = "Other Open Civic Data identifiers that refer to the same division – for example, those that refer to other political divisions whose boundaries are defined to be coterminous with this one. For example, ocd-division/country:us/state:wy will include an alias of ocd-division/country:us/state:wy/cd:1, since Wyoming has only one Congressional district."]
         #[serde(
             rename = "aliases",
             default,
@@ -923,7 +923,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub elections: ::std::option::Option<Vec<crate::schemas::Election>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"civicinfo#electionsQueryResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “civicinfo#electionsQueryResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -954,7 +954,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ElectoralDistrict {
-        #[doc = "An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id \"34\" and a scope of stateUpper."]
+        #[doc = "An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id “34” and a scope of stateUpper."]
         #[serde(
             rename = "id",
             default,
@@ -968,7 +968,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The geographic scope of this district. If unspecified the district's geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special"]
+        #[doc = "The geographic scope of this district. If unspecified the district’s geography is not known. One of: national, statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, township, countyCouncil, cityCouncil, ward, special"]
         #[serde(
             rename = "scope",
             default,
@@ -1202,7 +1202,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GeocodingSummaryFeatureType {
-        #[doc = "An address template feature provides region-specific conventions for structuring addresses. These features aren't necessarily defined by physical geographic features, so they are classified as meta-features."]
+        #[doc = "An address template feature provides region-specific conventions for structuring addresses. These features aren’t necessarily defined by physical geographic features, so they are classified as meta-features."]
         TypeAddressTemplate,
         #[doc = "ABSTRACT"]
         TypeAdministrativeArea,
@@ -1263,7 +1263,7 @@ pub mod schemas {
         TypeBusStation,
         #[doc = "DEPRECATED"]
         TypeBusiness,
-        #[doc = "A business chain feature is used to represent a chain, e.g. Starbucks, McDonald's, etc. Other features representing specific stores/franchises of this chain may refer to one such feature via RELATION_MEMBER_OF_CHAIN. This is not strictly reserved to commercial chains but can also be used to model organizations such as the Red Cross or the United Nations."]
+        #[doc = "A business chain feature is used to represent a chain, e.g. Starbucks, McDonald’s, etc. Other features representing specific stores/franchises of this chain may refer to one such feature via RELATION_MEMBER_OF_CHAIN. This is not strictly reserved to commercial chains but can also be used to model organizations such as the Red Cross or the United Nations."]
         TypeBusinessChain,
         #[doc = "A Business Corridor is a dense cluster of semantically similar establishments. TYPE_BUSINESS_CORRIDOR features are distinguished from TYPE_COLLOQUIAL_AREA features because the corridors are not under the political hierarchy, are allowed to be nameless, and may not correspond to well-known real world locations. For more details, see go/geo-corridors-schema."]
         TypeBusinessCorridor,
@@ -1286,7 +1286,7 @@ pub mod schemas {
         TypeCartographicLine,
         #[doc = "DEPRECATED"]
         TypeCashMachine,
-        #[doc = "Don't use 0xA7. Use 8 bits for additional types under TYPE_NATURAL_FEATURE, so we don't run out of space. The following are miscellaneous natural features that don't fit any of the categories above."]
+        #[doc = "Don’t use 0xA7. Use 8 bits for additional types under TYPE_NATURAL_FEATURE, so we don’t run out of space. The following are miscellaneous natural features that don’t fit any of the categories above."]
         TypeCave,
         #[doc = "A small, low-elevation, sandy island formed on the surface of coral reefs"]
         TypeCay,
@@ -1350,7 +1350,7 @@ pub mod schemas {
         TypeDesignatedMarketArea,
         #[doc = "RESERVED"]
         TypeDigitalElevationModel,
-        #[doc = "Eventually we'll have more data for disputed areas (e.g., who makes claims on the area, who has de facto control, etc.). For the moment, we just define a type so we can simply mark areas as disputed."]
+        #[doc = "Eventually we’ll have more data for disputed areas (e.g., who makes claims on the area, who has de facto control, etc.). For the moment, we just define a type so we can simply mark areas as disputed."]
         TypeDisputedArea,
         #[doc = "A branch which flows away from the main river. Includes deltas."]
         TypeDistributary,
@@ -1366,7 +1366,7 @@ pub mod schemas {
         TypeEarthquake,
         #[doc = "DEPRECATED"]
         TypeEcoTouristDestination,
-        #[doc = "Features that are notable for being high (or low), or for having sudden changes in elevation. These features might have an \"elevation\" extension to specify the actual elevation. See ElevationProto for more information."]
+        #[doc = "Features that are notable for being high (or low), or for having sudden changes in elevation. These features might have an “elevation” extension to specify the actual elevation. See ElevationProto for more information."]
         TypeElevated,
         #[doc = "DEPRECATED"]
         TypeEmbassy,
@@ -1397,7 +1397,7 @@ pub mod schemas {
         TypeFerryBoat,
         #[doc = "DEPRECATED"]
         TypeFerryTerminal,
-        #[doc = "Also called a \"car transport\", a ferry train is a rail service that carries passengers and their vehicles across undrivable terrain. The Channel Tunnel (\"Chunnel\") is the most famous example, but they are also common in the Alps where they connect neighboring valleys otherwise separated by impassable mountains."]
+        #[doc = "Also called a “car transport”, a ferry train is a rail service that carries passengers and their vehicles across undrivable terrain. The Channel Tunnel (“Chunnel”) is the most famous example, but they are also common in the Alps where they connect neighboring valleys otherwise separated by impassable mountains."]
         TypeFerryTrain,
         #[doc = "DEPRECATED"]
         TypeFire,
@@ -1489,9 +1489,9 @@ pub mod schemas {
         #[doc = "DEPRECATED"]
         TypeIndustrial,
         TypeInlet,
-        #[doc = "An intersection consists of a collection of segments that terminate at the same location. This is topological definition: it may not match what a typical user would think of as an \"intersection\". See TYPE_INTERSECTION_GROUP, below, for more information. Each segment terminating at an intersection has an \"endpoint type\" that specifies how that segment is terminated: stop sign, yield sign, three-way light, etc."]
+        #[doc = "An intersection consists of a collection of segments that terminate at the same location. This is topological definition: it may not match what a typical user would think of as an “intersection”. See TYPE_INTERSECTION_GROUP, below, for more information. Each segment terminating at an intersection has an “endpoint type” that specifies how that segment is terminated: stop sign, yield sign, three-way light, etc."]
         TypeIntersection,
-        #[doc = "Our TYPE_INTERSECTION feature, above, models the point where one or more segments terminate. This is topological definition: it may not match what a typical user would think of as an \"intersection\". Consider the intersections where Hayes, Market, Larkin, and 9th Street meet near (37.77765, -122.41638) in San Francisco. Most people would probably consider this a single feature, even though we model it as four separate TYPE_INTERSECTION features. This TYPE_INTERSECTION_GROUP is used to model the user's concept of a complex intersection."]
+        #[doc = "Our TYPE_INTERSECTION feature, above, models the point where one or more segments terminate. This is topological definition: it may not match what a typical user would think of as an “intersection”. Consider the intersections where Hayes, Market, Larkin, and 9th Street meet near (37.77765, -122.41638) in San Francisco. Most people would probably consider this a single feature, even though we model it as four separate TYPE_INTERSECTION features. This TYPE_INTERSECTION_GROUP is used to model the user’s concept of a complex intersection."]
         TypeIntersectionGroup,
         #[doc = "Man-made (and sometimes natural) channels used to move water. This type was used for both dam structures and water that is hold back by dams. We should use TYPE_COMPOUND_BUILDING for dam structures and TYPE_RESERVOIR for water."]
         TypeIrrigation,
@@ -1533,7 +1533,7 @@ pub mod schemas {
         TypeLitterReceptacle,
         #[doc = "DEPRECATED"]
         TypeLocalPark,
-        #[doc = "A locale feature provides region specific conventions such as preferred language and formatting details for time, date, and currency values. Locales aren't necessary defined by physical geographic features, so they are classified as meta-features."]
+        #[doc = "A locale feature provides region specific conventions such as preferred language and formatting details for time, date, and currency values. Locales aren’t necessary defined by physical geographic features, so they are classified as meta-features."]
         TypeLocale,
         TypeLocality,
         TypeLockerArea,
@@ -1609,7 +1609,7 @@ pub mod schemas {
         TypePond,
         #[doc = "DEPRECATED"]
         TypePostOffice,
-        #[doc = "The term \"post town\" is used for a locality-like-entity that is only used for postal addresses."]
+        #[doc = "The term “post town” is used for a locality-like-entity that is only used for postal addresses."]
         TypePostTown,
         #[doc = "ABSTRACT"]
         TypePostal,
@@ -1713,7 +1713,7 @@ pub mod schemas {
         TypeStandardTrack,
         #[doc = "An area used for aggregating statistical data, eg, a census region. Note that TYPE_STATISTICAL_AREA has a third nibble so we can add an abstract parent above it later if need be at 0x2E1 (and rename TYPE_STATISTICAL_AREA as TYPE_STATISTICAL_AREA1)."]
         TypeStatisticalArea,
-        #[doc = "Note that this type does not distinguish the nature of the statue (religious, historical, memorial, tourist, ...)."]
+        #[doc = "Note that this type does not distinguish the nature of the statue (religious, historical, memorial, tourist, …)."]
         TypeStatue,
         #[doc = "A long narrow ocean subdivision. Includes sounds."]
         TypeStrait,
@@ -1758,7 +1758,7 @@ pub mod schemas {
         TypeTerrace,
         #[doc = "Expanses of land that share common surface attributes. These areas would look more or less uniform from a high altitude."]
         TypeTerrain,
-        #[doc = "A timezone feature is used to specify the region covering an international timezone. When a point is covered by multiple timezone features, the most specific one can be used to compute the local time at this point. Most specific implies a much smaller region or the one that is closer to the center. A feature's timezone can be specified in the repeated related_timezone field."]
+        #[doc = "A timezone feature is used to specify the region covering an international timezone. When a point is covered by multiple timezone features, the most specific one can be used to compute the local time at this point. Most specific implies a much smaller region or the one that is closer to the center. A feature’s timezone can be specified in the repeated related_timezone field."]
         TypeTimezone,
         #[doc = "A toll cluster is either a single point on a segment (represented as a point at the end of the segment that has ENDPOINT_TOLL_BOOTH set) or a group of points on various road segments in MapFacts that represents one or more lanes passing through a toll fixture that all go to the same routing destination. Each toll cluster should have at most a single price per payment method. E.g. {CASH = $5, PASS = $1}. Note: If a toll fixture has different prices for multiple routing destinations, drivers need to be in the correct lane before passing through the toll fixture and hence such a fixture is represented by multiple toll clusters. A toll cluster does not necessarily represent a real-world entity, e.g. a particular plaza/structure as perceived by humans. This is because a plaza can be represented by more than one toll cluster. We require toll clusters to have names, but they might be non-unique. For example, a plaza might be represented by multiple toll clusters that may have the same plaza name. For further details, please see go/toll-cluster-schema."]
         TypeTollCluster,
@@ -1802,7 +1802,7 @@ pub mod schemas {
         #[doc = "Tracks for streetcars, cable-cars, etc. Ferries are services that are part of the road network but are not roads. They typically involve fares and scheduled departure times."]
         TypeTrolleyTrack,
         TypeTundra,
-        #[doc = "Features that are notable for being high (or low), or for having sudden changes in elevation. These features might have an \"elevation\" extension to specify the actual elevation. See ElevationProto for more information."]
+        #[doc = "Features that are notable for being high (or low), or for having sudden changes in elevation. These features might have an “elevation” extension to specify the actual elevation. See ElevationProto for more information."]
         TypeUndersea,
         #[doc = "DEPRECATED"]
         TypeUniversity,
@@ -1834,7 +1834,7 @@ pub mod schemas {
         TypeWadi,
         #[doc = "Use TYPE_COMPOUND_GROUND and appropriate gcids for the next two."]
         TypeWall,
-        #[doc = "Features can be TYPE_WATER if we don't have enough information to properly type the body of water. TYPE_WATER is also used as the type for child features that compose a TYPE_RIVER feature."]
+        #[doc = "Features can be TYPE_WATER if we don’t have enough information to properly type the body of water. TYPE_WATER is also used as the type for child features that compose a TYPE_RIVER feature."]
         TypeWater,
         TypeWaterFountain,
         TypeWaterNavigation,
@@ -3100,7 +3100,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GeographicDivision {
-        #[doc = "Any other valid OCD IDs that refer to the same division.\\n\\nBecause OCD IDs are meant to be human-readable and at least somewhat predictable, there are occasionally several identifiers for a single division. These identifiers are defined to be equivalent to one another, and one is always indicated as the primary identifier. The primary identifier will be returned in ocd_id above, and any other equivalent valid identifiers will be returned in this list.\\n\\nFor example, if this division's OCD ID is ocd-division/country:us/district:dc, this will contain ocd-division/country:us/state:dc."]
+        #[doc = "Any other valid OCD IDs that refer to the same division.\\n\\nBecause OCD IDs are meant to be human-readable and at least somewhat predictable, there are occasionally several identifiers for a single division. These identifiers are defined to be equivalent to one another, and one is always indicated as the primary identifier. The primary identifier will be returned in ocd_id above, and any other equivalent valid identifiers will be returned in this list.\\n\\nFor example, if this division’s OCD ID is ocd-division/country:us/district:dc, this will contain ocd-division/country:us/state:dc."]
         #[serde(
             rename = "alsoKnownAs",
             default,
@@ -3176,7 +3176,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub division_id: ::std::option::Option<String>,
-        #[doc = "The levels of government of which this office is part. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at \"locality\" level, but also effectively at both \"administrative-area-2\" and \"administrative-area-1\"."]
+        #[doc = "The levels of government of which this office is part. There may be more than one in cases where a jurisdiction effectively acts at two different levels of government; for example, the mayor of the District of Columbia acts at “locality” level, but also effectively at both “administrative-area-2” and “administrative-area-1”."]
         #[serde(
             rename = "levels",
             default,
@@ -3453,14 +3453,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub emails: ::std::option::Option<Vec<String>>,
-        #[doc = "Detailed summary about the official's address's geocoding"]
+        #[doc = "Detailed summary about the official’s address’s geocoding"]
         #[serde(
             rename = "geocodingSummaries",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub geocoding_summaries: ::std::option::Option<Vec<crate::schemas::GeocodingSummary>>,
-        #[doc = "The official's name."]
+        #[doc = "The official’s name."]
         #[serde(
             rename = "name",
             default,
@@ -3474,7 +3474,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub party: ::std::option::Option<String>,
-        #[doc = "The official's public contact phone numbers."]
+        #[doc = "The official’s public contact phone numbers."]
         #[serde(
             rename = "phones",
             default,
@@ -3488,7 +3488,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub photo_url: ::std::option::Option<String>,
-        #[doc = "The official's public website URLs."]
+        #[doc = "The official’s public website URLs."]
         #[serde(
             rename = "urls",
             default,
@@ -3765,7 +3765,7 @@ pub mod schemas {
         pub divisions: ::std::option::Option<
             ::std::collections::BTreeMap<String, crate::schemas::GeographicDivision>,
         >,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"civicinfo#representativeInfoResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “civicinfo#representativeInfoResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3919,7 +3919,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct VoterInfoResponse {
-        #[doc = "Contests that will appear on the voter's ballot."]
+        #[doc = "Contests that will appear on the voter’s ballot."]
         #[serde(
             rename = "contests",
             default,
@@ -3947,7 +3947,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub election: ::std::option::Option<crate::schemas::Election>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"civicinfo#voterInfoResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “civicinfo#voterInfoResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3988,7 +3988,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub precinct_id: ::std::option::Option<String>,
-        #[doc = "The precincts that match this voter's address. Will only be returned for project IDs which have been whitelisted as \"partner projects\"."]
+        #[doc = "The precincts that match this voter’s address. Will only be returned for project IDs which have been whitelisted as “partner projects”."]
         #[serde(
             rename = "precincts",
             default,
@@ -4293,12 +4293,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4427,7 +4427,7 @@ pub mod resources {
                     xgafv: None,
                 }
             }
-            #[doc = "Looks up information relevant to a voter based on the voter's registered address."]
+            #[doc = "Looks up information relevant to a voter based on the voter’s registered address."]
             pub fn voter_info_query(
                 &self,
                 address: impl Into<String>,
@@ -4501,12 +4501,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4672,12 +4672,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5400,7 +5400,7 @@ pub mod resources {
                 self.include_offices = Some(value);
                 self
             }
-            #[doc = "A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned."]
+            #[doc = "A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don’t contain a matching office will not be returned."]
             pub fn levels(
                 mut self,
                 value : impl Into < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByAddressLevelsItems > >,
@@ -5408,7 +5408,7 @@ pub mod resources {
                 self.levels = Some(value.into());
                 self
             }
-            #[doc = "A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned."]
+            #[doc = "A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don’t contain a matching office will not be returned."]
             pub fn roles(
                 mut self,
                 value : impl Into < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByAddressRolesItems > >,
@@ -5446,12 +5446,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5562,7 +5562,7 @@ pub mod resources {
         #[derive(Debug, Clone)]
         pub struct RepresentativeInfoByDivisionRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , ocd_id : String , levels : :: std :: option :: Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionLevelsItems > > , recursive : :: std :: option :: Option < bool > , roles : :: std :: option :: Option < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionRolesItems > > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
         impl<'a> RepresentativeInfoByDivisionRequestBuilder<'a> {
-            #[doc = "A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don't contain a matching office will not be returned."]
+            #[doc = "A list of office levels to filter by. Only offices that serve at least one of these levels will be returned. Divisions that don’t contain a matching office will not be returned."]
             pub fn levels(
                 mut self,
                 value : impl Into < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionLevelsItems > >,
@@ -5570,12 +5570,12 @@ pub mod resources {
                 self.levels = Some(value.into());
                 self
             }
-            #[doc = "If true, information about all divisions contained in the division requested will be included as well. For example, if querying ocd-division/country:us/district:dc, this would also return all DC's wards and ANCs."]
+            #[doc = "If true, information about all divisions contained in the division requested will be included as well. For example, if querying ocd-division/country:us/district:dc, this would also return all DC’s wards and ANCs."]
             pub fn recursive(mut self, value: bool) -> Self {
                 self.recursive = Some(value);
                 self
             }
-            #[doc = "A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don't contain a matching office will not be returned."]
+            #[doc = "A list of office roles to filter by. Only offices fulfilling one of these roles will be returned. Divisions that don’t contain a matching office will not be returned."]
             pub fn roles(
                 mut self,
                 value : impl Into < Vec < crate :: resources :: representatives :: params :: RepresentativeInfoByDivisionRolesItems > >,
@@ -5613,12 +5613,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

@@ -71,7 +71,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub position: ::std::option::Option<crate::schemas::Position>,
-        #[doc = "Total amount of parallelism in the input of this task that remains, (i.e. can be delegated to this task and any new tasks via dynamic splitting). Always at least 1 for non-finished work items and 0 for finished. \"Amount of parallelism\" refers to how many non-empty parts of the input can be read in parallel. This does not necessarily equal number of records. An input that can be read in parallel down to the individual records is called \"perfectly splittable\". An example of non-perfectly parallelizable input is a block-compressed file format where a block of records has to be read as a whole, but different blocks can be read in parallel. Examples: * If we are processing record #30 (starting at 1) out of 50 in a perfectly splittable 50-record input, this value should be 21 (20 remaining + 1 current). * If we are reading through block 3 in a block-compressed file consisting of 5 blocks, this value should be 3 (since blocks 4 and 5 can be processed in parallel by new tasks via dynamic splitting and the current task remains processing block 3). * If we are reading through the last block in a block-compressed file, or reading or processing the last record in a perfectly splittable input, this value should be 1, because apart from the current task, no additional remainder can be split off."]
+        #[doc = "Total amount of parallelism in the input of this task that remains, (i.e. can be delegated to this task and any new tasks via dynamic splitting). Always at least 1 for non-finished work items and 0 for finished. “Amount of parallelism” refers to how many non-empty parts of the input can be read in parallel. This does not necessarily equal number of records. An input that can be read in parallel down to the individual records is called “perfectly splittable”. An example of non-perfectly parallelizable input is a block-compressed file format where a block of records has to be read as a whole, but different blocks can be read in parallel. Examples: * If we are processing record #30 (starting at 1) out of 50 in a perfectly splittable 50-record input, this value should be 21 (20 remaining + 1 current). * If we are reading through block 3 in a block-compressed file consisting of 5 blocks, this value should be 3 (since blocks 4 and 5 can be processed in parallel by new tasks via dynamic splitting and the current task remains processing block 3). * If we are reading through the last block in a block-compressed file, or reading or processing the last record in a perfectly splittable input, this value should be 1, because apart from the current task, no additional remainder can be split off."]
         #[serde(
             rename = "remainingParallelism",
             default,
@@ -825,7 +825,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CounterMetadataKind {
-        #[doc = "Aggregated value represents the logical 'and' of all contributed values."]
+        #[doc = "Aggregated value represents the logical ‘and’ of all contributed values."]
         And,
         #[doc = "Aggregated value captures statistics about a distribution."]
         Distribution,
@@ -839,7 +839,7 @@ pub mod schemas {
         Mean,
         #[doc = "Aggregated value is the min of all contributed values."]
         Min,
-        #[doc = "Aggregated value represents the logical 'or' of all contributed values."]
+        #[doc = "Aggregated value represents the logical ‘or’ of all contributed values."]
         Or,
         #[doc = "Aggregated value is a set of unique contributed values."]
         Set,
@@ -1062,7 +1062,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub execution_step_name: ::std::option::Option<String>,
-        #[doc = "Index of an input collection that's being read from/written to as a side input. The index identifies a step's side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them."]
+        #[doc = "Index of an input collection that’s being read from/written to as a side input. The index identifies a step’s side inputs starting by 1 (e.g. the first side input has input_index 1, the third has input_index 3). Side inputs are identified by a pair of (original_step_name, input_index). This field helps uniquely identify them."]
         #[serde(
             rename = "inputIndex",
             default,
@@ -1083,7 +1083,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub origin: ::std::option::Option<crate::schemas::CounterStructuredNameOrigin>,
-        #[doc = "A string containing a more specific namespace of the counter's origin."]
+        #[doc = "A string containing a more specific namespace of the counter’s origin."]
         #[serde(
             rename = "originNamespace",
             default,
@@ -1097,7 +1097,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub original_requesting_step_name: ::std::option::Option<String>,
-        #[doc = "System generated name of the original step in the user's graph, before optimization."]
+        #[doc = "System generated name of the original step in the user’s graph, before optimization."]
         #[serde(
             rename = "originalStepName",
             default,
@@ -1505,7 +1505,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_name: ::std::option::Option<String>,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
         #[serde(
             rename = "location",
             default,
@@ -1574,14 +1574,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DataDiskAssignment {
-        #[doc = "Mounted data disks. The order is important a data disk's 0-based index in this list defines which persistent directory the disk is mounted to, for example the list of { \"myproject-1014-104817-4c2-harness-0-disk-0\" }, { \"myproject-1014-104817-4c2-harness-0-disk-1\" }."]
+        #[doc = "Mounted data disks. The order is important a data disk’s 0-based index in this list defines which persistent directory the disk is mounted to, for example the list of { “myproject-1014-104817-4c2-harness-0-disk-0” }, { “myproject-1014-104817-4c2-harness-0-disk-1” }."]
         #[serde(
             rename = "dataDisks",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_disks: ::std::option::Option<Vec<String>>,
-        #[doc = "VM instance name the data disks mounted to, for example \"myproject-1014-104817-4c2-harness-0\"."]
+        #[doc = "VM instance name the data disks mounted to, for example “myproject-1014-104817-4c2-harness-0”."]
         #[serde(
             rename = "vmInstance",
             default,
@@ -1650,7 +1650,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DebugOptions {
-        #[doc = "When true, enables the logging of the literal hot key to the user's Cloud Logging."]
+        #[doc = "When true, enables the logging of the literal hot key to the user’s Cloud Logging."]
         #[serde(
             rename = "enableHotKeyLogging",
             default,
@@ -1837,7 +1837,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Disk {
-        #[doc = "Disk storage type, as defined by Google Compute Engine. This must be a disk type appropriate to the project and zone in which the workers will run. If unknown or unspecified, the service will attempt to choose a reasonable default. For example, the standard persistent disk type is a resource name typically ending in \"pd-standard\". If SSD persistent disks are available, the resource name typically ends with \"pd-ssd\". The actual valid values are defined the Google Compute Engine API, not by the Cloud Dataflow API; consult the Google Compute Engine documentation for more information about determining the set of available disk types for a particular project and zone. Google Compute Engine Disk types are local to a particular project in a particular zone, and so the resource name will typically look something like this: compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard"]
+        #[doc = "Disk storage type, as defined by Google Compute Engine. This must be a disk type appropriate to the project and zone in which the workers will run. If unknown or unspecified, the service will attempt to choose a reasonable default. For example, the standard persistent disk type is a resource name typically ending in “pd-standard”. If SSD persistent disks are available, the resource name typically ends with “pd-ssd”. The actual valid values are defined the Google Compute Engine API, not by the Cloud Dataflow API; consult the Google Compute Engine documentation for more information about determining the set of available disk types for a particular project and zone. Google Compute Engine Disk types are local to a particular project in a particular zone, and so the resource name will typically look something like this: compute.googleapis.com/projects/project-id/zones/zone/diskTypes/pd-standard"]
         #[serde(
             rename = "diskType",
             default,
@@ -2001,7 +2001,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub min: ::std::option::Option<crate::schemas::SplitInt64>,
-        #[doc = "Use an int64 since we'd prefer the added precision. If overflow is a common problem we can detect it and use an additional int64 or a double."]
+        #[doc = "Use an int64 since we’d prefer the added precision. If overflow is a common problem we can detect it and use an additional int64 or a double."]
         #[serde(
             rename = "sum",
             default,
@@ -2055,7 +2055,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Environment {
-        #[doc = "The type of cluster manager API to use. If unknown or unspecified, the service will attempt to choose a reasonable default. This should be in the form of the API service name, e.g. \"compute.googleapis.com\"."]
+        #[doc = "The type of cluster manager API to use. If unknown or unspecified, the service will attempt to choose a reasonable default. This should be in the form of the API service name, e.g. “compute.googleapis.com”."]
         #[serde(
             rename = "clusterManagerApiService",
             default,
@@ -2135,7 +2135,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub shuffle_mode: ::std::option::Option<crate::schemas::EnvironmentShuffleMode>,
-        #[doc = "The prefix of the resources the system should use for temporary storage. The system will append the suffix \"/temp-{JOBNAME} to this resource prefix, where {JOBNAME} is the value of the job_name field. The resulting bucket and object prefix is used as the prefix of the resources used to store temporary data needed during the job execution. NOTE: This will override the value in taskrunner_settings. The supported resource type is: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}"]
+        #[doc = "The prefix of the resources the system should use for temporary storage. The system will append the suffix “/temp-{JOBNAME} to this resource prefix, where {JOBNAME} is the value of the job_name field. The resulting bucket and object prefix is used as the prefix of the resources used to store temporary data needed during the job execution. NOTE: This will override the value in taskrunner_settings. The supported resource type is: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}"]
         #[serde(
             rename = "tempStoragePrefix",
             default,
@@ -2158,21 +2158,21 @@ pub mod schemas {
         )]
         pub version:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The worker pools. At least one \"harness\" worker pool must be specified in order for the job to have workers."]
+        #[doc = "The worker pools. At least one “harness” worker pool must be specified in order for the job to have workers."]
         #[serde(
             rename = "workerPools",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_pools: ::std::option::Option<Vec<crate::schemas::WorkerPool>>,
-        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region."]
+        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1”. Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane’s region."]
         #[serde(
             rename = "workerRegion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_region: ::std::option::Option<String>,
-        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity."]
+        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1-a”. Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane’s region is chosen based on available capacity."]
         #[serde(
             rename = "workerZone",
             default,
@@ -2418,13 +2418,13 @@ pub mod schemas {
         JobStatePending,
         #[doc = "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`."]
         JobStateQueued,
-        #[doc = "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."]
+        #[doc = "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job’s associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."]
         JobStateResourceCleaningUp,
         #[doc = "`JOB_STATE_RUNNING` indicates that the job is currently running."]
         JobStateRunning,
         #[doc = "`JOB_STATE_STOPPED` indicates that the job has not yet started to run."]
         JobStateStopped,
-        #[doc = "The job's run state isn't specified."]
+        #[doc = "The job’s run state isn’t specified."]
         JobStateUnknown,
         #[doc = "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`."]
         JobStateUpdated,
@@ -2737,7 +2737,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FailedLocation {
-        #[doc = "The name of the [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond."]
+        #[doc = "The name of the \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond."]
         #[serde(
             rename = "name",
             default,
@@ -2837,7 +2837,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_experiments: ::std::option::Option<Vec<String>>,
-        #[doc = "Additional user labels to be specified for the job. Keys and values must follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }."]
+        #[doc = "Additional user labels to be specified for the job. Keys and values must follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of “key”: value pairs. Example: { “name”: “wrench”, “mass”: “1kg”, “count”: “3” }."]
         #[serde(
             rename = "additionalUserLabels",
             default,
@@ -2919,7 +2919,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_workers: ::std::option::Option<i32>,
-        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\"."]
+        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network “default”."]
         #[serde(
             rename = "network",
             default,
@@ -2940,7 +2940,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub save_heap_dumps_to_gcs_path: ::std::option::Option<String>,
-        #[doc = "Docker registry location of container image to use for the 'worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines."]
+        #[doc = "Docker registry location of container image to use for the ’worker harness. Default is the container for the version of the SDK. Note this field is only valid for portable pipelines."]
         #[serde(
             rename = "sdkContainerImage",
             default,
@@ -2961,7 +2961,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub staging_location: ::std::option::Option<String>,
-        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
+        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form “https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK” or “regions/REGION/subnetworks/SUBNETWORK”. If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
         #[serde(
             rename = "subnetwork",
             default,
@@ -2975,14 +2975,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub temp_location: ::std::option::Option<String>,
-        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region."]
+        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1”. Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane’s region."]
         #[serde(
             rename = "workerRegion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_region: ::std::option::Option<String>,
-        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
+        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1-a”. Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane’s region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
         #[serde(
             rename = "workerZone",
             default,
@@ -3354,7 +3354,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub component_id: ::std::option::Option<String>,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
         #[serde(
             rename = "location",
             default,
@@ -3540,14 +3540,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Histogram {
-        #[doc = "Counts of values in each bucket. For efficiency, prefix and trailing buckets with count = 0 are elided. Buckets can store the full range of values of an unsigned long, with ULLONG_MAX falling into the 59th bucket with range [1e19, 2e19)."]
+        #[doc = "Counts of values in each bucket. For efficiency, prefix and trailing buckets with count = 0 are elided. Buckets can store the full range of values of an unsigned long, with ULLONG_MAX falling into the 59th bucket with range \\[1e19, 2e19)."]
         #[serde(
             rename = "bucketCounts",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bucket_counts: ::std::option::Option<Vec<i64>>,
-        #[doc = "Starting index of first stored bucket. The non-inclusive upper-bound of the ith bucket is given by: pow(10,(i-first_bucket_offset)/3) * (1,2,5)[(i-first_bucket_offset)%3]"]
+        #[doc = "Starting index of first stored bucket. The non-inclusive upper-bound of the ith bucket is given by: pow(10,(i-first_bucket_offset)/3) * (1,2,5)\\[(i-first_bucket_offset)%3\\]"]
         #[serde(
             rename = "firstBucketOffset",
             default,
@@ -3630,7 +3630,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub output_num: ::std::option::Option<i32>,
-        #[doc = "The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input's instruction's containing MapTask."]
+        #[doc = "The index (origin zero) of the parallel instruction that produces the output to be consumed by this input. This index is relative to the list of instructions in this input’s instruction’s containing MapTask."]
         #[serde(
             rename = "producerInstructionIndex",
             default,
@@ -3812,7 +3812,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Job {
-        #[doc = "The client's unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client's ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it."]
+        #[doc = "The client’s unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client’s ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it."]
         #[serde(
             rename = "clientRequestId",
             default,
@@ -3826,7 +3826,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "If this is specified, the job's initial state is populated from the given snapshot."]
+        #[doc = "If this is specified, the job’s initial state is populated from the given snapshot."]
         #[serde(
             rename = "createdFromSnapshotId",
             default,
@@ -3875,14 +3875,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_metadata: ::std::option::Option<crate::schemas::JobMetadata>,
-        #[doc = "User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size."]
+        #[doc = "User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: \\[\\\\p{Ll}\\p{Lo}\\p{N}\\_-\\]{0,63} * Both keys and values are additionally constrained to be \\<= 128 bytes in size."]
         #[serde(
             rename = "labels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
         #[serde(
             rename = "location",
             default,
@@ -3931,7 +3931,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub replaced_by_job_id: ::std::option::Option<String>,
-        #[doc = "The job's requested state. `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING` states, by setting requested_state. `UpdateJob` may also be used to directly set a job's requested state to `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the job if it has not already reached a terminal state."]
+        #[doc = "The job’s requested state. `UpdateJob` may be used to switch between the `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING` states, by setting requested_state. `UpdateJob` may also be used to directly set a job’s requested state to `JOB_STATE_CANCELLED` or `JOB_STATE_DONE`, irrevocably terminating the job if it has not already reached a terminal state."]
         #[serde(
             rename = "requestedState",
             default,
@@ -4017,13 +4017,13 @@ pub mod schemas {
         JobStatePending,
         #[doc = "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`."]
         JobStateQueued,
-        #[doc = "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."]
+        #[doc = "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job’s associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."]
         JobStateResourceCleaningUp,
         #[doc = "`JOB_STATE_RUNNING` indicates that the job is currently running."]
         JobStateRunning,
         #[doc = "`JOB_STATE_STOPPED` indicates that the job has not yet started to run."]
         JobStateStopped,
-        #[doc = "The job's run state isn't specified."]
+        #[doc = "The job’s run state isn’t specified."]
         JobStateUnknown,
         #[doc = "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`."]
         JobStateUpdated,
@@ -4219,13 +4219,13 @@ pub mod schemas {
         JobStatePending,
         #[doc = "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`."]
         JobStateQueued,
-        #[doc = "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."]
+        #[doc = "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job’s associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."]
         JobStateResourceCleaningUp,
         #[doc = "`JOB_STATE_RUNNING` indicates that the job is currently running."]
         JobStateRunning,
         #[doc = "`JOB_STATE_STOPPED` indicates that the job has not yet started to run."]
         JobStateStopped,
-        #[doc = "The job's run state isn't specified."]
+        #[doc = "The job’s run state isn’t specified."]
         JobStateUnknown,
         #[doc = "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`."]
         JobStateUpdated,
@@ -4477,17 +4477,17 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum JobMessageMessageImportance {
-        #[doc = "The message is at the 'basic' level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+        #[doc = "The message is at the ‘basic’ level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
         JobMessageBasic,
-        #[doc = "The message is at the 'debug' level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default."]
+        #[doc = "The message is at the ‘debug’ level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default."]
         JobMessageDebug,
-        #[doc = "The message is at the 'detailed' level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI."]
+        #[doc = "The message is at the ‘detailed’ level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI."]
         JobMessageDetailed,
-        #[doc = "The message is at the 'error' level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+        #[doc = "The message is at the ‘error’ level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
         JobMessageError,
-        #[doc = "The message importance isn't specified, or is unknown."]
+        #[doc = "The message importance isn’t specified, or is unknown."]
         JobMessageImportanceUnknown,
-        #[doc = "The message is at the 'warning' level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+        #[doc = "The message is at the ‘warning’ level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
         JobMessageWarning,
     }
     impl JobMessageMessageImportance {
@@ -4685,7 +4685,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct KeyRangeDataDiskAssignment {
-        #[doc = "The name of the data disk where data for this range is stored. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example \"myproject-1014-104817-4c2-harness-0-disk-1\"."]
+        #[doc = "The name of the data disk where data for this range is stored. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example “myproject-1014-104817-4c2-harness-0-disk-1”."]
         #[serde(
             rename = "dataDisk",
             default,
@@ -4730,7 +4730,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct KeyRangeLocation {
-        #[doc = "The name of the data disk where data for this range is stored. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example \"myproject-1014-104817-4c2-harness-0-disk-1\"."]
+        #[doc = "The name of the data disk where data for this range is stored. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example “myproject-1014-104817-4c2-harness-0-disk-1”."]
         #[serde(
             rename = "dataDisk",
             default,
@@ -4824,14 +4824,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub launch_options: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "The parameters for FlexTemplate. Ex. {\"num_workers\":\"5\"}"]
+        #[doc = "The parameters for FlexTemplate. Ex. {“num_workers”:“5”}"]
         #[serde(
             rename = "parameters",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameters: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Use this to pass transform_name_mappings for streaming update jobs. Ex:{\"oldTransformName\":\"newTransformName\",...}'"]
+        #[doc = "Use this to pass transform_name_mappings for streaming update jobs. Ex:{“oldTransformName”:“newTransformName”,…}’"]
         #[serde(
             rename = "transformNameMappings",
             default,
@@ -5004,7 +5004,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_worker_time: ::std::option::Option<String>,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem’s job."]
         #[serde(
             rename = "location",
             default,
@@ -5040,7 +5040,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_capabilities: ::std::option::Option<Vec<String>>,
-        #[doc = "Identifies the worker leasing work -- typically the ID of the virtual machine running the worker."]
+        #[doc = "Identifies the worker leasing work – typically the ID of the virtual machine running the worker."]
         #[serde(
             rename = "workerId",
             default,
@@ -5127,7 +5127,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ListJobsResponse {
-        #[doc = "Zero or more messages describing the [regional endpoints] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond."]
+        #[doc = "Zero or more messages describing the \\[regional endpoints\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that failed to respond."]
         #[serde(
             rename = "failedLocation",
             default,
@@ -5351,7 +5351,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MetricStructuredName {
-        #[doc = "Zero or more labeled fields which identify the part of the job this metric is associated with, such as the name of a step or collection. For example, built-in counters associated with steps will have context['step'] = . Counters associated with PCollections in the SDK will have context['pcollection'] = ."]
+        #[doc = "Zero or more labeled fields which identify the part of the job this metric is associated with, such as the name of a step or collection. For example, built-in counters associated with steps will have context\\[‘step’\\] = . Counters associated with PCollections in the SDK will have context\\[‘pcollection’\\] = ."]
         #[serde(
             rename = "context",
             default,
@@ -5365,7 +5365,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Origin (namespace) of metric name. May be blank for user-define metrics; will be \"dataflow\" for metrics defined by the Dataflow service or SDK."]
+        #[doc = "Origin (namespace) of metric name. May be blank for user-define metrics; will be “dataflow” for metrics defined by the Dataflow service or SDK."]
         #[serde(
             rename = "origin",
             default,
@@ -5413,21 +5413,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub internal: ::std::option::Option<::serde_json::Value>,
-        #[doc = "Metric aggregation kind. The possible metric aggregation kinds are \"Sum\", \"Max\", \"Min\", \"Mean\", \"Set\", \"And\", \"Or\", and \"Distribution\". The specified aggregation kind is case-insensitive. If omitted, this is not an aggregated value but instead a single metric sample value."]
+        #[doc = "Metric aggregation kind. The possible metric aggregation kinds are “Sum”, “Max”, “Min”, “Mean”, “Set”, “And”, “Or”, and “Distribution”. The specified aggregation kind is case-insensitive. If omitted, this is not an aggregated value but instead a single metric sample value."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Worker-computed aggregate value for the \"Mean\" aggregation kind. This holds the count of the aggregated values and is used in combination with mean_sum above to obtain the actual mean aggregate value. The only possible value type is Long."]
+        #[doc = "Worker-computed aggregate value for the “Mean” aggregation kind. This holds the count of the aggregated values and is used in combination with mean_sum above to obtain the actual mean aggregate value. The only possible value type is Long."]
         #[serde(
             rename = "meanCount",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mean_count: ::std::option::Option<::serde_json::Value>,
-        #[doc = "Worker-computed aggregate value for the \"Mean\" aggregation kind. This holds the sum of the aggregated values and is used in combination with mean_count below to obtain the actual mean aggregate value. The only possible value types are Long and Double."]
+        #[doc = "Worker-computed aggregate value for the “Mean” aggregation kind. This holds the sum of the aggregated values and is used in combination with mean_count below to obtain the actual mean aggregate value. The only possible value types are Long and Double."]
         #[serde(
             rename = "meanSum",
             default,
@@ -5441,14 +5441,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<crate::schemas::MetricStructuredName>,
-        #[doc = "Worker-computed aggregate value for aggregation kinds \"Sum\", \"Max\", \"Min\", \"And\", and \"Or\". The possible value types are Long, Double, and Boolean."]
+        #[doc = "Worker-computed aggregate value for aggregation kinds “Sum”, “Max”, “Min”, “And”, and “Or”. The possible value types are Long, Double, and Boolean."]
         #[serde(
             rename = "scalar",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub scalar: ::std::option::Option<::serde_json::Value>,
-        #[doc = "Worker-computed aggregate value for the \"Set\" aggregation kind. The only possible value type is a list of Values whose type can be Long, Double, or String, according to the metric's type. All Values in the list must be of the same type."]
+        #[doc = "Worker-computed aggregate value for the “Set” aggregation kind. The only possible value type is a list of Values whose type can be Long, Double, or String, according to the metric’s type. All Values in the list must be of the same type."]
         #[serde(
             rename = "set",
             default,
@@ -5486,7 +5486,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MountedDataDisk {
-        #[doc = "The name of the data disk. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example \"myproject-1014-104817-4c2-harness-0-disk-1\"."]
+        #[doc = "The name of the data disk. This name is local to the Google Cloud Platform project and uniquely identifies the disk within that project, for example “myproject-1014-104817-4c2-harness-0-disk-1”."]
         #[serde(
             rename = "dataDisk",
             default,
@@ -5575,7 +5575,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NameAndKindKind {
-        #[doc = "Aggregated value represents the logical 'and' of all contributed values."]
+        #[doc = "Aggregated value represents the logical ‘and’ of all contributed values."]
         And,
         #[doc = "Aggregated value captures statistics about a distribution."]
         Distribution,
@@ -5589,7 +5589,7 @@ pub mod schemas {
         Mean,
         #[doc = "Aggregated value is the min of all contributed values."]
         Min,
-        #[doc = "Aggregated value represents the logical 'or' of all contributed values."]
+        #[doc = "Aggregated value represents the logical ‘or’ of all contributed values."]
         Or,
         #[doc = "Aggregated value is a set of unique contributed values."]
         Set,
@@ -6255,7 +6255,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ProgressTimeseries {
-        #[doc = "The current progress of the component, in the range [0,1]."]
+        #[doc = "The current progress of the component, in the range \\[0,1\\]."]
         #[serde(
             rename = "currentProgress",
             default,
@@ -6345,7 +6345,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_label: ::std::option::Option<String>,
-        #[doc = "A pubsub subscription, in the form of \"pubsub.googleapis.com/subscriptions//\""]
+        #[doc = "A pubsub subscription, in the form of “pubsub.googleapis.com/subscriptions//”"]
         #[serde(
             rename = "subscription",
             default,
@@ -6359,7 +6359,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timestamp_label: ::std::option::Option<String>,
-        #[doc = "A pubsub topic, in the form of \"pubsub.googleapis.com/topics//\""]
+        #[doc = "A pubsub topic, in the form of “pubsub.googleapis.com/topics//”"]
         #[serde(
             rename = "topic",
             default,
@@ -6573,7 +6573,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_worker_time: ::std::option::Option<String>,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem’s job."]
         #[serde(
             rename = "location",
             default,
@@ -6646,7 +6646,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ReportedParallelism {
-        #[doc = "Specifies whether the parallelism is infinite. If true, \"value\" is ignored. Infinite parallelism means the service will assume that the work item can always be split into more non-empty work items by dynamic splitting. This is a work-around for lack of support for infinity by the current JSON-based Java RPC stack."]
+        #[doc = "Specifies whether the parallelism is infinite. If true, “value” is ignored. Infinite parallelism means the service will assume that the work item can always be split into more non-empty work items by dynamic splitting. This is a work-around for lack of support for infinity by the current JSON-based Java RPC stack."]
         #[serde(
             rename = "isInfinite",
             default,
@@ -6753,7 +6753,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_experiments: ::std::option::Option<Vec<String>>,
-        #[doc = "Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of \"key\": value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }."]
+        #[doc = "Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of “key”: value pairs. Example: { “name”: “wrench”, “mass”: “1kg”, “count”: “3” }."]
         #[serde(
             rename = "additionalUserLabels",
             default,
@@ -6761,7 +6761,7 @@ pub mod schemas {
         )]
         pub additional_user_labels:
             ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Whether to bypass the safety checks for the job's temporary directory. Use with caution."]
+        #[doc = "Whether to bypass the safety checks for the job’s temporary directory. Use with caution."]
         #[serde(
             rename = "bypassTempDirValidation",
             default,
@@ -6804,7 +6804,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_workers: ::std::option::Option<i32>,
-        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\"."]
+        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network “default”."]
         #[serde(
             rename = "network",
             default,
@@ -6825,7 +6825,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_email: ::std::option::Option<String>,
-        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
+        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form “https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK” or “regions/REGION/subnetworks/SUBNETWORK”. If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
         #[serde(
             rename = "subnetwork",
             default,
@@ -6839,14 +6839,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub temp_location: ::std::option::Option<String>,
-        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region."]
+        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1”. Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane’s region."]
         #[serde(
             rename = "workerRegion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_region: ::std::option::Option<String>,
-        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
+        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1-a”. Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane’s region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
         #[serde(
             rename = "workerZone",
             default,
@@ -7316,7 +7316,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data_format: ::std::option::Option<crate::schemas::SendDebugCaptureRequestDataFormat>,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
         #[serde(
             rename = "location",
             default,
@@ -7459,7 +7459,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct SendWorkerMessagesRequest {
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job."]
         #[serde(
             rename = "location",
             default,
@@ -7754,7 +7754,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pubsub_metadata: ::std::option::Option<Vec<crate::schemas::PubsubSnapshotMetadata>>,
-        #[doc = "Cloud region where this snapshot lives in, e.g., \"us-central1\"."]
+        #[doc = "Cloud region where this snapshot lives in, e.g., “us-central1”."]
         #[serde(
             rename = "region",
             default,
@@ -7953,14 +7953,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub codec: ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "Setting this value to true hints to the framework that the source doesn't need splitting, and using SourceSplitRequest on it would yield SOURCE_SPLIT_OUTCOME_USE_CURRENT. E.g. a file splitter may set this to true when splitting a single file into a set of byte ranges of appropriate size, and set this to false when splitting a filepattern into individual files. However, for efficiency, a file splitter may decide to produce file subranges directly from the filepattern to avoid a splitting round-trip. See SourceSplitRequest for an overview of the splitting process. This field is meaningful only in the Source objects populated by the user (e.g. when filling in a DerivedSource). Source objects supplied by the framework to the user don't have this field populated."]
+        #[doc = "Setting this value to true hints to the framework that the source doesn’t need splitting, and using SourceSplitRequest on it would yield SOURCE_SPLIT_OUTCOME_USE_CURRENT. E.g. a file splitter may set this to true when splitting a single file into a set of byte ranges of appropriate size, and set this to false when splitting a filepattern into individual files. However, for efficiency, a file splitter may decide to produce file subranges directly from the filepattern to avoid a splitting round-trip. See SourceSplitRequest for an overview of the splitting process. This field is meaningful only in the Source objects populated by the user (e.g. when filling in a DerivedSource). Source objects supplied by the framework to the user don’t have this field populated."]
         #[serde(
             rename = "doesNotNeedSplitting",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub does_not_need_splitting: ::std::option::Option<bool>,
-        #[doc = "Optionally, metadata for this source can be supplied right away, avoiding a SourceGetMetadataOperation roundtrip (see SourceOperationRequest). This field is meaningful only in the Source objects populated by the user (e.g. when filling in a DerivedSource). Source objects supplied by the framework to the user don't have this field populated."]
+        #[doc = "Optionally, metadata for this source can be supplied right away, avoiding a SourceGetMetadataOperation roundtrip (see SourceOperationRequest). This field is meaningful only in the Source objects populated by the user (e.g. when filling in a DerivedSource). Source objects supplied by the framework to the user don’t have this field populated."]
         #[serde(
             rename = "metadata",
             default,
@@ -8281,7 +8281,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bundles: ::std::option::Option<Vec<crate::schemas::DerivedSource>>,
-        #[doc = "Indicates whether splitting happened and produced a list of bundles. If this is USE_CURRENT_SOURCE_AS_IS, the current source should be processed \"as is\" without splitting. \"bundles\" is ignored in this case. If this is SPLITTING_HAPPENED, then \"bundles\" contains a list of bundles into which the source was split."]
+        #[doc = "Indicates whether splitting happened and produced a list of bundles. If this is USE_CURRENT_SOURCE_AS_IS, the current source should be processed “as is” without splitting. “bundles” is ignored in this case. If this is SPLITTING_HAPPENED, then “bundles” contains a list of bundles into which the source was split."]
         #[serde(
             rename = "outcome",
             default,
@@ -8312,7 +8312,7 @@ pub mod schemas {
         SourceSplitOutcomeSplittingHappened,
         #[doc = "The source split outcome is unknown, or unspecified."]
         SourceSplitOutcomeUnknown,
-        #[doc = "The current source should be processed \"as is\" without splitting."]
+        #[doc = "The current source should be processed “as is” without splitting."]
         SourceSplitOutcomeUseCurrent,
     }
     impl SourceSplitResponseOutcome {
@@ -9561,7 +9561,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_task_dir: ::std::option::Option<String>,
-        #[doc = "The base URL for the taskrunner to use when accessing Google Cloud APIs. When workers access Google Cloud APIs, they logically do so via relative URLs. If this field is specified, it supplies the base URL to use for resolving these relative URLs. The normative algorithm used is defined by RFC 1808, \"Relative Uniform Resource Locators\". If not specified, the default value is \"http://www.googleapis.com/\""]
+        #[doc = "The base URL for the taskrunner to use when accessing Google Cloud APIs. When workers access Google Cloud APIs, they logically do so via relative URLs. If this field is specified, it supplies the base URL to use for resolving these relative URLs. The normative algorithm used is defined by RFC 1808, “Relative Uniform Resource Locators”. If not specified, the default value is “http://www.googleapis.com/”"]
         #[serde(
             rename = "baseUrl",
             default,
@@ -9582,7 +9582,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub continue_on_exception: ::std::option::Option<bool>,
-        #[doc = "The API version of endpoint, e.g. \"v1b3\""]
+        #[doc = "The API version of endpoint, e.g. “v1b3”"]
         #[serde(
             rename = "dataflowApiVersion",
             default,
@@ -9645,14 +9645,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub streaming_worker_main_class: ::std::option::Option<String>,
-        #[doc = "The UNIX group ID on the worker VM to use for tasks launched by taskrunner; e.g. \"wheel\"."]
+        #[doc = "The UNIX group ID on the worker VM to use for tasks launched by taskrunner; e.g. “wheel”."]
         #[serde(
             rename = "taskGroup",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub task_group: ::std::option::Option<String>,
-        #[doc = "The UNIX user ID on the worker VM to use for tasks launched by taskrunner; e.g. \"root\"."]
+        #[doc = "The UNIX user ID on the worker VM to use for tasks launched by taskrunner; e.g. “root”."]
         #[serde(
             rename = "taskUser",
             default,
@@ -10400,7 +10400,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub progress: ::std::option::Option<crate::schemas::ApproximateProgress>,
-        #[doc = "The report index. When a WorkItem is leased, the lease will contain an initial report index. When a WorkItem's status is reported to the system, the report should be sent with that report index, and the response will contain the index the worker should use for the next report. Reports received with unexpected index values will be rejected by the service. In order to preserve idempotency, the worker should not alter the contents of a report, even if the worker must submit the same report multiple times before getting back a response. The worker should not submit a subsequent report until the response for the previous report had been received from the service."]
+        #[doc = "The report index. When a WorkItem is leased, the lease will contain an initial report index. When a WorkItem’s status is reported to the system, the report should be sent with that report index, and the response will contain the index the worker should use for the next report. Reports received with unexpected index values will be rejected by the service. In order to preserve idempotency, the worker should not alter the contents of a report, even if the worker must submit the same report multiple times before getting back a response. The worker should not submit a subsequent report until the response for the previous report had been received from the service."]
         #[serde(
             rename = "reportIndex",
             default,
@@ -10408,7 +10408,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub report_index: ::std::option::Option<i64>,
-        #[doc = "The worker's progress through this WorkItem."]
+        #[doc = "The worker’s progress through this WorkItem."]
         #[serde(
             rename = "reportedProgress",
             default,
@@ -10437,7 +10437,7 @@ pub mod schemas {
         )]
         pub source_operation_response:
             ::std::option::Option<crate::schemas::SourceOperationResponse>,
-        #[doc = "A worker may split an active map task in two parts, \"primary\" and \"residual\", continuing to process the primary part and returning the residual part into the pool of available work. This event is called a \"dynamic split\" and is critical to the dynamic work rebalancing feature. The two obtained sub-tasks are called \"parts\" of the split. The parts, if concatenated, must represent the same input as would be read by the current task if the split did not happen. The exact way in which the original task is decomposed into the two parts is specified either as a position demarcating them (stop_position), or explicitly as two DerivedSources, if this task consumes a user-defined source type (dynamic_source_split). The \"current\" task is adjusted as a result of the split: after a task with range [A, B) sends a stop_position update at C, its range is considered to be [A, C), e.g.: * Progress should be interpreted relative to the new range, e.g. \"75% completed\" means \"75% of [A, C) completed\" * The worker should interpret proposed_stop_position relative to the new range, e.g. \"split at 68%\" should be interpreted as \"split at 68% of [A, C)\". * If the worker chooses to split again using stop_position, only stop_positions in [A, C) will be accepted. * Etc. dynamic_source_split has similar semantics: e.g., if a task with source S splits using dynamic_source_split into {P, R} (where P and R must be together equivalent to S), then subsequent progress and proposed_stop_position should be interpreted relative to P, and in a potential subsequent dynamic_source_split into {P', R'}, P' and R' must be together equivalent to P, etc."]
+        #[doc = "A worker may split an active map task in two parts, “primary” and “residual”, continuing to process the primary part and returning the residual part into the pool of available work. This event is called a “dynamic split” and is critical to the dynamic work rebalancing feature. The two obtained sub-tasks are called “parts” of the split. The parts, if concatenated, must represent the same input as would be read by the current task if the split did not happen. The exact way in which the original task is decomposed into the two parts is specified either as a position demarcating them (stop_position), or explicitly as two DerivedSources, if this task consumes a user-defined source type (dynamic_source_split). The “current” task is adjusted as a result of the split: after a task with range \\[A, B) sends a stop_position update at C, its range is considered to be \\[A, C), e.g.: * Progress should be interpreted relative to the new range, e.g. “75% completed” means “75% of \\[A, C) completed” * The worker should interpret proposed_stop_position relative to the new range, e.g. “split at 68%” should be interpreted as “split at 68% of \\[A, C)”. * If the worker chooses to split again using stop_position, only stop_positions in \\[A, C) will be accepted. * Etc. dynamic_source_split has similar semantics: e.g., if a task with source S splits using dynamic_source_split into {P, R} (where P and R must be together equivalent to S), then subsequent progress and proposed_stop_position should be interpreted relative to P, and in a potential subsequent dynamic_source_split into {P’, R’}, P’ and R’ must be together equivalent to P, etc."]
         #[serde(
             rename = "stopPosition",
             default,
@@ -10505,7 +10505,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub msg: ::std::option::Option<String>,
-        #[doc = "The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#_v1_pod This field is used by the worker to send the status of the indvidual containers running on each worker."]
+        #[doc = "The pods running on the worker. See: http://kubernetes.io/v1.1/docs/api-reference/v1/definitions.html#\\_v1_pod This field is used by the worker to send the status of the indvidual containers running on each worker."]
         #[serde(
             rename = "pods",
             default,
@@ -10617,7 +10617,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event: ::std::option::Option<crate::schemas::WorkerLifecycleEventEvent>,
-        #[doc = "Other stats that can accompany an event. E.g. { \"downloaded_bytes\" : \"123456\" }"]
+        #[doc = "Other stats that can accompany an event. E.g. { “downloaded_bytes” : “123456” }"]
         #[serde(
             rename = "metadata",
             default,
@@ -10750,7 +10750,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct WorkerMessage {
-        #[doc = "Labels are used to group WorkerMessages. For example, a worker_message about a particular container might have the labels: { \"JOB_ID\": \"2015-04-22\", \"WORKER_ID\": \"wordcount-vm-2015…\" \"CONTAINER_TYPE\": \"worker\", \"CONTAINER_ID\": \"ac1234def\"} Label tags typically correspond to Label enum values. However, for ease of development other strings can be used as tags. LABEL_UNSPECIFIED should not be used here."]
+        #[doc = "Labels are used to group WorkerMessages. For example, a worker_message about a particular container might have the labels: { “JOB_ID”: “2015-04-22”, “WORKER_ID”: “wordcount-vm-2015…” “CONTAINER_TYPE”: “worker”, “CONTAINER_ID”: “ac1234def”} Label tags typically correspond to Label enum values. However, for ease of development other strings can be used as tags. LABEL_UNSPECIFIED should not be used here."]
         #[serde(
             rename = "labels",
             default,
@@ -10812,14 +10812,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct WorkerMessageCode {
-        #[doc = "The code is a string intended for consumption by a machine that identifies the type of message being sent. Examples: 1. \"HARNESS_STARTED\" might be used to indicate the worker harness has started. 2. \"GCS_DOWNLOAD_ERROR\" might be used to indicate an error downloading a Cloud Storage file as part of the boot process of one of the worker containers. This is a string and not an enum to make it easy to add new codes without waiting for an API change."]
+        #[doc = "The code is a string intended for consumption by a machine that identifies the type of message being sent. Examples: 1. “HARNESS_STARTED” might be used to indicate the worker harness has started. 2. “GCS_DOWNLOAD_ERROR” might be used to indicate an error downloading a Cloud Storage file as part of the boot process of one of the worker containers. This is a string and not an enum to make it easy to add new codes without waiting for an API change."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<String>,
-        #[doc = "Parameters contains specific information about the code. This is a struct to allow parameters of different types. Examples: 1. For a \"HARNESS_STARTED\" message parameters might provide the name of the worker and additional data like timing information. 2. For a \"GCS_DOWNLOAD_ERROR\" parameters might contain fields listing the Cloud Storage objects being downloaded and fields containing errors. In general complex data structures should be avoided. If a worker needs to send a specific and complicated data structure then please consider defining a new proto and adding it to the data oneof in WorkerMessageResponse. Conventions: Parameters should only be used for information that isn't typically passed as a label. hostname and other worker identifiers should almost always be passed as labels since they will be included on most messages."]
+        #[doc = "Parameters contains specific information about the code. This is a struct to allow parameters of different types. Examples: 1. For a “HARNESS_STARTED” message parameters might provide the name of the worker and additional data like timing information. 2. For a “GCS_DOWNLOAD_ERROR” parameters might contain fields listing the Cloud Storage objects being downloaded and fields containing errors. In general complex data structures should be avoided. If a worker needs to send a specific and complicated data structure then please consider defining a new proto and adding it to the data oneof in WorkerMessageResponse. Conventions: Parameters should only be used for information that isn’t typically passed as a label. hostname and other worker identifiers should almost always be passed as labels since they will be included on most messages."]
         #[serde(
             rename = "parameters",
             default,
@@ -10851,7 +10851,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WorkerMessageResponse {
-        #[doc = "The service's response to a worker's health report."]
+        #[doc = "The service’s response to a worker’s health report."]
         #[serde(
             rename = "workerHealthReportResponse",
             default,
@@ -10859,7 +10859,7 @@ pub mod schemas {
         )]
         pub worker_health_report_response:
             ::std::option::Option<crate::schemas::WorkerHealthReportResponse>,
-        #[doc = "Service's response to reporting worker metrics (currently empty)."]
+        #[doc = "Service’s response to reporting worker metrics (currently empty)."]
         #[serde(
             rename = "workerMetricsResponse",
             default,
@@ -10867,7 +10867,7 @@ pub mod schemas {
         )]
         pub worker_metrics_response:
             ::std::option::Option<crate::schemas::ResourceUtilizationReportResponse>,
-        #[doc = "Service's response to shutdown notice (currently empty)."]
+        #[doc = "Service’s response to shutdown notice (currently empty)."]
         #[serde(
             rename = "workerShutdownNoticeResponse",
             default,
@@ -10944,7 +10944,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Machine type (e.g. \"n1-standard-1\"). If empty or unspecified, the service will attempt to choose a reasonable default."]
+        #[doc = "Machine type (e.g. “n1-standard-1”). If empty or unspecified, the service will attempt to choose a reasonable default."]
         #[serde(
             rename = "machineType",
             default,
@@ -10958,7 +10958,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metadata: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\"."]
+        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network “default”."]
         #[serde(
             rename = "network",
             default,
@@ -11009,7 +11009,7 @@ pub mod schemas {
         )]
         pub sdk_harness_container_images:
             ::std::option::Option<Vec<crate::schemas::SdkHarnessContainerImage>>,
-        #[doc = "Subnetwork to which VMs will be assigned, if desired. Expected to be of the form \"regions/REGION/subnetworks/SUBNETWORK\"."]
+        #[doc = "Subnetwork to which VMs will be assigned, if desired. Expected to be of the form “regions/REGION/subnetworks/SUBNETWORK”."]
         #[serde(
             rename = "subnetwork",
             default,
@@ -11023,7 +11023,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub taskrunner_settings: ::std::option::Option<crate::schemas::TaskRunnerSettings>,
-        #[doc = "Sets the policy for determining when to turndown worker pool. Allowed values are: `TEARDOWN_ALWAYS`, `TEARDOWN_ON_SUCCESS`, and `TEARDOWN_NEVER`. `TEARDOWN_ALWAYS` means workers are always torn down regardless of whether the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn down. If the workers are not torn down by the service, they will continue to run and use Google Compute Engine VM resources in the user's project until they are explicitly terminated by the user. Because of this, Google recommends using the `TEARDOWN_ALWAYS` policy except for small, manually supervised test jobs. If unknown or unspecified, the service will attempt to choose a reasonable default."]
+        #[doc = "Sets the policy for determining when to turndown worker pool. Allowed values are: `TEARDOWN_ALWAYS`, `TEARDOWN_ON_SUCCESS`, and `TEARDOWN_NEVER`. `TEARDOWN_ALWAYS` means workers are always torn down regardless of whether the job succeeds. `TEARDOWN_ON_SUCCESS` means workers are torn down if the job succeeds. `TEARDOWN_NEVER` means the workers are never torn down. If the workers are not torn down by the service, they will continue to run and use Google Compute Engine VM resources in the user’s project until they are explicitly terminated by the user. Because of this, Google recommends using the `TEARDOWN_ALWAYS` policy except for small, manually supervised test jobs. If unknown or unspecified, the service will attempt to choose a reasonable default."]
         #[serde(
             rename = "teardownPolicy",
             default,
@@ -11232,7 +11232,7 @@ pub mod schemas {
         TeardownNever,
         #[doc = "Teardown the resource on success. This is useful for debugging failures."]
         TeardownOnSuccess,
-        #[doc = "The teardown policy isn't specified, or is unknown."]
+        #[doc = "The teardown policy isn’t specified, or is unknown."]
         TeardownPolicyUnknown,
     }
     impl WorkerPoolTeardownPolicy {
@@ -11318,7 +11318,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WorkerSettings {
-        #[doc = "The base URL for accessing Google Cloud APIs. When workers access Google Cloud APIs, they logically do so via relative URLs. If this field is specified, it supplies the base URL to use for resolving these relative URLs. The normative algorithm used is defined by RFC 1808, \"Relative Uniform Resource Locators\". If not specified, the default value is \"http://www.googleapis.com/\""]
+        #[doc = "The base URL for accessing Google Cloud APIs. When workers access Google Cloud APIs, they logically do so via relative URLs. If this field is specified, it supplies the base URL to use for resolving these relative URLs. The normative algorithm used is defined by RFC 1808, “Relative Uniform Resource Locators”. If not specified, the default value is “http://www.googleapis.com/”"]
         #[serde(
             rename = "baseUrl",
             default,
@@ -11332,14 +11332,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reporting_enabled: ::std::option::Option<bool>,
-        #[doc = "The Cloud Dataflow service path relative to the root URL, for example, \"dataflow/v1b3/projects\"."]
+        #[doc = "The Cloud Dataflow service path relative to the root URL, for example, “dataflow/v1b3/projects”."]
         #[serde(
             rename = "servicePath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_path: ::std::option::Option<String>,
-        #[doc = "The Shuffle service path relative to the root URL, for example, \"shuffle/v1beta1\"."]
+        #[doc = "The Shuffle service path relative to the root URL, for example, “shuffle/v1beta1”."]
         #[serde(
             rename = "shuffleServicePath",
             default,
@@ -11384,7 +11384,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WorkerShutdownNotice {
-        #[doc = "The reason for the worker shutdown. Current possible values are: \"UNKNOWN\": shutdown reason is unknown. \"PREEMPTION\": shutdown reason is preemption. Other possible reasons may be added in the future."]
+        #[doc = "The reason for the worker shutdown. Current possible values are: “UNKNOWN”: shutdown reason is unknown. “PREEMPTION”: shutdown reason is preemption. Other possible reasons may be added in the future."]
         #[serde(
             rename = "reason",
             default,
@@ -11783,12 +11783,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -11947,12 +11947,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12070,7 +12070,7 @@ pub mod resources {
                     All,
                     #[doc = "Filters the jobs that have a terminated state, ordered on the termination timestamp. Example terminated states: `JOB_STATE_STOPPED`, `JOB_STATE_UPDATED`, `JOB_STATE_DRAINED`, etc."]
                     Terminated,
-                    #[doc = "The filter isn't specified, or is unknown. This returns all jobs ordered on descending `JobUuid`."]
+                    #[doc = "The filter isn’t specified, or is unknown. This returns all jobs ordered on descending `JobUuid`."]
                     Unknown,
                 }
                 impl AggregatedFilter {
@@ -12151,7 +12151,7 @@ pub mod resources {
                     JobViewDescription,
                     #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                     JobViewSummary,
-                    #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                    #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                     JobViewUnknown,
                 }
                 impl AggregatedView {
@@ -12232,7 +12232,7 @@ pub mod resources {
                     JobViewDescription,
                     #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                     JobViewSummary,
-                    #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                    #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                     JobViewUnknown,
                 }
                 impl CreateView {
@@ -12313,7 +12313,7 @@ pub mod resources {
                     JobViewDescription,
                     #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                     JobViewSummary,
-                    #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                    #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                     JobViewUnknown,
                 }
                 impl GetView {
@@ -12394,7 +12394,7 @@ pub mod resources {
                     All,
                     #[doc = "Filters the jobs that have a terminated state, ordered on the termination timestamp. Example terminated states: `JOB_STATE_STOPPED`, `JOB_STATE_UPDATED`, `JOB_STATE_DRAINED`, etc."]
                     Terminated,
-                    #[doc = "The filter isn't specified, or is unknown. This returns all jobs ordered on descending `JobUuid`."]
+                    #[doc = "The filter isn’t specified, or is unknown. This returns all jobs ordered on descending `JobUuid`."]
                     Unknown,
                 }
                 impl ListFilter {
@@ -12475,7 +12475,7 @@ pub mod resources {
                     JobViewDescription,
                     #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                     JobViewSummary,
-                    #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                    #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                     JobViewUnknown,
                 }
                 impl ListView {
@@ -12584,7 +12584,7 @@ pub mod resources {
                         view: None,
                     }
                 }
-                #[doc = "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API."]
+                #[doc = "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API."]
                 pub fn create(
                     &self,
                     request: crate::schemas::Job,
@@ -12611,7 +12611,7 @@ pub mod resources {
                         view: None,
                     }
                 }
-                #[doc = "Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`."]
+                #[doc = "Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`."]
                 pub fn get(
                     &self,
                     project_id: impl Into<String>,
@@ -12637,7 +12637,7 @@ pub mod resources {
                         view: None,
                     }
                 }
-                #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
+                #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
                 pub fn get_metrics(
                     &self,
                     project_id: impl Into<String>,
@@ -12663,7 +12663,7 @@ pub mod resources {
                         start_time: None,
                     }
                 }
-                #[doc = "List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`."]
+                #[doc = "List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`."]
                 pub fn list(&self, project_id: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -12713,7 +12713,7 @@ pub mod resources {
                         job_id: job_id.into(),
                     }
                 }
-                #[doc = "Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`."]
+                #[doc = "Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`."]
                 pub fn update(
                     &self,
                     request: crate::schemas::Job,
@@ -12802,7 +12802,7 @@ pub mod resources {
                     self.filter = Some(value);
                     self
                 }
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -12812,7 +12812,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Set this to the 'next_page_token' field of a previous response to request additional results in a long list."]
+                #[doc = "Set this to the ‘next_page_token’ field of a previous response to request additional results in a long list."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -12855,12 +12855,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13221,7 +13221,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> CreateRequestBuilder<'a> {
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -13269,12 +13269,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13407,7 +13407,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -13450,12 +13450,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13593,7 +13593,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetMetricsRequestBuilder<'a> {
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -13633,12 +13633,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13787,7 +13787,7 @@ pub mod resources {
                     self.filter = Some(value);
                     self
                 }
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -13797,7 +13797,7 @@ pub mod resources {
                     self.page_size = Some(value);
                     self
                 }
-                #[doc = "Set this to the 'next_page_token' field of a previous response to request additional results in a long list."]
+                #[doc = "Set this to the ‘next_page_token’ field of a previous response to request additional results in a long list."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -13840,12 +13840,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14234,12 +14234,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14377,7 +14377,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -14412,12 +14412,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14647,12 +14647,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14821,12 +14821,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14949,17 +14949,17 @@ pub mod resources {
                 pub mod params {
                     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                     pub enum ListMinimumImportance {
-                        #[doc = "The message is at the 'basic' level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+                        #[doc = "The message is at the ‘basic’ level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
                         JobMessageBasic,
-                        #[doc = "The message is at the 'debug' level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default."]
+                        #[doc = "The message is at the ‘debug’ level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default."]
                         JobMessageDebug,
-                        #[doc = "The message is at the 'detailed' level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI."]
+                        #[doc = "The message is at the ‘detailed’ level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI."]
                         JobMessageDetailed,
-                        #[doc = "The message is at the 'error' level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+                        #[doc = "The message is at the ‘error’ level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
                         JobMessageError,
-                        #[doc = "The message importance isn't specified, or is unknown."]
+                        #[doc = "The message importance isn’t specified, or is unknown."]
                         JobMessageImportanceUnknown,
-                        #[doc = "The message is at the 'warning' level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+                        #[doc = "The message is at the ‘warning’ level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
                         JobMessageWarning,
                     }
                     impl ListMinimumImportance {
@@ -15056,7 +15056,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
+                    #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
                     pub fn list(
                         &self,
                         project_id: impl Into<String>,
@@ -15115,12 +15115,12 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> ListRequestBuilder<'a> {
-                    #[doc = "Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available)."]
+                    #[doc = "Return only messages with timestamps \\< end_time. The default is now (i.e. return up to the latest messages available)."]
                     pub fn end_time(mut self, value: impl Into<String>) -> Self {
                         self.end_time = Some(value.into());
                         self
                     }
-                    #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
+                    #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id."]
                     pub fn location(mut self, value: impl Into<String>) -> Self {
                         self.location = Some(value.into());
                         self
@@ -15178,12 +15178,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15655,12 +15655,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15829,12 +15829,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16086,12 +16086,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -16297,12 +16297,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -16431,7 +16431,7 @@ pub mod resources {
                         JobViewDescription,
                         #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                         JobViewSummary,
-                        #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                        #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                         JobViewUnknown,
                     }
                     impl CreateView {
@@ -16515,7 +16515,7 @@ pub mod resources {
                         JobViewDescription,
                         #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                         JobViewSummary,
-                        #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                        #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                         JobViewUnknown,
                     }
                     impl GetView {
@@ -16599,7 +16599,7 @@ pub mod resources {
                         All,
                         #[doc = "Filters the jobs that have a terminated state, ordered on the termination timestamp. Example terminated states: `JOB_STATE_STOPPED`, `JOB_STATE_UPDATED`, `JOB_STATE_DRAINED`, etc."]
                         Terminated,
-                        #[doc = "The filter isn't specified, or is unknown. This returns all jobs ordered on descending `JobUuid`."]
+                        #[doc = "The filter isn’t specified, or is unknown. This returns all jobs ordered on descending `JobUuid`."]
                         Unknown,
                     }
                     impl ListFilter {
@@ -16683,7 +16683,7 @@ pub mod resources {
                         JobViewDescription,
                         #[doc = "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details."]
                         JobViewSummary,
-                        #[doc = "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
+                        #[doc = "The job view to return isn’t specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information."]
                         JobViewUnknown,
                     }
                     impl ListView {
@@ -16768,7 +16768,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API."]
+                    #[doc = "Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API."]
                     pub fn create(
                         &self,
                         request: crate::schemas::Job,
@@ -16796,7 +16796,7 @@ pub mod resources {
                             view: None,
                         }
                     }
-                    #[doc = "Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`."]
+                    #[doc = "Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`."]
                     pub fn get(
                         &self,
                         project_id: impl Into<String>,
@@ -16851,7 +16851,7 @@ pub mod resources {
                             page_token: None,
                         }
                     }
-                    #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
+                    #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
                     pub fn get_metrics(
                         &self,
                         project_id: impl Into<String>,
@@ -16878,7 +16878,7 @@ pub mod resources {
                             start_time: None,
                         }
                     }
-                    #[doc = "List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`."]
+                    #[doc = "List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, as you can only get the list of jobs that are running in `us-central1`."]
                     pub fn list(
                         &self,
                         project_id: impl Into<String>,
@@ -16934,7 +16934,7 @@ pub mod resources {
                             job_id: job_id.into(),
                         }
                     }
-                    #[doc = "Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`."]
+                    #[doc = "Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`."]
                     pub fn update(
                         &self,
                         request: crate::schemas::Job,
@@ -17081,12 +17081,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -17266,12 +17266,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -17457,12 +17457,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -17807,12 +17807,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -17977,7 +17977,7 @@ pub mod resources {
                         self.page_size = Some(value);
                         self
                     }
-                    #[doc = "Set this to the 'next_page_token' field of a previous response to request additional results in a long list."]
+                    #[doc = "Set this to the ‘next_page_token’ field of a previous response to request additional results in a long list."]
                     pub fn page_token(mut self, value: impl Into<String>) -> Self {
                         self.page_token = Some(value.into());
                         self
@@ -18020,12 +18020,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -18430,12 +18430,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -18611,12 +18611,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -18858,12 +18858,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -19043,12 +19043,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -19181,17 +19181,17 @@ pub mod resources {
                     pub mod params {
                         #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
                         pub enum ListMinimumImportance {
-                            #[doc = "The message is at the 'basic' level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+                            #[doc = "The message is at the ‘basic’ level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
                             JobMessageBasic,
-                            #[doc = "The message is at the 'debug' level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default."]
+                            #[doc = "The message is at the ‘debug’ level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default."]
                             JobMessageDebug,
-                            #[doc = "The message is at the 'detailed' level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI."]
+                            #[doc = "The message is at the ‘detailed’ level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI."]
                             JobMessageDetailed,
-                            #[doc = "The message is at the 'error' level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+                            #[doc = "The message is at the ‘error’ level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
                             JobMessageError,
-                            #[doc = "The message importance isn't specified, or is unknown."]
+                            #[doc = "The message importance isn’t specified, or is unknown."]
                             JobMessageImportanceUnknown,
-                            #[doc = "The message is at the 'warning' level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
+                            #[doc = "The message is at the ‘warning’ level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."]
                             JobMessageWarning,
                         }
                         impl ListMinimumImportance {
@@ -19305,7 +19305,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
+                        #[doc = "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`."]
                         pub fn list(
                             &self,
                             project_id: impl Into<String>,
@@ -19341,7 +19341,7 @@ pub mod resources {
                     #[derive(Debug, Clone)]
                     pub struct ListRequestBuilder < 'a > { pub (crate) reqwest : & 'a :: reqwest :: Client , pub (crate) auth : & 'a dyn :: google_api_auth :: GetAccessToken , project_id : String , location : String , job_id : String , end_time : :: std :: option :: Option < String > , minimum_importance : :: std :: option :: Option < crate :: resources :: projects :: locations :: jobs :: messages :: params :: ListMinimumImportance > , page_size : :: std :: option :: Option < i32 > , page_token : :: std :: option :: Option < String > , start_time : :: std :: option :: Option < String > , access_token : :: std :: option :: Option < String > , alt : :: std :: option :: Option < crate :: params :: Alt > , callback : :: std :: option :: Option < String > , fields : :: std :: option :: Option < String > , key : :: std :: option :: Option < String > , oauth_token : :: std :: option :: Option < String > , pretty_print : :: std :: option :: Option < bool > , quota_user : :: std :: option :: Option < String > , upload_protocol : :: std :: option :: Option < String > , upload_type : :: std :: option :: Option < String > , xgafv : :: std :: option :: Option < crate :: params :: Xgafv > , }
                     impl<'a> ListRequestBuilder<'a> {
-                        #[doc = "Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available)."]
+                        #[doc = "Return only messages with timestamps \\< end_time. The default is now (i.e. return up to the latest messages available)."]
                         pub fn end_time(mut self, value: impl Into<String>) -> Self {
                             self.end_time = Some(value.into());
                             self
@@ -19399,12 +19399,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -19862,12 +19862,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -20114,12 +20114,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -20540,12 +20540,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -20725,12 +20725,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self
@@ -20999,12 +20999,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -21179,12 +21179,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -21362,12 +21362,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -21578,12 +21578,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -21916,12 +21916,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -22061,7 +22061,7 @@ pub mod resources {
                     xgafv: ::std::option::Option<crate::params::Xgafv>,
                 }
                 impl<'a> GetRequestBuilder<'a> {
-                    #[doc = "Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'."]
+                    #[doc = "Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with ‘gs://’."]
                     pub fn gcs_path(mut self, value: impl Into<String>) -> Self {
                         self.gcs_path = Some(value.into());
                         self
@@ -22104,12 +22104,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -22266,7 +22266,7 @@ pub mod resources {
                         self.dynamic_template_staging_location = Some(value.into());
                         self
                     }
-                    #[doc = "A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'."]
+                    #[doc = "A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with ‘gs://’."]
                     pub fn gcs_path(mut self, value: impl Into<String>) -> Self {
                         self.gcs_path = Some(value.into());
                         self
@@ -22306,12 +22306,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -22552,12 +22552,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22733,12 +22733,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -23051,12 +23051,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -23186,12 +23186,12 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'."]
+                #[doc = "Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with ‘gs://’."]
                 pub fn gcs_path(mut self, value: impl Into<String>) -> Self {
                     self.gcs_path = Some(value.into());
                     self
                 }
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -23234,12 +23234,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -23387,12 +23387,12 @@ pub mod resources {
                     self.dynamic_template_staging_location = Some(value.into());
                     self
                 }
-                #[doc = "A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'."]
+                #[doc = "A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with ‘gs://’."]
                 pub fn gcs_path(mut self, value: impl Into<String>) -> Self {
                     self.gcs_path = Some(value.into());
                     self
                 }
-                #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
+                #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
                 pub fn location(mut self, value: impl Into<String>) -> Self {
                     self.location = Some(value.into());
                     self
@@ -23432,12 +23432,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

@@ -126,7 +126,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Type of the child link. Its value is \"analytics#webproperties\"."]
+        #[doc = "Type of the child link. Its value is “analytics#webproperties”."]
         #[serde(
             rename = "type",
             default,
@@ -959,7 +959,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#dailyUploads\". Value is \"analytics#uploads\"."]
+        #[doc = "Value is “analytics#dailyUploads”. Value is “analytics#uploads”."]
         #[serde(
             rename = "type",
             default,
@@ -997,7 +997,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#webproperty\"."]
+        #[doc = "Value is “analytics#webproperty”."]
         #[serde(
             rename = "type",
             default,
@@ -1143,7 +1143,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "Kind value for a custom dimension. Set to \"analytics#customDimension\". It is a read-only field."]
+        #[doc = "Kind value for a custom dimension. Set to “analytics#customDimension”. It is a read-only field."]
         #[serde(
             rename = "kind",
             default,
@@ -1223,7 +1223,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Type of the parent link. Set to \"analytics#webproperty\"."]
+        #[doc = "Type of the parent link. Set to “analytics#webproperty”."]
         #[serde(
             rename = "type",
             default,
@@ -1369,7 +1369,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "Kind value for a custom metric. Set to \"analytics#customMetric\". It is a read-only field."]
+        #[doc = "Kind value for a custom metric. Set to “analytics#customMetric”. It is a read-only field."]
         #[serde(
             rename = "kind",
             default,
@@ -1470,7 +1470,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Type of the parent link. Set to \"analytics#webproperty\"."]
+        #[doc = "Type of the parent link. Set to “analytics#webproperty”."]
         #[serde(
             rename = "type",
             default,
@@ -2005,7 +2005,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "Boolean specifying whether to distribute traffic evenly across all variations. If the value is False, content experiments follows the default behavior of adjusting traffic dynamically based on variation performance. Optional -- defaults to False. This field may not be changed for an experiment whose status is ENDED."]
+        #[doc = "Boolean specifying whether to distribute traffic evenly across all variations. If the value is False, content experiments follows the default behavior of adjusting traffic dynamically based on variation performance. Optional – defaults to False. This field may not be changed for an experiment whose status is ENDED."]
         #[serde(
             rename = "equalWeighting",
             default,
@@ -2033,7 +2033,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED."]
+        #[doc = "An integer number in \\[3, 90\\]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED."]
         #[serde(
             rename = "minimumExperimentLengthInDays",
             default,
@@ -2047,14 +2047,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The metric that the experiment is optimizing. Valid values: \"ga:goal(n)Completions\", \"ga:adsenseAdsClicks\", \"ga:adsenseAdsViewed\", \"ga:adsenseRevenue\", \"ga:bounces\", \"ga:pageviews\", \"ga:sessionDuration\", \"ga:transactions\", \"ga:transactionRevenue\". This field is required if status is \"RUNNING\" and servingFramework is one of \"REDIRECT\" or \"API\"."]
+        #[doc = "The metric that the experiment is optimizing. Valid values: “ga:goal(n)Completions”, “ga:adsenseAdsClicks”, “ga:adsenseAdsViewed”, “ga:adsenseRevenue”, “ga:bounces”, “ga:pageviews”, “ga:sessionDuration”, “ga:transactions”, “ga:transactionRevenue”. This field is required if status is “RUNNING” and servingFramework is one of “REDIRECT” or “API”."]
         #[serde(
             rename = "objectiveMetric",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub objective_metric: ::std::option::Option<String>,
-        #[doc = "Whether the objectiveMetric should be minimized or maximized. Possible values: \"MAXIMUM\", \"MINIMUM\". Optional--defaults to \"MAXIMUM\". Cannot be specified without objectiveMetric. Cannot be modified when status is \"RUNNING\" or \"ENDED\"."]
+        #[doc = "Whether the objectiveMetric should be minimized or maximized. Possible values: “MAXIMUM”, “MINIMUM”. Optional–defaults to “MAXIMUM”. Cannot be specified without objectiveMetric. Cannot be modified when status is “RUNNING” or “ENDED”."]
         #[serde(
             rename = "optimizationType",
             default,
@@ -2075,7 +2075,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub profile_id: ::std::option::Option<String>,
-        #[doc = "Why the experiment ended. Possible values: \"STOPPED_BY_USER\", \"WINNER_FOUND\", \"EXPERIMENT_EXPIRED\", \"ENDED_WITH_NO_WINNER\", \"GOAL_OBJECTIVE_CHANGED\". \"ENDED_WITH_NO_WINNER\" means that the experiment didn't expire but no winner was projected to be found. If the experiment status is changed via the API to ENDED this field is set to STOPPED_BY_USER. This field is read-only."]
+        #[doc = "Why the experiment ended. Possible values: “STOPPED_BY_USER”, “WINNER_FOUND”, “EXPERIMENT_EXPIRED”, “ENDED_WITH_NO_WINNER”, “GOAL_OBJECTIVE_CHANGED”. “ENDED_WITH_NO_WINNER” means that the experiment didn’t expire but no winner was projected to be found. If the experiment status is changed via the API to ENDED this field is set to STOPPED_BY_USER. This field is read-only."]
         #[serde(
             rename = "reasonExperimentEnded",
             default,
@@ -2117,14 +2117,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<::chrono::DateTime<chrono::offset::Utc>>,
-        #[doc = "Experiment status. Possible values: \"DRAFT\", \"READY_TO_RUN\", \"RUNNING\", \"ENDED\". Experiments can be created in the \"DRAFT\", \"READY_TO_RUN\" or \"RUNNING\" state. This field is required when creating an experiment."]
+        #[doc = "Experiment status. Possible values: “DRAFT”, “READY_TO_RUN”, “RUNNING”, “ENDED”. Experiments can be created in the “DRAFT”, “READY_TO_RUN” or “RUNNING” state. This field is required when creating an experiment."]
         #[serde(
             rename = "status",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<String>,
-        #[doc = "A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED."]
+        #[doc = "A floating-point number in (0, 1\\]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED."]
         #[serde(
             rename = "trafficCoverage",
             default,
@@ -2197,7 +2197,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#profile\". This field is read-only."]
+        #[doc = "Value is “analytics#profile”. This field is read-only."]
         #[serde(
             rename = "type",
             default,
@@ -2226,7 +2226,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Status of the variation. Possible values: \"ACTIVE\", \"INACTIVE\". INACTIVE variations are not served. This field may not be changed for an experiment whose status is ENDED."]
+        #[doc = "Status of the variation. Possible values: “ACTIVE”, “INACTIVE”. INACTIVE variations are not served. This field may not be changed for an experiment whose status is ENDED."]
         #[serde(
             rename = "status",
             default,
@@ -2639,7 +2639,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#account\"."]
+        #[doc = "Value is “analytics#account”."]
         #[serde(
             rename = "type",
             default,
@@ -3718,7 +3718,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#profile\"."]
+        #[doc = "Value is “analytics#profile”."]
         #[serde(
             rename = "type",
             default,
@@ -4880,7 +4880,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#goals\"."]
+        #[doc = "Value is “analytics#goals”."]
         #[serde(
             rename = "type",
             default,
@@ -4918,7 +4918,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Value is \"analytics#webproperty\"."]
+        #[doc = "Value is “analytics#webproperty”."]
         #[serde(
             rename = "type",
             default,
@@ -5008,7 +5008,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub profile_ref: ::std::option::Option<crate::schemas::ProfileRef>,
-        #[doc = "The rank of this profile filter link relative to the other filters linked to the same profile.\nFor readonly (i.e., list and get) operations, the rank always starts at 1.\nFor write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1."]
+        #[doc = "The rank of this profile filter link relative to the other filters linked to the same profile.\nFor readonly (i.e., list and get) operations, the rank always starts at 1.\nFor write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, \\[0, 255\\]. In order to insert a link at the end of the list, either don’t specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1."]
         #[serde(
             rename = "rank",
             default,
@@ -5956,14 +5956,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Type for a segment. Possible values are \"BUILT_IN\" or \"CUSTOM\"."]
+        #[doc = "Type for a segment. Possible values are “BUILT_IN” or “CUSTOM”."]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "Segment ID. Can be used with the 'segment' parameter in Core Reporting API."]
+        #[doc = "Segment ID. Can be used with the ‘segment’ parameter in Core Reporting API."]
         #[serde(
             rename = "segmentId",
             default,
@@ -6564,7 +6564,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<crate::schemas::UserDeletionRequestId>,
-        #[doc = "Value is \"analytics#userDeletionRequest\"."]
+        #[doc = "Value is “analytics#userDeletionRequest”."]
         #[serde(
             rename = "kind",
             default,
@@ -6616,7 +6616,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "The User's id"]
+        #[doc = "The User’s id"]
         #[serde(
             rename = "userId",
             default,
@@ -7082,7 +7082,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Type of the parent link. Its value is \"analytics#profiles\"."]
+        #[doc = "Type of the parent link. Its value is “analytics#profiles”."]
         #[serde(
             rename = "type",
             default,
@@ -7120,7 +7120,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub href: ::std::option::Option<String>,
-        #[doc = "Type of the parent link. Its value is \"analytics#account\"."]
+        #[doc = "Type of the parent link. Its value is “analytics#account”."]
         #[serde(
             rename = "type",
             default,
@@ -7550,7 +7550,7 @@ pub mod resources {
                 user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'."]
+                #[doc = "A comma-separated list of Analytics dimensions. E.g., ‘ga:browser,ga:city’."]
                 pub fn dimensions(mut self, value: impl Into<String>) -> Self {
                     self.dimensions = Some(value.into());
                     self
@@ -7868,7 +7868,7 @@ pub mod resources {
                 user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'."]
+                #[doc = "A comma-separated list of Multi-Channel Funnels dimensions. E.g., ‘mcf:source,mcf:medium’."]
                 pub fn dimensions(mut self, value: impl Into<String>) -> Self {
                     self.dimensions = Some(value.into());
                     self
@@ -8077,7 +8077,7 @@ pub mod resources {
                 user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "A comma-separated list of real time dimensions. E.g., 'rt:medium,rt:city'."]
+                #[doc = "A comma-separated list of real time dimensions. E.g., ‘rt:medium,rt:city’."]
                 pub fn dimensions(mut self, value: impl Into<String>) -> Self {
                     self.dimensions = Some(value.into());
                     self

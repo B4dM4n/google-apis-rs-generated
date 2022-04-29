@@ -129,7 +129,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Blobstore2Info {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "blobGeneration",
             default,
@@ -137,28 +137,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub blob_generation: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "blobId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blob_id: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "downloadReadHandle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub download_read_handle: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "readToken",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub read_token: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "uploadMetadataContainer",
             default,
@@ -490,7 +490,7 @@ pub mod schemas {
         InProgressGoogleSupport,
         #[doc = "The case has been created but no one is assigned to work on it yet."]
         New,
-        #[doc = "A solution has been offered for the case, but it isn't yet closed."]
+        #[doc = "A solution has been offered for the case, but it isn’t yet closed."]
         SolutionProvided,
         #[doc = "Case is in an unknown state."]
         StateUnspecified,
@@ -705,42 +705,42 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CompositeMedia {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "blobRef",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blob_ref: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "blobstore2Info",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blobstore_2_info: ::std::option::Option<crate::schemas::Blobstore2Info>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "cosmoBinaryReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cosmo_binary_reference: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "crc32cHash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub crc_3_2c_hash: ::std::option::Option<u32>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "inline",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inline: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "length",
             default,
@@ -748,35 +748,35 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub length: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "md5Hash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub md_5_hash: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<crate::schemas::ObjectId>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "path",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "referenceType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reference_type: ::std::option::Option<crate::schemas::CompositeMediaReferenceType>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "sha1Hash",
             default,
@@ -796,15 +796,15 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CompositeMediaReferenceType {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         BigstoreRef,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         BlobRef,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         CosmoBinaryReference,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         Inline,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         Path,
     }
     impl CompositeMediaReferenceType {
@@ -893,35 +893,35 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ContentTypeInfo {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "bestGuess",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub best_guess: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "fromBytes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub from_bytes: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "fromFileName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub from_file_name: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "fromHeader",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub from_header: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "fromUrlPath",
             default,
@@ -983,14 +983,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiffChecksumsResponse {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "checksumsLocation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub checksums_location: ::std::option::Option<crate::schemas::CompositeMedia>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "chunkSizeBytes",
             default,
@@ -998,14 +998,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub chunk_size_bytes: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectLocation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_location: ::std::option::Option<crate::schemas::CompositeMedia>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectSizeBytes",
             default,
@@ -1013,7 +1013,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub object_size_bytes: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectVersion",
             default,
@@ -1044,7 +1044,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiffDownloadResponse {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectLocation",
             default,
@@ -1075,21 +1075,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiffUploadRequest {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "checksumsInfo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub checksums_info: ::std::option::Option<crate::schemas::CompositeMedia>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectInfo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_info: ::std::option::Option<crate::schemas::CompositeMedia>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectVersion",
             default,
@@ -1120,14 +1120,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiffUploadResponse {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_version: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "originalObject",
             default,
@@ -1158,7 +1158,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DiffVersionResponse {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectSizeBytes",
             default,
@@ -1166,7 +1166,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub object_size_bytes: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectVersion",
             default,
@@ -1197,14 +1197,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DownloadParameters {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "allowGzipCompression",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_gzip_compression: ::std::option::Option<bool>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "ignoreRange",
             default,
@@ -1514,147 +1514,147 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Media {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "algorithm",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub algorithm: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "bigstoreObjectRef",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bigstore_object_ref: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "blobRef",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blob_ref: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "blobstore2Info",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blobstore_2_info: ::std::option::Option<crate::schemas::Blobstore2Info>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "compositeMedia",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub composite_media: ::std::option::Option<Vec<crate::schemas::CompositeMedia>>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "contentType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_type: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "contentTypeInfo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_type_info: ::std::option::Option<crate::schemas::ContentTypeInfo>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "cosmoBinaryReference",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cosmo_binary_reference: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "crc32cHash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub crc_3_2c_hash: ::std::option::Option<u32>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "diffChecksumsResponse",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub diff_checksums_response: ::std::option::Option<crate::schemas::DiffChecksumsResponse>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "diffDownloadResponse",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub diff_download_response: ::std::option::Option<crate::schemas::DiffDownloadResponse>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "diffUploadRequest",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub diff_upload_request: ::std::option::Option<crate::schemas::DiffUploadRequest>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "diffUploadResponse",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub diff_upload_response: ::std::option::Option<crate::schemas::DiffUploadResponse>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "diffVersionResponse",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub diff_version_response: ::std::option::Option<crate::schemas::DiffVersionResponse>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "downloadParameters",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub download_parameters: ::std::option::Option<crate::schemas::DownloadParameters>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "filename",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filename: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "hash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hash: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "hashVerified",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hash_verified: ::std::option::Option<bool>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "inline",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inline: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "isPotentialRetry",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub is_potential_retry: ::std::option::Option<bool>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "length",
             default,
@@ -1662,56 +1662,56 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub length: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "md5Hash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub md_5_hash: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "mediaId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub media_id: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub object_id: ::std::option::Option<crate::schemas::ObjectId>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "path",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "referenceType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reference_type: ::std::option::Option<crate::schemas::MediaReferenceType>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "sha1Hash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sha_1_hash: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "sha256Hash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sha_256_hash: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "timestamp",
             default,
@@ -1719,7 +1719,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub timestamp: ::std::option::Option<u64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "token",
             default,
@@ -1739,31 +1739,31 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MediaReferenceType {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         ArbitraryBytes,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         BigstoreRef,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         BlobRef,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         CompositeMedia,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         CosmoBinaryReference,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         DiffChecksumsResponse,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         DiffDownloadResponse,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         DiffUploadRequest,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         DiffUploadResponse,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         DiffVersionResponse,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         GetMedia,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         Inline,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         Path,
     }
     impl MediaReferenceType {
@@ -1876,14 +1876,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ObjectId {
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "bucketName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bucket_name: ::std::option::Option<String>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "generation",
             default,
@@ -1891,7 +1891,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub generation: ::std::option::Option<i64>,
-        #[doc = "# gdata.* are outside protos with mising documentation"]
+        #[doc = "# gdata.\\* are outside protos with mising documentation"]
         #[serde(
             rename = "objectName",
             default,
@@ -2523,12 +2523,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2647,7 +2647,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Retrieve valid classifications to be used when creating a support case. The classications are hierarchical, with each classification containing all levels of the hierarchy, separated by \" > \". For example \"Technical Issue > Compute > Compute Engine\"."]
+            #[doc = "Retrieve valid classifications to be used when creating a support case. The classications are hierarchical, with each classification containing all levels of the hierarchy, separated by “ > “. For example “Technical Issue > Compute > Compute Engine”."]
             pub fn search(&self) -> SearchRequestBuilder {
                 SearchRequestBuilder {
                     reqwest: &self.reqwest,
@@ -2735,12 +2735,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3059,7 +3059,7 @@ pub mod resources {
                     parent: parent.into(),
                 }
             }
-            #[doc = "Escalate a case. Escalating a case will initiate the Cloud Support escalation management process. This operation is only available to certain Customer Care tiers. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which tiers are able to perform escalations."]
+            #[doc = "Escalate a case. Escalating a case will initiate the Cloud Support escalation management process. This operation is only available to certain Customer Care tiers. Go to https://cloud.google.com/support and look for ‘Technical support escalations’ in the feature list to find out which tiers are able to perform escalations."]
             pub fn escalate(
                 &self,
                 request: crate::schemas::EscalateCaseRequest,
@@ -3235,12 +3235,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3398,12 +3398,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3561,12 +3561,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3723,12 +3723,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3856,7 +3856,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "An expression written in the Cloud filter language. If non-empty, then only cases whose fields match the filter are returned. If empty, then no messages are filtered out. Filter strings can use the following fields: - state (Accepted values: OPEN or CLOSED) - severity (Accepted values: S0, S1, S2, S3, or S4) - creator.email with the operators equals (=) and AND. Additionally, a global restriction (with no operator) can be used to search across displayName, description, and comments (e.g. \"my search\")."]
+            #[doc = "An expression written in the Cloud filter language. If non-empty, then only cases whose fields match the filter are returned. If empty, then no messages are filtered out. Filter strings can use the following fields: - state (Accepted values: OPEN or CLOSED) - severity (Accepted values: S0, S1, S2, S3, or S4) - creator.email with the operators equals (=) and AND. Additionally, a global restriction (with no operator) can be used to search across displayName, description, and comments (e.g. “my search”)."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -3901,12 +3901,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4224,12 +4224,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4368,7 +4368,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "An expression written in the Cloud filter language. Filter strings can use the following fields: - organization (A name of the form organizations/) - project (A name of the form projects/) - customer (A name of the form customers/) - state (Accepted values: OPEN or CLOSED) - severity (Accepted values: S0, S1, S2, S3, or S4) - creator.email with the operators equals (=) and AND. Additionally, a global restriction (with no key/operator) can be used to search across display_name, description, and comments (e.g. \"my search\"). One of organization, project, or customer field must be specified."]
+            #[doc = "An expression written in the Cloud filter language. Filter strings can use the following fields: - organization (A name of the form organizations/) - project (A name of the form projects/) - customer (A name of the form customers/) - state (Accepted values: OPEN or CLOSED) - severity (Accepted values: S0, S1, S2, S3, or S4) - creator.email with the operators equals (=) and AND. Additionally, a global restriction (with no key/operator) can be used to search across display_name, description, and comments (e.g. “my search”). One of organization, project, or customer field must be specified."]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
@@ -4403,12 +4403,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4757,12 +4757,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5134,12 +5134,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5308,12 +5308,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -5590,7 +5590,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Download a file attachment on a case. Note: HTTP requests must append \"?alt=media\" to the URL."]
+            #[doc = "Download a file attachment on a case. Note: HTTP requests must append “?alt=media” to the URL."]
             pub fn download(&self, name: impl Into<String>) -> DownloadRequestBuilder {
                 DownloadRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5683,12 +5683,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5873,12 +5873,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

@@ -40,7 +40,7 @@ pub mod schemas {
         CancellationReasonOther,
         #[doc = "Payment is past due."]
         CancellationReasonPastDue,
-        #[doc = "Buyer's remorse."]
+        #[doc = "Buyer’s remorse."]
         CancellationReasonRemorse,
         #[doc = "Reason is unspecified."]
         CancellationReasonUnspecified,
@@ -404,21 +404,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1ExtendSubscriptionResponse {
-        #[doc = "The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. Example, \"cycleEndTime\":\"2019-08-31T17:28:54.564Z\""]
+        #[doc = "The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. Example, “cycleEndTime”:“2019-08-31T17:28:54.564Z”"]
         #[serde(
             rename = "cycleEndTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cycle_end_time: ::std::option::Option<String>,
-        #[doc = "End of the free trial period, in ISO 8061 format. UTC timezone. Example, \"freeTrialEndTime\":\"2019-08-31T17:28:54.564Z\" This time will be set the same as initial subscription creation time if no free trial period is offered to the partner."]
+        #[doc = "End of the free trial period, in ISO 8061 format. UTC timezone. Example, “freeTrialEndTime”:“2019-08-31T17:28:54.564Z” This time will be set the same as initial subscription creation time if no free trial period is offered to the partner."]
         #[serde(
             rename = "freeTrialEndTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub free_trial_end_time: ::std::option::Option<String>,
-        #[doc = "Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: \"2019-08-31T17:28:54.564Z\""]
+        #[doc = "Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: “2019-08-31T17:28:54.564Z”"]
         #[serde(
             rename = "renewalTime",
             default,
@@ -591,7 +591,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1Location {
-        #[doc = "The postal code this location refers to. Ex. \"94043\""]
+        #[doc = "The postal code this location refers to. Ex. “94043”"]
         #[serde(
             rename = "postalCode",
             default,
@@ -629,14 +629,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudPaymentsResellerSubscriptionV1Product {
-        #[doc = "Output only. Response only. Resource name of the subscription. It will have the format of \"partners/{partner_id}/products/{product_id}\""]
+        #[doc = "Output only. Response only. Resource name of the subscription. It will have the format of “partners/{partner_id}/products/{product_id}”"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. 2-letter ISO region code where the product is available in. Ex. \"US\" Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1"]
+        #[doc = "Output only. 2-letter ISO region code where the product is available in. Ex. “US” Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1"]
         #[serde(
             rename = "regionCodes",
             default,
@@ -682,7 +682,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPaymentsResellerSubscriptionV1Promotion { # [doc = "Output only. The product ids this promotion can be applied to."] # [serde (rename = "applicableProducts" , default , skip_serializing_if = "std::option::Option::is_none")] pub applicable_products : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Specifies the end time (exclusive) of the period that the promotion is available in. If unset, the promotion is available indefinitely."] # [serde (rename = "endTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub end_time : :: std :: option :: Option < String > , # [doc = "Optional. Specifies the duration of the free trial of the subscription when promotion_type is PROMOTION_TYPE_FREE_TRIAL"] # [serde (rename = "freeTrialDuration" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_duration : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Duration > , # [doc = "Optional. Specifies the introductory pricing details when the promotion_type is PROMOTION_TYPE_INTRODUCTORY_PRICING."] # [serde (rename = "introductoryPricingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub introductory_pricing_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetails > , # [doc = "Output only. Response only. Resource name of the subscription promotion. It will have the format of \"partners/{partner_id}/promotion/{promotion_id}\""] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Output only. Output Only. Specifies the type of the promotion."] # [serde (rename = "promotionType" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotion_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1PromotionPromotionType > , # [doc = "Output only. 2-letter ISO region code where the promotion is available in. Ex. \"US\" Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1"] # [serde (rename = "regionCodes" , default , skip_serializing_if = "std::option::Option::is_none")] pub region_codes : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Specifies the start time (inclusive) of the period that the promotion is available in."] # [serde (rename = "startTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub start_time : :: std :: option :: Option < String > , # [doc = "Output only. Localized human readable name of the promotion."] # [serde (rename = "titles" , default , skip_serializing_if = "std::option::Option::is_none")] pub titles : :: std :: option :: Option < Vec < crate :: schemas :: GoogleTypeLocalizedText > > , }
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1Promotion { # [doc = "Output only. The product ids this promotion can be applied to."] # [serde (rename = "applicableProducts" , default , skip_serializing_if = "std::option::Option::is_none")] pub applicable_products : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Specifies the end time (exclusive) of the period that the promotion is available in. If unset, the promotion is available indefinitely."] # [serde (rename = "endTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub end_time : :: std :: option :: Option < String > , # [doc = "Optional. Specifies the duration of the free trial of the subscription when promotion_type is PROMOTION_TYPE_FREE_TRIAL"] # [serde (rename = "freeTrialDuration" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_duration : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Duration > , # [doc = "Optional. Specifies the introductory pricing details when the promotion_type is PROMOTION_TYPE_INTRODUCTORY_PRICING."] # [serde (rename = "introductoryPricingDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub introductory_pricing_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetails > , # [doc = "Output only. Response only. Resource name of the subscription promotion. It will have the format of “partners/{partner_id}/promotion/{promotion_id}”"] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Output only. Output Only. Specifies the type of the promotion."] # [serde (rename = "promotionType" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotion_type : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1PromotionPromotionType > , # [doc = "Output only. 2-letter ISO region code where the promotion is available in. Ex. “US” Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1"] # [serde (rename = "regionCodes" , default , skip_serializing_if = "std::option::Option::is_none")] pub region_codes : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Specifies the start time (inclusive) of the period that the promotion is available in."] # [serde (rename = "startTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub start_time : :: std :: option :: Option < String > , # [doc = "Output only. Localized human readable name of the promotion."] # [serde (rename = "titles" , default , skip_serializing_if = "std::option::Option::is_none")] pub titles : :: std :: option :: Option < Vec < crate :: schemas :: GoogleTypeLocalizedText > > , }
     impl ::google_field_selector::FieldSelector for GoogleCloudPaymentsResellerSubscriptionV1Promotion {
         fn fields() -> Vec<::google_field_selector::Field> {
             Vec::new()
@@ -826,7 +826,7 @@ pub mod schemas {
         :: serde :: Deserialize,
         :: serde :: Serialize,
     )]
-    pub struct GoogleCloudPaymentsResellerSubscriptionV1Subscription { # [doc = "Output only. Describes the details of a cancelled subscription. Only applicable to subscription of state `STATE_CANCELLED`."] # [serde (rename = "cancellationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancellation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionCancellationDetails > , # [doc = "Output only. System generated timestamp when the subscription is created. UTC timezone."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. For example: \"2019-08-31T17:28:54.564Z\""] # [serde (rename = "cycleEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub cycle_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Indicates if the subscription is entitled to the end user."] # [serde (rename = "endUserEntitled" , default , skip_serializing_if = "std::option::Option::is_none")] pub end_user_entitled : :: std :: option :: Option < bool > , # [doc = "Output only. End of the free trial period, in ISO 8061 format. For example, \"2019-08-31T17:28:54.564Z\". It will be set the same as createTime if no free trial promotion is specified."] # [serde (rename = "freeTrialEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Response only. Resource name of the subscription. It will have the format of \"partners/{partner_id}/subscriptions/{subscription_id}\""] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Required. Identifier of the end-user in partner’s system. The value is restricted to 63 ASCII characters at the maximum."] # [serde (rename = "partnerUserToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub partner_user_token : :: std :: option :: Option < String > , # [doc = "Output only. Describes the processing state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "processingState" , default , skip_serializing_if = "std::option::Option::is_none")] pub processing_state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionProcessingState > , # [doc = "Required. Required. Resource name that identifies the purchased products. The format will be 'partners/{partner_id}/products/{product_id}'."] # [serde (rename = "products" , default , skip_serializing_if = "std::option::Option::is_none")] pub products : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be 'partners/{partner_id}/promotions/{promotion_id}'."] # [serde (rename = "promotions" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotions : :: std :: option :: Option < Vec < String > > , # [doc = "Output only. The place where partners should redirect the end-user to after creation. This field might also be populated when creation failed. However, Partners should always prepare a default URL to redirect the user in case this field is empty."] # [serde (rename = "redirectUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub redirect_uri : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: \"2019-08-31T17:28:54.564Z\""] # [serde (rename = "renewalTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub renewal_time : :: std :: option :: Option < String > , # [doc = "Required. The location that the service is provided as indicated by the partner."] # [serde (rename = "serviceLocation" , default , skip_serializing_if = "std::option::Option::is_none")] pub service_location : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Location > , # [doc = "Output only. Describes the state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState > , # [doc = "Output only. System generated timestamp when the subscription is most recently updated. UTC timezone."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , # [doc = "Optional. Details about the previous subscription that this new subscription upgrades/downgrades from. Only populated if this subscription is an upgrade/downgrade from another subscription."] # [serde (rename = "upgradeDowngradeDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub upgrade_downgrade_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails > , }
+    pub struct GoogleCloudPaymentsResellerSubscriptionV1Subscription { # [doc = "Output only. Describes the details of a cancelled subscription. Only applicable to subscription of state `STATE_CANCELLED`."] # [serde (rename = "cancellationDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub cancellation_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionCancellationDetails > , # [doc = "Output only. System generated timestamp when the subscription is created. UTC timezone."] # [serde (rename = "createTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub create_time : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be extended, in ISO 8061 format. UTC timezone. For example: “2019-08-31T17:28:54.564Z”"] # [serde (rename = "cycleEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub cycle_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Indicates if the subscription is entitled to the end user."] # [serde (rename = "endUserEntitled" , default , skip_serializing_if = "std::option::Option::is_none")] pub end_user_entitled : :: std :: option :: Option < bool > , # [doc = "Output only. End of the free trial period, in ISO 8061 format. For example, “2019-08-31T17:28:54.564Z”. It will be set the same as createTime if no free trial promotion is specified."] # [serde (rename = "freeTrialEndTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub free_trial_end_time : :: std :: option :: Option < String > , # [doc = "Output only. Response only. Resource name of the subscription. It will have the format of “partners/{partner_id}/subscriptions/{subscription_id}”"] # [serde (rename = "name" , default , skip_serializing_if = "std::option::Option::is_none")] pub name : :: std :: option :: Option < String > , # [doc = "Required. Identifier of the end-user in partner’s system. The value is restricted to 63 ASCII characters at the maximum."] # [serde (rename = "partnerUserToken" , default , skip_serializing_if = "std::option::Option::is_none")] pub partner_user_token : :: std :: option :: Option < String > , # [doc = "Output only. Describes the processing state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "processingState" , default , skip_serializing_if = "std::option::Option::is_none")] pub processing_state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionProcessingState > , # [doc = "Required. Required. Resource name that identifies the purchased products. The format will be ‘partners/{partner_id}/products/{product_id}’."] # [serde (rename = "products" , default , skip_serializing_if = "std::option::Option::is_none")] pub products : :: std :: option :: Option < Vec < String > > , # [doc = "Optional. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be ‘partners/{partner_id}/promotions/{promotion_id}’."] # [serde (rename = "promotions" , default , skip_serializing_if = "std::option::Option::is_none")] pub promotions : :: std :: option :: Option < Vec < String > > , # [doc = "Output only. The place where partners should redirect the end-user to after creation. This field might also be populated when creation failed. However, Partners should always prepare a default URL to redirect the user in case this field is empty."] # [serde (rename = "redirectUri" , default , skip_serializing_if = "std::option::Option::is_none")] pub redirect_uri : :: std :: option :: Option < String > , # [doc = "Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: “2019-08-31T17:28:54.564Z”"] # [serde (rename = "renewalTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub renewal_time : :: std :: option :: Option < String > , # [doc = "Required. The location that the service is provided as indicated by the partner."] # [serde (rename = "serviceLocation" , default , skip_serializing_if = "std::option::Option::is_none")] pub service_location : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1Location > , # [doc = "Output only. Describes the state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle)."] # [serde (rename = "state" , default , skip_serializing_if = "std::option::Option::is_none")] pub state : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionState > , # [doc = "Output only. System generated timestamp when the subscription is most recently updated. UTC timezone."] # [serde (rename = "updateTime" , default , skip_serializing_if = "std::option::Option::is_none")] pub update_time : :: std :: option :: Option < String > , # [doc = "Optional. Details about the previous subscription that this new subscription upgrades/downgrades from. Only populated if this subscription is an upgrade/downgrade from another subscription."] # [serde (rename = "upgradeDowngradeDetails" , default , skip_serializing_if = "std::option::Option::is_none")] pub upgrade_downgrade_details : :: std :: option :: Option < crate :: schemas :: GoogleCloudPaymentsResellerSubscriptionV1SubscriptionUpgradeDowngradeDetails > , }
     impl ::google_field_selector::FieldSelector
         for GoogleCloudPaymentsResellerSubscriptionV1Subscription
     {
@@ -1020,7 +1020,7 @@ pub mod schemas {
         CancellationReasonOther,
         #[doc = "Payment is past due."]
         CancellationReasonPastDue,
-        #[doc = "Buyer's remorse."]
+        #[doc = "Buyer’s remorse."]
         CancellationReasonRemorse,
         #[doc = "Reason is unspecified."]
         CancellationReasonUnspecified,
@@ -1223,14 +1223,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeLocalizedText {
-        #[doc = "The text's BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The text’s BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
-        #[doc = "Localized string in the language corresponding to `language_code' below."]
+        #[doc = "Localized string in the language corresponding to \\`language_code’ below."]
         #[serde(
             rename = "text",
             default,
@@ -1557,12 +1557,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -1888,7 +1888,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Optional. Specifies the filters for the promotion results. The syntax defined in the EBNF grammar: https://google.aip.dev/assets/misc/ebnf-filtering.txt. Examples: - applicable_products: \"sku1\" - region_codes: \"US\" - applicable_products: \"sku1\" AND region_codes: \"US\""]
+                #[doc = "Optional. Specifies the filters for the promotion results. The syntax defined in the EBNF grammar: https://google.aip.dev/assets/misc/ebnf-filtering.txt. Examples: - applicable_products: “sku1” - region_codes: “US” - applicable_products: “sku1” AND region_codes: “US”"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -1933,12 +1933,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2420,12 +2420,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2584,12 +2584,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2739,12 +2739,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2881,12 +2881,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3038,12 +3038,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3212,12 +3212,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3367,12 +3367,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

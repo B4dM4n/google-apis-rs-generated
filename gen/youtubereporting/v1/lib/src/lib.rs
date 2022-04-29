@@ -1636,7 +1636,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> CreateRequestBuilder<'a> {
-            #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+            #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -1671,12 +1671,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1797,7 +1797,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> DeleteRequestBuilder<'a> {
-            #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+            #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -1832,12 +1832,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1964,7 +1964,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetRequestBuilder<'a> {
-            #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+            #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -1999,12 +1999,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2138,7 +2138,7 @@ pub mod resources {
                 self.include_system_managed = Some(value);
                 self
             }
-            #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+            #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -2183,12 +2183,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2525,7 +2525,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+                #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
                 pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                     self.on_behalf_of_content_owner = Some(value.into());
                     self
@@ -2560,12 +2560,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2711,7 +2711,7 @@ pub mod resources {
                     self.created_after = Some(value.into());
                     self
                 }
-                #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+                #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
                 pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                     self.on_behalf_of_content_owner = Some(value.into());
                     self
@@ -2766,12 +2766,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3122,12 +3122,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3321,7 +3321,7 @@ pub mod resources {
                 self.include_system_managed = Some(value);
                 self
             }
-            #[doc = "The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
+            #[doc = "The content owner’s external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel)."]
             pub fn on_behalf_of_content_owner(mut self, value: impl Into<String>) -> Self {
                 self.on_behalf_of_content_owner = Some(value.into());
                 self
@@ -3366,12 +3366,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

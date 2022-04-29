@@ -135,7 +135,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "This ad client's product code, which corresponds to the PRODUCT_CODE report dimension."]
+        #[doc = "This ad client’s product code, which corresponds to the PRODUCT_CODE report dimension."]
         #[serde(
             rename = "productCode",
             default,
@@ -194,7 +194,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through ad clients. To retrieve the next page of results, set the next request's \"pageToken\" value to this."]
+        #[doc = "Continuation token used to page through ad clients. To retrieve the next page of results, set the next request’s “pageToken” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -513,7 +513,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "Size of this ad unit. Size values are in the form SIZE_{width}_{height}."]
+        #[doc = "Size of this ad unit. Size values are in the form SIZE\\_{width}\\_{height}."]
         #[serde(
             rename = "size",
             default,
@@ -662,7 +662,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through ad units. To retrieve the next page of results, set the next request's \"pageToken\" value to this."]
+        #[doc = "Continuation token used to page through ad units. To retrieve the next page of results, set the next request’s “pageToken” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -747,14 +747,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_locale: ::std::option::Option<String>,
-        #[doc = "The locale of the user's hosted website."]
+        #[doc = "The locale of the user’s hosted website."]
         #[serde(
             rename = "websiteLocale",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub website_locale: ::std::option::Option<String>,
-        #[doc = "The URL of the user's hosted website."]
+        #[doc = "The URL of the user’s hosted website."]
         #[serde(
             rename = "websiteUrl",
             default,
@@ -858,7 +858,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through custom channels. To retrieve the next page of results, set the next request's \"pageToken\" value to this."]
+        #[doc = "Continuation token used to page through custom channels. To retrieve the next page of results, set the next request’s “pageToken” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1027,7 +1027,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "URL Pattern of this URL channel. Does not include \"http://\" or \"https://\". Example: www.example.com/home"]
+        #[doc = "URL Pattern of this URL channel. Does not include “http://” or “https://”. Example: www.example.com/home"]
         #[serde(
             rename = "urlPattern",
             default,
@@ -1079,7 +1079,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through URL channels. To retrieve the next page of results, set the next request's \"pageToken\" value to this."]
+        #[doc = "Continuation token used to page through URL channels. To retrieve the next page of results, set the next request’s “pageToken” value to this."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -1577,7 +1577,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Get information about one of the ad clients in the specified publisher's AdSense account."]
+                #[doc = "Get information about one of the ad clients in the specified publisher’s AdSense account."]
                 pub fn get(
                     &self,
                     account_id: impl Into<String>,
@@ -1778,7 +1778,7 @@ pub mod resources {
                     self.max_results = Some(value);
                     self
                 }
-                #[doc = "A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response."]
+                #[doc = "A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of “nextPageToken” from the previous response."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -2157,7 +2157,7 @@ pub mod resources {
                         ad_client_id: ad_client_id.into(),
                     }
                 }
-                #[doc = "List all ad units in the specified publisher's AdSense account."]
+                #[doc = "List all ad units in the specified publisher’s AdSense account."]
                 pub fn list(
                     &self,
                     account_id: impl Into<String>,
@@ -2860,7 +2860,7 @@ pub mod resources {
                     self.max_results = Some(value);
                     self
                 }
-                #[doc = "A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response."]
+                #[doc = "A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of “nextPageToken” from the previous response."]
                 pub fn page_token(mut self, value: impl Into<String>) -> Self {
                     self.page_token = Some(value.into());
                     self
@@ -3449,7 +3449,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify \"alt=csv\" as a query parameter."]
+                #[doc = "Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify “alt=csv” as a query parameter."]
                 pub fn generate(
                     &self,
                     account_id: impl Into<String>,
@@ -3513,7 +3513,7 @@ pub mod resources {
                     self.filter = Some(value.into());
                     self
                 }
-                #[doc = "Optional locale to use for translating report output to a local language. Defaults to \"en_US\" if not specified."]
+                #[doc = "Optional locale to use for translating report output to a local language. Defaults to “en_US” if not specified."]
                 pub fn locale(mut self, value: impl Into<String>) -> Self {
                     self.locale = Some(value.into());
                     self
@@ -3528,7 +3528,7 @@ pub mod resources {
                     self.metric = Some(value.into());
                     self
                 }
-                #[doc = "The name of a dimension or metric to sort the resulting report on, optionally prefixed with \"+\" to sort ascending or \"-\" to sort descending. If no prefix is specified, the column is sorted ascending."]
+                #[doc = "The name of a dimension or metric to sort the resulting report on, optionally prefixed with “+” to sort ascending or “-” to sort descending. If no prefix is specified, the column is sorted ascending."]
                 pub fn sort(mut self, value: impl Into<Vec<String>>) -> Self {
                     self.sort = Some(value.into());
                     self
@@ -3870,7 +3870,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response."]
+            #[doc = "A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of “nextPageToken” from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -4307,7 +4307,7 @@ pub mod resources {
                 self.user_locale = Some(value.into());
                 self
             }
-            #[doc = "The locale of the user's hosted website."]
+            #[doc = "The locale of the user’s hosted website."]
             pub fn website_locale(mut self, value: impl Into<String>) -> Self {
                 self.website_locale = Some(value.into());
                 self
@@ -5125,7 +5125,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response."]
+            #[doc = "A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of “nextPageToken” from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self
@@ -5685,7 +5685,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify \"alt=csv\" as a query parameter."]
+            #[doc = "Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify “alt=csv” as a query parameter."]
             pub fn generate(
                 &self,
                 start_date: impl Into<String>,
@@ -5746,7 +5746,7 @@ pub mod resources {
                 self.filter = Some(value.into());
                 self
             }
-            #[doc = "Optional locale to use for translating report output to a local language. Defaults to \"en_US\" if not specified."]
+            #[doc = "Optional locale to use for translating report output to a local language. Defaults to “en_US” if not specified."]
             pub fn locale(mut self, value: impl Into<String>) -> Self {
                 self.locale = Some(value.into());
                 self
@@ -5761,7 +5761,7 @@ pub mod resources {
                 self.metric = Some(value.into());
                 self
             }
-            #[doc = "The name of a dimension or metric to sort the resulting report on, optionally prefixed with \"+\" to sort ascending or \"-\" to sort descending. If no prefix is specified, the column is sorted ascending."]
+            #[doc = "The name of a dimension or metric to sort the resulting report on, optionally prefixed with “+” to sort ascending or “-” to sort descending. If no prefix is specified, the column is sorted ascending."]
             pub fn sort(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.sort = Some(value.into());
                 self
@@ -6265,7 +6265,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of \"nextPageToken\" from the previous response."]
+            #[doc = "A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of “nextPageToken” from the previous response."]
             pub fn page_token(mut self, value: impl Into<String>) -> Self {
                 self.page_token = Some(value.into());
                 self

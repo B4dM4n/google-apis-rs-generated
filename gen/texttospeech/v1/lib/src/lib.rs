@@ -15,35 +15,35 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audio_encoding: ::std::option::Option<crate::schemas::AudioConfigAudioEncoding>,
-        #[doc = "Optional. Input only. An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech. Effects are applied on top of each other in the order they are given. See [audio profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for current supported profile ids."]
+        #[doc = "Optional. Input only. An identifier which selects ‘audio effects’ profiles that are applied on (post synthesized) text to speech. Effects are applied on top of each other in the order they are given. See [audio profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for current supported profile ids."]
         #[serde(
             rename = "effectsProfileId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub effects_profile_id: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch."]
+        #[doc = "Optional. Input only. Speaking pitch, in the range \\[-20.0, 20.0\\]. 20 means increase 20 semitones from the original pitch. -20 means decrease 20 semitones from the original pitch."]
         #[serde(
             rename = "pitch",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pitch: ::std::option::Option<f64>,
-        #[doc = "Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in SynthesizeSpeechRequest, if this is different from the voice's natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will fail the request and return google.rpc.Code.INVALID_ARGUMENT."]
+        #[doc = "Optional. The synthesis sample rate (in hertz) for this audio. When this is specified in SynthesizeSpeechRequest, if this is different from the voice’s natural sample rate, then the synthesizer will honor this request by converting to the desired sample rate (which might result in worse audio quality), unless the specified sample rate is not supported for the encoding chosen, in which case it will fail the request and return google.rpc.Code.INVALID_ARGUMENT."]
         #[serde(
             rename = "sampleRateHertz",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sample_rate_hertz: ::std::option::Option<i32>,
-        #[doc = "Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values < 0.25 or > 4.0 will return an error."]
+        #[doc = "Optional. Input only. Speaking rate/speed, in the range \\[0.25, 4.0\\]. 1.0 is the normal native speed supported by the specific voice. 2.0 is twice as fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0 speed. Any other values \\< 0.25 or > 4.0 will return an error."]
         #[serde(
             rename = "speakingRate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub speaking_rate: ::std::option::Option<f64>,
-        #[doc = "Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. Strongly recommend not to exceed +10 (dB) as there's usually no effective increase in loudness for any value greater than that."]
+        #[doc = "Optional. Input only. Volume gain (in dB) of the normal native volume supported by the specific voice, in the range \\[-96.0, 16.0\\]. If unset, or set to a value of 0.0 (dB), will play at normal native signal amplitude. A value of -6.0 (dB) will play at approximately half the amplitude of the normal native signal amplitude. A value of +6.0 (dB) will play at approximately twice the amplitude of the normal native signal amplitude. Strongly recommend not to exceed +10 (dB) as there’s usually no effective increase in loudness for any value greater than that."]
         #[serde(
             rename = "volumeGainDb",
             default,
@@ -421,7 +421,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Voice {
-        #[doc = "The languages that this voice supports, expressed as [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g. \"en-US\", \"es-419\", \"cmn-tw\")."]
+        #[doc = "The languages that this voice supports, expressed as [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g. “en-US”, “es-419”, “cmn-tw”)."]
         #[serde(
             rename = "languageCodes",
             default,
@@ -468,7 +468,7 @@ pub mod schemas {
         Male,
         #[doc = "A gender-neutral voice. This voice is not yet supported."]
         Neutral,
-        #[doc = "An unspecified gender. In VoiceSelectionParams, this means that the client doesn't care which gender the selected voice will have. In the Voice field of ListVoicesResponse, this may mean that the voice doesn't fit any of the other categories in this enum, or that the gender of the voice isn't known."]
+        #[doc = "An unspecified gender. In VoiceSelectionParams, this means that the client doesn’t care which gender the selected voice will have. In the Voice field of ListVoicesResponse, this may mean that the voice doesn’t fit any of the other categories in this enum, or that the gender of the voice isn’t known."]
         SsmlVoiceGenderUnspecified,
     }
     impl VoiceSsmlGender {
@@ -554,14 +554,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VoiceSelectionParams {
-        #[doc = "The configuration for a custom voice. If [CustomVoiceParams.model] is set, the service will choose the custom voice matching the specified configuration."]
+        #[doc = "The configuration for a custom voice. If \\[CustomVoiceParams.model\\] is set, the service will choose the custom voice matching the specified configuration."]
         #[serde(
             rename = "customVoice",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_voice: ::std::option::Option<crate::schemas::CustomVoiceParams>,
-        #[doc = "Required. The language (and potentially also the region) of the voice expressed as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g. \"en-US\". This should not include a script tag (e.g. use \"cmn-cn\" rather than \"cmn-Hant-cn\"), because the script will be inferred from the input provided in the SynthesisInput. The TTS service will use this parameter to help choose an appropriate voice. Note that the TTS service may choose a voice with a slightly different language code than the one selected; it may substitute a different region (e.g. using en-US rather than en-CA if there isn't a Canadian voice available), or even a different language, e.g. using \"nb\" (Norwegian Bokmal) instead of \"no\" (Norwegian)\"."]
+        #[doc = "Required. The language (and potentially also the region) of the voice expressed as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g. “en-US”. This should not include a script tag (e.g. use “cmn-cn” rather than “cmn-Hant-cn”), because the script will be inferred from the input provided in the SynthesisInput. The TTS service will use this parameter to help choose an appropriate voice. Note that the TTS service may choose a voice with a slightly different language code than the one selected; it may substitute a different region (e.g. using en-US rather than en-CA if there isn’t a Canadian voice available), or even a different language, e.g. using “nb” (Norwegian Bokmal) instead of “no” (Norwegian)“."]
         #[serde(
             rename = "languageCode",
             default,
@@ -601,7 +601,7 @@ pub mod schemas {
         Male,
         #[doc = "A gender-neutral voice. This voice is not yet supported."]
         Neutral,
-        #[doc = "An unspecified gender. In VoiceSelectionParams, this means that the client doesn't care which gender the selected voice will have. In the Voice field of ListVoicesResponse, this may mean that the voice doesn't fit any of the other categories in this enum, or that the gender of the voice isn't known."]
+        #[doc = "An unspecified gender. In VoiceSelectionParams, this means that the client doesn’t care which gender the selected voice will have. In the Voice field of ListVoicesResponse, this may mean that the voice doesn’t fit any of the other categories in this enum, or that the gender of the voice isn’t known."]
         SsmlVoiceGenderUnspecified,
     }
     impl VoiceSelectionParamsSsmlGender {
@@ -951,12 +951,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1141,12 +1141,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

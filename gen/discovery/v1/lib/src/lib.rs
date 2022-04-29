@@ -233,7 +233,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The descriptions for the enums. Each position maps to the corresponding value in the \"enum\" array."]
+        #[doc = "The descriptions for the enums. Each position maps to the corresponding value in the “enum” array."]
         #[serde(
             rename = "enumDescriptions",
             default,
@@ -304,7 +304,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#enum: ::std::option::Option<Vec<String>>,
-        #[doc = "A reference to another schema. The value of this property is the \"id\" of another schema."]
+        #[doc = "A reference to another schema. The value of this property is the “id” of another schema."]
         #[serde(
             rename = "$ref",
             default,
@@ -482,14 +482,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub auth: ::std::option::Option<crate::schemas::RestDescriptionAuth>,
-        #[doc = "[DEPRECATED] The base path for REST requests."]
+        #[doc = "\\[DEPRECATED\\] The base path for REST requests."]
         #[serde(
             rename = "basePath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_path: ::std::option::Option<String>,
-        #[doc = "[DEPRECATED] The base URL for REST requests."]
+        #[doc = "\\[DEPRECATED\\] The base URL for REST requests."]
         #[serde(
             rename = "baseUrl",
             default,
@@ -893,7 +893,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub media_upload: ::std::option::Option<crate::schemas::RestMethodMediaUpload>,
-        #[doc = "Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the \"most-significant\" parameter appears first."]
+        #[doc = "Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the “most-significant” parameter appears first."]
         #[serde(
             rename = "parameterOrder",
             default,
@@ -957,7 +957,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub supports_subscription: ::std::option::Option<bool>,
-        #[doc = "Indicates that downloads from this method should use the download service URL (i.e. \"/download\"). Only applies if the method supports media download."]
+        #[doc = "Indicates that downloads from this method should use the download service URL (i.e. “/download”). Only applies if the method supports media download."]
         #[serde(
             rename = "useMediaDownloadService",
             default,
@@ -995,7 +995,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accept: ::std::option::Option<Vec<String>>,
-        #[doc = "Maximum size of a media upload, such as \"1MB\", \"2GB\" or \"3TB\"."]
+        #[doc = "Maximum size of a media upload, such as “1MB”, “2GB” or “3TB”."]
         #[serde(
             rename = "maxSize",
             default,

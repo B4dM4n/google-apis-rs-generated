@@ -5,7 +5,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Asset {
-        #[doc = "The author's publicly visible name. Use this name when giving credit to the author. For more information, see [Licensing](/poly/discover/licensing)."]
+        #[doc = "The author’s publicly visible name. Use this name when giving credit to the author. For more information, see [Licensing](/poly/discover/licensing)."]
         #[serde(
             rename = "authorName",
             default,
@@ -19,14 +19,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "The human-readable description, set by the asset's author."]
+        #[doc = "The human-readable description, set by the asset’s author."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The human-readable name, set by the asset's author."]
+        #[doc = "The human-readable name, set by the asset’s author."]
         #[serde(
             rename = "displayName",
             default,
@@ -54,7 +54,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub license: ::std::option::Option<crate::schemas::AssetLicense>,
-        #[doc = "Application-defined opaque metadata for this asset. This field is only returned when querying for the signed-in user's own assets, not for public assets. This string is limited to 1K chars. It is up to the creator of the asset to define the format for this string (for example, JSON)."]
+        #[doc = "Application-defined opaque metadata for this asset. This field is only returned when querying for the signed-in user’s own assets, not for public assets. This string is limited to 1K chars. It is up to the creator of the asset to define the format for this string (for example, JSON)."]
         #[serde(
             rename = "metadata",
             default,
@@ -192,11 +192,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum AssetVisibility {
-        #[doc = "Access to the asset and its underlying files and resources is restricted to the author. **Authentication:** You must supply an OAuth token that corresponds to the author's account."]
+        #[doc = "Access to the asset and its underlying files and resources is restricted to the author. **Authentication:** You must supply an OAuth token that corresponds to the author’s account."]
         Private,
         #[doc = "Access to the asset and its underlying files and resources is available to anyone."]
         Public,
-        #[doc = "Access to the asset and its underlying files and resources is available to anyone with the asset's name. Unlisted assets are **not** returned by List Assets."]
+        #[doc = "Access to the asset and its underlying files and resources is available to anyone with the asset’s name. Unlisted assets are **not** returned by List Assets."]
         Unlisted,
         #[doc = "Unknown (and invalid) visibility."]
         VisibilityUnspecified,
@@ -343,7 +343,7 @@ pub mod schemas {
         InvalidElementType,
         #[doc = "The asset import did not include any file that we can import (i.e. an OBJ file)."]
         NoImportableFile,
-        #[doc = "A problem was encountered while parsing the OBJ file. The converter makes a 'best effort' attempt to continue when encountering such issues. In some cases the resulting preview model may still be acceptable. The details can be found in the parse error message."]
+        #[doc = "A problem was encountered while parsing the OBJ file. The converter makes a ‘best effort’ attempt to continue when encountering such issues. In some cases the resulting preview model may still be acceptable. The details can be found in the parse error message."]
         ObjParseError,
     }
     impl AssetImportMessageCode {
@@ -886,7 +886,7 @@ pub mod schemas {
         FileNotFound,
         #[doc = "A missing file was found at a different file path."]
         FileSubstitution,
-        #[doc = "Vertex references are specified in an inconsistent style for a face (e.g. some vertices specify texture vertices but some don't)."]
+        #[doc = "Vertex references are specified in an inconsistent style for a face (e.g. some vertices specify texture vertices but some don’t)."]
         InconsistentVertexRefs,
         #[doc = "The command is invalid."]
         InvalidCommand,
@@ -1073,21 +1073,21 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct PresentationParams {
-        #[doc = "A background color which could be used for displaying the 3D asset in a 'thumbnail' or 'palette' style view. Authors have the option to set this background color when publishing or editing their asset. This is represented as a six-digit hexademical triplet specifying the RGB components of the background color, e.g. #FF0000 for Red."]
+        #[doc = "A background color which could be used for displaying the 3D asset in a ‘thumbnail’ or ‘palette’ style view. Authors have the option to set this background color when publishing or editing their asset. This is represented as a six-digit hexademical triplet specifying the RGB components of the background color, e.g. #FF0000 for Red."]
         #[serde(
             rename = "backgroundColor",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub background_color: ::std::option::Option<String>,
-        #[doc = "The materials' diffuse/albedo color. This does not apply to vertex colors or texture maps."]
+        #[doc = "The materials’ diffuse/albedo color. This does not apply to vertex colors or texture maps."]
         #[serde(
             rename = "colorSpace",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color_space: ::std::option::Option<crate::schemas::PresentationParamsColorSpace>,
-        #[doc = "A rotation that should be applied to the object root to make it upright. More precisely, this quaternion transforms from \"object space\" (the space in which the object is defined) to \"presentation space\", a coordinate system where +Y is up, +X is right, -Z is forward. For example, if the object is the Eiffel Tower, in its local coordinate system the object might be laid out such that the base of the tower is on the YZ plane and the tip of the tower is towards positive X. In this case this quaternion would specify a rotation (of 90 degrees about the Z axis) such that in the presentation space the base of the tower is aligned with the XZ plane, and the tip of the tower lies towards +Y. This rotation is unrelated to the object's pose in the web preview, which is just a camera position setting and is *not* reflected in this rotation. Please note: this is applicable only to the gLTF."]
+        #[doc = "A rotation that should be applied to the object root to make it upright. More precisely, this quaternion transforms from “object space” (the space in which the object is defined) to “presentation space”, a coordinate system where +Y is up, +X is right, -Z is forward. For example, if the object is the Eiffel Tower, in its local coordinate system the object might be laid out such that the base of the tower is on the YZ plane and the tip of the tower is towards positive X. In this case this quaternion would specify a rotation (of 90 degrees about the Z axis) such that in the presentation space the base of the tower is aligned with the XZ plane, and the tip of the tower lies towards +Y. This rotation is unrelated to the object’s pose in the web preview, which is just a camera position setting and is *not* reflected in this rotation. Please note: this is applicable only to the gLTF."]
         #[serde(
             rename = "orientingRotation",
             default,
@@ -1705,12 +1705,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1916,12 +1916,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2295,7 +2295,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Lists assets authored by the given user. Only the value 'me', representing the currently-authenticated user, is supported. May include assets with an access level of PRIVATE or UNLISTED and assets which are All Rights Reserved for the currently-authenticated user."]
+                #[doc = "Lists assets authored by the given user. Only the value ‘me’, representing the currently-authenticated user, is supported. May include assets with an access level of PRIVATE or UNLISTED and assets which are All Rights Reserved for the currently-authenticated user."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -2403,12 +2403,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2687,7 +2687,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Lists assets that the user has liked. Only the value 'me', representing the currently-authenticated user, is supported. May include assets with an access level of UNLISTED."]
+                #[doc = "Lists assets that the user has liked. Only the value ‘me’, representing the currently-authenticated user, is supported. May include assets with an access level of UNLISTED."]
                 pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -2739,7 +2739,7 @@ pub mod resources {
                     self.format = Some(value.into());
                     self
                 }
-                #[doc = "Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`, 'LIKED_TIME'. Defaults to `LIKED_TIME`, which ranks assets based on how recently they were liked."]
+                #[doc = "Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`, ‘LIKED_TIME’. Defaults to `LIKED_TIME`, which ranks assets based on how recently they were liked."]
                 pub fn order_by(mut self, value: impl Into<String>) -> Self {
                     self.order_by = Some(value.into());
                     self
@@ -2784,12 +2784,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

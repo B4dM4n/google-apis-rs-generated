@@ -71,7 +71,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub country_id: ::std::option::Option<i64>,
-        #[doc = "ID of currency associated with this account. This is a required field. Acceptable values are: - \"1\" for USD - \"2\" for GBP - \"3\" for ESP - \"4\" for SEK - \"5\" for CAD - \"6\" for JPY - \"7\" for DEM - \"8\" for AUD - \"9\" for FRF - \"10\" for ITL - \"11\" for DKK - \"12\" for NOK - \"13\" for FIM - \"14\" for ZAR - \"15\" for IEP - \"16\" for NLG - \"17\" for EUR - \"18\" for KRW - \"19\" for TWD - \"20\" for SGD - \"21\" for CNY - \"22\" for HKD - \"23\" for NZD - \"24\" for MYR - \"25\" for BRL - \"26\" for PTE - \"28\" for CLP - \"29\" for TRY - \"30\" for ARS - \"31\" for PEN - \"32\" for ILS - \"33\" for CHF - \"34\" for VEF - \"35\" for COP - \"36\" for GTQ - \"37\" for PLN - \"39\" for INR - \"40\" for THB - \"41\" for IDR - \"42\" for CZK - \"43\" for RON - \"44\" for HUF - \"45\" for RUB - \"46\" for AED - \"47\" for BGN - \"48\" for HRK - \"49\" for MXN - \"50\" for NGN - \"51\" for EGP "]
+        #[doc = "ID of currency associated with this account. This is a required field. Acceptable values are: - “1” for USD - “2” for GBP - “3” for ESP - “4” for SEK - “5” for CAD - “6” for JPY - “7” for DEM - “8” for AUD - “9” for FRF - “10” for ITL - “11” for DKK - “12” for NOK - “13” for FIM - “14” for ZAR - “15” for IEP - “16” for NLG - “17” for EUR - “18” for KRW - “19” for TWD - “20” for SGD - “21” for CNY - “22” for HKD - “23” for NZD - “24” for MYR - “25” for BRL - “26” for PTE - “28” for CLP - “29” for TRY - “30” for ARS - “31” for PEN - “32” for ILS - “33” for CHF - “34” for VEF - “35” for COP - “36” for GTQ - “37” for PLN - “39” for INR - “40” for THB - “41” for IDR - “42” for CZK - “43” for RON - “44” for HUF - “45” for RUB - “46” for AED - “47” for BGN - “48” for HRK - “49” for MXN - “50” for NGN - “51” for EGP "]
         #[serde(
             rename = "currencyId",
             default,
@@ -102,14 +102,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#account\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#account”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Locale of this account. Acceptable values are: - \"cs\" (Czech) - \"de\" (German) - \"en\" (English) - \"en-GB\" (English United Kingdom) - \"es\" (Spanish) - \"fr\" (French) - \"it\" (Italian) - \"ja\" (Japanese) - \"ko\" (Korean) - \"pl\" (Polish) - \"pt-BR\" (Portuguese Brazil) - \"ru\" (Russian) - \"sv\" (Swedish) - \"tr\" (Turkish) - \"zh-CN\" (Chinese Simplified) - \"zh-TW\" (Chinese Traditional) "]
+        #[doc = "Locale of this account. Acceptable values are: - “cs” (Czech) - “de” (German) - “en” (English) - “en-GB” (English United Kingdom) - “es” (Spanish) - “fr” (French) - “it” (Italian) - “ja” (Japanese) - “ko” (Korean) - “pl” (Polish) - “pt-BR” (Portuguese Brazil) - “ru” (Russian) - “sv” (Swedish) - “tr” (Turkish) - “zh-CN” (Chinese Simplified) - “zh-TW” (Chinese Traditional) "]
         #[serde(
             rename = "locale",
             default,
@@ -378,7 +378,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub available_ads: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountActiveAdSummary\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountActiveAdSummary”."]
         #[serde(
             rename = "kind",
             default,
@@ -534,7 +534,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AccountPermission {
-        #[doc = "Account profiles associated with this account permission. Possible values are: - \"ACCOUNT_PROFILE_BASIC\" - \"ACCOUNT_PROFILE_STANDARD\" "]
+        #[doc = "Account profiles associated with this account permission. Possible values are: - “ACCOUNT_PROFILE_BASIC” - “ACCOUNT_PROFILE_STANDARD” "]
         #[serde(
             rename = "accountProfiles",
             default,
@@ -550,7 +550,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountPermission\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountPermission”."]
         #[serde(
             rename = "kind",
             default,
@@ -761,7 +761,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountPermissionGroup\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountPermissionGroup”."]
         #[serde(
             rename = "kind",
             default,
@@ -807,7 +807,7 @@ pub mod schemas {
         )]
         pub account_permission_groups:
             ::std::option::Option<Vec<crate::schemas::AccountPermissionGroup>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountPermissionGroupsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountPermissionGroupsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -845,7 +845,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_permissions: ::std::option::Option<Vec<crate::schemas::AccountPermission>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountPermissionsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountPermissionsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -927,21 +927,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountUserProfile\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountUserProfile”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Locale of the user profile. This is a required field. Acceptable values are: - \"cs\" (Czech) - \"de\" (German) - \"en\" (English) - \"en-GB\" (English United Kingdom) - \"es\" (Spanish) - \"fr\" (French) - \"it\" (Italian) - \"ja\" (Japanese) - \"ko\" (Korean) - \"pl\" (Polish) - \"pt-BR\" (Portuguese Brazil) - \"ru\" (Russian) - \"sv\" (Swedish) - \"tr\" (Turkish) - \"zh-CN\" (Chinese Simplified) - \"zh-TW\" (Chinese Traditional) "]
+        #[doc = "Locale of the user profile. This is a required field. Acceptable values are: - “cs” (Czech) - “de” (German) - “en” (English) - “en-GB” (English United Kingdom) - “es” (Spanish) - “fr” (French) - “it” (Italian) - “ja” (Japanese) - “ko” (Korean) - “pl” (Polish) - “pt-BR” (Portuguese Brazil) - “ru” (Russian) - “sv” (Swedish) - “tr” (Turkish) - “zh-CN” (Chinese Simplified) - “zh-TW” (Chinese Traditional) "]
         #[serde(
             rename = "locale",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locale: ::std::option::Option<String>,
-        #[doc = "Name of the user profile. This is a required field. Must be less than 64 characters long, must be globally unique, and cannot contain whitespace or any of the following characters: \"&;<>\"#%,\"."]
+        #[doc = "Name of the user profile. This is a required field. Must be less than 64 characters long, must be globally unique, and cannot contain whitespace or any of the following characters: “&;\\<\\>”\\#%,“."]
         #[serde(
             rename = "name",
             default,
@@ -1181,7 +1181,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub account_user_profiles: ::std::option::Option<Vec<crate::schemas::AccountUserProfile>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountUserProfilesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountUserProfilesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1231,7 +1231,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accounts: ::std::option::Option<Vec<crate::schemas::Account>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#accountsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#accountsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -1274,7 +1274,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Activities {
-        #[doc = "List of activity filters. The dimension values need to be all either of type \"dfa:activity\" or \"dfa:activityGroup\"."]
+        #[doc = "List of activity filters. The dimension values need to be all either of type “dfa:activity” or “dfa:activityGroup”."]
         #[serde(
             rename = "filters",
             default,
@@ -1502,7 +1502,7 @@ pub mod schemas {
         )]
         pub key_value_targeting_expression:
             ::std::option::Option<crate::schemas::KeyValueTargetingExpression>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#ad\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#ad”."]
         #[serde(
             rename = "kind",
             default,
@@ -2079,7 +2079,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ads: ::std::option::Option<Vec<crate::schemas::Ad>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#adsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#adsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2145,7 +2145,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub click_through_url_suffix: ::std::option::Option<String>,
-        #[doc = "ID of the click-through event tag to apply by default to the landing pages of this advertiser's campaigns."]
+        #[doc = "ID of the click-through event tag to apply by default to the landing pages of this advertiser’s campaigns."]
         #[serde(
             rename = "defaultClickThroughEventTagId",
             default,
@@ -2160,7 +2160,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub default_email: ::std::option::Option<String>,
-        #[doc = "Floodlight configuration ID of this advertiser. The floodlight configuration ID will be created automatically, so on insert this field should be left blank. This field can be set to another advertiser's floodlight configuration ID in order to share that advertiser's floodlight configuration with this advertiser, so long as: - This advertiser's original floodlight configuration is not already associated with floodlight activities or floodlight activity groups. - This advertiser's original floodlight configuration is not already shared with another advertiser. "]
+        #[doc = "Floodlight configuration ID of this advertiser. The floodlight configuration ID will be created automatically, so on insert this field should be left blank. This field can be set to another advertiser’s floodlight configuration ID in order to share that advertiser’s floodlight configuration with this advertiser, so long as: - This advertiser’s original floodlight configuration is not already associated with floodlight activities or floodlight activity groups. - This advertiser’s original floodlight configuration is not already shared with another advertiser. "]
         #[serde(
             rename = "floodlightConfigurationId",
             default,
@@ -2191,7 +2191,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#advertiser\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#advertiser”."]
         #[serde(
             rename = "kind",
             default,
@@ -2213,7 +2213,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Original floodlight configuration before any sharing occurred. Set the floodlightConfigurationId of this advertiser to originalFloodlightConfigurationId to unshare the advertiser's current floodlight configuration. You cannot unshare an advertiser's floodlight configuration if the shared configuration has activities associated with any campaign or placement."]
+        #[doc = "Original floodlight configuration before any sharing occurred. Set the floodlightConfigurationId of this advertiser to originalFloodlightConfigurationId to unshare the advertiser’s current floodlight configuration. You cannot unshare an advertiser’s floodlight configuration if the shared configuration has activities associated with any campaign or placement."]
         #[serde(
             rename = "originalFloodlightConfigurationId",
             default,
@@ -2352,7 +2352,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#advertiserGroup\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#advertiserGroup”."]
         #[serde(
             rename = "kind",
             default,
@@ -2397,7 +2397,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub advertiser_groups: ::std::option::Option<Vec<crate::schemas::AdvertiserGroup>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#advertiserGroupsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#advertiserGroupsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2440,7 +2440,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AdvertiserLandingPagesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#advertiserLandingPagesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#advertiserLandingPagesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2497,7 +2497,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub advertisers: ::std::option::Option<Vec<crate::schemas::Advertiser>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#advertisersListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#advertisersListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2648,21 +2648,21 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub dart_id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#browser\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#browser”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Major version number (leftmost number) of this browser. For example, for Chrome 5.0.376.86 beta, this field should be set to 5. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can't tell which version it is."]
+        #[doc = "Major version number (leftmost number) of this browser. For example, for Chrome 5.0.376.86 beta, this field should be set to 5. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can’t tell which version it is."]
         #[serde(
             rename = "majorVersion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub major_version: ::std::option::Option<String>,
-        #[doc = "Minor version number (number after first dot on left) of this browser. For example, for Chrome 5.0.375.86 beta, this field should be set to 0. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can't tell which version it is."]
+        #[doc = "Minor version number (number after first dot on left) of this browser. For example, for Chrome 5.0.375.86 beta, this field should be set to 0. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can’t tell which version it is."]
         #[serde(
             rename = "minorVersion",
             default,
@@ -2707,7 +2707,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub browsers: ::std::option::Option<Vec<crate::schemas::Browser>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#browsersListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#browsersListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -2895,7 +2895,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#campaign\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#campaign”."]
         #[serde(
             rename = "kind",
             default,
@@ -2984,7 +2984,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub creative_id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#campaignCreativeAssociation\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#campaignCreativeAssociation”."]
         #[serde(
             rename = "kind",
             default,
@@ -3023,7 +3023,7 @@ pub mod schemas {
         )]
         pub campaign_creative_associations:
             ::std::option::Option<Vec<crate::schemas::CampaignCreativeAssociation>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#campaignCreativeAssociationsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#campaignCreativeAssociationsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3073,7 +3073,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub campaigns: ::std::option::Option<Vec<crate::schemas::Campaign>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#campaignsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#campaignsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3152,7 +3152,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#changeLog\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#changeLog”."]
         #[serde(
             rename = "kind",
             default,
@@ -3250,7 +3250,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub change_logs: ::std::option::Option<Vec<crate::schemas::ChangeLog>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#changeLogsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#changeLogsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3398,7 +3398,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cities: ::std::option::Option<Vec<crate::schemas::City>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#citiesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#citiesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3452,7 +3452,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub dart_id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#city\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#city”."]
         #[serde(
             rename = "kind",
             default,
@@ -3534,7 +3534,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event_name: ::std::option::Option<String>,
-        #[doc = "Parameter name for the specified click tag. For DISPLAY_IMAGE_GALLERY creative assets, this field must match the value of the creative asset's creativeAssetId.name field."]
+        #[doc = "Parameter name for the specified click tag. For DISPLAY_IMAGE_GALLERY creative assets, this field must match the value of the creative asset’s creativeAssetId.name field."]
         #[serde(
             rename = "name",
             default,
@@ -3565,7 +3565,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ClickThroughUrl {
-        #[doc = "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: - If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field. - If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field. - If neither of the above cases apply, then the customClickThroughUrl is assigned to this field. "]
+        #[doc = "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: - If defaultLandingPage is enabled then the campaign’s default landing page URL is assigned to this field. - If defaultLandingPage is not enabled and a landingPageId is specified then that landing page’s URL is assigned to this field. - If neither of the above cases apply, then the customClickThroughUrl is assigned to this field. "]
         #[serde(
             rename = "computedClickThroughUrl",
             default,
@@ -3618,7 +3618,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ClickThroughUrlSuffixProperties {
-        #[doc = "Click-through URL suffix to apply to all ads in this entity's scope. Must be less than 128 characters long."]
+        #[doc = "Click-through URL suffix to apply to all ads in this entity’s scope. Must be less than 128 characters long."]
         #[serde(
             rename = "clickThroughUrlSuffix",
             default,
@@ -3716,7 +3716,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_only: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#companionSetting\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#companionSetting”."]
         #[serde(
             rename = "kind",
             default,
@@ -3747,7 +3747,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CompatibleFields {
-        #[doc = "Contains items that are compatible to be selected for a report of type \"CROSS_DIMENSION_REACH\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “CROSS_DIMENSION_REACH”."]
         #[serde(
             rename = "crossDimensionReachReportCompatibleFields",
             default,
@@ -3755,7 +3755,7 @@ pub mod schemas {
         )]
         pub cross_dimension_reach_report_compatible_fields:
             ::std::option::Option<crate::schemas::CrossDimensionReachReportCompatibleFields>,
-        #[doc = "Contains items that are compatible to be selected for a report of type \"FLOODLIGHT\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “FLOODLIGHT”."]
         #[serde(
             rename = "floodlightReportCompatibleFields",
             default,
@@ -3770,7 +3770,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Contains items that are compatible to be selected for a report of type \"PATH_ATTRIBUTION\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “PATH_ATTRIBUTION”."]
         #[serde(
             rename = "pathAttributionReportCompatibleFields",
             default,
@@ -3778,7 +3778,7 @@ pub mod schemas {
         )]
         pub path_attribution_report_compatible_fields:
             ::std::option::Option<crate::schemas::PathReportCompatibleFields>,
-        #[doc = "Contains items that are compatible to be selected for a report of type \"PATH\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “PATH”."]
         #[serde(
             rename = "pathReportCompatibleFields",
             default,
@@ -3786,7 +3786,7 @@ pub mod schemas {
         )]
         pub path_report_compatible_fields:
             ::std::option::Option<crate::schemas::PathReportCompatibleFields>,
-        #[doc = "Contains items that are compatible to be selected for a report of type \"PATH_TO_CONVERSION\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “PATH_TO_CONVERSION”."]
         #[serde(
             rename = "pathToConversionReportCompatibleFields",
             default,
@@ -3794,7 +3794,7 @@ pub mod schemas {
         )]
         pub path_to_conversion_report_compatible_fields:
             ::std::option::Option<crate::schemas::PathToConversionReportCompatibleFields>,
-        #[doc = "Contains items that are compatible to be selected for a report of type \"REACH\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “REACH”."]
         #[serde(
             rename = "reachReportCompatibleFields",
             default,
@@ -3802,7 +3802,7 @@ pub mod schemas {
         )]
         pub reach_report_compatible_fields:
             ::std::option::Option<crate::schemas::ReachReportCompatibleFields>,
-        #[doc = "Contains items that are compatible to be selected for a report of type \"STANDARD\"."]
+        #[doc = "Contains items that are compatible to be selected for a report of type “STANDARD”."]
         #[serde(
             rename = "reportCompatibleFields",
             default,
@@ -3841,7 +3841,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#connectionType\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#connectionType”."]
         #[serde(
             rename = "kind",
             default,
@@ -3886,7 +3886,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub connection_types: ::std::option::Option<Vec<crate::schemas::ConnectionType>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#connectionTypesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#connectionTypesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3924,7 +3924,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub content_categories: ::std::option::Option<Vec<crate::schemas::ContentCategory>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#contentCategoriesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#contentCategoriesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -3983,7 +3983,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#contentCategory\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#contentCategory”."]
         #[serde(
             rename = "kind",
             default,
@@ -4026,14 +4026,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_variables: ::std::option::Option<Vec<crate::schemas::CustomFloodlightVariable>>,
-        #[doc = "The display click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid is a required field."]
+        #[doc = "The display click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates\\[\\], matchId, mobileDeviceId and gclid. This or encryptedUserId or encryptedUserIdCandidates\\[\\] or matchId or mobileDeviceId or gclid is a required field."]
         #[serde(
             rename = "dclid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dclid: ::std::option::Option<String>,
-        #[doc = "The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates[], matchId, mobileDeviceId, gclid and dclid. This or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid or dclid is a required field."]
+        #[doc = "The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates\\[\\], matchId, mobileDeviceId, gclid and dclid. This or encryptedUserIdCandidates\\[\\] or matchId or mobileDeviceId or gclid or dclid is a required field."]
         #[serde(
             rename = "encryptedUserId",
             default,
@@ -4063,14 +4063,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub floodlight_configuration_id: ::std::option::Option<i64>,
-        #[doc = "The Google click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId and dclid. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or mobileDeviceId or dclid is a required field."]
+        #[doc = "The Google click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates\\[\\], matchId, mobileDeviceId and dclid. This or encryptedUserId or encryptedUserIdCandidates\\[\\] or matchId or mobileDeviceId or dclid is a required field."]
         #[serde(
             rename = "gclid",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gclid: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversion\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversion”."]
         #[serde(
             rename = "kind",
             default,
@@ -4084,14 +4084,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub limit_ad_tracking: ::std::option::Option<bool>,
-        #[doc = "The match ID field. A match ID is your own first-party identifier that has been synced with Google using the match ID feature in Floodlight. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[],mobileDeviceId, gclid and dclid. This or encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId or gclid or dclid is a required field."]
+        #[doc = "The match ID field. A match ID is your own first-party identifier that has been synced with Google using the match ID feature in Floodlight. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates\\[\\],mobileDeviceId, gclid and dclid. This or encryptedUserId or encryptedUserIdCandidates\\[\\] or mobileDeviceId or gclid or dclid is a required field."]
         #[serde(
             rename = "matchId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub match_id: ::std::option::Option<String>,
-        #[doc = "The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId, gclid and dclid. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or gclid or dclid is a required field."]
+        #[doc = "The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates\\[\\], matchId, gclid and dclid. This or encryptedUserId or encryptedUserIdCandidates\\[\\] or matchId or gclid or dclid is a required field."]
         #[serde(
             rename = "mobileDeviceId",
             default,
@@ -4128,7 +4128,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub timestamp_micros: ::std::option::Option<i64>,
-        #[doc = "Whether this particular request may come from a user under the age of 16 (may differ by country), under compliance with the European Union's General Data Protection Regulation (GDPR)."]
+        #[doc = "Whether this particular request may come from a user under the age of 16 (may differ by country), under compliance with the European Union’s General Data Protection Regulation (GDPR)."]
         #[serde(
             rename = "treatmentForUnderage",
             default,
@@ -4173,7 +4173,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<crate::schemas::ConversionErrorCode>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversionError\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversionError”."]
         #[serde(
             rename = "kind",
             default,
@@ -4293,7 +4293,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub errors: ::std::option::Option<Vec<crate::schemas::ConversionError>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversionStatus\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversionStatus”."]
         #[serde(
             rename = "kind",
             default,
@@ -4322,14 +4322,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conversions: ::std::option::Option<Vec<crate::schemas::Conversion>>,
-        #[doc = "Describes how encryptedUserId or encryptedUserIdCandidates[] is encrypted. This is a required field if encryptedUserId or encryptedUserIdCandidates[] is used."]
+        #[doc = "Describes how encryptedUserId or encryptedUserIdCandidates\\[\\] is encrypted. This is a required field if encryptedUserId or encryptedUserIdCandidates\\[\\] is used."]
         #[serde(
             rename = "encryptionInfo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encryption_info: ::std::option::Option<crate::schemas::EncryptionInfo>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversionsBatchInsertRequest\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversionsBatchInsertRequest”."]
         #[serde(
             rename = "kind",
             default,
@@ -4358,7 +4358,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub has_failures: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversionsBatchInsertResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversionsBatchInsertResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4401,7 +4401,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub encryption_info: ::std::option::Option<crate::schemas::EncryptionInfo>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversionsBatchUpdateRequest\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversionsBatchUpdateRequest”."]
         #[serde(
             rename = "kind",
             default,
@@ -4430,7 +4430,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub has_failures: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#conversionsBatchUpdateResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#conversionsBatchUpdateResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4475,7 +4475,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub countries: ::std::option::Option<Vec<crate::schemas::Country>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#countriesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#countriesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -4521,7 +4521,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub dart_id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#country\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#country”."]
         #[serde(
             rename = "kind",
             default,
@@ -4658,7 +4658,7 @@ pub mod schemas {
         )]
         pub backup_image_click_through_url:
             ::std::option::Option<crate::schemas::CreativeClickThroughUrl>,
-        #[doc = "List of feature dependencies that will cause a backup image to be served if the browser that serves the ad does not support them. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative asset correctly. This field is initially auto-generated to contain all features detected by Campaign Manager for all the assets of this creative and can then be modified by the client. To reset this field, copy over all the creativeAssets' detected features. Applicable to the following creative types: HTML5_BANNER. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE."]
+        #[doc = "List of feature dependencies that will cause a backup image to be served if the browser that serves the ad does not support them. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative asset correctly. This field is initially auto-generated to contain all features detected by Campaign Manager for all the assets of this creative and can then be modified by the client. To reset this field, copy over all the creativeAssets’ detected features. Applicable to the following creative types: HTML5_BANNER. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE."]
         #[serde(
             rename = "backupImageFeatures",
             default,
@@ -4701,14 +4701,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub companion_creatives: ::std::option::Option<Vec<i64>>,
-        #[doc = "Compatibilities associated with this creative. This is a read-only field. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering either on desktop or on mobile devices or in mobile apps for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are for rendering in mobile apps. Only pre-existing creatives may have these compatibilities since new creatives will either be assigned DISPLAY or DISPLAY_INTERSTITIAL instead. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. IN_STREAM_AUDIO refers to rendering in in-stream audio ads developed with the VAST standard. Applicable to all creative types. Acceptable values are: - \"APP\" - \"APP_INTERSTITIAL\" - \"IN_STREAM_VIDEO\" - \"IN_STREAM_AUDIO\" - \"DISPLAY\" - \"DISPLAY_INTERSTITIAL\" "]
+        #[doc = "Compatibilities associated with this creative. This is a read-only field. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering either on desktop or on mobile devices or in mobile apps for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are for rendering in mobile apps. Only pre-existing creatives may have these compatibilities since new creatives will either be assigned DISPLAY or DISPLAY_INTERSTITIAL instead. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. IN_STREAM_AUDIO refers to rendering in in-stream audio ads developed with the VAST standard. Applicable to all creative types. Acceptable values are: - “APP” - “APP_INTERSTITIAL” - “IN_STREAM_VIDEO” - “IN_STREAM_AUDIO” - “DISPLAY” - “DISPLAY_INTERSTITIAL” "]
         #[serde(
             rename = "compatibility",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compatibility: ::std::option::Option<Vec<crate::schemas::CreativeCompatibilityItems>>,
-        #[doc = "Whether Flash assets associated with the creative need to be automatically converted to HTML5. This flag is enabled by default and users can choose to disable it if they don't want the system to generate and use HTML5 asset for this creative. Applicable to the following creative type: FLASH_INPAGE. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE."]
+        #[doc = "Whether Flash assets associated with the creative need to be automatically converted to HTML5. This flag is enabled by default and users can choose to disable it if they don’t want the system to generate and use HTML5 asset for this creative. Applicable to the following creative type: FLASH_INPAGE. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE."]
         #[serde(
             rename = "convertFlashToHtml5",
             default,
@@ -4801,7 +4801,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creative\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creative”."]
         #[serde(
             rename = "kind",
             default,
@@ -4936,7 +4936,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ssl_compliant: ::std::option::Option<bool>,
-        #[doc = "Whether creative should be treated as SSL compliant even if the system scan shows it's not. Applicable to all creative types."]
+        #[doc = "Whether creative should be treated as SSL compliant even if the system scan shows it’s not. Applicable to all creative types."]
         #[serde(
             rename = "sslOverride",
             default,
@@ -7518,7 +7518,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreativeAssetId {
-        #[doc = "Name of the creative asset. This is a required field while inserting an asset. After insertion, this assetIdentifier is used to identify the uploaded asset. Characters in the name must be alphanumeric or one of the following: \".-_ \". Spaces are allowed."]
+        #[doc = "Name of the creative asset. This is a required field while inserting an asset. After insertion, this assetIdentifier is used to identify the uploaded asset. Characters in the name must be alphanumeric or one of the following: “.-\\_ “. Spaces are allowed."]
         #[serde(
             rename = "name",
             default,
@@ -7692,7 +7692,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeAssetMetadata\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeAssetMetadata”."]
         #[serde(
             rename = "kind",
             default,
@@ -7713,7 +7713,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub timer_custom_events: ::std::option::Option<Vec<crate::schemas::CreativeCustomEvent>>,
-        #[doc = "Rules validated during code generation that generated a warning. This is a read-only, auto-generated field. Possible values are: - \"ADMOB_REFERENCED\" - \"ASSET_FORMAT_UNSUPPORTED_DCM\" - \"ASSET_INVALID\" - \"CLICK_TAG_HARD_CODED\" - \"CLICK_TAG_INVALID\" - \"CLICK_TAG_IN_GWD\" - \"CLICK_TAG_MISSING\" - \"CLICK_TAG_MORE_THAN_ONE\" - \"CLICK_TAG_NON_TOP_LEVEL\" - \"COMPONENT_UNSUPPORTED_DCM\" - \"ENABLER_UNSUPPORTED_METHOD_DCM\" - \"EXTERNAL_FILE_REFERENCED\" - \"FILE_DETAIL_EMPTY\" - \"FILE_TYPE_INVALID\" - \"GWD_PROPERTIES_INVALID\" - \"HTML5_FEATURE_UNSUPPORTED\" - \"LINKED_FILE_NOT_FOUND\" - \"MAX_FLASH_VERSION_11\" - \"MRAID_REFERENCED\" - \"NOT_SSL_COMPLIANT\" - \"ORPHANED_ASSET\" - \"PRIMARY_HTML_MISSING\" - \"SVG_INVALID\" - \"ZIP_INVALID\" "]
+        #[doc = "Rules validated during code generation that generated a warning. This is a read-only, auto-generated field. Possible values are: - “ADMOB_REFERENCED” - “ASSET_FORMAT_UNSUPPORTED_DCM” - “ASSET_INVALID” - “CLICK_TAG_HARD_CODED” - “CLICK_TAG_INVALID” - “CLICK_TAG_IN_GWD” - “CLICK_TAG_MISSING” - “CLICK_TAG_MORE_THAN_ONE” - “CLICK_TAG_NON_TOP_LEVEL” - “COMPONENT_UNSUPPORTED_DCM” - “ENABLER_UNSUPPORTED_METHOD_DCM” - “EXTERNAL_FILE_REFERENCED” - “FILE_DETAIL_EMPTY” - “FILE_TYPE_INVALID” - “GWD_PROPERTIES_INVALID” - “HTML5_FEATURE_UNSUPPORTED” - “LINKED_FILE_NOT_FOUND” - “MAX_FLASH_VERSION_11” - “MRAID_REFERENCED” - “NOT_SSL_COMPLIANT” - “ORPHANED_ASSET” - “PRIMARY_HTML_MISSING” - “SVG_INVALID” - “ZIP_INVALID” "]
         #[serde(
             rename = "warnedValidationRules",
             default,
@@ -8422,7 +8422,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreativeAssetSelection {
-        #[doc = "A creativeAssets[].id. This should refer to one of the parent assets in this creative, and will be served if none of the rules match. This is a required field."]
+        #[doc = "A creativeAssets\\[\\].id. This should refer to one of the parent assets in this creative, and will be served if none of the rules match. This is a required field."]
         #[serde(
             rename = "defaultAssetId",
             default,
@@ -8461,7 +8461,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreativeAssignment {
-        #[doc = "Whether this creative assignment is active. When true, the creative will be included in the ad's rotation."]
+        #[doc = "Whether this creative assignment is active. When true, the creative will be included in the ad’s rotation."]
         #[serde(
             rename = "active",
             default,
@@ -8578,7 +8578,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreativeClickThroughUrl {
-        #[doc = "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: - If landingPageId is specified then that landing page's URL is assigned to this field. - Otherwise, the customClickThroughUrl is assigned to this field. "]
+        #[doc = "Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows: - If landingPageId is specified then that landing page’s URL is assigned to this field. - Otherwise, the customClickThroughUrl is assigned to this field. "]
         #[serde(
             rename = "computedClickThroughUrl",
             default,
@@ -9003,7 +9003,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeField\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeField”."]
         #[serde(
             rename = "kind",
             default,
@@ -9097,7 +9097,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeFieldValue\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeFieldValue”."]
         #[serde(
             rename = "kind",
             default,
@@ -9142,7 +9142,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creative_field_values: ::std::option::Option<Vec<crate::schemas::CreativeFieldValue>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeFieldValuesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeFieldValuesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9192,7 +9192,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creative_fields: ::std::option::Option<Vec<crate::schemas::CreativeField>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeFieldsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeFieldsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9273,7 +9273,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeGroup\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeGroup”."]
         #[serde(
             rename = "kind",
             default,
@@ -9449,7 +9449,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creative_groups: ::std::option::Option<Vec<crate::schemas::CreativeGroup>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativeGroupsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativeGroupsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9656,7 +9656,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creative_assignments: ::std::option::Option<Vec<crate::schemas::CreativeAssignment>>,
-        #[doc = "Creative optimization configuration that is used by this ad. It should refer to one of the existing optimization configurations in the ad's campaign. If it is unset or set to 0, then the campaign's default optimization configuration will be used for this ad."]
+        #[doc = "Creative optimization configuration that is used by this ad. It should refer to one of the existing optimization configurations in the ad’s campaign. If it is unset or set to 0, then the campaign’s default optimization configuration will be used for this ad."]
         #[serde(
             rename = "creativeOptimizationConfigurationId",
             default,
@@ -9879,7 +9879,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creatives: ::std::option::Option<Vec<crate::schemas::Creative>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#creativesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#creativesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -9922,14 +9922,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CrossDimensionReachReportCompatibleFields {
-        #[doc = "Dimensions which are compatible to be selected in the \"breakdown\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “breakdown” section of the report."]
         #[serde(
             rename = "breakdown",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub breakdown: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensionFilters\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensionFilters” section of the report."]
         #[serde(
             rename = "dimensionFilters",
             default,
@@ -9943,14 +9943,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metrics which are compatible to be selected in the \"metricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “metricNames” section of the report."]
         #[serde(
             rename = "metrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Metrics which are compatible to be selected in the \"overlapMetricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “overlapMetricNames” section of the report."]
         #[serde(
             rename = "overlapMetrics",
             default,
@@ -9981,14 +9981,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CustomFloodlightVariable {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#customFloodlightVariable\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#customFloodlightVariable”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "The type of custom floodlight variable to supply a value for. These map to the \"u[1-20]=\" in the tags."]
+        #[doc = "The type of custom floodlight variable to supply a value for. These map to the “u\\[1-20\\]=” in the tags."]
         #[serde(
             rename = "type",
             default,
@@ -10803,7 +10803,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DayPartTargeting {
-        #[doc = "Days of the week when the ad will serve. Acceptable values are: - \"SUNDAY\" - \"MONDAY\" - \"TUESDAY\" - \"WEDNESDAY\" - \"THURSDAY\" - \"FRIDAY\" - \"SATURDAY\" "]
+        #[doc = "Days of the week when the ad will serve. Acceptable values are: - “SUNDAY” - “MONDAY” - “TUESDAY” - “WEDNESDAY” - “THURSDAY” - “FRIDAY” - “SATURDAY” "]
         #[serde(
             rename = "daysOfWeek",
             default,
@@ -10818,7 +10818,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hours_of_day: ::std::option::Option<Vec<i32>>,
-        #[doc = "Whether or not to use the user's local time. If false, the America/New York time zone applies."]
+        #[doc = "Whether or not to use the user’s local time. If false, the America/New York time zone applies."]
         #[serde(
             rename = "userLocalTime",
             default,
@@ -10952,7 +10952,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fallback_url: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#deepLink\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#deepLink”."]
         #[serde(
             rename = "kind",
             default,
@@ -10997,7 +10997,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DefaultClickThroughEventTagProperties {
-        #[doc = "ID of the click-through event tag to apply to all ads in this entity's scope."]
+        #[doc = "ID of the click-through event tag to apply to all ads in this entity’s scope."]
         #[serde(
             rename = "defaultClickThroughEventTagId",
             default,
@@ -11384,7 +11384,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT."]
+        #[doc = "Determines how the ‘value’ field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, ‘*’ is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions (‘dfa:paidSearch*’) allow a matchType other than EXACT."]
         #[serde(
             rename = "matchType",
             default,
@@ -11520,7 +11520,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through dimension values. To retrieve the next page of results, set the next request's \"pageToken\" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted."]
+        #[doc = "Continuation token used to page through dimension values. To retrieve the next page of results, set the next request’s “pageToken” to the value of this field. The page token is only valid for a limited amount of time and should not be persisted."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -11628,7 +11628,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Tag types for regular placements. Acceptable values are: - \"STANDARD\" - \"IFRAME_JAVASCRIPT_INPAGE\" - \"INTERNAL_REDIRECT_INPAGE\" - \"JAVASCRIPT_INPAGE\" "]
+        #[doc = "Tag types for regular placements. Acceptable values are: - “STANDARD” - “IFRAME_JAVASCRIPT_INPAGE” - “INTERNAL_REDIRECT_INPAGE” - “JAVASCRIPT_INPAGE” "]
         #[serde(
             rename = "inpageTagFormats",
             default,
@@ -11636,7 +11636,7 @@ pub mod schemas {
         )]
         pub inpage_tag_formats:
             ::std::option::Option<Vec<crate::schemas::DirectorySiteInpageTagFormatsItems>>,
-        #[doc = "Tag types for interstitial placements. Acceptable values are: - \"IFRAME_JAVASCRIPT_INTERSTITIAL\" - \"INTERNAL_REDIRECT_INTERSTITIAL\" - \"JAVASCRIPT_INTERSTITIAL\" "]
+        #[doc = "Tag types for interstitial placements. Acceptable values are: - “IFRAME_JAVASCRIPT_INTERSTITIAL” - “INTERNAL_REDIRECT_INTERSTITIAL” - “JAVASCRIPT_INTERSTITIAL” "]
         #[serde(
             rename = "interstitialTagFormats",
             default,
@@ -11644,7 +11644,7 @@ pub mod schemas {
         )]
         pub interstitial_tag_formats:
             ::std::option::Option<Vec<crate::schemas::DirectorySiteInterstitialTagFormatsItems>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#directorySite\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#directorySite”."]
         #[serde(
             rename = "kind",
             default,
@@ -11937,7 +11937,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub directory_sites: ::std::option::Option<Vec<crate::schemas::DirectorySite>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#directorySitesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#directorySitesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12018,7 +12018,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct DynamicTargetingKey {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#dynamicTargetingKey\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#dynamicTargetingKey”."]
         #[serde(
             rename = "kind",
             default,
@@ -12155,7 +12155,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dynamic_targeting_keys: ::std::option::Option<Vec<crate::schemas::DynamicTargetingKey>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#dynamicTargetingKeysListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#dynamicTargetingKeysListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12210,7 +12210,7 @@ pub mod schemas {
         )]
         pub encryption_source:
             ::std::option::Option<crate::schemas::EncryptionInfoEncryptionSource>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#encryptionInfo\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#encryptionInfo”."]
         #[serde(
             rename = "kind",
             default,
@@ -12491,7 +12491,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub campaign_id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Whether this event tag should be automatically enabled for all of the advertiser's campaigns and ads."]
+        #[doc = "Whether this event tag should be automatically enabled for all of the advertiser’s campaigns and ads."]
         #[serde(
             rename = "enabledByDefault",
             default,
@@ -12513,7 +12513,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#eventTag\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#eventTag”."]
         #[serde(
             rename = "kind",
             default,
@@ -12865,7 +12865,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub event_tags: ::std::option::Option<Vec<crate::schemas::EventTag>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#eventTagsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#eventTagsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -12932,7 +12932,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#file\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#file”."]
         #[serde(
             rename = "kind",
             default,
@@ -13191,14 +13191,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::File>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#fileList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#fileList”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through files. To retrieve the next page of results, set the next request's \"pageToken\" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted."]
+        #[doc = "Continuation token used to page through files. To retrieve the next page of results, set the next request’s “pageToken” to the value of this field. The page token is only valid for a limited amount of time and should not be persisted."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -13300,7 +13300,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub global_site_tag_global_snippet: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightActivitiesGenerateTagResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightActivitiesGenerateTagResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13338,7 +13338,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub floodlight_activities: ::std::option::Option<Vec<crate::schemas::FloodlightActivity>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightActivitiesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightActivitiesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -13389,7 +13389,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub account_id: ::std::option::Option<i64>,
-        #[doc = "Advertiser ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group's advertiser or the existing activity's advertiser."]
+        #[doc = "Advertiser ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group’s advertiser or the existing activity’s advertiser."]
         #[serde(
             rename = "advertiserId",
             default,
@@ -13471,7 +13471,7 @@ pub mod schemas {
         )]
         pub floodlight_activity_group_type:
             ::std::option::Option<crate::schemas::FloodlightActivityFloodlightActivityGroupType>,
-        #[doc = "Floodlight configuration ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group's floodlight configuration or from the existing activity's floodlight configuration."]
+        #[doc = "Floodlight configuration ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group’s floodlight configuration or from the existing activity’s floodlight configuration."]
         #[serde(
             rename = "floodlightConfigurationId",
             default,
@@ -13510,7 +13510,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightActivity\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightActivity”."]
         #[serde(
             rename = "kind",
             default,
@@ -13582,14 +13582,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tag_format: ::std::option::Option<crate::schemas::FloodlightActivityTagFormat>,
-        #[doc = "Value of the cat= parameter in the floodlight tag, which the ad servers use to identify the activity. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being a-z0-9[ _ ]. This tag string must also be unique among activities of the same activity group. This field is read-only after insertion."]
+        #[doc = "Value of the cat= parameter in the floodlight tag, which the ad servers use to identify the activity. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being a-z0-9\\[ _ \\]. This tag string must also be unique among activities of the same activity group. This field is read-only after insertion."]
         #[serde(
             rename = "tagString",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tag_string: ::std::option::Option<String>,
-        #[doc = "List of the user-defined variables used by this conversion tag. These map to the \"u[1-100]=\" in the tags. Each of these can have a user defined type. Acceptable values are U1 to U100, inclusive. "]
+        #[doc = "List of the user-defined variables used by this conversion tag. These map to the “u\\[1-100\\]=” in the tags. Each of these can have a user defined type. Acceptable values are U1 to U100, inclusive. "]
         #[serde(
             rename = "userDefinedVariableTypes",
             default,
@@ -14591,7 +14591,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub account_id: ::std::option::Option<i64>,
-        #[doc = "Advertiser ID of this floodlight activity group. If this field is left blank, the value will be copied over either from the floodlight configuration's advertiser or from the existing activity group's advertiser."]
+        #[doc = "Advertiser ID of this floodlight activity group. If this field is left blank, the value will be copied over either from the floodlight configuration’s advertiser or from the existing activity group’s advertiser."]
         #[serde(
             rename = "advertiserId",
             default,
@@ -14637,7 +14637,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightActivityGroup\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightActivityGroup”."]
         #[serde(
             rename = "kind",
             default,
@@ -14666,7 +14666,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub subaccount_id: ::std::option::Option<i64>,
-        #[doc = "Value of the type= parameter in the floodlight tag, which the ad servers use to identify the activity group that the activity belongs to. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being a-z0-9[ _ ]. This tag string must also be unique among activity groups of the same floodlight configuration. This field is read-only after insertion."]
+        #[doc = "Value of the type= parameter in the floodlight tag, which the ad servers use to identify the activity group that the activity belongs to. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being a-z0-9\\[ _ \\]. This tag string must also be unique among activity groups of the same floodlight configuration. This field is read-only after insertion."]
         #[serde(
             rename = "tagString",
             default,
@@ -14774,7 +14774,7 @@ pub mod schemas {
         )]
         pub floodlight_activity_groups:
             ::std::option::Option<Vec<crate::schemas::FloodlightActivityGroup>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightActivityGroupsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightActivityGroupsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -14960,7 +14960,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub in_app_attribution_tracking_enabled: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightConfiguration\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightConfiguration”."]
         #[serde(
             rename = "kind",
             default,
@@ -15189,7 +15189,7 @@ pub mod schemas {
         )]
         pub floodlight_configurations:
             ::std::option::Option<Vec<crate::schemas::FloodlightConfiguration>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#floodlightConfigurationsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#floodlightConfigurationsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -15220,14 +15220,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FloodlightReportCompatibleFields {
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensionFilters\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensionFilters” section of the report."]
         #[serde(
             rename = "dimensionFilters",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_filters: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensions\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensions” section of the report."]
         #[serde(
             rename = "dimensions",
             default,
@@ -15241,7 +15241,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metrics which are compatible to be selected in the \"metricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “metricNames” section of the report."]
         #[serde(
             rename = "metrics",
             default,
@@ -15574,7 +15574,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub in_plan: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#inventoryItem\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#inventoryItem”."]
         #[serde(
             rename = "kind",
             default,
@@ -15771,7 +15771,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub inventory_items: ::std::option::Option<Vec<crate::schemas::InventoryItem>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#inventoryItemsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#inventoryItemsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -15875,7 +15875,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#landingPage\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#landingPage”."]
         #[serde(
             rename = "kind",
             default,
@@ -15928,14 +15928,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#language\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#language”."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Format of language code is an ISO 639 two-letter language code optionally followed by an underscore followed by an ISO 3166 code. Examples are \"en\" for English or \"zh_CN\" for Simplified Chinese."]
+        #[doc = "Format of language code is an ISO 639 two-letter language code optionally followed by an underscore followed by an ISO 3166 code. Examples are “en” for English or “zh_CN” for Simplified Chinese."]
         #[serde(
             rename = "languageCode",
             default,
@@ -16004,7 +16004,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LanguagesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#languagesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#languagesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -16195,7 +16195,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub value: ::std::option::Option<String>,
-        #[doc = "Friendly name of this term's variable. This is a read-only, auto-generated field. This field is only relevant when type is left unset or set to CUSTOM_VARIABLE_TERM."]
+        #[doc = "Friendly name of this term’s variable. This is a read-only, auto-generated field. This field is only relevant when type is left unset or set to CUSTOM_VARIABLE_TERM."]
         #[serde(
             rename = "variableFriendlyName",
             default,
@@ -17364,7 +17364,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub dma_id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#metro\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#metro”."]
         #[serde(
             rename = "kind",
             default,
@@ -17409,7 +17409,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MetrosListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#metrosListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#metrosListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -17461,7 +17461,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#mobileApp\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#mobileApp”."]
         #[serde(
             rename = "kind",
             default,
@@ -17579,7 +17579,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MobileAppsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#mobileAppsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#mobileAppsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -17652,7 +17652,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#mobileCarrier\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#mobileCarrier”."]
         #[serde(
             rename = "kind",
             default,
@@ -17690,7 +17690,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MobileCarriersListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#mobileCarriersListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#mobileCarriersListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -17808,7 +17808,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ObjectFilter {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#objectFilter\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#objectFilter”."]
         #[serde(
             rename = "kind",
             default,
@@ -17971,7 +17971,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub omniture_cost_data_enabled: ::std::option::Option<bool>,
-        #[doc = "Whether Omniture integration is enabled. This property can be enabled only when the \"Advanced Ad Serving\" account setting is enabled."]
+        #[doc = "Whether Omniture integration is enabled. This property can be enabled only when the “Advanced Ad Serving” account setting is enabled."]
         #[serde(
             rename = "omnitureIntegrationEnabled",
             default,
@@ -18017,7 +18017,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub desktop: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystem\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#operatingSystem”."]
         #[serde(
             rename = "kind",
             default,
@@ -18070,7 +18070,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystemVersion\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#operatingSystemVersion”."]
         #[serde(
             rename = "kind",
             default,
@@ -18129,7 +18129,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperatingSystemVersionsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystemVersionsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#operatingSystemVersionsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -18168,7 +18168,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperatingSystemsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#operatingSystemsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#operatingSystemsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -18312,7 +18312,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#order\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#order”."]
         #[serde(
             rename = "kind",
             default,
@@ -18633,7 +18633,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#orderDocument\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#orderDocument”."]
         #[serde(
             rename = "kind",
             default,
@@ -18803,7 +18803,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrderDocumentsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#orderDocumentsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#orderDocumentsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -18853,7 +18853,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OrdersListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#ordersListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#ordersListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -18917,7 +18917,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT."]
+        #[doc = "Determines how the ‘value’ field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, ‘*’ is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions (‘dfa:paidSearch*’) allow a matchType other than EXACT."]
         #[serde(
             rename = "pathMatchPosition",
             default,
@@ -19031,14 +19031,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PathReportCompatibleFields {
-        #[doc = "Dimensions which are compatible to be selected in the \"channelGroupings\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “channelGroupings” section of the report."]
         #[serde(
             rename = "channelGroupings",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub channel_groupings: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensions\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensions” section of the report."]
         #[serde(
             rename = "dimensions",
             default,
@@ -19052,14 +19052,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metrics which are compatible to be selected in the \"metricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “metricNames” section of the report."]
         #[serde(
             rename = "metrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Dimensions which are compatible to be selected in the \"pathFilters\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “pathFilters” section of the report."]
         #[serde(
             rename = "pathFilters",
             default,
@@ -19097,7 +19097,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_name: ::std::option::Option<String>,
-        #[doc = "The possible ID's associated with the value if available."]
+        #[doc = "The possible ID’s associated with the value if available."]
         #[serde(
             rename = "ids",
             default,
@@ -19111,7 +19111,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT."]
+        #[doc = "Determines how the ‘value’ field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, ‘*’ is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions (‘dfa:paidSearch*’) allow a matchType other than EXACT."]
         #[serde(
             rename = "matchType",
             default,
@@ -19226,14 +19226,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PathToConversionReportCompatibleFields {
-        #[doc = "Conversion dimensions which are compatible to be selected in the \"conversionDimensions\" section of the report."]
+        #[doc = "Conversion dimensions which are compatible to be selected in the “conversionDimensions” section of the report."]
         #[serde(
             rename = "conversionDimensions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conversion_dimensions: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "Custom floodlight variables which are compatible to be selected in the \"customFloodlightVariables\" section of the report."]
+        #[doc = "Custom floodlight variables which are compatible to be selected in the “customFloodlightVariables” section of the report."]
         #[serde(
             rename = "customFloodlightVariables",
             default,
@@ -19247,14 +19247,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metrics which are compatible to be selected in the \"metricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “metricNames” section of the report."]
         #[serde(
             rename = "metrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Per-interaction dimensions which are compatible to be selected in the \"perInteractionDimensions\" section of the report."]
+        #[doc = "Per-interaction dimensions which are compatible to be selected in the “perInteractionDimensions” section of the report."]
         #[serde(
             rename = "perInteractionDimensions",
             default,
@@ -19418,7 +19418,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key_name: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placement\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placement”."]
         #[serde(
             rename = "kind",
             default,
@@ -19468,7 +19468,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub payment_source: ::std::option::Option<crate::schemas::PlacementPaymentSource>,
-        #[doc = "ID of this placement's group, if applicable."]
+        #[doc = "ID of this placement’s group, if applicable."]
         #[serde(
             rename = "placementGroupId",
             default,
@@ -19499,7 +19499,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pricing_schedule: ::std::option::Option<crate::schemas::PricingSchedule>,
-        #[doc = "Whether this placement is the primary placement of a roadblock (placement group). You cannot change this field from true to false. Setting this field to true will automatically set the primary field on the original primary placement of the roadblock to false, and it will automatically set the roadblock's primaryPlacementId field to the ID of this placement."]
+        #[doc = "Whether this placement is the primary placement of a roadblock (placement group). You cannot change this field from true to false. Setting this field to true will automatically set the primary field on the original primary placement of the roadblock to false, and it will automatically set the roadblock’s primaryPlacementId field to the ID of this placement."]
         #[serde(
             rename = "primary",
             default,
@@ -19557,7 +19557,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub subaccount_id: ::std::option::Option<i64>,
-        #[doc = "Tag formats to generate for this placement. This field is required on insertion. Acceptable values are: - \"PLACEMENT_TAG_STANDARD\" - \"PLACEMENT_TAG_IFRAME_JAVASCRIPT\" - \"PLACEMENT_TAG_IFRAME_ILAYER\" - \"PLACEMENT_TAG_INTERNAL_REDIRECT\" - \"PLACEMENT_TAG_JAVASCRIPT\" - \"PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT\" - \"PLACEMENT_TAG_INTERSTITIAL_INTERNAL_REDIRECT\" - \"PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT\" - \"PLACEMENT_TAG_CLICK_COMMANDS\" - \"PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH\" - \"PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_3\" - \"PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_4\" - \"PLACEMENT_TAG_TRACKING\" - \"PLACEMENT_TAG_TRACKING_IFRAME\" - \"PLACEMENT_TAG_TRACKING_JAVASCRIPT\" "]
+        #[doc = "Tag formats to generate for this placement. This field is required on insertion. Acceptable values are: - “PLACEMENT_TAG_STANDARD” - “PLACEMENT_TAG_IFRAME_JAVASCRIPT” - “PLACEMENT_TAG_IFRAME_ILAYER” - “PLACEMENT_TAG_INTERNAL_REDIRECT” - “PLACEMENT_TAG_JAVASCRIPT” - “PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT” - “PLACEMENT_TAG_INTERSTITIAL_INTERNAL_REDIRECT” - “PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT” - “PLACEMENT_TAG_CLICK_COMMANDS” - “PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH” - “PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_3” - “PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_4” - “PLACEMENT_TAG_TRACKING” - “PLACEMENT_TAG_TRACKING_IFRAME” - “PLACEMENT_TAG_TRACKING_JAVASCRIPT” "]
         #[serde(
             rename = "tagFormats",
             default,
@@ -19571,7 +19571,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tag_setting: ::std::option::Option<crate::schemas::TagSetting>,
-        #[doc = "Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level -- the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView."]
+        #[doc = "Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level – the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView."]
         #[serde(
             rename = "videoActiveViewOptOut",
             default,
@@ -20177,7 +20177,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlacementAssignment {
-        #[doc = "Whether this placement assignment is active. When true, the placement will be included in the ad's rotation."]
+        #[doc = "Whether this placement assignment is active. When true, the placement will be included in the ad’s rotation."]
         #[serde(
             rename = "active",
             default,
@@ -20342,7 +20342,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id_dimension_value: ::std::option::Option<crate::schemas::DimensionValue>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementGroup\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placementGroup”."]
         #[serde(
             rename = "kind",
             default,
@@ -20518,7 +20518,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlacementGroupsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementGroupsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placementGroupsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -20568,7 +20568,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlacementStrategiesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementStrategiesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placementStrategiesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -20634,7 +20634,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementStrategy\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placementStrategy”."]
         #[serde(
             rename = "kind",
             default,
@@ -20711,7 +20711,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlacementsGenerateTagsResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementsGenerateTagsResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placementsGenerateTagsResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -20749,7 +20749,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlacementsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#placementsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#placementsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -20807,7 +20807,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#platformType\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#platformType”."]
         #[serde(
             rename = "kind",
             default,
@@ -20845,7 +20845,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PlatformTypesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#platformTypesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#platformTypesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -21068,7 +21068,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#postalCode\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#postalCode”."]
         #[serde(
             rename = "kind",
             default,
@@ -21099,7 +21099,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PostalCodesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#postalCodesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#postalCodesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -21894,7 +21894,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#project\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#project”."]
         #[serde(
             rename = "kind",
             default,
@@ -22198,7 +22198,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ProjectsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#projectsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#projectsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -22248,14 +22248,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReachReportCompatibleFields {
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensionFilters\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensionFilters” section of the report."]
         #[serde(
             rename = "dimensionFilters",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_filters: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensions\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensions” section of the report."]
         #[serde(
             rename = "dimensions",
             default,
@@ -22269,21 +22269,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metrics which are compatible to be selected in the \"metricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “metricNames” section of the report."]
         #[serde(
             rename = "metrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Metrics which are compatible to be selected as activity metrics to pivot on in the \"activities\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected as activity metrics to pivot on in the “activities” section of the report."]
         #[serde(
             rename = "pivotedActivityMetrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pivoted_activity_metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Metrics which are compatible to be selected in the \"reachByFrequencyMetricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “reachByFrequencyMetricNames” section of the report."]
         #[serde(
             rename = "reachByFrequencyMetrics",
             default,
@@ -22451,7 +22451,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub dart_id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#region\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#region”."]
         #[serde(
             rename = "kind",
             default,
@@ -22496,7 +22496,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RegionsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#regionsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#regionsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -22579,7 +22579,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#remarketingList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#remarketingList”."]
         #[serde(
             rename = "kind",
             default,
@@ -22820,7 +22820,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RemarketingListShare {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#remarketingListShare\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#remarketingListShare”."]
         #[serde(
             rename = "kind",
             default,
@@ -22873,7 +22873,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RemarketingListsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#remarketingListsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#remarketingListsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -22931,14 +22931,14 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub account_id: ::std::option::Option<i64>,
-        #[doc = "The report criteria for a report of type \"STANDARD\"."]
+        #[doc = "The report criteria for a report of type “STANDARD”."]
         #[serde(
             rename = "criteria",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub criteria: ::std::option::Option<crate::schemas::ReportCriteria>,
-        #[doc = "The report criteria for a report of type \"CROSS_DIMENSION_REACH\"."]
+        #[doc = "The report criteria for a report of type “CROSS_DIMENSION_REACH”."]
         #[serde(
             rename = "crossDimensionReachCriteria",
             default,
@@ -22946,7 +22946,7 @@ pub mod schemas {
         )]
         pub cross_dimension_reach_criteria:
             ::std::option::Option<crate::schemas::ReportCrossDimensionReachCriteria>,
-        #[doc = "The report's email delivery settings."]
+        #[doc = "The report’s email delivery settings."]
         #[serde(
             rename = "delivery",
             default,
@@ -22967,14 +22967,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub file_name: ::std::option::Option<String>,
-        #[doc = "The report criteria for a report of type \"FLOODLIGHT\"."]
+        #[doc = "The report criteria for a report of type “FLOODLIGHT”."]
         #[serde(
             rename = "floodlightCriteria",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub floodlight_criteria: ::std::option::Option<crate::schemas::ReportFloodlightCriteria>,
-        #[doc = "The output format of the report. If not specified, default format is \"CSV\". Note that the actual format in the completed report file might differ if for instance the report's size exceeds the format's capabilities. \"CSV\" will then be the fallback format."]
+        #[doc = "The output format of the report. If not specified, default format is “CSV”. Note that the actual format in the completed report file might differ if for instance the report’s size exceeds the format’s capabilities. “CSV” will then be the fallback format."]
         #[serde(
             rename = "format",
             default,
@@ -23019,7 +23019,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub owner_profile_id: ::std::option::Option<i64>,
-        #[doc = "The report criteria for a report of type \"PATH_ATTRIBUTION\"."]
+        #[doc = "The report criteria for a report of type “PATH_ATTRIBUTION”."]
         #[serde(
             rename = "pathAttributionCriteria",
             default,
@@ -23027,14 +23027,14 @@ pub mod schemas {
         )]
         pub path_attribution_criteria:
             ::std::option::Option<crate::schemas::ReportPathAttributionCriteria>,
-        #[doc = "The report criteria for a report of type \"PATH\"."]
+        #[doc = "The report criteria for a report of type “PATH”."]
         #[serde(
             rename = "pathCriteria",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path_criteria: ::std::option::Option<crate::schemas::ReportPathCriteria>,
-        #[doc = "The report criteria for a report of type \"PATH_TO_CONVERSION\"."]
+        #[doc = "The report criteria for a report of type “PATH_TO_CONVERSION”."]
         #[serde(
             rename = "pathToConversionCriteria",
             default,
@@ -23049,14 +23049,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::ReportType>,
-        #[doc = "The report criteria for a report of type \"REACH\"."]
+        #[doc = "The report criteria for a report of type “REACH”."]
         #[serde(
             rename = "reachCriteria",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reach_criteria: ::std::option::Option<crate::schemas::ReportReachCriteria>,
-        #[doc = "The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and the relative date range is not \"TODAY\"."]
+        #[doc = "The report’s schedule. Can only be set if the report’s ‘dateRange’ is a relative date range and the relative date range is not “TODAY”."]
         #[serde(
             rename = "schedule",
             default,
@@ -23470,7 +23470,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimensions: ::std::option::Option<Vec<crate::schemas::SortedDimension>>,
-        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be 'dfa:floodlightConfigId'."]
+        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be ‘dfa:floodlightConfigId’."]
         #[serde(
             rename = "floodlightConfigId",
             default,
@@ -23630,7 +23630,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReportPathAttributionCriteria {
-        #[doc = "The list of 'dfa:activity' values to filter on."]
+        #[doc = "The list of ‘dfa:activity’ values to filter on."]
         #[serde(
             rename = "activityFilters",
             default,
@@ -23658,7 +23658,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimensions: ::std::option::Option<Vec<crate::schemas::SortedDimension>>,
-        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be 'dfa:floodlightConfigId'."]
+        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be ‘dfa:floodlightConfigId’."]
         #[serde(
             rename = "floodlightConfigId",
             default,
@@ -23703,7 +23703,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReportPathCriteria {
-        #[doc = "The list of 'dfa:activity' values to filter on."]
+        #[doc = "The list of ‘dfa:activity’ values to filter on."]
         #[serde(
             rename = "activityFilters",
             default,
@@ -23731,7 +23731,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimensions: ::std::option::Option<Vec<crate::schemas::SortedDimension>>,
-        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be 'dfa:floodlightConfigId'."]
+        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be ‘dfa:floodlightConfigId’."]
         #[serde(
             rename = "floodlightConfigId",
             default,
@@ -23776,7 +23776,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReportPathToConversionCriteria {
-        #[doc = "The list of 'dfa:activity' values to filter on."]
+        #[doc = "The list of ‘dfa:activity’ values to filter on."]
         #[serde(
             rename = "activityFilters",
             default,
@@ -23812,7 +23812,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub date_range: ::std::option::Option<crate::schemas::DateRange>,
-        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be 'dfa:floodlightConfigId'."]
+        #[doc = "The floodlight ID for which to show data in this report. All advertisers associated with that ID will automatically be added. The dimension of the value needs to be ‘dfa:floodlightConfigId’."]
         #[serde(
             rename = "floodlightConfigId",
             default,
@@ -24128,7 +24128,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub active: ::std::option::Option<bool>,
-        #[doc = "Defines every how many days, weeks or months the report should be run. Needs to be set when \"repeats\" is either \"DAILY\", \"WEEKLY\" or \"MONTHLY\"."]
+        #[doc = "Defines every how many days, weeks or months the report should be run. Needs to be set when “repeats” is either “DAILY”, “WEEKLY” or “MONTHLY”."]
         #[serde(
             rename = "every",
             default,
@@ -24141,14 +24141,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub expiration_date: ::std::option::Option<::chrono::NaiveDate>,
-        #[doc = "The interval for which the report is repeated. Note: - \"DAILY\" also requires field \"every\" to be set. - \"WEEKLY\" also requires fields \"every\" and \"repeatsOnWeekDays\" to be set. - \"MONTHLY\" also requires fields \"every\" and \"runsOnDayOfMonth\" to be set. "]
+        #[doc = "The interval for which the report is repeated. Note: - “DAILY” also requires field “every” to be set. - “WEEKLY” also requires fields “every” and “repeatsOnWeekDays” to be set. - “MONTHLY” also requires fields “every” and “runsOnDayOfMonth” to be set. "]
         #[serde(
             rename = "repeats",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub repeats: ::std::option::Option<String>,
-        #[doc = "List of week days \"WEEKLY\" on which scheduled reports should run."]
+        #[doc = "List of week days “WEEKLY” on which scheduled reports should run."]
         #[serde(
             rename = "repeatsOnWeekDays",
             default,
@@ -24156,7 +24156,7 @@ pub mod schemas {
         )]
         pub repeats_on_week_days:
             ::std::option::Option<Vec<crate::schemas::ReportScheduleRepeatsOnWeekDaysItems>>,
-        #[doc = "Enum to define for \"MONTHLY\" scheduled reports whether reports should be repeated on the same day of the month as \"startDate\" or the same day of the week of the month. Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), \"DAY_OF_MONTH\" would run subsequent reports on the 2nd of every Month, and \"WEEK_OF_MONTH\" would run subsequent reports on the first Monday of the month."]
+        #[doc = "Enum to define for “MONTHLY” scheduled reports whether reports should be repeated on the same day of the month as “startDate” or the same day of the week of the month. Example: If ‘startDate’ is Monday, April 2nd 2012 (2012-04-02), “DAY_OF_MONTH” would run subsequent reports on the 2nd of every Month, and “WEEK_OF_MONTH” would run subsequent reports on the first Monday of the month."]
         #[serde(
             rename = "runsOnDayOfMonth",
             default,
@@ -24352,14 +24352,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ReportCompatibleFields {
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensionFilters\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensionFilters” section of the report."]
         #[serde(
             rename = "dimensionFilters",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dimension_filters: ::std::option::Option<Vec<crate::schemas::Dimension>>,
-        #[doc = "Dimensions which are compatible to be selected in the \"dimensions\" section of the report."]
+        #[doc = "Dimensions which are compatible to be selected in the “dimensions” section of the report."]
         #[serde(
             rename = "dimensions",
             default,
@@ -24373,14 +24373,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Metrics which are compatible to be selected in the \"metricNames\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected in the “metricNames” section of the report."]
         #[serde(
             rename = "metrics",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metrics: ::std::option::Option<Vec<crate::schemas::Metric>>,
-        #[doc = "Metrics which are compatible to be selected as activity metrics to pivot on in the \"activities\" section of the report."]
+        #[doc = "Metrics which are compatible to be selected as activity metrics to pivot on in the “activities” section of the report."]
         #[serde(
             rename = "pivotedActivityMetrics",
             default,
@@ -24432,7 +24432,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "Continuation token used to page through reports. To retrieve the next page of results, set the next request's \"pageToken\" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted."]
+        #[doc = "Continuation token used to page through reports. To retrieve the next page of results, set the next request’s “pageToken” to the value of this field. The page token is only valid for a limited amount of time and should not be persisted."]
         #[serde(
             rename = "nextPageToken",
             default,
@@ -24482,7 +24482,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lookback_configuration: ::std::option::Option<crate::schemas::LookbackConfiguration>,
-        #[doc = "Report generation time zone ID of this account. This is a required field that can only be changed by a superuser. Acceptable values are: - \"1\" for \"America/New_York\" - \"2\" for \"Europe/London\" - \"3\" for \"Europe/Paris\" - \"4\" for \"Africa/Johannesburg\" - \"5\" for \"Asia/Jerusalem\" - \"6\" for \"Asia/Shanghai\" - \"7\" for \"Asia/Hong_Kong\" - \"8\" for \"Asia/Tokyo\" - \"9\" for \"Australia/Sydney\" - \"10\" for \"Asia/Dubai\" - \"11\" for \"America/Los_Angeles\" - \"12\" for \"Pacific/Auckland\" - \"13\" for \"America/Sao_Paulo\" - \"16\" for \"America/Asuncion\" - \"17\" for \"America/Chicago\" - \"18\" for \"America/Denver\" - \"19\" for \"America/St_Johns\" - \"20\" for \"Asia/Dhaka\" - \"21\" for \"Asia/Jakarta\" - \"22\" for \"Asia/Kabul\" - \"23\" for \"Asia/Karachi\" - \"24\" for \"Asia/Calcutta\" - \"25\" for \"Asia/Pyongyang\" - \"26\" for \"Asia/Rangoon\" - \"27\" for \"Atlantic/Cape_Verde\" - \"28\" for \"Atlantic/South_Georgia\" - \"29\" for \"Australia/Adelaide\" - \"30\" for \"Australia/Lord_Howe\" - \"31\" for \"Europe/Moscow\" - \"32\" for \"Pacific/Kiritimati\" - \"35\" for \"Pacific/Norfolk\" - \"36\" for \"Pacific/Tongatapu\" "]
+        #[doc = "Report generation time zone ID of this account. This is a required field that can only be changed by a superuser. Acceptable values are: - “1” for “America/New_York” - “2” for “Europe/London” - “3” for “Europe/Paris” - “4” for “Africa/Johannesburg” - “5” for “Asia/Jerusalem” - “6” for “Asia/Shanghai” - “7” for “Asia/Hong_Kong” - “8” for “Asia/Tokyo” - “9” for “Australia/Sydney” - “10” for “Asia/Dubai” - “11” for “America/Los_Angeles” - “12” for “Pacific/Auckland” - “13” for “America/Sao_Paulo” - “16” for “America/Asuncion” - “17” for “America/Chicago” - “18” for “America/Denver” - “19” for “America/St_Johns” - “20” for “Asia/Dhaka” - “21” for “Asia/Jakarta” - “22” for “Asia/Kabul” - “23” for “Asia/Karachi” - “24” for “Asia/Calcutta” - “25” for “Asia/Pyongyang” - “26” for “Asia/Rangoon” - “27” for “Atlantic/Cape_Verde” - “28” for “Atlantic/South_Georgia” - “29” for “Australia/Adelaide” - “30” for “Australia/Lord_Howe” - “31” for “Europe/Moscow” - “32” for “Pacific/Kiritimati” - “35” for “Pacific/Norfolk” - “36” for “Pacific/Tongatapu” "]
         #[serde(
             rename = "reportGenerationTimeZoneId",
             default,
@@ -24560,7 +24560,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Rule {
-        #[doc = "A creativeAssets[].id. This should refer to one of the parent assets in this creative. This is a required field."]
+        #[doc = "A creativeAssets\\[\\].id. This should refer to one of the parent assets in this creative. This is a required field."]
         #[serde(
             rename = "assetId",
             default,
@@ -24660,7 +24660,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key_name: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#site\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#site”."]
         #[serde(
             rename = "kind",
             default,
@@ -24748,7 +24748,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_only: ::std::option::Option<bool>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#siteCompanionSetting\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#siteCompanionSetting”."]
         #[serde(
             rename = "kind",
             default,
@@ -24964,7 +24964,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub video_active_view_opt_out_template: ::std::option::Option<bool>,
-        #[doc = "Default VPAID adapter setting for new placements created under this site. This value will be used to populate the placements.vpaidAdapterChoice field, when no value is specified for the new placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to the placement. The publisher's specifications will typically determine this setting. For VPAID creatives, the adapter format will match the VPAID format (HTML5 VPAID creatives use the HTML5 adapter). *Note:* Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH."]
+        #[doc = "Default VPAID adapter setting for new placements created under this site. This value will be used to populate the placements.vpaidAdapterChoice field, when no value is specified for the new placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to the placement. The publisher’s specifications will typically determine this setting. For VPAID creatives, the adapter format will match the VPAID format (HTML5 VPAID creatives use the HTML5 adapter). *Note:* Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH."]
         #[serde(
             rename = "vpaidAdapterChoiceTemplate",
             default,
@@ -25073,7 +25073,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SiteSkippableSetting {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#siteSkippableSetting\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#siteSkippableSetting”."]
         #[serde(
             rename = "kind",
             default,
@@ -25132,7 +25132,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled_video_formats: ::std::option::Option<Vec<i32>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#siteTranscodeSetting\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#siteTranscodeSetting”."]
         #[serde(
             rename = "kind",
             default,
@@ -25170,7 +25170,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub companion_settings: ::std::option::Option<crate::schemas::SiteCompanionSetting>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#siteVideoSettings\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#siteVideoSettings”."]
         #[serde(
             rename = "kind",
             default,
@@ -25309,7 +25309,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SitesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#sitesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#sitesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -25381,7 +25381,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#size\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#size”."]
         #[serde(
             rename = "kind",
             default,
@@ -25419,7 +25419,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SizesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#sizesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#sizesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -25457,7 +25457,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SkippableSetting {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#skippableSetting\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#skippableSetting”."]
         #[serde(
             rename = "kind",
             default,
@@ -25646,7 +25646,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#subaccount\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#subaccount”."]
         #[serde(
             rename = "kind",
             default,
@@ -25684,7 +25684,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SubaccountsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#subaccountsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#subaccountsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -26334,7 +26334,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#targetableRemarketingList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#targetableRemarketingList”."]
         #[serde(
             rename = "kind",
             default,
@@ -26574,7 +26574,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TargetableRemarketingListsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#targetableRemarketingListsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#targetableRemarketingListsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -26678,7 +26678,7 @@ pub mod schemas {
         )]
         pub key_value_targeting_expression:
             ::std::option::Option<crate::schemas::KeyValueTargetingExpression>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#targetingTemplate\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#targetingTemplate”."]
         #[serde(
             rename = "kind",
             default,
@@ -26746,7 +26746,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TargetingTemplatesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#targetingTemplatesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#targetingTemplatesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -27114,7 +27114,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled_video_formats: ::std::option::Option<Vec<i32>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#transcodeSetting\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#transcodeSetting”."]
         #[serde(
             rename = "kind",
             default,
@@ -27152,7 +27152,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub registry: ::std::option::Option<crate::schemas::UniversalAdIdRegistry>,
-        #[doc = "ID value for this creative. Only alphanumeric characters and the following symbols are valid: \"_/-\". Maximum length is 64 characters. Read only when registry is DCM."]
+        #[doc = "ID value for this creative. Only alphanumeric characters and the following symbols are valid: “\\_/-”. Maximum length is 64 characters. Read only when registry is DCM."]
         #[serde(
             rename = "value",
             default,
@@ -27268,7 +27268,7 @@ pub mod schemas {
         )]
         pub data_type:
             ::std::option::Option<crate::schemas::UserDefinedVariableConfigurationDataType>,
-        #[doc = "User-friendly name for the variable which will appear in reports. This is a required field, must be less than 64 characters long, and cannot contain the following characters: \"\"<>\"."]
+        #[doc = "User-friendly name for the variable which will appear in reports. This is a required field, must be less than 64 characters long, and cannot contain the following characters: “”\\<\\>“."]
         #[serde(
             rename = "reportName",
             default,
@@ -27863,7 +27863,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<String>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userProfile\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userProfile”."]
         #[serde(
             rename = "kind",
             default,
@@ -27938,7 +27938,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub items: ::std::option::Option<Vec<crate::schemas::UserProfile>>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userProfileList\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userProfileList”."]
         #[serde(
             rename = "kind",
             default,
@@ -27992,7 +27992,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userRole\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userRole”."]
         #[serde(
             rename = "kind",
             default,
@@ -28068,7 +28068,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userRolePermission\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userRolePermission”."]
         #[serde(
             rename = "kind",
             default,
@@ -28219,7 +28219,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<i64>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userRolePermissionGroup\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userRolePermissionGroup”."]
         #[serde(
             rename = "kind",
             default,
@@ -28257,7 +28257,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserRolePermissionGroupsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userRolePermissionGroupsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userRolePermissionGroupsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -28296,7 +28296,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserRolePermissionsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userRolePermissionsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userRolePermissionsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -28334,7 +28334,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserRolesListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#userRolesListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#userRolesListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -28398,7 +28398,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<i32>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#videoFormat\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#videoFormat”."]
         #[serde(
             rename = "kind",
             default,
@@ -28524,7 +28524,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct VideoFormatsListResponse {
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#videoFormatsListResponse\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#videoFormatsListResponse”."]
         #[serde(
             rename = "kind",
             default,
@@ -28614,7 +28614,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub duration_seconds: ::std::option::Option<i32>,
-        #[doc = "Identifies what kind of resource this is. Value: the fixed string \"dfareporting#videoSettings\"."]
+        #[doc = "Identifies what kind of resource this is. Value: the fixed string “dfareporting#videoSettings”."]
         #[serde(
             rename = "kind",
             default,
@@ -29389,7 +29389,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Gets the account's active ad summary by account ID."]
+            #[doc = "Gets the account’s active ad summary by account ID."]
             pub fn get(&self, profile_id: i64, summary_account_id: i64) -> GetRequestBuilder {
                 GetRequestBuilder {
                     reqwest: &self.reqwest,
@@ -29460,12 +29460,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29682,12 +29682,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -29852,12 +29852,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30068,12 +30068,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30238,12 +30238,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30674,12 +30674,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -30845,12 +30845,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31011,7 +31011,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name, ID or email. Wildcards (*) are allowed. For example, \"user profile*2015\" will return objects with names like \"user profile June 2015\", \"user profile April 2015\", or simply \"user profile 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"user profile\" will match objects with name \"my user profile\", \"user profile 2015\", or simply \"user profile\"."]
+            #[doc = "Allows searching for objects by name, ID or email. Wildcards (*) are allowed. For example, “user profile*2015” will return objects with names like “user profile June 2015”, “user profile April 2015”, or simply “user profile 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “user profile” will match objects with name “my user profile”, “user profile 2015”, or simply “user profile”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -31072,12 +31072,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31403,12 +31403,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31568,12 +31568,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31979,12 +31979,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32126,7 +32126,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Select only active accounts. Don't set this field to select both active and non-active accounts."]
+            #[doc = "Select only active accounts. Don’t set this field to select both active and non-active accounts."]
             pub fn active(mut self, value: bool) -> Self {
                 self.active = Some(value);
                 self
@@ -32146,7 +32146,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"account*2015\" will return objects with names like \"account June 2015\", \"account April 2015\", or simply \"account 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"account\" will match objects with name \"my account\", \"account 2015\", or simply \"account\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “account*2015” will return objects with names like “account June 2015”, “account April 2015”, or simply “account 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “account” will match objects with name “my account”, “account 2015”, or simply “account”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -32197,12 +32197,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32524,12 +32524,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -32689,12 +32689,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33306,12 +33306,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33475,12 +33475,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -33723,7 +33723,7 @@ pub mod resources {
                 self.remarketing_list_ids = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"ad*2015\" will return objects with names like \"ad June 2015\", \"ad April 2015\", or simply \"ad 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"ad\" will match objects with name \"my ad\", \"ad 2015\", or simply \"ad\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “ad*2015” will return objects with names like “ad June 2015”, “ad April 2015”, or simply “ad 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “ad” will match objects with name “my ad”, “ad 2015”, or simply “ad”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -33789,12 +33789,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34152,12 +34152,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34315,12 +34315,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34767,12 +34767,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -34884,12 +34884,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35055,12 +35055,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35211,7 +35211,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"advertiser*2015\" will return objects with names like \"advertiser group June 2015\", \"advertiser group April 2015\", or simply \"advertiser group 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"advertisergroup\" will match objects with name \"my advertisergroup\", \"advertisergroup 2015\", or simply \"advertisergroup\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “advertiser*2015” will return objects with names like “advertiser group June 2015”, “advertiser group April 2015”, or simply “advertiser group 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “advertisergroup” will match objects with name “my advertisergroup”, “advertisergroup 2015”, or simply “advertisergroup”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -35262,12 +35262,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35588,12 +35588,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -35753,12 +35753,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -36191,12 +36191,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -36362,12 +36362,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -36514,7 +36514,7 @@ pub mod resources {
                 self.advertiser_ids = Some(value.into());
                 self
             }
-            #[doc = "Select only archived landing pages. Don't set this field to select both archived and non-archived landing pages."]
+            #[doc = "Select only archived landing pages. Don’t set this field to select both archived and non-archived landing pages."]
             pub fn archived(mut self, value: bool) -> Self {
                 self.archived = Some(value);
                 self
@@ -36539,7 +36539,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for landing pages by name or ID. Wildcards (*) are allowed. For example, \"landingpage*2017\" will return landing pages with names like \"landingpage July 2017\", \"landingpage March 2017\", or simply \"landingpage 2017\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"landingpage\" will match campaigns with name \"my landingpage\", \"landingpage 2015\", or simply \"landingpage\"."]
+            #[doc = "Allows searching for landing pages by name or ID. Wildcards (*) are allowed. For example, “landingpage*2017” will return landing pages with names like “landingpage July 2017”, “landingpage March 2017”, or simply “landingpage 2017”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “landingpage” will match campaigns with name “my landingpage”, “landingpage 2015”, or simply “landingpage”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -36595,12 +36595,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -36931,12 +36931,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -37096,12 +37096,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -37605,12 +37605,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -37776,12 +37776,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -37946,7 +37946,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Select only advertisers which use another advertiser's floodlight configuration."]
+            #[doc = "Select only advertisers which use another advertiser’s floodlight configuration."]
             pub fn only_parent(mut self, value: bool) -> Self {
                 self.only_parent = Some(value);
                 self
@@ -37956,7 +37956,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"advertiser*2015\" will return objects with names like \"advertiser June 2015\", \"advertiser April 2015\", or simply \"advertiser 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"advertiser\" will match objects with name \"my advertiser\", \"advertiser 2015\", or simply \"advertiser\" ."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “advertiser*2015” will return objects with names like “advertiser June 2015”, “advertiser April 2015”, or simply “advertiser 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “advertiser” will match objects with name “my advertiser”, “advertiser 2015”, or simply “advertiser” ."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -38020,12 +38020,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -38359,12 +38359,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -38524,12 +38524,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -38718,12 +38718,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39013,12 +39013,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39209,12 +39209,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39826,12 +39826,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -39997,12 +39997,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40153,7 +40153,7 @@ pub mod resources {
                 self.advertiser_ids = Some(value.into());
                 self
             }
-            #[doc = "Select only archived campaigns. Don't set this field to select both archived and non-archived campaigns."]
+            #[doc = "Select only archived campaigns. Don’t set this field to select both archived and non-archived campaigns."]
             pub fn archived(mut self, value: bool) -> Self {
                 self.archived = Some(value);
                 self
@@ -40188,7 +40188,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for campaigns by name or ID. Wildcards (*) are allowed. For example, \"campaign*2015\" will return campaigns with names like \"campaign June 2015\", \"campaign April 2015\", or simply \"campaign 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"campaign\" will match campaigns with name \"my campaign\", \"campaign 2015\", or simply \"campaign\"."]
+            #[doc = "Allows searching for campaigns by name or ID. Wildcards (*) are allowed. For example, “campaign*2015” will return campaigns with names like “campaign June 2015”, “campaign April 2015”, or simply “campaign 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “campaign” will match campaigns with name “my campaign”, “campaign 2015”, or simply “campaign”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -40244,12 +40244,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40586,12 +40586,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -40751,12 +40751,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -41345,12 +41345,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -41509,7 +41509,7 @@ pub mod resources {
                 self.ids = Some(value.into());
                 self
             }
-            #[doc = "Select only change logs whose change time is before the specified maxChangeTime.The time should be formatted as an RFC3339 date/time string. For example, for 10:54 PM on July 18th, 2015, in the America/New York time zone, the format is \"2015-07-18T22:54:00-04:00\". In other words, the year, month, day, the letter T, the hour (24-hour clock system), minute, second, and then the time zone offset."]
+            #[doc = "Select only change logs whose change time is before the specified maxChangeTime.The time should be formatted as an RFC3339 date/time string. For example, for 10:54 PM on July 18th, 2015, in the America/New York time zone, the format is “2015-07-18T22:54:00-04:00”. In other words, the year, month, day, the letter T, the hour (24-hour clock system), minute, second, and then the time zone offset."]
             pub fn max_change_time(mut self, value: impl Into<String>) -> Self {
                 self.max_change_time = Some(value.into());
                 self
@@ -41519,7 +41519,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Select only change logs whose change time is after the specified minChangeTime.The time should be formatted as an RFC3339 date/time string. For example, for 10:54 PM on July 18th, 2015, in the America/New York time zone, the format is \"2015-07-18T22:54:00-04:00\". In other words, the year, month, day, the letter T, the hour (24-hour clock system), minute, second, and then the time zone offset."]
+            #[doc = "Select only change logs whose change time is after the specified minChangeTime.The time should be formatted as an RFC3339 date/time string. For example, for 10:54 PM on July 18th, 2015, in the America/New York time zone, the format is “2015-07-18T22:54:00-04:00”. In other words, the year, month, day, the letter T, the hour (24-hour clock system), minute, second, and then the time zone offset."]
             pub fn min_change_time(mut self, value: impl Into<String>) -> Self {
                 self.min_change_time = Some(value.into());
                 self
@@ -41582,12 +41582,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -41973,12 +41973,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42197,12 +42197,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42367,12 +42367,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42820,12 +42820,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -42937,12 +42937,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -43108,12 +43108,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -43264,7 +43264,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"contentcategory*2015\" will return objects with names like \"contentcategory June 2015\", \"contentcategory April 2015\", or simply \"contentcategory 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"contentcategory\" will match objects with name \"my contentcategory\", \"contentcategory 2015\", or simply \"contentcategory\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “contentcategory*2015” will return objects with names like “contentcategory June 2015”, “contentcategory April 2015”, or simply “contentcategory 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “contentcategory” will match objects with name “my contentcategory”, “contentcategory 2015”, or simply “contentcategory”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -43315,12 +43315,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -43641,12 +43641,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -43806,12 +43806,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -44030,12 +44030,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -44194,12 +44194,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -44409,12 +44409,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -44579,12 +44579,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -44781,12 +44781,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -45324,12 +45324,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -45451,12 +45451,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -45632,12 +45632,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -45800,7 +45800,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for creative field values by their values. Wildcards (e.g. *) are not allowed."]
+            #[doc = "Allows searching for creative field values by their values. Wildcards (e.g. \\*) are not allowed."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -45851,12 +45851,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -46189,12 +46189,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -46364,12 +46364,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -46828,12 +46828,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -46945,12 +46945,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -47116,12 +47116,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -47278,7 +47278,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for creative fields by name or ID. Wildcards (*) are allowed. For example, \"creativefield*2015\" will return creative fields with names like \"creativefield June 2015\", \"creativefield April 2015\", or simply \"creativefield 2015\". Most of the searches also add wild-cards implicitly at the start and the end of the search string. For example, a search string of \"creativefield\" will match creative fields with the name \"my creativefield\", \"creativefield 2015\", or simply \"creativefield\"."]
+            #[doc = "Allows searching for creative fields by name or ID. Wildcards (*) are allowed. For example, “creativefield*2015” will return creative fields with names like “creativefield June 2015”, “creativefield April 2015”, or simply “creativefield 2015”. Most of the searches also add wild-cards implicitly at the start and the end of the search string. For example, a search string of “creativefield” will match creative fields with the name “my creativefield”, “creativefield 2015”, or simply “creativefield”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -47329,12 +47329,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -47658,12 +47658,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -47823,12 +47823,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -48259,12 +48259,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -48430,12 +48430,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -48598,7 +48598,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for creative groups by name or ID. Wildcards (*) are allowed. For example, \"creativegroup*2015\" will return creative groups with names like \"creativegroup June 2015\", \"creativegroup April 2015\", or simply \"creativegroup 2015\". Most of the searches also add wild-cards implicitly at the start and the end of the search string. For example, a search string of \"creativegroup\" will match creative groups with the name \"my creativegroup\", \"creativegroup 2015\", or simply \"creativegroup\"."]
+            #[doc = "Allows searching for creative groups by name or ID. Wildcards (*) are allowed. For example, “creativegroup*2015” will return creative groups with names like “creativegroup June 2015”, “creativegroup April 2015”, or simply “creativegroup 2015”. Most of the searches also add wild-cards implicitly at the start and the end of the search string. For example, a search string of “creativegroup” will match creative groups with the name “my creativegroup”, “creativegroup 2015”, or simply “creativegroup”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -48649,12 +48649,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -48979,12 +48979,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -49144,12 +49144,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -49773,12 +49773,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -49944,12 +49944,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -50143,7 +50143,7 @@ pub mod resources {
                 self.rendering_ids = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"creative*2015\" will return objects with names like \"creative June 2015\", \"creative April 2015\", or simply \"creative 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"creative\" will match objects with name \"my creative\", \"creative 2015\", or simply \"creative\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “creative*2015” will return objects with names like “creative June 2015”, “creative April 2015”, or simply “creative 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “creative” will match objects with name “my creative”, “creative 2015”, or simply “creative”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -50212,12 +50212,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -50558,12 +50558,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -50723,12 +50723,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -50937,12 +50937,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -51482,12 +51482,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -51653,12 +51653,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -51839,7 +51839,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name, ID or URL. Wildcards (*) are allowed. For example, \"directory site*2015\" will return objects with names like \"directory site June 2015\", \"directory site April 2015\", or simply \"directory site 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"directory site\" will match objects with name \"my directory site\", \"directory site 2015\" or simply, \"directory site\"."]
+            #[doc = "Allows searching for objects by name, ID or URL. Wildcards (*) are allowed. For example, “directory site*2015” will return objects with names like “directory site June 2015”, “directory site April 2015”, or simply “directory site 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “directory site” will match objects with name “my directory site”, “directory site 2015” or simply, “directory site”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -51890,12 +51890,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -52373,7 +52373,7 @@ pub mod resources {
                     object_type,
                 }
             }
-            #[doc = "Inserts a new dynamic targeting key. Keys must be created at the advertiser level before being assigned to the advertiser's ads, creatives, or placements. There is a maximum of 1000 keys per advertiser, out of which a maximum of 20 keys can be assigned per ad, creative, or placement."]
+            #[doc = "Inserts a new dynamic targeting key. Keys must be created at the advertiser level before being assigned to the advertiser’s ads, creatives, or placements. There is a maximum of 1000 keys per advertiser, out of which a maximum of 20 keys can be assigned per ad, creative, or placement."]
             pub fn insert(
                 &self,
                 request: crate::schemas::DynamicTargetingKey,
@@ -52473,12 +52473,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -52592,12 +52592,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -52784,12 +52784,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -53334,12 +53334,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -53451,12 +53451,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -53622,12 +53622,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -53782,12 +53782,12 @@ pub mod resources {
                 self.campaign_id = Some(value);
                 self
             }
-            #[doc = "Examine only the specified campaign or advertiser's event tags for matching selector criteria. When set to false, the parent advertiser and parent campaign of the specified ad or campaign is examined as well. In addition, when set to false, the status field is examined as well, along with the enabledByDefault field. This parameter can not be set to true when adId is specified as ads do not define their own even tags."]
+            #[doc = "Examine only the specified campaign or advertiser’s event tags for matching selector criteria. When set to false, the parent advertiser and parent campaign of the specified ad or campaign is examined as well. In addition, when set to false, the status field is examined as well, along with the enabledByDefault field. This parameter can not be set to true when adId is specified as ads do not define their own even tags."]
             pub fn definitions_only(mut self, value: bool) -> Self {
                 self.definitions_only = Some(value);
                 self
             }
-            #[doc = "Select only enabled event tags. What is considered enabled or disabled depends on the definitionsOnly parameter. When definitionsOnly is set to true, only the specified advertiser or campaign's event tags' enabledByDefault field is examined. When definitionsOnly is set to false, the specified ad or specified campaign's parent advertiser's or parent campaign's event tags' enabledByDefault and status fields are examined as well."]
+            #[doc = "Select only enabled event tags. What is considered enabled or disabled depends on the definitionsOnly parameter. When definitionsOnly is set to true, only the specified advertiser or campaign’s event tags’ enabledByDefault field is examined. When definitionsOnly is set to false, the specified ad or specified campaign’s parent advertiser’s or parent campaign’s event tags’ enabledByDefault and status fields are examined as well."]
             pub fn enabled(mut self, value: bool) -> Self {
                 self.enabled = Some(value);
                 self
@@ -53805,7 +53805,7 @@ pub mod resources {
                 self.ids = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"eventtag*2015\" will return objects with names like \"eventtag June 2015\", \"eventtag April 2015\", or simply \"eventtag 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"eventtag\" will match objects with name \"my eventtag\", \"eventtag 2015\", or simply \"eventtag\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “eventtag*2015” will return objects with names like “eventtag June 2015”, “eventtag April 2015”, or simply “eventtag 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “eventtag” will match objects with name “my eventtag”, “eventtag 2015”, or simply “eventtag”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -53856,12 +53856,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -54034,12 +54034,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -54199,12 +54199,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -54396,7 +54396,7 @@ pub mod resources {
             pub enum ListSortField {
                 #[doc = "Sort by file ID."]
                 Id,
-                #[doc = "Sort by 'lastmodifiedAt' field."]
+                #[doc = "Sort by ‘lastmodifiedAt’ field."]
                 LastModifiedTime,
             }
             impl ListSortField {
@@ -54638,12 +54638,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -54881,12 +54881,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -55587,12 +55587,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -55709,12 +55709,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -55875,12 +55875,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -56046,12 +56046,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -56249,7 +56249,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"floodlightactivity*2015\" will return objects with names like \"floodlightactivity June 2015\", \"floodlightactivity April 2015\", or simply \"floodlightactivity 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"floodlightactivity\" will match objects with name \"my floodlightactivity activity\", \"floodlightactivity 2015\", or simply \"floodlightactivity\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “floodlightactivity*2015” will return objects with names like “floodlightactivity June 2015”, “floodlightactivity April 2015”, or simply “floodlightactivity 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “floodlightactivity” will match objects with name “my floodlightactivity activity”, “floodlightactivity 2015”, or simply “floodlightactivity”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -56305,12 +56305,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -56656,12 +56656,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -56821,12 +56821,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -57327,12 +57327,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -57498,12 +57498,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -57679,7 +57679,7 @@ pub mod resources {
                 self.r#type = Some(value);
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"floodlightactivitygroup*2015\" will return objects with names like \"floodlightactivitygroup June 2015\", \"floodlightactivitygroup April 2015\", or simply \"floodlightactivitygroup 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"floodlightactivitygroup\" will match objects with name \"my floodlightactivitygroup activity\", \"floodlightactivitygroup 2015\", or simply \"floodlightactivitygroup\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “floodlightactivitygroup*2015” will return objects with names like “floodlightactivitygroup June 2015”, “floodlightactivitygroup April 2015”, or simply “floodlightactivitygroup 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “floodlightactivitygroup” will match objects with name “my floodlightactivitygroup activity”, “floodlightactivitygroup 2015”, or simply “floodlightactivitygroup”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -57730,12 +57730,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -58067,12 +58067,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -58232,12 +58232,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -58498,12 +58498,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -58674,12 +58674,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -58843,12 +58843,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -59008,12 +59008,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -59443,12 +59443,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -59688,12 +59688,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -60059,12 +60059,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -60252,12 +60252,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -60545,12 +60545,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -60714,7 +60714,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"app*2015\" will return objects with names like \"app Jan 2018\", \"app Jan 2018\", or simply \"app 2018\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"app\" will match objects with name \"my app\", \"app 2018\", or simply \"app\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “app*2015” will return objects with names like “app Jan 2018”, “app Jan 2018”, or simply “app 2018”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “app” will match objects with name “my app”, “app 2018”, or simply “app”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -60749,12 +60749,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -61126,12 +61126,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -61296,12 +61296,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -61510,12 +61510,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -61680,12 +61680,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -61896,12 +61896,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -62066,12 +62066,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -62431,12 +62431,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -62617,7 +62617,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for order documents by name or ID. Wildcards (*) are allowed. For example, \"orderdocument*2015\" will return order documents with names like \"orderdocument June 2015\", \"orderdocument April 2015\", or simply \"orderdocument 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"orderdocument\" will match order documents with name \"my orderdocument\", \"orderdocument 2015\", or simply \"orderdocument\"."]
+            #[doc = "Allows searching for order documents by name or ID. Wildcards (*) are allowed. For example, “orderdocument*2015” will return order documents with names like “orderdocument June 2015”, “orderdocument April 2015”, or simply “orderdocument 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “orderdocument” will match order documents with name “my orderdocument”, “orderdocument 2015”, or simply “orderdocument”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -62673,12 +62673,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -63214,12 +63214,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -63386,7 +63386,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for orders by name or ID. Wildcards (*) are allowed. For example, \"order*2015\" will return orders with names like \"order June 2015\", \"order April 2015\", or simply \"order 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"order\" will match orders with name \"my order\", \"order 2015\", or simply \"order\"."]
+            #[doc = "Allows searching for orders by name or ID. Wildcards (*) are allowed. For example, “order*2015” will return orders with names like “order June 2015”, “order April 2015”, or simply “order 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “order” will match orders with name “my order”, “order 2015”, or simply “order”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -63442,12 +63442,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -64234,12 +64234,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -64405,12 +64405,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -64568,7 +64568,7 @@ pub mod resources {
                 self.advertiser_ids = Some(value.into());
                 self
             }
-            #[doc = "Select only archived placements. Don't set this field to select both archived and non-archived placements."]
+            #[doc = "Select only archived placements. Don’t set this field to select both archived and non-archived placements."]
             pub fn archived(mut self, value: bool) -> Self {
                 self.archived = Some(value);
                 self
@@ -64593,7 +64593,7 @@ pub mod resources {
                 self.ids = Some(value.into());
                 self
             }
-            #[doc = "Select only placements or placement groups whose end date is on or before the specified maxEndDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose end date is on or before the specified maxEndDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn max_end_date(mut self, value: impl Into<String>) -> Self {
                 self.max_end_date = Some(value.into());
                 self
@@ -64603,17 +64603,17 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Select only placements or placement groups whose start date is on or before the specified maxStartDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose start date is on or before the specified maxStartDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn max_start_date(mut self, value: impl Into<String>) -> Self {
                 self.max_start_date = Some(value.into());
                 self
             }
-            #[doc = "Select only placements or placement groups whose end date is on or after the specified minEndDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose end date is on or after the specified minEndDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn min_end_date(mut self, value: impl Into<String>) -> Self {
                 self.min_end_date = Some(value.into());
                 self
             }
-            #[doc = "Select only placements or placement groups whose start date is on or after the specified minStartDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose start date is on or after the specified minStartDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn min_start_date(mut self, value: impl Into<String>) -> Self {
                 self.min_start_date = Some(value.into());
                 self
@@ -64644,7 +64644,7 @@ pub mod resources {
                 self.pricing_types = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for placement groups by name or ID. Wildcards (*) are allowed. For example, \"placement*2015\" will return placement groups with names like \"placement group June 2015\", \"placement group May 2015\", or simply \"placements 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"placementgroup\" will match placement groups with name \"my placementgroup\", \"placementgroup 2015\", or simply \"placementgroup\"."]
+            #[doc = "Allows searching for placement groups by name or ID. Wildcards (*) are allowed. For example, “placement*2015” will return placement groups with names like “placement group June 2015”, “placement group May 2015”, or simply “placements 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “placementgroup” will match placement groups with name “my placementgroup”, “placementgroup 2015”, or simply “placementgroup”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -64700,12 +64700,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -65053,12 +65053,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -65218,12 +65218,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -65672,12 +65672,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -65789,12 +65789,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -65960,12 +65960,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -66118,7 +66118,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"placementstrategy*2015\" will return objects with names like \"placementstrategy June 2015\", \"placementstrategy April 2015\", or simply \"placementstrategy 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"placementstrategy\" will match objects with name \"my placementstrategy\", \"placementstrategy 2015\", or simply \"placementstrategy\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “placementstrategy*2015” will return objects with names like “placementstrategy June 2015”, “placementstrategy April 2015”, or simply “placementstrategy 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “placementstrategy” will match objects with name “my placementstrategy”, “placementstrategy 2015”, or simply “placementstrategy”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -66169,12 +66169,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -66495,12 +66495,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -66660,12 +66660,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -67482,12 +67482,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -67652,12 +67652,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -67823,12 +67823,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -67988,7 +67988,7 @@ pub mod resources {
                 self.advertiser_ids = Some(value.into());
                 self
             }
-            #[doc = "Select only archived placements. Don't set this field to select both archived and non-archived placements."]
+            #[doc = "Select only archived placements. Don’t set this field to select both archived and non-archived placements."]
             pub fn archived(mut self, value: bool) -> Self {
                 self.archived = Some(value);
                 self
@@ -68026,7 +68026,7 @@ pub mod resources {
                 self.ids = Some(value.into());
                 self
             }
-            #[doc = "Select only placements or placement groups whose end date is on or before the specified maxEndDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose end date is on or before the specified maxEndDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn max_end_date(mut self, value: impl Into<String>) -> Self {
                 self.max_end_date = Some(value.into());
                 self
@@ -68036,17 +68036,17 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Select only placements or placement groups whose start date is on or before the specified maxStartDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose start date is on or before the specified maxStartDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn max_start_date(mut self, value: impl Into<String>) -> Self {
                 self.max_start_date = Some(value.into());
                 self
             }
-            #[doc = "Select only placements or placement groups whose end date is on or after the specified minEndDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose end date is on or after the specified minEndDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn min_end_date(mut self, value: impl Into<String>) -> Self {
                 self.min_end_date = Some(value.into());
                 self
             }
-            #[doc = "Select only placements or placement groups whose start date is on or after the specified minStartDate. The date should be formatted as \"yyyy-MM-dd\"."]
+            #[doc = "Select only placements or placement groups whose start date is on or after the specified minStartDate. The date should be formatted as “yyyy-MM-dd”."]
             pub fn min_start_date(mut self, value: impl Into<String>) -> Self {
                 self.min_start_date = Some(value.into());
                 self
@@ -68077,7 +68077,7 @@ pub mod resources {
                 self.pricing_types = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for placements by name or ID. Wildcards (*) are allowed. For example, \"placement*2015\" will return placements with names like \"placement June 2015\", \"placement May 2015\", or simply \"placements 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"placement\" will match placements with name \"my placement\", \"placement 2015\", or simply \"placement\" ."]
+            #[doc = "Allows searching for placements by name or ID. Wildcards (*) are allowed. For example, “placement*2015” will return placements with names like “placement June 2015”, “placement May 2015”, or simply “placements 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “placement” will match placements with name “my placement”, “placement 2015”, or simply “placement” ."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -68138,12 +68138,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -68500,12 +68500,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -68665,12 +68665,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -68880,12 +68880,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -69050,12 +69050,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -69264,12 +69264,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -69433,12 +69433,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -69793,12 +69793,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -69960,7 +69960,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for projects by name or ID. Wildcards (*) are allowed. For example, \"project*2015\" will return projects with names like \"project June 2015\", \"project April 2015\", or simply \"project 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"project\" will match projects with name \"my project\", \"project 2015\", or simply \"project\"."]
+            #[doc = "Allows searching for projects by name or ID. Wildcards (*) are allowed. For example, “project*2015” will return projects with names like “project June 2015”, “project April 2015”, or simply “project 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “project” will match projects with name “my project”, “project 2015”, or simply “project”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -70011,12 +70011,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -70369,12 +70369,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -70614,12 +70614,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -70786,12 +70786,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -70951,12 +70951,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -71387,12 +71387,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -71558,12 +71558,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -71716,7 +71716,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"remarketing list*2015\" will return objects with names like \"remarketing list June 2015\", \"remarketing list April 2015\", or simply \"remarketing list 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"remarketing list\" will match objects with name \"my remarketing list\", \"remarketing list 2015\", or simply \"remarketing list\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “remarketing list*2015” will return objects with names like “remarketing list June 2015”, “remarketing list April 2015”, or simply “remarketing list 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “remarketing list” will match objects with name “my remarketing list”, “remarketing list 2015”, or simply “remarketing list”."]
             pub fn name(mut self, value: impl Into<String>) -> Self {
                 self.name = Some(value.into());
                 self
@@ -71772,12 +71772,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -72098,12 +72098,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -72263,12 +72263,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -72455,7 +72455,7 @@ pub mod resources {
             pub enum ListSortField {
                 #[doc = "Sort by report ID."]
                 Id,
-                #[doc = "Sort by 'lastModifiedTime' field."]
+                #[doc = "Sort by ‘lastModifiedTime’ field."]
                 LastModifiedTime,
                 #[doc = "Sort by name of reports."]
                 Name,
@@ -72835,12 +72835,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -72952,12 +72952,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -73123,12 +73123,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -73322,12 +73322,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -73643,12 +73643,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -73821,12 +73821,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -73995,12 +73995,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -74202,12 +74202,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -74568,12 +74568,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -74826,12 +74826,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -75436,12 +75436,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -75607,12 +75607,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -75805,7 +75805,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name, ID or keyName. Wildcards (*) are allowed. For example, \"site*2015\" will return objects with names like \"site June 2015\", \"site April 2015\", or simply \"site 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"site\" will match objects with name \"my site\", \"site 2015\", or simply \"site\"."]
+            #[doc = "Allows searching for objects by name, ID or keyName. Wildcards (*) are allowed. For example, “site*2015” will return objects with names like “site June 2015”, “site April 2015”, or simply “site 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “site” will match objects with name “my site”, “site 2015”, or simply “site”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -75866,12 +75866,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -76212,12 +76212,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -76377,12 +76377,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -76620,12 +76620,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -76791,12 +76791,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -76978,12 +76978,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -77417,12 +77417,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -77588,12 +77588,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -77742,7 +77742,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"subaccount*2015\" will return objects with names like \"subaccount June 2015\", \"subaccount April 2015\", or simply \"subaccount 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"subaccount\" will match objects with name \"my subaccount\", \"subaccount 2015\", or simply \"subaccount\" ."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “subaccount*2015” will return objects with names like “subaccount June 2015”, “subaccount April 2015”, or simply “subaccount 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “subaccount” will match objects with name “my subaccount”, “subaccount 2015”, or simply “subaccount” ."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -77793,12 +77793,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -78119,12 +78119,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -78284,12 +78284,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -78645,12 +78645,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -78806,7 +78806,7 @@ pub mod resources {
                 self.max_results = Some(value);
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"remarketing list*2015\" will return objects with names like \"remarketing list June 2015\", \"remarketing list April 2015\", or simply \"remarketing list 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"remarketing list\" will match objects with name \"my remarketing list\", \"remarketing list 2015\", or simply \"remarketing list\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “remarketing list*2015” will return objects with names like “remarketing list June 2015”, “remarketing list April 2015”, or simply “remarketing list 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “remarketing list” will match objects with name “my remarketing list”, “remarketing list 2015”, or simply “remarketing list”."]
             pub fn name(mut self, value: impl Into<String>) -> Self {
                 self.name = Some(value.into());
                 self
@@ -78862,12 +78862,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -79462,12 +79462,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -79633,12 +79633,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -79795,7 +79795,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"template*2015\" will return objects with names like \"template June 2015\", \"template April 2015\", or simply \"template 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"template\" will match objects with name \"my template\", \"template 2015\", or simply \"template\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “template*2015” will return objects with names like “template June 2015”, “template April 2015”, or simply “template 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “template” will match objects with name “my template”, “template 2015”, or simply “template”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -79846,12 +79846,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -80173,12 +80173,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -80338,12 +80338,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -80550,12 +80550,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -80710,12 +80710,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -80915,12 +80915,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -81085,12 +81085,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -81302,12 +81302,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -81478,12 +81478,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -81936,12 +81936,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -82053,12 +82053,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -82224,12 +82224,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -82385,7 +82385,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, \"userrole*2015\" will return objects with names like \"userrole June 2015\", \"userrole April 2015\", or simply \"userrole 2015\". Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of \"userrole\" will match objects with name \"my userrole\", \"userrole 2015\", or simply \"userrole\"."]
+            #[doc = "Allows searching for objects by name or ID. Wildcards (*) are allowed. For example, “userrole*2015” will return objects with names like “userrole June 2015”, “userrole April 2015”, or simply “userrole 2015”. Most of the searches also add wildcards implicitly at the start and the end of the search string. For example, a search string of “userrole” will match objects with name “my userrole”, “userrole 2015”, or simply “userrole”."]
             pub fn search_string(mut self, value: impl Into<String>) -> Self {
                 self.search_string = Some(value.into());
                 self
@@ -82441,12 +82441,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -82769,12 +82769,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -82934,12 +82934,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -83149,12 +83149,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -83319,12 +83319,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

@@ -52,21 +52,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_footer_text: ::std::option::Option<String>,
-        #[doc = "An email address used when replying to a message if the replyTo property is set to REPLY_TO_CUSTOM. This address is defined by an account administrator.\n\n* When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds a custom email address used when replying to a message. \n* If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a text value or an error is returned."]
+        #[doc = "An email address used when replying to a message if the replyTo property is set to REPLY_TO_CUSTOM. This address is defined by an account administrator.\n\n* When the group’s ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds a custom email address used when replying to a message. \n* If the group’s ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a text value or an error is returned."]
         #[serde(
             rename = "customReplyTo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_reply_to: ::std::option::Option<String>,
-        #[doc = "Specifies whether the group has a custom role that's included in one of the settings being merged. This field is read-only and update/patch requests to it are ignored. Possible values are:\n\n* true \n* false"]
+        #[doc = "Specifies whether the group has a custom role that’s included in one of the settings being merged. This field is read-only and update/patch requests to it are ignored. Possible values are:\n\n* true \n* false"]
         #[serde(
             rename = "customRolesEnabledForSettingsToBeMerged",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_roles_enabled_for_settings_to_be_merged: ::std::option::Option<String>,
-        #[doc = "When a message is rejected, this is text for the rejection notification sent to the message's author. By default, this property is empty and has no value in the API's response body. The maximum notification text size is 10,000 characters. Note: Requires sendMessageDenyNotification property to be true."]
+        #[doc = "When a message is rejected, this is text for the rejection notification sent to the message’s author. By default, this property is empty and has no value in the API’s response body. The maximum notification text size is 10,000 characters. Note: Requires sendMessageDenyNotification property to be true."]
         #[serde(
             rename = "defaultMessageDenyNotificationText",
             default,
@@ -87,7 +87,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The group's email address. This property can be updated using the Directory API. Note: Only a group owner can change a group's email address. A group manager can't do this.\nWhen you change your group's address using the Directory API or the control panel, you are changing the address your subscribers use to send email and the web address people use to access your group. People can't reach your group by visiting the old address."]
+        #[doc = "The group’s email address. This property can be updated using the Directory API. Note: Only a group owner can change a group’s email address. A group manager can’t do this.\nWhen you change your group’s address using the Directory API or the control panel, you are changing the address your subscribers use to send email and the web address people use to access your group. People can’t reach your group by visiting the old address."]
         #[serde(
             rename = "email",
             default,
@@ -143,21 +143,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_message_bytes: ::std::option::Option<i32>,
-        #[doc = "Enables members to post messages as the group. Possible values are:\n\n* true: Group member can post messages using the group's email address instead of their own email address. Message appear to originate from the group itself. Note: When true, any message moderation settings on individual users or new members do not apply to posts made on behalf of the group. \n* false: Members can not post in behalf of the group's email address."]
+        #[doc = "Enables members to post messages as the group. Possible values are:\n\n* true: Group member can post messages using the group’s email address instead of their own email address. Message appear to originate from the group itself. Note: When true, any message moderation settings on individual users or new members do not apply to posts made on behalf of the group. \n* false: Members can not post in behalf of the group’s email address."]
         #[serde(
             rename = "membersCanPostAsTheGroup",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub members_can_post_as_the_group: ::std::option::Option<String>,
-        #[doc = "Deprecated. The default message display font always has a value of \"DEFAULT_FONT\"."]
+        #[doc = "Deprecated. The default message display font always has a value of “DEFAULT_FONT”."]
         #[serde(
             rename = "messageDisplayFont",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub message_display_font: ::std::option::Option<String>,
-        #[doc = "Moderation level of incoming messages. Possible values are:\n\n* MODERATE_ALL_MESSAGES: All messages are sent to the group owner's email address for approval. If approved, the message is sent to the group. \n* MODERATE_NON_MEMBERS: All messages from non group members are sent to the group owner's email address for approval. If approved, the message is sent to the group. \n* MODERATE_NEW_MEMBERS: All messages from new members are sent to the group owner's email address for approval. If approved, the message is sent to the group. \n* MODERATE_NONE: No moderator approval is required. Messages are delivered directly to the group. Note: When the whoCanPostMessage is set to ANYONE_CAN_POST, we recommend the messageModerationLevel be set to MODERATE_NON_MEMBERS to protect the group from possible spam.\n  When memberCanPostAsTheGroup is true, any message moderation settings on individual users or new members will not apply to posts made on behalf of the group."]
+        #[doc = "Moderation level of incoming messages. Possible values are:\n\n* MODERATE_ALL_MESSAGES: All messages are sent to the group owner’s email address for approval. If approved, the message is sent to the group. \n* MODERATE_NON_MEMBERS: All messages from non group members are sent to the group owner’s email address for approval. If approved, the message is sent to the group. \n* MODERATE_NEW_MEMBERS: All messages from new members are sent to the group owner’s email address for approval. If approved, the message is sent to the group. \n* MODERATE_NONE: No moderator approval is required. Messages are delivered directly to the group. Note: When the whoCanPostMessage is set to ANYONE_CAN_POST, we recommend the messageModerationLevel be set to MODERATE_NON_MEMBERS to protect the group from possible spam.\n  When memberCanPostAsTheGroup is true, any message moderation settings on individual users or new members will not apply to posts made on behalf of the group."]
         #[serde(
             rename = "messageModerationLevel",
             default,
@@ -171,21 +171,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The primary language for group. For a group's primary language use the language tags from the G Suite languages found at G Suite Email Settings API Email Language Tags."]
+        #[doc = "The primary language for group. For a group’s primary language use the language tags from the G Suite languages found at G Suite Email Settings API Email Language Tags."]
         #[serde(
             rename = "primaryLanguage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub primary_language: ::std::option::Option<String>,
-        #[doc = "Specifies who receives the default reply. Possible values are:\n\n* REPLY_TO_CUSTOM: For replies to messages, use the group's custom email address.\n  When the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds the custom email address used when replying to a message. If the group's ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a value. Otherwise an error is returned.\n\n* REPLY_TO_SENDER: The reply sent to author of message. \n\n* REPLY_TO_LIST: This reply message is sent to the group. \n\n* REPLY_TO_OWNER: The reply is sent to the owner(s) of the group. This does not include the group's managers. \n\n* REPLY_TO_IGNORE: Group users individually decide where the message reply is sent. \n\n* REPLY_TO_MANAGERS: This reply message is sent to the group's managers, which includes all managers and the group owner."]
+        #[doc = "Specifies who receives the default reply. Possible values are:\n\n* REPLY_TO_CUSTOM: For replies to messages, use the group’s custom email address.\n  When the group’s ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property holds the custom email address used when replying to a message. If the group’s ReplyTo property is set to REPLY_TO_CUSTOM, the customReplyTo property must have a value. Otherwise an error is returned.\n\n* REPLY_TO_SENDER: The reply sent to author of message. \n\n* REPLY_TO_LIST: This reply message is sent to the group. \n\n* REPLY_TO_OWNER: The reply is sent to the owner(s) of the group. This does not include the group’s managers. \n\n* REPLY_TO_IGNORE: Group users individually decide where the message reply is sent. \n\n* REPLY_TO_MANAGERS: This reply message is sent to the group’s managers, which includes all managers and the group owner."]
         #[serde(
             rename = "replyTo",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reply_to: ::std::option::Option<String>,
-        #[doc = "Allows a member to be notified if the member's message to the group is denied by the group owner. Possible values are:\n\n* true: When a message is rejected, send the deny message notification to the message author.\n  The defaultMessageDenyNotificationText property is dependent on the sendMessageDenyNotification property being true.\n\n* false: When a message is rejected, no notification is sent."]
+        #[doc = "Allows a member to be notified if the member’s message to the group is denied by the group owner. Possible values are:\n\n* true: When a message is rejected, send the deny message notification to the message author.\n  The defaultMessageDenyNotificationText property is dependent on the sendMessageDenyNotification property being true.\n\n* false: When a message is rejected, no notification is sent."]
         #[serde(
             rename = "sendMessageDenyNotification",
             default,
@@ -206,14 +206,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub spam_moderation_level: ::std::option::Option<String>,
-        #[doc = "Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to add members. Possible values are:\n\n* ALL_MEMBERS_CAN_ADD: Managers and members can directly add new members. \n* ALL_MANAGERS_CAN_ADD: Only managers can directly add new members. this includes the group's owner. \n* ALL_OWNERS_CAN_ADD: Only owners can directly add new members. \n* NONE_CAN_ADD: No one can directly add new members."]
+        #[doc = "Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to add members. Possible values are:\n\n* ALL_MEMBERS_CAN_ADD: Managers and members can directly add new members. \n* ALL_MANAGERS_CAN_ADD: Only managers can directly add new members. this includes the group’s owner. \n* ALL_OWNERS_CAN_ADD: Only owners can directly add new members. \n* NONE_CAN_ADD: No one can directly add new members."]
         #[serde(
             rename = "whoCanAdd",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub who_can_add: ::std::option::Option<String>,
-        #[doc = "Deprecated. This functionality is no longer supported in the Google Groups UI. The value is always \"NONE\"."]
+        #[doc = "Deprecated. This functionality is no longer supported in the Google Groups UI. The value is always “NONE”."]
         #[serde(
             rename = "whoCanAddReferences",
             default,
@@ -297,14 +297,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub who_can_hide_abuse: ::std::option::Option<String>,
-        #[doc = "Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to invite new members. Possible values are:\n\n* ALL_MEMBERS_CAN_INVITE: Managers and members can invite a new member candidate. \n* ALL_MANAGERS_CAN_INVITE: Only managers can invite a new member. This includes the group's owner. \n* ALL_OWNERS_CAN_INVITE: Only owners can invite a new member. \n* NONE_CAN_INVITE: No one can invite a new member candidate."]
+        #[doc = "Deprecated. This is merged into the new whoCanModerateMembers setting. Permissions to invite new members. Possible values are:\n\n* ALL_MEMBERS_CAN_INVITE: Managers and members can invite a new member candidate. \n* ALL_MANAGERS_CAN_INVITE: Only managers can invite a new member. This includes the group’s owner. \n* ALL_OWNERS_CAN_INVITE: Only owners can invite a new member. \n* NONE_CAN_INVITE: No one can invite a new member candidate."]
         #[serde(
             rename = "whoCanInvite",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub who_can_invite: ::std::option::Option<String>,
-        #[doc = "Permission to join group. Possible values are:\n\n* ANYONE_CAN_JOIN: Anyone in the account domain can join. This includes accounts with multiple domains. \n* ALL_IN_DOMAIN_CAN_JOIN: Any Internet user who is outside your domain can access your Google Groups service and view the list of groups in your Groups directory. Warning: Group owners can add external addresses, outside of the domain to their groups. They can also allow people outside your domain to join their groups. If you later disable this option, any external addresses already added to users' groups remain in those groups. \n* INVITED_CAN_JOIN: Candidates for membership can be invited to join.\n* CAN_REQUEST_TO_JOIN: Non members can request an invitation to join."]
+        #[doc = "Permission to join group. Possible values are:\n\n* ANYONE_CAN_JOIN: Anyone in the account domain can join. This includes accounts with multiple domains. \n* ALL_IN_DOMAIN_CAN_JOIN: Any Internet user who is outside your domain can access your Google Groups service and view the list of groups in your Groups directory. Warning: Group owners can add external addresses, outside of the domain to their groups. They can also allow people outside your domain to join their groups. If you later disable this option, any external addresses already added to users’ groups remain in those groups. \n* INVITED_CAN_JOIN: Candidates for membership can be invited to join.\n* CAN_REQUEST_TO_JOIN: Non members can request an invitation to join."]
         #[serde(
             rename = "whoCanJoin",
             default,
@@ -339,7 +339,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub who_can_mark_duplicate: ::std::option::Option<String>,
-        #[doc = "Deprecated. This is merged into the new whoCanAssistContent setting. Permission to mark any other user's post as a favorite reply. Possible values are:\n\n* ALL_MEMBERS \n* OWNERS_AND_MANAGERS \n* MANAGERS_ONLY \n* OWNERS_ONLY \n* NONE"]
+        #[doc = "Deprecated. This is merged into the new whoCanAssistContent setting. Permission to mark any other user’s post as a favorite reply. Possible values are:\n\n* ALL_MEMBERS \n* OWNERS_AND_MANAGERS \n* MANAGERS_ONLY \n* OWNERS_ONLY \n* NONE"]
         #[serde(
             rename = "whoCanMarkFavoriteReplyOnAnyTopic",
             default,
@@ -374,7 +374,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub who_can_moderate_members: ::std::option::Option<String>,
-        #[doc = "Deprecated. This is merged into the new whoCanModerateMembers setting. Specifies who can change group members' roles. Possible values are:\n\n* ALL_MEMBERS \n* OWNERS_AND_MANAGERS \n* OWNERS_ONLY \n* NONE"]
+        #[doc = "Deprecated. This is merged into the new whoCanModerateMembers setting. Specifies who can change group members’ roles. Possible values are:\n\n* ALL_MEMBERS \n* OWNERS_AND_MANAGERS \n* OWNERS_ONLY \n* NONE"]
         #[serde(
             rename = "whoCanModifyMembers",
             default,
@@ -437,7 +437,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub who_can_unmark_favorite_reply_on_any_topic: ::std::option::Option<String>,
-        #[doc = "Permissions to view group messages. Possible values are:\n\n* ANYONE_CAN_VIEW: Any Internet user can view the group's messages.\n* ALL_IN_DOMAIN_CAN_VIEW: Anyone in your account can view this group's messages. \n* ALL_MEMBERS_CAN_VIEW: All group members can view the group's messages. \n* ALL_MANAGERS_CAN_VIEW: Any group manager can view this group's messages."]
+        #[doc = "Permissions to view group messages. Possible values are:\n\n* ANYONE_CAN_VIEW: Any Internet user can view the group’s messages.\n* ALL_IN_DOMAIN_CAN_VIEW: Anyone in your account can view this group’s messages. \n* ALL_MEMBERS_CAN_VIEW: All group members can view the group’s messages. \n* ALL_MANAGERS_CAN_VIEW: Any group manager can view this group’s messages."]
         #[serde(
             rename = "whoCanViewGroup",
             default,

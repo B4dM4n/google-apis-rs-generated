@@ -22,7 +22,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AggregationInfo {
-        #[doc = "The number of intervals to aggregate over. Example: If aggregation_level is \"DAILY\" and aggregation_count is 14, aggregation will be over 14 days."]
+        #[doc = "The number of intervals to aggregate over. Example: If aggregation_level is “DAILY” and aggregation_count is 14, aggregation will be over 14 days."]
         #[serde(
             rename = "aggregationCount",
             default,
@@ -479,14 +479,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Category {
-        #[doc = "The type of product the SKU refers to. Example: \"Compute\", \"Storage\", \"Network\", \"ApplicationServices\" etc."]
+        #[doc = "The type of product the SKU refers to. Example: “Compute”, “Storage”, “Network”, “ApplicationServices” etc."]
         #[serde(
             rename = "resourceFamily",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_family: ::std::option::Option<String>,
-        #[doc = "A group classification for related SKUs. Example: \"RAM\", \"GPU\", \"Prediction\", \"Ops\", \"GoogleEgress\" etc."]
+        #[doc = "A group classification for related SKUs. Example: “RAM”, “GPU”, “Prediction”, “Ops”, “GoogleEgress” etc."]
         #[serde(
             rename = "resourceGroup",
             default,
@@ -500,7 +500,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_display_name: ::std::option::Option<String>,
-        #[doc = "Represents how the SKU is consumed. Example: \"OnDemand\", \"Preemptible\", \"Commit1Mo\", \"Commit1Yr\" etc."]
+        #[doc = "Represents how the SKU is consumed. Example: “OnDemand”, “Preemptible”, “Commit1Mo”, “Commit1Yr” etc."]
         #[serde(
             rename = "usageType",
             default,
@@ -612,9 +612,9 @@ pub mod schemas {
     pub enum GeoTaxonomyType {
         #[doc = "The sku is global in nature, e.g. a license sku. Global skus are available in all regions, and so have an empty region list."]
         Global,
-        #[doc = "The sku is associated with multiple regions, e.g. \"us-west2\" and \"us-east1\"."]
+        #[doc = "The sku is associated with multiple regions, e.g. “us-west2” and “us-east1”."]
         MultiRegional,
-        #[doc = "The sku is available in a specific region, e.g. \"us-west2\"."]
+        #[doc = "The sku is available in a specific region, e.g. “us-west2”."]
         Regional,
         #[doc = "The type is not specified."]
         TypeUnspecified,
@@ -954,7 +954,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct PricingExpression {
-        #[doc = "The base unit for the SKU which is the unit used in usage exports. Example: \"By\""]
+        #[doc = "The base unit for the SKU which is the unit used in usage exports. Example: “By”"]
         #[serde(
             rename = "baseUnit",
             default,
@@ -968,14 +968,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_unit_conversion_factor: ::std::option::Option<f64>,
-        #[doc = "The base unit in human readable form. Example: \"byte\"."]
+        #[doc = "The base unit in human readable form. Example: “byte”."]
         #[serde(
             rename = "baseUnitDescription",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub base_unit_description: ::std::option::Option<String>,
-        #[doc = "The recommended quantity of units for displaying pricing info. When displaying pricing info it is recommended to display: (unit_price * display_quantity) per display_quantity usage_unit. This field does not affect the pricing formula and is for display purposes only. Example: If the unit_price is \"0.0001 USD\", the usage_unit is \"GB\" and the display_quantity is \"1000\" then the recommended way of displaying the pricing info is \"0.10 USD per 1000 GB\""]
+        #[doc = "The recommended quantity of units for displaying pricing info. When displaying pricing info it is recommended to display: (unit_price * display_quantity) per display_quantity usage_unit. This field does not affect the pricing formula and is for display purposes only. Example: If the unit_price is “0.0001 USD”, the usage_unit is “GB” and the display_quantity is “1000” then the recommended way of displaying the pricing info is “0.10 USD per 1000 GB”"]
         #[serde(
             rename = "displayQuantity",
             default,
@@ -989,14 +989,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tiered_rates: ::std::option::Option<Vec<crate::schemas::TierRate>>,
-        #[doc = "The short hand for unit of usage this pricing is specified in. Example: usage_unit of \"GiBy\" means that usage is specified in \"Gibi Byte\"."]
+        #[doc = "The short hand for unit of usage this pricing is specified in. Example: usage_unit of “GiBy” means that usage is specified in “Gibi Byte”."]
         #[serde(
             rename = "usageUnit",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub usage_unit: ::std::option::Option<String>,
-        #[doc = "The unit of usage in human readable form. Example: \"gibi byte\"."]
+        #[doc = "The unit of usage in human readable form. Example: “gibi byte”."]
         #[serde(
             rename = "usageUnitDescription",
             default,
@@ -1018,7 +1018,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct PricingInfo {
-        #[doc = "Aggregation Info. This can be left unspecified if the pricing expression doesn't require aggregation."]
+        #[doc = "Aggregation Info. This can be left unspecified if the pricing expression doesn’t require aggregation."]
         #[serde(
             rename = "aggregationInfo",
             default,
@@ -1098,7 +1098,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The ID of the project that this `ProjectBillingInfo` represents, such as `tokyo-rain-123`. This is a convenience field so that you don't need to parse the `name` field to obtain a project ID. This field is read-only."]
+        #[doc = "The ID of the project that this `ProjectBillingInfo` represents, such as `tokyo-rain-123`. This is a convenience field so that you don’t need to parse the `name` field to obtain a project ID. This field is read-only."]
         #[serde(
             rename = "projectId",
             default,
@@ -1129,7 +1129,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Service {
-        #[doc = "The business under which the service is offered. Ex. \"businessEntities/GCP\", \"businessEntities/Maps\""]
+        #[doc = "The business under which the service is offered. Ex. “businessEntities/GCP”, “businessEntities/Maps”"]
         #[serde(
             rename = "businessEntityName",
             default,
@@ -1143,14 +1143,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "The resource name for the service. Example: \"services/DA34-426B-A397\""]
+        #[doc = "The resource name for the service. Example: “services/DA34-426B-A397”"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The identifier for the service. Example: \"DA34-426B-A397\""]
+        #[doc = "The identifier for the service. Example: “DA34-426B-A397”"]
         #[serde(
             rename = "serviceId",
             default,
@@ -1231,7 +1231,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub geo_taxonomy: ::std::option::Option<crate::schemas::GeoTaxonomy>,
-        #[doc = "The resource name for the SKU. Example: \"services/DA34-426B-A397/skus/AA95-CD31-42FE\""]
+        #[doc = "The resource name for the SKU. Example: “services/DA34-426B-A397/skus/AA95-CD31-42FE”"]
         #[serde(
             rename = "name",
             default,
@@ -1245,21 +1245,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pricing_info: ::std::option::Option<Vec<crate::schemas::PricingInfo>>,
-        #[doc = "Identifies the service provider. This is 'Google' for first party services in Google Cloud Platform."]
+        #[doc = "Identifies the service provider. This is ‘Google’ for first party services in Google Cloud Platform."]
         #[serde(
             rename = "serviceProviderName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_provider_name: ::std::option::Option<String>,
-        #[doc = "List of service regions this SKU is offered at. Example: \"asia-east1\" Service regions can be found at https://cloud.google.com/about/locations/"]
+        #[doc = "List of service regions this SKU is offered at. Example: “asia-east1” Service regions can be found at https://cloud.google.com/about/locations/"]
         #[serde(
             rename = "serviceRegions",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_regions: ::std::option::Option<Vec<String>>,
-        #[doc = "The identifier for the SKU. Example: \"AA95-CD31-42FE\""]
+        #[doc = "The identifier for the SKU. Example: “AA95-CD31-42FE”"]
         #[serde(
             rename = "skuId",
             default,
@@ -1656,7 +1656,7 @@ pub mod resources {
                     page_token: None,
                 }
             }
-            #[doc = "Updates a billing account's fields. Currently the only field that can be edited is `display_name`. The current authenticated user must have the `billing.accounts.update` IAM permission, which is typically given to the [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing account."]
+            #[doc = "Updates a billing account’s fields. Currently the only field that can be edited is `display_name`. The current authenticated user must have the `billing.accounts.update` IAM permission, which is typically given to the [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing account."]
             pub fn patch(
                 &self,
                 request: crate::schemas::BillingAccount,
@@ -1788,12 +1788,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -1942,12 +1942,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2108,12 +2108,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2245,7 +2245,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
-            #[doc = "Options for how to filter the returned billing accounts. Currently this only supports filtering for [subaccounts](https://cloud.google.com/billing/docs/concepts) under a single provided reseller billing account. (e.g. \"master_billing_account=billingAccounts/012345-678901-ABCDEF\"). Boolean algebra and other fields are not currently supported."]
+            #[doc = "Options for how to filter the returned billing accounts. Currently this only supports filtering for [subaccounts](https://cloud.google.com/billing/docs/concepts) under a single provided reseller billing account. (e.g. “master_billing_account=billingAccounts/012345-678901-ABCDEF”). Boolean algebra and other fields are not currently supported."]
             pub fn filter(mut self, value: impl Into<String>) -> Self {
                 self.filter = Some(value.into());
                 self
@@ -2290,12 +2290,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2572,7 +2572,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> PatchRequestBuilder<'a> {
-            #[doc = "The update mask applied to the resource. Only \"display_name\" is currently supported."]
+            #[doc = "The update mask applied to the resource. Only “display_name” is currently supported."]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -2607,12 +2607,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2770,12 +2770,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2933,12 +2933,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3139,12 +3139,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -3522,12 +3522,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3684,12 +3684,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3896,12 +3896,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4270,12 +4270,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

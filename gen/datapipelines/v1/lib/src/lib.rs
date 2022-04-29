@@ -115,7 +115,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_workers: ::std::option::Option<i32>,
-        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\"."]
+        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network “default”."]
         #[serde(
             rename = "network",
             default,
@@ -136,7 +136,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_email: ::std::option::Option<String>,
-        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
+        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form “https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK” or “regions/REGION/subnetworks/SUBNETWORK”. If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
         #[serde(
             rename = "subnetwork",
             default,
@@ -150,14 +150,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub temp_location: ::std::option::Option<String>,
-        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, defaults to the control plane region."]
+        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1”. Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, defaults to the control plane region."]
         #[serde(
             rename = "workerRegion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_region: ::std::option::Option<String>,
-        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
+        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1-a”. Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
         #[serde(
             rename = "workerZone",
             default,
@@ -407,7 +407,7 @@ pub mod schemas {
         StatePending,
         #[doc = "The job is executing."]
         StateRunning,
-        #[doc = "The job state isn't specified."]
+        #[doc = "The job state isn’t specified."]
         StateUnspecified,
     }
     impl GoogleCloudDatapipelinesV1JobState {
@@ -588,7 +588,7 @@ pub mod schemas {
         pub launch_parameter: ::std::option::Option<
             crate::schemas::GoogleCloudDatapipelinesV1LaunchFlexTemplateParameter,
         >,
-        #[doc = "Required. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request. For example, `us-central1`, `us-west1`."]
+        #[doc = "Required. The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request. For example, `us-central1`, `us-west1`."]
         #[serde(
             rename = "location",
             default,
@@ -696,7 +696,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDatapipelinesV1LaunchTemplateRequest {
-        #[doc = "A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with 'gs://'."]
+        #[doc = "A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with ‘gs://’."]
         #[serde(
             rename = "gcsPath",
             default,
@@ -712,7 +712,7 @@ pub mod schemas {
         pub launch_parameters: ::std::option::Option<
             crate::schemas::GoogleCloudDatapipelinesV1LaunchTemplateParameters,
         >,
-        #[doc = "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
+        #[doc = "The \\[regional endpoint\\] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request."]
         #[serde(
             rename = "location",
             default,
@@ -840,7 +840,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_)."]
+        #[doc = "Required. The display name of the pipeline. It can contain only letters (\\[A-Za-z\\]), numbers (\\[0-9\\]), hyphens (-), and underscores (\\_)."]
         #[serde(
             rename = "displayName",
             default,
@@ -861,7 +861,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub last_update_time: ::std::option::Option<String>,
-        #[doc = "The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location."]
+        #[doc = "The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters (\\[A-Za-z\\]), numbers (\\[0-9\\]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline’s location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it’s only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location."]
         #[serde(
             rename = "name",
             default,
@@ -897,7 +897,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub scheduler_service_account_email: ::std::option::Option<String>,
-        #[doc = "Required. The state of the pipeline. When the pipeline is created, the state is set to 'PIPELINE_STATE_ACTIVE' by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through UpdatePipeline requests."]
+        #[doc = "Required. The state of the pipeline. When the pipeline is created, the state is set to ‘PIPELINE_STATE_ACTIVE’ by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through UpdatePipeline requests."]
         #[serde(
             rename = "state",
             default,
@@ -926,9 +926,9 @@ pub mod schemas {
     pub enum GoogleCloudDatapipelinesV1PipelineType {
         #[doc = "A batch pipeline. It runs jobs on a specific schedule, and each job will automatically terminate once execution is finished."]
         PipelineTypeBatch,
-        #[doc = "A streaming pipeline. The underlying job is continuously running until it is manually terminated by the user. This type of pipeline doesn't have a schedule to run on, and the linked job gets created when the pipeline is created."]
+        #[doc = "A streaming pipeline. The underlying job is continuously running until it is manually terminated by the user. This type of pipeline doesn’t have a schedule to run on, and the linked job gets created when the pipeline is created."]
         PipelineTypeStreaming,
-        #[doc = "The pipeline type isn't specified."]
+        #[doc = "The pipeline type isn’t specified."]
         PipelineTypeUnspecified,
     }
     impl GoogleCloudDatapipelinesV1PipelineType {
@@ -1018,11 +1018,11 @@ pub mod schemas {
         StateArchived,
         #[doc = "The pipeline is paused. This is a non-terminal state. When the pipeline is paused, it will hold processing jobs, but can be resumed later. For a batch pipeline, this means pausing the scheduler job. For a streaming pipeline, creating a job snapshot to resume from will give the same effect."]
         StatePaused,
-        #[doc = "The pipeline is getting started or resumed. When finished, the pipeline state will be 'PIPELINE_STATE_ACTIVE'."]
+        #[doc = "The pipeline is getting started or resumed. When finished, the pipeline state will be ‘PIPELINE_STATE_ACTIVE’."]
         StateResuming,
-        #[doc = "The pipeline is in the process of stopping. When finished, the pipeline state will be 'PIPELINE_STATE_ARCHIVED'."]
+        #[doc = "The pipeline is in the process of stopping. When finished, the pipeline state will be ‘PIPELINE_STATE_ARCHIVED’."]
         StateStopping,
-        #[doc = "The pipeline state isn't specified."]
+        #[doc = "The pipeline state isn’t specified."]
         StateUnspecified,
     }
     impl GoogleCloudDatapipelinesV1PipelineState {
@@ -1165,7 +1165,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub additional_experiments: ::std::option::Option<Vec<String>>,
-        #[doc = "Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of key/value pairs. Example: { \"name\": \"wrench\", \"mass\": \"1kg\", \"count\": \"3\" }."]
+        #[doc = "Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of key/value pairs. Example: { “name”: “wrench”, “mass”: “1kg”, “count”: “3” }."]
         #[serde(
             rename = "additionalUserLabels",
             default,
@@ -1173,7 +1173,7 @@ pub mod schemas {
         )]
         pub additional_user_labels:
             ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Whether to bypass the safety checks for the job's temporary directory. Use with caution."]
+        #[doc = "Whether to bypass the safety checks for the job’s temporary directory. Use with caution."]
         #[serde(
             rename = "bypassTempDirValidation",
             default,
@@ -1217,7 +1217,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_workers: ::std::option::Option<i32>,
-        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network \"default\"."]
+        #[doc = "Network to which VMs will be assigned. If empty or unspecified, the service will use the network “default”."]
         #[serde(
             rename = "network",
             default,
@@ -1238,7 +1238,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_email: ::std::option::Option<String>,
-        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form \"https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK\" or \"regions/REGION/subnetworks/SUBNETWORK\". If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
+        #[doc = "Subnetwork to which VMs will be assigned, if desired. You can specify a subnetwork using either a complete URL or an abbreviated path. Expected to be of the form “https://www.googleapis.com/compute/v1/projects/HOST_PROJECT_ID/regions/REGION/subnetworks/SUBNETWORK” or “regions/REGION/subnetworks/SUBNETWORK”. If the subnetwork is located in a Shared VPC network, you must use the complete URL."]
         #[serde(
             rename = "subnetwork",
             default,
@@ -1252,14 +1252,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub temp_location: ::std::option::Option<String>,
-        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1\". Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane's region."]
+        #[doc = "The Compute Engine region (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1”. Mutually exclusive with worker_zone. If neither worker_region nor worker_zone is specified, default to the control plane’s region."]
         #[serde(
             rename = "workerRegion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub worker_region: ::std::option::Option<String>,
-        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. \"us-west1-a\". Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane's region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
+        #[doc = "The Compute Engine zone (https://cloud.google.com/compute/docs/regions-zones/regions-zones) in which worker processing should occur, e.g. “us-west1-a”. Mutually exclusive with worker_region. If neither worker_region nor worker_zone is specified, a zone in the control plane’s region is chosen based on available capacity. If both `worker_zone` and `zone` are set, `worker_zone` takes precedence."]
         #[serde(
             rename = "workerZone",
             default,
@@ -1894,7 +1894,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Lists pipelines. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it."]
+                #[doc = "Lists pipelines. Returns a “FORBIDDEN” error if the caller doesn’t have permission to access it."]
                 pub fn list_pipelines(
                     &self,
                     parent: impl Into<String>,
@@ -1997,12 +1997,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -2334,7 +2334,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Looks up a single pipeline. Returns a \"NOT_FOUND\" error if no such pipeline exists. Returns a \"FORBIDDEN\" error if the caller doesn't have permission to access it."]
+                    #[doc = "Looks up a single pipeline. Returns a “NOT_FOUND” error if no such pipeline exists. Returns a “FORBIDDEN” error if the caller doesn’t have permission to access it."]
                     pub fn get(&self, name: impl Into<String>) -> GetRequestBuilder {
                         GetRequestBuilder {
                             reqwest: &self.reqwest,
@@ -2353,7 +2353,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Updates a pipeline. If successful, the updated Pipeline is returned. Returns `NOT_FOUND` if the pipeline doesn't exist. If UpdatePipeline does not return successfully, you can retry the UpdatePipeline request until you receive a successful response."]
+                    #[doc = "Updates a pipeline. If successful, the updated Pipeline is returned. Returns `NOT_FOUND` if the pipeline doesn’t exist. If UpdatePipeline does not return successfully, you can retry the UpdatePipeline request until you receive a successful response."]
                     pub fn patch(
                         &self,
                         request: crate::schemas::GoogleCloudDatapipelinesV1Pipeline,
@@ -2378,7 +2378,7 @@ pub mod resources {
                             update_mask: None,
                         }
                     }
-                    #[doc = "Creates a job for the specified pipeline directly. You can use this method when the internal scheduler is not configured and you want to trigger the job directly or through an external system. Returns a \"NOT_FOUND\" error if the pipeline doesn't exist. Returns a \"FORBIDDEN\" error if the user doesn't have permission to access the pipeline or run jobs for the pipeline."]
+                    #[doc = "Creates a job for the specified pipeline directly. You can use this method when the internal scheduler is not configured and you want to trigger the job directly or through an external system. Returns a “NOT_FOUND” error if the pipeline doesn’t exist. Returns a “FORBIDDEN” error if the user doesn’t have permission to access the pipeline or run jobs for the pipeline."]
                     pub fn run(
                         &self,
                         request: crate::schemas::GoogleCloudDatapipelinesV1RunPipelineRequest,
@@ -2402,7 +2402,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Freezes pipeline execution permanently. If there's a corresponding scheduler entry, it's deleted, and the pipeline state is changed to \"ARCHIVED\". However, pipeline metadata is retained."]
+                    #[doc = "Freezes pipeline execution permanently. If there’s a corresponding scheduler entry, it’s deleted, and the pipeline state is changed to “ARCHIVED”. However, pipeline metadata is retained."]
                     pub fn stop(
                         &self,
                         request: crate::schemas::GoogleCloudDatapipelinesV1StopPipelineRequest,
@@ -2487,12 +2487,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -2651,12 +2651,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -2813,12 +2813,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -2982,12 +2982,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3147,12 +3147,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3316,12 +3316,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -3441,7 +3441,7 @@ pub mod resources {
                         fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                             self.auth
                         }
-                        #[doc = "Lists jobs for a given pipeline. Throws a \"FORBIDDEN\" error if the caller doesn't have permission to access it."]
+                        #[doc = "Lists jobs for a given pipeline. Throws a “FORBIDDEN” error if the caller doesn’t have permission to access it."]
                         pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                             ListRequestBuilder {
                                 reqwest: &self.reqwest,
@@ -3524,12 +3524,12 @@ pub mod resources {
                             self.quota_user = Some(value.into());
                             self
                         }
-                        #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                        #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                         pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                             self.upload_protocol = Some(value.into());
                             self
                         }
-                        #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                        #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                         pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                             self.upload_type = Some(value.into());
                             self

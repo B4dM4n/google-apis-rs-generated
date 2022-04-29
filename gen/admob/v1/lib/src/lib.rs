@@ -19,14 +19,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AdUnit {
-        #[doc = "AdFormat of the ad unit. Possible values are as follows: \"BANNER\" - Banner ad format. \"BANNER_INTERSTITIAL\" - Legacy format that can be used as either banner or interstitial. This format can no longer be created but can be targeted by mediation groups. \"INTERSTITIAL\" - A full screen ad. Supported ad types are \"RICH_MEDIA\" and \"VIDEO\". \"NATIVE\" - Native ad format. \"REWARDED\" - An ad that, once viewed, gets a callback verifying the view so that a reward can be given to the user. Supported ad types are \"RICH_MEDIA\" (interactive) and video where video can not be excluded."]
+        #[doc = "AdFormat of the ad unit. Possible values are as follows: “BANNER” - Banner ad format. “BANNER_INTERSTITIAL” - Legacy format that can be used as either banner or interstitial. This format can no longer be created but can be targeted by mediation groups. “INTERSTITIAL” - A full screen ad. Supported ad types are “RICH_MEDIA” and “VIDEO”. “NATIVE” - Native ad format. “REWARDED” - An ad that, once viewed, gets a callback verifying the view so that a reward can be given to the user. Supported ad types are “RICH_MEDIA” (interactive) and video where video can not be excluded."]
         #[serde(
             rename = "adFormat",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub ad_format: ::std::option::Option<String>,
-        #[doc = "Ad media type supported by this ad unit. Possible values as follows: \"RICH_MEDIA\" - Text, image, and other non-video media. \"VIDEO\" - Video media."]
+        #[doc = "Ad media type supported by this ad unit. Possible values as follows: “RICH_MEDIA” - Text, image, and other non-video media. “VIDEO” - Video media."]
         #[serde(
             rename = "adTypes",
             default,
@@ -113,7 +113,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Describes the platform of the app. Limited to \"IOS\" and \"ANDROID\"."]
+        #[doc = "Describes the platform of the app. Limited to “IOS” and “ANDROID”."]
         #[serde(
             rename = "platform",
             default,
@@ -144,7 +144,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AppLinkedAppInfo {
-        #[doc = "The app store ID of the app; present if and only if the app is linked to an app store. If the app is added to the Google Play store, it will be the application ID of the app. For example: \"com.example.myapp\". See https://developer.android.com/studio/build/application-id. If the app is added to the Apple App Store, it will be app store ID. For example \"105169111\". Note that setting the app store id is considered an irreversible action. Once an app is linked, it cannot be unlinked."]
+        #[doc = "The app store ID of the app; present if and only if the app is linked to an app store. If the app is added to the Google Play store, it will be the application ID of the app. For example: “com.example.myapp”. See https://developer.android.com/studio/build/application-id. If the app is added to the Apple App Store, it will be app store ID. For example “105169111”. Note that setting the app store id is considered an irreversible action. Once an app is linked, it cannot be unlinked."]
         #[serde(
             rename = "appStoreId",
             default,
@@ -213,7 +213,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Date {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -566,7 +566,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub currency_code: ::std::option::Option<String>,
-        #[doc = "Language used for any localized text, such as some dimension value display labels. The language tag defined in the IETF BCP47. Defaults to 'en-US' if unspecified."]
+        #[doc = "Language used for any localized text, such as some dimension value display labels. The language tag defined in the IETF BCP47. Defaults to ‘en-US’ if unspecified."]
         #[serde(
             rename = "languageCode",
             default,
@@ -649,7 +649,7 @@ pub mod schemas {
         )]
         pub sort_conditions:
             ::std::option::Option<Vec<crate::schemas::MediationReportSpecSortCondition>>,
-        #[doc = "A report time zone. Accepts an IANA TZ name values, such as \"America/Los_Angeles.\" If no time zone is defined, the account default takes effect. Check default value by the get account action. **Warning:** The \"America/Los_Angeles\" is the only supported value at the moment."]
+        #[doc = "A report time zone. Accepts an IANA TZ name values, such as “America/Los_Angeles.” If no time zone is defined, the account default takes effect. Check default value by the get account action. **Warning:** The “America/Los_Angeles” is the only supported value at the moment."]
         #[serde(
             rename = "timeZone",
             default,
@@ -669,37 +669,37 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MediationReportSpecDimensionsItems {
-        #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, \"5450213213286189855\" and \"AdMob Network\" as label value)."]
+        #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, “5450213213286189855” and “AdMob Network” as label value)."]
         AdSource,
-        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234:asi:5678\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the ad source instance (for example, “ca-app-pub-1234:asi:5678” and “AdMob (default)” as label value)."]
         AdSourceInstance,
-        #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/8790\"). If AD_UNIT dimension is specified, then APP is included automatically."]
+        #[doc = "The unique ID of the ad unit (for example, “ca-app-pub-1234/8790”). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
-        #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
+        #[doc = "The unique ID of the mobile application (for example, “ca-app-pub-1234~1234”)."]
         App,
         #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         AppVersionName,
-        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
+        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, “US” or “FR”). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
-        #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
+        #[doc = "Format of the ad unit (for example, “banner”, “native”), an ad delivery dimension."]
         Format,
-        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        #[doc = "GMA SDK version, e.g. “iOS 7.62.0”. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         GmaSdkVersion,
-        #[doc = "The unique ID of the mediation group (for example, \"ca-app-pub-1234:mg:1234\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the mediation group (for example, “ca-app-pub-1234:mg:1234” and “AdMob (default)” as label value)."]
         MediationGroup,
-        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        #[doc = "Mobile operating system version, e.g. “iOS 13.5.1”. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         MobileOsVersion,
-        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
+        #[doc = "A month in the YYYYMM format (for example, “202107”). Requests can specify at most one time dimension."]
         Month,
-        #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
+        #[doc = "Mobile OS platform of the app (for example, “Android” or “iOS”)."]
         Platform,
-        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\"). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
+        #[doc = "Restriction mode for ads serving (e.g. “Non-personalized ads”). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
         ServingRestriction,
-        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Week,
     }
     impl MediationReportSpecDimensionsItems {
@@ -826,7 +826,7 @@ pub mod schemas {
         MatchedRequests,
         #[doc = "Default value for an unset field. Do not use."]
         MetricUnspecified,
-        #[doc = "The third-party ad network's estimated average eCPM. The currency unit (USD, EUR, or other) of the earning metrics are determined by the localization setting for currency. The amount is in micros. For example, $2.30 would be represented as 2300000. The estimated average eCPM per mediation group and per ad source instance level is supported dating back to October 20, 2019. Third-party estimated average eCPM will show 0 for dates prior to October 20, 2019."]
+        #[doc = "The third-party ad network’s estimated average eCPM. The currency unit (USD, EUR, or other) of the earning metrics are determined by the localization setting for currency. The amount is in micros. For example, $2.30 would be represented as 2300000. The estimated average eCPM per mediation group and per ad source instance level is supported dating back to October 20, 2019. Third-party estimated average eCPM will show 0 for dates prior to October 20, 2019."]
         ObservedEcpm,
     }
     impl MediationReportSpecMetricsItems {
@@ -955,37 +955,37 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MediationReportSpecDimensionFilterDimension {
-        #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, \"5450213213286189855\" and \"AdMob Network\" as label value)."]
+        #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, “5450213213286189855” and “AdMob Network” as label value)."]
         AdSource,
-        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234:asi:5678\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the ad source instance (for example, “ca-app-pub-1234:asi:5678” and “AdMob (default)” as label value)."]
         AdSourceInstance,
-        #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/8790\"). If AD_UNIT dimension is specified, then APP is included automatically."]
+        #[doc = "The unique ID of the ad unit (for example, “ca-app-pub-1234/8790”). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
-        #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
+        #[doc = "The unique ID of the mobile application (for example, “ca-app-pub-1234~1234”)."]
         App,
         #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         AppVersionName,
-        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
+        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, “US” or “FR”). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
-        #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
+        #[doc = "Format of the ad unit (for example, “banner”, “native”), an ad delivery dimension."]
         Format,
-        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        #[doc = "GMA SDK version, e.g. “iOS 7.62.0”. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         GmaSdkVersion,
-        #[doc = "The unique ID of the mediation group (for example, \"ca-app-pub-1234:mg:1234\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the mediation group (for example, “ca-app-pub-1234:mg:1234” and “AdMob (default)” as label value)."]
         MediationGroup,
-        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        #[doc = "Mobile operating system version, e.g. “iOS 13.5.1”. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         MobileOsVersion,
-        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
+        #[doc = "A month in the YYYYMM format (for example, “202107”). Requests can specify at most one time dimension."]
         Month,
-        #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
+        #[doc = "Mobile OS platform of the app (for example, “Android” or “iOS”)."]
         Platform,
-        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\"). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
+        #[doc = "Restriction mode for ads serving (e.g. “Non-personalized ads”). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
         ServingRestriction,
-        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Week,
     }
     impl MediationReportSpecDimensionFilterDimension {
@@ -1162,37 +1162,37 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MediationReportSpecSortConditionDimension {
-        #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, \"5450213213286189855\" and \"AdMob Network\" as label value)."]
+        #[doc = "The [unique ID of the ad source](/admob/api/v1/ad_sources) (for example, “5450213213286189855” and “AdMob Network” as label value)."]
         AdSource,
-        #[doc = "The unique ID of the ad source instance (for example, \"ca-app-pub-1234:asi:5678\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the ad source instance (for example, “ca-app-pub-1234:asi:5678” and “AdMob (default)” as label value)."]
         AdSourceInstance,
-        #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/8790\"). If AD_UNIT dimension is specified, then APP is included automatically."]
+        #[doc = "The unique ID of the ad unit (for example, “ca-app-pub-1234/8790”). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
-        #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
+        #[doc = "The unique ID of the mobile application (for example, “ca-app-pub-1234~1234”)."]
         App,
         #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         AppVersionName,
-        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
+        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, “US” or “FR”). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
-        #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
+        #[doc = "Format of the ad unit (for example, “banner”, “native”), an ad delivery dimension."]
         Format,
-        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        #[doc = "GMA SDK version, e.g. “iOS 7.62.0”. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         GmaSdkVersion,
-        #[doc = "The unique ID of the mediation group (for example, \"ca-app-pub-1234:mg:1234\" and \"AdMob (default)\" as label value)."]
+        #[doc = "The unique ID of the mediation group (for example, “ca-app-pub-1234:mg:1234” and “AdMob (default)” as label value)."]
         MediationGroup,
-        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\". **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
+        #[doc = "Mobile operating system version, e.g. “iOS 13.5.1”. **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS), [OBSERVED_ECPM](#Metric.ENUM_VALUES.OBSERVED_ECPM) metrics."]
         MobileOsVersion,
-        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
+        #[doc = "A month in the YYYYMM format (for example, “202107”). Requests can specify at most one time dimension."]
         Month,
-        #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
+        #[doc = "Mobile OS platform of the app (for example, “Android” or “iOS”)."]
         Platform,
-        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\"). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
+        #[doc = "Restriction mode for ads serving (e.g. “Non-personalized ads”). **Warning:** The dimension is incompatible with [ESTIMATED_EARNINGS](#Metric.ENUM_VALUES.ESTIMATED_EARNINGS) metric."]
         ServingRestriction,
-        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Week,
     }
     impl MediationReportSpecSortConditionDimension {
@@ -1333,7 +1333,7 @@ pub mod schemas {
         MatchedRequests,
         #[doc = "Default value for an unset field. Do not use."]
         MetricUnspecified,
-        #[doc = "The third-party ad network's estimated average eCPM. The currency unit (USD, EUR, or other) of the earning metrics are determined by the localization setting for currency. The amount is in micros. For example, $2.30 would be represented as 2300000. The estimated average eCPM per mediation group and per ad source instance level is supported dating back to October 20, 2019. Third-party estimated average eCPM will show 0 for dates prior to October 20, 2019."]
+        #[doc = "The third-party ad network’s estimated average eCPM. The currency unit (USD, EUR, or other) of the earning metrics are determined by the localization setting for currency. The amount is in micros. For example, $2.30 would be represented as 2300000. The estimated average eCPM per mediation group and per ad source instance level is supported dating back to October 20, 2019. Third-party estimated average eCPM will show 0 for dates prior to October 20, 2019."]
         ObservedEcpm,
     }
     impl MediationReportSpecSortConditionMetric {
@@ -1568,7 +1568,7 @@ pub mod schemas {
         )]
         pub sort_conditions:
             ::std::option::Option<Vec<crate::schemas::NetworkReportSpecSortCondition>>,
-        #[doc = "A report time zone. Accepts an IANA TZ name values, such as \"America/Los_Angeles.\" If no time zone is defined, the account default takes effect. Check default value by the get account action. **Warning:** The \"America/Los_Angeles\" is the only supported value at the moment."]
+        #[doc = "A report time zone. Accepts an IANA TZ name values, such as “America/Los_Angeles.” If no time zone is defined, the account default takes effect. Check default value by the get account action. **Warning:** The “America/Los_Angeles” is the only supported value at the moment."]
         #[serde(
             rename = "timeZone",
             default,
@@ -1588,33 +1588,33 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NetworkReportSpecDimensionsItems {
-        #[doc = "Type of the ad (for example, \"text\" or \"image\"), an ad delivery dimension. **Warning:** The dimension is incompatible with [AD_REQUESTS](#Metric.ENUM_VALUES.AD_REQUESTS), [MATCH_RATE](#Metric.ENUM_VALUES.MATCH_RATE) and [IMPRESSION_RPM](#Metric.ENUM_VALUES.IMPRESSION_RPM) metrics."]
+        #[doc = "Type of the ad (for example, “text” or “image”), an ad delivery dimension. **Warning:** The dimension is incompatible with [AD_REQUESTS](#Metric.ENUM_VALUES.AD_REQUESTS), [MATCH_RATE](#Metric.ENUM_VALUES.MATCH_RATE) and [IMPRESSION_RPM](#Metric.ENUM_VALUES.IMPRESSION_RPM) metrics."]
         AdType,
-        #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/1234\"). If AD_UNIT dimension is specified, then APP is included automatically."]
+        #[doc = "The unique ID of the ad unit (for example, “ca-app-pub-1234/1234”). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
-        #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
+        #[doc = "The unique ID of the mobile application (for example, “ca-app-pub-1234~1234”)."]
         App,
         #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString."]
         AppVersionName,
-        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
+        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, “US” or “FR”). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
-        #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
+        #[doc = "Format of the ad unit (for example, “banner”, “native”), an ad delivery dimension."]
         Format,
-        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\"."]
+        #[doc = "GMA SDK version, e.g. “iOS 7.62.0”."]
         GmaSdkVersion,
-        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\"."]
+        #[doc = "Mobile operating system version, e.g. “iOS 13.5.1”."]
         MobileOsVersion,
-        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
+        #[doc = "A month in the YYYYMM format (for example, “202107”). Requests can specify at most one time dimension."]
         Month,
-        #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
+        #[doc = "Mobile OS platform of the app (for example, “Android” or “iOS”)."]
         Platform,
-        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\")."]
+        #[doc = "Restriction mode for ads serving (e.g. “Non-personalized ads”)."]
         ServingRestriction,
-        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Week,
     }
     impl NetworkReportSpecDimensionsItems {
@@ -1869,33 +1869,33 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NetworkReportSpecDimensionFilterDimension {
-        #[doc = "Type of the ad (for example, \"text\" or \"image\"), an ad delivery dimension. **Warning:** The dimension is incompatible with [AD_REQUESTS](#Metric.ENUM_VALUES.AD_REQUESTS), [MATCH_RATE](#Metric.ENUM_VALUES.MATCH_RATE) and [IMPRESSION_RPM](#Metric.ENUM_VALUES.IMPRESSION_RPM) metrics."]
+        #[doc = "Type of the ad (for example, “text” or “image”), an ad delivery dimension. **Warning:** The dimension is incompatible with [AD_REQUESTS](#Metric.ENUM_VALUES.AD_REQUESTS), [MATCH_RATE](#Metric.ENUM_VALUES.MATCH_RATE) and [IMPRESSION_RPM](#Metric.ENUM_VALUES.IMPRESSION_RPM) metrics."]
         AdType,
-        #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/1234\"). If AD_UNIT dimension is specified, then APP is included automatically."]
+        #[doc = "The unique ID of the ad unit (for example, “ca-app-pub-1234/1234”). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
-        #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
+        #[doc = "The unique ID of the mobile application (for example, “ca-app-pub-1234~1234”)."]
         App,
         #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString."]
         AppVersionName,
-        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
+        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, “US” or “FR”). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
-        #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
+        #[doc = "Format of the ad unit (for example, “banner”, “native”), an ad delivery dimension."]
         Format,
-        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\"."]
+        #[doc = "GMA SDK version, e.g. “iOS 7.62.0”."]
         GmaSdkVersion,
-        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\"."]
+        #[doc = "Mobile operating system version, e.g. “iOS 13.5.1”."]
         MobileOsVersion,
-        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
+        #[doc = "A month in the YYYYMM format (for example, “202107”). Requests can specify at most one time dimension."]
         Month,
-        #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
+        #[doc = "Mobile OS platform of the app (for example, “Android” or “iOS”)."]
         Platform,
-        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\")."]
+        #[doc = "Restriction mode for ads serving (e.g. “Non-personalized ads”)."]
         ServingRestriction,
-        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Week,
     }
     impl NetworkReportSpecDimensionFilterDimension {
@@ -2060,33 +2060,33 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum NetworkReportSpecSortConditionDimension {
-        #[doc = "Type of the ad (for example, \"text\" or \"image\"), an ad delivery dimension. **Warning:** The dimension is incompatible with [AD_REQUESTS](#Metric.ENUM_VALUES.AD_REQUESTS), [MATCH_RATE](#Metric.ENUM_VALUES.MATCH_RATE) and [IMPRESSION_RPM](#Metric.ENUM_VALUES.IMPRESSION_RPM) metrics."]
+        #[doc = "Type of the ad (for example, “text” or “image”), an ad delivery dimension. **Warning:** The dimension is incompatible with [AD_REQUESTS](#Metric.ENUM_VALUES.AD_REQUESTS), [MATCH_RATE](#Metric.ENUM_VALUES.MATCH_RATE) and [IMPRESSION_RPM](#Metric.ENUM_VALUES.IMPRESSION_RPM) metrics."]
         AdType,
-        #[doc = "The unique ID of the ad unit (for example, \"ca-app-pub-1234/1234\"). If AD_UNIT dimension is specified, then APP is included automatically."]
+        #[doc = "The unique ID of the ad unit (for example, “ca-app-pub-1234/1234”). If AD_UNIT dimension is specified, then APP is included automatically."]
         AdUnit,
-        #[doc = "The unique ID of the mobile application (for example, \"ca-app-pub-1234~1234\")."]
+        #[doc = "The unique ID of the mobile application (for example, “ca-app-pub-1234~1234”)."]
         App,
         #[doc = "For Android, the app version name can be found in versionName in PackageInfo. For iOS, the app version name can be found in CFBundleShortVersionString."]
         AppVersionName,
-        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, \"US\" or \"FR\"). This is a geography dimension."]
+        #[doc = "CLDR country code of the place where the ad views/clicks occur (for example, “US” or “FR”). This is a geography dimension."]
         Country,
-        #[doc = "A date in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "A date in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Date,
         #[doc = "Default value for an unset field. Do not use."]
         DimensionUnspecified,
-        #[doc = "Format of the ad unit (for example, \"banner\", \"native\"), an ad delivery dimension."]
+        #[doc = "Format of the ad unit (for example, “banner”, “native”), an ad delivery dimension."]
         Format,
-        #[doc = "GMA SDK version, e.g. \"iOS 7.62.0\"."]
+        #[doc = "GMA SDK version, e.g. “iOS 7.62.0”."]
         GmaSdkVersion,
-        #[doc = "Mobile operating system version, e.g. \"iOS 13.5.1\"."]
+        #[doc = "Mobile operating system version, e.g. “iOS 13.5.1”."]
         MobileOsVersion,
-        #[doc = "A month in the YYYYMM format (for example, \"202107\"). Requests can specify at most one time dimension."]
+        #[doc = "A month in the YYYYMM format (for example, “202107”). Requests can specify at most one time dimension."]
         Month,
-        #[doc = "Mobile OS platform of the app (for example, \"Android\" or \"iOS\")."]
+        #[doc = "Mobile OS platform of the app (for example, “Android” or “iOS”)."]
         Platform,
-        #[doc = "Restriction mode for ads serving (e.g. \"Non-personalized ads\")."]
+        #[doc = "Restriction mode for ads serving (e.g. “Non-personalized ads”)."]
         ServingRestriction,
-        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, \"20210701\"). Requests can specify at most one time dimension."]
+        #[doc = "The date of the first day of a week in the YYYYMMDD format (for example, “20210701”). Requests can specify at most one time dimension."]
         Week,
     }
     impl NetworkReportSpecSortConditionDimension {
@@ -2428,7 +2428,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub publisher_id: ::std::option::Option<String>,
-        #[doc = "The time zone that is used in reports that are generated for this account. The value is a time-zone ID as specified by the CLDR project, for example, \"America/Los_Angeles\"."]
+        #[doc = "The time zone that is used in reports that are generated for this account. The value is a time-zone ID as specified by the CLDR project, for example, “America/Los_Angeles”."]
         #[serde(
             rename = "reportingTimeZone",
             default,
@@ -2512,7 +2512,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub localization_settings: ::std::option::Option<crate::schemas::LocalizationSettings>,
-        #[doc = "The report time zone. The value is a time-zone ID as specified by the CLDR project, for example, \"America/Los_Angeles\"."]
+        #[doc = "The report time zone. The value is a time-zone ID as specified by the CLDR project, for example, “America/Los_Angeles”."]
         #[serde(
             rename = "reportingTimeZone",
             default,
@@ -2583,7 +2583,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_label: ::std::option::Option<String>,
-        #[doc = "Dimension value in the format specified in the report's spec Dimension enum."]
+        #[doc = "Dimension value in the format specified in the report’s spec Dimension enum."]
         #[serde(
             rename = "value",
             default,
@@ -3119,12 +3119,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3290,12 +3290,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -3643,12 +3643,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -4007,12 +4007,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -4363,12 +4363,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -4564,12 +4564,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

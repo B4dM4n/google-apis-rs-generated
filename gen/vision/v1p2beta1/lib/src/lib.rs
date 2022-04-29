@@ -414,14 +414,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub block_type: ::std::option::Option<crate::schemas::BlockBlockType>,
-        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_box: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "Confidence of the OCR results on the block. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the block. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -584,21 +584,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alpha: ::std::option::Option<f32>,
-        #[doc = "The amount of blue in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of blue in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "blue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blue: ::std::option::Option<f32>,
-        #[doc = "The amount of green in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of green in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "green",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub green: ::std::option::Option<f32>,
-        #[doc = "The amount of red in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of red in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "red",
             default,
@@ -627,14 +627,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "The fraction of pixels the color occupies in the image. Value in range [0, 1]."]
+        #[doc = "The fraction of pixels the color occupies in the image. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "pixelFraction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pixel_fraction: ::std::option::Option<f32>,
-        #[doc = "Image-specific score for this color. Value in range [0, 1]."]
+        #[doc = "Image-specific score for this color. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -656,14 +656,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CropHint {
-        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image's scale."]
+        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image’s scale."]
         #[serde(
             rename = "boundingPoly",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_poly: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "Confidence of this being a salient region. Range [0, 1]."]
+        #[doc = "Confidence of this being a salient region. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -843,14 +843,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct DetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -901,7 +901,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_poly: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the \"Eiffel Tower\" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]."]
+        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the “Eiffel Tower” entity is detected, this field represents the confidence that there is a tower in the query image. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -943,14 +943,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub properties: ::std::option::Option<Vec<crate::schemas::Property>>,
-        #[doc = "Overall score of the result. Range [0, 1]."]
+        #[doc = "Overall score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub score: ::std::option::Option<f32>,
-        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of \"tower\" is likely higher to an image containing the detected \"Eiffel Tower\" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]."]
+        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of “tower” is likely higher to an image containing the detected “Eiffel Tower” than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range \\[0, 1\\]."]
         #[serde(
             rename = "topicality",
             default,
@@ -987,21 +987,21 @@ pub mod schemas {
         )]
         pub blurred_likelihood:
             ::std::option::Option<crate::schemas::FaceAnnotationBlurredLikelihood>,
-        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image's scale. The bounding box is computed to \"frame\" the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
+        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image’s scale. The bounding box is computed to “frame” the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
         #[serde(
             rename = "boundingPoly",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_poly: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "Detection confidence. Range [0, 1]."]
+        #[doc = "Detection confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "detectionConfidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detection_confidence: ::std::option::Option<f32>,
-        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the \"amount of skin\" visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
+        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the “amount of skin” visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
         #[serde(
             rename = "fdBoundingPoly",
             default,
@@ -1023,7 +1023,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub joy_likelihood: ::std::option::Option<crate::schemas::FaceAnnotationJoyLikelihood>,
-        #[doc = "Face landmarking confidence. Range [0, 1]."]
+        #[doc = "Face landmarking confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "landmarkingConfidence",
             default,
@@ -1037,14 +1037,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub landmarks: ::std::option::Option<Vec<crate::schemas::Landmark>>,
-        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]."]
+        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range \\[-180,180\\]."]
         #[serde(
             rename = "panAngle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pan_angle: ::std::option::Option<f32>,
-        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]."]
+        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range \\[-180,180\\]."]
         #[serde(
             rename = "rollAngle",
             default,
@@ -1067,7 +1067,7 @@ pub mod schemas {
         )]
         pub surprise_likelihood:
             ::std::option::Option<crate::schemas::FaceAnnotationSurpriseLikelihood>,
-        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]."]
+        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image’s horizontal plane. Range \\[-180,180\\]."]
         #[serde(
             rename = "tiltAngle",
             default,
@@ -1743,7 +1743,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GcsDestination {
-        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with \"filenameprefix\". * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
+        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with “filenameprefix”. * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
         #[serde(
             rename = "uri",
             default,
@@ -2044,7 +2044,7 @@ pub mod schemas {
         )]
         pub block_type:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BlockBlockType>,
-        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -2052,7 +2052,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results on the block. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the block. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2221,14 +2221,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "The fraction of pixels the color occupies in the image. Value in range [0, 1]."]
+        #[doc = "The fraction of pixels the color occupies in the image. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "pixelFraction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pixel_fraction: ::std::option::Option<f32>,
-        #[doc = "Image-specific score for this color. Value in range [0, 1]."]
+        #[doc = "Image-specific score for this color. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -2250,7 +2250,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1CropHint {
-        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image's scale."]
+        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image’s scale."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -2258,7 +2258,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "Confidence of this being a salient region. Range [0, 1]."]
+        #[doc = "Confidence of this being a salient region. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2340,7 +2340,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the \"Eiffel Tower\" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]."]
+        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the “Eiffel Tower” entity is detected, this field represents the confidence that there is a tower in the query image. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2384,14 +2384,14 @@ pub mod schemas {
         )]
         pub properties:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P1Beta1Property>>,
-        #[doc = "Overall score of the result. Range [0, 1]."]
+        #[doc = "Overall score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub score: ::std::option::Option<f32>,
-        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of \"tower\" is likely higher to an image containing the detected \"Eiffel Tower\" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]."]
+        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of “tower” is likely higher to an image containing the detected “Eiffel Tower” than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range \\[0, 1\\]."]
         #[serde(
             rename = "topicality",
             default,
@@ -2431,7 +2431,7 @@ pub mod schemas {
         pub blurred_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P1Beta1FaceAnnotationBlurredLikelihood,
         >,
-        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image's scale. The bounding box is computed to \"frame\" the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
+        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image’s scale. The bounding box is computed to “frame” the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -2439,14 +2439,14 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "Detection confidence. Range [0, 1]."]
+        #[doc = "Detection confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "detectionConfidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detection_confidence: ::std::option::Option<f32>,
-        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the \"amount of skin\" visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
+        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the “amount of skin” visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
         #[serde(
             rename = "fdBoundingPoly",
             default,
@@ -2472,7 +2472,7 @@ pub mod schemas {
         pub joy_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P1Beta1FaceAnnotationJoyLikelihood,
         >,
-        #[doc = "Face landmarking confidence. Range [0, 1]."]
+        #[doc = "Face landmarking confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "landmarkingConfidence",
             default,
@@ -2488,14 +2488,14 @@ pub mod schemas {
         pub landmarks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVisionV1P1Beta1FaceAnnotationLandmark>,
         >,
-        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]."]
+        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range \\[-180,180\\]."]
         #[serde(
             rename = "panAngle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pan_angle: ::std::option::Option<f32>,
-        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]."]
+        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range \\[-180,180\\]."]
         #[serde(
             rename = "rollAngle",
             default,
@@ -2520,7 +2520,7 @@ pub mod schemas {
         pub surprise_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P1Beta1FaceAnnotationSurpriseLikelihood,
         >,
-        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]."]
+        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image’s horizontal plane. Range \\[-180,180\\]."]
         #[serde(
             rename = "tiltAngle",
             default,
@@ -3800,7 +3800,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1GcsDestination {
-        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with \"filenameprefix\". * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
+        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with “filenameprefix”. * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
         #[serde(
             rename = "uri",
             default,
@@ -3938,7 +3938,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_source: ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1GcsSource>,
-        #[doc = "The type of the file. Currently only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. Wildcards are not supported."]
+        #[doc = "The type of the file. Currently only “application/pdf”, “image/tiff” and “image/gif” are supported. Wildcards are not supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -3968,7 +3968,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -3989,7 +3989,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -4213,7 +4213,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1OutputConfig {
-        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
+        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
         #[serde(
             rename = "batchSize",
             default,
@@ -4250,7 +4250,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blocks: ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P1Beta1Block>>,
-        #[doc = "Confidence of the OCR results on the page. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the page. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -4295,7 +4295,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1Paragraph {
-        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -4303,7 +4303,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the paragraph. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the paragraph. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -4407,14 +4407,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of \"homegoods-v2\", \"apparel-v2\", \"toys-v2\", \"packagedgoods-v1\" or \"general-v1\". The legacy categories \"homegoods\", \"apparel\", and \"toys\" are still supported, but these should not be used for new products."]
+        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of “homegoods-v2”, “apparel-v2”, “toys-v2”, “packagedgoods-v1” or “general-v1”. The legacy categories “homegoods”, “apparel”, and “toys” are still supported, but these should not be used for new products."]
         #[serde(
             rename = "productCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_category: ::std::option::Option<String>,
-        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. \"1199\". Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
+        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. “1199”. Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
         #[serde(
             rename = "productLabels",
             default,
@@ -4560,7 +4560,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1ProductSearchResultsObjectAnnotation {
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -4581,7 +4581,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -4727,7 +4727,7 @@ pub mod schemas {
         pub racy: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P1Beta1SafeSearchAnnotationRacy,
         >,
-        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive."]
+        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image’s canonical version to make it appear funny or offensive."]
         #[serde(
             rename = "spoof",
             default,
@@ -5265,7 +5265,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1Symbol {
-        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -5273,7 +5273,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the symbol. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the symbol. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -5500,14 +5500,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1TextAnnotationDetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -5606,7 +5606,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1WebDetection {
-        #[doc = "The service's best guess as to the topic of the request image. Inferred from similar images on the open web."]
+        #[doc = "The service’s best guess as to the topic of the request image. Inferred from similar images on the open web."]
         #[serde(
             rename = "bestGuessLabels",
             default,
@@ -5756,7 +5756,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The BCP-47 language code for `label`, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code for `label`, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -5832,7 +5832,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P1Beta1Word {
-        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -5840,7 +5840,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P1Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the word. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the word. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6448,7 +6448,7 @@ pub mod schemas {
         )]
         pub block_type:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BlockBlockType>,
-        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -6456,7 +6456,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results on the block. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the block. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6625,14 +6625,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "The fraction of pixels the color occupies in the image. Value in range [0, 1]."]
+        #[doc = "The fraction of pixels the color occupies in the image. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "pixelFraction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pixel_fraction: ::std::option::Option<f32>,
-        #[doc = "Image-specific score for this color. Value in range [0, 1]."]
+        #[doc = "Image-specific score for this color. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -6654,7 +6654,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1CropHint {
-        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image's scale."]
+        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image’s scale."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -6662,7 +6662,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "Confidence of this being a salient region. Range [0, 1]."]
+        #[doc = "Confidence of this being a salient region. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6766,7 +6766,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the \"Eiffel Tower\" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]."]
+        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the “Eiffel Tower” entity is detected, this field represents the confidence that there is a tower in the query image. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6810,14 +6810,14 @@ pub mod schemas {
         )]
         pub properties:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P2Beta1Property>>,
-        #[doc = "Overall score of the result. Range [0, 1]."]
+        #[doc = "Overall score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub score: ::std::option::Option<f32>,
-        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of \"tower\" is likely higher to an image containing the detected \"Eiffel Tower\" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]."]
+        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of “tower” is likely higher to an image containing the detected “Eiffel Tower” than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range \\[0, 1\\]."]
         #[serde(
             rename = "topicality",
             default,
@@ -6857,7 +6857,7 @@ pub mod schemas {
         pub blurred_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P2Beta1FaceAnnotationBlurredLikelihood,
         >,
-        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image's scale. The bounding box is computed to \"frame\" the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
+        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image’s scale. The bounding box is computed to “frame” the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -6865,14 +6865,14 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "Detection confidence. Range [0, 1]."]
+        #[doc = "Detection confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "detectionConfidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detection_confidence: ::std::option::Option<f32>,
-        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the \"amount of skin\" visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
+        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the “amount of skin” visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
         #[serde(
             rename = "fdBoundingPoly",
             default,
@@ -6898,7 +6898,7 @@ pub mod schemas {
         pub joy_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P2Beta1FaceAnnotationJoyLikelihood,
         >,
-        #[doc = "Face landmarking confidence. Range [0, 1]."]
+        #[doc = "Face landmarking confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "landmarkingConfidence",
             default,
@@ -6914,14 +6914,14 @@ pub mod schemas {
         pub landmarks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVisionV1P2Beta1FaceAnnotationLandmark>,
         >,
-        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]."]
+        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range \\[-180,180\\]."]
         #[serde(
             rename = "panAngle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pan_angle: ::std::option::Option<f32>,
-        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]."]
+        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range \\[-180,180\\]."]
         #[serde(
             rename = "rollAngle",
             default,
@@ -6946,7 +6946,7 @@ pub mod schemas {
         pub surprise_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P2Beta1FaceAnnotationSurpriseLikelihood,
         >,
-        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]."]
+        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image’s horizontal plane. Range \\[-180,180\\]."]
         #[serde(
             rename = "tiltAngle",
             default,
@@ -8233,7 +8233,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_results: ::std::option::Option<i32>,
-        #[doc = "Model to use for the feature. Supported values: \"builtin/stable\" (the default if unset) and \"builtin/latest\"."]
+        #[doc = "Model to use for the feature. Supported values: “builtin/stable” (the default if unset) and “builtin/latest”."]
         #[serde(
             rename = "model",
             default,
@@ -8266,7 +8266,7 @@ pub mod schemas {
         DocumentTextDetection,
         #[doc = "Run face detection."]
         FaceDetection,
-        #[doc = "Compute a set of image properties, such as the image's dominant colors."]
+        #[doc = "Compute a set of image properties, such as the image’s dominant colors."]
         ImageProperties,
         #[doc = "Run label detection."]
         LabelDetection,
@@ -8409,7 +8409,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1GcsDestination {
-        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with \"filenameprefix\". * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
+        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with “filenameprefix”. * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
         #[serde(
             rename = "uri",
             default,
@@ -8685,7 +8685,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_source: ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1GcsSource>,
-        #[doc = "The type of the file. Currently only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. Wildcards are not supported."]
+        #[doc = "The type of the file. Currently only “application/pdf”, “image/tiff” and “image/gif” are supported. Wildcards are not supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -8744,7 +8744,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -8765,7 +8765,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -8989,7 +8989,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1OutputConfig {
-        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
+        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
         #[serde(
             rename = "batchSize",
             default,
@@ -9026,7 +9026,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blocks: ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P2Beta1Block>>,
-        #[doc = "Confidence of the OCR results on the page. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the page. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -9071,7 +9071,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1Paragraph {
-        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -9079,7 +9079,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the paragraph. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the paragraph. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -9183,14 +9183,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of \"homegoods-v2\", \"apparel-v2\", \"toys-v2\", \"packagedgoods-v1\" or \"general-v1\". The legacy categories \"homegoods\", \"apparel\", and \"toys\" are still supported, but these should not be used for new products."]
+        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of “homegoods-v2”, “apparel-v2”, “toys-v2”, “packagedgoods-v1” or “general-v1”. The legacy categories “homegoods”, “apparel”, and “toys” are still supported, but these should not be used for new products."]
         #[serde(
             rename = "productCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_category: ::std::option::Option<String>,
-        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. \"1199\". Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
+        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. “1199”. Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
         #[serde(
             rename = "productLabels",
             default,
@@ -9259,14 +9259,14 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "The filtering expression. This can be used to restrict search results based on Product labels. We currently support an AND of OR of key-value expressions, where each expression within an OR must have the same key. An '=' should be used to connect the key and value. For example, \"(color = red OR color = blue) AND brand = Google\" is acceptable, but \"(color = red OR brand = Google)\" is not acceptable. \"color: red\" is not acceptable because it uses a ':' instead of an '='."]
+        #[doc = "The filtering expression. This can be used to restrict search results based on Product labels. We currently support an AND of OR of key-value expressions, where each expression within an OR must have the same key. An ‘=’ should be used to connect the key and value. For example, “(color = red OR color = blue) AND brand = Google” is acceptable, but “(color = red OR brand = Google)” is not acceptable. “color: red” is not acceptable because it uses a ‘:’ instead of an ‘=’."]
         #[serde(
             rename = "filter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub filter: ::std::option::Option<String>,
-        #[doc = "The list of product categories to search in. Currently, we only consider the first category, and either \"homegoods-v2\", \"apparel-v2\", \"toys-v2\", \"packagedgoods-v1\", or \"general-v1\" should be specified. The legacy categories \"homegoods\", \"apparel\", and \"toys\" are still supported but will be deprecated. For new products, please use \"homegoods-v2\", \"apparel-v2\", or \"toys-v2\" for better product search accuracy. It is recommended to migrate existing products to these categories as well."]
+        #[doc = "The list of product categories to search in. Currently, we only consider the first category, and either “homegoods-v2”, “apparel-v2”, “toys-v2”, “packagedgoods-v1”, or “general-v1” should be specified. The legacy categories “homegoods”, “apparel”, and “toys” are still supported but will be deprecated. For new products, please use “homegoods-v2”, “apparel-v2”, or “toys-v2” for better product search accuracy. It is recommended to migrate existing products to these categories as well."]
         #[serde(
             rename = "productCategories",
             default,
@@ -9380,7 +9380,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1ProductSearchResultsObjectAnnotation {
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -9401,7 +9401,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -9547,7 +9547,7 @@ pub mod schemas {
         pub racy: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P2Beta1SafeSearchAnnotationRacy,
         >,
-        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive."]
+        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image’s canonical version to make it appear funny or offensive."]
         #[serde(
             rename = "spoof",
             default,
@@ -10085,7 +10085,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1Symbol {
-        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -10093,7 +10093,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the symbol. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the symbol. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -10320,14 +10320,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1TextAnnotationDetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -10457,7 +10457,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1WebDetection {
-        #[doc = "The service's best guess as to the topic of the request image. Inferred from similar images on the open web."]
+        #[doc = "The service’s best guess as to the topic of the request image. Inferred from similar images on the open web."]
         #[serde(
             rename = "bestGuessLabels",
             default,
@@ -10638,7 +10638,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The BCP-47 language code for `label`, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code for `label`, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -10714,7 +10714,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P2Beta1Word {
-        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -10722,7 +10722,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P2Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the word. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the word. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -11154,7 +11154,7 @@ pub mod schemas {
         )]
         pub block_type:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BlockBlockType>,
-        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -11162,7 +11162,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results on the block. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the block. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -11331,14 +11331,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "The fraction of pixels the color occupies in the image. Value in range [0, 1]."]
+        #[doc = "The fraction of pixels the color occupies in the image. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "pixelFraction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pixel_fraction: ::std::option::Option<f32>,
-        #[doc = "Image-specific score for this color. Value in range [0, 1]."]
+        #[doc = "Image-specific score for this color. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -11360,7 +11360,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1CropHint {
-        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image's scale."]
+        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image’s scale."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -11368,7 +11368,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "Confidence of this being a salient region. Range [0, 1]."]
+        #[doc = "Confidence of this being a salient region. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -11450,7 +11450,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the \"Eiffel Tower\" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]."]
+        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the “Eiffel Tower” entity is detected, this field represents the confidence that there is a tower in the query image. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -11494,14 +11494,14 @@ pub mod schemas {
         )]
         pub properties:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P3Beta1Property>>,
-        #[doc = "Overall score of the result. Range [0, 1]."]
+        #[doc = "Overall score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub score: ::std::option::Option<f32>,
-        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of \"tower\" is likely higher to an image containing the detected \"Eiffel Tower\" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]."]
+        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of “tower” is likely higher to an image containing the detected “Eiffel Tower” than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range \\[0, 1\\]."]
         #[serde(
             rename = "topicality",
             default,
@@ -11541,7 +11541,7 @@ pub mod schemas {
         pub blurred_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P3Beta1FaceAnnotationBlurredLikelihood,
         >,
-        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image's scale. The bounding box is computed to \"frame\" the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
+        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image’s scale. The bounding box is computed to “frame” the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -11549,14 +11549,14 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "Detection confidence. Range [0, 1]."]
+        #[doc = "Detection confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "detectionConfidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detection_confidence: ::std::option::Option<f32>,
-        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the \"amount of skin\" visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
+        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the “amount of skin” visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
         #[serde(
             rename = "fdBoundingPoly",
             default,
@@ -11582,7 +11582,7 @@ pub mod schemas {
         pub joy_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P3Beta1FaceAnnotationJoyLikelihood,
         >,
-        #[doc = "Face landmarking confidence. Range [0, 1]."]
+        #[doc = "Face landmarking confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "landmarkingConfidence",
             default,
@@ -11598,14 +11598,14 @@ pub mod schemas {
         pub landmarks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVisionV1P3Beta1FaceAnnotationLandmark>,
         >,
-        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]."]
+        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range \\[-180,180\\]."]
         #[serde(
             rename = "panAngle",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pan_angle: ::std::option::Option<f32>,
-        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]."]
+        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range \\[-180,180\\]."]
         #[serde(
             rename = "rollAngle",
             default,
@@ -11630,7 +11630,7 @@ pub mod schemas {
         pub surprise_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P3Beta1FaceAnnotationSurpriseLikelihood,
         >,
-        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]."]
+        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image’s horizontal plane. Range \\[-180,180\\]."]
         #[serde(
             rename = "tiltAngle",
             default,
@@ -12910,7 +12910,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1GcsDestination {
-        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with \"filenameprefix\". * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
+        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with “filenameprefix”. * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
         #[serde(
             rename = "uri",
             default,
@@ -13031,7 +13031,7 @@ pub mod schemas {
         )]
         pub reference_images:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P3Beta1ReferenceImage>>,
-        #[doc = "The rpc status for each ImportProductSet request, including both successes and errors. The number of statuses here matches the number of lines in the csv file, and statuses[i] stores the success or failure status of processing the i-th line of the csv, starting from line 0."]
+        #[doc = "The rpc status for each ImportProductSet request, including both successes and errors. The number of statuses here matches the number of lines in the csv file, and statuses\\[i\\] stores the success or failure status of processing the i-th line of the csv, starting from line 0."]
         #[serde(
             rename = "statuses",
             default,
@@ -13078,7 +13078,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_source: ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1GcsSource>,
-        #[doc = "The type of the file. Currently only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. Wildcards are not supported."]
+        #[doc = "The type of the file. Currently only “application/pdf”, “image/tiff” and “image/gif” are supported. Wildcards are not supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -13108,7 +13108,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -13129,7 +13129,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -13353,7 +13353,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1OutputConfig {
-        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
+        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
         #[serde(
             rename = "batchSize",
             default,
@@ -13390,7 +13390,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blocks: ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P3Beta1Block>>,
-        #[doc = "Confidence of the OCR results on the page. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the page. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -13435,7 +13435,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1Paragraph {
-        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -13443,7 +13443,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the paragraph. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the paragraph. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -13547,14 +13547,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of \"homegoods-v2\", \"apparel-v2\", \"toys-v2\", \"packagedgoods-v1\" or \"general-v1\". The legacy categories \"homegoods\", \"apparel\", and \"toys\" are still supported, but these should not be used for new products."]
+        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of “homegoods-v2”, “apparel-v2”, “toys-v2”, “packagedgoods-v1” or “general-v1”. The legacy categories “homegoods”, “apparel”, and “toys” are still supported, but these should not be used for new products."]
         #[serde(
             rename = "productCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_category: ::std::option::Option<String>,
-        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. \"1199\". Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
+        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. “1199”. Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
         #[serde(
             rename = "productLabels",
             default,
@@ -13700,7 +13700,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1ProductSearchResultsObjectAnnotation {
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -13721,7 +13721,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -13904,7 +13904,7 @@ pub mod schemas {
         pub racy: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P3Beta1SafeSearchAnnotationRacy,
         >,
-        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive."]
+        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image’s canonical version to make it appear funny or offensive."]
         #[serde(
             rename = "spoof",
             default,
@@ -14442,7 +14442,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1Symbol {
-        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -14450,7 +14450,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the symbol. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the symbol. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -14677,14 +14677,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1TextAnnotationDetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -14783,7 +14783,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1WebDetection {
-        #[doc = "The service's best guess as to the topic of the request image. Inferred from similar images on the open web."]
+        #[doc = "The service’s best guess as to the topic of the request image. Inferred from similar images on the open web."]
         #[serde(
             rename = "bestGuessLabels",
             default,
@@ -14933,7 +14933,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The BCP-47 language code for `label`, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code for `label`, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -15009,7 +15009,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P3Beta1Word {
-        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -15017,7 +15017,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P3Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the word. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the word. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -15509,7 +15509,7 @@ pub mod schemas {
         )]
         pub block_type:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BlockBlockType>,
-        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the block. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -15517,7 +15517,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results on the block. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the block. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -15688,14 +15688,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1Celebrity {
-        #[doc = "The Celebrity's description."]
+        #[doc = "The Celebrity’s description."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The Celebrity's display name."]
+        #[doc = "The Celebrity’s display name."]
         #[serde(
             rename = "displayName",
             default,
@@ -15731,14 +15731,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub color: ::std::option::Option<crate::schemas::Color>,
-        #[doc = "The fraction of pixels the color occupies in the image. Value in range [0, 1]."]
+        #[doc = "The fraction of pixels the color occupies in the image. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "pixelFraction",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pixel_fraction: ::std::option::Option<f32>,
-        #[doc = "Image-specific score for this color. Value in range [0, 1]."]
+        #[doc = "Image-specific score for this color. Value in range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -15760,7 +15760,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1CropHint {
-        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image's scale."]
+        #[doc = "The bounding polygon for the crop region. The coordinates of the bounding box are in the original image’s scale."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -15768,7 +15768,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "Confidence of this being a salient region. Range [0, 1]."]
+        #[doc = "Confidence of this being a salient region. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -15850,7 +15850,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the \"Eiffel Tower\" entity is detected, this field represents the confidence that there is a tower in the query image. Range [0, 1]."]
+        #[doc = "**Deprecated. Use `score` instead.** The accuracy of the entity detection in an image. For example, for an image in which the “Eiffel Tower” entity is detected, this field represents the confidence that there is a tower in the query image. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -15894,14 +15894,14 @@ pub mod schemas {
         )]
         pub properties:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P4Beta1Property>>,
-        #[doc = "Overall score of the result. Range [0, 1]."]
+        #[doc = "Overall score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub score: ::std::option::Option<f32>,
-        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of \"tower\" is likely higher to an image containing the detected \"Eiffel Tower\" than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range [0, 1]."]
+        #[doc = "The relevancy of the ICA (Image Content Annotation) label to the image. For example, the relevancy of “tower” is likely higher to an image containing the detected “Eiffel Tower” than to an image containing a detected distant towering building, even though the confidence that there is a tower in each image may be the same. Range \\[0, 1\\]."]
         #[serde(
             rename = "topicality",
             default,
@@ -15941,7 +15941,7 @@ pub mod schemas {
         pub blurred_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P4Beta1FaceAnnotationBlurredLikelihood,
         >,
-        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image's scale. The bounding box is computed to \"frame\" the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
+        #[doc = "The bounding polygon around the face. The coordinates of the bounding box are in the original image’s scale. The bounding box is computed to “frame” the face in accordance with human expectations. It is based on the landmarker results. Note that one or more x and/or y coordinates may not be generated in the `BoundingPoly` (the polygon will be unbounded) if only a partial face appears in the image to be annotated."]
         #[serde(
             rename = "boundingPoly",
             default,
@@ -15949,14 +15949,14 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "Detection confidence. Range [0, 1]."]
+        #[doc = "Detection confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "detectionConfidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub detection_confidence: ::std::option::Option<f32>,
-        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the \"amount of skin\" visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
+        #[doc = "The `fd_bounding_poly` bounding polygon is tighter than the `boundingPoly`, and encloses only the skin part of the face. Typically, it is used to eliminate the face from any image analysis that detects the “amount of skin” visible in an image. It is not based on the landmarker results, only on the initial face detection, hence the fd (face detection) prefix."]
         #[serde(
             rename = "fdBoundingPoly",
             default,
@@ -15982,7 +15982,7 @@ pub mod schemas {
         pub joy_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P4Beta1FaceAnnotationJoyLikelihood,
         >,
-        #[doc = "Face landmarking confidence. Range [0, 1]."]
+        #[doc = "Face landmarking confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "landmarkingConfidence",
             default,
@@ -15998,7 +15998,7 @@ pub mod schemas {
         pub landmarks: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVisionV1P4Beta1FaceAnnotationLandmark>,
         >,
-        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range [-180,180]."]
+        #[doc = "Yaw angle, which indicates the leftward/rightward angle that the face is pointing relative to the vertical plane perpendicular to the image. Range \\[-180,180\\]."]
         #[serde(
             rename = "panAngle",
             default,
@@ -16014,7 +16014,7 @@ pub mod schemas {
         pub recognition_result: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudVisionV1P4Beta1FaceRecognitionResult>,
         >,
-        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range [-180,180]."]
+        #[doc = "Roll angle, which indicates the amount of clockwise/anti-clockwise rotation of the face relative to the image vertical about the axis perpendicular to the face. Range \\[-180,180\\]."]
         #[serde(
             rename = "rollAngle",
             default,
@@ -16039,7 +16039,7 @@ pub mod schemas {
         pub surprise_likelihood: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P4Beta1FaceAnnotationSurpriseLikelihood,
         >,
-        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image's horizontal plane. Range [-180,180]."]
+        #[doc = "Pitch angle, which indicates the upwards/downwards angle that the face is pointing relative to the image’s horizontal plane. Range \\[-180,180\\]."]
         #[serde(
             rename = "tiltAngle",
             default,
@@ -17317,7 +17317,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub celebrity: ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1Celebrity>,
-        #[doc = "Recognition confidence. Range [0, 1]."]
+        #[doc = "Recognition confidence. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -17348,7 +17348,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1GcsDestination {
-        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with \"filenameprefix\". * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
+        #[doc = "Google Cloud Storage URI prefix where the results will be stored. Results will be in JSON format and preceded by its corresponding input URI prefix. This field can either represent a gcs file prefix or gcs directory. In either case, the uri should be unique because in order to get all of the output files, you will need to do a wildcard gcs search on the uri prefix you provide. Examples: * File Prefix: gs://bucket-name/here/filenameprefix The output files will be created in gs://bucket-name/here/ and the names of the output files will begin with “filenameprefix”. * Directory Prefix: gs://bucket-name/some/location/ The output files will be created in gs://bucket-name/some/location/ and the names of the output files could be anything because there was no filename prefix specified. If multiple outputs, each response is still AnnotateFileResponse, each of which contains some subset of the full list of AnnotateImageResponse. Multiple outputs can happen if, for example, the output JSON is too large and overflows into multiple sharded files."]
         #[serde(
             rename = "uri",
             default,
@@ -17469,7 +17469,7 @@ pub mod schemas {
         )]
         pub reference_images:
             ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P4Beta1ReferenceImage>>,
-        #[doc = "The rpc status for each ImportProductSet request, including both successes and errors. The number of statuses here matches the number of lines in the csv file, and statuses[i] stores the success or failure status of processing the i-th line of the csv, starting from line 0."]
+        #[doc = "The rpc status for each ImportProductSet request, including both successes and errors. The number of statuses here matches the number of lines in the csv file, and statuses\\[i\\] stores the success or failure status of processing the i-th line of the csv, starting from line 0."]
         #[serde(
             rename = "statuses",
             default,
@@ -17516,7 +17516,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_source: ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1GcsSource>,
-        #[doc = "The type of the file. Currently only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. Wildcards are not supported."]
+        #[doc = "The type of the file. Currently only “application/pdf”, “image/tiff” and “image/gif” are supported. Wildcards are not supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -17546,7 +17546,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -17567,7 +17567,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -17791,7 +17791,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1OutputConfig {
-        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
+        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
         #[serde(
             rename = "batchSize",
             default,
@@ -17828,7 +17828,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blocks: ::std::option::Option<Vec<crate::schemas::GoogleCloudVisionV1P4Beta1Block>>,
-        #[doc = "Confidence of the OCR results on the page. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the page. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -17873,7 +17873,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1Paragraph {
-        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -17881,7 +17881,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the paragraph. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the paragraph. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -17985,14 +17985,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of \"homegoods-v2\", \"apparel-v2\", \"toys-v2\", \"packagedgoods-v1\" or \"general-v1\". The legacy categories \"homegoods\", \"apparel\", and \"toys\" are still supported, but these should not be used for new products."]
+        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of “homegoods-v2”, “apparel-v2”, “toys-v2”, “packagedgoods-v1” or “general-v1”. The legacy categories “homegoods”, “apparel”, and “toys” are still supported, but these should not be used for new products."]
         #[serde(
             rename = "productCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_category: ::std::option::Option<String>,
-        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. \"1199\". Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
+        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. “1199”. Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
         #[serde(
             rename = "productLabels",
             default,
@@ -18138,7 +18138,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1ProductSearchResultsObjectAnnotation {
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -18159,7 +18159,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -18342,7 +18342,7 @@ pub mod schemas {
         pub racy: ::std::option::Option<
             crate::schemas::GoogleCloudVisionV1P4Beta1SafeSearchAnnotationRacy,
         >,
-        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive."]
+        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image’s canonical version to make it appear funny or offensive."]
         #[serde(
             rename = "spoof",
             default,
@@ -18880,7 +18880,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1Symbol {
-        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -18888,7 +18888,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the symbol. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the symbol. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -19115,14 +19115,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1TextAnnotationDetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -19221,7 +19221,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1WebDetection {
-        #[doc = "The service's best guess as to the topic of the request image. Inferred from similar images on the open web."]
+        #[doc = "The service’s best guess as to the topic of the request image. Inferred from similar images on the open web."]
         #[serde(
             rename = "bestGuessLabels",
             default,
@@ -19371,7 +19371,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The BCP-47 language code for `label`, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code for `label`, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -19447,7 +19447,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudVisionV1P4Beta1Word {
-        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -19455,7 +19455,7 @@ pub mod schemas {
         )]
         pub bounding_box:
             ::std::option::Option<crate::schemas::GoogleCloudVisionV1P4Beta1BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the word. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the word. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -19594,7 +19594,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub reference_images: ::std::option::Option<Vec<crate::schemas::ReferenceImage>>,
-        #[doc = "The rpc status for each ImportProductSet request, including both successes and errors. The number of statuses here matches the number of lines in the csv file, and statuses[i] stores the success or failure status of processing the i-th line of the csv, starting from line 0."]
+        #[doc = "The rpc status for each ImportProductSet request, including both successes and errors. The number of statuses here matches the number of lines in the csv file, and statuses\\[i\\] stores the success or failure status of processing the i-th line of the csv, starting from line 0."]
         #[serde(
             rename = "statuses",
             default,
@@ -19639,7 +19639,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gcs_source: ::std::option::Option<crate::schemas::GcsSource>,
-        #[doc = "The type of the file. Currently only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. Wildcards are not supported."]
+        #[doc = "The type of the file. Currently only “application/pdf”, “image/tiff” and “image/gif” are supported. Wildcards are not supported."]
         #[serde(
             rename = "mimeType",
             default,
@@ -19974,14 +19974,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct LatLng {
-        #[doc = "The latitude in degrees. It must be in the range [-90.0, +90.0]."]
+        #[doc = "The latitude in degrees. It must be in the range \\[-90.0, +90.0\\]."]
         #[serde(
             rename = "latitude",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latitude: ::std::option::Option<f64>,
-        #[doc = "The longitude in degrees. It must be in the range [-180.0, +180.0]."]
+        #[doc = "The longitude in degrees. It must be in the range \\[-180.0, +180.0\\]."]
         #[serde(
             rename = "longitude",
             default,
@@ -20010,7 +20010,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_poly: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -20031,7 +20031,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -20104,7 +20104,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct ObjectAnnotation {
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -20125,7 +20125,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Score of the result. Range [0, 1]."]
+        #[doc = "Score of the result. Range \\[0, 1\\]."]
         #[serde(
             rename = "score",
             default,
@@ -20337,7 +20337,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OutputConfig {
-        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
+        #[doc = "The max number of response protos to put into each output JSON file on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 response protos will be generated. If `batch_size` = 20, then 5 json files each containing 20 response protos will be written under the prefix `gcs_destination`.`uri`. Currently, batch_size only applies to GcsDestination, with potential future support for other output configurations."]
         #[serde(
             rename = "batchSize",
             default,
@@ -20373,7 +20373,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blocks: ::std::option::Option<Vec<crate::schemas::Block>>,
-        #[doc = "Confidence of the OCR results on the page. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results on the page. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -20416,14 +20416,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Paragraph {
-        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the paragraph. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_box: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the paragraph. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the paragraph. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -20525,14 +20525,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of \"homegoods-v2\", \"apparel-v2\", \"toys-v2\", \"packagedgoods-v1\" or \"general-v1\". The legacy categories \"homegoods\", \"apparel\", and \"toys\" are still supported, but these should not be used for new products."]
+        #[doc = "Immutable. The category for the product identified by the reference image. This should be one of “homegoods-v2”, “apparel-v2”, “toys-v2”, “packagedgoods-v1” or “general-v1”. The legacy categories “homegoods”, “apparel”, and “toys” are still supported, but these should not be used for new products."]
         #[serde(
             rename = "productCategory",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub product_category: ::std::option::Option<String>,
-        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. \"1199\". Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
+        #[doc = "Key-value pairs that can be attached to a product. At query time, constraints can be specified based on the product_labels. Note that integer values can be provided as strings, e.g. “1199”. Only strings with integer values can match a range-based restriction which is to be supported soon. Multiple values can be assigned to the same key. One product may have up to 500 product_labels. Notice that the total number of distinct product_labels over all products in one ProductSet cannot exceed 1M, otherwise the product search pipeline will refuse to work for that ProductSet."]
         #[serde(
             rename = "productLabels",
             default,
@@ -20738,7 +20738,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub racy: ::std::option::Option<crate::schemas::SafeSearchAnnotationRacy>,
-        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive."]
+        #[doc = "Spoof likelihood. The likelihood that an modification was made to the image’s canonical version to make it appear funny or offensive."]
         #[serde(
             rename = "spoof",
             default,
@@ -21257,14 +21257,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Symbol {
-        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the symbol. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_box: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the symbol. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the symbol. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -21396,7 +21396,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct WebDetection {
-        #[doc = "The service's best guess as to the topic of the request image. Inferred from similar images on the open web."]
+        #[doc = "The service’s best guess as to the topic of the request image. Inferred from similar images on the open web."]
         #[serde(
             rename = "bestGuessLabels",
             default,
@@ -21534,7 +21534,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub label: ::std::option::Option<String>,
-        #[doc = "The BCP-47 language code for `label`, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code for `label`, such as “en-US” or “sr-Latn”. For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -21606,14 +21606,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Word {
-        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the 'natural' orientation. For example: * when the text is horizontal it might look like: 0----1 | | 3----2 * when it's rotated 180 degrees around the top-left corner it becomes: 2----3 | | 1----0 and the vertex order will still be (0, 1, 2, 3)."]
+        #[doc = "The bounding box for the word. The vertices are in the order of top-left, top-right, bottom-right, bottom-left. When a rotation of the bounding box is detected the rotation is represented as around the top-left corner as defined when the text is read in the ‘natural’ orientation. For example: * when the text is horizontal it might look like: 0––1 | | 3––2 * when it’s rotated 180 degrees around the top-left corner it becomes: 2––3 | | 1––0 and the vertex order will still be (0, 1, 2, 3)."]
         #[serde(
             rename = "boundingBox",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bounding_box: ::std::option::Option<crate::schemas::BoundingPoly>,
-        #[doc = "Confidence of the OCR results for the word. Range [0, 1]."]
+        #[doc = "Confidence of the OCR results for the word. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -21851,7 +21851,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Service that performs image detection and annotation for a batch of files. Now only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted."]
+            #[doc = "Service that performs image detection and annotation for a batch of files. Now only “application/pdf”, “image/tiff” and “image/gif” are supported. This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted."]
             pub fn annotate(
                 &self,
                 request: crate::schemas::GoogleCloudVisionV1P2Beta1BatchAnnotateFilesRequest,
@@ -21945,12 +21945,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22105,12 +22105,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22315,12 +22315,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22475,12 +22475,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -22623,7 +22623,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Service that performs image detection and annotation for a batch of files. Now only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted."]
+                #[doc = "Service that performs image detection and annotation for a batch of files. Now only “application/pdf”, “image/tiff” and “image/gif” are supported. This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted."]
                 pub fn annotate(
                     &self,
                     request: crate::schemas::GoogleCloudVisionV1P2Beta1BatchAnnotateFilesRequest,
@@ -22722,12 +22722,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -22891,12 +22891,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -23114,12 +23114,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -23283,12 +23283,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -23434,7 +23434,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Service that performs image detection and annotation for a batch of files. Now only \"application/pdf\", \"image/tiff\" and \"image/gif\" are supported. This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted."]
+                    #[doc = "Service that performs image detection and annotation for a batch of files. Now only “application/pdf”, “image/tiff” and “image/gif” are supported. This service will extract at most 5 (customers can specify which 5 in AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each file provided and perform detection and annotation for each image extracted."]
                     pub fn annotate(
                         &self,
                         request : crate :: schemas :: GoogleCloudVisionV1P2Beta1BatchAnnotateFilesRequest,
@@ -23533,12 +23533,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -23703,12 +23703,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -23926,12 +23926,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -24096,12 +24096,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self

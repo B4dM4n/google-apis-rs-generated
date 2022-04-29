@@ -520,7 +520,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Activities {
-        #[doc = "Beach access. The hotel property is in close proximity to a beach and offers a way to get to that beach. This can include a route to the beach such as stairs down if hotel is on a bluff, or a short trail. Not the same as beachfront (with beach access, the hotel's proximity is close to but not right on the beach)."]
+        #[doc = "Beach access. The hotel property is in close proximity to a beach and offers a way to get to that beach. This can include a route to the beach such as stairs down if hotel is on a bluff, or a short trail. Not the same as beachfront (with beach access, the hotel’s proximity is close to but not right on the beach)."]
         #[serde(
             rename = "beachAccess",
             default,
@@ -3145,7 +3145,7 @@ pub mod schemas {
         EcoCertificateUnspecified,
         #[doc = "Eco-Certification Malta Standard."]
         EcoCertificationMalta,
-        #[doc = "Ecotourism Australia's ECO Certification Standard."]
+        #[doc = "Ecotourism Australia’s ECO Certification Standard."]
         EcotourismAustraliasEco,
         #[doc = "GREAT Green Deal Certification."]
         GreatGreenDeal,
@@ -3165,7 +3165,7 @@ pub mod schemas {
         GreenTourismActive,
         #[doc = "Hilton LightStay."]
         HiltonLightstay,
-        #[doc = "Hostelling International's Quality and Sustainability Standard."]
+        #[doc = "Hostelling International’s Quality and Sustainability Standard."]
         HostellingInternationalsQualityAndSustainability,
         #[doc = "Hoteles más Verdes (AHT) Standard."]
         HotelesMasVerdes,
@@ -3179,7 +3179,7 @@ pub mod schemas {
         PreferredByNatureSustainableTourism,
         #[doc = "Sustainable Travel Ireland – GSTC Industry Criteria."]
         SustainableTravelIreland,
-        #[doc = "TOFTigers Initiative's Pug Standard."]
+        #[doc = "TOFTigers Initiative’s Pug Standard."]
         TofTigersInititivesPug,
         #[doc = "Travelife Standard for Hotels & Accommodations."]
         Travelife,
@@ -3377,7 +3377,7 @@ pub mod schemas {
         pub energy_conservation_program_exception: ::std::option::Option<
             crate::schemas::EnergyEfficiencyEnergyConservationProgramException,
         >,
-        #[doc = "Energy efficient heating and cooling systems. The property doesn't use chlorofluorocarbon (CFC)-based refrigerants in heating, ventilating, and air-conditioning systems unless a third-party audit shows it's not economically feasible. The CFC-based refrigerants which are used should have a Global Warming Potential (GWP) ≤ 10. The property uses occupancy sensors on HVAC systems in back-of-house spaces, meeting rooms, and other low-traffic areas."]
+        #[doc = "Energy efficient heating and cooling systems. The property doesn’t use chlorofluorocarbon (CFC)-based refrigerants in heating, ventilating, and air-conditioning systems unless a third-party audit shows it’s not economically feasible. The CFC-based refrigerants which are used should have a Global Warming Potential (GWP) ≤ 10. The property uses occupancy sensors on HVAC systems in back-of-house spaces, meeting rooms, and other low-traffic areas."]
         #[serde(
             rename = "energyEfficientHeatingAndCoolingSystems",
             default,
@@ -3393,7 +3393,7 @@ pub mod schemas {
         pub energy_efficient_heating_and_cooling_systems_exception: ::std::option::Option<
             crate::schemas::EnergyEfficiencyEnergyEfficientHeatingAndCoolingSystemsException,
         >,
-        #[doc = "Energy efficient lighting. At least 75% of the property's lighting is energy efficient, using lighting that is more than 45 lumens per watt – typically LED or CFL lightbulbs."]
+        #[doc = "Energy efficient lighting. At least 75% of the property’s lighting is energy efficient, using lighting that is more than 45 lumens per watt – typically LED or CFL lightbulbs."]
         #[serde(
             rename = "energyEfficientLighting",
             default,
@@ -3423,7 +3423,7 @@ pub mod schemas {
         )]
         pub energy_saving_thermostats_exception:
             ::std::option::Option<crate::schemas::EnergyEfficiencyEnergySavingThermostatsException>,
-        #[doc = "Output only. Green building design. True if BREEAM-* or LEED-* certified."]
+        #[doc = "Output only. Green building design. True if BREEAM-\\* or LEED-\\* certified."]
         #[serde(
             rename = "greenBuildingDesign",
             default,
@@ -5124,7 +5124,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FoodAndDrink {
-        #[doc = "Bar. A designated room, lounge or area of an on-site restaurant with seating at a counter behind which a hotel staffer takes the guest's order and provides the requested alcoholic drink. Can be indoors or outdoors. Also known as Pub."]
+        #[doc = "Bar. A designated room, lounge or area of an on-site restaurant with seating at a counter behind which a hotel staffer takes the guest’s order and provides the requested alcoholic drink. Can be indoors or outdoors. Also known as Pub."]
         #[serde(
             rename = "bar",
             default,
@@ -5212,7 +5212,7 @@ pub mod schemas {
         )]
         pub free_breakfast_exception:
             ::std::option::Option<crate::schemas::FoodAndDrinkFreeBreakfastException>,
-        #[doc = "Restaurant. A business onsite at the hotel that is open to the public as well as guests, and offers meals and beverages to consume at tables or counters. May or may not include table service. Also known as cafe, buffet, eatery. A \"breakfast room\" where the hotel serves breakfast only to guests (not the general public) does not count as a restaurant."]
+        #[doc = "Restaurant. A business onsite at the hotel that is open to the public as well as guests, and offers meals and beverages to consume at tables or counters. May or may not include table service. Also known as cafe, buffet, eatery. A “breakfast room” where the hotel serves breakfast only to guests (not the general public) does not count as a restaurant."]
         #[serde(
             rename = "restaurant",
             default,
@@ -5242,7 +5242,7 @@ pub mod schemas {
         )]
         pub restaurants_count_exception:
             ::std::option::Option<crate::schemas::FoodAndDrinkRestaurantsCountException>,
-        #[doc = "Room service. A hotel staffer delivers meals prepared onsite to a guest's room as per their request. May or may not be available during specific hours. Services should be available to all guests (not based on rate/room booked/reward program, etc)."]
+        #[doc = "Room service. A hotel staffer delivers meals prepared onsite to a guest’s room as per their request. May or may not be available during specific hours. Services should be available to all guests (not based on rate/room booked/reward program, etc)."]
         #[serde(
             rename = "roomService",
             default,
@@ -5257,7 +5257,7 @@ pub mod schemas {
         )]
         pub room_service_exception:
             ::std::option::Option<crate::schemas::FoodAndDrinkRoomServiceException>,
-        #[doc = "Table service. A restaurant in which a staff member is assigned to a guest's table to take their order, deliver and clear away food, and deliver the bill, if applicable. Also known as sit-down restaurant."]
+        #[doc = "Table service. A restaurant in which a staff member is assigned to a guest’s table to take their order, deliver and clear away food, and deliver the bill, if applicable. Also known as sit-down restaurant."]
         #[serde(
             rename = "tableService",
             default,
@@ -6447,7 +6447,7 @@ pub mod schemas {
         pub connecting_unit_available_exception: ::std::option::Option<
             crate::schemas::GuestUnitFeaturesConnectingUnitAvailableException,
         >,
-        #[doc = "Executive floor. A floor of the hotel where the guestrooms are only bookable by members of the hotel's frequent guest membership program. Benefits of this room class include access to a designated lounge which may or may not feature free breakfast, cocktails or other perks specific to members of the program."]
+        #[doc = "Executive floor. A floor of the hotel where the guestrooms are only bookable by members of the hotel’s frequent guest membership program. Benefits of this room class include access to a designated lounge which may or may not feature free breakfast, cocktails or other perks specific to members of the program."]
         #[serde(
             rename = "executiveFloor",
             default,
@@ -6507,7 +6507,7 @@ pub mod schemas {
         )]
         pub max_occupants_count_exception:
             ::std::option::Option<crate::schemas::GuestUnitFeaturesMaxOccupantsCountException>,
-        #[doc = "Private home. A privately owned home (house, townhouse, apartment, cabin, bungalow etc) that may or not serve as the owner's residence, but is rented out in its entirety or by the room(s) to paying guest(s) for vacation stays. Not for lease-based, long-term residency."]
+        #[doc = "Private home. A privately owned home (house, townhouse, apartment, cabin, bungalow etc) that may or not serve as the owner’s residence, but is rented out in its entirety or by the room(s) to paying guest(s) for vacation stays. Not for lease-based, long-term residency."]
         #[serde(
             rename = "privateHome",
             default,
@@ -7560,7 +7560,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub features: ::std::option::Option<crate::schemas::GuestUnitFeatures>,
-        #[doc = "Required. Short, English label or name of the GuestUnitType. Target <50 chars."]
+        #[doc = "Required. Short, English label or name of the GuestUnitType. Target \\<50 chars."]
         #[serde(
             rename = "label",
             default,
@@ -7650,7 +7650,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Housekeeping {
-        #[doc = "Daily housekeeping. Guest units are cleaned by hotel staff daily during guest's stay."]
+        #[doc = "Daily housekeeping. Guest units are cleaned by hotel staff daily during guest’s stay."]
         #[serde(
             rename = "dailyHousekeeping",
             default,
@@ -7665,7 +7665,7 @@ pub mod schemas {
         )]
         pub daily_housekeeping_exception:
             ::std::option::Option<crate::schemas::HousekeepingDailyHousekeepingException>,
-        #[doc = "Housekeeping available. Guest units are cleaned by hotel staff during guest's stay. Schedule may vary from daily, weekly, or specific days of the week."]
+        #[doc = "Housekeeping available. Guest units are cleaned by hotel staff during guest’s stay. Schedule may vary from daily, weekly, or specific days of the week."]
         #[serde(
             rename = "housekeepingAvailable",
             default,
@@ -11558,7 +11558,7 @@ pub mod schemas {
         )]
         pub fireplace_exception:
             ::std::option::Option<crate::schemas::LivingAreaFeaturesFireplaceException>,
-        #[doc = "Hairdryer. A handheld electric appliance that blows temperature-controlled air for the purpose of drying wet hair. Can be mounted to a bathroom wall or a freestanding device stored in the guestroom's bathroom or closet."]
+        #[doc = "Hairdryer. A handheld electric appliance that blows temperature-controlled air for the purpose of drying wet hair. Can be mounted to a bathroom wall or a freestanding device stored in the guestroom’s bathroom or closet."]
         #[serde(
             rename = "hairdryer",
             default,
@@ -11663,7 +11663,7 @@ pub mod schemas {
         )]
         pub private_bathroom_exception:
             ::std::option::Option<crate::schemas::LivingAreaFeaturesPrivateBathroomException>,
-        #[doc = "Shower. A fixed plumbing fixture for standing bathing that features a tall spray spout or faucet through which water flows, a knob or knobs that control the water's temperature, and a drain in the floor."]
+        #[doc = "Shower. A fixed plumbing fixture for standing bathing that features a tall spray spout or faucet through which water flows, a knob or knobs that control the water’s temperature, and a drain in the floor."]
         #[serde(
             rename = "shower",
             default,
@@ -11700,7 +11700,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub tv: ::std::option::Option<bool>,
-        #[doc = "TV casting. A television equipped with a device through which the video entertainment accessed on a personal computer, phone or tablet can be wirelessly delivered to and viewed on the guestroom's television."]
+        #[doc = "TV casting. A television equipped with a device through which the video entertainment accessed on a personal computer, phone or tablet can be wirelessly delivered to and viewed on the guestroom’s television."]
         #[serde(
             rename = "tvCasting",
             default,
@@ -13702,7 +13702,7 @@ pub mod schemas {
         )]
         pub balcony_exception:
             ::std::option::Option<crate::schemas::LivingAreaLayoutBalconyException>,
-        #[doc = "Living area sq meters. The measurement in meters of the area of a guestroom's living space."]
+        #[doc = "Living area sq meters. The measurement in meters of the area of a guestroom’s living space."]
         #[serde(
             rename = "livingAreaSqMeters",
             default,
@@ -14374,7 +14374,7 @@ pub mod schemas {
         )]
         pub cribs_count_exception:
             ::std::option::Option<crate::schemas::LivingAreaSleepingCribsCountException>,
-        #[doc = "Double beds count. The number of medium beds measuring 53\"W x 75\"L (135cm x 191cm). Also known as full size bed."]
+        #[doc = "Double beds count. The number of medium beds measuring 53“W x 75“L (135cm x 191cm). Also known as full size bed."]
         #[serde(
             rename = "doubleBedsCount",
             default,
@@ -14419,7 +14419,7 @@ pub mod schemas {
         )]
         pub hypoallergenic_bedding_exception:
             ::std::option::Option<crate::schemas::LivingAreaSleepingHypoallergenicBeddingException>,
-        #[doc = "King beds count. The number of large beds measuring 76\"W x 80\"L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king."]
+        #[doc = "King beds count. The number of large beds measuring 76“W x 80“L (193cm x 102cm). Most often meant to accompany two people. Includes California king and super king."]
         #[serde(
             rename = "kingBedsCount",
             default,
@@ -14464,7 +14464,7 @@ pub mod schemas {
         )]
         pub other_beds_count_exception:
             ::std::option::Option<crate::schemas::LivingAreaSleepingOtherBedsCountException>,
-        #[doc = "Queen beds count. The number of medium-large beds measuring 60\"W x 80\"L (152cm x 102cm)."]
+        #[doc = "Queen beds count. The number of medium-large beds measuring 60“W x 80“L (152cm x 102cm)."]
         #[serde(
             rename = "queenBedsCount",
             default,
@@ -14494,7 +14494,7 @@ pub mod schemas {
         )]
         pub roll_away_beds_count_exception:
             ::std::option::Option<crate::schemas::LivingAreaSleepingRollAwayBedsCountException>,
-        #[doc = "Single or twin count beds. The number of smaller beds measuring 38\"W x 75\"L (97cm x 191cm) that can accommodate one adult."]
+        #[doc = "Single or twin count beds. The number of smaller beds measuring 38“W x 75“L (97cm x 191cm) that can accommodate one adult."]
         #[serde(
             rename = "singleOrTwinBedsCount",
             default,
@@ -16125,7 +16125,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pools: ::std::option::Option<crate::schemas::Pools>,
-        #[doc = "General factual information about the property's physical structure and important dates."]
+        #[doc = "General factual information about the property’s physical structure and important dates."]
         #[serde(
             rename = "property",
             default,
@@ -17894,7 +17894,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cash_exception: ::std::option::Option<crate::schemas::PaymentOptionsCashException>,
-        #[doc = "Cheque. The hotel accepts a printed document issued by the guest's bank in the guest's name as a form of payment."]
+        #[doc = "Cheque. The hotel accepts a printed document issued by the guest’s bank in the guest’s name as a form of payment."]
         #[serde(
             rename = "cheque",
             default,
@@ -17923,7 +17923,7 @@ pub mod schemas {
         )]
         pub credit_card_exception:
             ::std::option::Option<crate::schemas::PaymentOptionsCreditCardException>,
-        #[doc = "Debit card. The hotel accepts a bank-issued card that immediately deducts the charged funds from the guest's bank account upon processing."]
+        #[doc = "Debit card. The hotel accepts a bank-issued card that immediately deducts the charged funds from the guest’s bank account upon processing."]
         #[serde(
             rename = "debitCard",
             default,
@@ -17938,7 +17938,7 @@ pub mod schemas {
         )]
         pub debit_card_exception:
             ::std::option::Option<crate::schemas::PaymentOptionsDebitCardException>,
-        #[doc = "Mobile nfc. The hotel has the compatible computer hardware terminal that reads and charges a payment app on the guest's smartphone without requiring the two devices to make physical contact. Also known as Apple Pay, Google Pay, Samsung Pay."]
+        #[doc = "Mobile nfc. The hotel has the compatible computer hardware terminal that reads and charges a payment app on the guest’s smartphone without requiring the two devices to make physical contact. Also known as Apple Pay, Google Pay, Samsung Pay."]
         #[serde(
             rename = "mobileNfc",
             default,
@@ -19985,7 +19985,7 @@ pub mod schemas {
         )]
         pub checkin_time_exception:
             ::std::option::Option<crate::schemas::PoliciesCheckinTimeException>,
-        #[doc = "Check-out time. The time of the day on the last day of a guest's reserved stay at which the guest must vacate their room and settle their bill. Some hotels may offer late or early check out for a fee."]
+        #[doc = "Check-out time. The time of the day on the last day of a guest’s reserved stay at which the guest must vacate their room and settle their bill. Some hotels may offer late or early check out for a fee."]
         #[serde(
             rename = "checkoutTime",
             default,
@@ -20000,7 +20000,7 @@ pub mod schemas {
         )]
         pub checkout_time_exception:
             ::std::option::Option<crate::schemas::PoliciesCheckoutTimeException>,
-        #[doc = "Kids stay free. The children of guests are allowed to stay in the room/suite of a parent or adult without an additional fee. The policy may or may not stipulate a limit of the child's age or the overall number of children allowed."]
+        #[doc = "Kids stay free. The children of guests are allowed to stay in the room/suite of a parent or adult without an additional fee. The policy may or may not stipulate a limit of the child’s age or the overall number of children allowed."]
         #[serde(
             rename = "kidsStayFree",
             default,
@@ -20846,7 +20846,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lazy_river_exception: ::std::option::Option<crate::schemas::PoolsLazyRiverException>,
-        #[doc = "Lifeguard. A trained member of the hotel staff stationed by the hotel's indoor or outdoor swimming area and responsible for the safety of swimming guests."]
+        #[doc = "Lifeguard. A trained member of the hotel staff stationed by the hotel’s indoor or outdoor swimming area and responsible for the safety of swimming guests."]
         #[serde(
             rename = "lifeguard",
             default,
@@ -20960,7 +20960,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub waterslide_exception: ::std::option::Option<crate::schemas::PoolsWaterslideException>,
-        #[doc = "Wave pool. A large indoor or outdoor pool with a machine that produces water currents to mimic the ocean's crests."]
+        #[doc = "Wave pool. A large indoor or outdoor pool with a machine that produces water currents to mimic the ocean’s crests."]
         #[serde(
             rename = "wavePool",
             default,
@@ -22589,7 +22589,7 @@ pub mod schemas {
         )]
         pub convenience_store_exception:
             ::std::option::Option<crate::schemas::ServicesConvenienceStoreException>,
-        #[doc = "Currency exchange. A staff member or automated machine tasked with the transaction of providing the native currency of the hotel's locale in exchange for the foreign currency provided by a guest."]
+        #[doc = "Currency exchange. A staff member or automated machine tasked with the transaction of providing the native currency of the hotel’s locale in exchange for the foreign currency provided by a guest."]
         #[serde(
             rename = "currencyExchange",
             default,
@@ -24441,7 +24441,7 @@ pub mod schemas {
         pub responsible_purchasing_policy_exception: ::std::option::Option<
             crate::schemas::SustainableSourcingResponsiblePurchasingPolicyException,
         >,
-        #[doc = "Responsibly sources seafood. The property does not source seafood from the Monterey Bay Aquarium Seafood Watch \"avoid\" list, and must sustainably source seafood listed as \"good alternative,\" \"eco-certified,\" and \"best choice\". The property has a policy outlining a commitment to source Marine Stewardship Council (MSC) and/or Aquaculture Stewardship Council (ASC) Chain of Custody certified seafood."]
+        #[doc = "Responsibly sources seafood. The property does not source seafood from the Monterey Bay Aquarium Seafood Watch “avoid” list, and must sustainably source seafood listed as “good alternative,” “eco-certified,” and “best choice”. The property has a policy outlining a commitment to source Marine Stewardship Council (MSC) and/or Aquaculture Stewardship Council (ASC) Chain of Custody certified seafood."]
         #[serde(
             rename = "responsiblySourcesSeafood",
             default,
@@ -25358,7 +25358,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimeOfDay {
-        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time."]
+        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
@@ -25410,7 +25410,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Transportation {
-        #[doc = "Airport shuttle. The hotel provides guests with a chauffeured van or bus to and from the airport. Can be free or for a fee. Guests may share the vehicle with other guests unknown to them. Applies if the hotel has a third-party shuttle service (office/desk etc.) within the hotel. As long as hotel provides this service, it doesn't matter if it's directly with them or a third party they work with. Does not apply if guest has to coordinate with an entity outside/other than the hotel."]
+        #[doc = "Airport shuttle. The hotel provides guests with a chauffeured van or bus to and from the airport. Can be free or for a fee. Guests may share the vehicle with other guests unknown to them. Applies if the hotel has a third-party shuttle service (office/desk etc.) within the hotel. As long as hotel provides this service, it doesn’t matter if it’s directly with them or a third party they work with. Does not apply if guest has to coordinate with an entity outside/other than the hotel."]
         #[serde(
             rename = "airportShuttle",
             default,
@@ -26318,7 +26318,7 @@ pub mod schemas {
         )]
         pub ocean_view_exception:
             ::std::option::Option<crate::schemas::ViewsFromUnitOceanViewException>,
-        #[doc = "Pool view. A guestroom that features a window through which guests can see the hotel's swimming pool."]
+        #[doc = "Pool view. A guestroom that features a window through which guests can see the hotel’s swimming pool."]
         #[serde(
             rename = "poolView",
             default,
@@ -27221,7 +27221,7 @@ pub mod schemas {
         )]
         pub safely_disposes_lightbulbs_exception:
             ::std::option::Option<crate::schemas::WasteReductionSafelyDisposesLightbulbsException>,
-        #[doc = "Safely handles hazardous substances. The property has a hazardous waste management program aligned wit GreenSeal and LEED requirements, and meets all regulatory requirements for hazardous waste disposal and recycling. Hazardous means substances that are classified as \"hazardous\" by an authoritative body (such as OSHA or DOT), are labeled with signal words such as \"Danger,\" \"Caution,\" \"Warning,\" or are flammable, corrosive, or ignitable. Requirements include: - The property shall maintain records of the efforts it has made to replace the hazardous substances it uses with less hazardous alternatives. - An inventory of the hazardous materials stored on-site. - Products intended for cleaning, dishwashing, laundry, and pool maintenance shall be stored in clearly labeled containers. These containers shall be checked regularly for leaks, and replaced a necessary. - Spill containment devices shall be installed to collect spills, drips, or leaching of chemicals."]
+        #[doc = "Safely handles hazardous substances. The property has a hazardous waste management program aligned wit GreenSeal and LEED requirements, and meets all regulatory requirements for hazardous waste disposal and recycling. Hazardous means substances that are classified as “hazardous” by an authoritative body (such as OSHA or DOT), are labeled with signal words such as “Danger,” “Caution,” “Warning,” or are flammable, corrosive, or ignitable. Requirements include: - The property shall maintain records of the efforts it has made to replace the hazardous substances it uses with less hazardous alternatives. - An inventory of the hazardous materials stored on-site. - Products intended for cleaning, dishwashing, laundry, and pool maintenance shall be stored in clearly labeled containers. These containers shall be checked regularly for leaks, and replaced a necessary. - Spill containment devices shall be installed to collect spills, drips, or leaching of chemicals."]
         #[serde(
             rename = "safelyHandlesHazardousSubstances",
             default,
@@ -29050,7 +29050,7 @@ pub mod schemas {
         )]
         pub towel_reuse_program_exception:
             ::std::option::Option<crate::schemas::WaterConservationTowelReuseProgramException>,
-        #[doc = "Water saving showers. All of the property's guest rooms have shower heads that use no more than 2.0 gallons per minute (gpm)."]
+        #[doc = "Water saving showers. All of the property’s guest rooms have shower heads that use no more than 2.0 gallons per minute (gpm)."]
         #[serde(
             rename = "waterSavingShowers",
             default,
@@ -29065,7 +29065,7 @@ pub mod schemas {
         )]
         pub water_saving_showers_exception:
             ::std::option::Option<crate::schemas::WaterConservationWaterSavingShowersException>,
-        #[doc = "Water saving sinks. All of the property's guest rooms have bathroom faucets that use a maximum of 1.5 gallons per minute (gpm), public restroom faucets do not exceed 0.5 gpm, and kitchen faucets (excluding faucets used exclusively for filling operations) do not exceed 2.2 gpm."]
+        #[doc = "Water saving sinks. All of the property’s guest rooms have bathroom faucets that use a maximum of 1.5 gallons per minute (gpm), public restroom faucets do not exceed 0.5 gpm, and kitchen faucets (excluding faucets used exclusively for filling operations) do not exceed 2.2 gpm."]
         #[serde(
             rename = "waterSavingSinks",
             default,
@@ -29080,7 +29080,7 @@ pub mod schemas {
         )]
         pub water_saving_sinks_exception:
             ::std::option::Option<crate::schemas::WaterConservationWaterSavingSinksException>,
-        #[doc = "Water saving toilets. All of the property's toilets use 1.6 gallons per flush, or less."]
+        #[doc = "Water saving toilets. All of the property’s toilets use 1.6 gallons per flush, or less."]
         #[serde(
             rename = "waterSavingToilets",
             default,
@@ -29801,7 +29801,7 @@ pub mod schemas {
         )]
         pub free_weights_exception:
             ::std::option::Option<crate::schemas::WellnessFreeWeightsException>,
-        #[doc = "Massage. A service provided by a trained massage therapist involving the physical manipulation of a guest's muscles in order to achieve relaxation or pain relief."]
+        #[doc = "Massage. A service provided by a trained massage therapist involving the physical manipulation of a guest’s muscles in order to achieve relaxation or pain relief."]
         #[serde(
             rename = "massage",
             default,
@@ -31065,7 +31065,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> GetLodgingRequestBuilder<'a> {
-            #[doc = "Required. The specific fields to return. Use \"*\" to include all fields. Repeated field items cannot be individually specified."]
+            #[doc = "Required. The specific fields to return. Use “\\*” to include all fields. Repeated field items cannot be individually specified."]
             pub fn read_mask(mut self, value: impl Into<String>) -> Self {
                 self.read_mask = Some(value.into());
                 self
@@ -31100,12 +31100,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31233,7 +31233,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> UpdateLodgingRequestBuilder<'a> {
-            #[doc = "Required. The specific fields to update. Use \"*\" to update all fields, which may include unsetting empty fields in the request. Repeated field items cannot be individually updated."]
+            #[doc = "Required. The specific fields to update. Use “\\*” to update all fields, which may include unsetting empty fields in the request. Repeated field items cannot be individually updated."]
             pub fn update_mask(mut self, value: impl Into<String>) -> Self {
                 self.update_mask = Some(value.into());
                 self
@@ -31268,12 +31268,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -31435,7 +31435,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetGoogleUpdatedRequestBuilder<'a> {
-                #[doc = "Required. The specific fields to return. Use \"*\" to include all fields. Repeated field items cannot be individually specified."]
+                #[doc = "Required. The specific fields to return. Use “\\*” to include all fields. Repeated field items cannot be individually specified."]
                 pub fn read_mask(mut self, value: impl Into<String>) -> Self {
                     self.read_mask = Some(value.into());
                     self
@@ -31470,12 +31470,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

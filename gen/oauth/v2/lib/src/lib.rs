@@ -94,28 +94,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Userinfo {
-        #[doc = "The user's email address."]
+        #[doc = "The user’s email address."]
         #[serde(
             rename = "email",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub email: ::std::option::Option<String>,
-        #[doc = "The user's last name."]
+        #[doc = "The user’s last name."]
         #[serde(
             rename = "family_name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub family_name: ::std::option::Option<String>,
-        #[doc = "The user's gender."]
+        #[doc = "The user’s gender."]
         #[serde(
             rename = "gender",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub gender: ::std::option::Option<String>,
-        #[doc = "The user's first name."]
+        #[doc = "The user’s first name."]
         #[serde(
             rename = "given_name",
             default,
@@ -143,28 +143,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub link: ::std::option::Option<String>,
-        #[doc = "The user's preferred locale."]
+        #[doc = "The user’s preferred locale."]
         #[serde(
             rename = "locale",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub locale: ::std::option::Option<String>,
-        #[doc = "The user's full name."]
+        #[doc = "The user’s full name."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "URL of the user's picture image."]
+        #[doc = "URL of the user’s picture image."]
         #[serde(
             rename = "picture",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub picture: ::std::option::Option<String>,
-        #[doc = "Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address."]
+        #[doc = "Boolean flag which is true if the email address is verified. Always verified because we only return the user’s primary email address."]
         #[serde(
             rename = "verified_email",
             default,

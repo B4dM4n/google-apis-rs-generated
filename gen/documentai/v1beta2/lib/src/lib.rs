@@ -2090,7 +2090,7 @@ pub mod schemas {
         )]
         pub human_review_status:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1HumanReviewStatus>,
-        #[doc = "The source of the document, same as the [input_gcs_source] field in the request when the batch process started. The batch process is started by take snapshot of that document, since a user can move or change that document during the process."]
+        #[doc = "The source of the document, same as the \\[input_gcs_source\\] field in the request when the batch process started. The batch process is started by take snapshot of that document, since a user can move or change that document during the process."]
         #[serde(
             rename = "inputGcsSource",
             default,
@@ -2291,7 +2291,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "Placeholder. A list of text corrections made to [Document.text]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
+        #[doc = "Placeholder. A list of text corrections made to \\[Document.text\\]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
         #[serde(
             rename = "textChanges",
             default,
@@ -2330,7 +2330,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta1DocumentEntity {
-        #[doc = "Optional. Confidence of detected Schema entity. Range [0, 1]."]
+        #[doc = "Optional. Confidence of detected Schema entity. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2358,7 +2358,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_text: ::std::option::Option<String>,
-        #[doc = "Optional. This attribute indicates that the processing didn't actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
+        #[doc = "Optional. This attribute indicates that the processing didn’t actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
         #[serde(
             rename = "nonPresent",
             default,
@@ -2732,7 +2732,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1BoundingPoly>,
-        #[doc = "Optional. Confidence of detected page element, if applicable. Range [0, 1]."]
+        #[doc = "Optional. Confidence of detected page element, if applicable. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -2902,14 +2902,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta1DocumentPageDetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -3027,7 +3027,7 @@ pub mod schemas {
         pub value_detected_languages: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta1DocumentPageDetectedLanguage>,
         >,
-        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - \"unfilled_checkbox\" - \"filled_checkbox\""]
+        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - “unfilled_checkbox” - “filled_checkbox”"]
         #[serde(
             rename = "valueType",
             default,
@@ -3109,7 +3109,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1BoundingPoly>,
-        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range [0, 1]."]
+        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -3928,7 +3928,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "The index of the index into current revision's parent_ids list."]
+        #[doc = "The index of the index into current revision’s parent_ids list."]
         #[serde(
             rename = "revision",
             default,
@@ -4648,7 +4648,7 @@ pub mod schemas {
         )]
         pub gcs_destination:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta1GcsDestination>,
-        #[doc = "The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json"]
+        #[doc = "The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json"]
         #[serde(
             rename = "pagesPerShard",
             default,
@@ -4954,7 +4954,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub text: ::std::option::Option<String>,
-        #[doc = "Placeholder. A list of text corrections made to [Document.text]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
+        #[doc = "Placeholder. A list of text corrections made to \\[Document.text\\]. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other."]
         #[serde(
             rename = "textChanges",
             default,
@@ -4993,7 +4993,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta2DocumentEntity {
-        #[doc = "Optional. Confidence of detected Schema entity. Range [0, 1]."]
+        #[doc = "Optional. Confidence of detected Schema entity. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -5021,7 +5021,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mention_text: ::std::option::Option<String>,
-        #[doc = "Optional. This attribute indicates that the processing didn't actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
+        #[doc = "Optional. This attribute indicates that the processing didn’t actually identify this entity, but a confidence score was assigned that represent the potential that this could be a false negative. A non-present entity should have an empty mention_text and text_anchor."]
         #[serde(
             rename = "nonPresent",
             default,
@@ -5431,7 +5431,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2BoundingPoly>,
-        #[doc = "Optional. Confidence of detected page element, if applicable. Range [0, 1]."]
+        #[doc = "Optional. Confidence of detected page element, if applicable. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -5601,14 +5601,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta2DocumentPageDetectedLanguage {
-        #[doc = "Confidence of detected language. Range [0, 1]."]
+        #[doc = "Confidence of detected language. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub confidence: ::std::option::Option<f32>,
-        #[doc = "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
+        #[doc = "The BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier."]
         #[serde(
             rename = "languageCode",
             default,
@@ -5726,7 +5726,7 @@ pub mod schemas {
         pub value_detected_languages: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta2DocumentPageDetectedLanguage>,
         >,
-        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - \"unfilled_checkbox\" - \"filled_checkbox\""]
+        #[doc = "If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - “unfilled_checkbox” - “filled_checkbox”"]
         #[serde(
             rename = "valueType",
             default,
@@ -5808,7 +5808,7 @@ pub mod schemas {
         )]
         pub bounding_poly:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2BoundingPoly>,
-        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range [0, 1]."]
+        #[doc = "Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range \\[0, 1\\]."]
         #[serde(
             rename = "confidence",
             default,
@@ -6627,7 +6627,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub index: ::std::option::Option<i32>,
-        #[doc = "The index of the index into current revision's parent_ids list."]
+        #[doc = "The index of the index into current revision’s parent_ids list."]
         #[serde(
             rename = "revision",
             default,
@@ -7060,7 +7060,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub enabled: ::std::option::Option<bool>,
-        #[doc = "Model version of the entity extraction. Default is \"builtin/stable\". Specify \"builtin/latest\" for the latest model."]
+        #[doc = "Model version of the entity extraction. Default is “builtin/stable”. Specify “builtin/latest” for the latest model."]
         #[serde(
             rename = "modelVersion",
             default,
@@ -7107,7 +7107,7 @@ pub mod schemas {
         pub key_value_pair_hints: ::std::option::Option<
             Vec<crate::schemas::GoogleCloudDocumentaiV1Beta2KeyValuePairHint>,
         >,
-        #[doc = "Model version of the form extraction system. Default is \"builtin/stable\". Specify \"builtin/latest\" for the latest model. For custom form models, specify: \"custom/{model_name}\". Model name format is \"bucket_name/path/to/modeldir\" corresponding to \"gs://bucket_name/path/to/modeldir\" where annotated examples are stored."]
+        #[doc = "Model version of the form extraction system. Default is “builtin/stable”. Specify “builtin/latest” for the latest model. For custom form models, specify: “custom/{model_name}”. Model name format is “bucket_name/path/to/modeldir” corresponding to “gs://bucket_name/path/to/modeldir” where annotated examples are stored."]
         #[serde(
             rename = "modelVersion",
             default,
@@ -7508,7 +7508,7 @@ pub mod schemas {
         )]
         pub gcs_destination:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2GcsDestination>,
-        #[doc = "The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json"]
+        #[doc = "The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is \\[1, 100\\]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json"]
         #[serde(
             rename = "pagesPerShard",
             default,
@@ -7538,7 +7538,7 @@ pub mod schemas {
         )]
         pub automl_params:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta2AutoMlParams>,
-        #[doc = "Specifies a known document type for deeper structure detection. Valid values are currently \"general\" and \"invoice\". If not provided, \"general\"\\ is used as default. If any other value is given, the request is rejected."]
+        #[doc = "Specifies a known document type for deeper structure detection. Valid values are currently “general” and “invoice”. If not provided, “general”\\\\ is used as default. If any other value is given, the request is rejected."]
         #[serde(
             rename = "documentType",
             default,
@@ -7659,7 +7659,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta2TableBoundHint {
-        #[doc = "Bounding box hint for a table on this page. The coordinates must be normalized to [0,1] and the bounding box must be an axis-aligned rectangle."]
+        #[doc = "Bounding box hint for a table on this page. The coordinates must be normalized to \\[0,1\\] and the bounding box must be an axis-aligned rectangle."]
         #[serde(
             rename = "boundingBox",
             default,
@@ -7703,7 +7703,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub header_hints: ::std::option::Option<Vec<String>>,
-        #[doc = "Model version of the table extraction system. Default is \"builtin/stable\". Specify \"builtin/latest\" for the latest model."]
+        #[doc = "Model version of the table extraction system. Default is “builtin/stable”. Specify “builtin/latest” for the latest model."]
         #[serde(
             rename = "modelVersion",
             default,
@@ -7905,7 +7905,7 @@ pub mod schemas {
         )]
         pub human_review_status:
             ::std::option::Option<crate::schemas::GoogleCloudDocumentaiV1Beta3HumanReviewStatus>,
-        #[doc = "The source of the document, same as the [input_gcs_source] field in the request when the batch process started. The batch process is started by take snapshot of that document, since a user can move or change that document during the process."]
+        #[doc = "The source of the document, same as the \\[input_gcs_source\\] field in the request when the batch process started. The batch process is started by take snapshot of that document, since a user can move or change that document during the process."]
         #[serde(
             rename = "inputGcsSource",
             default,
@@ -8410,7 +8410,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1Beta3HumanReviewStatus {
-        #[doc = "The name of the operation triggered by the processed document. This field is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has the same response type and metadata as the long running operation returned by [ReviewDocument] method."]
+        #[doc = "The name of the operation triggered by the processed document. This field is populated only when the \\[state\\] is \\[HUMAN_REVIEW_IN_PROGRESS\\]. It has the same response type and metadata as the long running operation returned by \\[ReviewDocument\\] method."]
         #[serde(
             rename = "humanReviewOperation",
             default,
@@ -8446,7 +8446,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDocumentaiV1Beta3HumanReviewStatusState {
-        #[doc = "Some error happened during triggering human review, see the [state_message] for details."]
+        #[doc = "Some error happened during triggering human review, see the \\[state_message\\] for details."]
         Error,
         #[doc = "Human review validation is triggered and the document is under review."]
         InProgress,
@@ -9275,7 +9275,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleCloudDocumentaiV1HumanReviewStatus {
-        #[doc = "The name of the operation triggered by the processed document. This field is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has the same response type and metadata as the long running operation returned by [ReviewDocument] method."]
+        #[doc = "The name of the operation triggered by the processed document. This field is populated only when the \\[state\\] is \\[HUMAN_REVIEW_IN_PROGRESS\\]. It has the same response type and metadata as the long running operation returned by \\[ReviewDocument\\] method."]
         #[serde(
             rename = "humanReviewOperation",
             default,
@@ -9310,7 +9310,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum GoogleCloudDocumentaiV1HumanReviewStatusState {
-        #[doc = "Some error happened during triggering human review, see the [state_message] for details."]
+        #[doc = "Some error happened during triggering human review, see the \\[state_message\\] for details."]
         Error,
         #[doc = "Human review validation is triggered and the document is under review."]
         InProgress,
@@ -9730,21 +9730,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub alpha: ::std::option::Option<f32>,
-        #[doc = "The amount of blue in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of blue in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "blue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub blue: ::std::option::Option<f32>,
-        #[doc = "The amount of green in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of green in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "green",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub green: ::std::option::Option<f32>,
-        #[doc = "The amount of red in the color as a value in the interval [0, 1]."]
+        #[doc = "The amount of red in the color as a value in the interval \\[0, 1\\]."]
         #[serde(
             rename = "red",
             default,
@@ -9775,7 +9775,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeDate {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -9827,7 +9827,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub day: ::std::option::Option<i32>,
-        #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time."]
+        #[doc = "Required. Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
@@ -9953,21 +9953,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypePostalAddress {
-        #[doc = "Unstructured address lines describing the lower levels of an address. Because values in address_lines do not have type information and may sometimes contain multiple values in a single field (e.g. \"Austin, TX\"), it is important that the line order is clear. The order of address lines should be \"envelope order\" for the country/region of the address. In places where this can vary (e.g. Japan), address_language is used to make it explicit (e.g. \"ja\" for large-to-small ordering and \"ja-Latn\" or \"en\" for small-to-large). This way, the most specific line of an address can be selected based on the language. The minimum permitted structural representation of an address consists of a region_code with all remaining information placed in the address_lines. It would be possible to format such an address very approximately without geocoding, but no semantic reasoning could be made about any of the address components until it was at least partially resolved. Creating an address only containing a region_code and address_lines, and then geocoding is the recommended way to handle completely unstructured addresses (as opposed to guessing which parts of the address should be localities or administrative areas)."]
+        #[doc = "Unstructured address lines describing the lower levels of an address. Because values in address_lines do not have type information and may sometimes contain multiple values in a single field (e.g. “Austin, TX”), it is important that the line order is clear. The order of address lines should be “envelope order” for the country/region of the address. In places where this can vary (e.g. Japan), address_language is used to make it explicit (e.g. “ja” for large-to-small ordering and “ja-Latn” or “en” for small-to-large). This way, the most specific line of an address can be selected based on the language. The minimum permitted structural representation of an address consists of a region_code with all remaining information placed in the address_lines. It would be possible to format such an address very approximately without geocoding, but no semantic reasoning could be made about any of the address components until it was at least partially resolved. Creating an address only containing a region_code and address_lines, and then geocoding is the recommended way to handle completely unstructured addresses (as opposed to guessing which parts of the address should be localities or administrative areas)."]
         #[serde(
             rename = "addressLines",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address_lines: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. Highest administrative subdivision which is used for postal addresses of a country or region. For example, this can be a state, a province, an oblast, or a prefecture. Specifically, for Spain this is the province and not the autonomous community (e.g. \"Barcelona\" and not \"Catalonia\"). Many countries don't use an administrative area in postal addresses. E.g. in Switzerland this should be left unpopulated."]
+        #[doc = "Optional. Highest administrative subdivision which is used for postal addresses of a country or region. For example, this can be a state, a province, an oblast, or a prefecture. Specifically, for Spain this is the province and not the autonomous community (e.g. “Barcelona” and not “Catalonia”). Many countries don’t use an administrative area in postal addresses. E.g. in Switzerland this should be left unpopulated."]
         #[serde(
             rename = "administrativeArea",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub administrative_area: ::std::option::Option<String>,
-        #[doc = "Optional. BCP-47 language code of the contents of this address (if known). This is often the UI language of the input form or is expected to match one of the languages used in the address' country/region, or their transliterated equivalents. This can affect formatting in certain countries, but is not critical to the correctness of the data and will never affect any validation or other non-formatting related operations. If this value is not known, it should be omitted (rather than specifying a possibly incorrect default). Examples: \"zh-Hant\", \"ja\", \"ja-Latn\", \"en\"."]
+        #[doc = "Optional. BCP-47 language code of the contents of this address (if known). This is often the UI language of the input form or is expected to match one of the languages used in the address’ country/region, or their transliterated equivalents. This can affect formatting in certain countries, but is not critical to the correctness of the data and will never affect any validation or other non-formatting related operations. If this value is not known, it should be omitted (rather than specifying a possibly incorrect default). Examples: “zh-Hant”, “ja”, “ja-Latn”, “en”."]
         #[serde(
             rename = "languageCode",
             default,
@@ -9995,14 +9995,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code: ::std::option::Option<String>,
-        #[doc = "Optional. The recipient at the address. This field may, under certain circumstances, contain multiline information. For example, it might contain \"care of\" information."]
+        #[doc = "Optional. The recipient at the address. This field may, under certain circumstances, contain multiline information. For example, it might contain “care of” information."]
         #[serde(
             rename = "recipients",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recipients: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
+        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: “CH” for Switzerland."]
         #[serde(
             rename = "regionCode",
             default,
@@ -10016,7 +10016,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub revision: ::std::option::Option<i32>,
-        #[doc = "Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like \"CEDEX\", optionally followed by a number (e.g. \"CEDEX 7\"), or just a number alone, representing the \"sector code\" (Jamaica), \"delivery area indicator\" (Malawi) or \"post office indicator\" (e.g. Côte d'Ivoire)."]
+        #[doc = "Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like “CEDEX”, optionally followed by a number (e.g. “CEDEX 7”), or just a number alone, representing the “sector code” (Jamaica), “delivery area indicator” (Malawi) or “post office indicator” (e.g. Côte d’Ivoire)."]
         #[serde(
             rename = "sortingCode",
             default,
@@ -10054,14 +10054,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleTypeTimeZone {
-        #[doc = "IANA Time Zone Database time zone, e.g. \"America/New_York\"."]
+        #[doc = "IANA Time Zone Database time zone, e.g. “America/New_York”."]
         #[serde(
             rename = "id",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "Optional. IANA Time Zone Database version number, e.g. \"2019a\"."]
+        #[doc = "Optional. IANA Time Zone Database version number, e.g. “2019a”."]
         #[serde(
             rename = "version",
             default,
@@ -10303,7 +10303,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format."]
+                #[doc = "LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the \\[Document\\] format."]
                 pub fn batch_process(
                     &self,
                     request : crate :: schemas :: GoogleCloudDocumentaiV1Beta2BatchProcessDocumentsRequest,
@@ -10402,12 +10402,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10567,12 +10567,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10724,7 +10724,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format."]
+                    #[doc = "LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the \\[Document\\] format."]
                     pub fn batch_process(
                         &self,
                         request : crate :: schemas :: GoogleCloudDocumentaiV1Beta2BatchProcessDocumentsRequest,
@@ -10824,12 +10824,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -10989,12 +10989,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -11184,12 +11184,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -11378,12 +11378,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

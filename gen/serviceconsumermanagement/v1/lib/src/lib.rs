@@ -58,7 +58,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mixins: ::std::option::Option<Vec<crate::schemas::Mixin>>,
-        #[doc = "The fully qualified name of this interface, including package name followed by the interface's simple name."]
+        #[doc = "The fully qualified name of this interface, including package name followed by the interface’s simple name."]
         #[serde(
             rename = "name",
             default,
@@ -233,7 +233,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub external_resource: ::std::option::Option<String>,
-        #[doc = "When attaching a reserved project already in tenancy units, this is the tag of a tenant resource under the tenancy unit for the managed service's service producer project. The reserved tenant resource must be in an active state."]
+        #[doc = "When attaching a reserved project already in tenancy units, this is the tag of a tenant resource under the tenancy unit for the managed service’s service producer project. The reserved tenant resource must be in an active state."]
         #[serde(
             rename = "reservedResource",
             default,
@@ -271,7 +271,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AuthProvider {
-        #[doc = "The list of JWT [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3). that are allowed to access. A JWT containing any of these audiences will be accepted. When this setting is absent, JWTs with audiences: - \"https://[service.name]/[google.protobuf.Api.name]\" - \"https://[service.name]/\" will be accepted. For example, if no audiences are in the setting, LibraryService API will accept JWTs with the following audiences: - https://library-example.googleapis.com/google.example.library.v1.LibraryService - https://library-example.googleapis.com/ Example: audiences: bookstore_android.apps.googleusercontent.com, bookstore_web.apps.googleusercontent.com"]
+        #[doc = "The list of JWT [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3). that are allowed to access. A JWT containing any of these audiences will be accepted. When this setting is absent, JWTs with audiences: - “https://\\[service.name\\]/\\[google.protobuf.Api.name\\]” - “https://\\[service.name\\]/” will be accepted. For example, if no audiences are in the setting, LibraryService API will accept JWTs with the following audiences: - https://library-example.googleapis.com/google.example.library.v1.LibraryService - https://library-example.googleapis.com/ Example: audiences: bookstore_android.apps.googleusercontent.com, bookstore_web.apps.googleusercontent.com"]
         #[serde(
             rename = "audiences",
             default,
@@ -285,7 +285,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub authorization_url: ::std::option::Option<String>,
-        #[doc = "The unique identifier of the auth provider. It will be referred to by `AuthRequirement.provider_id`. Example: \"bookstore_auth\"."]
+        #[doc = "The unique identifier of the auth provider. It will be referred to by `AuthRequirement.provider_id`. Example: “bookstore_auth”."]
         #[serde(
             rename = "id",
             default,
@@ -299,14 +299,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub issuer: ::std::option::Option<String>,
-        #[doc = "URL of the provider's public key set to validate signature of the JWT. See [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata). Optional if the key set document: - can be retrieved from [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) of the issuer. - can be inferred from the email domain of the issuer (e.g. a Google service account). Example: https://www.googleapis.com/oauth2/v1/certs"]
+        #[doc = "URL of the provider’s public key set to validate signature of the JWT. See [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata). Optional if the key set document: - can be retrieved from [OpenID Discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) of the issuer. - can be inferred from the email domain of the issuer (e.g. a Google service account). Example: https://www.googleapis.com/oauth2/v1/certs"]
         #[serde(
             rename = "jwksUri",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub jwks_uri: ::std::option::Option<String>,
-        #[doc = "Defines the locations to extract the JWT. For now it is only used by the Cloud Endpoints to store the OpenAPI extension [x-google-jwt-locations] (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations) JWT locations can be one of HTTP headers, URL query parameters or cookies. The rule is that the first match wins. If not specified, default to use following 3 locations: 1) Authorization: Bearer 2) x-goog-iap-jwt-assertion 3) access_token query parameter Default locations can be specified as followings: jwt_locations: - header: Authorization value_prefix: \"Bearer \" - header: x-goog-iap-jwt-assertion - query: access_token"]
+        #[doc = "Defines the locations to extract the JWT. For now it is only used by the Cloud Endpoints to store the OpenAPI extension \\[x-google-jwt-locations\\] (https://cloud.google.com/endpoints/docs/openapi/openapi-extensions#x-google-jwt-locations) JWT locations can be one of HTTP headers, URL query parameters or cookies. The rule is that the first match wins. If not specified, default to use following 3 locations: 1) Authorization: Bearer 2) x-goog-iap-jwt-assertion 3) access_token query parameter Default locations can be specified as followings: jwt_locations: - header: Authorization value_prefix: “Bearer “ - header: x-goog-iap-jwt-assertion - query: access_token"]
         #[serde(
             rename = "jwtLocations",
             default,
@@ -337,7 +337,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct AuthRequirement {
-        #[doc = "NOTE: This will be deprecated soon, once AuthProvider.audiences is implemented and accepted in all the runtime components. The list of JWT [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3). that are allowed to access. A JWT containing any of these audiences will be accepted. When this setting is absent, only JWTs with audience \"https://Service_name/API_name\" will be accepted. For example, if no audiences are in the setting, LibraryService API will only accept JWTs with the following audience \"https://library-example.googleapis.com/google.example.library.v1.LibraryService\". Example: audiences: bookstore_android.apps.googleusercontent.com, bookstore_web.apps.googleusercontent.com"]
+        #[doc = "NOTE: This will be deprecated soon, once AuthProvider.audiences is implemented and accepted in all the runtime components. The list of JWT [audiences](https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32#section-4.1.3). that are allowed to access. A JWT containing any of these audiences will be accepted. When this setting is absent, only JWTs with audience “https://Service_name/API_name” will be accepted. For example, if no audiences are in the setting, LibraryService API will only accept JWTs with the following audience “https://library-example.googleapis.com/google.example.library.v1.LibraryService”. Example: audiences: bookstore_android.apps.googleusercontent.com, bookstore_web.apps.googleusercontent.com"]
         #[serde(
             rename = "audiences",
             default,
@@ -382,7 +382,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub providers: ::std::option::Option<Vec<crate::schemas::AuthProvider>>,
-        #[doc = "A list of authentication rules that apply to individual API methods. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "A list of authentication rules that apply to individual API methods. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -456,7 +456,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Backend {
-        #[doc = "A list of API backend rules that apply to individual API methods. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "A list of API backend rules that apply to individual API methods. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -492,14 +492,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deadline: ::std::option::Option<f64>,
-        #[doc = "When disable_auth is true, a JWT ID token won't be generated and the original \"Authorization\" HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header."]
+        #[doc = "When disable_auth is true, a JWT ID token won’t be generated and the original “Authorization” HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header."]
         #[serde(
             rename = "disableAuth",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_auth: ::std::option::Option<bool>,
-        #[doc = "The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP \"authorization\" header, and sent to the backend."]
+        #[doc = "The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP “authorization” header, and sent to the backend."]
         #[serde(
             rename = "jwtAudience",
             default,
@@ -519,7 +519,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path_translation: ::std::option::Option<crate::schemas::BackendRulePathTranslation>,
-        #[doc = "The protocol used for sending a request to the backend. The supported values are \"http/1.1\" and \"h2\". The default value is inferred from the scheme in the address field: SCHEME PROTOCOL http:// http/1.1 https:// http/1.1 grpc:// h2 grpcs:// h2 For secure HTTP backends (https://) that support HTTP/2, set this field to \"h2\" for improved performance. Configuring this field to non-default values is only supported for secure HTTP backends. This field will be ignored for all other backends. See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for more details on the supported values."]
+        #[doc = "The protocol used for sending a request to the backend. The supported values are “http/1.1” and “h2”. The default value is inferred from the scheme in the address field: SCHEME PROTOCOL http:// http/1.1 https:// http/1.1 grpc:// h2 grpcs:// h2 For secure HTTP backends (https://) that support HTTP/2, set this field to “h2” for improved performance. Configuring this field to non-default values is only supported for secure HTTP backends. This field will be ignored for all other backends. See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for more details on the supported values."]
         #[serde(
             rename = "protocol",
             default,
@@ -762,7 +762,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Context {
-        #[doc = "A list of RPC context rules that apply to individual API methods. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "A list of RPC context rules that apply to individual API methods. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -883,7 +883,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreateTenancyUnitRequest {
-        #[doc = "Optional. Optional service producer-provided identifier of the tenancy unit. Must be no longer than 40 characters and preferably URI friendly. If it isn't provided, a UID for the tenancy unit is automatically generated. The identifier must be unique across a managed service. If the tenancy unit already exists for the managed service and service consumer pair, calling `CreateTenancyUnit` returns the existing tenancy unit if the provided identifier is identical or empty, otherwise the call fails."]
+        #[doc = "Optional. Optional service producer-provided identifier of the tenancy unit. Must be no longer than 40 characters and preferably URI friendly. If it isn’t provided, a UID for the tenancy unit is automatically generated. The identifier must be unique across a managed service. If the tenancy unit already exists for the managed service and service consumer pair, calling `CreateTenancyUnit` returns the existing tenancy unit if the provided identifier is identical or empty, otherwise the call fails."]
         #[serde(
             rename = "tenancyUnitId",
             default,
@@ -914,14 +914,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CustomError {
-        #[doc = "The list of custom error rules that apply to individual API messages. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "The list of custom error rules that apply to individual API messages. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub rules: ::std::option::Option<Vec<crate::schemas::CustomErrorRule>>,
-        #[doc = "The list of custom error detail types, e.g. 'google.foo.v1.CustomError'."]
+        #[doc = "The list of custom error detail types, e.g. ‘google.foo.v1.CustomError’."]
         #[serde(
             rename = "types",
             default,
@@ -1066,7 +1066,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub documentation_root_url: ::std::option::Option<String>,
-        #[doc = "Declares a single overview page. For example: documentation: summary: ... overview: (== include overview.md ==) This is a shortcut for the following declaration (using pages style): documentation: summary: ... pages: - name: Overview content: (== include overview.md ==) Note: you cannot specify both `overview` field and `pages` field."]
+        #[doc = "Declares a single overview page. For example: documentation: summary: … overview: (== include overview.md ==) This is a shortcut for the following declaration (using pages style): documentation: summary: … pages: - name: Overview content: (== include overview.md ==) Note: you cannot specify both `overview` field and `pages` field."]
         #[serde(
             rename = "overview",
             default,
@@ -1080,7 +1080,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub pages: ::std::option::Option<Vec<crate::schemas::Page>>,
-        #[doc = "A list of documentation rules that apply to individual API elements. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "A list of documentation rules that apply to individual API elements. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -1132,14 +1132,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub deprecation_description: ::std::option::Option<String>,
-        #[doc = "Description of the selected proto element (e.g. a message, a method, a 'service' definition, or a field). Defaults to leading & trailing comments taken from the proto source definition of the proto element."]
+        #[doc = "Description of the selected proto element (e.g. a message, a method, a ‘service’ definition, or a field). Defaults to leading & trailing comments taken from the proto source definition of the proto element."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "The selector is a comma-separated list of patterns for any element such as a method, a field, an enum value. Each pattern is a qualified name of the element which may end in \"*\", indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. \"foo.*\" is ok, but not \"foo.b*\" or \"foo.*.bar\". A wildcard will match one or more components. To specify a default for all applicable elements, the whole pattern \"*\" is used."]
+        #[doc = "The selector is a comma-separated list of patterns for any element such as a method, a field, an enum value. Each pattern is a qualified name of the element which may end in “*”, indicating a wildcard. Wildcards are only allowed at the end and for a whole component of the qualified name, i.e. “foo.*” is ok, but not “foo.b\\*” or “foo.*.bar”. A wildcard will match one or more components. To specify a default for all applicable elements, the whole pattern “*” is used."]
         #[serde(
             rename = "selector",
             default,
@@ -1208,7 +1208,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The specification of an Internet routable address of API frontend that will handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary). It should be either a valid IPv4 address or a fully-qualified domain name. For example, \"8.8.8.8\" or \"myservice.appspot.com\"."]
+        #[doc = "The specification of an Internet routable address of API frontend that will handle requests to this [API Endpoint](https://cloud.google.com/apis/design/glossary). It should be either a valid IPv4 address or a fully-qualified domain name. For example, “8.8.8.8” or “myservice.appspot.com”."]
         #[serde(
             rename = "target",
             default,
@@ -1712,14 +1712,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Http {
-        #[doc = "When set to true, URL path parameters will be fully URI-decoded except in cases of single segment matches in reserved expansion, where \"%2F\" will be left encoded. The default behavior is to not decode RFC 6570 reserved characters in multi segment matches."]
+        #[doc = "When set to true, URL path parameters will be fully URI-decoded except in cases of single segment matches in reserved expansion, where “%2F” will be left encoded. The default behavior is to not decode RFC 6570 reserved characters in multi segment matches."]
         #[serde(
             rename = "fullyDecodeReservedExpansion",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub fully_decode_reserved_expansion: ::std::option::Option<bool>,
-        #[doc = "A list of HTTP configuration rules that apply to individual API methods. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "A list of HTTP configuration rules that apply to individual API methods. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -1764,7 +1764,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub body: ::std::option::Option<String>,
-        #[doc = "The custom pattern is used for specifying an HTTP method that is not included in the `pattern` field, such as HEAD, or \"*\" to leave the HTTP method unspecified for this rule. The wild-card rule is useful for services that provide content to Web (HTML) clients."]
+        #[doc = "The custom pattern is used for specifying an HTTP method that is not included in the `pattern` field, such as HEAD, or “\\*” to leave the HTTP method unspecified for this rule. The wild-card rule is useful for services that provide content to Web (HTML) clients."]
         #[serde(
             rename = "custom",
             default,
@@ -1865,7 +1865,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
-        #[doc = "The value prefix. The value format is \"value_prefix{token}\" Only applies to \"in\" header type. Must be empty for \"in\" query type. If not empty, the header value has to match (case sensitive) this prefix. If not matched, JWT will not be extracted. If matched, JWT will be extracted after the prefix is removed. For example, for \"Authorization: Bearer {JWT}\", value_prefix=\"Bearer \" with a space at the end."]
+        #[doc = "The value prefix. The value format is “value_prefix{token}” Only applies to “in” header type. Must be empty for “in” query type. If not empty, the header value has to match (case sensitive) this prefix. If not matched, JWT will not be extracted. If matched, JWT will be extracted after the prefix is removed. For example, for “Authorization: Bearer {JWT}”, value_prefix=“Bearer “ with a space at the end."]
         #[serde(
             rename = "valuePrefix",
             default,
@@ -2113,7 +2113,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub labels: ::std::option::Option<Vec<crate::schemas::LabelDescriptor>>,
-        #[doc = "The name of the log. It must be less than 512 characters long and can include the following characters: upper- and lower-case alphanumeric characters [A-Za-z0-9], and punctuation characters including slash, underscore, hyphen, period [/_-.]."]
+        #[doc = "The name of the log. It must be less than 512 characters long and can include the following characters: upper- and lower-case alphanumeric characters \\[A-Za-z0-9\\], and punctuation characters including slash, underscore, hyphen, period \\[/\\_-.\\]."]
         #[serde(
             rename = "name",
             default,
@@ -2182,7 +2182,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct LoggingDestination {
-        #[doc = "Names of the logs to be sent to this destination. Each name must be defined in the Service.logs section. If the log name is not a domain scoped name, it will be automatically prefixed with the service name followed by \"/\"."]
+        #[doc = "Names of the logs to be sent to this destination. Each name must be defined in the Service.logs section. If the log name is not a domain scoped name, it will be automatically prefixed with the service name followed by “/”."]
         #[serde(
             rename = "logs",
             default,
@@ -2360,7 +2360,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example \"Request count\". This field is optional but it is recommended to be set for any metrics associated with user-visible concepts, such as Quota."]
+        #[doc = "A concise name for the metric, which can be displayed in user interfaces. Use sentence case without an ending period, for example “Request count”. This field is optional but it is recommended to be set for any metrics associated with user-visible concepts, such as Quota."]
         #[serde(
             rename = "displayName",
             default,
@@ -2409,14 +2409,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The metric type, including its DNS name prefix. The type is not URL-encoded. All user-defined metric types have the DNS name `custom.googleapis.com` or `external.googleapis.com`. Metric types should use a natural hierarchical grouping. For example: \"custom.googleapis.com/invoice/paid/amount\" \"external.googleapis.com/prometheus/up\" \"appengine.googleapis.com/http/server/response_latencies\""]
+        #[doc = "The metric type, including its DNS name prefix. The type is not URL-encoded. All user-defined metric types have the DNS name `custom.googleapis.com` or `external.googleapis.com`. Metric types should use a natural hierarchical grouping. For example: “custom.googleapis.com/invoice/paid/amount” “external.googleapis.com/prometheus/up” “appengine.googleapis.com/http/server/response_latencies”"]
         #[serde(
             rename = "type",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<String>,
-        #[doc = "The units in which the metric value is reported. It is only applicable if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit` defines the representation of the stored metric values. Different systems might scale the values to be more easily displayed (so a value of `0.02kBy` *might* be displayed as `20By`, and a value of `3523kBy` *might* be displayed as `3.5MBy`). However, if the `unit` is `kBy`, then the value of the metric is always in thousands of bytes, no matter how it might be displayed. If you want a custom metric to record the exact number of CPU-seconds used by a job, you can create an `INT64 CUMULATIVE` metric whose `unit` is `s{CPU}` (or equivalently `1s{CPU}` or just `s`). If the job uses 12,005 CPU-seconds, then the value is written as `12005`. Alternatively, if you want a custom metric to record data in a more granular way, you can create a `DOUBLE CUMULATIVE` metric whose `unit` is `ks{CPU}`, and then write the value `12.005` (which is `12005/1000`), or use `Kis{CPU}` and write `11.723` (which is `12005/1024`). The supported units are a subset of [The Unified Code for Units of Measure](https://unitsofmeasure.org/ucum.html) standard: **Basic units (UNIT)** * `bit` bit * `By` byte * `s` second * `min` minute * `h` hour * `d` day * `1` dimensionless **Prefixes (PREFIX)** * `k` kilo (10^3) * `M` mega (10^6) * `G` giga (10^9) * `T` tera (10^12) * `P` peta (10^15) * `E` exa (10^18) * `Z` zetta (10^21) * `Y` yotta (10^24) * `m` milli (10^-3) * `u` micro (10^-6) * `n` nano (10^-9) * `p` pico (10^-12) * `f` femto (10^-15) * `a` atto (10^-18) * `z` zepto (10^-21) * `y` yocto (10^-24) * `Ki` kibi (2^10) * `Mi` mebi (2^20) * `Gi` gibi (2^30) * `Ti` tebi (2^40) * `Pi` pebi (2^50) **Grammar** The grammar also includes these connectors: * `/` division or ratio (as an infix operator). For examples, `kBy/{email}` or `MiBy/10ms` (although you should almost never have `/s` in a metric `unit`; rates should always be computed at query time from the underlying cumulative or delta value). * `.` multiplication or composition (as an infix operator). For examples, `GBy.d` or `k{watt}.h`. The grammar for a unit is as follows: Expression = Component { \".\" Component } { \"/\" Component } ; Component = ( [ PREFIX ] UNIT | \"%\" ) [ Annotation ] | Annotation | \"1\" ; Annotation = \"{\" NAME \"}\" ; Notes: * `Annotation` is just a comment if it follows a `UNIT`. If the annotation is used alone, then the unit is equivalent to `1`. For examples, `{request}/s == 1/s`, `By{transmitted}/s == By/s`. * `NAME` is a sequence of non-blank printable ASCII characters not containing `{` or `}`. * `1` represents a unitary [dimensionless unit](https://en.wikipedia.org/wiki/Dimensionless_quantity) of 1, such as in `1/s`. It is typically used when none of the basic units are appropriate. For example, \"new users per day\" can be represented as `1/d` or `{new-users}/d` (and a metric value `5` would mean \"5 new users). Alternatively, \"thousands of page views per day\" would be represented as `1000/d` or `k1/d` or `k{page_views}/d` (and a metric value of `5.3` would mean \"5300 page views per day\"). * `%` represents dimensionless value of 1/100, and annotates values giving a percentage (so the metric values are typically in the range of 0..100, and a metric value `3` means \"3 percent\"). * `10^2.%` indicates a metric contains a ratio, typically in the range 0..1, that will be multiplied by 100 and displayed as a percentage (so a metric value `0.03` means \"3 percent\")."]
+        #[doc = "The units in which the metric value is reported. It is only applicable if the `value_type` is `INT64`, `DOUBLE`, or `DISTRIBUTION`. The `unit` defines the representation of the stored metric values. Different systems might scale the values to be more easily displayed (so a value of `0.02kBy` *might* be displayed as `20By`, and a value of `3523kBy` *might* be displayed as `3.5MBy`). However, if the `unit` is `kBy`, then the value of the metric is always in thousands of bytes, no matter how it might be displayed. If you want a custom metric to record the exact number of CPU-seconds used by a job, you can create an `INT64 CUMULATIVE` metric whose `unit` is `s{CPU}` (or equivalently `1s{CPU}` or just `s`). If the job uses 12,005 CPU-seconds, then the value is written as `12005`. Alternatively, if you want a custom metric to record data in a more granular way, you can create a `DOUBLE CUMULATIVE` metric whose `unit` is `ks{CPU}`, and then write the value `12.005` (which is `12005/1000`), or use `Kis{CPU}` and write `11.723` (which is `12005/1024`). The supported units are a subset of [The Unified Code for Units of Measure](https://unitsofmeasure.org/ucum.html) standard: **Basic units (UNIT)** * `bit` bit * `By` byte * `s` second * `min` minute * `h` hour * `d` day * `1` dimensionless **Prefixes (PREFIX)** * `k` kilo (10^3) * `M` mega (10^6) * `G` giga (10^9) * `T` tera (10^12) * `P` peta (10^15) * `E` exa (10^18) * `Z` zetta (10^21) * `Y` yotta (10^24) * `m` milli (10^-3) * `u` micro (10^-6) * `n` nano (10^-9) * `p` pico (10^-12) * `f` femto (10^-15) * `a` atto (10^-18) * `z` zepto (10^-21) * `y` yocto (10^-24) * `Ki` kibi (2^10) * `Mi` mebi (2^20) * `Gi` gibi (2^30) * `Ti` tebi (2^40) * `Pi` pebi (2^50) **Grammar** The grammar also includes these connectors: * `/` division or ratio (as an infix operator). For examples, `kBy/{email}` or `MiBy/10ms` (although you should almost never have `/s` in a metric `unit`; rates should always be computed at query time from the underlying cumulative or delta value). * `.` multiplication or composition (as an infix operator). For examples, `GBy.d` or `k{watt}.h`. The grammar for a unit is as follows: Expression = Component { “.” Component } { “/” Component } ; Component = ( \\[ PREFIX \\] UNIT | “%” ) \\[ Annotation \\] | Annotation | “1” ; Annotation = “{” NAME “}” ; Notes: * `Annotation` is just a comment if it follows a `UNIT`. If the annotation is used alone, then the unit is equivalent to `1`. For examples, `{request}/s == 1/s`, `By{transmitted}/s == By/s`. * `NAME` is a sequence of non-blank printable ASCII characters not containing `{` or `}`. * `1` represents a unitary [dimensionless unit](https://en.wikipedia.org/wiki/Dimensionless_quantity) of 1, such as in `1/s`. It is typically used when none of the basic units are appropriate. For example, “new users per day” can be represented as `1/d` or `{new-users}/d` (and a metric value `5` would mean “5 new users). Alternatively, “thousands of page views per day” would be represented as `1000/d` or `k1/d` or `k{page_views}/d` (and a metric value of `5.3` would mean “5300 page views per day”). * `%` represents dimensionless value of 1/100, and annotates values giving a percentage (so the metric values are typically in the range of 0..100, and a metric value `3` means “3 percent”). * `10^2.%` indicates a metric contains a ratio, typically in the range 0..1, that will be multiplied by 100 and displayed as a percentage (so a metric value `0.03` means “3 percent”)."]
         #[serde(
             rename = "unit",
             default,
@@ -2443,11 +2443,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MetricDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests – just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -2767,11 +2767,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MetricDescriptorMetadataLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests – just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -3017,11 +3017,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum MonitoredResourceDescriptorLaunchStage {
-        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don't have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests -- just like they would in normal production cases."]
+        #[doc = "Alpha is a limited availability test for releases before they are cleared for widespread use. By Alpha, all significant design issues are resolved and we are in the process of verifying functionality. Alpha customers need to apply for access, agree to applicable terms, and have their projects allowlisted. Alpha releases don’t have to be feature complete, no SLAs are provided, and there are no technical support obligations, but they will be far enough along that customers can actually use them in test environments or for limited-use tests – just like they would in normal production cases."]
         Alpha,
         #[doc = "Beta is the point at which we are ready to open a release for any customer to use. There are no SLA or technical support obligations in a Beta release. Products will be complete from a feature perspective, but may have some open outstanding issues. Beta releases are suitable for limited production use cases."]
         Beta,
-        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the \"Deprecation Policy\" section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
+        #[doc = "Deprecated features are scheduled to be shut down and removed. For more information, see the “Deprecation Policy” section of our [Terms of Service](https://cloud.google.com/terms/) and the [Google Cloud Platform Subject to the Deprecation Policy](https://cloud.google.com/terms/deprecation) documentation."]
         Deprecated,
         #[doc = "Early Access features are limited to a closed group of testers. To use these features, you must sign up in advance and sign a Trusted Tester agreement (which includes confidentiality provisions). These features may be unstable, changed in backward-incompatible ways, and are not guaranteed to be released."]
         EarlyAccess,
@@ -3283,14 +3283,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Option {
-        #[doc = "The option's name. For protobuf built-in options (options defined in descriptor.proto), this is the short name. For example, `\"map_entry\"`. For custom options, it should be the fully-qualified name. For example, `\"google.api.http\"`."]
+        #[doc = "The option’s name. For protobuf built-in options (options defined in descriptor.proto), this is the short name. For example, `\"map_entry\"`. For custom options, it should be the fully-qualified name. For example, `\"google.api.http\"`."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The option's value packed in an Any message. If the value is a primitive, the corresponding wrapper type defined in google/protobuf/wrappers.proto should be used. If the value is an enum, it should be stored as an int32 value using the google.protobuf.Int32Value type."]
+        #[doc = "The option’s value packed in an Any message. If the value is a primitive, the corresponding wrapper type defined in google/protobuf/wrappers.proto should be used. If the value is an enum, it should be stored as an int32 value using the google.protobuf.Int32Value type."]
         #[serde(
             rename = "value",
             default,
@@ -3450,7 +3450,7 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub default_limit: ::std::option::Option<i64>,
-        #[doc = "Optional. User-visible, extended description for this quota limit. Should be used only when more context is needed to understand this limit than provided by the limit's display name (see: `display_name`)."]
+        #[doc = "Optional. User-visible, extended description for this quota limit. Should be used only when more context is needed to understand this limit than provided by the limit’s display name (see: `display_name`)."]
         #[serde(
             rename = "description",
             default,
@@ -3464,14 +3464,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub display_name: ::std::option::Option<String>,
-        #[doc = "Duration of this limit in textual notation. Must be \"100s\" or \"1d\". Used by group-based quotas only."]
+        #[doc = "Duration of this limit in textual notation. Must be “100s” or “1d”. Used by group-based quotas only."]
         #[serde(
             rename = "duration",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub duration: ::std::option::Option<String>,
-        #[doc = "Free tier value displayed in the Developers Console for this limit. The free tier is the number of tokens that will be subtracted from the billed amount when billing is enabled. This field can only be set on a limit with duration \"1d\", in a billable group; it is invalid on any other limit. If this field is not set, it defaults to 0, indicating that there is no free tier for this service. Used by group-based quotas only."]
+        #[doc = "Free tier value displayed in the Developers Console for this limit. The free tier is the number of tokens that will be subtracted from the billed amount when billing is enabled. This field can only be set on a limit with duration “1d”, in a billable group; it is invalid on any other limit. If this field is not set, it defaults to 0, indicating that there is no free tier for this service. Used by group-based quotas only."]
         #[serde(
             rename = "freeTier",
             default,
@@ -3494,14 +3494,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub metric: ::std::option::Option<String>,
-        #[doc = "Name of the quota limit. The name must be provided, and it must be unique within the service. The name can only include alphanumeric characters as well as '-'. The maximum length of the limit name is 64 characters."]
+        #[doc = "Name of the quota limit. The name must be provided, and it must be unique within the service. The name can only include alphanumeric characters as well as ‘-’. The maximum length of the limit name is 64 characters."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Specify the unit of the quota limit. It uses the same syntax as Metric.unit. The supported unit kinds are determined by the quota backend system. Here are some examples: * \"1/min/{project}\" for quota per minute per project. Note: the order of unit components is insignificant. The \"1\" at the beginning is required to follow the metric unit syntax."]
+        #[doc = "Specify the unit of the quota limit. It uses the same syntax as Metric.unit. The supported unit kinds are determined by the quota backend system. Here are some examples: * “1/min/{project}” for quota per minute per project. Note: the order of unit components is insignificant. The “1” at the beginning is required to follow the metric unit syntax."]
         #[serde(
             rename = "unit",
             default,
@@ -3686,7 +3686,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub http: ::std::option::Option<crate::schemas::Http>,
-        #[doc = "A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. Must be no longer than 63 characters and only lower case letters, digits, '.', '_' and '-' are allowed. If empty, the server may choose to generate one instead."]
+        #[doc = "A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. Must be no longer than 63 characters and only lower case letters, digits, ‘.’, ‘\\_’ and ‘-’ are allowed. If empty, the server may choose to generate one instead."]
         #[serde(
             rename = "id",
             default,
@@ -3764,7 +3764,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub system_parameters: ::std::option::Option<crate::schemas::SystemParameters>,
-        #[doc = "A list of all proto message types included in this API service. It serves similar purpose as [google.api.Service.types], except that these types are not needed by user-defined APIs. Therefore, they will not show up in the generated discovery doc. This field should only be used to define system APIs in ESF."]
+        #[doc = "A list of all proto message types included in this API service. It serves similar purpose as \\[google.api.Service.types\\], except that these types are not needed by user-defined APIs. Therefore, they will not show up in the generated discovery doc. This field should only be used to define system APIs in ESF."]
         #[serde(
             rename = "systemTypes",
             default,
@@ -3816,7 +3816,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ServiceAccountConfig {
-        #[doc = "ID of the IAM service account to be created in tenant project. The email format of the service account is \"@.iam.gserviceaccount.com\". This account ID must be unique within tenant project and service producers have to guarantee it. The ID must be 6-30 characters long, and match the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])`."]
+        #[doc = "ID of the IAM service account to be created in tenant project. The email format of the service account is “@.iam.gserviceaccount.com”. This account ID must be unique within tenant project and service producers have to guarantee it. The ID must be 6-30 characters long, and match the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])`."]
         #[serde(
             rename = "accountId",
             default,
@@ -3948,7 +3948,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub http_header: ::std::option::Option<String>,
-        #[doc = "Define the name of the parameter, such as \"api_key\" . It is case sensitive."]
+        #[doc = "Define the name of the parameter, such as “api_key” . It is case sensitive."]
         #[serde(
             rename = "name",
             default,
@@ -3993,7 +3993,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub parameters: ::std::option::Option<Vec<crate::schemas::SystemParameter>>,
-        #[doc = "Selects the methods to which this rule applies. Use '*' to indicate all methods in all APIs. Refer to selector for syntax details."]
+        #[doc = "Selects the methods to which this rule applies. Use ‘\\*’ to indicate all methods in all APIs. Refer to selector for syntax details."]
         #[serde(
             rename = "selector",
             default,
@@ -4024,7 +4024,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SystemParameters {
-        #[doc = "Define system parameters. The parameters defined here will override the default parameters implemented by the system. If this field is missing from the service config, default system parameters will be used. Default system parameters and names is implementation-dependent. Example: define api key for all methods system_parameters rules: - selector: \"*\" parameters: - name: api_key url_query_parameter: api_key Example: define 2 api key names for a specific method. system_parameters rules: - selector: \"/ListShelves\" parameters: - name: api_key http_header: Api-Key1 - name: api_key http_header: Api-Key2 **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "Define system parameters. The parameters defined here will override the default parameters implemented by the system. If this field is missing from the service config, default system parameters will be used. Default system parameters and names is implementation-dependent. Example: define api key for all methods system_parameters rules: - selector: “\\*” parameters: - name: api_key url_query_parameter: api_key Example: define 2 api key names for a specific method. system_parameters rules: - selector: “/ListShelves” parameters: - name: api_key http_header: Api-Key1 - name: api_key http_header: Api-Key2 **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -4055,7 +4055,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TenancyUnit {
-        #[doc = "Output only. @OutputOnly Cloud resource name of the consumer of this service. For example 'projects/123456'."]
+        #[doc = "Output only. @OutputOnly Cloud resource name of the consumer of this service. For example ‘projects/123456’."]
         #[serde(
             rename = "consumer",
             default,
@@ -4069,14 +4069,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Globally unique identifier of this tenancy unit \"services/{service}/{collection id}/{resource id}/tenancyUnits/{unit}\""]
+        #[doc = "Globally unique identifier of this tenancy unit “services/{service}/{collection id}/{resource id}/tenancyUnits/{unit}”"]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Output only. Google Cloud API name of the managed service owning this tenancy unit. For example 'serviceconsumermanagement.googleapis.com'."]
+        #[doc = "Output only. Google Cloud API name of the managed service owning this tenancy unit. For example ‘serviceconsumermanagement.googleapis.com’."]
         #[serde(
             rename = "service",
             default,
@@ -4142,7 +4142,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service_account_config: ::std::option::Option<crate::schemas::ServiceAccountConfig>,
-        #[doc = "Google Cloud API names of services that are activated on this project during provisioning. If any of these services can't be activated, the request fails. For example: 'compute.googleapis.com','cloudfunctions.googleapis.com'"]
+        #[doc = "Google Cloud API names of services that are activated on this project during provisioning. If any of these services can’t be activated, the request fails. For example: ‘compute.googleapis.com’,‘cloudfunctions.googleapis.com’"]
         #[serde(
             rename = "services",
             default,
@@ -4180,7 +4180,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TenantProjectPolicy {
-        #[doc = "Policy bindings to be applied to the tenant project, in addition to the 'roles/owner' role granted to the Service Consumer Management service account. At least one binding must have the role `roles/owner`."]
+        #[doc = "Policy bindings to be applied to the tenant project, in addition to the ‘roles/owner’ role granted to the Service Consumer Management service account. At least one binding must have the role `roles/owner`."]
         #[serde(
             rename = "policyBindings",
             default,
@@ -4211,7 +4211,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TenantResource {
-        #[doc = "Output only. @OutputOnly Identifier of the tenant resource. For cloud projects, it is in the form 'projects/{number}'. For example 'projects/123456'."]
+        #[doc = "Output only. @OutputOnly Identifier of the tenant resource. For cloud projects, it is in the form ‘projects/{number}’. For example ‘projects/123456’."]
         #[serde(
             rename = "resource",
             default,
@@ -4511,14 +4511,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub producer_notification_channel: ::std::option::Option<String>,
-        #[doc = "Requirements that must be satisfied before a consumer project can use the service. Each requirement is of the form /; for example 'serviceusage.googleapis.com/billing-enabled'. For Google APIs, a Terms of Service requirement must be included here. Google Cloud APIs must include \"serviceusage.googleapis.com/tos/cloud\". Other Google APIs should include \"serviceusage.googleapis.com/tos/universal\". Additional ToS can be included based on the business needs."]
+        #[doc = "Requirements that must be satisfied before a consumer project can use the service. Each requirement is of the form /; for example ‘serviceusage.googleapis.com/billing-enabled’. For Google APIs, a Terms of Service requirement must be included here. Google Cloud APIs must include “serviceusage.googleapis.com/tos/cloud”. Other Google APIs should include “serviceusage.googleapis.com/tos/universal”. Additional ToS can be included based on the business needs."]
         #[serde(
             rename = "requirements",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub requirements: ::std::option::Option<Vec<String>>,
-        #[doc = "A list of usage rules that apply to individual API methods. **NOTE:** All service configuration rules follow \"last one wins\" order."]
+        #[doc = "A list of usage rules that apply to individual API methods. **NOTE:** All service configuration rules follow “last one wins” order."]
         #[serde(
             rename = "rules",
             default,
@@ -4549,14 +4549,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UsageRule {
-        #[doc = "If true, the selected method allows unregistered calls, e.g. calls that don't identify any user or application."]
+        #[doc = "If true, the selected method allows unregistered calls, e.g. calls that don’t identify any user or application."]
         #[serde(
             rename = "allowUnregisteredCalls",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub allow_unregistered_calls: ::std::option::Option<bool>,
-        #[doc = "Selects the methods to which this rule applies. Use '*' to indicate all methods in all APIs. Refer to selector for syntax details."]
+        #[doc = "Selects the methods to which this rule applies. Use ‘\\*’ to indicate all methods in all APIs. Refer to selector for syntax details."]
         #[serde(
             rename = "selector",
             default,
@@ -4804,7 +4804,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container: ::std::option::Option<String>,
-        #[doc = "If this map is nonempty, then this policy applies only to specific values for dimensions defined in the limit unit. For example, an policy on a limit with the unit 1/{project}/{region} could contain an entry with the key \"region\" and the value \"us-east-1\"; the policy is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit's unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * \"project\" is not a valid key; the project is already specified in the parent resource name. * \"user\" is not a valid key; the API does not support quota polcies that apply only to a specific user. * If \"region\" appears as a key, its value must be a valid Cloud region. * If \"zone\" appears as a key, its value must be a valid Cloud zone. * If any valid key other than \"region\" or \"zone\" appears in the map, then all valid keys other than \"region\" or \"zone\" must also appear in the map."]
+        #[doc = "If this map is nonempty, then this policy applies only to specific values for dimensions defined in the limit unit. For example, an policy on a limit with the unit 1/{project}/{region} could contain an entry with the key “region” and the value “us-east-1”; the policy is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit’s unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * “project” is not a valid key; the project is already specified in the parent resource name. * “user” is not a valid key; the API does not support quota polcies that apply only to a specific user. * If “region” appears as a key, its value must be a valid Cloud region. * If “zone” appears as a key, its value must be a valid Cloud zone. * If any valid key other than “region” or “zone” appears in the map, then all valid keys other than “region” or “zone” must also appear in the map."]
         #[serde(
             rename = "dimensions",
             default,
@@ -4864,14 +4864,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct V1Beta1QuotaOverride {
-        #[doc = "The resource name of the ancestor that requested the override. For example: \"organizations/12345\" or \"folders/67890\". Used by admin overrides only."]
+        #[doc = "The resource name of the ancestor that requested the override. For example: “organizations/12345” or “folders/67890”. Used by admin overrides only."]
         #[serde(
             rename = "adminOverrideAncestor",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub admin_override_ancestor: ::std::option::Option<String>,
-        #[doc = "If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit. For example, an override on a limit with the unit 1/{project}/{region} could contain an entry with the key \"region\" and the value \"us-east-1\"; the override is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit's unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * \"project\" is not a valid key; the project is already specified in the parent resource name. * \"user\" is not a valid key; the API does not support quota overrides that apply only to a specific user. * If \"region\" appears as a key, its value must be a valid Cloud region. * If \"zone\" appears as a key, its value must be a valid Cloud zone. * If any valid key other than \"region\" or \"zone\" appears in the map, then all valid keys other than \"region\" or \"zone\" must also appear in the map."]
+        #[doc = "If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit. For example, an override on a limit with the unit 1/{project}/{region} could contain an entry with the key “region” and the value “us-east-1”; the override is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit’s unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * “project” is not a valid key; the project is already specified in the parent resource name. * “user” is not a valid key; the API does not support quota overrides that apply only to a specific user. * If “region” appears as a key, its value must be a valid Cloud region. * If “zone” appears as a key, its value must be a valid Cloud zone. * If any valid key other than “region” or “zone” appears in the map, then all valid keys other than “region” or “zone” must also appear in the map."]
         #[serde(
             rename = "dimensions",
             default,
@@ -4969,7 +4969,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The P4 service identity configuration tag. This must be defined in activation_grants. If not specified when creating the account, the tag is set to \"default\"."]
+        #[doc = "The P4 service identity configuration tag. This must be defined in activation_grants. If not specified when creating the account, the tag is set to “default”."]
         #[serde(
             rename = "tag",
             default,
@@ -5150,7 +5150,7 @@ pub mod schemas {
         AttachStatusUnspecified,
         #[doc = "The default identity was attached to a role successfully in this request."]
         Attached,
-        #[doc = "Role was attached to the consumer project at some point in time. Tenant manager doesn't make assertion about the current state of the identity with respect to the consumer. Role attachment should happen only once after activation and cannot be reattached after customer removes it. (go/si-attach-role)"]
+        #[doc = "Role was attached to the consumer project at some point in time. Tenant manager doesn’t make assertion about the current state of the identity with respect to the consumer. Role attachment should happen only once after activation and cannot be reattached after customer removes it. (go/si-attach-role)"]
         PreviouslyAttached,
     }
     impl V1GenerateDefaultIdentityResponseAttachStatus {
@@ -5366,7 +5366,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The P4 SA configuration tag. This must be defined in activation_grants. If not specified when creating the account, the tag is set to \"default\"."]
+        #[doc = "The P4 SA configuration tag. This must be defined in activation_grants. If not specified when creating the account, the tag is set to “default”."]
         #[serde(
             rename = "tag",
             default,
@@ -5590,7 +5590,7 @@ pub mod resources {
             fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                 self.auth
             }
-            #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
+            #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."]
             pub fn cancel(
                 &self,
                 request: crate::schemas::CancelOperationRequest,
@@ -5614,7 +5614,7 @@ pub mod resources {
                     name: name.into(),
                 }
             }
-            #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."]
+            #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn’t support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."]
             pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                 DeleteRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5652,7 +5652,7 @@ pub mod resources {
                     name: name.into(),
                 }
             }
-            #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+            #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `\"/v1/{name=users/*}/operations\"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
             pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                 ListRequestBuilder {
                     reqwest: &self.reqwest,
@@ -5725,12 +5725,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5887,12 +5887,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6047,12 +6047,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6225,12 +6225,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6558,7 +6558,7 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> SearchRequestBuilder<'a> {
-            #[doc = "Optional. The maximum number of results returned by this request. Currently, the default maximum is set to 1000. If `page_size` isn't provided or the size provided is a number larger than 1000, it's automatically set to 1000."]
+            #[doc = "Optional. The maximum number of results returned by this request. Currently, the default maximum is set to 1000. If `page_size` isn’t provided or the size provided is a number larger than 1000, it’s automatically set to 1000."]
             pub fn page_size(mut self, value: i32) -> Self {
                 self.page_size = Some(value);
                 self
@@ -6568,7 +6568,7 @@ pub mod resources {
                 self.page_token = Some(value.into());
                 self
             }
-            #[doc = "Optional. Set a query `{expression}` for querying tenancy units. Your `{expression}` must be in the format: `field_name=literal_string`. The `field_name` is the name of the field you want to compare. Supported fields are `tenant_resources.tag` and `tenant_resources.resource`. For example, to search tenancy units that contain at least one tenant resource with a given tag 'xyz', use the query `tenant_resources.tag=xyz`. To search tenancy units that contain at least one tenant resource with a given resource name 'projects/123456', use the query `tenant_resources.resource=projects/123456`. Multiple expressions can be joined with `AND`s. Tenancy units must match all expressions to be included in the result set. For example, `tenant_resources.tag=xyz AND tenant_resources.resource=projects/123456`"]
+            #[doc = "Optional. Set a query `{expression}` for querying tenancy units. Your `{expression}` must be in the format: `field_name=literal_string`. The `field_name` is the name of the field you want to compare. Supported fields are `tenant_resources.tag` and `tenant_resources.resource`. For example, to search tenancy units that contain at least one tenant resource with a given tag ‘xyz’, use the query `tenant_resources.tag=xyz`. To search tenancy units that contain at least one tenant resource with a given resource name ‘projects/123456’, use the query `tenant_resources.resource=projects/123456`. Multiple expressions can be joined with `AND`s. Tenancy units must match all expressions to be included in the result set. For example, `tenant_resources.tag=xyz AND tenant_resources.resource=projects/123456`"]
             pub fn query(mut self, value: impl Into<String>) -> Self {
                 self.query = Some(value.into());
                 self
@@ -6603,12 +6603,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6906,7 +6906,7 @@ pub mod resources {
                         parent: parent.into(),
                     }
                 }
-                #[doc = "Apply a configuration to an existing tenant project. This project must exist in an active state and have the original owner account. The caller must have permission to add a project to the given tenancy unit. The configuration is applied, but any existing settings on the project aren't modified. Specified policy bindings are applied. Existing bindings aren't modified. Specified services are activated. No service is deactivated. If specified, new billing configuration is applied. Omit a billing configuration to keep the existing one. A service account in the project is created if previously non existed. Specified labels will be appended to tenant project, note that the value of existing label key will be updated if the same label key is requested. The specified folder is ignored, as moving a tenant project to a different folder isn't supported. The operation fails if any of the steps fail, but no rollback of already applied configuration changes is attempted. Operation."]
+                #[doc = "Apply a configuration to an existing tenant project. This project must exist in an active state and have the original owner account. The caller must have permission to add a project to the given tenancy unit. The configuration is applied, but any existing settings on the project aren’t modified. Specified policy bindings are applied. Existing bindings aren’t modified. Specified services are activated. No service is deactivated. If specified, new billing configuration is applied. Omit a billing configuration to keep the existing one. A service account in the project is created if previously non existed. Specified labels will be appended to tenant project, note that the value of existing label key will be updated if the same label key is requested. The specified folder is ignored, as moving a tenant project to a different folder isn’t supported. The operation fails if any of the steps fail, but no rollback of already applied configuration changes is attempted. Operation."]
                 pub fn apply_project_config(
                     &self,
                     request: crate::schemas::ApplyTenantProjectConfigRequest,
@@ -6930,7 +6930,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Attach an existing project to the tenancy unit as a new tenant resource. The project could either be the tenant project reserved by calling `AddTenantProject` under a tenancy unit of a service producer's project of a managed service, or from a separate project. The caller is checked against a set of permissions as if calling `AddTenantProject` on the same service consumer. To trigger the attachment, the targeted tenant project must be in a folder. Make sure the ServiceConsumerManagement service account is the owner of that project. These two requirements are already met if the project is reserved by calling `AddTenantProject`. Operation."]
+                #[doc = "Attach an existing project to the tenancy unit as a new tenant resource. The project could either be the tenant project reserved by calling `AddTenantProject` under a tenancy unit of a service producer’s project of a managed service, or from a separate project. The caller is checked against a set of permissions as if calling `AddTenantProject` on the same service consumer. To trigger the attachment, the targeted tenant project must be in a folder. Make sure the ServiceConsumerManagement service account is the owner of that project. These two requirements are already met if the project is reserved by calling `AddTenantProject`. Operation."]
                 pub fn attach_project(
                     &self,
                     request: crate::schemas::AttachTenantProjectRequest,
@@ -6978,7 +6978,7 @@ pub mod resources {
                         parent: parent.into(),
                     }
                 }
-                #[doc = "Delete a tenancy unit. Before you delete the tenancy unit, there should be no tenant resources in it that aren't in a DELETED state. Operation."]
+                #[doc = "Delete a tenancy unit. Before you delete the tenancy unit, there should be no tenant resources in it that aren’t in a DELETED state. Operation."]
                 pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                     DeleteRequestBuilder {
                         reqwest: &self.reqwest,
@@ -6997,7 +6997,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Deletes the specified project resource identified by a tenant resource tag. The mothod removes a project lien with a 'TenantManager' origin if that was added. It will then attempt to delete the project. If that operation fails, this method also fails. After the project has been deleted, the tenant resource state is set to DELETED. To permanently remove resource metadata, call the `RemoveTenantProject` method. New resources with the same tag can't be added if there are existing resources in a DELETED state. Operation."]
+                #[doc = "Deletes the specified project resource identified by a tenant resource tag. The mothod removes a project lien with a ‘TenantManager’ origin if that was added. It will then attempt to delete the project. If that operation fails, this method also fails. After the project has been deleted, the tenant resource state is set to DELETED. To permanently remove resource metadata, call the `RemoveTenantProject` method. New resources with the same tag can’t be added if there are existing resources in a DELETED state. Operation."]
                 pub fn delete_project(
                     &self,
                     request: crate::schemas::DeleteTenantProjectRequest,
@@ -7021,7 +7021,7 @@ pub mod resources {
                         name: name.into(),
                     }
                 }
-                #[doc = "Find the tenancy unit for a managed service and service consumer. This method shouldn't be used in a service producer's runtime path, for example to find the tenant project number when creating VMs. Service producers must persist the tenant project's information after the project is created."]
+                #[doc = "Find the tenancy unit for a managed service and service consumer. This method shouldn’t be used in a service producer’s runtime path, for example to find the tenant project number when creating VMs. Service producers must persist the tenant project’s information after the project is created."]
                 pub fn list(&self, parent: impl Into<String>) -> ListRequestBuilder {
                     ListRequestBuilder {
                         reqwest: &self.reqwest,
@@ -7043,7 +7043,7 @@ pub mod resources {
                         page_token: None,
                     }
                 }
-                #[doc = "Removes the specified project resource identified by a tenant resource tag. The method removes the project lien with 'TenantManager' origin if that was added. It then attempts to delete the project. If that operation fails, this method also fails. Calls to remove already removed or non-existent tenant project succeed. After the project has been deleted, or if was already in a DELETED state, resource metadata is permanently removed from the tenancy unit. Operation."]
+                #[doc = "Removes the specified project resource identified by a tenant resource tag. The method removes the project lien with ‘TenantManager’ origin if that was added. It then attempts to delete the project. If that operation fails, this method also fails. Calls to remove already removed or non-existent tenant project succeed. After the project has been deleted, or if was already in a DELETED state, resource metadata is permanently removed from the tenancy unit. Operation."]
                 pub fn remove_project(
                     &self,
                     request: crate::schemas::RemoveTenantProjectRequest,
@@ -7142,12 +7142,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7305,12 +7305,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7468,12 +7468,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7631,12 +7631,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7793,12 +7793,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7954,12 +7954,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8134,12 +8134,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8457,12 +8457,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8620,12 +8620,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self

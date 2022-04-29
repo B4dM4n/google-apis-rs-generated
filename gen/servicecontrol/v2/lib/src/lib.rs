@@ -19,28 +19,28 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Api {
-        #[doc = "The API operation name. For gRPC requests, it is the fully qualified API method name, such as \"google.pubsub.v1.Publisher.Publish\". For OpenAPI requests, it is the `operationId`, such as \"getPet\"."]
+        #[doc = "The API operation name. For gRPC requests, it is the fully qualified API method name, such as “google.pubsub.v1.Publisher.Publish”. For OpenAPI requests, it is the `operationId`, such as “getPet”."]
         #[serde(
             rename = "operation",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation: ::std::option::Option<String>,
-        #[doc = "The API protocol used for sending the request, such as \"http\", \"https\", \"grpc\", or \"internal\"."]
+        #[doc = "The API protocol used for sending the request, such as “http”, “https”, “grpc”, or “internal”."]
         #[serde(
             rename = "protocol",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub protocol: ::std::option::Option<String>,
-        #[doc = "The API service name. It is a logical identifier for a networked API, such as \"pubsub.googleapis.com\". The naming syntax depends on the API management system being used for handling the request."]
+        #[doc = "The API service name. It is a logical identifier for a networked API, such as “pubsub.googleapis.com”. The naming syntax depends on the API management system being used for handling the request."]
         #[serde(
             rename = "service",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub service: ::std::option::Option<String>,
-        #[doc = "The API version associated with the API operation above, such as \"v1\" or \"v1alpha1\"."]
+        #[doc = "The API version associated with the API operation above, such as “v1” or “v1alpha1”."]
         #[serde(
             rename = "version",
             default,
@@ -152,7 +152,7 @@ pub mod schemas {
         )]
         pub metadata:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The name of the service method or operation. For API calls, this should be the name of the API method. For example, \"google.cloud.bigquery.v2.TableService.InsertTable\" \"google.logging.v2.ConfigServiceV2.CreateSink\""]
+        #[doc = "The name of the service method or operation. For API calls, this should be the name of the API method. For example, “google.cloud.bigquery.v2.TableService.InsertTable” “google.logging.v2.ConfigServiceV2.CreateSink”"]
         #[serde(
             rename = "methodName",
             default,
@@ -196,14 +196,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_location: ::std::option::Option<crate::schemas::ResourceLocation>,
-        #[doc = "The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. For example: \"projects/PROJECT_ID/zones/us-central1-a/instances\" \"projects/PROJECT_ID/datasets/DATASET_ID\""]
+        #[doc = "The resource or collection that is the target of the operation. The name is a scheme-less URI, not including the API service name. For example: “projects/PROJECT_ID/zones/us-central1-a/instances” “projects/PROJECT_ID/datasets/DATASET_ID”"]
         #[serde(
             rename = "resourceName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resource_name: ::std::option::Option<String>,
-        #[doc = "The resource's original state before mutation. Present only for operations which have successfully modified the targeted resource(s). In general, this field should contain all changed fields, except those that are already been included in `request`, `response`, `metadata` or `service_data` fields. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the `@type` property."]
+        #[doc = "The resource’s original state before mutation. Present only for operations which have successfully modified the targeted resource(s). In general, this field should contain all changed fields, except those that are already been included in `request`, `response`, `metadata` or `service_data` fields. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the `@type` property."]
         #[serde(
             rename = "resourceOriginalState",
             default,
@@ -254,21 +254,21 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Auth {
-        #[doc = "A list of access level resource names that allow resources to be accessed by authenticated requester. It is part of Secure GCP processing for the incoming request. An access level string has the format: \"//{api_service_name}/accessPolicies/{policy_id}/accessLevels/{short_name}\" Example: \"//accesscontextmanager.googleapis.com/accessPolicies/MY_POLICY_ID/accessLevels/MY_LEVEL\""]
+        #[doc = "A list of access level resource names that allow resources to be accessed by authenticated requester. It is part of Secure GCP processing for the incoming request. An access level string has the format: “//{api_service_name}/accessPolicies/{policy_id}/accessLevels/{short_name}” Example: “//accesscontextmanager.googleapis.com/accessPolicies/MY_POLICY_ID/accessLevels/MY_LEVEL”"]
         #[serde(
             rename = "accessLevels",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub access_levels: ::std::option::Option<Vec<String>>,
-        #[doc = "The intended audience(s) for this authentication information. Reflects the audience (`aud`) claim within a JWT. The audience value(s) depends on the `issuer`, but typically include one or more of the following pieces of information: * The services intended to receive the credential. For example, [\"https://pubsub.googleapis.com/\", \"https://storage.googleapis.com/\"]. * A set of service-based scopes. For example, [\"https://www.googleapis.com/auth/cloud-platform\"]. * The client id of an app, such as the Firebase project id for JWTs from Firebase Auth. Consult the documentation for the credential issuer to determine the information provided."]
+        #[doc = "The intended audience(s) for this authentication information. Reflects the audience (`aud`) claim within a JWT. The audience value(s) depends on the `issuer`, but typically include one or more of the following pieces of information: * The services intended to receive the credential. For example, \\[“https://pubsub.googleapis.com/”, “https://storage.googleapis.com/”\\]. * A set of service-based scopes. For example, \\[“https://www.googleapis.com/auth/cloud-platform”\\]. * The client id of an app, such as the Firebase project id for JWTs from Firebase Auth. Consult the documentation for the credential issuer to determine the information provided."]
         #[serde(
             rename = "audiences",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub audiences: ::std::option::Option<Vec<String>>,
-        #[doc = "Structured claims presented with the credential. JWTs include `{key: value}` pairs for standard and private claims. The following is a subset of the standard required and optional claims that would typically be presented for a Google-based JWT: {'iss': 'accounts.google.com', 'sub': '113289723416554971153', 'aud': ['123456789012', 'pubsub.googleapis.com'], 'azp': '123456789012.apps.googleusercontent.com', 'email': 'jsmith@example.com', 'iat': 1353601026, 'exp': 1353604926} SAML assertions are similarly specified, but with an identity provider dependent structure."]
+        #[doc = "Structured claims presented with the credential. JWTs include `{key: value}` pairs for standard and private claims. The following is a subset of the standard required and optional claims that would typically be presented for a Google-based JWT: {‘iss’: ‘accounts.google.com’, ‘sub’: ‘113289723416554971153’, ‘aud’: \\[‘123456789012’, ‘pubsub.googleapis.com’\\], ‘azp’: ‘123456789012.apps.googleusercontent.com’, ‘email’: ‘jsmith@example.com’, ‘iat’: 1353601026, ‘exp’: 1353604926} SAML assertions are similarly specified, but with an identity provider dependent structure."]
         #[serde(
             rename = "claims",
             default,
@@ -276,14 +276,14 @@ pub mod schemas {
         )]
         pub claims:
             ::std::option::Option<::std::collections::BTreeMap<String, ::serde_json::Value>>,
-        #[doc = "The authorized presenter of the credential. Reflects the optional Authorized Presenter (`azp`) claim within a JWT or the OAuth client id. For example, a Google Cloud Platform client id looks as follows: \"123456789012.apps.googleusercontent.com\"."]
+        #[doc = "The authorized presenter of the credential. Reflects the optional Authorized Presenter (`azp`) claim within a JWT or the OAuth client id. For example, a Google Cloud Platform client id looks as follows: “123456789012.apps.googleusercontent.com”."]
         #[serde(
             rename = "presenter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub presenter: ::std::option::Option<String>,
-        #[doc = "The authenticated principal. Reflects the issuer (`iss`) and subject (`sub`) claims within a JWT. The issuer and subject should be `/` delimited, with `/` percent-encoded within the subject fragment. For Google accounts, the principal format is: \"https://accounts.google.com/{id}\""]
+        #[doc = "The authenticated principal. Reflects the issuer (`iss`) and subject (`sub`) claims within a JWT. The issuer and subject should be `/` delimited, with `/` percent-encoded within the subject fragment. For Google accounts, the principal format is: “https://accounts.google.com/{id}”"]
         #[serde(
             rename = "principal",
             default,
@@ -332,7 +332,7 @@ pub mod schemas {
         )]
         pub service_account_delegation_info:
             ::std::option::Option<Vec<crate::schemas::ServiceAccountDelegationInfo>>,
-        #[doc = "The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example: \"//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}\""]
+        #[doc = "The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example: “//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}”"]
         #[serde(
             rename = "serviceAccountKeyName",
             default,
@@ -433,7 +433,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub resources: ::std::option::Option<Vec<crate::schemas::ResourceInfo>>,
-        #[doc = "Specifies the version of the service configuration that should be used to process the request. Must not be empty. Set this field to 'latest' to specify using the latest configuration."]
+        #[doc = "Specifies the version of the service configuration that should be used to process the request. Must not be empty. Set this field to ‘latest’ to specify using the latest configuration."]
         #[serde(
             rename = "serviceConfigId",
             default,
@@ -460,7 +460,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub headers: ::std::option::Option<::std::collections::BTreeMap<String, String>>,
-        #[doc = "Operation is allowed when this field is not set. Any non-'OK' status indicates a denial; google.rpc.Status.details would contain additional details about the denial."]
+        #[doc = "Operation is allowed when this field is not set. Any non-‘OK’ status indicates a denial; google.rpc.Status.details would contain additional details about the denial."]
         #[serde(
             rename = "status",
             default,
@@ -638,7 +638,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operations: ::std::option::Option<Vec<crate::schemas::AttributeContext>>,
-        #[doc = "Specifies the version of the service configuration that should be used to process the request. Must not be empty. Set this field to 'latest' to specify using the latest configuration."]
+        #[doc = "Specifies the version of the service configuration that should be used to process the request. Must not be empty. Set this field to ‘latest’ to specify using the latest configuration."]
         #[serde(
             rename = "serviceConfigId",
             default,
@@ -724,7 +724,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub path: ::std::option::Option<String>,
-        #[doc = "The network protocol used with the request, such as \"http/1.1\", \"spdy/3\", \"h2\", \"h2c\", \"webrtc\", \"tcp\", \"udp\", \"quic\". See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for details."]
+        #[doc = "The network protocol used with the request, such as “http/1.1”, “spdy/3”, “h2”, “h2c”, “webrtc”, “tcp”, “udp”, “quic”. See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for details."]
         #[serde(
             rename = "protocol",
             default,
@@ -780,14 +780,14 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct RequestMetadata {
-        #[doc = "The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from a Compute Engine VM with external IP address, this will be the VM's external IP address. For caller from a Compute Engine VM without external IP address, if the VM is in the same organization (or project) as the accessed resource, `caller_ip` will be the VM's internal IPv4 address, otherwise the `caller_ip` will be redacted to \"gce-internal-ip\". See https://cloud.google.com/compute/docs/vpc/ for more information."]
+        #[doc = "The IP address of the caller. For caller from internet, this will be public IPv4 or IPv6 address. For caller from a Compute Engine VM with external IP address, this will be the VM’s external IP address. For caller from a Compute Engine VM without external IP address, if the VM is in the same organization (or project) as the accessed resource, `caller_ip` will be the VM’s internal IPv4 address, otherwise the `caller_ip` will be redacted to “gce-internal-ip”. See https://cloud.google.com/compute/docs/vpc/ for more information."]
         #[serde(
             rename = "callerIp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub caller_ip: ::std::option::Option<String>,
-        #[doc = "The network of the caller. Set only if the network host project is part of the same GCP organization (or project) as the accessed resource. See https://cloud.google.com/compute/docs/vpc/ for more information. This is a scheme-less URI full resource name. For example: \"//compute.googleapis.com/projects/PROJECT_ID/global/networks/NETWORK_ID\""]
+        #[doc = "The network of the caller. Set only if the network host project is part of the same GCP organization (or project) as the accessed resource. See https://cloud.google.com/compute/docs/vpc/ for more information. This is a scheme-less URI full resource name. For example: “//compute.googleapis.com/projects/PROJECT_ID/global/networks/NETWORK_ID”"]
         #[serde(
             rename = "callerNetwork",
             default,
@@ -860,7 +860,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub delete_time: ::std::option::Option<String>,
-        #[doc = "Mutable. The display name set by clients. Must be <= 63 characters."]
+        #[doc = "Mutable. The display name set by clients. Must be \\<= 63 characters."]
         #[serde(
             rename = "displayName",
             default,
@@ -888,14 +888,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "The stable identifier (name) of a resource on the `service`. A resource can be logically identified as \"//{resource.service}/{resource.name}\". The differences between a resource name and a URI are: * Resource name is a logical identifier, independent of network protocol and API version. For example, `//pubsub.googleapis.com/projects/123/topics/news-feed`. * URI often includes protocol and version information, so it can be used directly by applications. For example, `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`. See https://cloud.google.com/apis/design/resource_names for details."]
+        #[doc = "The stable identifier (name) of a resource on the `service`. A resource can be logically identified as “//{resource.service}/{resource.name}”. The differences between a resource name and a URI are: * Resource name is a logical identifier, independent of network protocol and API version. For example, `//pubsub.googleapis.com/projects/123/topics/news-feed`. * URI often includes protocol and version information, so it can be used directly by applications. For example, `https://pubsub.googleapis.com/v1/projects/123/topics/news-feed`. See https://cloud.google.com/apis/design/resource_names for details."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The type of the resource. The syntax is platform-specific because different platforms define their resources differently. For Google APIs, the type format must be \"{service}/{kind}\", such as \"pubsub.googleapis.com/Topic\"."]
+        #[doc = "The type of the resource. The syntax is platform-specific because different platforms define their resources differently. For Google APIs, the type format must be “{service}/{kind}”, such as “pubsub.googleapis.com/Topic”."]
         #[serde(
             rename = "type",
             default,
@@ -954,7 +954,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub container: ::std::option::Option<String>,
-        #[doc = "Optional. The location of the resource. The value must be a valid zone, region or multiregion. For example: \"europe-west4\" or \"northamerica-northeast1-a\""]
+        #[doc = "Optional. The location of the resource. The value must be a valid zone, region or multiregion. For example: “europe-west4” or “northamerica-northeast1-a”"]
         #[serde(
             rename = "location",
             default,
@@ -968,14 +968,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "The resource permission needed for this request. The format must be \"{service}/{plural}.{verb}\"."]
+        #[doc = "The resource permission needed for this request. The format must be “{service}/{plural}.{verb}”."]
         #[serde(
             rename = "permission",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub permission: ::std::option::Option<String>,
-        #[doc = "The resource type in the format of \"{service}/{kind}\"."]
+        #[doc = "The resource type in the format of “{service}/{kind}”."]
         #[serde(
             rename = "type",
             default,
@@ -1006,14 +1006,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceLocation {
-        #[doc = "The locations of a resource after the execution of the operation. Requests to create or delete a location based resource must populate the 'current_locations' field and not the 'original_locations' field. For example: \"europe-west1-a\" \"us-east1\" \"nam3\""]
+        #[doc = "The locations of a resource after the execution of the operation. Requests to create or delete a location based resource must populate the ‘current_locations’ field and not the ‘original_locations’ field. For example: “europe-west1-a” “us-east1” “nam3”"]
         #[serde(
             rename = "currentLocations",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_locations: ::std::option::Option<Vec<String>>,
-        #[doc = "The locations of a resource prior to the execution of the operation. Requests that mutate the resource's location must populate both the 'original_locations' as well as the 'current_locations' fields. For example: \"europe-west1-a\" \"us-east1\" \"nam3\""]
+        #[doc = "The locations of a resource prior to the execution of the operation. Requests that mutate the resource’s location must populate both the ‘original_locations’ as well as the ‘current_locations’ fields. For example: “europe-west1-a” “us-east1” “nam3”"]
         #[serde(
             rename = "originalLocations",
             default,
@@ -1139,7 +1139,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SpanContext {
-        #[doc = "The resource name of the span. The format is: projects/[PROJECT_ID_OR_NUMBER]/traces/[TRACE_ID]/spans/[SPAN_ID] `[TRACE_ID]` is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. `[SPAN_ID]` is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
+        #[doc = "The resource name of the span. The format is: projects/\\[PROJECT_ID_OR_NUMBER\\]/traces/\\[TRACE_ID\\]/spans/\\[SPAN_ID\\] `[TRACE_ID]` is a unique identifier for a trace within a project; it is a 32-character hexadecimal encoding of a 16-byte array. `[SPAN_ID]` is a unique identifier for a span within a trace; it is a 16-character hexadecimal encoding of an 8-byte array."]
         #[serde(
             rename = "spanName",
             default,
@@ -1262,7 +1262,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latency: ::std::option::Option<String>,
-        #[doc = "Protocol used for the request. Examples: \"HTTP/1.1\", \"HTTP/2\", \"websocket\""]
+        #[doc = "Protocol used for the request. Examples: “HTTP/1.1”, “HTTP/2”, “websocket”"]
         #[serde(
             rename = "protocol",
             default,
@@ -2080,12 +2080,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -2243,12 +2243,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

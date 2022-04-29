@@ -28,7 +28,7 @@ pub mod schemas {
         )]
         pub site:
             ::std::option::Option<crate::schemas::SiteVerificationWebResourceGettokenRequestSite>,
-        #[doc = "The verification method that will be used to verify this site. For sites, 'FILE' or 'META' methods may be used. For domains, only 'DNS' may be used."]
+        #[doc = "The verification method that will be used to verify this site. For sites, ‘FILE’ or ‘META’ methods may be used. For domains, only ‘DNS’ may be used."]
         #[serde(
             rename = "verificationMethod",
             default,
@@ -166,7 +166,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SiteVerificationWebResourceResource {
-        #[doc = "The string used to identify this site. This value should be used in the \"id\" portion of the REST URL for the Get, Update, and Delete operations."]
+        #[doc = "The string used to identify this site. This value should be used in the “id” portion of the REST URL for the Get, Update, and Delete operations."]
         #[serde(
             rename = "id",
             default,

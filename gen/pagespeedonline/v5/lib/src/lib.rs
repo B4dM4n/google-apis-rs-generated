@@ -36,7 +36,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub relevant_audits: ::std::option::Option<Vec<String>>,
-        #[doc = "The weight this audit's score has on the overall category score."]
+        #[doc = "The weight this audit’s score has on the overall category score."]
         #[serde(
             rename = "weight",
             default,
@@ -58,14 +58,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Bucket {
-        #[doc = "Upper bound for a bucket's range."]
+        #[doc = "Upper bound for a bucket’s range."]
         #[serde(
             rename = "max",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max: ::std::option::Option<i32>,
-        #[doc = "Lower bound for a bucket's range."]
+        #[doc = "Lower bound for a bucket’s range."]
         #[serde(
             rename = "min",
             default,
@@ -330,7 +330,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub explanation: ::std::option::Option<String>,
-        #[doc = "The audit's id."]
+        #[doc = "The audit’s id."]
         #[serde(
             rename = "id",
             default,
@@ -420,7 +420,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub manual_description: ::std::option::Option<String>,
-        #[doc = "The overall score of the category, the weighted average of all its audits. (The category's score, can be null.)"]
+        #[doc = "The overall score of the category, the weighted average of all its audits. (The category’s score, can be null.)"]
         #[serde(
             rename = "score",
             default,
@@ -578,7 +578,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub id: ::std::option::Option<String>,
-        #[doc = "The requested URL, which may differ from the resolved \"id\"."]
+        #[doc = "The requested URL, which may differ from the resolved “id”."]
         #[serde(
             rename = "initial_url",
             default,
@@ -601,7 +601,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub origin_fallback: ::std::option::Option<bool>,
-        #[doc = "The human readable speed \"category\" of the id."]
+        #[doc = "The human readable speed “category” of the id."]
         #[serde(
             rename = "overall_category",
             default,
@@ -656,7 +656,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lighthouse_result: ::std::option::Option<crate::schemas::LighthouseResultV5>,
-        #[doc = "Metrics of end users' page loading experience."]
+        #[doc = "Metrics of end users’ page loading experience."]
         #[serde(
             rename = "loadingExperience",
             default,
@@ -804,14 +804,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dropdown_save_gist: ::std::option::Option<String>,
-        #[doc = "Option in a dropdown menu that saves the Lighthouse report HTML locally to the system as a '.html' file."]
+        #[doc = "Option in a dropdown menu that saves the Lighthouse report HTML locally to the system as a ‘.html’ file."]
         #[serde(
             rename = "dropdownSaveHTML",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub dropdown_save_html: ::std::option::Option<String>,
-        #[doc = "Option in a dropdown menu that saves the Lighthouse JSON object to the local system as a '.json' file."]
+        #[doc = "Option in a dropdown menu that saves the Lighthouse JSON object to the local system as a ‘.json’ file."]
         #[serde(
             rename = "dropdownSaveJSON",
             default,
@@ -944,7 +944,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub runtime_settings_cpu_throttling: ::std::option::Option<String>,
-        #[doc = "Label for a row in a table that describes the kind of device that was emulated for the Lighthouse run. Example values for row elements: 'No Emulation', 'Emulated Desktop', etc."]
+        #[doc = "Label for a row in a table that describes the kind of device that was emulated for the Lighthouse run. Example values for row elements: ‘No Emulation’, ‘Emulated Desktop’, etc."]
         #[serde(
             rename = "runtimeSettingsDevice",
             default,
@@ -1182,7 +1182,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Timing {
-        #[doc = "The total duration of Lighthouse's run."]
+        #[doc = "The total duration of Lighthouse’s run."]
         #[serde(
             rename = "total",
             default,
@@ -1443,17 +1443,17 @@ pub mod resources {
         pub mod params {
             #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
             pub enum RunpagespeedCategoryItems {
-                #[doc = "Accessibility (a11y), category pertaining to a website's capacity to be accessible to all users."]
+                #[doc = "Accessibility (a11y), category pertaining to a website’s capacity to be accessible to all users."]
                 Accessibility,
-                #[doc = "Best Practices, category pertaining to a website's conformance to web best practice."]
+                #[doc = "Best Practices, category pertaining to a website’s conformance to web best practice."]
                 BestPractices,
                 #[doc = "Default UNDEFINED category."]
                 CategoryUnspecified,
-                #[doc = "Performance, category pertaining to a website's performance."]
+                #[doc = "Performance, category pertaining to a website’s performance."]
                 Performance,
-                #[doc = "Progressive Web App (PWA), category pertaining to a website's ability to be run as a PWA."]
+                #[doc = "Progressive Web App (PWA), category pertaining to a website’s ability to be run as a PWA."]
                 Pwa,
-                #[doc = "Search Engine Optimization (SEO), category pertaining to a website's ability to be indexed by search engines."]
+                #[doc = "Search Engine Optimization (SEO), category pertaining to a website’s ability to be indexed by search engines."]
                 Seo,
             }
             impl RunpagespeedCategoryItems {
@@ -1737,12 +1737,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

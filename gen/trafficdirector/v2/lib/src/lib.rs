@@ -159,7 +159,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub static_clusters: ::std::option::Option<Vec<crate::schemas::StaticCluster>>,
-        #[doc = "This is the :ref:`version_info ` in the last processed CDS discovery response. If there are only static bootstrap clusters, this field will be \"\"."]
+        #[doc = "This is the :ref:`version_info ` in the last processed CDS discovery response. If there are only static bootstrap clusters, this field will be “”."]
         #[serde(
             rename = "versionInfo",
             default,
@@ -188,7 +188,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub exact: ::std::option::Option<f64>,
-        #[doc = "If specified, the input double value must be in the range specified here. Note: The range is using half-open interval semantics [start, end)."]
+        #[doc = "If specified, the input double value must be in the range specified here. Note: The range is using half-open interval semantics \\[start, end)."]
         #[serde(
             rename = "range",
             default,
@@ -432,7 +432,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Extension {
-        #[doc = "Category of the extension. Extension category names use reverse DNS notation. For instance \"envoy.filters.listener\" for Envoy's built-in listener filters or \"com.acme.filters.http\" for HTTP filters from acme.com vendor. [#comment:"]
+        #[doc = "Category of the extension. Extension category names use reverse DNS notation. For instance “envoy.filters.listener” for Envoy’s built-in listener filters or “com.acme.filters.http” for HTTP filters from acme.com vendor. \\[\\#comment:"]
         #[serde(
             rename = "category",
             default,
@@ -453,7 +453,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[#not-implemented-hide:] Type descriptor of extension configuration proto. [#comment:"]
+        #[doc = "\\[\\#not-implemented-hide:\\] Type descriptor of extension configuration proto. \\[\\#comment:"]
         #[serde(
             rename = "typeDescriptor",
             default,
@@ -491,7 +491,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GoogleRE2 {
-        #[doc = "This field controls the RE2 \"program size\" which is a rough estimate of how complex a compiled regex is to evaluate. A regex that has a program size greater than the configured value will fail to compile. In this case, the configured max program size can be increased or the regex can be simplified. If not specified, the default is 100. This field is deprecated; regexp validation should be performed on the management server instead of being done by each individual client."]
+        #[doc = "This field controls the RE2 “program size” which is a rough estimate of how complex a compiled regex is to evaluate. A regex that has a program size greater than the configured value will fail to compile. In this case, the configured max program size can be increased or the regex can be simplified. If not specified, the default is 100. This field is deprecated; regexp validation should be performed on the management server instead of being done by each individual client."]
         #[serde(
             rename = "maxProgramSize",
             default,
@@ -582,7 +582,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub static_listeners: ::std::option::Option<Vec<crate::schemas::StaticListener>>,
-        #[doc = "This is the :ref:`version_info ` in the last processed LDS discovery response. If there are only static bootstrap listeners, this field will be \"\"."]
+        #[doc = "This is the :ref:`version_info ` in the last processed LDS discovery response. If there are only static bootstrap listeners, this field will be “”."]
         #[serde(
             rename = "versionInfo",
             default,
@@ -627,7 +627,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sub_zone: ::std::option::Option<String>,
-        #[doc = "Defines the local service zone where Envoy is running. Though optional, it should be set if discovery service routing is used and the discovery service exposes :ref:`zone data `, either in this message or via :option:`--service-zone`. The meaning of zone is context dependent, e.g. `Availability Zone (AZ) `_ on AWS, `Zone `_ on GCP, etc."]
+        #[doc = "Defines the local service zone where Envoy is running. Though optional, it should be set if discovery service routing is used and the discovery service exposes :ref:`zone data `, either in this message or via :option:`--service-zone`. The meaning of zone is context dependent, e.g. `Availability Zone (AZ) `\\_ on AWS, `Zone `\\_ on GCP, etc."]
         #[serde(
             rename = "zone",
             default,
@@ -711,14 +711,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_agent_build_version: ::std::option::Option<crate::schemas::BuildVersion>,
-        #[doc = "Free-form string that identifies the entity requesting config. E.g. \"envoy\" or \"grpc\""]
+        #[doc = "Free-form string that identifies the entity requesting config. E.g. “envoy” or “grpc”"]
         #[serde(
             rename = "userAgentName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user_agent_name: ::std::option::Option<String>,
-        #[doc = "Free-form string that identifies the version of the entity requesting config. E.g. \"1.12.2\" or \"abcd1234\", or \"SpecialEnvoyBuild\""]
+        #[doc = "Free-form string that identifies the version of the entity requesting config. E.g. “1.12.2” or “abcd1234”, or “SpecialEnvoyBuild”"]
         #[serde(
             rename = "userAgentVersion",
             default,
@@ -969,7 +969,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub mode: ::std::option::Option<u32>,
-        #[doc = "Unix Domain Socket path. On Linux, paths starting with '@' will use the abstract namespace. The starting '@' is replaced by a null byte by Envoy. Paths starting with '@' will result in an error in environments other than Linux."]
+        #[doc = "Unix Domain Socket path. On Linux, paths starting with ‘@’ will use the abstract namespace. The starting ‘@’ is replaced by a null byte by Envoy. Paths starting with ‘@’ will result in an error in environments other than Linux."]
         #[serde(
             rename = "path",
             default,
@@ -1000,7 +1000,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct RegexMatcher {
-        #[doc = "Google's RE2 regex engine."]
+        #[doc = "Google’s RE2 regex engine."]
         #[serde(
             rename = "googleRe2",
             default,
@@ -1136,14 +1136,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SocketAddress {
-        #[doc = "The address for this socket. :ref:`Listeners ` will bind to the address. An empty address is not allowed. Specify `0.0.0.0` or `::` to bind to any address. [#comment:TODO(zuercher) reinstate when implemented: It is possible to distinguish a Listener address via the prefix/suffix matching in :ref:`FilterChainMatch `.] When used within an upstream :ref:`BindConfig `, the address controls the source address of outbound connections. For :ref:`clusters `, the cluster type determines whether the address must be an IP (*STATIC* or *EDS* clusters) or a hostname resolved by DNS (*STRICT_DNS* or *LOGICAL_DNS* clusters). Address resolution can be customized via :ref:`resolver_name `."]
+        #[doc = "The address for this socket. :ref:`Listeners ` will bind to the address. An empty address is not allowed. Specify `0.0.0.0` or `::` to bind to any address. \\[\\#comment:TODO(zuercher) reinstate when implemented: It is possible to distinguish a Listener address via the prefix/suffix matching in :ref:`FilterChainMatch `.\\] When used within an upstream :ref:`BindConfig `, the address controls the source address of outbound connections. For :ref:`clusters `, the cluster type determines whether the address must be an IP (*STATIC* or *EDS* clusters) or a hostname resolved by DNS (*STRICT_DNS* or *LOGICAL_DNS* clusters). Address resolution can be customized via :ref:`resolver_name `."]
         #[serde(
             rename = "address",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address: ::std::option::Option<String>,
-        #[doc = "When binding to an IPv6 address above, this enables `IPv4 compatibility `_. Binding to `::` will allow both IPv4 and IPv6 connections, with peer IPv4 addresses mapped into IPv6 space as `::FFFF:`."]
+        #[doc = "When binding to an IPv6 address above, this enables `IPv4 compatibility `\\_. Binding to `::` will allow both IPv4 and IPv6 connections, with peer IPv4 addresses mapped into IPv6 space as `::FFFF:`."]
         #[serde(
             rename = "ipv4Compat",
             default,
@@ -1374,7 +1374,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub prefix: ::std::option::Option<String>,
-        #[doc = "The input string must match the regular expression specified here. The regex grammar is defined `here `_. Examples: * The regex `\\d{3}` matches the value *123* * The regex `\\d{3}` does not match the value *1234* * The regex `\\d{3}` does not match the value *123.456* .. attention:: This field has been deprecated in favor of `safe_regex` as it is not safe for use with untrusted input in all cases."]
+        #[doc = "The input string must match the regular expression specified here. The regex grammar is defined `here `\\_. Examples: * The regex `\\d{3}` matches the value *123* * The regex `\\d{3}` does not match the value *1234* * The regex `\\d{3}` does not match the value *123.456* .. attention:: This field has been deprecated in favor of `safe_regex` as it is not safe for use with untrusted input in all cases."]
         #[serde(
             rename = "regex",
             default,
@@ -1791,12 +1791,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

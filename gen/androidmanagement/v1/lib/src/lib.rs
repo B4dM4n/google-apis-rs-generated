@@ -326,7 +326,7 @@ pub mod schemas {
     pub enum AdvancedSecurityOverridesUntrustedAppsPolicy {
         #[doc = "Allow untrusted app installs on entire device."]
         AllowInstallDeviceWide,
-        #[doc = "For devices with work profiles, allow untrusted app installs in the device's personal profile only."]
+        #[doc = "For devices with work profiles, allow untrusted app installs in the device’s personal profile only."]
         AllowInstallInPersonalProfileOnly,
         #[doc = "Default. Disallow untrusted app installs on entire device."]
         DisallowInstall,
@@ -474,7 +474,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ApiLevelCondition {
-        #[doc = "The minimum desired Android Framework API level. If the device doesn't meet the minimum requirement, this condition is satisfied. Must be greater than zero."]
+        #[doc = "The minimum desired Android Framework API level. If the device doesn’t meet the minimum requirement, this condition is satisfied. Must be greater than zero."]
         #[serde(
             rename = "minApiLevel",
             default,
@@ -564,7 +564,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub version_code: ::std::option::Option<i32>,
-        #[doc = "The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be \"1.4\")."]
+        #[doc = "The string used in the Play store by the app developer to identify the version. The string is not necessarily unique or localized (for example, the string could be “1.4”)."]
         #[serde(
             rename = "versionString",
             default,
@@ -1284,7 +1284,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub accessible_track_ids: ::std::option::Option<Vec<String>>,
-        #[doc = "Specifies whether the app is allowed networking when the VPN is not connected and alwaysOnVpnPackage.lockdownEnabled is enabled. If set to VPN_LOCKDOWN_ENFORCED, the app is not allowed networking, and if set to VPN_LOCKDOWN_EXEMPTION, the app is allowed networking. Only supported on devices running Android 10 and above. If this is not supported by the device, the device will contain a NonComplianceDetail with non_compliance_reason set to API_LEVEL and a fieldPath. If this is not applicable to the app, the device will contain a NonComplianceDetail with non_compliance_reason set to UNSUPPORTED and a fieldPath. The fieldPath is set to applications[i].alwaysOnVpnLockdownExemption, where i is the index of the package in the applications policy."]
+        #[doc = "Specifies whether the app is allowed networking when the VPN is not connected and alwaysOnVpnPackage.lockdownEnabled is enabled. If set to VPN_LOCKDOWN_ENFORCED, the app is not allowed networking, and if set to VPN_LOCKDOWN_EXEMPTION, the app is allowed networking. Only supported on devices running Android 10 and above. If this is not supported by the device, the device will contain a NonComplianceDetail with non_compliance_reason set to API_LEVEL and a fieldPath. If this is not applicable to the app, the device will contain a NonComplianceDetail with non_compliance_reason set to UNSUPPORTED and a fieldPath. The fieldPath is set to applications\\[i\\].alwaysOnVpnLockdownExemption, where i is the index of the package in the applications policy."]
         #[serde(
             rename = "alwaysOnVpnLockdownExemption",
             default,
@@ -1812,17 +1812,17 @@ pub mod schemas {
     pub enum ApplicationPolicyInstallType {
         #[doc = "The app is available to install."]
         Available,
-        #[doc = "The app is blocked and can't be installed. If the app was installed under a previous policy, it will be uninstalled."]
+        #[doc = "The app is blocked and can’t be installed. If the app was installed under a previous policy, it will be uninstalled."]
         Blocked,
-        #[doc = "The app is automatically installed and can't be removed by the user."]
+        #[doc = "The app is automatically installed and can’t be removed by the user."]
         ForceInstalled,
         #[doc = "Unspecified. Defaults to AVAILABLE."]
         InstallTypeUnspecified,
-        #[doc = "The app is automatically installed in kiosk mode: it's set as the preferred home intent and whitelisted for lock task mode. Device setup won't complete until the app is installed. After installation, users won't be able to remove the app. You can only set this installType for one app per policy. When this is present in the policy, status bar will be automatically disabled."]
+        #[doc = "The app is automatically installed in kiosk mode: it’s set as the preferred home intent and whitelisted for lock task mode. Device setup won’t complete until the app is installed. After installation, users won’t be able to remove the app. You can only set this installType for one app per policy. When this is present in the policy, status bar will be automatically disabled."]
         Kiosk,
         #[doc = "The app is automatically installed and can be removed by the user."]
         Preinstalled,
-        #[doc = "The app is automatically installed and can't be removed by the user and will prevent setup from completion until installation is complete."]
+        #[doc = "The app is automatically installed and can’t be removed by the user and will prevent setup from completion until installation is complete."]
         RequiredForSetup,
     }
     impl ApplicationPolicyInstallType {
@@ -1960,7 +1960,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub package_name: ::std::option::Option<String>,
-        #[doc = "The SHA-256 hash of the app's APK file, which can be used to verify the app hasn't been modified. Each byte of the hash value is represented as a two-digit hexadecimal number."]
+        #[doc = "The SHA-256 hash of the app’s APK file, which can be used to verify the app hasn’t been modified. Each byte of the hash value is represented as a two-digit hexadecimal number."]
         #[serde(
             rename = "packageSha256Hash",
             default,
@@ -2012,7 +2012,7 @@ pub mod schemas {
         ApplicationSourceUnspecified,
         #[doc = "The app was installed from the Google Play Store."]
         InstalledFromPlayStore,
-        #[doc = "This is a system app from the device's factory image."]
+        #[doc = "This is a system app from the device’s factory image."]
         SystemAppFactoryVersion,
         #[doc = "This is an updated system app."]
         SystemAppUpdatedVersion,
@@ -2351,7 +2351,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ChoosePrivateKeyRule {
-        #[doc = "The package names to which this rule applies. The hash of the signing certificate for each app is verified against the hash provided by Play. If no package names are specified, then the alias is provided to all apps that call KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String[],%20java.security.Principal[],%20java.lang.String,%20int,%20java.lang.String%29) or any overloads (but not without calling KeyChain.choosePrivateKeyAlias, even on Android 11 and above). Any app with the same Android UID as a package specified here will have access when they call KeyChain.choosePrivateKeyAlias."]
+        #[doc = "The package names to which this rule applies. The hash of the signing certificate for each app is verified against the hash provided by Play. If no package names are specified, then the alias is provided to all apps that call KeyChain.choosePrivateKeyAlias (https://developer.android.com/reference/android/security/KeyChain#choosePrivateKeyAlias%28android.app.Activity,%20android.security.KeyChainAliasCallback,%20java.lang.String\\[\\],%20java.security.Principal\\[\\],%20java.lang.String,%20int,%20java.lang.String%29) or any overloads (but not without calling KeyChain.choosePrivateKeyAlias, even on Android 11 and above). Any app with the same Android UID as a package specified here will have access when they call KeyChain.choosePrivateKeyAlias."]
         #[serde(
             rename = "packageNames",
             default,
@@ -2469,7 +2469,7 @@ pub mod schemas {
         ManagementMode,
         #[doc = "An unknown error occurred."]
         Unknown,
-        #[doc = "The device doesn't support the command. Updating Android Device Policy to the latest version may resolve the issue."]
+        #[doc = "The device doesn’t support the command. Updating Android Device Policy to the latest version may resolve the issue."]
         Unsupported,
     }
     impl CommandErrorCode {
@@ -2558,7 +2558,7 @@ pub mod schemas {
         Reboot,
         #[doc = "Removes the work profile and all policies from a company-owned Android 8.0+ device, relinquishing the device for personal use. Apps and data associated with the personal profile(s) are preserved. The device will be deleted from the server after it acknowledges the command."]
         RelinquishOwnership,
-        #[doc = "Reset the user's password."]
+        #[doc = "Reset the user’s password."]
         ResetPassword,
     }
     impl CommandType {
@@ -2636,11 +2636,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CommandResetPasswordFlagsItems {
-        #[doc = "Don't ask for user credentials on device boot."]
+        #[doc = "Don’t ask for user credentials on device boot."]
         DoNotAskCredentialsOnBoot,
         #[doc = "Lock the device after password reset."]
         LockNow,
-        #[doc = "Don't allow other admins to change the password again until the user has entered it."]
+        #[doc = "Don’t allow other admins to change the password again until the user has entered it."]
         RequireEntry,
         #[doc = "This value is ignored."]
         ResetPasswordFlagUnspecified,
@@ -2868,7 +2868,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ComplianceRule {
-        #[doc = "A condition which is satisfied if the Android Framework API level on the device doesn't meet a minimum requirement."]
+        #[doc = "A condition which is satisfied if the Android Framework API level on the device doesn’t meet a minimum requirement."]
         #[serde(
             rename = "apiLevelCondition",
             default,
@@ -3309,7 +3309,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Date {
-        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant."]
+        #[doc = "Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn’t significant."]
         #[serde(
             rename = "day",
             default,
@@ -3350,7 +3350,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub api_level: ::std::option::Option<i32>,
-        #[doc = "Reports for apps installed on the device. This information is only available when application_reports_enabled is true in the device's policy."]
+        #[doc = "Reports for apps installed on the device. This information is only available when application_reports_enabled is true in the device’s policy."]
         #[serde(
             rename = "applicationReports",
             default,
@@ -3387,7 +3387,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub applied_state: ::std::option::Option<crate::schemas::DeviceAppliedState>,
-        #[doc = "Information about Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device's policy."]
+        #[doc = "Information about Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device’s policy."]
         #[serde(
             rename = "commonCriteriaModeInfo",
             default,
@@ -3395,7 +3395,7 @@ pub mod schemas {
         )]
         pub common_criteria_mode_info:
             ::std::option::Option<crate::schemas::CommonCriteriaModeInfo>,
-        #[doc = "Device settings information. This information is only available if deviceSettingsEnabled is true in the device's policy."]
+        #[doc = "Device settings information. This information is only available if deviceSettingsEnabled is true in the device’s policy."]
         #[serde(
             rename = "deviceSettings",
             default,
@@ -3409,7 +3409,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disabled_reason: ::std::option::Option<crate::schemas::UserFacingMessage>,
-        #[doc = "Detailed information about displays on the device. This information is only available if displayInfoEnabled is true in the device's policy."]
+        #[doc = "Detailed information about displays on the device. This information is only available if displayInfoEnabled is true in the device’s policy."]
         #[serde(
             rename = "displays",
             default,
@@ -3444,7 +3444,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hardware_info: ::std::option::Option<crate::schemas::HardwareInfo>,
-        #[doc = "Hardware status samples in chronological order. This information is only available if hardwareStatusEnabled is true in the device's policy."]
+        #[doc = "Hardware status samples in chronological order. This information is only available if hardwareStatusEnabled is true in the device’s policy."]
         #[serde(
             rename = "hardwareStatusSamples",
             default,
@@ -3479,7 +3479,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub management_mode: ::std::option::Option<crate::schemas::DeviceManagementMode>,
-        #[doc = "Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device's policy."]
+        #[doc = "Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device’s policy."]
         #[serde(
             rename = "memoryEvents",
             default,
@@ -3500,7 +3500,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Device network information. This information is only available if networkInfoEnabled is true in the device's policy."]
+        #[doc = "Device network information. This information is only available if networkInfoEnabled is true in the device’s policy."]
         #[serde(
             rename = "networkInfo",
             default,
@@ -3528,14 +3528,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_compliant: ::std::option::Option<bool>,
-        #[doc = "The name of the policy applied to the device, in the form enterprises/{enterpriseId}/policies/{policyId}. If not specified, the policy_name for the device's user is applied. This field can be modified by a patch request. You can specify only the policyId when calling enterprises.devices.patch, as long as the policyId doesn’t contain any slashes. The rest of the policy name is inferred."]
+        #[doc = "The name of the policy applied to the device, in the form enterprises/{enterpriseId}/policies/{policyId}. If not specified, the policy_name for the device’s user is applied. This field can be modified by a patch request. You can specify only the policyId when calling enterprises.devices.patch, as long as the policyId doesn’t contain any slashes. The rest of the policy name is inferred."]
         #[serde(
             rename = "policyName",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub policy_name: ::std::option::Option<String>,
-        #[doc = "Power management events on the device in chronological order. This information is only available if powerManagementEventsEnabled is true in the device's policy."]
+        #[doc = "Power management events on the device in chronological order. This information is only available if powerManagementEventsEnabled is true in the device’s policy."]
         #[serde(
             rename = "powerManagementEvents",
             default,
@@ -3550,14 +3550,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub previous_device_names: ::std::option::Option<Vec<String>>,
-        #[doc = "Device's security posture value that reflects how secure the device is."]
+        #[doc = "Device’s security posture value that reflects how secure the device is."]
         #[serde(
             rename = "securityPosture",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub security_posture: ::std::option::Option<crate::schemas::SecurityPosture>,
-        #[doc = "Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device's policy."]
+        #[doc = "Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device’s policy."]
         #[serde(
             rename = "softwareInfo",
             default,
@@ -3571,7 +3571,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub state: ::std::option::Option<crate::schemas::DeviceState>,
-        #[doc = "Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device's policy."]
+        #[doc = "Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device’s policy."]
         #[serde(
             rename = "systemProperties",
             default,
@@ -4356,14 +4356,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub qr_code: ::std::option::Option<String>,
-        #[doc = "The user associated with this enrollment token. If it's specified when the enrollment token is created and the user does not exist, the user will be created. This field must not contain personally identifiable information. Only the account_identifier field needs to be set."]
+        #[doc = "The user associated with this enrollment token. If it’s specified when the enrollment token is created and the user does not exist, the user will be created. This field must not contain personally identifiable information. Only the account_identifier field needs to be set."]
         #[serde(
             rename = "user",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user: ::std::option::Option<crate::schemas::User>,
-        #[doc = "The token value that's passed to the device and authorizes the device to enroll. This is a read-only field generated by the server."]
+        #[doc = "The token value that’s passed to the device and authorizes the device to enroll. This is a read-only field generated by the server."]
         #[serde(
             rename = "value",
             default,
@@ -4525,7 +4525,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red << 16) | (green << 8) | blue, where the value of each component is between 0 and 255, inclusive."]
+        #[doc = "A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red \\<\\< 16) | (green \\<\\< 8) | blue, where the value of each component is between 0 and 255, inclusive."]
         #[serde(
             rename = "primaryColor",
             default,
@@ -4712,14 +4712,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ExternalData {
-        #[doc = "The base-64 encoded SHA-256 hash of the content hosted at url. If the content doesn't match this hash, Android Device Policy won't use the data."]
+        #[doc = "The base-64 encoded SHA-256 hash of the content hosted at url. If the content doesn’t match this hash, Android Device Policy won’t use the data."]
         #[serde(
             rename = "sha256Hash",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub sha_256_hash: ::std::option::Option<String>,
-        #[doc = "The absolute URL to the data, which must use either the http or https scheme. Android Device Policy doesn't provide any credentials in the GET request, so the URL must be publicly accessible. Including a long, random component in the URL may be used to prevent attackers from discovering the URL."]
+        #[doc = "The absolute URL to the data, which must use either the http or https scheme. Android Device Policy doesn’t provide any credentials in the GET request, so the URL must be publicly accessible. Including a long, random component in the URL may be used to prevent attackers from discovering the URL."]
         #[serde(
             rename = "url",
             default,
@@ -4750,14 +4750,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct FreezePeriod {
-        #[doc = "The end date (inclusive) of the freeze period. Must be no later than 90 days from the start date. If the end date is earlier than the start date, the freeze period is considered wrapping year-end. Note: year must not be set. For example, {\"month\": 1,\"date\": 30}."]
+        #[doc = "The end date (inclusive) of the freeze period. Must be no later than 90 days from the start date. If the end date is earlier than the start date, the freeze period is considered wrapping year-end. Note: year must not be set. For example, {“month”: 1,“date”: 30}."]
         #[serde(
             rename = "endDate",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_date: ::std::option::Option<crate::schemas::Date>,
-        #[doc = "The start date (inclusive) of the freeze period. Note: year must not be set. For example, {\"month\": 1,\"date\": 30}."]
+        #[doc = "The start date (inclusive) of the freeze period. Note: year must not be set. For example, {“month”: 1,“date”: 30}."]
         #[serde(
             rename = "startDate",
             default,
@@ -5003,7 +5003,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub create_time: ::std::option::Option<String>,
-        #[doc = "Optionally, a machine-readable value to be read by the EMM. For example, setting values that the admin can choose to query against in the EMM console (e.g. “notify me if the battery_warning data < 10”)."]
+        #[doc = "Optionally, a machine-readable value to be read by the EMM. For example, setting values that the admin can choose to query against in the EMM console (e.g. “notify me if the battery_warning data \\< 10”)."]
         #[serde(
             rename = "data",
             default,
@@ -5161,7 +5161,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_bar: ::std::option::Option<crate::schemas::KioskCustomizationStatusBar>,
-        #[doc = "Specifies whether system error dialogs for crashed or unresponsive apps are blocked in kiosk mode. When blocked, the system will force-stop the app as if the user chooses the \"close app\" option on the UI."]
+        #[doc = "Specifies whether system error dialogs for crashed or unresponsive apps are blocked in kiosk mode. When blocked, the system will force-stop the app as if the user chooses the “close app” option on the UI."]
         #[serde(
             rename = "systemErrorWarnings",
             default,
@@ -5374,7 +5374,7 @@ pub mod schemas {
     pub enum KioskCustomizationStatusBar {
         #[doc = "System info and notifications are disabled in kiosk mode."]
         NotificationsAndSystemInfoDisabled,
-        #[doc = "System info and notifications are shown on the status bar in kiosk mode.Note: For this policy to take effect, the device's home button must be enabled using kioskCustomization.systemNavigation."]
+        #[doc = "System info and notifications are shown on the status bar in kiosk mode.Note: For this policy to take effect, the device’s home button must be enabled using kioskCustomization.systemNavigation."]
         NotificationsAndSystemInfoEnabled,
         #[doc = "Unspecified, defaults to INFO_AND_NOTIFICATIONS_DISABLED."]
         StatusBarUnspecified,
@@ -5898,7 +5898,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct ManagedProperty {
-        #[doc = "The default value of the property. BUNDLE_ARRAY properties don't have a default value."]
+        #[doc = "The default value of the property. BUNDLE_ARRAY properties don’t have a default value."]
         #[serde(
             rename = "defaultValue",
             default,
@@ -5919,7 +5919,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub entries: ::std::option::Option<Vec<crate::schemas::ManagedPropertyEntry>>,
-        #[doc = "The unique key that the app uses to identify the property, e.g. \"com.google.android.gm.fieldname\"."]
+        #[doc = "The unique key that the app uses to identify the property, e.g. “com.google.android.gm.fieldname”."]
         #[serde(
             rename = "key",
             default,
@@ -5968,7 +5968,7 @@ pub mod schemas {
         BundleArray,
         #[doc = "A choice of one item from a set."]
         Choice,
-        #[doc = "A hidden restriction of string type (the default value can be used to pass along information that can't be modified, such as a version code)."]
+        #[doc = "A hidden restriction of string type (the default value can be used to pass along information that can’t be modified, such as a version code)."]
         Hidden,
         #[doc = "A property of integer type."]
         Integer,
@@ -6353,14 +6353,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub current_value: ::std::option::Option<::serde_json::Value>,
-        #[doc = "For settings with nested fields, if a particular nested field is out of compliance, this specifies the full path to the offending field. The path is formatted in the same way the policy JSON field would be referenced in JavaScript, that is: 1) For object-typed fields, the field name is followed by a dot then by a subfield name. 2) For array-typed fields, the field name is followed by the array index enclosed in brackets. For example, to indicate a problem with the url field in the externalData field in the 3rd application, the path would be applications[2].externalData.url"]
+        #[doc = "For settings with nested fields, if a particular nested field is out of compliance, this specifies the full path to the offending field. The path is formatted in the same way the policy JSON field would be referenced in JavaScript, that is: 1) For object-typed fields, the field name is followed by a dot then by a subfield name. 2) For array-typed fields, the field name is followed by the array index enclosed in brackets. For example, to indicate a problem with the url field in the externalData field in the 3rd application, the path would be applications\\[2\\].externalData.url"]
         #[serde(
             rename = "fieldPath",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub field_path: ::std::option::Option<String>,
-        #[doc = "If package_name is set and the non-compliance reason is APP_NOT_INSTALLED or APP_NOT_UPDATED, the detailed reason the app can't be installed or updated."]
+        #[doc = "If package_name is set and the non-compliance reason is APP_NOT_INSTALLED or APP_NOT_UPDATED, the detailed reason the app can’t be installed or updated."]
         #[serde(
             rename = "installationFailureReason",
             default,
@@ -6405,7 +6405,7 @@ pub mod schemas {
     pub enum NonComplianceDetailInstallationFailureReason {
         #[doc = "The installation is still in progress."]
         InProgress,
-        #[doc = "An unknown condition is preventing the app from being installed. Some potential reasons are that the device doesn't have enough storage, the device network connection is unreliable, or the installation is taking longer than expected. The installation will be retried automatically."]
+        #[doc = "An unknown condition is preventing the app from being installed. Some potential reasons are that the device doesn’t have enough storage, the device network connection is unreliable, or the installation is taking longer than expected. The installation will be retried automatically."]
         InstallationFailureReasonUnknown,
         #[doc = "This value is disallowed."]
         InstallationFailureReasonUnspecified,
@@ -6413,7 +6413,7 @@ pub mod schemas {
         NoLicensesRemaining,
         #[doc = "The app has not been approved by the admin."]
         NotApproved,
-        #[doc = "The app is not available in the user's country."]
+        #[doc = "The app is not available in the user’s country."]
         NotAvailableInCountry,
         #[doc = "The app is incompatible with the device."]
         NotCompatibleWithDevice,
@@ -6480,21 +6480,21 @@ pub mod schemas {
     pub enum NonComplianceDetailNonComplianceReason {
         #[doc = "The setting is not supported in the API level of the Android version running on the device."]
         ApiLevel,
-        #[doc = "The setting can't be applied to the app because the app doesn't support it, for example because its target SDK version is not high enough."]
+        #[doc = "The setting can’t be applied to the app because the app doesn’t support it, for example because its target SDK version is not high enough."]
         AppIncompatible,
         #[doc = "A blocked app is installed."]
         AppInstalled,
         #[doc = "The app required to implement the policy is not installed."]
         AppNotInstalled,
-        #[doc = "The app is installed, but it hasn't been updated to the minimum version code specified by policy."]
+        #[doc = "The app is installed, but it hasn’t been updated to the minimum version code specified by policy."]
         AppNotUpdated,
         #[doc = "The setting has an invalid value."]
         InvalidValue,
-        #[doc = "The management mode (profile owner, device owner, etc.) doesn't support the setting."]
+        #[doc = "The management mode (profile owner, device owner, etc.) doesn’t support the setting."]
         ManagementMode,
         #[doc = "This value is disallowed."]
         NonComplianceReasonUnspecified,
-        #[doc = "The setting hasn't been applied at the time of the report, but is expected to be applied shortly."]
+        #[doc = "The setting hasn’t been applied at the time of the report, but is expected to be applied shortly."]
         Pending,
         #[doc = "The policy is not supported by the version of Android Device Policy on the device."]
         Unsupported,
@@ -6619,7 +6619,7 @@ pub mod schemas {
         )]
         pub non_compliance_reason:
             ::std::option::Option<crate::schemas::NonComplianceDetailConditionNonComplianceReason>,
-        #[doc = "The package name of the app that's out of compliance. If not set, then this condition matches any package name."]
+        #[doc = "The package name of the app that’s out of compliance. If not set, then this condition matches any package name."]
         #[serde(
             rename = "packageName",
             default,
@@ -6648,21 +6648,21 @@ pub mod schemas {
     pub enum NonComplianceDetailConditionNonComplianceReason {
         #[doc = "The setting is not supported in the API level of the Android version running on the device."]
         ApiLevel,
-        #[doc = "The setting can't be applied to the app because the app doesn't support it, for example because its target SDK version is not high enough."]
+        #[doc = "The setting can’t be applied to the app because the app doesn’t support it, for example because its target SDK version is not high enough."]
         AppIncompatible,
         #[doc = "A blocked app is installed."]
         AppInstalled,
         #[doc = "The app required to implement the policy is not installed."]
         AppNotInstalled,
-        #[doc = "The app is installed, but it hasn't been updated to the minimum version code specified by policy."]
+        #[doc = "The app is installed, but it hasn’t been updated to the minimum version code specified by policy."]
         AppNotUpdated,
         #[doc = "The setting has an invalid value."]
         InvalidValue,
-        #[doc = "The management mode (profile owner, device owner, etc.) doesn't support the setting."]
+        #[doc = "The management mode (profile owner, device owner, etc.) doesn’t support the setting."]
         ManagementMode,
         #[doc = "This value is disallowed."]
         NonComplianceReasonUnspecified,
-        #[doc = "The setting hasn't been applied at the time of the report, but is expected to be applied shortly."]
+        #[doc = "The setting hasn’t been applied at the time of the report, but is expected to be applied shortly."]
         Pending,
         #[doc = "The policy is not supported by the version of Android Device Policy on the device."]
         Unsupported,
@@ -6933,7 +6933,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub password_expiration_timeout: ::std::option::Option<String>,
-        #[doc = "The length of the password history. After setting this field, the user won't be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction."]
+        #[doc = "The length of the password history. After setting this field, the user won’t be able to enter a new password that is the same as any password in the history. A value of 0 means there is no restriction."]
         #[serde(
             rename = "passwordHistoryLength",
             default,
@@ -7450,7 +7450,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PersistentPreferredActivity {
-        #[doc = "The intent actions to match in the filter. If any actions are included in the filter, then an intent's action must be one of those values for it to match. If no actions are included, the intent action is ignored."]
+        #[doc = "The intent actions to match in the filter. If any actions are included in the filter, then an intent’s action must be one of those values for it to match. If no actions are included, the intent action is ignored."]
         #[serde(
             rename = "actions",
             default,
@@ -7525,7 +7525,7 @@ pub mod schemas {
     pub enum PersonalApplicationPolicyInstallType {
         #[doc = "The app is available to install in the personal profile."]
         Available,
-        #[doc = "The app is blocked and can't be installed in the personal profile."]
+        #[doc = "The app is blocked and can’t be installed in the personal profile."]
         Blocked,
         #[doc = "Unspecified. Defaults to AVAILABLE."]
         InstallTypeUnspecified,
@@ -7616,7 +7616,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PersonalUsagePolicies {
-        #[doc = "Account types that can't be managed by the user."]
+        #[doc = "Account types that can’t be managed by the user."]
         #[serde(
             rename = "accountTypesWithManagementDisabled",
             default,
@@ -7762,7 +7762,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Default, :: serde :: Deserialize, :: serde :: Serialize)]
     pub struct Policy {
-        #[doc = "Account types that can't be managed by the user."]
+        #[doc = "Account types that can’t be managed by the user."]
         #[serde(
             rename = "accountTypesWithManagementDisabled",
             default,
@@ -7783,7 +7783,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub adjust_volume_disabled: ::std::option::Option<bool>,
-        #[doc = "Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values."]
+        #[doc = "Security policies set to secure values by default. To maintain the security posture of a device, we don’t recommend overriding any of the default values."]
         #[serde(
             rename = "advancedSecurityOverrides",
             default,
@@ -7885,7 +7885,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub cell_broadcasts_config_disabled: ::std::option::Option<bool>,
-        #[doc = "Rules for determining apps' access to private keys. See ChoosePrivateKeyRule for details."]
+        #[doc = "Rules for determining apps’ access to private keys. See ChoosePrivateKeyRule for details."]
         #[serde(
             rename = "choosePrivateKeyRules",
             default,
@@ -7971,7 +7971,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub factory_reset_disabled: ::std::option::Option<bool>,
-        #[doc = "Email addresses of device administrators for factory reset protection. When the device is factory reset, it will require one of these admins to log in with the Google account email and password to unlock the device. If no admins are specified, the device won't provide factory reset protection."]
+        #[doc = "Email addresses of device administrators for factory reset protection. When the device is factory reset, it will require one of these admins to log in with the Google account email and password to unlock the device. If no admins are specified, the device won’t provide factory reset protection."]
         #[serde(
             rename = "frpAdminEmails",
             default,
@@ -8092,7 +8092,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details."]
+        #[doc = "Whether the network escape hatch is enabled. If a network connection can’t be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details."]
         #[serde(
             rename = "networkEscapeHatchEnabled",
             default,
@@ -8157,7 +8157,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub permission_grants: ::std::option::Option<Vec<crate::schemas::PermissionGrant>>,
-        #[doc = "Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used. This can be set on fully managed devices and on work profiles. When applied to a work profile, this affects both the personal profile and the work profile."]
+        #[doc = "Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system’s built-in accessibility service can be used. In particular, if the field is set to empty, only the system’s built-in accessibility servicess can be used. This can be set on fully managed devices and on work profiles. When applied to a work profile, this affects both the personal profile and the work profile."]
         #[serde(
             rename = "permittedAccessibilityServices",
             default,
@@ -8202,7 +8202,7 @@ pub mod schemas {
         )]
         pub policy_enforcement_rules:
             ::std::option::Option<Vec<crate::schemas::PolicyEnforcementRule>>,
-        #[doc = "Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices."]
+        #[doc = "Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees’ devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices."]
         #[serde(
             rename = "preferentialNetworkService",
             default,
@@ -8309,7 +8309,7 @@ pub mod schemas {
         )]
         pub status_reporting_settings:
             ::std::option::Option<crate::schemas::StatusReportingSettings>,
-        #[doc = "The battery plugged in modes for which the device stays on. When using this setting, it is recommended to clear maximum_time_to_lock so that the device doesn't lock itself while it stays on."]
+        #[doc = "The battery plugged in modes for which the device stays on. When using this setting, it is recommended to clear maximum_time_to_lock so that the device doesn’t lock itself while it stays on."]
         #[serde(
             rename = "stayOnPluggedModes",
             default,
@@ -8381,7 +8381,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub vpn_config_disabled: ::std::option::Option<bool>,
-        #[doc = "Whether configuring Wi-Fi access points is disabled.Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled)."]
+        #[doc = "Whether configuring Wi-Fi access points is disabled.Note: If a network connection can’t be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled)."]
         #[serde(
             rename = "wifiConfigDisabled",
             default,
@@ -8586,7 +8586,7 @@ pub mod schemas {
         AutoDateAndTimeZoneEnforced,
         #[doc = "Unspecified. Defaults to AUTO_DATE_AND_TIME_ZONE_USER_CHOICE."]
         AutoDateAndTimeZoneUnspecified,
-        #[doc = "Auto date, time, and time zone are left to user's choice."]
+        #[doc = "Auto date, time, and time zone are left to user’s choice."]
         AutoDateAndTimeZoneUserChoice,
     }
     impl PolicyAutoDateAndTimeZone {
@@ -9248,7 +9248,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum PolicyPlayStoreMode {
-        #[doc = "All apps are available and any app that should not be on the device should be explicitly marked as 'BLOCKED' in the applications policy."]
+        #[doc = "All apps are available and any app that should not be on the device should be explicitly marked as ‘BLOCKED’ in the applications policy."]
         Blacklist,
         #[doc = "Unspecified. Defaults to WHITELIST."]
         PlayStoreModeUnspecified,
@@ -9829,7 +9829,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ProxyInfo {
-        #[doc = "For a direct proxy, the hosts for which the proxy is bypassed. The host names may contain wildcards such as *.example.com."]
+        #[doc = "For a direct proxy, the hosts for which the proxy is bypassed. The host names may contain wildcards such as \\*.example.com."]
         #[serde(
             rename = "excludedHosts",
             default,
@@ -9881,7 +9881,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SecurityPosture {
-        #[doc = "Device's security posture value."]
+        #[doc = "Device’s security posture value."]
         #[serde(
             rename = "devicePosture",
             default,
@@ -10193,7 +10193,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "A URL where an enterprise admin can register their enterprise. The page can't be rendered in an iframe."]
+        #[doc = "A URL where an enterprise admin can register their enterprise. The page can’t be rendered in an iframe."]
         #[serde(
             rename = "url",
             default,
@@ -10266,7 +10266,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bootloader_version: ::std::option::Option<String>,
-        #[doc = "SHA-256 hash of android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the system package, which can be used to verify that the system build hasn't been modified."]
+        #[doc = "SHA-256 hash of android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the system package, which can be used to verify that the system build hasn’t been modified."]
         #[serde(
             rename = "deviceBuildSignature",
             default,
@@ -10462,7 +10462,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct SystemUpdate {
-        #[doc = "If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device's local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time."]
+        #[doc = "If the type is WINDOWED, the end of the maintenance window, measured as the number of minutes after midnight in device’s local time. This value must be between 0 and 1439, inclusive. If this value is less than start_minutes, then the maintenance window spans midnight. If the maintenance window specified is smaller than 30 minutes, the actual window is extended to 30 minutes beyond the start time."]
         #[serde(
             rename = "endMinutes",
             default,
@@ -10483,7 +10483,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub r#type: ::std::option::Option<crate::schemas::SystemUpdateType>,
-        #[doc = "If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device's local time. This value must be between 0 and 1439, inclusive."]
+        #[doc = "If the type is WINDOWED, the start of the maintenance window, measured as the number of minutes after midnight in the device’s local time. This value must be between 0 and 1439, inclusive."]
         #[serde(
             rename = "startMinutes",
             default,
@@ -10999,7 +10999,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct User {
-        #[doc = "A unique identifier you create for this user, such as user342 or asset#44418. This field must be set when the user is created and can't be updated. This field must not contain personally identifiable information (PII). This identifier must be 1024 characters or less; otherwise, the update policy request will fail."]
+        #[doc = "A unique identifier you create for this user, such as user342 or asset#44418. This field must be set when the user is created and can’t be updated. This field must not contain personally identifiable information (PII). This identifier must be 1024 characters or less; otherwise, the update policy request will fail."]
         #[serde(
             rename = "accountIdentifier",
             default,
@@ -11030,7 +11030,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct UserFacingMessage {
-        #[doc = "The default message displayed if no localized message is specified or the user's locale doesn't match with any of the localized messages. A default message must be provided if any localized messages are provided."]
+        #[doc = "The default message displayed if no localized message is specified or the user’s locale doesn’t match with any of the localized messages. A default message must be provided if any localized messages are provided."]
         #[serde(
             rename = "defaultMessage",
             default,
@@ -11216,7 +11216,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct WebAppIcon {
-        #[doc = "The actual bytes of the image in a base64url encoded string (c.f. RFC4648, section 5 \"Base 64 Encoding with URL and Filename Safe Alphabet\"). - The image type can be png or jpg. - The image should ideally be square. - The image should ideally have a size of 512x512. "]
+        #[doc = "The actual bytes of the image in a base64url encoded string (c.f. RFC4648, section 5 “Base 64 Encoding with URL and Filename Safe Alphabet”). - The image type can be png or jpg. - The image should ideally be square. - The image should ideally have a size of 512x512. "]
         #[serde(
             rename = "imageData",
             default,
@@ -12013,12 +12013,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12171,12 +12171,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12331,12 +12331,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12514,12 +12514,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12832,12 +12832,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -12996,7 +12996,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
-                #[doc = "The preferred language for localized application info, as a BCP47 tag (e.g. \"en-US\", \"de\"). If not specified the default language of the application will be used."]
+                #[doc = "The preferred language for localized application info, as a BCP47 tag (e.g. “en-US”, “de”). If not specified the default language of the application will be used."]
                 pub fn language_code(mut self, value: impl Into<String>) -> Self {
                     self.language_code = Some(value.into());
                     self
@@ -13031,12 +13031,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13152,7 +13152,7 @@ pub mod resources {
                     PreserveResetProtectionData,
                     #[doc = "This value is ignored."]
                     WipeDataFlagUnspecified,
-                    #[doc = "Additionally wipe the device's external storage (such as SD cards)."]
+                    #[doc = "Additionally wipe the device’s external storage (such as SD cards)."]
                     WipeExternalStorage,
                 }
                 impl DeleteWipeDataFlagsItems {
@@ -13436,12 +13436,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13600,12 +13600,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13761,12 +13761,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -13935,12 +13935,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14261,12 +14261,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -14384,7 +14384,7 @@ pub mod resources {
                     fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                         self.auth
                     }
-                    #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED."]
+                    #[doc = "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn’t support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED."]
                     pub fn cancel(&self, name: impl Into<String>) -> CancelRequestBuilder {
                         CancelRequestBuilder {
                             reqwest: &self.reqwest,
@@ -14403,7 +14403,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED."]
+                    #[doc = "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn’t support this method, it returns google.rpc.Code.UNIMPLEMENTED."]
                     pub fn delete(&self, name: impl Into<String>) -> DeleteRequestBuilder {
                         DeleteRequestBuilder {
                             reqwest: &self.reqwest,
@@ -14441,7 +14441,7 @@ pub mod resources {
                             name: name.into(),
                         }
                     }
-                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns UNIMPLEMENTED.NOTE: the name binding allows API services to override the binding to use different resource name schemes, such as users/*/operations. To override the binding, API services can add a binding such as \"/v1/{name=users/*}/operations\" to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
+                    #[doc = "Lists operations that match the specified filter in the request. If the server doesn’t support this method, it returns UNIMPLEMENTED.NOTE: the name binding allows API services to override the binding to use different resource name schemes, such as users/*/operations. To override the binding, API services can add a binding such as “/v1/{name=users/*}/operations” to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id."]
                     pub fn list(&self, name: impl Into<String>) -> ListRequestBuilder {
                         ListRequestBuilder {
                             reqwest: &self.reqwest,
@@ -14513,12 +14513,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14674,12 +14674,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -14834,12 +14834,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15012,12 +15012,12 @@ pub mod resources {
                         self.quota_user = Some(value.into());
                         self
                     }
-                    #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                    #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                     pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                         self.upload_protocol = Some(value.into());
                         self
                     }
-                    #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                    #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                     pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                         self.upload_type = Some(value.into());
                         self
@@ -15393,12 +15393,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -15555,12 +15555,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -15811,12 +15811,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -15971,12 +15971,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -16143,12 +16143,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -16469,12 +16469,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -16752,12 +16752,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -16914,12 +16914,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17074,12 +17074,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17246,12 +17246,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17572,12 +17572,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17771,12 +17771,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -17977,12 +17977,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

@@ -321,7 +321,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "[Input Only] The parameters that define your deployment, including the deployment configuration and relevant templates."]
+        #[doc = "\\[Input Only\\] The parameters that define your deployment, including the deployment configuration and relevant templates."]
         #[serde(
             rename = "target",
             default,
@@ -644,21 +644,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct GlobalSetPolicyRequest {
-        #[doc = "Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings."]
+        #[doc = "Flatten Policy to create a backward compatible wire-format. Deprecated. Use ‘policy’ to specify bindings."]
         #[serde(
             rename = "bindings",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub bindings: ::std::option::Option<Vec<crate::schemas::Binding>>,
-        #[doc = "Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag."]
+        #[doc = "Flatten Policy to create a backward compatible wire-format. Deprecated. Use ‘policy’ to specify the etag."]
         #[serde(
             rename = "etag",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub etag: ::std::option::Option<::google_api_bytes::Bytes>,
-        #[doc = "REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them."]
+        #[doc = "REQUIRED: The complete policy to be applied to the ‘resource’. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them."]
         #[serde(
             rename = "policy",
             default,
@@ -866,56 +866,56 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct Operation {
-        #[doc = "[Output Only] The value of `requestId` if you provided it in the request. Not present otherwise."]
+        #[doc = "\\[Output Only\\] The value of `requestId` if you provided it in the request. Not present otherwise."]
         #[serde(
             rename = "clientOperationId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub client_operation_id: ::std::option::Option<String>,
-        #[doc = "[Deprecated] This field is deprecated."]
+        #[doc = "\\[Deprecated\\] This field is deprecated."]
         #[serde(
             rename = "creationTimestamp",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub creation_timestamp: ::std::option::Option<String>,
-        #[doc = "[Output Only] A textual description of the operation, which is set when the operation is created."]
+        #[doc = "\\[Output Only\\] A textual description of the operation, which is set when the operation is created."]
         #[serde(
             rename = "description",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub description: ::std::option::Option<String>,
-        #[doc = "[Output Only] The time that this operation was completed. This value is in RFC3339 text format."]
+        #[doc = "\\[Output Only\\] The time that this operation was completed. This value is in RFC3339 text format."]
         #[serde(
             rename = "endTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub end_time: ::std::option::Option<String>,
-        #[doc = "[Output Only] If errors are generated during processing of the operation, this field will be populated."]
+        #[doc = "\\[Output Only\\] If errors are generated during processing of the operation, this field will be populated."]
         #[serde(
             rename = "error",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub error: ::std::option::Option<crate::schemas::OperationError>,
-        #[doc = "[Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`."]
+        #[doc = "\\[Output Only\\] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`."]
         #[serde(
             rename = "httpErrorMessage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub http_error_message: ::std::option::Option<String>,
-        #[doc = "[Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found."]
+        #[doc = "\\[Output Only\\] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found."]
         #[serde(
             rename = "httpErrorStatusCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub http_error_status_code: ::std::option::Option<i32>,
-        #[doc = "[Output Only] The unique identifier for the operation. This identifier is defined by the server."]
+        #[doc = "\\[Output Only\\] The unique identifier for the operation. This identifier is defined by the server."]
         #[serde(
             rename = "id",
             default,
@@ -923,84 +923,84 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub id: ::std::option::Option<u64>,
-        #[doc = "[Output Only] The time that this operation was requested. This value is in RFC3339 text format."]
+        #[doc = "\\[Output Only\\] The time that this operation was requested. This value is in RFC3339 text format."]
         #[serde(
             rename = "insertTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub insert_time: ::std::option::Option<String>,
-        #[doc = "[Output Only] Type of the resource. Always `compute#operation` for Operation resources."]
+        #[doc = "\\[Output Only\\] Type of the resource. Always `compute#operation` for Operation resources."]
         #[serde(
             rename = "kind",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub kind: ::std::option::Option<String>,
-        #[doc = "[Output Only] Name of the operation."]
+        #[doc = "\\[Output Only\\] Name of the operation."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "[Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request."]
+        #[doc = "\\[Output Only\\] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request."]
         #[serde(
             rename = "operationGroupId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_group_id: ::std::option::Option<String>,
-        #[doc = "[Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on."]
+        #[doc = "\\[Output Only\\] The type of operation, such as `insert`, `update`, or `delete`, and so on."]
         #[serde(
             rename = "operationType",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub operation_type: ::std::option::Option<String>,
-        #[doc = "[Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses."]
+        #[doc = "\\[Output Only\\] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses."]
         #[serde(
             rename = "progress",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub progress: ::std::option::Option<i32>,
-        #[doc = "[Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations."]
+        #[doc = "\\[Output Only\\] The URL of the region where the operation resides. Only applicable when performing regional operations."]
         #[serde(
             rename = "region",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region: ::std::option::Option<String>,
-        #[doc = "[Output Only] Server-defined URL for the resource."]
+        #[doc = "\\[Output Only\\] Server-defined URL for the resource."]
         #[serde(
             rename = "selfLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub self_link: ::std::option::Option<String>,
-        #[doc = "[Output Only] The time that this operation was started by the server. This value is in RFC3339 text format."]
+        #[doc = "\\[Output Only\\] The time that this operation was started by the server. This value is in RFC3339 text format."]
         #[serde(
             rename = "startTime",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub start_time: ::std::option::Option<String>,
-        #[doc = "[Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`."]
+        #[doc = "\\[Output Only\\] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`."]
         #[serde(
             rename = "status",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status: ::std::option::Option<crate::schemas::OperationStatus>,
-        #[doc = "[Output Only] An optional textual description of the current status of the operation."]
+        #[doc = "\\[Output Only\\] An optional textual description of the current status of the operation."]
         #[serde(
             rename = "statusMessage",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub status_message: ::std::option::Option<String>,
-        #[doc = "[Output Only] The unique target ID, which identifies a specific incarnation of the target resource."]
+        #[doc = "\\[Output Only\\] The unique target ID, which identifies a specific incarnation of the target resource."]
         #[serde(
             rename = "targetId",
             default,
@@ -1008,28 +1008,28 @@ pub mod schemas {
         )]
         #[serde(with = "crate::parsed_string")]
         pub target_id: ::std::option::Option<u64>,
-        #[doc = "[Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from."]
+        #[doc = "\\[Output Only\\] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from."]
         #[serde(
             rename = "targetLink",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub target_link: ::std::option::Option<String>,
-        #[doc = "[Output Only] User who requested the operation, for example: `user@example.com`."]
+        #[doc = "\\[Output Only\\] User who requested the operation, for example: `user@example.com`."]
         #[serde(
             rename = "user",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub user: ::std::option::Option<String>,
-        #[doc = "[Output Only] If warning messages are generated during processing of the operation, this field will be populated."]
+        #[doc = "\\[Output Only\\] If warning messages are generated during processing of the operation, this field will be populated."]
         #[serde(
             rename = "warnings",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub warnings: ::std::option::Option<Vec<crate::schemas::OperationWarningsItems>>,
-        #[doc = "[Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations."]
+        #[doc = "\\[Output Only\\] The URL of the zone where the operation resides. Only applicable when performing per-zone operations."]
         #[serde(
             rename = "zone",
             default,
@@ -1060,7 +1060,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperationError {
-        #[doc = "[Output Only] The array of errors encountered while processing this operation."]
+        #[doc = "\\[Output Only\\] The array of errors encountered while processing this operation."]
         #[serde(
             rename = "errors",
             default,
@@ -1091,21 +1091,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperationErrorErrorsItems {
-        #[doc = "[Output Only] The error type identifier for this error."]
+        #[doc = "\\[Output Only\\] The error type identifier for this error."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<String>,
-        #[doc = "[Output Only] Indicates the field in the request that caused the error. This property is optional."]
+        #[doc = "\\[Output Only\\] Indicates the field in the request that caused the error. This property is optional."]
         #[serde(
             rename = "location",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "[Output Only] An optional, human-readable error message."]
+        #[doc = "\\[Output Only\\] An optional, human-readable error message."]
         #[serde(
             rename = "message",
             default,
@@ -1209,21 +1209,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperationWarningsItems {
-        #[doc = "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."]
+        #[doc = "\\[Output Only\\] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<crate::schemas::OperationWarningsItemsCode>,
-        #[doc = "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "]
+        #[doc = "\\[Output Only\\] Metadata about this warning in key: value format. For example: “data”: \\[ { “key”: “scope”, “value”: “zones/us-east1-d” } "]
         #[serde(
             rename = "data",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data: ::std::option::Option<Vec<crate::schemas::OperationWarningsItemsDataItems>>,
-        #[doc = "[Output Only] A human-readable description of the warning code."]
+        #[doc = "\\[Output Only\\] A human-readable description of the warning code."]
         #[serde(
             rename = "message",
             default,
@@ -1263,15 +1263,15 @@ pub mod schemas {
         LargeDeploymentWarning,
         #[doc = "A resource depends on a missing type"]
         MissingTypeDependency,
-        #[doc = "The route's nextHopIp address is not assigned to an instance on the network."]
+        #[doc = "The route’s nextHopIp address is not assigned to an instance on the network."]
         NextHopAddressNotAssigned,
-        #[doc = "The route's next hop instance cannot ip forward."]
+        #[doc = "The route’s next hop instance cannot ip forward."]
         NextHopCannotIpForward,
-        #[doc = "The route's nextHopInstance URL refers to an instance that does not exist."]
+        #[doc = "The route’s nextHopInstance URL refers to an instance that does not exist."]
         NextHopInstanceNotFound,
-        #[doc = "The route's nextHopInstance URL refers to an instance that is not on the same network as the route."]
+        #[doc = "The route’s nextHopInstance URL refers to an instance that is not on the same network as the route."]
         NextHopInstanceNotOnNetwork,
-        #[doc = "The route's next hop instance does not have a status of RUNNING."]
+        #[doc = "The route’s next hop instance does not have a status of RUNNING."]
         NextHopNotRunning,
         #[doc = "No results are present on a particular list page."]
         NoResultsOnPage,
@@ -1482,14 +1482,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct OperationWarningsItemsDataItems {
-        #[doc = "[Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding)."]
+        #[doc = "\\[Output Only\\] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding)."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "[Output Only] A warning data value corresponding to the key."]
+        #[doc = "\\[Output Only\\] A warning data value corresponding to the key."]
         #[serde(
             rename = "value",
             default,
@@ -1723,21 +1723,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceWarningsItems {
-        #[doc = "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."]
+        #[doc = "\\[Output Only\\] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<crate::schemas::ResourceWarningsItemsCode>,
-        #[doc = "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "]
+        #[doc = "\\[Output Only\\] Metadata about this warning in key: value format. For example: “data”: \\[ { “key”: “scope”, “value”: “zones/us-east1-d” } "]
         #[serde(
             rename = "data",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data: ::std::option::Option<Vec<crate::schemas::ResourceWarningsItemsDataItems>>,
-        #[doc = "[Output Only] A human-readable description of the warning code."]
+        #[doc = "\\[Output Only\\] A human-readable description of the warning code."]
         #[serde(
             rename = "message",
             default,
@@ -1777,15 +1777,15 @@ pub mod schemas {
         LargeDeploymentWarning,
         #[doc = "A resource depends on a missing type"]
         MissingTypeDependency,
-        #[doc = "The route's nextHopIp address is not assigned to an instance on the network."]
+        #[doc = "The route’s nextHopIp address is not assigned to an instance on the network."]
         NextHopAddressNotAssigned,
-        #[doc = "The route's next hop instance cannot ip forward."]
+        #[doc = "The route’s next hop instance cannot ip forward."]
         NextHopCannotIpForward,
-        #[doc = "The route's nextHopInstance URL refers to an instance that does not exist."]
+        #[doc = "The route’s nextHopInstance URL refers to an instance that does not exist."]
         NextHopInstanceNotFound,
-        #[doc = "The route's nextHopInstance URL refers to an instance that is not on the same network as the route."]
+        #[doc = "The route’s nextHopInstance URL refers to an instance that is not on the same network as the route."]
         NextHopInstanceNotOnNetwork,
-        #[doc = "The route's next hop instance does not have a status of RUNNING."]
+        #[doc = "The route’s next hop instance does not have a status of RUNNING."]
         NextHopNotRunning,
         #[doc = "No results are present on a particular list page."]
         NoResultsOnPage,
@@ -1990,14 +1990,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceWarningsItemsDataItems {
-        #[doc = "[Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding)."]
+        #[doc = "\\[Output Only\\] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding)."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "[Output Only] A warning data value corresponding to the key."]
+        #[doc = "\\[Output Only\\] A warning data value corresponding to the key."]
         #[serde(
             rename = "value",
             default,
@@ -2139,7 +2139,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceUpdateError {
-        #[doc = "[Output Only] The array of errors encountered while processing this operation."]
+        #[doc = "\\[Output Only\\] The array of errors encountered while processing this operation."]
         #[serde(
             rename = "errors",
             default,
@@ -2170,21 +2170,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceUpdateErrorErrorsItems {
-        #[doc = "[Output Only] The error type identifier for this error."]
+        #[doc = "\\[Output Only\\] The error type identifier for this error."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<String>,
-        #[doc = "[Output Only] Indicates the field in the request that caused the error. This property is optional."]
+        #[doc = "\\[Output Only\\] Indicates the field in the request that caused the error. This property is optional."]
         #[serde(
             rename = "location",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub location: ::std::option::Option<String>,
-        #[doc = "[Output Only] An optional, human-readable error message."]
+        #[doc = "\\[Output Only\\] An optional, human-readable error message."]
         #[serde(
             rename = "message",
             default,
@@ -2392,21 +2392,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceUpdateWarningsItems {
-        #[doc = "[Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."]
+        #[doc = "\\[Output Only\\] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response."]
         #[serde(
             rename = "code",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub code: ::std::option::Option<crate::schemas::ResourceUpdateWarningsItemsCode>,
-        #[doc = "[Output Only] Metadata about this warning in key: value format. For example: \"data\": [ { \"key\": \"scope\", \"value\": \"zones/us-east1-d\" } "]
+        #[doc = "\\[Output Only\\] Metadata about this warning in key: value format. For example: “data”: \\[ { “key”: “scope”, “value”: “zones/us-east1-d” } "]
         #[serde(
             rename = "data",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub data: ::std::option::Option<Vec<crate::schemas::ResourceUpdateWarningsItemsDataItems>>,
-        #[doc = "[Output Only] A human-readable description of the warning code."]
+        #[doc = "\\[Output Only\\] A human-readable description of the warning code."]
         #[serde(
             rename = "message",
             default,
@@ -2446,15 +2446,15 @@ pub mod schemas {
         LargeDeploymentWarning,
         #[doc = "A resource depends on a missing type"]
         MissingTypeDependency,
-        #[doc = "The route's nextHopIp address is not assigned to an instance on the network."]
+        #[doc = "The route’s nextHopIp address is not assigned to an instance on the network."]
         NextHopAddressNotAssigned,
-        #[doc = "The route's next hop instance cannot ip forward."]
+        #[doc = "The route’s next hop instance cannot ip forward."]
         NextHopCannotIpForward,
-        #[doc = "The route's nextHopInstance URL refers to an instance that does not exist."]
+        #[doc = "The route’s nextHopInstance URL refers to an instance that does not exist."]
         NextHopInstanceNotFound,
-        #[doc = "The route's nextHopInstance URL refers to an instance that is not on the same network as the route."]
+        #[doc = "The route’s nextHopInstance URL refers to an instance that is not on the same network as the route."]
         NextHopInstanceNotOnNetwork,
-        #[doc = "The route's next hop instance does not have a status of RUNNING."]
+        #[doc = "The route’s next hop instance does not have a status of RUNNING."]
         NextHopNotRunning,
         #[doc = "No results are present on a particular list page."]
         NoResultsOnPage,
@@ -2689,14 +2689,14 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct ResourceUpdateWarningsItemsDataItems {
-        #[doc = "[Output Only] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding)."]
+        #[doc = "\\[Output Only\\] A key that provides more detail on the warning being returned. For example, for warnings where there are no results in a list request for a particular zone, this key might be scope and the key value might be the zone name. Other examples might be a key indicating a deprecated resource and a suggested replacement, or a warning about invalid network settings (for example, if an instance attempts to perform IP forwarding but is not enabled for IP forwarding)."]
         #[serde(
             rename = "key",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "[Output Only] A warning data value corresponding to the key."]
+        #[doc = "\\[Output Only\\] A warning data value corresponding to the key."]
         #[serde(
             rename = "value",
             default,
@@ -2808,7 +2808,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TestPermissionsRequest {
-        #[doc = "The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed."]
+        #[doc = "The set of permissions to check for the ‘resource’. Permissions with wildcards (such as ‘*’ or ‘storage.*’) are not allowed."]
         #[serde(
             rename = "permissions",
             default,
@@ -3931,12 +3931,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4112,12 +4112,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4282,12 +4282,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4457,12 +4457,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4612,7 +4612,7 @@ pub mod resources {
                 self.create_policy = Some(value);
                 self
             }
-            #[doc = "If set to true, creates a deployment and creates \"shell\" resources but does not actually instantiate these resources. This allows you to preview what your deployment looks like. After previewing a deployment, you can deploy your resources by making a request with the `update()` method or you can use the `cancelPreview()` method to cancel the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it."]
+            #[doc = "If set to true, creates a deployment and creates “shell” resources but does not actually instantiate these resources. This allows you to preview what your deployment looks like. After previewing a deployment, you can deploy your resources by making a request with the `update()` method or you can use the `cancelPreview()` method to cancel the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it."]
             pub fn preview(mut self, value: bool) -> Self {
                 self.preview = Some(value);
                 self
@@ -4647,12 +4647,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -4835,12 +4835,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5147,7 +5147,7 @@ pub mod resources {
                 self.delete_policy = Some(value);
                 self
             }
-            #[doc = "If set to true, updates the deployment and creates and updates the \"shell\" resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a `target.config` with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the `update()` or you can `cancelPreview()` to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it."]
+            #[doc = "If set to true, updates the deployment and creates and updates the “shell” resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a `target.config` with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the `update()` or you can `cancelPreview()` to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it."]
             pub fn preview(mut self, value: bool) -> Self {
                 self.preview = Some(value);
                 self
@@ -5182,12 +5182,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5356,12 +5356,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5528,12 +5528,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5700,12 +5700,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -5863,7 +5863,7 @@ pub mod resources {
                 self.delete_policy = Some(value);
                 self
             }
-            #[doc = "If set to true, updates the deployment and creates and updates the \"shell\" resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a `target.config` with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the `update()` or you can `cancelPreview()` to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it."]
+            #[doc = "If set to true, updates the deployment and creates and updates the “shell” resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a `target.config` with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the `update()` or you can `cancelPreview()` to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it."]
             pub fn preview(mut self, value: bool) -> Self {
                 self.preview = Some(value);
                 self
@@ -5898,12 +5898,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6138,12 +6138,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6339,12 +6339,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6726,12 +6726,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6918,12 +6918,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7305,12 +7305,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7506,12 +7506,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -7892,12 +7892,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self

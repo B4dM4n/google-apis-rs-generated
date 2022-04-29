@@ -26,7 +26,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub emails: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional but at least one of uris, emails or instruction must be specified. Use this field to provide instructions, such as \"Mail your application to ...\", that a candidate can follow to apply for the job. This field accepts and sanitizes HTML input, and also accepts bold, italic, ordered list, and unordered list markup tags. The maximum number of allowed characters is 3,000."]
+        #[doc = "Optional but at least one of uris, emails or instruction must be specified. Use this field to provide instructions, such as “Mail your application to …”, that a candidate can follow to apply for the job. This field accepts and sanitizes HTML input, and also accepts bold, italic, ordered list, and unordered list markup tags. The maximum number of allowed characters is 3,000."]
         #[serde(
             rename = "instruction",
             default,
@@ -64,7 +64,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct BatchDeleteJobsRequest {
-        #[doc = "Required. The filter string specifies the jobs to be deleted. Supported operator: =, AND The fields eligible for filtering are: * `companyName` (Required) * `requisitionId` (Required) Sample Query: companyName = \"projects/api-test-project/companies/123\" AND requisitionId = \"req-1\""]
+        #[doc = "Required. The filter string specifies the jobs to be deleted. Supported operator: =, AND The fields eligible for filtering are: * `companyName` (Required) * `requisitionId` (Required) Sample Query: companyName = “projects/api-test-project/companies/123” AND requisitionId = “req-1”"]
         #[serde(
             rename = "filter",
             default,
@@ -210,7 +210,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CommuteFilter {
-        #[doc = "Optional. If true, jobs without \"precise\" addresses (street level addresses or GPS coordinates) might also be returned. For city and coarser level addresses, text matching is used. If this field is set to false or is not specified, only jobs that include precise addresses are returned by Commute Search. Note: If `allow_imprecise_addresses` is set to true, Commute Search is not able to calculate accurate commute times to jobs with city level and coarser address information. Jobs with imprecise addresses will return a `travel_duration` time of 0 regardless of distance from the job seeker."]
+        #[doc = "Optional. If true, jobs without “precise” addresses (street level addresses or GPS coordinates) might also be returned. For city and coarser level addresses, text matching is used. If this field is set to false or is not specified, only jobs that include precise addresses are returned by Commute Search. Note: If `allow_imprecise_addresses` is set to true, Commute Search is not able to calculate accurate commute times to jobs with city level and coarser address information. Jobs with imprecise addresses will return a `travel_duration` time of 0 regardless of distance from the job seeker."]
         #[serde(
             rename = "allowImpreciseAddresses",
             default,
@@ -464,7 +464,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Company {
-        #[doc = "Optional. The URI to employer's career site or careers page on the employer's web site, for example, \"https://careers.google.com\"."]
+        #[doc = "Optional. The URI to employer’s career site or careers page on the employer’s web site, for example, “https://careers.google.com”."]
         #[serde(
             rename = "careerSiteUri",
             default,
@@ -478,7 +478,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub derived_info: ::std::option::Option<crate::schemas::CompanyDerivedInfo>,
-        #[doc = "Required. The display name of the company, for example, \"Google LLC\"."]
+        #[doc = "Required. The display name of the company, for example, “Google LLC”."]
         #[serde(
             rename = "displayName",
             default,
@@ -499,7 +499,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub external_id: ::std::option::Option<String>,
-        #[doc = "Optional. The street address of the company's main headquarters, which may be different from the job location. The service attempts to geolocate the provided address, and populates a more specific location wherever possible in DerivedInfo.headquarters_location."]
+        #[doc = "Optional. The street address of the company’s main headquarters, which may be different from the job location. The service attempts to geolocate the provided address, and populates a more specific location wherever possible in DerivedInfo.headquarters_location."]
         #[serde(
             rename = "headquartersAddress",
             default,
@@ -513,28 +513,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub hiring_agency: ::std::option::Option<bool>,
-        #[doc = "Optional. A URI that hosts the employer's company logo."]
+        #[doc = "Optional. A URI that hosts the employer’s company logo."]
         #[serde(
             rename = "imageUri",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub image_uri: ::std::option::Option<String>,
-        #[doc = "Optional. A list of keys of filterable Job.custom_attributes, whose corresponding `string_values` are used in keyword search. Jobs with `string_values` under these specified field keys are returned if any of the values matches the search keyword. Custom field values with parenthesis, brackets and special symbols won't be properly searchable, and those keyword queries need to be surrounded by quotes."]
+        #[doc = "Optional. A list of keys of filterable Job.custom_attributes, whose corresponding `string_values` are used in keyword search. Jobs with `string_values` under these specified field keys are returned if any of the values matches the search keyword. Custom field values with parenthesis, brackets and special symbols won’t be properly searchable, and those keyword queries need to be surrounded by quotes."]
         #[serde(
             rename = "keywordSearchableJobCustomAttributes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub keyword_searchable_job_custom_attributes: ::std::option::Option<Vec<String>>,
-        #[doc = "Required during company update. The resource name for a company. This is generated by the service when a company is created. The format is \"projects/{project_id}/companies/{company_id}\", for example, \"projects/api-test-project/companies/foo\"."]
+        #[doc = "Required during company update. The resource name for a company. This is generated by the service when a company is created. The format is “projects/{project_id}/companies/{company_id}”, for example, “projects/api-test-project/companies/foo”."]
         #[serde(
             rename = "name",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub name: ::std::option::Option<String>,
-        #[doc = "Optional. The employer's company size."]
+        #[doc = "Optional. The employer’s company size."]
         #[serde(
             rename = "size",
             default,
@@ -548,7 +548,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub suspended: ::std::option::Option<bool>,
-        #[doc = "Optional. The URI representing the company's primary web site or home page, for example, \"https://www.google.com\". The maximum number of allowed characters is 255."]
+        #[doc = "Optional. The URI representing the company’s primary web site or home page, for example, “https://www.google.com”. The maximum number of allowed characters is 255."]
         #[serde(
             rename = "websiteUri",
             default,
@@ -1025,9 +1025,9 @@ pub mod schemas {
         AnnualizedTotalAmount,
         #[doc = "Filter type unspecified. Position holder, INVALID, should never be used."]
         FilterTypeUnspecified,
-        #[doc = "Filter by `base compensation entry's` unit and amount / range. A job is a match if and only if the job contains a base CompensationEntry, and the base entry's unit matches provided compensation_units and amount or range overlaps with provided compensation_range. See CompensationInfo.CompensationEntry for definition of base compensation entry. Set exactly one units and populate range."]
+        #[doc = "Filter by `base compensation entry's` unit and amount / range. A job is a match if and only if the job contains a base CompensationEntry, and the base entry’s unit matches provided compensation_units and amount or range overlaps with provided compensation_range. See CompensationInfo.CompensationEntry for definition of base compensation entry. Set exactly one units and populate range."]
         UnitAndAmount,
-        #[doc = "Filter by `base compensation entry's` unit. A job is a match if and only if the job contains a base CompensationEntry and the base CompensationEntry's unit matches provided units. Populate one or more units. See CompensationInfo.CompensationEntry for definition of base compensation entry."]
+        #[doc = "Filter by `base compensation entry's` unit. A job is a match if and only if the job contains a base CompensationEntry and the base CompensationEntry’s unit matches provided units. Populate one or more units. See CompensationInfo.CompensationEntry for definition of base compensation entry."]
         UnitOnly,
     }
     impl CompensationFilterType {
@@ -1241,11 +1241,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CompensationHistogramRequestType {
-        #[doc = "Histogram by job's annualized base compensation. See CompensationEntry for definition of annualized base compensation."]
+        #[doc = "Histogram by job’s annualized base compensation. See CompensationEntry for definition of annualized base compensation."]
         AnnualizedBase,
-        #[doc = "Histogram by job's annualized total compensation. See CompensationEntry for definition of annualized total compensation."]
+        #[doc = "Histogram by job’s annualized total compensation. See CompensationEntry for definition of annualized total compensation."]
         AnnualizedTotal,
-        #[doc = "Histogram by job's base compensation. See CompensationEntry for definition of base compensation."]
+        #[doc = "Histogram by job’s base compensation. See CompensationEntry for definition of base compensation."]
         Base,
         #[doc = "Default value. Invalid."]
         CompensationHistogramRequestTypeUnspecified,
@@ -1357,11 +1357,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CompensationHistogramResultType {
-        #[doc = "Histogram by job's annualized base compensation. See CompensationEntry for definition of annualized base compensation."]
+        #[doc = "Histogram by job’s annualized base compensation. See CompensationEntry for definition of annualized base compensation."]
         AnnualizedBase,
-        #[doc = "Histogram by job's annualized total compensation. See CompensationEntry for definition of annualized total compensation."]
+        #[doc = "Histogram by job’s annualized total compensation. See CompensationEntry for definition of annualized total compensation."]
         AnnualizedTotal,
-        #[doc = "Histogram by job's base compensation. See CompensationEntry for definition of base compensation."]
+        #[doc = "Histogram by job’s base compensation. See CompensationEntry for definition of base compensation."]
         Base,
         #[doc = "Default value. Invalid."]
         CompensationHistogramRequestTypeUnspecified,
@@ -1446,7 +1446,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct CompensationInfo {
-        #[doc = "Output only. Annualized base compensation range. Computed as base compensation entry's CompensationEntry.compensation times CompensationEntry.expected_units_per_year. See CompensationEntry for explanation on compensation annualization."]
+        #[doc = "Output only. Annualized base compensation range. Computed as base compensation entry’s CompensationEntry.compensation times CompensationEntry.expected_units_per_year. See CompensationEntry for explanation on compensation annualization."]
         #[serde(
             rename = "annualizedBaseCompensationRange",
             default,
@@ -1454,7 +1454,7 @@ pub mod schemas {
         )]
         pub annualized_base_compensation_range:
             ::std::option::Option<crate::schemas::CompensationRange>,
-        #[doc = "Output only. Annualized total compensation range. Computed as all compensation entries' CompensationEntry.compensation times CompensationEntry.expected_units_per_year. See CompensationEntry for explanation on compensation annualization."]
+        #[doc = "Output only. Annualized total compensation range. Computed as all compensation entries’ CompensationEntry.compensation times CompensationEntry.expected_units_per_year. See CompensationEntry for explanation on compensation annualization."]
         #[serde(
             rename = "annualizedTotalCompensationRange",
             default,
@@ -1695,7 +1695,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CreateClientEventRequest {
-        #[doc = "Required. Events issued when end user interacts with customer's application that uses Cloud Talent Solution."]
+        #[doc = "Required. Events issued when end user interacts with customer’s application that uses Cloud Talent Solution."]
         #[serde(
             rename = "clientEvent",
             default,
@@ -1813,7 +1813,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub key: ::std::option::Option<String>,
-        #[doc = "Optional. Specifies buckets used to perform a range histogram on Job's filterable long custom field values, or min/max value requirements."]
+        #[doc = "Optional. Specifies buckets used to perform a range histogram on Job’s filterable long custom field values, or min/max value requirements."]
         #[serde(
             rename = "longValueHistogramBucketingOption",
             default,
@@ -1890,7 +1890,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct CustomRankingInfo {
-        #[doc = "Required. Controls over how important the score of CustomRankingInfo.ranking_expression gets applied to job's final ranking position. An error is thrown if not specified."]
+        #[doc = "Required. Controls over how important the score of CustomRankingInfo.ranking_expression gets applied to job’s final ranking position. An error is thrown if not specified."]
         #[serde(
             rename = "importanceLevel",
             default,
@@ -1898,7 +1898,7 @@ pub mod schemas {
         )]
         pub importance_level:
             ::std::option::Option<crate::schemas::CustomRankingInfoImportanceLevel>,
-        #[doc = "Required. Controls over how job documents get ranked on top of existing relevance score (determined by API algorithm). A combination of the ranking expression and relevance score is used to determine job's final ranking position. The syntax for this expression is a subset of Google SQL syntax. Supported operators are: +, -, *, /, where the left and right side of the operator is either a numeric Job.custom_attributes key, integer/double value or an expression that can be evaluated to a number. Parenthesis are supported to adjust calculation precedence. The expression must be < 200 characters in length. The expression is considered invalid for a job if the expression references custom attributes that are not populated on the job or if the expression results in a divide by zero. If an expression is invalid for a job, that job is demoted to the end of the results. Sample ranking expression (year + 25) * 0.25 - (freshness / 0.5)"]
+        #[doc = "Required. Controls over how job documents get ranked on top of existing relevance score (determined by API algorithm). A combination of the ranking expression and relevance score is used to determine job’s final ranking position. The syntax for this expression is a subset of Google SQL syntax. Supported operators are: +, -, \\*, /, where the left and right side of the operator is either a numeric Job.custom_attributes key, integer/double value or an expression that can be evaluated to a number. Parenthesis are supported to adjust calculation precedence. The expression must be \\< 200 characters in length. The expression is considered invalid for a job if the expression references custom attributes that are not populated on the job or if the expression results in a divide by zero. If an expression is invalid for a job, that job is demoted to the end of the results. Sample ranking expression (year + 25) * 0.25 - (freshness / 0.5)"]
         #[serde(
             rename = "rankingExpression",
             default,
@@ -1918,19 +1918,19 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum CustomRankingInfoImportanceLevel {
-        #[doc = "The given ranking expression is of Extreme importance, and dominates job's final ranking position with existing relevance score (determined by API algorithm) ignored."]
+        #[doc = "The given ranking expression is of Extreme importance, and dominates job’s final ranking position with existing relevance score (determined by API algorithm) ignored."]
         Extreme,
-        #[doc = "The given ranking expression is of High importance in terms of job's final ranking position compared to existing relevance score (determined by API algorithm)."]
+        #[doc = "The given ranking expression is of High importance in terms of job’s final ranking position compared to existing relevance score (determined by API algorithm)."]
         High,
         #[doc = "Default value if the importance level is not specified."]
         ImportanceLevelUnspecified,
-        #[doc = "The given ranking expression is of Low importance in terms of job's final ranking position compared to existing relevance score (determined by API algorithm)."]
+        #[doc = "The given ranking expression is of Low importance in terms of job’s final ranking position compared to existing relevance score (determined by API algorithm)."]
         Low,
-        #[doc = "The given ranking expression is of Medium importance in terms of job's final ranking position compared to existing relevance score (determined by API algorithm)."]
+        #[doc = "The given ranking expression is of Medium importance in terms of job’s final ranking position compared to existing relevance score (determined by API algorithm)."]
         Medium,
-        #[doc = "The given ranking expression is of Mild importance in terms of job's final ranking position compared to existing relevance score (determined by API algorithm)."]
+        #[doc = "The given ranking expression is of Mild importance in terms of job’s final ranking position compared to existing relevance score (determined by API algorithm)."]
         Mild,
-        #[doc = "The given ranking expression is of None importance, existing relevance score (determined by API algorithm) dominates job's final ranking position."]
+        #[doc = "The given ranking expression is of None importance, existing relevance score (determined by API algorithm) dominates job’s final ranking position."]
         None,
     }
     impl CustomRankingInfoImportanceLevel {
@@ -2062,7 +2062,7 @@ pub mod schemas {
         Android,
         #[doc = "A bot, as opposed to a device operated by human beings, such as a web crawler."]
         Bot,
-        #[doc = "The device type isn't specified."]
+        #[doc = "The device type isn’t specified."]
         DeviceTypeUnspecified,
         #[doc = "An iOS device native application."]
         Ios,
@@ -2217,7 +2217,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum HistogramFacetsSimpleHistogramFacetsItems {
-        #[doc = "Filter by Admin1, which is a global placeholder for referring to state, province, or the particular term a country uses to define the geographic structure below the country level. Examples include states codes such as \"CA\", \"IL\", \"NY\", and provinces, such as \"BC\"."]
+        #[doc = "Filter by Admin1, which is a global placeholder for referring to state, province, or the particular term a country uses to define the geographic structure below the country level. Examples include states codes such as “CA”, “IL”, “NY”, and provinces, such as “BC”."]
         Admin1,
         #[doc = "A combination of state or province code with a country code. This field differs from `JOB_ADMIN1`, which can be used in multiple countries."]
         Admin1Country,
@@ -2225,7 +2225,7 @@ pub mod schemas {
         BaseCompensationUnit,
         #[doc = "Filter by the Category."]
         Category,
-        #[doc = "Filter by the \"city name\", \"Admin1 code\", for example, \"Mountain View, CA\" or \"New York, NY\"."]
+        #[doc = "Filter by the “city name”, “Admin1 code”, for example, “Mountain View, CA” or “New York, NY”."]
         City,
         #[doc = "Filter by the city center GPS coordinate (latitude and longitude), for example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, clients may need to refresh them periodically."]
         CityCoordinate,
@@ -2245,9 +2245,9 @@ pub mod schemas {
         EmploymentType,
         #[doc = "Filter by the required experience level of the job."]
         ExperienceLevel,
-        #[doc = "Filter by the language code portion of the locale field, such as \"en\" or \"fr\"."]
+        #[doc = "Filter by the language code portion of the locale field, such as “en” or “fr”."]
         Language,
-        #[doc = "Filter by the locale field of a job, such as \"en-US\", \"fr-FR\". This is the BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)."]
+        #[doc = "Filter by the locale field of a job, such as “en-US”, “fr-FR”. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)."]
         Locale,
         #[doc = "The default value if search type is not specified."]
         SearchTypeUnspecified,
@@ -2394,7 +2394,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct HistogramQuery {
-        #[doc = "An expression specifies a histogram request against matching resources (for example, jobs) for searches. Expression syntax is a aggregation function call with histogram facets and other options. Available aggregation function calls are: * `count(string_histogram_facet)`: Count the number of matching entity, for each distinct attribute value. * `count(numeric_histogram_facet, list of buckets)`: Count the number of matching entity within each bucket. A maximum of 200 histogram buckets are supported. Data types: * Histogram facet: facet names with format a-zA-Z+. * String: string like \"any string with backslash escape for quote(\").\" * Number: whole number and floating point number like 10, -1 and -0.01. * List: list of elements with comma(,) separator surrounded by square brackets. For example, [1, 2, 3] and [\"one\", \"two\", \"three\"]. Built-in constants: * MIN (minimum number similar to java Double.MIN_VALUE) * MAX (maximum number similar to java Double.MAX_VALUE) Built-in functions: * bucket(start, end[, label]): bucket built-in function creates a bucket with range of start, end). Note that the end is exclusive. For example, bucket(1, MAX, \"positive number\") or bucket(1, 10). Job histogram facets: * company_id: histogram by [Job.distributor_company_id. * company_display_name: histogram by Job.company_display_name. * employment_type: histogram by Job.employment_types. For example, \"FULL_TIME\", \"PART_TIME\". * company_size: histogram by CompanySize, for example, \"SMALL\", \"MEDIUM\", \"BIG\". * publish_time_in_day: histogram by the Job.publish_time in days. Must specify list of numeric buckets in spec. * publish_time_in_month: histogram by the Job.publish_time in months. Must specify list of numeric buckets in spec. * publish_time_in_year: histogram by the Job.publish_time in years. Must specify list of numeric buckets in spec. * degree_type: histogram by the Job.degree_type. For example, \"Bachelors\", \"Masters\". * job_level: histogram by the Job.job_level. For example, \"Entry Level\". * country: histogram by the country code of jobs. For example, \"US\", \"FR\". * admin1: histogram by the admin1 code of jobs, which is a global placeholder referring to the state, province, or the particular term a country uses to define the geographic structure below the country level. For example, \"CA\", \"IL\". * city: histogram by a combination of the \"city name, admin1 code\". For example, \"Mountain View, CA\", \"New York, NY\". * admin1_country: histogram by a combination of the \"admin1 code, country\". For example, \"CA, US\", \"IL, US\". * city_coordinate: histogram by the city center's GPS coordinates (latitude and longitude). For example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, customers may need to refresh them periodically. * locale: histogram by the Job.language_code. For example, \"en-US\", \"fr-FR\". * language: histogram by the language subtag of the Job.language_code. For example, \"en\", \"fr\". * category: histogram by the JobCategory. For example, \"COMPUTER_AND_IT\", \"HEALTHCARE\". * base_compensation_unit: histogram by the CompensationUnit of base salary. For example, \"WEEKLY\", \"MONTHLY\". * base_compensation: histogram by the base salary. Must specify list of numeric buckets to group results by. * annualized_base_compensation: histogram by the base annualized salary. Must specify list of numeric buckets to group results by. * annualized_total_compensation: histogram by the total annualized salary. Must specify list of numeric buckets to group results by. * string_custom_attribute: histogram by string Job.custom_attributes. Values can be accessed via square bracket notations like string_custom_attribute[\"key1\"]. * numeric_custom_attribute: histogram by numeric Job.custom_attributes. Values can be accessed via square bracket notations like numeric_custom_attribute[\"key1\"]. Must specify list of numeric buckets to group results by. Example expressions: * count(admin1) * count(base_compensation, [bucket(1000, 10000), bucket(10000, 100000), bucket(100000, MAX)]) * count(string_custom_attribute[\"some-string-custom-attribute\"]) * count(numeric_custom_attribute[\"some-numeric-custom-attribute\"], [bucket(MIN, 0, \"negative\"), bucket(0, MAX, \"non-negative\")])"]
+        #[doc = "An expression specifies a histogram request against matching resources (for example, jobs) for searches. Expression syntax is a aggregation function call with histogram facets and other options. Available aggregation function calls are: * `count(string_histogram_facet)`: Count the number of matching entity, for each distinct attribute value. * `count(numeric_histogram_facet, list of buckets)`: Count the number of matching entity within each bucket. A maximum of 200 histogram buckets are supported. Data types: * Histogram facet: facet names with format a-zA-Z+. * String: string like “any string with backslash escape for quote(\").” * Number: whole number and floating point number like 10, -1 and -0.01. * List: list of elements with comma(,) separator surrounded by square brackets. For example, \\[1, 2, 3\\] and \\[“one”, “two”, “three”\\]. Built-in constants: * MIN (minimum number similar to java Double.MIN_VALUE) * MAX (maximum number similar to java Double.MAX_VALUE) Built-in functions: * bucket(start, end\\[, label\\]): bucket built-in function creates a bucket with range of start, end). Note that the end is exclusive. For example, bucket(1, MAX, “positive number”) or bucket(1, 10). Job histogram facets: * company_id: histogram by \\[Job.distributor_company_id. * company_display_name: histogram by Job.company_display_name. * employment_type: histogram by Job.employment_types. For example, “FULL_TIME”, “PART_TIME”. * company_size: histogram by CompanySize, for example, “SMALL”, “MEDIUM”, “BIG”. * publish_time_in_day: histogram by the Job.publish_time in days. Must specify list of numeric buckets in spec. * publish_time_in_month: histogram by the Job.publish_time in months. Must specify list of numeric buckets in spec. * publish_time_in_year: histogram by the Job.publish_time in years. Must specify list of numeric buckets in spec. * degree_type: histogram by the Job.degree_type. For example, “Bachelors”, “Masters”. * job_level: histogram by the Job.job_level. For example, “Entry Level”. * country: histogram by the country code of jobs. For example, “US”, “FR”. * admin1: histogram by the admin1 code of jobs, which is a global placeholder referring to the state, province, or the particular term a country uses to define the geographic structure below the country level. For example, “CA”, “IL”. * city: histogram by a combination of the “city name, admin1 code”. For example, “Mountain View, CA”, “New York, NY”. * admin1_country: histogram by a combination of the “admin1 code, country”. For example, “CA, US”, “IL, US”. * city_coordinate: histogram by the city center’s GPS coordinates (latitude and longitude). For example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, customers may need to refresh them periodically. * locale: histogram by the Job.language_code. For example, “en-US”, “fr-FR”. * language: histogram by the language subtag of the Job.language_code. For example, “en”, “fr”. * category: histogram by the JobCategory. For example, “COMPUTER_AND_IT”, “HEALTHCARE”. * base_compensation_unit: histogram by the CompensationUnit of base salary. For example, “WEEKLY”, “MONTHLY”. * base_compensation: histogram by the base salary. Must specify list of numeric buckets to group results by. * annualized_base_compensation: histogram by the base annualized salary. Must specify list of numeric buckets to group results by. * annualized_total_compensation: histogram by the total annualized salary. Must specify list of numeric buckets to group results by. * string_custom_attribute: histogram by string Job.custom_attributes. Values can be accessed via square bracket notations like string_custom_attribute\\[“key1”\\]. * numeric_custom_attribute: histogram by numeric Job.custom_attributes. Values can be accessed via square bracket notations like numeric_custom_attribute\\[“key1”\\]. Must specify list of numeric buckets to group results by. Example expressions: * count(admin1) * count(base_compensation, \\[bucket(1000, 10000), bucket(10000, 100000), bucket(100000, MAX)\\]) * count(string_custom_attribute\\[“some-string-custom-attribute”\\]) * count(numeric_custom_attribute\\[“some-numeric-custom-attribute”\\], \\[bucket(MIN, 0, “negative”), bucket(0, MAX, “non-negative”)\\])"]
         #[serde(
             rename = "histogramQuery",
             default,
@@ -2490,7 +2490,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum HistogramResultSearchType {
-        #[doc = "Filter by Admin1, which is a global placeholder for referring to state, province, or the particular term a country uses to define the geographic structure below the country level. Examples include states codes such as \"CA\", \"IL\", \"NY\", and provinces, such as \"BC\"."]
+        #[doc = "Filter by Admin1, which is a global placeholder for referring to state, province, or the particular term a country uses to define the geographic structure below the country level. Examples include states codes such as “CA”, “IL”, “NY”, and provinces, such as “BC”."]
         Admin1,
         #[doc = "A combination of state or province code with a country code. This field differs from `JOB_ADMIN1`, which can be used in multiple countries."]
         Admin1Country,
@@ -2498,7 +2498,7 @@ pub mod schemas {
         BaseCompensationUnit,
         #[doc = "Filter by the Category."]
         Category,
-        #[doc = "Filter by the \"city name\", \"Admin1 code\", for example, \"Mountain View, CA\" or \"New York, NY\"."]
+        #[doc = "Filter by the “city name”, “Admin1 code”, for example, “Mountain View, CA” or “New York, NY”."]
         City,
         #[doc = "Filter by the city center GPS coordinate (latitude and longitude), for example, 37.4038522,-122.0987765. Since the coordinates of a city center can change, clients may need to refresh them periodically."]
         CityCoordinate,
@@ -2518,9 +2518,9 @@ pub mod schemas {
         EmploymentType,
         #[doc = "Filter by the required experience level of the job."]
         ExperienceLevel,
-        #[doc = "Filter by the language code portion of the locale field, such as \"en\" or \"fr\"."]
+        #[doc = "Filter by the language code portion of the locale field, such as “en” or “fr”."]
         Language,
-        #[doc = "Filter by the locale field of a job, such as \"en-US\", \"fr-FR\". This is the BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)."]
+        #[doc = "Filter by the locale field of a job, such as “en-US”, “fr-FR”. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)."]
         Locale,
         #[doc = "The default value if search type is not specified."]
         SearchTypeUnspecified,
@@ -2676,7 +2676,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct Job {
-        #[doc = "Optional but strongly recommended for the best service experience. Location(s) where the employer is looking to hire for this job posting. Specifying the full street address(es) of the hiring location enables better API results, especially job searches by commute time. At most 50 locations are allowed for best search performance. If a job has more locations, it is suggested to split it into multiple jobs with unique requisition_ids (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', etc.) as multiple jobs with the same company_name, language_code and requisition_id are not allowed. If the original requisition_id must be preserved, a custom field should be used for storage. It is also suggested to group the locations that close to each other in the same job for better search experience. Jobs with multiple addresses must have their addresses with the same LocationType to allow location filtering to work properly. (For example, a Job with addresses \"1600 Amphitheatre Parkway, Mountain View, CA, USA\" and \"London, UK\" may not have location filters applied correctly at search time since the first is a LocationType.STREET_ADDRESS and the second is a LocationType.LOCALITY.) If a job needs to have multiple addresses, it is suggested to split it into multiple jobs with same LocationTypes. The maximum number of allowed characters is 500."]
+        #[doc = "Optional but strongly recommended for the best service experience. Location(s) where the employer is looking to hire for this job posting. Specifying the full street address(es) of the hiring location enables better API results, especially job searches by commute time. At most 50 locations are allowed for best search performance. If a job has more locations, it is suggested to split it into multiple jobs with unique requisition_ids (e.g. ‘ReqA’ becomes ‘ReqA-1’, ‘ReqA-2’, etc.) as multiple jobs with the same company_name, language_code and requisition_id are not allowed. If the original requisition_id must be preserved, a custom field should be used for storage. It is also suggested to group the locations that close to each other in the same job for better search experience. Jobs with multiple addresses must have their addresses with the same LocationType to allow location filtering to work properly. (For example, a Job with addresses “1600 Amphitheatre Parkway, Mountain View, CA, USA” and “London, UK” may not have location filters applied correctly at search time since the first is a LocationType.STREET_ADDRESS and the second is a LocationType.LOCALITY.) If a job needs to have multiple addresses, it is suggested to split it into multiple jobs with same LocationTypes. The maximum number of allowed characters is 500."]
         #[serde(
             rename = "addresses",
             default,
@@ -2697,7 +2697,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub company_display_name: ::std::option::Option<String>,
-        #[doc = "Required. The resource name of the company listing the job, such as \"projects/api-test-project/companies/foo\"."]
+        #[doc = "Required. The resource name of the company listing the job, such as “projects/api-test-project/companies/foo”."]
         #[serde(
             rename = "companyName",
             default,
@@ -2711,7 +2711,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compensation_info: ::std::option::Option<crate::schemas::CompensationInfo>,
-        #[doc = "Optional. A map of fields to hold both filterable and non-filterable custom job attributes that are not covered by the provided structured fields. The keys of the map are strings up to 64 bytes and must match the pattern: a-zA-Z*. For example, key0LikeThis or KEY_1_LIKE_THIS. At most 100 filterable and at most 100 unfilterable keys are supported. For filterable `string_values`, across all keys at most 200 values are allowed, with each string no more than 255 characters. For unfilterable `string_values`, the maximum total size of `string_values` across all keys is 50KB."]
+        #[doc = "Optional. A map of fields to hold both filterable and non-filterable custom job attributes that are not covered by the provided structured fields. The keys of the map are strings up to 64 bytes and must match the pattern: a-zA-Z\\*. For example, key0LikeThis or KEY_1_LIKE_THIS. At most 100 filterable and at most 100 unfilterable keys are supported. For filterable `string_values`, across all keys at most 200 values are allowed, with each string no more than 255 characters. For unfilterable `string_values`, the maximum total size of `string_values` across all keys is 50KB."]
         #[serde(
             rename = "customAttributes",
             default,
@@ -2776,7 +2776,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_end_time: ::std::option::Option<String>,
-        #[doc = "Optional. The experience level associated with the job, such as \"Entry Level\"."]
+        #[doc = "Optional. The experience level associated with the job, such as “Entry Level”."]
         #[serde(
             rename = "jobLevel",
             default,
@@ -2790,14 +2790,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_start_time: ::std::option::Option<String>,
-        #[doc = "Optional. The language of the posting. This field is distinct from any requirements for fluency that are associated with the job. Language codes must be in BCP-47 format, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){: class=\"external\" target=\"_blank\" }. If this field is unspecified and Job.description is present, detected language code based on Job.description is assigned, otherwise defaults to 'en_US'."]
+        #[doc = "Optional. The language of the posting. This field is distinct from any requirements for fluency that are associated with the job. Language codes must be in BCP-47 format, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){: class=“external” target=“\\_blank” }. If this field is unspecified and Job.description is present, detected language code based on Job.description is assigned, otherwise defaults to ‘en_US’."]
         #[serde(
             rename = "languageCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_code: ::std::option::Option<String>,
-        #[doc = "Required during job update. The resource name for the job. This is generated by the service when a job is created. The format is \"projects/{project_id}/jobs/{job_id}\", for example, \"projects/api-test-project/jobs/1234\". Use of this field in job queries and API calls is preferred over the use of requisition_id since this value is unique."]
+        #[doc = "Required during job update. The resource name for the job. This is generated by the service when a job is created. The format is “projects/{project_id}/jobs/{job_id}”, for example, “projects/api-test-project/jobs/1234”. Use of this field in job queries and API calls is preferred over the use of requisition_id since this value is unique."]
         #[serde(
             rename = "name",
             default,
@@ -2811,7 +2811,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub posting_create_time: ::std::option::Option<String>,
-        #[doc = "Optional but strongly recommended for the best service experience. The expiration timestamp of the job. After this timestamp, the job is marked as expired, and it no longer appears in search results. The expired job can't be deleted or listed by the DeleteJob and ListJobs APIs, but it can be retrieved with the GetJob API or updated with the UpdateJob API. An expired job can be updated and opened again by using a future expiration timestamp. Updating an expired job fails if there is another existing open job with same company_name, language_code and requisition_id. The expired jobs are retained in our system for 90 days. However, the overall expired job count cannot exceed 3 times the maximum of open jobs count over the past week, otherwise jobs with earlier expire time are cleaned first. Expired jobs are no longer accessible after they are cleaned out. Invalid timestamps are ignored, and treated as expire time not provided. Timestamp before the instant request is made is considered valid, the job will be treated as expired immediately. If this value is not provided at the time of job creation or is invalid, the job posting expires after 30 days from the job's creation time. For example, if the job was created on 2017/01/01 13:00AM UTC with an unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC. If this value is not provided on job update, it depends on the field masks set by UpdateJobRequest.update_mask. If the field masks include expiry_time, or the masks are empty meaning that every field is updated, the job posting expires after 30 days from the job's last update time. Otherwise the expiration date isn't updated."]
+        #[doc = "Optional but strongly recommended for the best service experience. The expiration timestamp of the job. After this timestamp, the job is marked as expired, and it no longer appears in search results. The expired job can’t be deleted or listed by the DeleteJob and ListJobs APIs, but it can be retrieved with the GetJob API or updated with the UpdateJob API. An expired job can be updated and opened again by using a future expiration timestamp. Updating an expired job fails if there is another existing open job with same company_name, language_code and requisition_id. The expired jobs are retained in our system for 90 days. However, the overall expired job count cannot exceed 3 times the maximum of open jobs count over the past week, otherwise jobs with earlier expire time are cleaned first. Expired jobs are no longer accessible after they are cleaned out. Invalid timestamps are ignored, and treated as expire time not provided. Timestamp before the instant request is made is considered valid, the job will be treated as expired immediately. If this value is not provided at the time of job creation or is invalid, the job posting expires after 30 days from the job’s creation time. For example, if the job was created on 2017/01/01 13:00AM UTC with an unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC. If this value is not provided on job update, it depends on the field masks set by UpdateJobRequest.update_mask. If the field masks include expiry_time, or the masks are empty meaning that every field is updated, the job posting expires after 30 days from the job’s last update time. Otherwise the expiration date isn’t updated."]
         #[serde(
             rename = "postingExpireTime",
             default,
@@ -2825,7 +2825,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub posting_publish_time: ::std::option::Option<String>,
-        #[doc = "Optional. The job PostingRegion (for example, state, country) throughout which the job is available. If this field is set, a LocationFilter in a search query within the job region finds this job posting if an exact location match isn't specified. If this field is set to PostingRegion.NATION or PostingRegion.ADMINISTRATIVE_AREA, setting job Job.addresses to the same location level as this field is strongly recommended."]
+        #[doc = "Optional. The job PostingRegion (for example, state, country) throughout which the job is available. If this field is set, a LocationFilter in a search query within the job region finds this job posting if an exact location match isn’t specified. If this field is set to PostingRegion.NATION or PostingRegion.ADMINISTRATIVE_AREA, setting job Job.addresses to the same location level as this field is strongly recommended."]
         #[serde(
             rename = "postingRegion",
             default,
@@ -2860,7 +2860,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub qualifications: ::std::option::Option<String>,
-        #[doc = "Required. The requisition ID, also referred to as the posting ID, assigned by the client to identify a job. This field is intended to be used by clients for client identification and tracking of postings. A job is not allowed to be created if there is another job with the same [company_name], language_code and requisition_id. The maximum number of allowed characters is 255."]
+        #[doc = "Required. The requisition ID, also referred to as the posting ID, assigned by the client to identify a job. This field is intended to be used by clients for client identification and tracking of postings. A job is not allowed to be created if there is another job with the same \\[company_name\\], language_code and requisition_id. The maximum number of allowed characters is 255."]
         #[serde(
             rename = "requisitionId",
             default,
@@ -2874,7 +2874,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub responsibilities: ::std::option::Option<String>,
-        #[doc = "Required. The title of the job, such as \"Software Engineer\" The maximum number of allowed characters is 500."]
+        #[doc = "Required. The title of the job, such as “Software Engineer” The maximum number of allowed characters is 500."]
         #[serde(
             rename = "title",
             default,
@@ -2903,9 +2903,9 @@ pub mod schemas {
     pub enum JobDegreeTypesItems {
         #[doc = "Adult Remedial Education; Programmes providing learning experiences that build on secondary education and prepare for labour market entry and/or tertiary education. The content is broader than secondary but not as complex as tertiary education. ISCED code 4."]
         AdultRemedialEducation,
-        #[doc = "Associate's or equivalent; Short first tertiary programmes that are typically practically-based, occupationally-specific and prepare for labour market entry. These programmes may also provide a pathway to other tertiary programmes. ISCED code 5."]
+        #[doc = "Associate’s or equivalent; Short first tertiary programmes that are typically practically-based, occupationally-specific and prepare for labour market entry. These programmes may also provide a pathway to other tertiary programmes. ISCED code 5."]
         AssociatesOrEquivalent,
-        #[doc = "Bachelor's or equivalent; Programmes designed to provide intermediate academic and/or professional knowledge, skills and competencies leading to a first tertiary degree or equivalent qualification. ISCED code 6."]
+        #[doc = "Bachelor’s or equivalent; Programmes designed to provide intermediate academic and/or professional knowledge, skills and competencies leading to a first tertiary degree or equivalent qualification. ISCED code 6."]
         BachelorsOrEquivalent,
         #[doc = "Default value. Represents no degree, or early childhood education. Maps to ISCED code 0. Ex) Kindergarten"]
         DegreeTypeUnspecified,
@@ -2913,7 +2913,7 @@ pub mod schemas {
         DoctoralOrEquivalent,
         #[doc = "Lower secondary education; First stage of secondary education building on primary education, typically with a more subject-oriented curriculum. ISCED code 2. Ex) Middle school"]
         LowerSecondaryEducation,
-        #[doc = "Master's or equivalent; Programmes designed to provide advanced academic and/or professional knowledge, skills and competencies leading to a second tertiary degree or equivalent qualification. ISCED code 7."]
+        #[doc = "Master’s or equivalent; Programmes designed to provide advanced academic and/or professional knowledge, skills and competencies leading to a second tertiary degree or equivalent qualification. ISCED code 7."]
         MastersOrEquivalent,
         #[doc = "Primary education which is typically the first stage of compulsory education. ISCED code 1. Ex) Elementary school"]
         PrimaryEducation,
@@ -3007,7 +3007,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum JobEmploymentTypesItems {
-        #[doc = "The job is offered as a contracted position with the understanding that it's converted into a full-time position at the end of the contract. Jobs of this type are also returned by a search for EmploymentType.CONTRACTOR jobs."]
+        #[doc = "The job is offered as a contracted position with the understanding that it’s converted into a full-time position at the end of the contract. Jobs of this type are also returned by a search for EmploymentType.CONTRACTOR jobs."]
         ContractToHire,
         #[doc = "The job is offered as a contracted, as opposed to a salaried employee, position."]
         Contractor,
@@ -3027,7 +3027,7 @@ pub mod schemas {
         PerDiem,
         #[doc = "The job is offered as a temporary employment opportunity, usually a short-term engagement."]
         Temporary,
-        #[doc = "The is an opportunity for an individual to volunteer, where there's no expectation of compensation for the provided services."]
+        #[doc = "The is an opportunity for an individual to volunteer, where there’s no expectation of compensation for the provided services."]
         Volunteer,
     }
     impl JobEmploymentTypesItems {
@@ -3335,9 +3335,9 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum JobPostingRegion {
-        #[doc = "In addition to exact location matching, job posting is returned when the LocationFilter in the search query is in the same administrative area as the returned job posting. For example, if a `ADMINISTRATIVE_AREA` job is posted in \"CA, USA\", it's returned if LocationFilter has \"Mountain View\". Administrative area refers to top-level administrative subdivision of this country. For example, US state, IT region, UK constituent nation and JP prefecture."]
+        #[doc = "In addition to exact location matching, job posting is returned when the LocationFilter in the search query is in the same administrative area as the returned job posting. For example, if a `ADMINISTRATIVE_AREA` job is posted in “CA, USA”, it’s returned if LocationFilter has “Mountain View”. Administrative area refers to top-level administrative subdivision of this country. For example, US state, IT region, UK constituent nation and JP prefecture."]
         AdministrativeArea,
-        #[doc = "In addition to exact location matching, job is returned when LocationFilter in search query is in the same country as this job. For example, if a `NATION_WIDE` job is posted in \"USA\", it's returned if LocationFilter has 'Mountain View'."]
+        #[doc = "In addition to exact location matching, job is returned when LocationFilter in search query is in the same country as this job. For example, if a `NATION_WIDE` job is posted in “USA”, it’s returned if LocationFilter has ‘Mountain View’."]
         Nation,
         #[doc = "If the region is unspecified, the job is only returned if it matches the LocationFilter."]
         PostingRegionUnspecified,
@@ -3559,7 +3559,7 @@ pub mod schemas {
         HumanResources,
         #[doc = "An installation, maintenance, or repair job, such as Electrician."]
         InstallationMaintenanceAndRepair,
-        #[doc = "The default value if the category isn't specified."]
+        #[doc = "The default value if the category isn’t specified."]
         JobCategoryUnspecified,
         #[doc = "A legal job, such as Law Clerk."]
         Legal,
@@ -3575,7 +3575,7 @@ pub mod schemas {
         PersonalCareAndServices,
         #[doc = "A protective services job, such as Security Guard."]
         ProtectiveServices,
-        #[doc = "A real estate job, such as Buyer's Agent."]
+        #[doc = "A real estate job, such as Buyer’s Agent."]
         RealEstate,
         #[doc = "A restaurant and hospitality job, such as Restaurant Server."]
         RestaurantAndHospitality,
@@ -3877,7 +3877,7 @@ pub mod schemas {
         ApplicationRedirectFromSearch,
         #[doc = "The job seeker or other entity interacting with the service began the process or demonstrated the intention of applying for a job."]
         ApplicationStart,
-        #[doc = "The job seeker or other entity interacting with the service began the process or demonstrated the intention of applying for a job from the search results page without viewing the details of the job posting. If sending this event, JobEventType.VIEW event shouldn't be sent."]
+        #[doc = "The job seeker or other entity interacting with the service began the process or demonstrated the intention of applying for a job from the search results page without viewing the details of the job posting. If sending this event, JobEventType.VIEW event shouldn’t be sent."]
         ApplicationStartFromSearch,
         #[doc = "The job seeker or other entity interacting with the service demonstrated an interest in a job by bookmarking or saving it."]
         Bookmark,
@@ -3895,7 +3895,7 @@ pub mod schemas {
         Notification,
         #[doc = "A recruiter or staffing agency submitted an application on behalf of the candidate after interacting with the service to identify a suitable job posting."]
         SentCv,
-        #[doc = "The job seeker, or other entity interacting with the service, has viewed the details of a job, including the full description. This event doesn't apply to the viewing a snippet of a job appearing as a part of the job search results. Viewing a snippet is associated with an impression)."]
+        #[doc = "The job seeker, or other entity interacting with the service, has viewed the details of a job, including the full description. This event doesn’t apply to the viewing a snippet of a job appearing as a part of the job search results. Viewing a snippet is associated with an impression)."]
         View,
         #[doc = "The job seeker or other entity interacting with the service performed an action to view a job and was redirected to a different website for job."]
         ViewRedirect,
@@ -4013,42 +4013,42 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct JobQuery {
-        #[doc = "Optional. Allows filtering jobs by commute time with different travel methods (for example, driving or public transit). Note: This only works with COMMUTE MODE. When specified, [JobQuery.location_filters] is ignored. Currently we don't support sorting by commute time."]
+        #[doc = "Optional. Allows filtering jobs by commute time with different travel methods (for example, driving or public transit). Note: This only works with COMMUTE MODE. When specified, \\[JobQuery.location_filters\\] is ignored. Currently we don’t support sorting by commute time."]
         #[serde(
             rename = "commuteFilter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub commute_filter: ::std::option::Option<crate::schemas::CommuteFilter>,
-        #[doc = "Optional. This filter specifies the company Company.display_name of the jobs to search against. The company name must match the value exactly. Alternatively, if the value being searched for is wrapped in `SUBSTRING_MATCH([value])`, the company name must contain a case insensitive substring match of the value. Using this function may increase latency. Sample Value: `SUBSTRING_MATCH(google)` If a value isn't specified, jobs within the search results are associated with any company. If multiple values are specified, jobs within the search results may be associated with any of the specified companies. At most 20 company display name filters are allowed."]
+        #[doc = "Optional. This filter specifies the company Company.display_name of the jobs to search against. The company name must match the value exactly. Alternatively, if the value being searched for is wrapped in `SUBSTRING_MATCH([value])`, the company name must contain a case insensitive substring match of the value. Using this function may increase latency. Sample Value: `SUBSTRING_MATCH(google)` If a value isn’t specified, jobs within the search results are associated with any company. If multiple values are specified, jobs within the search results may be associated with any of the specified companies. At most 20 company display name filters are allowed."]
         #[serde(
             rename = "companyDisplayNames",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub company_display_names: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. This filter specifies the company entities to search against. If a value isn't specified, jobs are searched for against all companies. If multiple values are specified, jobs are searched against the companies specified. The format is \"projects/{project_id}/companies/{company_id}\", for example, \"projects/api-test-project/companies/foo\". At most 20 company filters are allowed."]
+        #[doc = "Optional. This filter specifies the company entities to search against. If a value isn’t specified, jobs are searched for against all companies. If multiple values are specified, jobs are searched against the companies specified. The format is “projects/{project_id}/companies/{company_id}”, for example, “projects/api-test-project/companies/foo”. At most 20 company filters are allowed."]
         #[serde(
             rename = "companyNames",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub company_names: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. This search filter is applied only to Job.compensation_info. For example, if the filter is specified as \"Hourly job with per-hour compensation > $15\", only jobs meeting these criteria are searched. If a filter isn't defined, all open jobs are searched."]
+        #[doc = "Optional. This search filter is applied only to Job.compensation_info. For example, if the filter is specified as “Hourly job with per-hour compensation > $15”, only jobs meeting these criteria are searched. If a filter isn’t defined, all open jobs are searched."]
         #[serde(
             rename = "compensationFilter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub compensation_filter: ::std::option::Option<crate::schemas::CompensationFilter>,
-        #[doc = "Optional. This filter specifies a structured syntax to match against the Job.custom_attributes marked as `filterable`. The syntax for this expression is a subset of SQL syntax. Supported operators are: `=`, `!=`, `<`, `<=`, `>`, and `>=` where the left of the operator is a custom field key and the right of the operator is a number or a quoted string. You must escape backslash (\\) and quote (\") characters. Supported functions are `LOWER([field_name])` to perform a case insensitive match and `EMPTY([field_name])` to filter on the existence of a key. Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting (for example, \"((A AND B AND C) OR NOT D) AND E\"), a maximum of 100 comparisons or functions are allowed in the expression. The expression must be < 10000 bytes in length. Sample Query: `(LOWER(driving_license)=\"class \\\"a\\\"\" OR EMPTY(driving_license)) AND driving_years > 10`"]
+        #[doc = "Optional. This filter specifies a structured syntax to match against the Job.custom_attributes marked as `filterable`. The syntax for this expression is a subset of SQL syntax. Supported operators are: `=`, `!=`, `<`, `<=`, `>`, and `>=` where the left of the operator is a custom field key and the right of the operator is a number or a quoted string. You must escape backslash (\\\\) and quote (\") characters. Supported functions are `LOWER([field_name])` to perform a case insensitive match and `EMPTY([field_name])` to filter on the existence of a key. Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting (for example, “((A AND B AND C) OR NOT D) AND E”), a maximum of 100 comparisons or functions are allowed in the expression. The expression must be \\< 10000 bytes in length. Sample Query: `(LOWER(driving_license)=\"class \\\"a\\\"\" OR EMPTY(driving_license)) AND driving_years > 10`"]
         #[serde(
             rename = "customAttributeFilter",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_attribute_filter: ::std::option::Option<String>,
-        #[doc = "Optional. This flag controls the spell-check feature. If false, the service attempts to correct a misspelled query, for example, \"enginee\" is corrected to \"engineer\". Defaults to false: a spell check is performed."]
+        #[doc = "Optional. This flag controls the spell-check feature. If false, the service attempts to correct a misspelled query, for example, “enginee” is corrected to “engineer”. Defaults to false: a spell check is performed."]
         #[serde(
             rename = "disableSpellCheck",
             default,
@@ -4077,14 +4077,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_categories: ::std::option::Option<Vec<crate::schemas::JobQueryJobCategoriesItems>>,
-        #[doc = "Optional. This filter specifies the locale of jobs to search against, for example, \"en-US\". If a value isn't specified, the search results can contain jobs in any locale. Language codes should be in BCP-47 format, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). At most 10 language code filters are allowed."]
+        #[doc = "Optional. This filter specifies the locale of jobs to search against, for example, “en-US”. If a value isn’t specified, the search results can contain jobs in any locale. Language codes should be in BCP-47 format, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). At most 10 language code filters are allowed."]
         #[serde(
             rename = "languageCodes",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub language_codes: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. The location filter specifies geo-regions containing the jobs to search against. See LocationFilter for more information. If a location value isn't specified, jobs fitting the other search criteria are retrieved regardless of where they're located. If multiple values are specified, jobs are retrieved from any of the specified locations. If different values are specified for the LocationFilter.distance_in_miles parameter, the maximum provided distance is used for all locations. At most 5 location filters are allowed."]
+        #[doc = "Optional. The location filter specifies geo-regions containing the jobs to search against. See LocationFilter for more information. If a location value isn’t specified, jobs fitting the other search criteria are retrieved regardless of where they’re located. If multiple values are specified, jobs are retrieved from any of the specified locations. If different values are specified for the LocationFilter.distance_in_miles parameter, the maximum provided distance is used for all locations. At most 5 location filters are allowed."]
         #[serde(
             rename = "locationFilters",
             default,
@@ -4105,7 +4105,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub query: ::std::option::Option<String>,
-        #[doc = "The language code of query. For example, \"en-US\". This field helps to better interpret the query. If a value isn't specified, the query language code is automatically detected, which may not be accurate. Language code should be in BCP-47 format, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)."]
+        #[doc = "The language code of query. For example, “en-US”. This field helps to better interpret the query. If a value isn’t specified, the query language code is automatically detected, which may not be accurate. Language code should be in BCP-47 format, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47)."]
         #[serde(
             rename = "queryLanguageCode",
             default,
@@ -4125,7 +4125,7 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum JobQueryEmploymentTypesItems {
-        #[doc = "The job is offered as a contracted position with the understanding that it's converted into a full-time position at the end of the contract. Jobs of this type are also returned by a search for EmploymentType.CONTRACTOR jobs."]
+        #[doc = "The job is offered as a contracted position with the understanding that it’s converted into a full-time position at the end of the contract. Jobs of this type are also returned by a search for EmploymentType.CONTRACTOR jobs."]
         ContractToHire,
         #[doc = "The job is offered as a contracted, as opposed to a salaried employee, position."]
         Contractor,
@@ -4145,7 +4145,7 @@ pub mod schemas {
         PerDiem,
         #[doc = "The job is offered as a temporary employment opportunity, usually a short-term engagement."]
         Temporary,
-        #[doc = "The is an opportunity for an individual to volunteer, where there's no expectation of compensation for the provided services."]
+        #[doc = "The is an opportunity for an individual to volunteer, where there’s no expectation of compensation for the provided services."]
         Volunteer,
     }
     impl JobQueryEmploymentTypesItems {
@@ -4279,7 +4279,7 @@ pub mod schemas {
         HumanResources,
         #[doc = "An installation, maintenance, or repair job, such as Electrician."]
         InstallationMaintenanceAndRepair,
-        #[doc = "The default value if the category isn't specified."]
+        #[doc = "The default value if the category isn’t specified."]
         JobCategoryUnspecified,
         #[doc = "A legal job, such as Law Clerk."]
         Legal,
@@ -4295,7 +4295,7 @@ pub mod schemas {
         PersonalCareAndServices,
         #[doc = "A protective services job, such as Security Guard."]
         ProtectiveServices,
-        #[doc = "A real estate job, such as Buyer's Agent."]
+        #[doc = "A real estate job, such as Buyer’s Agent."]
         RealEstate,
         #[doc = "A restaurant and hospitality job, such as Restaurant Server."]
         RestaurantAndHospitality,
@@ -4507,14 +4507,14 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct LatLng {
-        #[doc = "The latitude in degrees. It must be in the range [-90.0, +90.0]."]
+        #[doc = "The latitude in degrees. It must be in the range \\[-90.0, +90.0\\]."]
         #[serde(
             rename = "latitude",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub latitude: ::std::option::Option<f64>,
-        #[doc = "The longitude in degrees. It must be in the range [-180.0, +180.0]."]
+        #[doc = "The longitude in degrees. It must be in the range \\[-180.0, +180.0\\]."]
         #[serde(
             rename = "longitude",
             default,
@@ -4625,7 +4625,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lat_lng: ::std::option::Option<crate::schemas::LatLng>,
-        #[doc = "The type of a location, which corresponds to the address lines field of PostalAddress. For example, \"Downtown, Atlanta, GA, USA\" has a type of LocationType#NEIGHBORHOOD, and \"Kansas City, KS, USA\" has a type of LocationType#LOCALITY."]
+        #[doc = "The type of a location, which corresponds to the address lines field of PostalAddress. For example, “Downtown, Atlanta, GA, USA” has a type of LocationType#NEIGHBORHOOD, and “Kansas City, KS, USA” has a type of LocationType#LOCALITY."]
         #[serde(
             rename = "locationType",
             default,
@@ -4639,7 +4639,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_address: ::std::option::Option<crate::schemas::PostalAddress>,
-        #[doc = "Radius in miles of the job location. This value is derived from the location bounding box in which a circle with the specified radius centered from LatLng covers the area associated with the job location. For example, currently, \"Mountain View, CA, USA\" has a radius of 6.17 miles."]
+        #[doc = "Radius in miles of the job location. This value is derived from the location bounding box in which a circle with the specified radius centered from LatLng covers the area associated with the job location. For example, currently, “Mountain View, CA, USA” has a radius of 6.17 miles."]
         #[serde(
             rename = "radiusInMiles",
             default,
@@ -4777,7 +4777,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct LocationFilter {
-        #[doc = "Optional. The address name, such as \"Mountain View\" or \"Bay Area\"."]
+        #[doc = "Optional. The address name, such as “Mountain View” or “Bay Area”."]
         #[serde(
             rename = "address",
             default,
@@ -4791,21 +4791,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub distance_in_miles: ::std::option::Option<f64>,
-        #[doc = "Optional. The latitude and longitude of the geographic center from which to search. This field's ignored if `address` is provided."]
+        #[doc = "Optional. The latitude and longitude of the geographic center from which to search. This field’s ignored if `address` is provided."]
         #[serde(
             rename = "latLng",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub lat_lng: ::std::option::Option<crate::schemas::LatLng>,
-        #[doc = "Optional. CLDR region code of the country/region. This field may be used in two ways: 1) If telecommute preference is not set, this field is used address ambiguity of the user-input address. For example, \"Liverpool\" may refer to \"Liverpool, NY, US\" or \"Liverpool, UK\". This region code biases the address resolution toward a specific country or territory. If this field is not set, address resolution is biased toward the United States by default. 2) If telecommute preference is set to TELECOMMUTE_ALLOWED, the telecommute location filter will be limited to the region specified in this field. If this field is not set, the telecommute job locations will not be limited. See https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
+        #[doc = "Optional. CLDR region code of the country/region. This field may be used in two ways: 1) If telecommute preference is not set, this field is used address ambiguity of the user-input address. For example, “Liverpool” may refer to “Liverpool, NY, US” or “Liverpool, UK”. This region code biases the address resolution toward a specific country or territory. If this field is not set, address resolution is biased toward the United States by default. 2) If telecommute preference is set to TELECOMMUTE_ALLOWED, the telecommute location filter will be limited to the region specified in this field. If this field is not set, the telecommute job locations will not be limited. See https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/territory_information.html for details. Example: “CH” for Switzerland."]
         #[serde(
             rename = "regionCode",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub region_code: ::std::option::Option<String>,
-        #[doc = "Optional. Allows the client to return jobs without a set location, specifically, telecommuting jobs (telecommuting is considered by the service as a special location). Job.posting_region indicates if a job permits telecommuting. If this field is set to TelecommutePreference.TELECOMMUTE_ALLOWED, telecommuting jobs are searched, and address and lat_lng are ignored. If not set or set to TelecommutePreference.TELECOMMUTE_EXCLUDED, the telecommute status of the jobs is ignored. Jobs that have PostingRegion.TELECOMMUTE and have additional Job.addresses may still be matched based on other location filters using address or latlng. This filter can be used by itself to search exclusively for telecommuting jobs, or it can be combined with another location filter to search for a combination of job locations, such as \"Mountain View\" or \"telecommuting\" jobs. However, when used in combination with other location filters, telecommuting jobs can be treated as less relevant than other jobs in the search response."]
+        #[doc = "Optional. Allows the client to return jobs without a set location, specifically, telecommuting jobs (telecommuting is considered by the service as a special location). Job.posting_region indicates if a job permits telecommuting. If this field is set to TelecommutePreference.TELECOMMUTE_ALLOWED, telecommuting jobs are searched, and address and lat_lng are ignored. If not set or set to TelecommutePreference.TELECOMMUTE_EXCLUDED, the telecommute status of the jobs is ignored. Jobs that have PostingRegion.TELECOMMUTE and have additional Job.addresses may still be matched based on other location filters using address or latlng. This filter can be used by itself to search exclusively for telecommuting jobs, or it can be combined with another location filter to search for a combination of job locations, such as “Mountain View” or “telecommuting” jobs. However, when used in combination with other location filters, telecommuting jobs can be treated as less relevant than other jobs in the search response."]
         #[serde(
             rename = "telecommutePreference",
             default,
@@ -4924,21 +4924,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job: ::std::option::Option<crate::schemas::Job>,
-        #[doc = "A summary of the job with core information that's displayed on the search results listing page."]
+        #[doc = "A summary of the job with core information that’s displayed on the search results listing page."]
         #[serde(
             rename = "jobSummary",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_summary: ::std::option::Option<String>,
-        #[doc = "Contains snippets of text from the Job.job_title field most closely matching a search query's keywords, if available. The matching query keywords are enclosed in HTML bold tags."]
+        #[doc = "Contains snippets of text from the Job.job_title field most closely matching a search query’s keywords, if available. The matching query keywords are enclosed in HTML bold tags."]
         #[serde(
             rename = "jobTitleSnippet",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub job_title_snippet: ::std::option::Option<String>,
-        #[doc = "Contains snippets of text from the Job.description and similar fields that most closely match a search query's keywords, if available. All HTML tags in the original fields are stripped when returned in this field, and matching query keywords are enclosed in HTML bold tags."]
+        #[doc = "Contains snippets of text from the Job.description and similar fields that most closely match a search query’s keywords, if available. All HTML tags in the original fields are stripped when returned in this field, and matching query keywords are enclosed in HTML bold tags."]
         #[serde(
             rename = "searchTextSnippet",
             default,
@@ -4969,7 +4969,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct MendelDebugInput {
-        #[doc = "When a request spans multiple servers, a MendelDebugInput may travel with the request and take effect in all the servers. This field is a map of namespaces to NamespacedMendelDebugInput protos. In a single server, up to two NamespacedMendelDebugInput protos are applied: 1. NamespacedMendelDebugInput with the global namespace (key == \"\"). 2. NamespacedMendelDebugInput with the server's namespace. When both NamespacedMendelDebugInput protos are present, they are merged. See go/mendel-debug-forcing for more details."]
+        #[doc = "When a request spans multiple servers, a MendelDebugInput may travel with the request and take effect in all the servers. This field is a map of namespaces to NamespacedMendelDebugInput protos. In a single server, up to two NamespacedMendelDebugInput protos are applied: 1. NamespacedMendelDebugInput with the global namespace (key == “”). 2. NamespacedMendelDebugInput with the server’s namespace. When both NamespacedMendelDebugInput protos are present, they are merged. See go/mendel-debug-forcing for more details."]
         #[serde(
             rename = "namespacedDebugInput",
             default,
@@ -5069,28 +5069,28 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub absolutely_forced_exps: ::std::option::Option<Vec<i32>>,
-        #[doc = "Set of experiment names to be conditionally forced. These experiments will be forced only if their conditions and their parent domain's conditions are true."]
+        #[doc = "Set of experiment names to be conditionally forced. These experiments will be forced only if their conditions and their parent domain’s conditions are true."]
         #[serde(
             rename = "conditionallyForcedExpNames",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditionally_forced_exp_names: ::std::option::Option<Vec<String>>,
-        #[doc = "Set of experiment tags to be conditionally forced. The experiments with these tags will be forced only if their conditions and their parent domain's conditions are true."]
+        #[doc = "Set of experiment tags to be conditionally forced. The experiments with these tags will be forced only if their conditions and their parent domain’s conditions are true."]
         #[serde(
             rename = "conditionallyForcedExpTags",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditionally_forced_exp_tags: ::std::option::Option<Vec<String>>,
-        #[doc = "Set of experiment ids to be conditionally forced. These ids will be forced only if their conditions and their parent domain's conditions are true."]
+        #[doc = "Set of experiment ids to be conditionally forced. These ids will be forced only if their conditions and their parent domain’s conditions are true."]
         #[serde(
             rename = "conditionallyForcedExps",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub conditionally_forced_exps: ::std::option::Option<Vec<i32>>,
-        #[doc = "If true, disable automatic enrollment selection (at all diversion points). Automatic enrollment selection means experiment selection process based on the experiment's automatic enrollment condition. This does not disable selection of forced experiments."]
+        #[doc = "If true, disable automatic enrollment selection (at all diversion points). Automatic enrollment selection means experiment selection process based on the experiment’s automatic enrollment condition. This does not disable selection of forced experiments."]
         #[serde(
             rename = "disableAutomaticEnrollmentSelection",
             default,
@@ -5118,7 +5118,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub disable_exps: ::std::option::Option<Vec<i32>>,
-        #[doc = "If true, disable manual enrollment selection (at all diversion points). Manual enrollment selection means experiment selection process based on the request's manual enrollment states (a.k.a. opt-in experiments). This does not disable selection of forced experiments."]
+        #[doc = "If true, disable manual enrollment selection (at all diversion points). Manual enrollment selection means experiment selection process based on the request’s manual enrollment states (a.k.a. opt-in experiments). This does not disable selection of forced experiments."]
         #[serde(
             rename = "disableManualEnrollmentSelection",
             default,
@@ -5161,7 +5161,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct NumericBucketingOption {
-        #[doc = "Required. Two adjacent values form a histogram bucket. Values should be in ascending order. For example, if [5, 10, 15] are provided, four buckets are created: (-inf, 5), 5, 10), [10, 15), [15, inf). At most 20 [buckets_bound is supported."]
+        #[doc = "Required. Two adjacent values form a histogram bucket. Values should be in ascending order. For example, if \\[5, 10, 15\\] are provided, four buckets are created: (-inf, 5), 5, 10), \\[10, 15), \\[15, inf). At most 20 \\[buckets_bound is supported."]
         #[serde(
             rename = "bucketBounds",
             default,
@@ -5197,14 +5197,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub counts: ::std::option::Option<Vec<crate::schemas::BucketizedCount>>,
-        #[doc = "Stores the maximum value of the numeric field. Is populated only if [NumericBucketingOption.requires_min_max] is set to true."]
+        #[doc = "Stores the maximum value of the numeric field. Is populated only if \\[NumericBucketingOption.requires_min_max\\] is set to true."]
         #[serde(
             rename = "maxValue",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub max_value: ::std::option::Option<f64>,
-        #[doc = "Stores the minimum value of the numeric field. Will be populated only if [NumericBucketingOption.requires_min_max] is set to true."]
+        #[doc = "Stores the minimum value of the numeric field. Will be populated only if \\[NumericBucketingOption.requires_min_max\\] is set to true."]
         #[serde(
             rename = "minValue",
             default,
@@ -5285,21 +5285,21 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct PostalAddress {
-        #[doc = "Unstructured address lines describing the lower levels of an address. Because values in address_lines do not have type information and may sometimes contain multiple values in a single field (e.g. \"Austin, TX\"), it is important that the line order is clear. The order of address lines should be \"envelope order\" for the country/region of the address. In places where this can vary (e.g. Japan), address_language is used to make it explicit (e.g. \"ja\" for large-to-small ordering and \"ja-Latn\" or \"en\" for small-to-large). This way, the most specific line of an address can be selected based on the language. The minimum permitted structural representation of an address consists of a region_code with all remaining information placed in the address_lines. It would be possible to format such an address very approximately without geocoding, but no semantic reasoning could be made about any of the address components until it was at least partially resolved. Creating an address only containing a region_code and address_lines, and then geocoding is the recommended way to handle completely unstructured addresses (as opposed to guessing which parts of the address should be localities or administrative areas)."]
+        #[doc = "Unstructured address lines describing the lower levels of an address. Because values in address_lines do not have type information and may sometimes contain multiple values in a single field (e.g. “Austin, TX”), it is important that the line order is clear. The order of address lines should be “envelope order” for the country/region of the address. In places where this can vary (e.g. Japan), address_language is used to make it explicit (e.g. “ja” for large-to-small ordering and “ja-Latn” or “en” for small-to-large). This way, the most specific line of an address can be selected based on the language. The minimum permitted structural representation of an address consists of a region_code with all remaining information placed in the address_lines. It would be possible to format such an address very approximately without geocoding, but no semantic reasoning could be made about any of the address components until it was at least partially resolved. Creating an address only containing a region_code and address_lines, and then geocoding is the recommended way to handle completely unstructured addresses (as opposed to guessing which parts of the address should be localities or administrative areas)."]
         #[serde(
             rename = "addressLines",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub address_lines: ::std::option::Option<Vec<String>>,
-        #[doc = "Optional. Highest administrative subdivision which is used for postal addresses of a country or region. For example, this can be a state, a province, an oblast, or a prefecture. Specifically, for Spain this is the province and not the autonomous community (e.g. \"Barcelona\" and not \"Catalonia\"). Many countries don't use an administrative area in postal addresses. E.g. in Switzerland this should be left unpopulated."]
+        #[doc = "Optional. Highest administrative subdivision which is used for postal addresses of a country or region. For example, this can be a state, a province, an oblast, or a prefecture. Specifically, for Spain this is the province and not the autonomous community (e.g. “Barcelona” and not “Catalonia”). Many countries don’t use an administrative area in postal addresses. E.g. in Switzerland this should be left unpopulated."]
         #[serde(
             rename = "administrativeArea",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub administrative_area: ::std::option::Option<String>,
-        #[doc = "Optional. BCP-47 language code of the contents of this address (if known). This is often the UI language of the input form or is expected to match one of the languages used in the address' country/region, or their transliterated equivalents. This can affect formatting in certain countries, but is not critical to the correctness of the data and will never affect any validation or other non-formatting related operations. If this value is not known, it should be omitted (rather than specifying a possibly incorrect default). Examples: \"zh-Hant\", \"ja\", \"ja-Latn\", \"en\"."]
+        #[doc = "Optional. BCP-47 language code of the contents of this address (if known). This is often the UI language of the input form or is expected to match one of the languages used in the address’ country/region, or their transliterated equivalents. This can affect formatting in certain countries, but is not critical to the correctness of the data and will never affect any validation or other non-formatting related operations. If this value is not known, it should be omitted (rather than specifying a possibly incorrect default). Examples: “zh-Hant”, “ja”, “ja-Latn”, “en”."]
         #[serde(
             rename = "languageCode",
             default,
@@ -5327,14 +5327,14 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub postal_code: ::std::option::Option<String>,
-        #[doc = "Optional. The recipient at the address. This field may, under certain circumstances, contain multiline information. For example, it might contain \"care of\" information."]
+        #[doc = "Optional. The recipient at the address. This field may, under certain circumstances, contain multiline information. For example, it might contain “care of” information."]
         #[serde(
             rename = "recipients",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub recipients: ::std::option::Option<Vec<String>>,
-        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: \"CH\" for Switzerland."]
+        #[doc = "Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: “CH” for Switzerland."]
         #[serde(
             rename = "regionCode",
             default,
@@ -5348,7 +5348,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub revision: ::std::option::Option<i32>,
-        #[doc = "Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like \"CEDEX\", optionally followed by a number (e.g. \"CEDEX 7\"), or just a number alone, representing the \"sector code\" (Jamaica), \"delivery area indicator\" (Malawi) or \"post office indicator\" (e.g. Côte d'Ivoire)."]
+        #[doc = "Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like “CEDEX”, optionally followed by a number (e.g. “CEDEX 7”), or just a number alone, representing the “sector code” (Jamaica), “delivery area indicator” (Malawi) or “post office indicator” (e.g. Côte d’Ivoire)."]
         #[serde(
             rename = "sortingCode",
             default,
@@ -5520,21 +5520,21 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub device_info: ::std::option::Option<crate::schemas::DeviceInfo>,
-        #[doc = "Required. The client-defined scope or source of the service call, which typically is the domain on which the service has been implemented and is currently being run. For example, if the service is being run by client *Foo, Inc.*, on job board www.foo.com and career site www.bar.com, then this field is set to \"foo.com\" for use on the job board, and \"bar.com\" for use on the career site. If this field isn't available for some reason, send \"UNKNOWN\". Any improvements to the model for a particular tenant site rely on this field being set correctly to a domain. The maximum number of allowed characters is 255."]
+        #[doc = "Required. The client-defined scope or source of the service call, which typically is the domain on which the service has been implemented and is currently being run. For example, if the service is being run by client *Foo, Inc.*, on job board www.foo.com and career site www.bar.com, then this field is set to “foo.com” for use on the job board, and “bar.com” for use on the career site. If this field isn’t available for some reason, send “UNKNOWN”. Any improvements to the model for a particular tenant site rely on this field being set correctly to a domain. The maximum number of allowed characters is 255."]
         #[serde(
             rename = "domain",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub domain: ::std::option::Option<String>,
-        #[doc = "Required. A unique session identification string. A session is defined as the duration of an end user's interaction with the service over a certain period. Obfuscate this field for privacy concerns before providing it to the service. If this field is not available for some reason, send \"UNKNOWN\". Note that any improvements to the model for a particular tenant site, rely on this field being set correctly to some unique session_id. The maximum number of allowed characters is 255."]
+        #[doc = "Required. A unique session identification string. A session is defined as the duration of an end user’s interaction with the service over a certain period. Obfuscate this field for privacy concerns before providing it to the service. If this field is not available for some reason, send “UNKNOWN”. Note that any improvements to the model for a particular tenant site, rely on this field being set correctly to some unique session_id. The maximum number of allowed characters is 255."]
         #[serde(
             rename = "sessionId",
             default,
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub session_id: ::std::option::Option<String>,
-        #[doc = "Required. A unique user identification string, as determined by the client. To have the strongest positive impact on search quality make sure the client-level is unique. Obfuscate this field for privacy concerns before providing it to the service. If this field is not available for some reason, send \"UNKNOWN\". Note that any improvements to the model for a particular tenant site, rely on this field being set correctly to a unique user_id. The maximum number of allowed characters is 255."]
+        #[doc = "Required. A unique user identification string, as determined by the client. To have the strongest positive impact on search quality make sure the client-level is unique. Obfuscate this field for privacy concerns before providing it to the service. If this field is not available for some reason, send “UNKNOWN”. Note that any improvements to the model for a particular tenant site, rely on this field being set correctly to a unique user_id. The maximum number of allowed characters is 255."]
         #[serde(
             rename = "userId",
             default,
@@ -5594,7 +5594,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub custom_ranking_info: ::std::option::Option<crate::schemas::CustomRankingInfo>,
-        #[doc = "Optional. Controls whether to disable exact keyword match on Job.job_title, Job.description, Job.company_display_name, Job.locations, Job.qualifications. When disable keyword match is turned off, a keyword match returns jobs that do not match given category filters when there are matching keywords. For example, the query \"program manager,\" a result is returned even if the job posting has the title \"software developer,\" which does not fall into \"program manager\" ontology, but does have \"program manager\" appearing in its description. For queries like \"cloud\" that does not contain title or location specific ontology, jobs with \"cloud\" keyword matches are returned regardless of this flag's value. Please use Company.keyword_searchable_custom_fields or Company.keyword_searchable_custom_attributes if company specific globally matched custom field/attribute string values is needed. Enabling keyword match improves recall of subsequent search requests. Defaults to false."]
+        #[doc = "Optional. Controls whether to disable exact keyword match on Job.job_title, Job.description, Job.company_display_name, Job.locations, Job.qualifications. When disable keyword match is turned off, a keyword match returns jobs that do not match given category filters when there are matching keywords. For example, the query “program manager,” a result is returned even if the job posting has the title “software developer,” which does not fall into “program manager” ontology, but does have “program manager” appearing in its description. For queries like “cloud” that does not contain title or location specific ontology, jobs with “cloud” keyword matches are returned regardless of this flag’s value. Please use Company.keyword_searchable_custom_fields or Company.keyword_searchable_custom_attributes if company specific globally matched custom field/attribute string values is needed. Enabling keyword match improves recall of subsequent search requests. Defaults to false."]
         #[serde(
             rename = "disableKeywordMatch",
             default,
@@ -5651,7 +5651,7 @@ pub mod schemas {
             skip_serializing_if = "std::option::Option::is_none"
         )]
         pub offset: ::std::option::Option<i32>,
-        #[doc = "Optional. The criteria determining how search results are sorted. Default is \"relevance desc\". Supported options are: * `\"relevance desc\"`: By relevance descending, as determined by the API algorithms. Relevance thresholding of query results is only available with this ordering. * `\"posting_publish_time desc\"`: By Job.posting_publish_time descending. * `\"posting_update_time desc\"`: By Job.posting_update_time descending. * `\"title\"`: By Job.title ascending. * `\"title desc\"`: By Job.title descending. * `\"annualized_base_compensation\"`: By job's CompensationInfo.annualized_base_compensation_range ascending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"annualized_base_compensation desc\"`: By job's CompensationInfo.annualized_base_compensation_range descending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"annualized_total_compensation\"`: By job's CompensationInfo.annualized_total_compensation_range ascending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"annualized_total_compensation desc\"`: By job's CompensationInfo.annualized_total_compensation_range descending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"custom_ranking desc\"`: By the relevance score adjusted to the SearchJobsRequest.custom_ranking_info.ranking_expression with weight factor assigned by SearchJobsRequest.custom_ranking_info.importance_level in descending order. * Location sorting: Use the special syntax to order jobs by distance: \"`distance_from('Hawaii')`\": Order by distance from Hawaii. \"`distance_from(19.89, 155.5)`\": Order by distance from a coordinate. \"`distance_from('Hawaii'), distance_from('Puerto Rico')`\": Order by multiple locations. See details below. \"`distance_from('Hawaii'), distance_from(19.89, 155.5)`\": Order by multiple locations. See details below. The string can have a maximum of 256 characters. When multiple distance centers are provided, a job that is close to any of the distance centers would have a high rank. When a job has multiple locations, the job location closest to one of the distance centers will be used. Jobs that don't have locations will be ranked at the bottom. Distance is calculated with a precision of 11.3 meters (37.4 feet). Diversification strategy is still applied unless explicitly disabled in diversification_level."]
+        #[doc = "Optional. The criteria determining how search results are sorted. Default is “relevance desc”. Supported options are: * `\"relevance desc\"`: By relevance descending, as determined by the API algorithms. Relevance thresholding of query results is only available with this ordering. * `\"posting_publish_time desc\"`: By Job.posting_publish_time descending. * `\"posting_update_time desc\"`: By Job.posting_update_time descending. * `\"title\"`: By Job.title ascending. * `\"title desc\"`: By Job.title descending. * `\"annualized_base_compensation\"`: By job’s CompensationInfo.annualized_base_compensation_range ascending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"annualized_base_compensation desc\"`: By job’s CompensationInfo.annualized_base_compensation_range descending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"annualized_total_compensation\"`: By job’s CompensationInfo.annualized_total_compensation_range ascending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"annualized_total_compensation desc\"`: By job’s CompensationInfo.annualized_total_compensation_range descending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `\"custom_ranking desc\"`: By the relevance score adjusted to the SearchJobsRequest.custom_ranking_info.ranking_expression with weight factor assigned by SearchJobsRequest.custom_ranking_info.importance_level in descending order. * Location sorting: Use the special syntax to order jobs by distance: “`distance_from('Hawaii')`”: Order by distance from Hawaii. “`distance_from(19.89, 155.5)`”: Order by distance from a coordinate. “`distance_from('Hawaii'), distance_from('Puerto Rico')`”: Order by multiple locations. See details below. “`distance_from('Hawaii'), distance_from(19.89, 155.5)`”: Order by multiple locations. See details below. The string can have a maximum of 256 characters. When multiple distance centers are provided, a job that is close to any of the distance centers would have a high rank. When a job has multiple locations, the job location closest to one of the distance centers will be used. Jobs that don’t have locations will be ranked at the bottom. Distance is calculated with a precision of 11.3 meters (37.4 feet). Diversification strategy is still applied unless explicitly disabled in diversification_level."]
         #[serde(
             rename = "orderBy",
             default,
@@ -5708,7 +5708,7 @@ pub mod schemas {
     pub enum SearchJobsRequestDiversificationLevel {
         #[doc = "Disables diversification. Jobs that would normally be pushed to the last page would not have their positions altered. This may result in highly similar jobs appearing in sequence in the search results."]
         Disabled,
-        #[doc = "The diversification level isn't specified. By default, jobs with this enum are ordered according to SIMPLE diversifying behavior."]
+        #[doc = "The diversification level isn’t specified. By default, jobs with this enum are ordered according to SIMPLE diversifying behavior."]
         DiversificationLevelUnspecified,
         #[doc = "Default diversifying behavior. The result list is ordered so that highly similar results are pushed to the end of the last page of search results."]
         Simple,
@@ -5874,11 +5874,11 @@ pub mod schemas {
     }
     #[derive(Debug, Clone, PartialEq, Hash, PartialOrd, Ord, Eq, Copy)]
     pub enum SearchJobsRequestSearchMode {
-        #[doc = "The job search matches only against featured jobs (jobs with a promotionValue > 0). This method doesn't return any jobs having a promotionValue <= 0. The search results order is determined by the promotionValue (jobs with a higher promotionValue are returned higher up in the search results), with relevance being used as a tiebreaker."]
+        #[doc = "The job search matches only against featured jobs (jobs with a promotionValue > 0). This method doesn’t return any jobs having a promotionValue \\<= 0. The search results order is determined by the promotionValue (jobs with a higher promotionValue are returned higher up in the search results), with relevance being used as a tiebreaker."]
         FeaturedJobSearch,
         #[doc = "The job search matches against all jobs, and featured jobs (jobs with promotionValue > 0) are not specially handled."]
         JobSearch,
-        #[doc = "The mode of the search method isn't specified. The default search behavior is identical to JOB_SEARCH search behavior."]
+        #[doc = "The mode of the search method isn’t specified. The default search behavior is identical to JOB_SEARCH search behavior."]
         SearchModeUnspecified,
     }
     impl SearchJobsRequestSearchMode {
@@ -5952,7 +5952,7 @@ pub mod schemas {
         Debug, Clone, PartialEq, PartialOrd, Default, :: serde :: Deserialize, :: serde :: Serialize,
     )]
     pub struct SearchJobsResponse {
-        #[doc = "If query broadening is enabled, we may append additional results from the broadened query. This number indicates how many of the jobs returned in the jobs field are from the broadened query. These results are always at the end of the jobs list. In particular, a value of 0, or if the field isn't set, all the jobs in the jobs list are from the original (without broadening) query. If this field is non-zero, subsequent requests with offset after this result set should contain all broadened results."]
+        #[doc = "If query broadening is enabled, we may append additional results from the broadened query. This number indicates how many of the jobs returned in the jobs field are from the broadened query. These results are always at the end of the jobs list. In particular, a value of 0, or if the field isn’t set, all the jobs in the jobs list are from the original (without broadening) query. If this field is non-zero, subsequent requests with offset after this result set should contain all broadened results."]
         #[serde(
             rename = "broadenedQueryJobsCount",
             default,
@@ -6125,7 +6125,7 @@ pub mod schemas {
         :: serde :: Serialize,
     )]
     pub struct TimeOfDay {
-        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value \"24:00:00\" for scenarios like business closing time."]
+        #[doc = "Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value “24:00:00” for scenarios like business closing time."]
         #[serde(
             rename = "hours",
             default,
@@ -6529,7 +6529,7 @@ pub mod resources {
             pub enum CompleteScope {
                 #[doc = "Default value."]
                 CompletionScopeUnspecified,
-                #[doc = "Suggestions are based on all jobs data in the system that's visible to the client"]
+                #[doc = "Suggestions are based on all jobs data in the system that’s visible to the client"]
                 Public,
                 #[doc = "Suggestions are based only on the data provided by the client."]
                 Tenant,
@@ -6693,17 +6693,17 @@ pub mod resources {
             xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> CompleteRequestBuilder<'a> {
-            #[doc = "Optional. If provided, restricts completion to specified company. The format is \"projects/{project_id}/companies/{company_id}\", for example, \"projects/api-test-project/companies/foo\"."]
+            #[doc = "Optional. If provided, restricts completion to specified company. The format is “projects/{project_id}/companies/{company_id}”, for example, “projects/api-test-project/companies/foo”."]
             pub fn company_name(mut self, value: impl Into<String>) -> Self {
                 self.company_name = Some(value.into());
                 self
             }
-            #[doc = "Deprecated. Use language_codes instead. Optional. The language of the query. This is the BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). For CompletionType.JOB_TITLE type, only open jobs with the same language_code are returned. For CompletionType.COMPANY_NAME type, only companies having open jobs with the same language_code are returned. For CompletionType.COMBINED type, only open jobs with the same language_code or companies having open jobs with the same language_code are returned. The maximum number of allowed characters is 255."]
+            #[doc = "Deprecated. Use language_codes instead. Optional. The language of the query. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). For CompletionType.JOB_TITLE type, only open jobs with the same language_code are returned. For CompletionType.COMPANY_NAME type, only companies having open jobs with the same language_code are returned. For CompletionType.COMBINED type, only open jobs with the same language_code or companies having open jobs with the same language_code are returned. The maximum number of allowed characters is 255."]
             pub fn language_code(mut self, value: impl Into<String>) -> Self {
                 self.language_code = Some(value.into());
                 self
             }
-            #[doc = "Optional. The list of languages of the query. This is the BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). For CompletionType.JOB_TITLE type, only open jobs with the same language_codes are returned. For CompletionType.COMPANY_NAME type, only companies having open jobs with the same language_codes are returned. For CompletionType.COMBINED type, only open jobs with the same language_codes or companies having open jobs with the same language_codes are returned. The maximum number of allowed characters is 255."]
+            #[doc = "Optional. The list of languages of the query. This is the BCP-47 language code, such as “en-US” or “sr-Latn”. For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). For CompletionType.JOB_TITLE type, only open jobs with the same language_codes are returned. For CompletionType.COMPANY_NAME type, only companies having open jobs with the same language_codes are returned. For CompletionType.COMBINED type, only open jobs with the same language_codes or companies having open jobs with the same language_codes are returned. The maximum number of allowed characters is 255."]
             pub fn language_codes(mut self, value: impl Into<Vec<String>>) -> Self {
                 self.language_codes = Some(value.into());
                 self
@@ -6764,12 +6764,12 @@ pub mod resources {
                 self.quota_user = Some(value.into());
                 self
             }
-            #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+            #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
             pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                 self.upload_protocol = Some(value.into());
                 self
             }
-            #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+            #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
             pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                 self.upload_type = Some(value.into());
                 self
@@ -6895,7 +6895,7 @@ pub mod resources {
                 fn auth_ref(&self) -> &dyn ::google_api_auth::GetAccessToken {
                     self.auth
                 }
-                #[doc = "Report events issued when end user interacts with customer's application that uses Cloud Talent Solution. You may inspect the created events in [self service tools](https://console.cloud.google.com/talent-solution/overview). [Learn more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools."]
+                #[doc = "Report events issued when end user interacts with customer’s application that uses Cloud Talent Solution. You may inspect the created events in [self service tools](https://console.cloud.google.com/talent-solution/overview). [Learn more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools."]
                 pub fn create(
                     &self,
                     request: crate::schemas::CreateClientEventRequest,
@@ -6970,12 +6970,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7178,7 +7178,7 @@ pub mod resources {
                         require_open_jobs: None,
                     }
                 }
-                #[doc = "Updates specified company. Company names can't be updated. To update a company name, delete the company and all jobs associated with it, and only then re-create them."]
+                #[doc = "Updates specified company. Company names can’t be updated. To update a company name, delete the company and all jobs associated with it, and only then re-create them."]
                 pub fn patch(
                     &self,
                     request: crate::schemas::UpdateCompanyRequest,
@@ -7253,12 +7253,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7415,12 +7415,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7575,12 +7575,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -7753,12 +7753,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8074,12 +8074,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8516,12 +8516,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8679,12 +8679,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -8841,12 +8841,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9001,12 +9001,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9136,7 +9136,7 @@ pub mod resources {
                 xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
-                #[doc = "Required. The filter string specifies the jobs to be enumerated. Supported operator: =, AND The fields eligible for filtering are: * `companyName` * `requisitionId` * `status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is specified. At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT error is thrown. Sample Query: * companyName = \"projects/api-test-project/companies/123\" * companyName = \"projects/api-test-project/companies/123\" AND requisitionId = \"req-1\" * companyName = \"projects/api-test-project/companies/123\" AND status = \"EXPIRED\" * requisitionId = \"req-1\" * requisitionId = \"req-1\" AND status = \"EXPIRED\""]
+                #[doc = "Required. The filter string specifies the jobs to be enumerated. Supported operator: =, AND The fields eligible for filtering are: * `companyName` * `requisitionId` * `status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is specified. At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT error is thrown. Sample Query: * companyName = “projects/api-test-project/companies/123” * companyName = “projects/api-test-project/companies/123” AND requisitionId = “req-1” * companyName = “projects/api-test-project/companies/123” AND status = “EXPIRED” * requisitionId = “req-1” * requisitionId = “req-1” AND status = “EXPIRED”"]
                 pub fn filter(mut self, value: impl Into<String>) -> Self {
                     self.filter = Some(value.into());
                     self
@@ -9149,7 +9149,7 @@ pub mod resources {
                     self.job_view = Some(value);
                     self
                 }
-                #[doc = "Optional. The maximum number of jobs to be returned per page of results. If job_view is set to JobView.JOB_VIEW_ID_ONLY, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100. Default is 100 if empty or a number < 1 is specified."]
+                #[doc = "Optional. The maximum number of jobs to be returned per page of results. If job_view is set to JobView.JOB_VIEW_ID_ONLY, the maximum allowed page size is 1000. Otherwise, the maximum allowed page size is 100. Default is 100 if empty or a number \\< 1 is specified."]
                 pub fn page_size(mut self, value: i32) -> Self {
                     self.page_size = Some(value);
                     self
@@ -9189,12 +9189,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9511,12 +9511,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9673,12 +9673,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -9836,12 +9836,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
@@ -10029,12 +10029,12 @@ pub mod resources {
                     self.quota_user = Some(value.into());
                     self
                 }
-                #[doc = "Upload protocol for media (e.g. \"raw\", \"multipart\")."]
+                #[doc = "Upload protocol for media (e.g. “raw”, “multipart”)."]
                 pub fn upload_protocol(mut self, value: impl Into<String>) -> Self {
                     self.upload_protocol = Some(value.into());
                     self
                 }
-                #[doc = "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."]
+                #[doc = "Legacy upload protocol for media (e.g. “media”, “multipart”)."]
                 pub fn upload_type(mut self, value: impl Into<String>) -> Self {
                     self.upload_type = Some(value.into());
                     self
