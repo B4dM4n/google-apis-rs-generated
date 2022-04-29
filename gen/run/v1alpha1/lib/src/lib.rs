@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [namespaces](resources/namespaces/struct.NamespacesActions.html)\n      * [jobs](resources/namespaces/jobs/struct.JobsActions.html)\n        * [*create*](resources/namespaces/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/jobs/struct.GetRequestBuilder.html), [*list*](resources/namespaces/jobs/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n* [namespaces](resources/namespaces/struct.NamespacesActions.html)\n  * [jobs](resources/namespaces/jobs/struct.JobsActions.html)\n    * [*create*](resources/namespaces/jobs/struct.CreateRequestBuilder.html), [*delete*](resources/namespaces/jobs/struct.DeleteRequestBuilder.html), [*get*](resources/namespaces/jobs/struct.GetRequestBuilder.html), [*list*](resources/namespaces/jobs/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.\n\n`https://www.googleapis.com/auth/cloud-platform`"]
     pub const CLOUD_PLATFORM: &str = "https://www.googleapis.com/auth/cloud-platform";
@@ -1200,6 +1200,11 @@ pub mod schemas {
             ::google_field_selector::FieldType::Leaf
         }
     }
+    impl crate::GetNextPageToken for ListJobsResponse {
+        fn next_page_token(&self) -> ::std::option::Option<String> {
+            self.next_page_token.to_owned()
+        }
+    }
     #[derive(
         Debug,
         Clone,
@@ -2211,17 +2216,17 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::Job,
                 parent: String,
-                access_token: Option<String>,
-                alt: Option<crate::params::Alt>,
-                callback: Option<String>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                upload_protocol: Option<String>,
-                upload_type: Option<String>,
-                xgafv: Option<crate::params::Xgafv>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> CreateRequestBuilder<'a> {
                 #[doc = "OAuth access token."]
@@ -2281,7 +2286,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -2312,7 +2317,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -2373,20 +2378,20 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 name: String,
-                api_version: Option<String>,
-                kind: Option<String>,
-                propagation_policy: Option<String>,
-                access_token: Option<String>,
-                alt: Option<crate::params::Alt>,
-                callback: Option<String>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                upload_protocol: Option<String>,
-                upload_type: Option<String>,
-                xgafv: Option<crate::params::Xgafv>,
+                api_version: ::std::option::Option<String>,
+                kind: ::std::option::Option<String>,
+                propagation_policy: ::std::option::Option<String>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "Optional. Cloud Run currently ignores this parameter."]
@@ -2461,7 +2466,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -2492,7 +2497,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -2554,17 +2559,17 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 name: String,
-                access_token: Option<String>,
-                alt: Option<crate::params::Alt>,
-                callback: Option<String>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                upload_protocol: Option<String>,
-                upload_type: Option<String>,
-                xgafv: Option<crate::params::Xgafv>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "OAuth access token."]
@@ -2624,7 +2629,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -2655,7 +2660,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -2714,24 +2719,24 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 parent: String,
-                field_selector: Option<String>,
-                include_uninitialized: Option<bool>,
-                label_selector: Option<String>,
-                limit: Option<i32>,
-                r#continue: Option<String>,
-                resource_version: Option<String>,
-                watch: Option<bool>,
-                access_token: Option<String>,
-                alt: Option<crate::params::Alt>,
-                callback: Option<String>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                upload_protocol: Option<String>,
-                upload_type: Option<String>,
-                xgafv: Option<crate::params::Xgafv>,
+                field_selector: ::std::option::Option<String>,
+                include_uninitialized: ::std::option::Option<bool>,
+                label_selector: ::std::option::Option<String>,
+                limit: ::std::option::Option<i32>,
+                r#continue: ::std::option::Option<String>,
+                resource_version: ::std::option::Option<String>,
+                watch: ::std::option::Option<bool>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "Optional. Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run."]
@@ -2826,7 +2831,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -2857,7 +2862,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -3201,5 +3206,18 @@ mod parsed_string {
             Some(x) => Ok(Some(x.parse().map_err(::serde::de::Error::custom)?)),
             None => Ok(None),
         }
+    }
+}
+/// Represent the ability to extract the `nextPageToken` from a response.
+pub trait GetNextPageToken {
+    /// Get the `nextPageToken` from a response if present.
+    fn next_page_token(&self) -> ::std::option::Option<String>;
+}
+
+impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
+    fn next_page_token(&self) -> ::std::option::Option<String> {
+        self.get("nextPageToken")
+            .and_then(|t| t.as_str())
+            .map(|s| s.to_owned())
     }
 }

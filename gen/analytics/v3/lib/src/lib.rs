@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [data](resources/data/struct.DataActions.html)\n      * [ga](resources/data/ga/struct.GaActions.html)\n        * [*get*](resources/data/ga/struct.GetRequestBuilder.html)\n      * [mcf](resources/data/mcf/struct.McfActions.html)\n        * [*get*](resources/data/mcf/struct.GetRequestBuilder.html)\n      * [realtime](resources/data/realtime/struct.RealtimeActions.html)\n        * [*get*](resources/data/realtime/struct.GetRequestBuilder.html)\n    * [management](resources/management/struct.ManagementActions.html)\n      * [account_summaries](resources/management/account_summaries/struct.AccountSummariesActions.html)\n        * [*list*](resources/management/account_summaries/struct.ListRequestBuilder.html)\n      * [account_user_links](resources/management/account_user_links/struct.AccountUserLinksActions.html)\n        * [*delete*](resources/management/account_user_links/struct.DeleteRequestBuilder.html), [*insert*](resources/management/account_user_links/struct.InsertRequestBuilder.html), [*list*](resources/management/account_user_links/struct.ListRequestBuilder.html), [*update*](resources/management/account_user_links/struct.UpdateRequestBuilder.html)\n      * [accounts](resources/management/accounts/struct.AccountsActions.html)\n        * [*list*](resources/management/accounts/struct.ListRequestBuilder.html)\n      * [client_id](resources/management/client_id/struct.ClientIdActions.html)\n        * [*hashClientId*](resources/management/client_id/struct.HashClientIdRequestBuilder.html)\n      * [custom_data_sources](resources/management/custom_data_sources/struct.CustomDataSourcesActions.html)\n        * [*list*](resources/management/custom_data_sources/struct.ListRequestBuilder.html)\n      * [custom_dimensions](resources/management/custom_dimensions/struct.CustomDimensionsActions.html)\n        * [*get*](resources/management/custom_dimensions/struct.GetRequestBuilder.html), [*insert*](resources/management/custom_dimensions/struct.InsertRequestBuilder.html), [*list*](resources/management/custom_dimensions/struct.ListRequestBuilder.html), [*patch*](resources/management/custom_dimensions/struct.PatchRequestBuilder.html), [*update*](resources/management/custom_dimensions/struct.UpdateRequestBuilder.html)\n      * [custom_metrics](resources/management/custom_metrics/struct.CustomMetricsActions.html)\n        * [*get*](resources/management/custom_metrics/struct.GetRequestBuilder.html), [*insert*](resources/management/custom_metrics/struct.InsertRequestBuilder.html), [*list*](resources/management/custom_metrics/struct.ListRequestBuilder.html), [*patch*](resources/management/custom_metrics/struct.PatchRequestBuilder.html), [*update*](resources/management/custom_metrics/struct.UpdateRequestBuilder.html)\n      * [experiments](resources/management/experiments/struct.ExperimentsActions.html)\n        * [*delete*](resources/management/experiments/struct.DeleteRequestBuilder.html), [*get*](resources/management/experiments/struct.GetRequestBuilder.html), [*insert*](resources/management/experiments/struct.InsertRequestBuilder.html), [*list*](resources/management/experiments/struct.ListRequestBuilder.html), [*patch*](resources/management/experiments/struct.PatchRequestBuilder.html), [*update*](resources/management/experiments/struct.UpdateRequestBuilder.html)\n      * [filters](resources/management/filters/struct.FiltersActions.html)\n        * [*delete*](resources/management/filters/struct.DeleteRequestBuilder.html), [*get*](resources/management/filters/struct.GetRequestBuilder.html), [*insert*](resources/management/filters/struct.InsertRequestBuilder.html), [*list*](resources/management/filters/struct.ListRequestBuilder.html), [*patch*](resources/management/filters/struct.PatchRequestBuilder.html), [*update*](resources/management/filters/struct.UpdateRequestBuilder.html)\n      * [goals](resources/management/goals/struct.GoalsActions.html)\n        * [*get*](resources/management/goals/struct.GetRequestBuilder.html), [*insert*](resources/management/goals/struct.InsertRequestBuilder.html), [*list*](resources/management/goals/struct.ListRequestBuilder.html), [*patch*](resources/management/goals/struct.PatchRequestBuilder.html), [*update*](resources/management/goals/struct.UpdateRequestBuilder.html)\n      * [profile_filter_links](resources/management/profile_filter_links/struct.ProfileFilterLinksActions.html)\n        * [*delete*](resources/management/profile_filter_links/struct.DeleteRequestBuilder.html), [*get*](resources/management/profile_filter_links/struct.GetRequestBuilder.html), [*insert*](resources/management/profile_filter_links/struct.InsertRequestBuilder.html), [*list*](resources/management/profile_filter_links/struct.ListRequestBuilder.html), [*patch*](resources/management/profile_filter_links/struct.PatchRequestBuilder.html), [*update*](resources/management/profile_filter_links/struct.UpdateRequestBuilder.html)\n      * [profile_user_links](resources/management/profile_user_links/struct.ProfileUserLinksActions.html)\n        * [*delete*](resources/management/profile_user_links/struct.DeleteRequestBuilder.html), [*insert*](resources/management/profile_user_links/struct.InsertRequestBuilder.html), [*list*](resources/management/profile_user_links/struct.ListRequestBuilder.html), [*update*](resources/management/profile_user_links/struct.UpdateRequestBuilder.html)\n      * [profiles](resources/management/profiles/struct.ProfilesActions.html)\n        * [*delete*](resources/management/profiles/struct.DeleteRequestBuilder.html), [*get*](resources/management/profiles/struct.GetRequestBuilder.html), [*insert*](resources/management/profiles/struct.InsertRequestBuilder.html), [*list*](resources/management/profiles/struct.ListRequestBuilder.html), [*patch*](resources/management/profiles/struct.PatchRequestBuilder.html), [*update*](resources/management/profiles/struct.UpdateRequestBuilder.html)\n      * [remarketing_audience](resources/management/remarketing_audience/struct.RemarketingAudienceActions.html)\n        * [*delete*](resources/management/remarketing_audience/struct.DeleteRequestBuilder.html), [*get*](resources/management/remarketing_audience/struct.GetRequestBuilder.html), [*insert*](resources/management/remarketing_audience/struct.InsertRequestBuilder.html), [*list*](resources/management/remarketing_audience/struct.ListRequestBuilder.html), [*patch*](resources/management/remarketing_audience/struct.PatchRequestBuilder.html), [*update*](resources/management/remarketing_audience/struct.UpdateRequestBuilder.html)\n      * [segments](resources/management/segments/struct.SegmentsActions.html)\n        * [*list*](resources/management/segments/struct.ListRequestBuilder.html)\n      * [unsampled_reports](resources/management/unsampled_reports/struct.UnsampledReportsActions.html)\n        * [*delete*](resources/management/unsampled_reports/struct.DeleteRequestBuilder.html), [*get*](resources/management/unsampled_reports/struct.GetRequestBuilder.html), [*insert*](resources/management/unsampled_reports/struct.InsertRequestBuilder.html), [*list*](resources/management/unsampled_reports/struct.ListRequestBuilder.html)\n      * [uploads](resources/management/uploads/struct.UploadsActions.html)\n        * [*deleteUploadData*](resources/management/uploads/struct.DeleteUploadDataRequestBuilder.html), [*get*](resources/management/uploads/struct.GetRequestBuilder.html), [*list*](resources/management/uploads/struct.ListRequestBuilder.html), [*uploadData*](resources/management/uploads/struct.UploadDataRequestBuilder.html)\n      * [web_property_ad_words_links](resources/management/web_property_ad_words_links/struct.WebPropertyAdWordsLinksActions.html)\n        * [*delete*](resources/management/web_property_ad_words_links/struct.DeleteRequestBuilder.html), [*get*](resources/management/web_property_ad_words_links/struct.GetRequestBuilder.html), [*insert*](resources/management/web_property_ad_words_links/struct.InsertRequestBuilder.html), [*list*](resources/management/web_property_ad_words_links/struct.ListRequestBuilder.html), [*patch*](resources/management/web_property_ad_words_links/struct.PatchRequestBuilder.html), [*update*](resources/management/web_property_ad_words_links/struct.UpdateRequestBuilder.html)\n      * [webproperties](resources/management/webproperties/struct.WebpropertiesActions.html)\n        * [*get*](resources/management/webproperties/struct.GetRequestBuilder.html), [*insert*](resources/management/webproperties/struct.InsertRequestBuilder.html), [*list*](resources/management/webproperties/struct.ListRequestBuilder.html), [*patch*](resources/management/webproperties/struct.PatchRequestBuilder.html), [*update*](resources/management/webproperties/struct.UpdateRequestBuilder.html)\n      * [webproperty_user_links](resources/management/webproperty_user_links/struct.WebpropertyUserLinksActions.html)\n        * [*delete*](resources/management/webproperty_user_links/struct.DeleteRequestBuilder.html), [*insert*](resources/management/webproperty_user_links/struct.InsertRequestBuilder.html), [*list*](resources/management/webproperty_user_links/struct.ListRequestBuilder.html), [*update*](resources/management/webproperty_user_links/struct.UpdateRequestBuilder.html)\n    * [metadata](resources/metadata/struct.MetadataActions.html)\n      * [columns](resources/metadata/columns/struct.ColumnsActions.html)\n        * [*list*](resources/metadata/columns/struct.ListRequestBuilder.html)\n    * [provisioning](resources/provisioning/struct.ProvisioningActions.html)\n      * [*createAccountTicket*](resources/provisioning/struct.CreateAccountTicketRequestBuilder.html), [*createAccountTree*](resources/provisioning/struct.CreateAccountTreeRequestBuilder.html)\n    * [user_deletion](resources/user_deletion/struct.UserDeletionActions.html)\n      * [user_deletion_request](resources/user_deletion/user_deletion_request/struct.UserDeletionRequestActions.html)\n        * [*upsert*](resources/user_deletion/user_deletion_request/struct.UpsertRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n* [data](resources/data/struct.DataActions.html)\n  * [ga](resources/data/ga/struct.GaActions.html)\n    * [*get*](resources/data/ga/struct.GetRequestBuilder.html)\n  * [mcf](resources/data/mcf/struct.McfActions.html)\n    * [*get*](resources/data/mcf/struct.GetRequestBuilder.html)\n  * [realtime](resources/data/realtime/struct.RealtimeActions.html)\n    * [*get*](resources/data/realtime/struct.GetRequestBuilder.html)\n* [management](resources/management/struct.ManagementActions.html)\n  * [account_summaries](resources/management/account_summaries/struct.AccountSummariesActions.html)\n    * [*list*](resources/management/account_summaries/struct.ListRequestBuilder.html)\n  * [account_user_links](resources/management/account_user_links/struct.AccountUserLinksActions.html)\n    * [*delete*](resources/management/account_user_links/struct.DeleteRequestBuilder.html), [*insert*](resources/management/account_user_links/struct.InsertRequestBuilder.html), [*list*](resources/management/account_user_links/struct.ListRequestBuilder.html), [*update*](resources/management/account_user_links/struct.UpdateRequestBuilder.html)\n  * [accounts](resources/management/accounts/struct.AccountsActions.html)\n    * [*list*](resources/management/accounts/struct.ListRequestBuilder.html)\n  * [client_id](resources/management/client_id/struct.ClientIdActions.html)\n    * [*hashClientId*](resources/management/client_id/struct.HashClientIdRequestBuilder.html)\n  * [custom_data_sources](resources/management/custom_data_sources/struct.CustomDataSourcesActions.html)\n    * [*list*](resources/management/custom_data_sources/struct.ListRequestBuilder.html)\n  * [custom_dimensions](resources/management/custom_dimensions/struct.CustomDimensionsActions.html)\n    * [*get*](resources/management/custom_dimensions/struct.GetRequestBuilder.html), [*insert*](resources/management/custom_dimensions/struct.InsertRequestBuilder.html), [*list*](resources/management/custom_dimensions/struct.ListRequestBuilder.html), [*patch*](resources/management/custom_dimensions/struct.PatchRequestBuilder.html), [*update*](resources/management/custom_dimensions/struct.UpdateRequestBuilder.html)\n  * [custom_metrics](resources/management/custom_metrics/struct.CustomMetricsActions.html)\n    * [*get*](resources/management/custom_metrics/struct.GetRequestBuilder.html), [*insert*](resources/management/custom_metrics/struct.InsertRequestBuilder.html), [*list*](resources/management/custom_metrics/struct.ListRequestBuilder.html), [*patch*](resources/management/custom_metrics/struct.PatchRequestBuilder.html), [*update*](resources/management/custom_metrics/struct.UpdateRequestBuilder.html)\n  * [experiments](resources/management/experiments/struct.ExperimentsActions.html)\n    * [*delete*](resources/management/experiments/struct.DeleteRequestBuilder.html), [*get*](resources/management/experiments/struct.GetRequestBuilder.html), [*insert*](resources/management/experiments/struct.InsertRequestBuilder.html), [*list*](resources/management/experiments/struct.ListRequestBuilder.html), [*patch*](resources/management/experiments/struct.PatchRequestBuilder.html), [*update*](resources/management/experiments/struct.UpdateRequestBuilder.html)\n  * [filters](resources/management/filters/struct.FiltersActions.html)\n    * [*delete*](resources/management/filters/struct.DeleteRequestBuilder.html), [*get*](resources/management/filters/struct.GetRequestBuilder.html), [*insert*](resources/management/filters/struct.InsertRequestBuilder.html), [*list*](resources/management/filters/struct.ListRequestBuilder.html), [*patch*](resources/management/filters/struct.PatchRequestBuilder.html), [*update*](resources/management/filters/struct.UpdateRequestBuilder.html)\n  * [goals](resources/management/goals/struct.GoalsActions.html)\n    * [*get*](resources/management/goals/struct.GetRequestBuilder.html), [*insert*](resources/management/goals/struct.InsertRequestBuilder.html), [*list*](resources/management/goals/struct.ListRequestBuilder.html), [*patch*](resources/management/goals/struct.PatchRequestBuilder.html), [*update*](resources/management/goals/struct.UpdateRequestBuilder.html)\n  * [profile_filter_links](resources/management/profile_filter_links/struct.ProfileFilterLinksActions.html)\n    * [*delete*](resources/management/profile_filter_links/struct.DeleteRequestBuilder.html), [*get*](resources/management/profile_filter_links/struct.GetRequestBuilder.html), [*insert*](resources/management/profile_filter_links/struct.InsertRequestBuilder.html), [*list*](resources/management/profile_filter_links/struct.ListRequestBuilder.html), [*patch*](resources/management/profile_filter_links/struct.PatchRequestBuilder.html), [*update*](resources/management/profile_filter_links/struct.UpdateRequestBuilder.html)\n  * [profile_user_links](resources/management/profile_user_links/struct.ProfileUserLinksActions.html)\n    * [*delete*](resources/management/profile_user_links/struct.DeleteRequestBuilder.html), [*insert*](resources/management/profile_user_links/struct.InsertRequestBuilder.html), [*list*](resources/management/profile_user_links/struct.ListRequestBuilder.html), [*update*](resources/management/profile_user_links/struct.UpdateRequestBuilder.html)\n  * [profiles](resources/management/profiles/struct.ProfilesActions.html)\n    * [*delete*](resources/management/profiles/struct.DeleteRequestBuilder.html), [*get*](resources/management/profiles/struct.GetRequestBuilder.html), [*insert*](resources/management/profiles/struct.InsertRequestBuilder.html), [*list*](resources/management/profiles/struct.ListRequestBuilder.html), [*patch*](resources/management/profiles/struct.PatchRequestBuilder.html), [*update*](resources/management/profiles/struct.UpdateRequestBuilder.html)\n  * [remarketing_audience](resources/management/remarketing_audience/struct.RemarketingAudienceActions.html)\n    * [*delete*](resources/management/remarketing_audience/struct.DeleteRequestBuilder.html), [*get*](resources/management/remarketing_audience/struct.GetRequestBuilder.html), [*insert*](resources/management/remarketing_audience/struct.InsertRequestBuilder.html), [*list*](resources/management/remarketing_audience/struct.ListRequestBuilder.html), [*patch*](resources/management/remarketing_audience/struct.PatchRequestBuilder.html), [*update*](resources/management/remarketing_audience/struct.UpdateRequestBuilder.html)\n  * [segments](resources/management/segments/struct.SegmentsActions.html)\n    * [*list*](resources/management/segments/struct.ListRequestBuilder.html)\n  * [unsampled_reports](resources/management/unsampled_reports/struct.UnsampledReportsActions.html)\n    * [*delete*](resources/management/unsampled_reports/struct.DeleteRequestBuilder.html), [*get*](resources/management/unsampled_reports/struct.GetRequestBuilder.html), [*insert*](resources/management/unsampled_reports/struct.InsertRequestBuilder.html), [*list*](resources/management/unsampled_reports/struct.ListRequestBuilder.html)\n  * [uploads](resources/management/uploads/struct.UploadsActions.html)\n    * [*deleteUploadData*](resources/management/uploads/struct.DeleteUploadDataRequestBuilder.html), [*get*](resources/management/uploads/struct.GetRequestBuilder.html), [*list*](resources/management/uploads/struct.ListRequestBuilder.html), [*uploadData*](resources/management/uploads/struct.UploadDataRequestBuilder.html)\n  * [web_property_ad_words_links](resources/management/web_property_ad_words_links/struct.WebPropertyAdWordsLinksActions.html)\n    * [*delete*](resources/management/web_property_ad_words_links/struct.DeleteRequestBuilder.html), [*get*](resources/management/web_property_ad_words_links/struct.GetRequestBuilder.html), [*insert*](resources/management/web_property_ad_words_links/struct.InsertRequestBuilder.html), [*list*](resources/management/web_property_ad_words_links/struct.ListRequestBuilder.html), [*patch*](resources/management/web_property_ad_words_links/struct.PatchRequestBuilder.html), [*update*](resources/management/web_property_ad_words_links/struct.UpdateRequestBuilder.html)\n  * [webproperties](resources/management/webproperties/struct.WebpropertiesActions.html)\n    * [*get*](resources/management/webproperties/struct.GetRequestBuilder.html), [*insert*](resources/management/webproperties/struct.InsertRequestBuilder.html), [*list*](resources/management/webproperties/struct.ListRequestBuilder.html), [*patch*](resources/management/webproperties/struct.PatchRequestBuilder.html), [*update*](resources/management/webproperties/struct.UpdateRequestBuilder.html)\n  * [webproperty_user_links](resources/management/webproperty_user_links/struct.WebpropertyUserLinksActions.html)\n    * [*delete*](resources/management/webproperty_user_links/struct.DeleteRequestBuilder.html), [*insert*](resources/management/webproperty_user_links/struct.InsertRequestBuilder.html), [*list*](resources/management/webproperty_user_links/struct.ListRequestBuilder.html), [*update*](resources/management/webproperty_user_links/struct.UpdateRequestBuilder.html)\n* [metadata](resources/metadata/struct.MetadataActions.html)\n  * [columns](resources/metadata/columns/struct.ColumnsActions.html)\n    * [*list*](resources/metadata/columns/struct.ListRequestBuilder.html)\n* [provisioning](resources/provisioning/struct.ProvisioningActions.html)\n  * [*createAccountTicket*](resources/provisioning/struct.CreateAccountTicketRequestBuilder.html), [*createAccountTree*](resources/provisioning/struct.CreateAccountTreeRequestBuilder.html)\n* [user_deletion](resources/user_deletion/struct.UserDeletionActions.html)\n  * [user_deletion_request](resources/user_deletion/user_deletion_request/struct.UserDeletionRequestActions.html)\n    * [*upsert*](resources/user_deletion/user_deletion_request/struct.UpsertRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View and manage your Google Analytics data\n\n`https://www.googleapis.com/auth/analytics`"]
     pub const ANALYTICS: &str = "https://www.googleapis.com/auth/analytics";
@@ -7531,22 +7531,23 @@ pub mod resources {
                 start_date: String,
                 end_date: String,
                 metrics: String,
-                dimensions: Option<String>,
-                filters: Option<String>,
-                include_empty_rows: Option<bool>,
-                max_results: Option<i32>,
-                output: Option<crate::resources::data::ga::params::GetOutput>,
-                sampling_level: Option<crate::resources::data::ga::params::GetSamplingLevel>,
-                segment: Option<String>,
-                sort: Option<String>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                dimensions: ::std::option::Option<String>,
+                filters: ::std::option::Option<String>,
+                include_empty_rows: ::std::option::Option<bool>,
+                max_results: ::std::option::Option<i32>,
+                output: ::std::option::Option<crate::resources::data::ga::params::GetOutput>,
+                sampling_level:
+                    ::std::option::Option<crate::resources::data::ga::params::GetSamplingLevel>,
+                segment: ::std::option::Option<String>,
+                sort: ::std::option::Option<String>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'."]
@@ -7637,7 +7638,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -7668,7 +7669,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -7851,19 +7852,20 @@ pub mod resources {
                 start_date: String,
                 end_date: String,
                 metrics: String,
-                dimensions: Option<String>,
-                filters: Option<String>,
-                max_results: Option<i32>,
-                sampling_level: Option<crate::resources::data::mcf::params::GetSamplingLevel>,
-                sort: Option<String>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                dimensions: ::std::option::Option<String>,
+                filters: ::std::option::Option<String>,
+                max_results: ::std::option::Option<i32>,
+                sampling_level:
+                    ::std::option::Option<crate::resources::data::mcf::params::GetSamplingLevel>,
+                sort: ::std::option::Option<String>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'."]
@@ -7936,7 +7938,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -7967,7 +7969,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -8062,17 +8064,17 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 ids: String,
                 metrics: String,
-                dimensions: Option<String>,
-                filters: Option<String>,
-                max_results: Option<i32>,
-                sort: Option<String>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                dimensions: ::std::option::Option<String>,
+                filters: ::std::option::Option<String>,
+                max_results: ::std::option::Option<i32>,
+                sort: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "A comma-separated list of real time dimensions. E.g., 'rt:medium,rt:city'."]
@@ -8132,7 +8134,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -8163,7 +8165,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -8425,15 +8427,15 @@ pub mod resources {
             pub struct ListRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of account summaries to include in this response, where the largest acceptable value is 1000."]
@@ -8483,7 +8485,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -8514,7 +8516,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -8656,13 +8658,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -8743,13 +8745,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::EntityUserLink,
                 account_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -8789,7 +8791,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -8820,7 +8822,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -8877,15 +8879,15 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of account-user links to include in this response."]
@@ -8935,7 +8937,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -8966,7 +8968,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -9026,13 +9028,13 @@ pub mod resources {
                 request: crate::schemas::EntityUserLink,
                 account_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -9072,7 +9074,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -9103,7 +9105,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -9194,15 +9196,15 @@ pub mod resources {
             pub struct ListRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of accounts to include in this response."]
@@ -9252,7 +9254,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -9283,7 +9285,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -9363,13 +9365,13 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::HashClientIdRequest,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> HashClientIdRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -9409,7 +9411,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -9440,7 +9442,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -9524,15 +9526,15 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of custom data sources to include in this response."]
@@ -9582,7 +9584,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -9613,7 +9615,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -9809,13 +9811,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_dimension_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -9855,7 +9857,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -9886,7 +9888,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -9959,13 +9961,13 @@ pub mod resources {
                 request: crate::schemas::CustomDimension,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -10005,7 +10007,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -10036,7 +10038,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -10102,15 +10104,15 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of custom dimensions to include in this response."]
@@ -10160,7 +10162,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -10191,7 +10193,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -10260,14 +10262,14 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_dimension_id: String,
-                ignore_custom_data_source_links: Option<bool>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                ignore_custom_data_source_links: ::std::option::Option<bool>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set."]
@@ -10312,7 +10314,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -10343,7 +10345,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -10422,14 +10424,14 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_dimension_id: String,
-                ignore_custom_data_source_links: Option<bool>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                ignore_custom_data_source_links: ::std::option::Option<bool>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "Force the update and ignore any warnings related to the custom dimension being linked to a custom data source / data set."]
@@ -10474,7 +10476,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -10505,7 +10507,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -10711,13 +10713,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_metric_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -10757,7 +10759,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -10788,7 +10790,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -10861,13 +10863,13 @@ pub mod resources {
                 request: crate::schemas::CustomMetric,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -10907,7 +10909,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -10938,7 +10940,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -11004,15 +11006,15 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of custom metrics to include in this response."]
@@ -11062,7 +11064,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -11093,7 +11095,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -11162,14 +11164,14 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_metric_id: String,
-                ignore_custom_data_source_links: Option<bool>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                ignore_custom_data_source_links: ::std::option::Option<bool>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set."]
@@ -11214,7 +11216,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -11245,7 +11247,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -11324,14 +11326,14 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_metric_id: String,
-                ignore_custom_data_source_links: Option<bool>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                ignore_custom_data_source_links: ::std::option::Option<bool>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "Force the update and ignore any warnings related to the custom metric being linked to a custom data source / data set."]
@@ -11376,7 +11378,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -11407,7 +11409,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -11646,13 +11648,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 experiment_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -11751,13 +11753,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 experiment_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -11797,7 +11799,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -11828,7 +11830,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -11910,13 +11912,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -11956,7 +11958,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -11987,7 +11989,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -12062,15 +12064,15 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of experiments to include in this response."]
@@ -12120,7 +12122,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -12151,7 +12153,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -12229,13 +12231,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 experiment_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -12275,7 +12277,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -12306,7 +12308,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -12390,13 +12392,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 experiment_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -12436,7 +12438,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -12467,7 +12469,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -12681,13 +12683,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 filter_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -12727,7 +12729,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -12758,7 +12760,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -12822,13 +12824,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 filter_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -12868,7 +12870,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -12899,7 +12901,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -12963,13 +12965,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::Filter,
                 account_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -13009,7 +13011,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -13040,7 +13042,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -13097,15 +13099,15 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of filters to include in this response."]
@@ -13155,7 +13157,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -13186,7 +13188,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -13246,13 +13248,13 @@ pub mod resources {
                 request: crate::schemas::Filter,
                 account_id: String,
                 filter_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -13292,7 +13294,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -13323,7 +13325,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -13389,13 +13391,13 @@ pub mod resources {
                 request: crate::schemas::Filter,
                 account_id: String,
                 filter_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -13435,7 +13437,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -13466,7 +13468,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -13669,13 +13671,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 goal_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -13715,7 +13717,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -13746,7 +13748,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -13828,13 +13830,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -13874,7 +13876,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -13905,7 +13907,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -13980,15 +13982,15 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of goals to include in this response."]
@@ -14038,7 +14040,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -14069,7 +14071,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -14147,13 +14149,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 goal_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -14193,7 +14195,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -14224,7 +14226,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -14308,13 +14310,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 goal_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -14354,7 +14356,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -14385,7 +14387,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -14628,13 +14630,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -14733,13 +14735,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -14779,7 +14781,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -14810,7 +14812,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -14892,13 +14894,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -14938,7 +14940,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -14969,7 +14971,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -15044,15 +15046,15 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of profile filter links to include in this response."]
@@ -15102,7 +15104,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -15133,7 +15135,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -15211,13 +15213,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -15257,7 +15259,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -15288,7 +15290,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -15372,13 +15374,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -15418,7 +15420,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -15449,7 +15451,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -15642,13 +15644,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -15747,13 +15749,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -15793,7 +15795,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -15824,7 +15826,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -15899,15 +15901,15 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of profile-user links to include in this response."]
@@ -15957,7 +15959,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -15988,7 +15990,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -16066,13 +16068,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -16112,7 +16114,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -16143,7 +16145,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -16373,13 +16375,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -16469,13 +16471,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -16515,7 +16517,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -16546,7 +16548,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -16619,13 +16621,13 @@ pub mod resources {
                 request: crate::schemas::Profile,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -16665,7 +16667,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -16696,7 +16698,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -16762,15 +16764,15 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of views (profiles) to include in this response."]
@@ -16820,7 +16822,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -16851,7 +16853,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -16920,13 +16922,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -16966,7 +16968,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -16997,7 +16999,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -17072,13 +17074,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -17118,7 +17120,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -17149,7 +17151,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -17372,13 +17374,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 remarketing_audience_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -17468,13 +17470,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 remarketing_audience_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -17514,7 +17516,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -17545,7 +17547,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -17618,13 +17620,13 @@ pub mod resources {
                 request: crate::schemas::RemarketingAudience,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -17664,7 +17666,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -17695,7 +17697,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -17761,16 +17763,16 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                r#type: Option<String>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                r#type: ::std::option::Option<String>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of remarketing audiences to include in this response."]
@@ -17825,7 +17827,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -17856,7 +17858,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -17926,13 +17928,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 remarketing_audience_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -17972,7 +17974,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -18003,7 +18005,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -18078,13 +18080,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 remarketing_audience_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -18124,7 +18126,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -18155,7 +18157,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -18254,15 +18256,15 @@ pub mod resources {
             pub struct ListRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of segments to include in this response."]
@@ -18312,7 +18314,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -18343,7 +18345,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -18504,13 +18506,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 unsampled_report_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -18609,13 +18611,13 @@ pub mod resources {
                 web_property_id: String,
                 profile_id: String,
                 unsampled_report_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -18655,7 +18657,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -18686,7 +18688,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -18768,13 +18770,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -18814,7 +18816,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -18845,7 +18847,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -18920,15 +18922,15 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 profile_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of unsampled reports to include in this response."]
@@ -18978,7 +18980,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -19009,7 +19011,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -19192,13 +19194,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_data_source_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteUploadDataRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -19291,13 +19293,13 @@ pub mod resources {
                 web_property_id: String,
                 custom_data_source_id: String,
                 upload_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -19337,7 +19339,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -19368,7 +19370,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -19449,15 +19451,15 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_data_source_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of uploads to include in this response."]
@@ -19507,7 +19509,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -19538,7 +19540,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -19614,13 +19616,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 custom_data_source_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UploadDataRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -19782,7 +19784,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -19813,7 +19815,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -20035,13 +20037,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 web_property_ad_words_link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -20131,13 +20133,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 web_property_ad_words_link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -20177,7 +20179,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -20208,7 +20210,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -20281,13 +20283,13 @@ pub mod resources {
                 request: crate::schemas::EntityAdWordsLink,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -20327,7 +20329,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -20358,7 +20360,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -20424,15 +20426,15 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of webProperty-Google Ads links to include in this response."]
@@ -20482,7 +20484,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -20513,7 +20515,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -20582,13 +20584,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 web_property_ad_words_link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -20628,7 +20630,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -20659,7 +20661,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -20734,13 +20736,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 web_property_ad_words_link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -20780,7 +20782,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -20811,7 +20813,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -20997,13 +20999,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> GetRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -21043,7 +21045,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -21074,7 +21076,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -21138,13 +21140,13 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::Webproperty,
                 account_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -21184,7 +21186,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -21215,7 +21217,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -21272,15 +21274,15 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of web properties to include in this response."]
@@ -21330,7 +21332,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -21361,7 +21363,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -21421,13 +21423,13 @@ pub mod resources {
                 request: crate::schemas::Webproperty,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> PatchRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -21467,7 +21469,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -21498,7 +21500,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -21564,13 +21566,13 @@ pub mod resources {
                 request: crate::schemas::Webproperty,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -21610,7 +21612,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -21641,7 +21643,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -21809,13 +21811,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> DeleteRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -21905,13 +21907,13 @@ pub mod resources {
                 request: crate::schemas::EntityUserLink,
                 account_id: String,
                 web_property_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> InsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -21951,7 +21953,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -21982,7 +21984,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -22048,15 +22050,15 @@ pub mod resources {
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 account_id: String,
                 web_property_id: String,
-                max_results: Option<i32>,
-                start_index: Option<i32>,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                max_results: ::std::option::Option<i32>,
+                start_index: ::std::option::Option<i32>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "The maximum number of webProperty-user Links to include in this response."]
@@ -22106,7 +22108,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -22137,7 +22139,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -22206,13 +22208,13 @@ pub mod resources {
                 account_id: String,
                 web_property_id: String,
                 link_id: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpdateRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -22252,7 +22254,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -22283,7 +22285,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -22401,13 +22403,13 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 report_type: String,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -22447,7 +22449,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -22478,7 +22480,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -22583,13 +22585,13 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::AccountTicket,
-            alt: Option<crate::params::Alt>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            user_ip: Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            user_ip: ::std::option::Option<String>,
         }
         impl<'a> CreateAccountTicketRequestBuilder<'a> {
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -22629,7 +22631,7 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
             {
                 let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
                     None
                 } else {
                     Some(fields)
@@ -22660,7 +22662,7 @@ pub mod resources {
             #[doc = r" whatever return value is provided."]
             pub async fn execute_with_fields<T, F>(
                 mut self,
-                fields: Option<F>,
+                fields: ::std::option::Option<F>,
             ) -> Result<T, crate::Error>
             where
                 T: ::serde::de::DeserializeOwned,
@@ -22709,13 +22711,13 @@ pub mod resources {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
             request: crate::schemas::AccountTreeRequest,
-            alt: Option<crate::params::Alt>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            user_ip: Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            user_ip: ::std::option::Option<String>,
         }
         impl<'a> CreateAccountTreeRequestBuilder<'a> {
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -22755,7 +22757,7 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
             {
                 let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
                     None
                 } else {
                     Some(fields)
@@ -22786,7 +22788,7 @@ pub mod resources {
             #[doc = r" whatever return value is provided."]
             pub async fn execute_with_fields<T, F>(
                 mut self,
-                fields: Option<F>,
+                fields: ::std::option::Option<F>,
             ) -> Result<T, crate::Error>
             where
                 T: ::serde::de::DeserializeOwned,
@@ -22886,13 +22888,13 @@ pub mod resources {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
                 request: crate::schemas::UserDeletionRequest,
-                alt: Option<crate::params::Alt>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                user_ip: Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                user_ip: ::std::option::Option<String>,
             }
             impl<'a> UpsertRequestBuilder<'a> {
                 #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -22932,7 +22934,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -22963,7 +22965,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -23291,6 +23293,19 @@ mod parsed_string {
         }
     }
 }
+/// Represent the ability to extract the `nextPageToken` from a response.
+pub trait GetNextPageToken {
+    /// Get the `nextPageToken` from a response if present.
+    fn next_page_token(&self) -> ::std::option::Option<String>;
+}
+
+impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
+    fn next_page_token(&self) -> ::std::option::Option<String> {
+        self.get("nextPageToken")
+            .and_then(|t| t.as_str())
+            .map(|s| s.to_owned())
+    }
+}
 pub struct ResumableUpload {
     reqwest: ::reqwest::Client,
     url: String,
@@ -23365,16 +23380,13 @@ impl ResumableUpload {
 fn parse_range_header(
     range: &::reqwest::header::HeaderValue,
 ) -> Result<(i64, i64), Box<dyn ::std::error::Error>> {
-    let range = range.to_str()?;
-    if !range.starts_with("bytes ") {
-        return Err(r#"does not begin with "bytes""#.to_owned().into());
-    }
-    let range = &range[6..];
-    let slash_idx = range
-        .find('/')
-        .ok_or_else(|| r#"does not contain"#.to_owned())?;
-    let (begin, end) = range.split_at(slash_idx);
-    let end = &end[1..]; // remove '/'
+    let range = range
+        .to_str()?
+        .strip_prefix("bytes ")
+        .ok_or_else(|| r#"does not begin with "bytes""#.to_owned())?;
+    let (begin, end) = range
+        .split_once('/')
+        .ok_or_else(|| r#"does not contain "/""#.to_owned())?;
     let begin: i64 = begin.parse()?;
     let end: i64 = end.parse()?;
     Ok((begin, end))

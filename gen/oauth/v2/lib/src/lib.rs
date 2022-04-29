@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [userinfo](resources/userinfo/struct.UserinfoActions.html)\n      * [*get*](resources/userinfo/struct.GetRequestBuilder.html)\n      * [v_2](resources/userinfo/v_2/struct.V2Actions.html)\n        * [me](resources/userinfo/v_2/me/struct.MeActions.html)\n          * [*get*](resources/userinfo/v_2/me/struct.GetRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n* [userinfo](resources/userinfo/struct.UserinfoActions.html)\n  * [*get*](resources/userinfo/struct.GetRequestBuilder.html)\n  * [v_2](resources/userinfo/v_2/struct.V2Actions.html)\n    * [me](resources/userinfo/v_2/me/struct.MeActions.html)\n      * [*get*](resources/userinfo/v_2/me/struct.GetRequestBuilder.html)\n"]
 pub mod scopes {
     #[doc = "View your email address\n\n`https://www.googleapis.com/auth/userinfo.email`"]
     pub const USERINFO_EMAIL: &str = "https://www.googleapis.com/auth/userinfo.email";
@@ -303,15 +303,15 @@ impl Client {
 pub struct TokeninfoRequestBuilder<'a> {
     pub(crate) reqwest: &'a ::reqwest::Client,
     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-    access_token: Option<String>,
-    id_token: Option<String>,
-    alt: Option<crate::params::Alt>,
-    fields: Option<String>,
-    key: Option<String>,
-    oauth_token: Option<String>,
-    pretty_print: Option<bool>,
-    quota_user: Option<String>,
-    user_ip: Option<String>,
+    access_token: ::std::option::Option<String>,
+    id_token: ::std::option::Option<String>,
+    alt: ::std::option::Option<crate::params::Alt>,
+    fields: ::std::option::Option<String>,
+    key: ::std::option::Option<String>,
+    oauth_token: ::std::option::Option<String>,
+    pretty_print: ::std::option::Option<bool>,
+    quota_user: ::std::option::Option<String>,
+    user_ip: ::std::option::Option<String>,
 }
 impl<'a> TokeninfoRequestBuilder<'a> {
     #[doc = ""]
@@ -361,7 +361,7 @@ impl<'a> TokeninfoRequestBuilder<'a> {
         T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
     {
         let fields = ::google_field_selector::to_string::<T>();
-        let fields: Option<String> = if fields.is_empty() {
+        let fields: ::std::option::Option<String> = if fields.is_empty() {
             None
         } else {
             Some(fields)
@@ -388,7 +388,10 @@ impl<'a> TokeninfoRequestBuilder<'a> {
     #[doc = r" Execute the given operation. This will use the `fields`"]
     #[doc = r" selector provided and will deserialize the response into"]
     #[doc = r" whatever return value is provided."]
-    pub async fn execute_with_fields<T, F>(mut self, fields: Option<F>) -> Result<T, crate::Error>
+    pub async fn execute_with_fields<T, F>(
+        mut self,
+        fields: ::std::option::Option<F>,
+    ) -> Result<T, crate::Error>
     where
         T: ::serde::de::DeserializeOwned,
         F: Into<String>,
@@ -466,13 +469,13 @@ pub mod resources {
         pub struct GetRequestBuilder<'a> {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            alt: Option<crate::params::Alt>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            user_ip: Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            user_ip: ::std::option::Option<String>,
         }
         impl<'a> GetRequestBuilder<'a> {
             #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -512,7 +515,7 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
             {
                 let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
                     None
                 } else {
                     Some(fields)
@@ -543,7 +546,7 @@ pub mod resources {
             #[doc = r" whatever return value is provided."]
             pub async fn execute_with_fields<T, F>(
                 mut self,
-                fields: Option<F>,
+                fields: ::std::option::Option<F>,
             ) -> Result<T, crate::Error>
             where
                 T: ::serde::de::DeserializeOwned,
@@ -633,13 +636,13 @@ pub mod resources {
                 pub struct GetRequestBuilder<'a> {
                     pub(crate) reqwest: &'a ::reqwest::Client,
                     pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                    alt: Option<crate::params::Alt>,
-                    fields: Option<String>,
-                    key: Option<String>,
-                    oauth_token: Option<String>,
-                    pretty_print: Option<bool>,
-                    quota_user: Option<String>,
-                    user_ip: Option<String>,
+                    alt: ::std::option::Option<crate::params::Alt>,
+                    fields: ::std::option::Option<String>,
+                    key: ::std::option::Option<String>,
+                    oauth_token: ::std::option::Option<String>,
+                    pretty_print: ::std::option::Option<bool>,
+                    quota_user: ::std::option::Option<String>,
+                    user_ip: ::std::option::Option<String>,
                 }
                 impl<'a> GetRequestBuilder<'a> {
                     #[doc = "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token."]
@@ -679,7 +682,7 @@ pub mod resources {
                         T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                     {
                         let fields = ::google_field_selector::to_string::<T>();
-                        let fields: Option<String> = if fields.is_empty() {
+                        let fields: ::std::option::Option<String> = if fields.is_empty() {
                             None
                         } else {
                             Some(fields)
@@ -710,7 +713,7 @@ pub mod resources {
                     #[doc = r" whatever return value is provided."]
                     pub async fn execute_with_fields<T, F>(
                         mut self,
-                        fields: Option<F>,
+                        fields: ::std::option::Option<F>,
                     ) -> Result<T, crate::Error>
                     where
                         T: ::serde::de::DeserializeOwned,
@@ -1036,5 +1039,18 @@ mod parsed_string {
             Some(x) => Ok(Some(x.parse().map_err(::serde::de::Error::custom)?)),
             None => Ok(None),
         }
+    }
+}
+/// Represent the ability to extract the `nextPageToken` from a response.
+pub trait GetNextPageToken {
+    /// Get the `nextPageToken` from a response if present.
+    fn next_page_token(&self) -> ::std::option::Option<String>;
+}
+
+impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
+    fn next_page_token(&self) -> ::std::option::Option<String> {
+        self.get("nextPageToken")
+            .and_then(|t| t.as_str())
+            .map(|s| s.to_owned())
     }
 }

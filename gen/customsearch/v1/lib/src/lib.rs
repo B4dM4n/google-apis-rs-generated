@@ -1,4 +1,4 @@
-#![doc = "# Resources and Methods\n    * [cse](resources/cse/struct.CseActions.html)\n      * [*list*](resources/cse/struct.ListRequestBuilder.html)\n      * [siterestrict](resources/cse/siterestrict/struct.SiterestrictActions.html)\n        * [*list*](resources/cse/siterestrict/struct.ListRequestBuilder.html)\n"]
+#![doc = "# Resources and Methods\n* [cse](resources/cse/struct.CseActions.html)\n  * [*list*](resources/cse/struct.ListRequestBuilder.html)\n  * [siterestrict](resources/cse/siterestrict/struct.SiterestrictActions.html)\n    * [*list*](resources/cse/siterestrict/struct.ListRequestBuilder.html)\n"]
 pub mod scopes {}
 pub mod schemas {
     #[derive(
@@ -2376,48 +2376,50 @@ pub mod resources {
         pub struct ListRequestBuilder<'a> {
             pub(crate) reqwest: &'a ::reqwest::Client,
             pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-            c_2coff: Option<String>,
-            cr: Option<String>,
-            cx: Option<String>,
-            date_restrict: Option<String>,
-            exact_terms: Option<String>,
-            exclude_terms: Option<String>,
-            file_type: Option<String>,
-            filter: Option<String>,
-            gl: Option<String>,
-            googlehost: Option<String>,
-            high_range: Option<String>,
-            hl: Option<String>,
-            hq: Option<String>,
-            img_color_type: Option<crate::resources::cse::params::ListImgColorType>,
-            img_dominant_color: Option<crate::resources::cse::params::ListImgDominantColor>,
-            img_size: Option<crate::resources::cse::params::ListImgSize>,
-            img_type: Option<crate::resources::cse::params::ListImgType>,
-            link_site: Option<String>,
-            low_range: Option<String>,
-            lr: Option<String>,
-            num: Option<i32>,
-            or_terms: Option<String>,
-            q: Option<String>,
-            related_site: Option<String>,
-            rights: Option<String>,
-            safe: Option<crate::resources::cse::params::ListSafe>,
-            search_type: Option<crate::resources::cse::params::ListSearchType>,
-            site_search: Option<String>,
-            site_search_filter: Option<crate::resources::cse::params::ListSiteSearchFilter>,
-            sort: Option<String>,
-            start: Option<u32>,
-            access_token: Option<String>,
-            alt: Option<crate::params::Alt>,
-            callback: Option<String>,
-            fields: Option<String>,
-            key: Option<String>,
-            oauth_token: Option<String>,
-            pretty_print: Option<bool>,
-            quota_user: Option<String>,
-            upload_protocol: Option<String>,
-            upload_type: Option<String>,
-            xgafv: Option<crate::params::Xgafv>,
+            c_2coff: ::std::option::Option<String>,
+            cr: ::std::option::Option<String>,
+            cx: ::std::option::Option<String>,
+            date_restrict: ::std::option::Option<String>,
+            exact_terms: ::std::option::Option<String>,
+            exclude_terms: ::std::option::Option<String>,
+            file_type: ::std::option::Option<String>,
+            filter: ::std::option::Option<String>,
+            gl: ::std::option::Option<String>,
+            googlehost: ::std::option::Option<String>,
+            high_range: ::std::option::Option<String>,
+            hl: ::std::option::Option<String>,
+            hq: ::std::option::Option<String>,
+            img_color_type: ::std::option::Option<crate::resources::cse::params::ListImgColorType>,
+            img_dominant_color:
+                ::std::option::Option<crate::resources::cse::params::ListImgDominantColor>,
+            img_size: ::std::option::Option<crate::resources::cse::params::ListImgSize>,
+            img_type: ::std::option::Option<crate::resources::cse::params::ListImgType>,
+            link_site: ::std::option::Option<String>,
+            low_range: ::std::option::Option<String>,
+            lr: ::std::option::Option<String>,
+            num: ::std::option::Option<i32>,
+            or_terms: ::std::option::Option<String>,
+            q: ::std::option::Option<String>,
+            related_site: ::std::option::Option<String>,
+            rights: ::std::option::Option<String>,
+            safe: ::std::option::Option<crate::resources::cse::params::ListSafe>,
+            search_type: ::std::option::Option<crate::resources::cse::params::ListSearchType>,
+            site_search: ::std::option::Option<String>,
+            site_search_filter:
+                ::std::option::Option<crate::resources::cse::params::ListSiteSearchFilter>,
+            sort: ::std::option::Option<String>,
+            start: ::std::option::Option<u32>,
+            access_token: ::std::option::Option<String>,
+            alt: ::std::option::Option<crate::params::Alt>,
+            callback: ::std::option::Option<String>,
+            fields: ::std::option::Option<String>,
+            key: ::std::option::Option<String>,
+            oauth_token: ::std::option::Option<String>,
+            pretty_print: ::std::option::Option<bool>,
+            quota_user: ::std::option::Option<String>,
+            upload_protocol: ::std::option::Option<String>,
+            upload_type: ::std::option::Option<String>,
+            xgafv: ::std::option::Option<crate::params::Xgafv>,
         }
         impl<'a> ListRequestBuilder<'a> {
             #[doc = "Enables or disables [Simplified and Traditional Chinese Search](https://developers.google.com/custom-search/docs/json_api_reference#chineseSearch). The default value for this parameter is 0 (zero), meaning that the feature is enabled. Supported values are: * `1`: Disabled * `0`: Enabled (default)"]
@@ -2644,7 +2646,7 @@ pub mod resources {
                 T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
             {
                 let fields = ::google_field_selector::to_string::<T>();
-                let fields: Option<String> = if fields.is_empty() {
+                let fields: ::std::option::Option<String> = if fields.is_empty() {
                     None
                 } else {
                     Some(fields)
@@ -2675,7 +2677,7 @@ pub mod resources {
             #[doc = r" whatever return value is provided."]
             pub async fn execute_with_fields<T, F>(
                 mut self,
-                fields: Option<F>,
+                fields: ::std::option::Option<F>,
             ) -> Result<T, crate::Error>
             where
                 T: ::serde::de::DeserializeOwned,
@@ -3472,51 +3474,58 @@ pub mod resources {
             pub struct ListRequestBuilder<'a> {
                 pub(crate) reqwest: &'a ::reqwest::Client,
                 pub(crate) auth: &'a dyn ::google_api_auth::GetAccessToken,
-                c_2coff: Option<String>,
-                cr: Option<String>,
-                cx: Option<String>,
-                date_restrict: Option<String>,
-                exact_terms: Option<String>,
-                exclude_terms: Option<String>,
-                file_type: Option<String>,
-                filter: Option<String>,
-                gl: Option<String>,
-                googlehost: Option<String>,
-                high_range: Option<String>,
-                hl: Option<String>,
-                hq: Option<String>,
-                img_color_type:
-                    Option<crate::resources::cse::siterestrict::params::ListImgColorType>,
-                img_dominant_color:
-                    Option<crate::resources::cse::siterestrict::params::ListImgDominantColor>,
-                img_size: Option<crate::resources::cse::siterestrict::params::ListImgSize>,
-                img_type: Option<crate::resources::cse::siterestrict::params::ListImgType>,
-                link_site: Option<String>,
-                low_range: Option<String>,
-                lr: Option<String>,
-                num: Option<i32>,
-                or_terms: Option<String>,
-                q: Option<String>,
-                related_site: Option<String>,
-                rights: Option<String>,
-                safe: Option<crate::resources::cse::siterestrict::params::ListSafe>,
-                search_type: Option<crate::resources::cse::siterestrict::params::ListSearchType>,
-                site_search: Option<String>,
-                site_search_filter:
-                    Option<crate::resources::cse::siterestrict::params::ListSiteSearchFilter>,
-                sort: Option<String>,
-                start: Option<u32>,
-                access_token: Option<String>,
-                alt: Option<crate::params::Alt>,
-                callback: Option<String>,
-                fields: Option<String>,
-                key: Option<String>,
-                oauth_token: Option<String>,
-                pretty_print: Option<bool>,
-                quota_user: Option<String>,
-                upload_protocol: Option<String>,
-                upload_type: Option<String>,
-                xgafv: Option<crate::params::Xgafv>,
+                c_2coff: ::std::option::Option<String>,
+                cr: ::std::option::Option<String>,
+                cx: ::std::option::Option<String>,
+                date_restrict: ::std::option::Option<String>,
+                exact_terms: ::std::option::Option<String>,
+                exclude_terms: ::std::option::Option<String>,
+                file_type: ::std::option::Option<String>,
+                filter: ::std::option::Option<String>,
+                gl: ::std::option::Option<String>,
+                googlehost: ::std::option::Option<String>,
+                high_range: ::std::option::Option<String>,
+                hl: ::std::option::Option<String>,
+                hq: ::std::option::Option<String>,
+                img_color_type: ::std::option::Option<
+                    crate::resources::cse::siterestrict::params::ListImgColorType,
+                >,
+                img_dominant_color: ::std::option::Option<
+                    crate::resources::cse::siterestrict::params::ListImgDominantColor,
+                >,
+                img_size:
+                    ::std::option::Option<crate::resources::cse::siterestrict::params::ListImgSize>,
+                img_type:
+                    ::std::option::Option<crate::resources::cse::siterestrict::params::ListImgType>,
+                link_site: ::std::option::Option<String>,
+                low_range: ::std::option::Option<String>,
+                lr: ::std::option::Option<String>,
+                num: ::std::option::Option<i32>,
+                or_terms: ::std::option::Option<String>,
+                q: ::std::option::Option<String>,
+                related_site: ::std::option::Option<String>,
+                rights: ::std::option::Option<String>,
+                safe: ::std::option::Option<crate::resources::cse::siterestrict::params::ListSafe>,
+                search_type: ::std::option::Option<
+                    crate::resources::cse::siterestrict::params::ListSearchType,
+                >,
+                site_search: ::std::option::Option<String>,
+                site_search_filter: ::std::option::Option<
+                    crate::resources::cse::siterestrict::params::ListSiteSearchFilter,
+                >,
+                sort: ::std::option::Option<String>,
+                start: ::std::option::Option<u32>,
+                access_token: ::std::option::Option<String>,
+                alt: ::std::option::Option<crate::params::Alt>,
+                callback: ::std::option::Option<String>,
+                fields: ::std::option::Option<String>,
+                key: ::std::option::Option<String>,
+                oauth_token: ::std::option::Option<String>,
+                pretty_print: ::std::option::Option<bool>,
+                quota_user: ::std::option::Option<String>,
+                upload_protocol: ::std::option::Option<String>,
+                upload_type: ::std::option::Option<String>,
+                xgafv: ::std::option::Option<crate::params::Xgafv>,
             }
             impl<'a> ListRequestBuilder<'a> {
                 #[doc = "Enables or disables [Simplified and Traditional Chinese Search](https://developers.google.com/custom-search/docs/json_api_reference#chineseSearch). The default value for this parameter is 0 (zero), meaning that the feature is enabled. Supported values are: * `1`: Disabled * `0`: Enabled (default)"]
@@ -3752,7 +3761,7 @@ pub mod resources {
                     T: ::serde::de::DeserializeOwned + ::google_field_selector::FieldSelector,
                 {
                     let fields = ::google_field_selector::to_string::<T>();
-                    let fields: Option<String> = if fields.is_empty() {
+                    let fields: ::std::option::Option<String> = if fields.is_empty() {
                         None
                     } else {
                         Some(fields)
@@ -3783,7 +3792,7 @@ pub mod resources {
                 #[doc = r" whatever return value is provided."]
                 pub async fn execute_with_fields<T, F>(
                     mut self,
-                    fields: Option<F>,
+                    fields: ::std::option::Option<F>,
                 ) -> Result<T, crate::Error>
                 where
                     T: ::serde::de::DeserializeOwned,
@@ -4143,5 +4152,18 @@ mod parsed_string {
             Some(x) => Ok(Some(x.parse().map_err(::serde::de::Error::custom)?)),
             None => Ok(None),
         }
+    }
+}
+/// Represent the ability to extract the `nextPageToken` from a response.
+pub trait GetNextPageToken {
+    /// Get the `nextPageToken` from a response if present.
+    fn next_page_token(&self) -> ::std::option::Option<String>;
+}
+
+impl GetNextPageToken for ::serde_json::Map<String, ::serde_json::Value> {
+    fn next_page_token(&self) -> ::std::option::Option<String> {
+        self.get("nextPageToken")
+            .and_then(|t| t.as_str())
+            .map(|s| s.to_owned())
     }
 }
